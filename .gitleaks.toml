@@ -1,0 +1,17 @@
+title = "Tawiza gitleaks config"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "long-dash-unicode"
+description = "Tiret long Unicode (U+2212) interdit"
+regex = '''−'''
+tags = ["typography"]
+
+[[allowlist]]
+description = "Fichiers autorises"
+paths = [
+    '''\.gitleaks\.toml$''',
+    '''docs/.*'''
+]

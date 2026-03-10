@@ -1,0 +1,58 @@
+#!/bin/bash
+# Pre-commit hook: bloque les secrets et les tirets longs Unicode
+
+RED='\033[0;31m'
+NC='\033[0m'
+BLOCKED=0
+
+STAGED=$(git diff --cached --name-only --diff-filter=ACM | grep -v '\.gitleaks\.toml$' | grep -v '^docs/' | grep -v '\.githooks/' | grep -vE '\.(jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|pdf)$')
+if [ -z "$STAGED" ]; then
+    exit 0
+fi
+
+# 1. Detecter les secrets
+while IFS= read -r file; do
+    [ -z "$file" ] && continue
+    content=$(git show ":$file" 2>/dev/null)
+
+    if echo "$content" | grep -qE 'xsmtpsib-|xkeysib-|PRIVATE KEY'; then
+        echo -e "${RED}BLOQUE: secret detecte dans $file${NC}"
+        BLOCKED=1
+    fi
+
+    if echo "$content" | grep -qE 'sk-[a-zA-Z0-9]{20,}'; then
+        echo -e "${RED}BLOQUE: cle API detectee dans $file${NC}"
+        BLOCKED=1
+    fi
+
+    if echo "$content" | grep -qP 'password\s*[:=]\s*["\x27].{8,}["\x27]'; then
+        echo -e "${RED}BLOQUE: mot de passe detecte dans $file${NC}"
+        BLOCKED=1
+    fi
+
+    # 2. Detecter les tirets longs Unicode (U+2212) et cadratins (U+2014)
+    if echo "$content" | grep -qP '\x{2212}'; then
+        echo -e "${RED}BLOQUE: tiret long Unicode (U+2212) dans $file${NC}"
+        BLOCKED=1
+    fi
+    if echo "$content" | grep -qP '\x{2014}'; then
+        echo -e "${RED}BLOQUE: tiret cadratin (U+2014) dans $file${NC}"
+        BLOCKED=1
+    fi
+    # 3. Detecter les mots français sans accents (fichiers .html uniquement)
+    if echo "$file" | grep -qE '\.html$'; then
+        MISSING=$(echo "$content" | grep -oP '\b(donnees|pauvrete|chomage|securite|geographie|economique|methodologie|fiscalite|desindustrialisees|mediterraneen|delinquance|etiquette|mediane)\b' | head -3)
+        if [ -n "$MISSING" ]; then
+            echo -e "${RED}ATTENTION: mots sans accents dans $file: $MISSING${NC}"
+            echo "  (Ce n'est pas bloquant, mais pensez a corriger)"
+        fi
+    fi
+done <<< "$STAGED"
+
+if [ $BLOCKED -eq 1 ]; then
+    echo ""
+    echo "Corrigez les problemes avant de commiter."
+    exit 1
+fi
+
+exit 0
