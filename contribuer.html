@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribuer - Tawiza</title>
+    <meta name="description" content="Tawiza est un projet open source. Développeurs, data scientists, rédacteurs : voici comment contribuer à l'intelligence territoriale.">
+    <meta name="keywords" content="contribuer, open source, intelligence territoriale, données publiques, bénévolat, développeur, data scientist, FastAPI, D3.js">
+    <meta name="author" content="Tawiza">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#b45309">
+    <link rel="canonical" href="https://tawiza.fr/contribuer.html">
+
+    <meta property="og:title" content="Contribuer - Tawiza">
+    <meta property="og:description" content="Projet open source d'intelligence territoriale. On cherche des gens qui veulent que les données publiques servent à quelque chose.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tawiza.fr/contribuer.html">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Tawiza">
+    <meta property="og:image" content="https://tawiza.fr/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contribuer - Tawiza">
+    <meta name="twitter:description" content="Projet open source d'intelligence territoriale. Voici comment participer.">
+    <meta name="twitter:image" content="https://tawiza.fr/og-image.png">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23b45309'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='18'%3ET%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3">
+
+    <!-- Analytics - Plausible self-hosted (no cookies, GDPR compliant) -->
+    <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.js"></script>
+</head>
+<body>
+    <!-- NAV -->
+    <nav class="nav" role="navigation" aria-label="Navigation principale">
+        <div class="nav-inner">
+            <a href="/" class="logo" aria-label="Tawiza - Accueil">
+                <img src="img/logo-tawiza-amber.svg" alt="Tawiza" class="logo-img logo-light-only" height="28">
+                <img src="img/logo-tawiza-white.svg" alt="Tawiza" class="logo-img logo-dark-only" height="28">
+            </a>
+            <div class="nav-links">
+                <a href="analyses/">Analyses</a>
+                <a href="manifeste.html">Manifeste</a>
+                <a href="contribuer.html" aria-current="page">Contribuer</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">Code source</a>
+            </div>
+            <button class="nav-mobile" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container-narrow fade-up">
+            <h1>C'est un projet open source. <span class="highlight">Pas une startup.</span></h1>
+            <p class="hero-sub">Personne ne lève de fonds. Personne ne prépare un pivot. On construit un outil d'intelligence territoriale parce que les données publiques françaises méritent mieux qu'un portail open data que personne ne visite.</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- PROFILS -->
+        <section>
+            <div class="container-narrow">
+                <h2 class="fade-up">On cherche des gens, pas des profils LinkedIn</h2>
+
+                <div class="fade-up profile-block">
+                    <h3>Dev Python</h3>
+                    <p>Le backend est en FastAPI + Ollama. Chaque API gouvernementale est un connecteur indépendant. Si tu as déjà bataillé avec une API publique française et ses formats improbables, tu sais exactement de quoi on parle.</p>
+                    <a href="https://github.com/tawiza/tawiza/labels/backend" class="action-link-secondary">Voir les issues backend</a>
+                </div>
+
+                <div class="fade-up profile-block">
+                    <h3>Dev frontend</h3>
+                    <p>Le site est du HTML/CSS/JS statique. Les visualisations sont en D3.js/SVG. Si tu veux faire des graphiques qui racontent une histoire, c'est ici. Pas de framework, pas de build de 45 secondes. Tu ouvres le fichier, tu modifies, tu recharges.</p>
+                    <a href="https://github.com/tawiza/tawiza/labels/frontend" class="action-link-secondary">Voir les issues frontend</a>
+                </div>
+
+                <div class="fade-up profile-block">
+                    <h3>Data scientist</h3>
+                    <p>Les pipelines de données sont le coeur du projet. Scraping, normalisation, croisement. Si tu sais transformer un CSV illisible en quelque chose d'utile, on a du travail. Et si tu as déjà essayé de croiser des données INSEE avec des données BODACC, tu sais que "du travail" est un euphémisme.</p>
+                    <a href="https://github.com/tawiza/tawiza/labels/data" class="action-link-secondary">Voir les issues data</a>
+                </div>
+
+                <div class="fade-up profile-block">
+                    <h3>Tu n'es pas dev ?</h3>
+                    <p>On a aussi besoin de gens qui écrivent bien, qui vérifient les sources, qui connaissent leur territoire. Une analyse économique locale écrite par quelqu'un qui vit sur place vaut dix dashboards générés automatiquement.</p>
+                    <p>Voilà comment contribuer sans écrire une ligne de code :</p>
+                    <ul>
+                        <li><strong>Signaler une erreur</strong> dans une analyse → <a href="https://github.com/tawiza/tawiza/issues" target="_blank" rel="noopener">ouvrir une issue sur GitHub</a></li>
+                        <li><strong>Proposer un sujet</strong> d'analyse → <a href="https://github.com/tawiza/tawiza/discussions" target="_blank" rel="noopener">GitHub Discussions</a></li>
+                        <li><strong>Relire et vérifier</strong> les sources d'un article</li>
+                        <li><strong>Écrire une analyse</strong> sur ton territoire → nous contacter avec tes données et ton angle</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMENT COMMENCER -->
+        <section>
+            <div class="container-narrow fade-up">
+                <h2>Comment commencer</h2>
+                <div class="steps">
+                    <div class="step">
+                        <strong>1. Cloner le dépôt</strong>
+                        <p>Le code est sur GitHub. Un <code>git clone</code>, un <code>docker compose up</code>, et c'est parti. Le README explique le reste.</p>
+                    </div>
+                    <div class="step">
+                        <strong>2. Choisir une issue</strong>
+                        <p>Les issues tagguées <code>good first issue</code> sont faites pour ça. Elles sont documentées, délimitées, et personne ne va te juger si tu poses des questions.</p>
+                    </div>
+                    <div class="step">
+                        <strong>3. Proposer une PR</strong>
+                        <p>Pas de process bureaucratique. Tu fais ta branche, tu pousses, tu ouvres une PR. On relit, on discute, on merge. C'est aussi simple que ça.</p>
+                    </div>
+                </div>
+                <p style="margin-top:2rem;color:var(--muted)">Pour l'instant, Tawiza est un projet solo. Chaque contribution, même minime, fait une vraie différence. Si tu contribues, tu seras parmi les premiers.</p>
+                <a href="https://github.com/tawiza/tawiza" class="action-link" target="_blank" rel="noopener">Voir le dépôt GitHub</a>
+                <br>
+                <a href="https://github.com/tawiza/tawiza/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" class="action-link-secondary" target="_blank" rel="noopener">Issues "good first issue"</a>
+            </div>
+        </section>
+
+        <!-- LIENS -->
+        <section>
+            <div class="container-narrow fade-up">
+                <h2>Rester au courant</h2>
+                <p>On ne va pas te spammer. Mais si tu veux suivre le projet, voilà où nous trouver.</p>
+                <p>
+                    <a href="https://github.com/tawiza/tawiza" class="action-link-secondary" target="_blank" rel="noopener">GitHub</a>
+                    <br>
+                    <a href="https://www.threads.net/@tawiza" class="action-link-secondary" target="_blank" rel="noopener">Threads</a>
+                    <br>
+                    <a href="https://bsky.app/profile/tawiza.fr" class="action-link-secondary" target="_blank" rel="noopener">Bluesky</a>
+                </p>
+                <p>Il y a aussi une <a href="/">newsletter</a> si tu préfères recevoir les analyses par mail.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-links">
+                    <a href="analyses/">Analyses</a>
+                    <a href="manifeste.html">Manifeste</a>
+                    <a href="contribuer.html">Contribuer</a>
+                    <a href="a-propos.html">À propos</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.threads.net/@tawiza" target="_blank" rel="noopener">Threads</a>
+                    <a href="https://bsky.app/profile/tawiza.fr" target="_blank" rel="noopener">Bluesky</a>
+                </div>
+                <p class="footer-legal">Licence MIT. Données collectées depuis des sources publiques ouvertes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Mobile nav
+    document.querySelector('.nav-mobile')?.addEventListener('click', function() {
+        const links = document.querySelector('.nav-links');
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        links.classList.toggle('open');
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
