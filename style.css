@@ -116,8 +116,11 @@ strong { font-weight: 600; color: var(--dark); }
     max-width: 1080px; margin: 0 auto; padding: 14px 24px;
     display: flex; justify-content: space-between; align-items: center;
 }
-.logo { font-size: 1.15rem; font-weight: 800; color: var(--terre); letter-spacing: -0.02em; }
-.logo:hover { color: var(--amber-dark); }
+.logo { display: inline-flex; align-items: center; }
+.logo:hover { opacity: 0.85; }
+.logo-img { height: 32px; width: auto; display: block; }
+.logo-light-only { display: block; }
+.logo-dark-only { display: none; }
 .nav-links { display: flex; align-items: center; gap: 24px; }
 .nav-links a { color: var(--text-soft); font-size: 0.84rem; font-weight: 500; }
 .nav-links a:hover { color: var(--amber); }
@@ -275,7 +278,7 @@ strong { font-weight: 600; color: var(--dark); }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 36px; }
 .footer-logo { font-size: 1.15rem; font-weight: 800; color: var(--cream); margin-bottom: 8px; }
 .footer-logo-link { display: inline-block; margin-bottom: 8px; }
-.footer-logo-img { height: 40px; width: auto; }
+.footer-logo-img { height: 48px; width: auto; }
 .logo-dark-only { display: none; }
 .footer-tagline { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5; }
 .footer-origin { font-size: 0.8rem; color: var(--text-muted); opacity: 0.6; }
@@ -284,6 +287,16 @@ strong { font-weight: 600; color: var(--dark); }
 .footer-links-col a:hover { color: var(--amber-light); }
 .footer-bottom { padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); }
 .footer-bottom p { font-size: 0.76rem; color: var(--text-muted); opacity: 0.5; text-align: center; }
+.privacy-notice {
+    margin-top: 16px; padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.privacy-notice p {
+    font-size: 0.72rem !important; color: var(--text-muted) !important;
+    opacity: 0.6 !important; line-height: 1.6 !important;
+}
+.privacy-notice a { color: var(--amber-light); }
 
 /* === RESPONSIVE — Tablette === */
 @media (max-width: 968px) {
@@ -356,8 +369,8 @@ strong { font-weight: 600; color: var(--dark); }
     .nav-links a { color: #a8a29e; }
     .nav-mobile span { background: #e7e5e4; }
 
-    .logo { color: var(--amber-light); }
-    .logo:hover { color: var(--amber); }
+    .logo-light-only { display: none !important; }
+    .logo-dark-only { display: block !important; }
 
     h2, h3, strong { color: #fafaf9; }
 

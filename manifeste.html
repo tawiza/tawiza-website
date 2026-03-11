@@ -47,16 +47,22 @@
     </script>
 </head>
 <body>
+    <!-- READING PROGRESS BAR -->
+    <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
     <!-- NAV -->
     <nav class="nav" role="navigation" aria-label="Navigation principale">
         <div class="nav-inner">
-            <a href="/" class="logo" aria-label="Tawiza - Accueil">Tawiza</a>
+            <a href="/" class="logo" aria-label="Tawiza - Accueil">
+                <img src="img/logo-tawiza-amber.svg" alt="Tawiza" class="logo-img logo-light-only" height="32">
+                <img src="img/logo-tawiza-white.svg" alt="Tawiza" class="logo-img logo-dark-only" height="32">
+            </a>
             <div class="nav-links">
                 <a href="/#features">Fonctionnalités</a>
                 <a href="/#commons">Bien commun</a>
                 <a href="/#developers">Développeurs</a>
                 <a href="/#newsletter">Newsletter</a>
-                <a href="https://github.com/hamidedefr/tawiza" target="_blank" rel="noopener" class="btn btn-sm btn-github" aria-label="Voir le code source sur GitHub">
+                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener" class="btn btn-sm btn-github" aria-label="Voir le code source sur GitHub">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
                     GitHub
                 </a>
@@ -76,7 +82,7 @@
             <div class="article-meta">
                 <time datetime="2026-03-11">11 mars 2026</time>
                 <span class="article-meta-sep">&middot;</span>
-                <span>15 min de lecture</span>
+                <span>20 min de lecture</span>
             </div>
         </div>
     </header>
@@ -445,8 +451,293 @@
             </section>
 
             <!-- ═══════════════════════════════════════ -->
-            <!-- PARTIE VII — ENGAGEMENTS                -->
+            <!-- PARTIE VII — LES CHIFFRES               -->
             <!-- ═══════════════════════════════════════ -->
+
+            <div class="section-divider"><span>Les chiffres</span></div>
+
+            <section class="article-section">
+                <h2>L'exclusion numérique en chiffres</h2>
+                <p>L'open data français est un paradoxe quantifiable. Les données existent, les lois les rendent obligatoirement ouvertes, mais la réalité du terrain raconte une autre histoire.</p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="47000" data-suffix="+">0</div>
+                        <div class="stat-label">Jeux de données</div>
+                        <div class="stat-desc">publiés sur data.gouv.fr<a href="#ref-9" class="footnote-ref" id="fnref-9">[9]</a></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="34945" data-suffix="">0</div>
+                        <div class="stat-label">Communes</div>
+                        <div class="stat-desc">en France (COG 2024)<a href="#ref-10" class="footnote-ref" id="fnref-10">[10]</a></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="4" data-suffix="%">0</div>
+                        <div class="stat-label">Des communes</div>
+                        <div class="stat-desc">publient des données ouvertes<a href="#ref-11" class="footnote-ref" id="fnref-11">[11]</a></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="800" data-suffix="€/j">0</div>
+                        <div class="stat-label">Coût moyen</div>
+                        <div class="stat-desc">d'un consultant data<a href="#ref-12" class="footnote-ref" id="fnref-12">[12]</a></div>
+                    </div>
+                </div>
+
+                <p>La <strong>loi pour une République numérique</strong> (loi Lemaire, 2016)<a href="#ref-6" class="footnote-ref">[6]</a> oblige les administrations de plus de 50 agents à publier leurs données. Mais publier n'est pas rendre accessible. Le fossé entre la donnée brute (un CSV de 800 000 lignes) et l'information exploitable (« votre commune perd 2% d'entreprises par an ») est un gouffre technique que seuls les acteurs les mieux dotés franchissent.</p>
+
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Critère</th>
+                                <th>Situation actuelle</th>
+                                <th>Avec Tawiza</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Accès aux données</td>
+                                <td>18+ plateformes différentes, formats hétérogènes</td>
+                                <td>Interface unifiée, données normalisées</td>
+                            </tr>
+                            <tr>
+                                <td>Compétences requises</td>
+                                <td>Data engineering, Python, SQL</td>
+                                <td>Question en langage naturel</td>
+                            </tr>
+                            <tr>
+                                <td>Coût d'analyse territoriale</td>
+                                <td>5 000 - 50 000 € (cabinet de conseil)</td>
+                                <td>Gratuit, auto-hébergeable</td>
+                            </tr>
+                            <tr>
+                                <td>Délai d'obtention</td>
+                                <td>2 à 8 semaines</td>
+                                <td>Temps réel</td>
+                            </tr>
+                            <tr>
+                                <td>Souveraineté des données</td>
+                                <td>Cloud tiers, dépendance fournisseur</td>
+                                <td>100% local, IA souveraine (Ollama)</td>
+                            </tr>
+                            <tr>
+                                <td>Transparence</td>
+                                <td>Algorithmes propriétaires</td>
+                                <td>Code ouvert, auditable (MIT)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>Ces chiffres ne sont pas des abstractions. Ils racontent une réalité : <strong>96% des communes françaises</strong> n'ont pas les moyens techniques d'exploiter les données qui les concernent. Les données publiques sont un bien commun en théorie, un privilège en pratique.</p>
+            </section>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- PARTIE VIII — ARCHITECTURE TECHNIQUE    -->
+            <!-- ═══════════════════════════════════════ -->
+
+            <div class="section-divider"><span>Architecture</span></div>
+
+            <section class="article-section">
+                <h2>L'architecture de la coopération</h2>
+                <p>Un bien commun numérique a besoin d'une infrastructure technique solide. Voici comment Tawiza transforme des données brutes dispersées en intelligence territoriale accessible.</p>
+
+                <div class="architecture-diagram">
+                    <h4>Pipeline de données — de la source à l'insight</h4>
+                    <svg class="arch-svg" viewBox="0 0 620 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background grid -->
+                        <defs>
+                            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                <circle cx="10" cy="10" r="0.5" fill="rgba(217,119,6,0.1)"/>
+                            </pattern>
+                            <linearGradient id="amber-grad" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#d97706" stop-opacity="0.6"/>
+                                <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.6"/>
+                            </linearGradient>
+                            <linearGradient id="flow-grad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#d97706" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="#d97706" stop-opacity="0.05"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="620" height="380" fill="url(#grid)"/>
+
+                        <!-- LAYER 1: Sources -->
+                        <g class="arch-node">
+                            <rect x="20" y="20" width="120" height="44" rx="8" fill="rgba(217,119,6,0.08)" stroke="#d97706" stroke-width="1.5"/>
+                            <text x="80" y="38" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#92400e">APIs PUBLIQUES</text>
+                            <text x="80" y="52" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#78716c">INSEE, SIRENE, BODACC...</text>
+                        </g>
+                        <g class="arch-node">
+                            <rect x="160" y="20" width="120" height="44" rx="8" fill="rgba(217,119,6,0.08)" stroke="#d97706" stroke-width="1.5"/>
+                            <text x="220" y="38" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#92400e">WEB CRAWLING</text>
+                            <text x="220" y="52" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#78716c">BOAMP, GDELT, presse...</text>
+                        </g>
+                        <g class="arch-node">
+                            <rect x="300" y="20" width="120" height="44" rx="8" fill="rgba(217,119,6,0.08)" stroke="#d97706" stroke-width="1.5"/>
+                            <text x="360" y="38" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#92400e">DATA.GOUV.FR</text>
+                            <text x="360" y="52" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#78716c">47 000+ datasets</text>
+                        </g>
+
+                        <!-- Flow arrows L1 → L2 -->
+                        <path d="M80 64 L80 100" stroke="url(#amber-grad)" stroke-width="1.5" stroke-dasharray="4 3"/>
+                        <path d="M220 64 L220 100" stroke="url(#amber-grad)" stroke-width="1.5" stroke-dasharray="4 3"/>
+                        <path d="M360 64 L310 100" stroke="url(#amber-grad)" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+                        <!-- LAYER 2: Collecteurs -->
+                        <g class="arch-node">
+                            <rect x="40" y="100" width="260" height="52" rx="10" fill="rgba(217,119,6,0.12)" stroke="#d97706" stroke-width="2"/>
+                            <text x="170" y="121" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="800" fill="#78350f">COLLECTEURS &amp; ADAPTATEURS</text>
+                            <text x="170" y="138" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#78716c">FastAPI · Connecteurs modulaires · Rate limiting · Cache</text>
+                        </g>
+
+                        <!-- LAYER 2b: Data Hunter -->
+                        <g class="arch-node">
+                            <rect x="320" y="100" width="140" height="52" rx="10" fill="rgba(245,158,11,0.1)" stroke="#f59e0b" stroke-width="1.5"/>
+                            <text x="390" y="121" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#92400e">DATA HUNTER</text>
+                            <text x="390" y="138" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#78716c">Agent de collecte proactif</text>
+                        </g>
+
+                        <!-- Flow arrows L2 → L3 -->
+                        <path d="M170 152 L170 188" stroke="url(#amber-grad)" stroke-width="1.5" stroke-dasharray="4 3"/>
+                        <path d="M390 152 L310 188" stroke="url(#amber-grad)" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+                        <!-- LAYER 3: Stockage -->
+                        <g class="arch-node">
+                            <rect x="80" y="188" width="240" height="52" rx="10" fill="rgba(120,53,15,0.08)" stroke="#78350f" stroke-width="2"/>
+                            <text x="200" y="209" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="800" fill="#78350f">STOCKAGE &amp; INDEXATION</text>
+                            <text x="200" y="226" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#78716c">PostgreSQL · pgvector · Embeddings · Recherche sémantique</text>
+                        </g>
+
+                        <!-- LAYER 3b: Ollama -->
+                        <g class="arch-node">
+                            <rect x="340" y="188" width="140" height="52" rx="10" fill="rgba(217,119,6,0.15)" stroke="#d97706" stroke-width="2"/>
+                            <text x="410" y="207" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#78350f">IA SOUVERAINE</text>
+                            <text x="410" y="222" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#78716c">Ollama · Modèles locaux</text>
+                            <text x="410" y="233" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#a8a29e">100% sur votre serveur</text>
+                        </g>
+
+                        <!-- Flow arrows L3 → L4 -->
+                        <path d="M200 240 L200 276" stroke="url(#amber-grad)" stroke-width="1.5" stroke-dasharray="4 3"/>
+                        <path d="M410 240 L350 276" stroke="url(#amber-grad)" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+                        <!-- LAYER 4: TAJINE -->
+                        <g class="arch-node">
+                            <rect x="100" y="276" width="280" height="52" rx="10" fill="rgba(217,119,6,0.18)" stroke="#d97706" stroke-width="2.5"/>
+                            <text x="240" y="297" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="800" fill="#78350f">AGENT TAJINE</text>
+                            <text x="240" y="314" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#78716c">5 niveaux cognitifs · ReAct · Analyse territoriale contextualisée</text>
+                        </g>
+
+                        <!-- Flow arrow L4 → L5 -->
+                        <path d="M380 302 L440 302" stroke="url(#amber-grad)" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+                        <!-- LAYER 5: Dashboard -->
+                        <g class="arch-node">
+                            <rect x="440" y="276" width="160" height="52" rx="10" fill="rgba(22,163,74,0.08)" stroke="#16a34a" stroke-width="1.5"/>
+                            <text x="520" y="297" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#166534">DASHBOARD</text>
+                            <text x="520" y="314" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#78716c">Next.js · D3.js · Cartes</text>
+                        </g>
+
+                        <!-- Users -->
+                        <g class="arch-node">
+                            <rect x="440" y="340" width="160" height="30" rx="6" fill="rgba(22,163,74,0.04)" stroke="#16a34a" stroke-width="1" stroke-dasharray="4 2"/>
+                            <text x="520" y="359" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="#166534">Citoyens · Élus · Associations · Entrepreneurs</text>
+                        </g>
+                        <path d="M520 328 L520 340" stroke="rgba(22,163,74,0.3)" stroke-width="1" stroke-dasharray="3 2"/>
+
+                        <!-- Legend -->
+                        <text x="20" y="370" font-family="Inter,sans-serif" font-size="7" fill="#a8a29e">Auto-hébergeable sur un VPS 4 vCPU / 16 Go RAM · Licence MIT · Aucune dépendance cloud</text>
+                    </svg>
+                </div>
+
+                <h3>Le pipeline en détail</h3>
+
+                <div class="pipeline-steps">
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2a10 10 0 0 1 10 10M12 2a10 10 0 0 0-10 10M12 2v4M2 12h4m14 0h-4m-4 4v4m0 0a10 10 0 0 0 10-10m-10 10a10 10 0 0 1-10-10"/></svg>
+                        </div>
+                        <div>
+                            <h4>1. Collecte multi-sources</h4>
+                            <p>Chaque API gouvernementale est encapsulée dans un <strong>connecteur indépendant</strong>. Rate limiting intelligent, cache distribué, gestion des erreurs gracieuse. Le Data Hunter complète avec du crawling ciblé sur les sources web territoriales.</p>
+                            <div class="pipeline-tech">
+                                <span>FastAPI</span><span>httpx</span><span>Redis</span><span>Celery</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="20" cy="18" r="2"/></svg>
+                        </div>
+                        <div>
+                            <h4>2. Normalisation et enrichissement</h4>
+                            <p>Les données brutes sont nettoyées, géocodées, normalisées au référentiel COG (Code Officiel Géographique). Croisement automatique entre sources : une entreprise SIRENE est liée à ses annonces BODACC, ses marchés BOAMP, ses données DVF.</p>
+                            <div class="pipeline-tech">
+                                <span>Python</span><span>Pydantic</span><span>API Géo</span><span>COG INSEE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                        </div>
+                        <div>
+                            <h4>3. Stockage vectoriel et sémantique</h4>
+                            <p>Les données sont stockées dans PostgreSQL avec l'extension <strong>pgvector</strong> pour la recherche sémantique. Chaque document territorial est transformé en embedding vectoriel, permettant des requêtes en langage naturel : « quelles communes du Pas-de-Calais perdent des entreprises ? ».</p>
+                            <div class="pipeline-tech">
+                                <span>PostgreSQL</span><span>pgvector</span><span>nomic-embed-text</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div>
+                            <h4>4. Analyse cognitive (TAJINE)</h4>
+                            <p>L'agent TAJINE opère sur <strong>5 niveaux cognitifs</strong> : constat factuel, analyse de tendances, corrélation inter-sources, projection de scénarios, recommandation d'action. Pipeline ReAct avec des outils spécialisés par domaine. IA 100% locale via Ollama.</p>
+                            <div class="pipeline-tech">
+                                <span>Ollama</span><span>ReAct</span><span>LangChain</span><span>qwen3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        </div>
+                        <div>
+                            <h4>5. Visualisation et restitution</h4>
+                            <p>Les résultats sont présentés dans un <strong>dashboard interactif</strong> : cartes choroplèthes, graphiques D3.js, tableaux de bord par territoire. L'objectif : qu'un élu ou un citoyen comprenne en 30 secondes ce qu'un data analyst mettrait 3 jours à produire.</p>
+                            <div class="pipeline-tech">
+                                <span>Next.js 14</span><span>D3.js</span><span>shadcn/ui</span><span>Tailwind</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <blockquote class="article-quote">
+                    <p>La technologie la plus sophistiquée est celle qui disparaît. L'utilisateur ne devrait jamais avoir à penser au pipeline, seulement à sa question et à la réponse.</p>
+                </blockquote>
+
+                <h3>Exigences minimales</h3>
+                <p>Tawiza est conçu pour être auto-hébergé sur un <strong>simple VPS</strong>. Pas besoin d'un cluster Kubernetes ou d'un budget cloud à cinq chiffres :</p>
+                <div class="mechanism-list">
+                    <div class="mechanism">
+                        <strong>Serveur :</strong> 4 vCPU, 16 Go RAM, 100 Go SSD. Un VPS à ~30 €/mois suffit pour couvrir un département entier.
+                    </div>
+                    <div class="mechanism">
+                        <strong>GPU (optionnel) :</strong> Recommandé pour l'IA locale (Ollama). AMD RX 7900 XTX ou NVIDIA RTX 3090+ pour les modèles 27B paramètres. Sans GPU, des modèles plus légers (7B) tournent en CPU.
+                    </div>
+                    <div class="mechanism">
+                        <strong>Dépendances :</strong> Docker, PostgreSQL, Redis, Ollama. Tout s'installe en une commande <code>docker compose up</code>.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- PARTIE IX — ENGAGEMENTS                 -->
+            <!-- ═══════════════════════════════════════ -->
+
+            <div class="section-divider"><span>Engagements</span></div>
 
             <section class="article-section">
                 <h2>Nos engagements</h2>
@@ -552,6 +843,30 @@
                         <a href="https://www.bollier.org/think-like-commoner" target="_blank" rel="noopener" class="ref-source-link">Site de l'auteur</a>
                         <span class="ref-description">Introduction accessible à la pensée des communs. Bollier montre comment cette vision du monde offre une alternative au tout-marché pour gérer les ressources partagées.</span>
                     </li>
+                    <li id="ref-9" data-ref="[9]">
+                        data.gouv.fr — Plateforme ouverte des données publiques françaises. Catalogue au 1er mars 2026.
+                        <a href="https://www.data.gouv.fr/fr/dashboard/" target="_blank" rel="noopener" class="ref-source-link">data.gouv.fr/dashboard</a>
+                        <a href="#fnref-9" class="ref-backlink" title="Retour au texte">&#8617;</a>
+                        <span class="ref-description">Plateforme nationale d'open data gérée par la DINUM. Recense les jeux de données publiés par les administrations, les collectivités et les entreprises délégataires de service public.</span>
+                    </li>
+                    <li id="ref-10" data-ref="[10]">
+                        INSEE. Code Officiel Géographique (COG) 2024. Nombre de communes en France.
+                        <a href="https://www.insee.fr/fr/information/2560452" target="_blank" rel="noopener" class="ref-source-link">insee.fr</a>
+                        <a href="#fnref-10" class="ref-backlink" title="Retour au texte">&#8617;</a>
+                        <span class="ref-description">Le COG recense toutes les communes françaises (métropole + outre-mer). 34 945 communes au 1er janvier 2024.</span>
+                    </li>
+                    <li id="ref-11" data-ref="[11]">
+                        Observatoire open data des territoires (OpenDataFrance). Baromètre 2024.
+                        <a href="https://www.opendatafrance.net/lobservatoire/" target="_blank" rel="noopener" class="ref-source-link">opendatafrance.net</a>
+                        <a href="#fnref-11" class="ref-backlink" title="Retour au texte">&#8617;</a>
+                        <span class="ref-description">Suivi annuel de l'ouverture des données par les collectivités territoriales françaises. Moins de 5% des communes ont publié au moins un jeu de données ouvert.</span>
+                    </li>
+                    <li id="ref-12" data-ref="[12]">
+                        Syntec Numérique / Numeum. Observatoire des métiers du numérique 2024. Tarifs journaliers moyens du conseil en données.
+                        <a href="https://numeum.fr/" target="_blank" rel="noopener" class="ref-source-link">numeum.fr</a>
+                        <a href="#fnref-12" class="ref-backlink" title="Retour au texte">&#8617;</a>
+                        <span class="ref-description">Les tarifs journaliers moyens des consultants data/BI en France se situent entre 600 € et 1 200 € HT/jour selon l'expertise et la région. Le chiffre de 800 €/jour est une médiane observée pour le conseil en données territorial.</span>
+                    </li>
                 </ol>
             </section>
 
@@ -567,13 +882,13 @@
                 <p>Si vous croyez que les données publiques appartiennent au public. Si vous pensez que comprendre son territoire est un droit, pas un privilège. Si vous êtes convaincu que la coopération bat la prédation quand le jeu est bien structuré. Alors ce projet a besoin de vous.</p>
                 <p>Pas besoin de coder. Signaler un bug, poser une question, partager le projet, tester un territoire, écrire de la documentation, chaque contribution déplace l'équilibre. Les communs se construisent à plusieurs.</p>
                 <div class="manifesto-logo">
-                    <img src="img/tajine-logo-light.png" alt="Logo Tajine" class="logo-light-only">
-                    <img src="img/tajine-logo-dark.png" alt="Logo Tajine" class="logo-dark-only">
+                    <img src="img/logo-tawiza-amber.svg" alt="Logo Tawiza" class="logo-light-only">
+                    <img src="img/logo-tawiza-white.svg" alt="Logo Tawiza" class="logo-dark-only">
                 </div>
                 <p class="article-closing-tawiza"><strong>Tawiza</strong> (ⵜⴰⵡⵉⵣⴰ), l'entraide collective.</p>
 
                 <div class="article-cta">
-                    <a href="https://github.com/hamidedefr/tawiza" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+                    <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
                         Contribuer sur GitHub
                     </a>
@@ -590,32 +905,35 @@
             <div class="footer-grid">
                 <div class="footer-brand-col">
                     <a href="/" class="footer-logo-link">
-                        <img src="img/tajine-logo-dark.png" alt="Tawiza" class="footer-logo-img" height="40">
+                        <img src="img/logo-tawiza-white.svg" alt="Tawiza" class="footer-logo-img" height="48">
                     </a>
                     <p class="footer-tagline">Intelligence territoriale,<br>bien commun numérique.</p>
                     <p class="footer-origin">Conçu et développé en France.</p>
                 </div>
                 <div class="footer-links-col">
                     <h4>Projet</h4>
-                    <a href="https://github.com/hamidedefr/tawiza" target="_blank" rel="noopener">Code source</a>
-                    <a href="https://github.com/hamidedefr/tawiza/tree/main/docs" target="_blank" rel="noopener">Documentation</a>
-                    <a href="https://github.com/hamidedefr/tawiza/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribuer</a>
-                    <a href="https://github.com/hamidedefr/tawiza/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
+                    <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">Code source</a>
+                    <a href="https://github.com/tawiza/tawiza/tree/main/docs" target="_blank" rel="noopener">Documentation</a>
+                    <a href="https://github.com/tawiza/.github/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribuer</a>
+                    <a href="https://github.com/tawiza/tawiza/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
                 </div>
                 <div class="footer-links-col">
                     <h4>Communauté</h4>
-                    <a href="https://github.com/hamidedefr/tawiza/issues" target="_blank" rel="noopener">Signaler un problème</a>
-                    <a href="https://github.com/hamidedefr/tawiza/discussions" target="_blank" rel="noopener">Discussions</a>
-                    <a href="https://github.com/hamidedefr/tawiza/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noopener">Code de conduite</a>
+                    <a href="https://github.com/tawiza/tawiza/issues" target="_blank" rel="noopener">Signaler un problème</a>
+                    <a href="https://github.com/tawiza/tawiza/discussions" target="_blank" rel="noopener">Discussions</a>
+                    <a href="https://github.com/tawiza/.github/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noopener">Code de conduite</a>
                 </div>
                 <div class="footer-links-col">
                     <h4>Légal</h4>
-                    <a href="https://github.com/hamidedefr/tawiza/blob/main/LICENSE" target="_blank" rel="noopener">Licence MIT</a>
-                    <a href="https://github.com/hamidedefr/tawiza/blob/main/SECURITY.md" target="_blank" rel="noopener">Sécurité</a>
+                    <a href="https://github.com/tawiza/tawiza/blob/main/LICENSE" target="_blank" rel="noopener">Licence MIT</a>
+                    <a href="https://github.com/tawiza/.github/blob/main/SECURITY.md" target="_blank" rel="noopener">Sécurité</a>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>Logiciel libre sous licence MIT. Données collectées exclusivement depuis des sources publiques ouvertes.</p>
+                <div class="privacy-notice">
+                    <p>Ce site utilise <strong>Plausible Analytics</strong>, une solution de mesure d'audience respectueuse de la vie privée. Aucun cookie, aucune donnée personnelle collectée, conforme RGPD sans bandeau de consentement. <a href="https://plausible.io/data-policy" target="_blank" rel="noopener">En savoir plus</a>.</p>
+                </div>
             </div>
         </div>
     </footer>
@@ -639,6 +957,41 @@
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Reading progress bar
+    const progressBar = document.getElementById('reading-progress');
+    if (progressBar) {
+        window.addEventListener('scroll', () => {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = Math.min((window.scrollY / docHeight) * 100, 100);
+            progressBar.style.width = progress + '%';
+        }, { passive: true });
+    }
+
+    // Animated stat counters
+    const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.dataset.target);
+                const suffix = el.dataset.suffix || '';
+                const duration = 1500;
+                const start = performance.now();
+
+                function animate(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.round(target * eased);
+                    el.textContent = current.toLocaleString('fr-FR') + suffix;
+                    if (progress < 1) requestAnimationFrame(animate);
+                }
+                requestAnimationFrame(animate);
+                statObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-number[data-target]').forEach(el => statObserver.observe(el));
     </script>
 </body>
 </html>
