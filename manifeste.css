@@ -81,6 +81,10 @@
     border-radius: 12px; color: var(--amber);
     display: flex; align-items: center; justify-content: center;
 }
+.pipeline-icon.tajine-icon {
+    width: 64px; height: 64px;
+    background: none;
+}
 .pipeline-step h4 {
     font-size: 0.95rem; margin-bottom: 6px; color: var(--dark);
 }
