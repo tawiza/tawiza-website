@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tawiza — Plateforme open source d'intelligence territoriale | Bien commun</title>
+    <meta name="description" content="Tawiza rend les données publiques de votre territoire accessibles et compréhensibles. 18+ APIs gouvernementales, crawling intelligent, agents IA souverains. Open source, bien commun numérique.">
+    <meta name="keywords" content="intelligence territoriale, open data, données publiques France, bien commun numérique, open source, INSEE, SIRENE, BODACC, BOAMP, DVF, analyse territoriale, IA souveraine, Ollama, FastAPI, collectivités, citoyens">
+    <meta name="author" content="Tawiza Community">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#d97706">
+    <link rel="canonical" href="https://tawiza.fr">
+
+    <meta property="og:title" content="Tawiza — Intelligence territoriale, bien commun">
+    <meta property="og:description" content="Plateforme open source qui rend les données publiques de votre territoire accessibles. Crawling, 18+ APIs, agents IA. Pour citoyens, collectivités et développeurs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tawiza.fr">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Tawiza">
+    <meta property="og:image" content="https://tawiza.fr/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Tawiza — Comprendre la santé de son territoire. Plateforme open source d'intelligence territoriale.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tawiza — Intelligence territoriale open source">
+    <meta name="twitter:description" content="Comprendre la santé de son territoire. Contribuer à l'améliorer. 18+ APIs publiques, IA souveraine, open source.">
+    <meta name="twitter:image" content="https://tawiza.fr/og-image.png">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d97706'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='18'%3ET%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Analytics — Plausible self-hosted (no cookies, GDPR compliant) -->
+    <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.js"></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org", "@type": "SoftwareApplication",
+        "name": "Tawiza",
+        "description": "Plateforme open source d'intelligence territoriale. Collecte, analyse et rend accessibles les données publiques françaises via 18+ APIs gouvernementales, crawling intelligent et agents IA souverains.",
+        "url": "https://tawiza.fr", "applicationCategory": "GovernmentApplication",
+        "operatingSystem": "Linux", "license": "https://opensource.org/licenses/MIT",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "author": { "@type": "Organization", "name": "Tawiza Community", "url": "https://github.com/hamidedefr/tawiza" },
+        "codeRepository": "https://github.com/hamidedefr/tawiza",
+        "programmingLanguage": ["Python", "TypeScript", "JavaScript"]
+    }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "WebSite", "name": "Tawiza", "url": "https://tawiza.fr", "inLanguage": "fr" }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org", "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Qu'est-ce que Tawiza ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Tawiza est une plateforme open source d'intelligence territoriale. Elle collecte, analyse et rend accessibles les données publiques françaises via 18+ APIs gouvernementales (INSEE, SIRENE, BODACC, BOAMP, DVF...), du crawling intelligent et des agents IA souverains tournant en local avec Ollama." }
+            },
+            {
+                "@type": "Question",
+                "name": "Tawiza est-il gratuit ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Oui, Tawiza est entièrement gratuit et open source sous licence MIT. C'est un bien commun numérique : le code est ouvert, les algorithmes sont auditables, et il peut être auto-hébergé sur un simple VPS." }
+            },
+            {
+                "@type": "Question",
+                "name": "Comment Tawiza protège-t-il les données ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Tawiza utilise une IA 100% locale avec Ollama et des modèles open source. Aucune donnée ne quitte votre serveur. La souveraineté numérique est au cœur du projet : pas de cloud tiers, pas de tracking, pas de dépendance externe." }
+            },
+            {
+                "@type": "Question",
+                "name": "Quelles sources de données Tawiza utilise-t-il ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Tawiza se connecte à plus de 18 APIs publiques : INSEE, SIRENE, BODACC, BOAMP, DVF, API Géo, DARES, Urssaf, Banque de France, data.gouv.fr, INPI, DGFIP, ADEME, GDELT, CAF, DREAL, DEPP, ATIH. Un crawling intelligent complète ces sources avec des données territoriales web." }
+            },
+            {
+                "@type": "Question",
+                "name": "Comment contribuer à Tawiza ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Tawiza est ouvert aux contributions : ajouter de nouvelles sources de données, améliorer les agents IA, travailler sur le frontend (Next.js, D3.js) ou renforcer l'infrastructure. Consultez le guide de contribution sur GitHub pour commencer." }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <canvas id="network-bg" aria-hidden="true"></canvas>
+
+    <!-- NAV -->
+    <nav class="nav" role="navigation" aria-label="Navigation principale">
+        <div class="nav-inner">
+            <a href="#" class="logo" aria-label="Tawiza - Accueil">Tawiza</a>
+            <div class="nav-links">
+                <a href="#features">Fonctionnalités</a>
+                <a href="#commons">Bien commun</a>
+                <a href="#developers">Développeurs</a>
+                <a href="#newsletter">Newsletter</a>
+                <a href="manifeste.html">Manifeste</a>
+                <a href="https://github.com/hamidedefr/tawiza" target="_blank" rel="noopener" class="btn btn-sm btn-github" aria-label="Voir le code source sur GitHub">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    GitHub
+                </a>
+            </div>
+            <button class="nav-mobile" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-content fade-up">
+            <h1>Chaque citoyen devrait pouvoir comprendre <span class="highlight">la santé de son territoire</span></h1>
+            <p class="hero-sub">Les données publiques de votre territoire existent déjà. Tawiza les collecte, les analyse et les rend lisibles — pour que comprendre devienne le premier pas vers agir.</p>
+            <div class="hero-actions">
+                <a href="https://github.com/hamidedefr/tawiza" target="_blank" rel="noopener" class="btn btn-primary">Explorer le code source</a>
+                <a href="https://github.com/hamidedefr/tawiza/tree/main/docs" target="_blank" rel="noopener" class="btn btn-outline">Documentation</a>
+            </div>
+            <div class="hero-badges">
+                <span class="badge">Open Source</span>
+                <span class="badge">IA souveraine</span>
+                <span class="badge">Bien commun</span>
+                <span class="badge">18+ APIs publiques</span>
+            </div>
+            <div class="hero-social-proof">
+                <a href="https://github.com/hamidedefr/tawiza" target="_blank" rel="noopener" class="github-stars">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    <span>Star on GitHub</span>
+                    <img src="https://img.shields.io/github/stars/hamidedefr/tawiza?style=flat&label=&color=d97706" alt="GitHub stars" height="20" loading="lazy">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- LE PROBLÈME -->
+        <section class="problem">
+            <div class="container">
+                <div class="problem-content fade-up">
+                    <h2>Les données publiques existent.<br>Personne ne les lit.</h2>
+                    <p>La France produit chaque jour des milliers de jeux de données publiques — marchés publics, créations d'entreprises, transactions immobilières, démographie. Ces données sont <strong>théoriquement ouvertes</strong>. En pratique, elles sont dispersées sur des dizaines de plateformes, dans des formats incompatibles. Il faut être data engineer pour en tirer quelque chose.</p>
+                    <div class="source-cloud">
+                        <span class="source">INSEE</span><span class="source">SIRENE</span><span class="source">BODACC</span><span class="source">BOAMP</span><span class="source">DVF</span><span class="source">API Géo</span><span class="source">DARES</span><span class="source">Urssaf</span><span class="source">Banque de France</span><span class="source">data.gouv.fr</span><span class="source">INPI</span><span class="source">DGFIP</span><span class="source">ADEME</span><span class="source">GDELT</span><span class="source">CAF</span><span class="source">DREAL</span><span class="source">DEPP</span><span class="source">ATIH</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FONCTIONNALITÉS -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="fade-up">Ce que fait Tawiza</h2>
+                <div class="cards">
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2a10 10 0 0 1 10 10M12 2a10 10 0 0 0-10 10M12 2v4M2 12h4m14 0h-4m-4 4v4m0 0a10 10 0 0 0 10-10m-10 10a10 10 0 0 1-10-10"/></svg></div>
+                        <h3>Crawling intelligent</h3>
+                        <p>Exploration continue du web pour collecter les données territoriales : marchés publics, publications légales, actualités économiques locales. Respectueux, ciblé, configurable.</p>
+                    </article>
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="20" cy="18" r="2"/><path d="M20 14v2"/></svg></div>
+                        <h3>18+ APIs publiques</h3>
+                        <p>Connexion directe aux sources officielles : INSEE, SIRENE, BODACC, BOAMP, DVF, Banque de France, DARES, Urssaf… Des données fraîches à la source.</p>
+                    </article>
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+                        <h3>Data Hunter</h3>
+                        <p>Un agent de collecte proactif qui croise les sources, détecte les signaux faibles et enrichit votre base territoriale en continu.</p>
+                    </article>
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+                        <h3>Agent TAJINE</h3>
+                        <p>Analyse territoriale à 5 niveaux cognitifs — du constat factuel à la simulation de scénarios. Il pense comme un analyste, pas comme un chatbot.</p>
+                    </article>
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+                        <h3>IA 100% locale</h3>
+                        <p>Tawiza tourne avec Ollama et des modèles open source. Aucune donnée ne quitte votre serveur. Souveraineté numérique réelle.</p>
+                    </article>
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <h3>Veille automatisée</h3>
+                        <p>Surveillance continue du BOAMP, BODACC et GDELT. Alertes sur les événements qui impactent votre territoire.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- BIEN COMMUN -->
+        <section id="commons" class="features">
+            <div class="container">
+                <h2 class="fade-up">Un bien commun numérique</h2>
+                <p class="section-sub fade-up">En 2009, <strong>Elinor Ostrom</strong> reçoit le Nobel d'économie : les communautés peuvent gérer durablement des ressources partagées. Les données publiques françaises sont exactement dans cette situation — produites par tous, pratiquement inaccessibles. Tawiza les transforme en commun numérique.</p>
+                <div class="cards">
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+                        <h3>Le citoyen</h3>
+                        <p>Comprend la dynamique économique de sa ville. S'engage dans les décisions locales avec des données, pas des impressions.</p>
+                    </article>
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+                        <h3>L'association</h3>
+                        <p>Argumente avec des faits, pas des intuitions. Les chiffres du territoire renforcent chaque dossier, chaque plaidoyer.</p>
+                    </article>
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+                        <h3>L'élu</h3>
+                        <p>Voit les tendances avant qu'elles ne deviennent des crises. Anticipe au lieu de réagir. Décide avec des indicateurs fiables.</p>
+                    </article>
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"/></svg></div>
+                        <h3>L'entrepreneur</h3>
+                        <p>Détecte les besoins locaux non couverts. Crée de la valeur là où elle compte : sur son territoire.</p>
+                    </article>
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+                        <h3>Open source</h3>
+                        <p>Code ouvert, algorithmes auditables, décisions documentées. Un bien commun ne peut pas être une boîte noire.</p>
+                    </article>
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+                        <h3>Souverain</h3>
+                        <p>Tourne sur votre serveur. IA locale. Aucune donnée ne quitte votre infrastructure. Souveraineté numérique réelle.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- DÉVELOPPEURS -->
+        <section id="developers" class="features">
+            <div class="container">
+                <h2 class="fade-up">Pour les développeurs</h2>
+                <p class="section-sub fade-up">Une architecture pensée pour la production. Next.js 14, FastAPI, Ollama, PostgreSQL, pgvector, D3.js. Des défis techniques qui valent le détour.</p>
+                <div class="cards">
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="20" cy="18" r="2"/></svg></div>
+                        <h3>Ajouter une source</h3>
+                        <p>Chaque API gouvernementale est un connecteur indépendant. Écrivez un adapter, ajoutez les tests, ouvrez une PR.</p>
+                    </article>
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+                        <h3>Améliorer les agents IA</h3>
+                        <p>Pipeline ReAct à 5 niveaux cognitifs. Optimisez les prompts, ajoutez des tools, améliorez le raisonnement.</p>
+                    </article>
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+                        <h3>Travailler le frontend</h3>
+                        <p>Visualisations D3.js, dashboards, cartes interactives. Rendre les données compréhensibles par tous.</p>
+                    </article>
+                    <article class="card fade-up">
+                        <div class="card-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                        <h3>Renforcer l'infra</h3>
+                        <p>Docker, CI/CD, monitoring. Tawiza doit tourner sur un simple VPS comme sur un cluster.</p>
+                    </article>
+                </div>
+                <div class="section-cta fade-up">
+                    <a href="https://github.com/hamidedefr/tawiza" target="_blank" rel="noopener" class="btn btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                        Voir sur GitHub
+                    </a>
+                    <a href="https://github.com/hamidedefr/tawiza/tree/main/docs/getting-started.md" target="_blank" rel="noopener" class="btn btn-outline">Premiers pas</a>
+                    <a href="https://github.com/hamidedefr/tawiza/issues" target="_blank" rel="noopener" class="btn btn-outline">Issues ouvertes</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section id="newsletter" class="newsletter">
+            <div class="container">
+                <div class="newsletter-inner fade-up">
+                    <div class="newsletter-text">
+                        <h2>Restez informé</h2>
+                        <p>Nouvelles sources de données, mises à jour majeures, cas d'usage territoriaux. Pas de spam, que du contenu utile.</p>
+                    </div>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="newsletter-input-group">
+                            <input type="email" id="newsletter-email" placeholder="votre@email.fr" required aria-label="Adresse email pour la newsletter">
+                            <button type="submit" class="btn btn-primary">S'inscrire</button>
+                        </div>
+                        <p class="newsletter-privacy">Gratuit. Désinscription en un clic. Aucun tracking. Double opt-in.</p>
+                        <p class="newsletter-status" id="newsletter-status" hidden></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-inner fade-up">
+                    <h2>Votre territoire mérite<br>d'être compris</h2>
+                    <p>Gratuit. Open source. Construit par des gens qui pensent que la connaissance territoriale est un droit, pas un produit.</p>
+                    <div class="cta-actions">
+                        <a href="https://github.com/hamidedefr/tawiza" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Commencer sur GitHub</a>
+                        <a href="https://github.com/hamidedefr/tawiza/tree/main/docs/self-hosting.md" target="_blank" rel="noopener" class="btn btn-outline btn-lg">Guide d'installation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-col">
+                    <a href="/" class="footer-logo-link">
+                        <img src="img/tajine-logo-dark.png" alt="Tawiza" class="footer-logo-img" height="40">
+                    </a>
+                    <p class="footer-tagline">Intelligence territoriale,<br>bien commun numérique.</p>
+                    <p class="footer-origin">Conçu et développé en France.</p>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Projet</h4>
+                    <a href="https://github.com/hamidedefr/tawiza" target="_blank" rel="noopener">Code source</a>
+                    <a href="https://github.com/hamidedefr/tawiza/tree/main/docs" target="_blank" rel="noopener">Documentation</a>
+                    <a href="https://github.com/hamidedefr/tawiza/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribuer</a>
+                    <a href="https://github.com/hamidedefr/tawiza/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
+                    <a href="manifeste.html">Manifeste</a>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Communauté</h4>
+                    <a href="https://github.com/hamidedefr/tawiza/issues" target="_blank" rel="noopener">Signaler un problème</a>
+                    <a href="https://github.com/hamidedefr/tawiza/discussions" target="_blank" rel="noopener">Discussions</a>
+                    <a href="https://github.com/hamidedefr/tawiza/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noopener">Code de conduite</a>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Légal</h4>
+                    <a href="https://github.com/hamidedefr/tawiza/blob/main/LICENSE" target="_blank" rel="noopener">Licence MIT</a>
+                    <a href="https://github.com/hamidedefr/tawiza/blob/main/SECURITY.md" target="_blank" rel="noopener">Sécurité</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Logiciel libre sous licence MIT. Données collectées exclusivement depuis des sources publiques ouvertes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="network.js"></script>
+    <script>
+    // Mobile nav
+    document.querySelector('.nav-mobile')?.addEventListener('click', function() {
+        const links = document.querySelector('.nav-links');
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        links.classList.toggle('open');
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Newsletter subscription
+    document.getElementById('newsletter-form')?.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const email = document.getElementById('newsletter-email').value;
+        const status = document.getElementById('newsletter-status');
+        const btn = this.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = '...';
+        try {
+            const res = await fetch('https://nl.tawiza.fr/api/public/subscription', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, list_uuids: ['19c245e5-dd64-40f3-be27-97768c6a50ab'], name: '' })
+            });
+            if (res.ok) {
+                status.textContent = 'Merci ! Vérifiez votre boîte mail pour confirmer.';
+                status.className = 'newsletter-status success';
+                status.hidden = false;
+                document.getElementById('newsletter-email').value = '';
+            } else {
+                throw new Error(res.status);
+            }
+        } catch (err) {
+            status.textContent = 'Erreur. Réessayez ou contactez-nous sur GitHub.';
+            status.className = 'newsletter-status error';
+            status.hidden = false;
+        }
+        btn.disabled = false;
+        btn.textContent = "S'inscrire";
+    });
+    </script>
+</body>
+</html>
