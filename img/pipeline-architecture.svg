@@ -1,17 +1,74 @@
 <svg viewBox="0 0 620 580" fill="none" xmlns="http://www.w3.org/2000/svg" style="font-family:'Inter',system-ui,sans-serif">
+  <style>
+    .bg { fill: #ffffff; }
+    .title { fill: #1e1e1e; }
+    .subtitle { fill: #757575; }
+    .zone-src { fill: #fff3bf; }
+    .zone-collect { fill: #e5dbff; }
+    .zone-store { fill: #d3f9d8; }
+    .zone-intel { fill: #e5dbff; }
+    .box-src { fill: #ffd8a8; }
+    .box-collect { fill: #d0bfff; }
+    .box-store { fill: #c3fae8; }
+    .box-tajine { fill: #ffd8a8; }
+    .box-dash { fill: #b2f2bb; }
+    .box-users { fill: #a5d8ff; }
+    .txt-amber { fill: #78350f; }
+    .txt-purple { fill: #4c1d95; }
+    .txt-green { fill: #065f46; }
+    .txt-blue { fill: #1e40af; }
+    .txt-tajine { fill: #78350f; }
+    .txt-dash { fill: #065f46; }
+    .label-src { fill: #92400e; }
+    .label-collect { fill: #6d28d9; }
+    .label-store { fill: #15803d; }
+    .label-intel { fill: #92400e; }
+    .legend { fill: #757575; }
+
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1a1714; }
+      .title { fill: #f5f5f4; }
+      .subtitle { fill: #a8a29e; }
+      .zone-src { fill: #2a2218; }
+      .zone-collect { fill: #1e1a2e; }
+      .zone-store { fill: #142118; }
+      .zone-intel { fill: #2a2218; }
+      .box-src { fill: #3d2c14; stroke: #f59e0b; }
+      .box-collect { fill: #2d1b5e; stroke: #a78bfa; }
+      .box-store { fill: #1a3d2a; stroke: #4ade80; }
+      .box-tajine { fill: #3d2c14; stroke: #f59e0b; }
+      .box-dash { fill: #1a3d2a; stroke: #4ade80; }
+      .box-users { fill: #1a2e4d; stroke: #60a5fa; }
+      .txt-amber { fill: #fbbf24; }
+      .txt-purple { fill: #c4b5fd; }
+      .txt-green { fill: #86efac; }
+      .txt-blue { fill: #93c5fd; }
+      .txt-tajine { fill: #fbbf24; }
+      .txt-dash { fill: #86efac; }
+      .label-src { fill: #f59e0b; }
+      .label-collect { fill: #a78bfa; }
+      .label-store { fill: #4ade80; }
+      .label-intel { fill: #f59e0b; }
+      .legend { fill: #78716c; }
+    }
+  </style>
+
+  <!-- Background -->
+  <rect class="bg" width="620" height="580" rx="12"/>
+
   <!-- Title -->
-  <text x="310" y="30" text-anchor="middle" font-size="22" font-weight="800" fill="#1e1e1e">Pipeline de données</text>
-  <text x="310" y="52" text-anchor="middle" font-size="14" fill="#757575">De la source à l'insight</text>
+  <text x="310" y="30" text-anchor="middle" font-size="22" font-weight="800" class="title">Pipeline de données</text>
+  <text x="310" y="52" text-anchor="middle" font-size="14" class="subtitle">De la source à l'insight</text>
 
   <!-- LAYER 1: Sources zone -->
-  <rect x="15" y="70" width="590" height="80" rx="16" fill="#fff3bf" fill-opacity="0.3" stroke="#f59e0b" stroke-opacity="0.3"/>
-  <text x="28" y="88" font-size="11" font-weight="600" fill="#92400e" opacity="0.7">Sources</text>
-  <rect x="35" y="96" width="165" height="44" rx="10" fill="#ffd8a8" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="117" y="123" text-anchor="middle" font-size="14" font-weight="600" fill="#78350f">APIs publiques</text>
-  <rect x="225" y="96" width="165" height="44" rx="10" fill="#ffd8a8" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="307" y="123" text-anchor="middle" font-size="14" font-weight="600" fill="#78350f">Web crawling</text>
-  <rect x="415" y="96" width="165" height="44" rx="10" fill="#ffd8a8" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="497" y="123" text-anchor="middle" font-size="14" font-weight="600" fill="#78350f">data.gouv.fr</text>
+  <rect x="15" y="70" width="590" height="80" rx="16" class="zone-src" fill-opacity="0.3" stroke="#f59e0b" stroke-opacity="0.3"/>
+  <text x="28" y="88" font-size="11" font-weight="600" class="label-src" opacity="0.8">Sources</text>
+  <rect x="35" y="96" width="165" height="44" rx="10" class="box-src" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="117" y="123" text-anchor="middle" font-size="14" font-weight="600" class="txt-amber">APIs publiques</text>
+  <rect x="225" y="96" width="165" height="44" rx="10" class="box-src" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="307" y="123" text-anchor="middle" font-size="14" font-weight="600" class="txt-amber">Web crawling</text>
+  <rect x="415" y="96" width="165" height="44" rx="10" class="box-src" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="497" y="123" text-anchor="middle" font-size="14" font-weight="600" class="txt-amber">data.gouv.fr</text>
 
   <!-- Arrows L1 → L2 -->
   <path d="M117 140 L117 175" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow-amber)"/>
@@ -19,47 +76,47 @@
   <path d="M497 140 L410 175" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow-amber)"/>
 
   <!-- LAYER 2: Collecte zone -->
-  <rect x="15" y="180" width="590" height="80" rx="16" fill="#e5dbff" fill-opacity="0.3" stroke="#8b5cf6" stroke-opacity="0.3"/>
-  <text x="28" y="198" font-size="11" font-weight="600" fill="#6d28d9" opacity="0.7">Collecte &amp; Normalisation</text>
-  <rect x="55" y="206" width="290" height="44" rx="10" fill="#d0bfff" stroke="#8b5cf6" stroke-width="1.5"/>
-  <text x="200" y="233" text-anchor="middle" font-size="14" font-weight="600" fill="#4c1d95">Collecteurs &amp; Adaptateurs</text>
-  <rect x="375" y="206" width="190" height="44" rx="10" fill="#d0bfff" stroke="#8b5cf6" stroke-width="1.5"/>
-  <text x="470" y="233" text-anchor="middle" font-size="14" font-weight="600" fill="#4c1d95">Data Hunter</text>
+  <rect x="15" y="180" width="590" height="80" rx="16" class="zone-collect" fill-opacity="0.3" stroke="#8b5cf6" stroke-opacity="0.3"/>
+  <text x="28" y="198" font-size="11" font-weight="600" class="label-collect" opacity="0.8">Collecte &amp; Normalisation</text>
+  <rect x="55" y="206" width="290" height="44" rx="10" class="box-collect" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="200" y="233" text-anchor="middle" font-size="14" font-weight="600" class="txt-purple">Collecteurs &amp; Adaptateurs</text>
+  <rect x="375" y="206" width="190" height="44" rx="10" class="box-collect" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="470" y="233" text-anchor="middle" font-size="14" font-weight="600" class="txt-purple">Data Hunter</text>
 
   <!-- Arrows L2 → L3 -->
   <path d="M200 250 L200 285" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
   <path d="M470 250 L390 285" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
 
   <!-- LAYER 3: Stockage zone -->
-  <rect x="15" y="290" width="590" height="80" rx="16" fill="#d3f9d8" fill-opacity="0.3" stroke="#22c55e" stroke-opacity="0.3"/>
-  <text x="28" y="308" font-size="11" font-weight="600" fill="#15803d" opacity="0.7">Stockage &amp; Indexation</text>
-  <rect x="55" y="316" width="210" height="44" rx="10" fill="#c3fae8" stroke="#22c55e" stroke-width="1.5"/>
-  <text x="160" y="343" text-anchor="middle" font-size="14" font-weight="600" fill="#065f46">PostgreSQL + pgvector</text>
-  <rect x="315" y="316" width="250" height="44" rx="10" fill="#c3fae8" stroke="#22c55e" stroke-width="1.5"/>
-  <text x="440" y="343" text-anchor="middle" font-size="14" font-weight="600" fill="#065f46">Ollama (IA souveraine)</text>
+  <rect x="15" y="290" width="590" height="80" rx="16" class="zone-store" fill-opacity="0.3" stroke="#22c55e" stroke-opacity="0.3"/>
+  <text x="28" y="308" font-size="11" font-weight="600" class="label-store" opacity="0.8">Stockage &amp; Indexation</text>
+  <rect x="55" y="316" width="210" height="44" rx="10" class="box-store" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="160" y="343" text-anchor="middle" font-size="14" font-weight="600" class="txt-green">PostgreSQL + pgvector</text>
+  <rect x="315" y="316" width="250" height="44" rx="10" class="box-store" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="440" y="343" text-anchor="middle" font-size="14" font-weight="600" class="txt-green">Ollama (IA souveraine)</text>
 
   <!-- Arrows L3 → L4 -->
   <path d="M160 360 L220 395" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
   <path d="M440 360 L340 395" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
 
   <!-- LAYER 4: Intelligence zone -->
-  <rect x="15" y="400" width="590" height="80" rx="16" fill="#e5dbff" fill-opacity="0.3" stroke="#f59e0b" stroke-opacity="0.3"/>
-  <text x="28" y="418" font-size="11" font-weight="600" fill="#92400e" opacity="0.7">Intelligence</text>
-  <rect x="85" y="426" width="310" height="44" rx="10" fill="#ffd8a8" stroke="#f59e0b" stroke-width="2"/>
-  <text x="240" y="453" text-anchor="middle" font-size="15" font-weight="700" fill="#78350f">Agent TAJINE (5 niveaux)</text>
+  <rect x="15" y="400" width="590" height="80" rx="16" class="zone-intel" fill-opacity="0.3" stroke="#f59e0b" stroke-opacity="0.3"/>
+  <text x="28" y="418" font-size="11" font-weight="600" class="label-intel" opacity="0.8">Intelligence</text>
+  <rect x="85" y="426" width="310" height="44" rx="10" class="box-tajine" stroke="#f59e0b" stroke-width="2"/>
+  <text x="240" y="453" text-anchor="middle" font-size="15" font-weight="700" class="txt-tajine">Agent TAJINE (5 niveaux)</text>
   <path d="M395 448 L450 448" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow-amber)"/>
-  <rect x="455" y="426" width="125" height="44" rx="10" fill="#b2f2bb" stroke="#22c55e" stroke-width="2"/>
-  <text x="517" y="453" text-anchor="middle" font-size="15" font-weight="700" fill="#065f46">Dashboard</text>
+  <rect x="455" y="426" width="125" height="44" rx="10" class="box-dash" stroke="#22c55e" stroke-width="2"/>
+  <text x="517" y="453" text-anchor="middle" font-size="15" font-weight="700" class="txt-dash">Dashboard</text>
 
   <!-- Arrow → Users -->
   <path d="M517 470 L517 500" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
 
   <!-- Users -->
-  <rect x="385" y="505" width="210" height="40" rx="10" fill="#a5d8ff" stroke="#4a9eed" stroke-width="1"/>
-  <text x="490" y="530" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">Citoyens · Élus · Assos</text>
+  <rect x="385" y="505" width="210" height="40" rx="10" class="box-users" stroke="#4a9eed" stroke-width="1"/>
+  <text x="490" y="530" text-anchor="middle" font-size="13" font-weight="600" class="txt-blue">Citoyens · Élus · Assos</text>
 
   <!-- Legend -->
-  <text x="25" y="565" font-size="11" fill="#757575">Auto-hébergeable · 4 vCPU, 16 Go RAM · Licence MIT · Aucune dépendance cloud</text>
+  <text x="25" y="565" font-size="11" class="legend">Auto-hébergeable · 4 vCPU, 16 Go RAM · Licence MIT · Aucune dépendance cloud</text>
 
   <!-- Arrow markers -->
   <defs>
