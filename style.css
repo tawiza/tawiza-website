@@ -121,6 +121,9 @@ strong { font-weight: 600; color: var(--dark); }
 .logo-img { height: 32px; width: auto; display: block; }
 .logo-light-only { display: block; }
 .logo-dark-only { display: none; }
+.tajine-light-only { display: inline-block; }
+.tajine-dark-only { display: none; }
+.tajine-icon img { object-fit: contain; }
 .nav-links { display: flex; align-items: center; gap: 24px; }
 .nav-links a { color: var(--text-soft); font-size: 0.84rem; font-weight: 500; }
 .nav-links a:hover { color: var(--amber); }
@@ -370,6 +373,8 @@ strong { font-weight: 600; color: var(--dark); }
 
     .logo-light-only { display: none !important; }
     .logo-dark-only { display: block !important; }
+    .tajine-light-only { display: none !important; }
+    .tajine-dark-only { display: inline-block !important; }
 
     h2, h3, strong { color: #fafaf9; }
 
