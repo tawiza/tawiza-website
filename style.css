@@ -281,7 +281,6 @@ strong { font-weight: 600; color: var(--dark); }
 .footer-logo-img { height: 48px; width: auto; }
 .logo-dark-only { display: none; }
 .footer-tagline { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5; }
-.footer-origin { font-size: 0.8rem; color: var(--text-muted); opacity: 0.6; }
 .footer-links-col h4 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cream); margin-bottom: 12px; }
 .footer-links-col a { display: block; color: var(--text-muted); font-size: 0.85rem; padding: 3px 0; }
 .footer-links-col a:hover { color: var(--amber-light); }
