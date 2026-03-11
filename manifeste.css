@@ -22,6 +22,14 @@
     transform: translateY(-4px);
     box-shadow: 0 12px 32px rgba(120, 53, 15, 0.08);
 }
+.stats-grid.visible .stat-card:nth-child(1) { animation: statIn 0.5s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.stats-grid.visible .stat-card:nth-child(2) { animation: statIn 0.5s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.stats-grid.visible .stat-card:nth-child(3) { animation: statIn 0.5s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.stats-grid.visible .stat-card:nth-child(4) { animation: statIn 0.5s 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@keyframes statIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
 .stat-number {
     font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800;
     color: var(--amber); line-height: 1;
@@ -66,10 +74,16 @@
 .pipeline-step {
     display: flex; gap: 20px; align-items: flex-start;
     padding: 24px; position: relative;
+    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 12px;
+}
+.pipeline-step:hover {
+    background: rgba(217, 119, 6, 0.03);
+    transform: translateX(4px);
 }
 .pipeline-step::before {
     content: "";
-    position: absolute; left: 35px; top: 56px; bottom: -24px;
+    position: absolute; left: 47px; top: 56px; bottom: -24px;
     width: 2px; background: linear-gradient(180deg, var(--amber), rgba(217, 119, 6, 0.1));
 }
 .pipeline-step:last-child::before { display: none; }
@@ -127,6 +141,7 @@
 .comparison-table td {
     padding: 14px 20px; border-top: 1px solid rgba(217, 119, 6, 0.06);
     color: var(--text-soft);
+    transition: background 0.3s ease;
 }
 .comparison-table td:first-child {
     font-weight: 600; color: var(--dark);
@@ -139,7 +154,10 @@
 .section-divider {
     display: flex; align-items: center; gap: 16px;
     margin: 56px 0 40px; color: var(--text-muted);
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
+.section-divider.visible { opacity: 1; transform: translateY(0); }
 .section-divider::before, .section-divider::after {
     content: ""; flex: 1; height: 1px;
     background: linear-gradient(90deg, transparent, rgba(217, 119, 6, 0.15), transparent);
@@ -166,7 +184,7 @@
     .stat-card { padding: 24px 12px; }
     .stat-number { font-size: 1.8rem; }
     .pipeline-step { padding: 16px 8px; }
-    .pipeline-step::before { left: 27px; }
+    .pipeline-step::before { left: 31px; }
     .comparison-table { font-size: 0.8rem; }
     .comparison-table th, .comparison-table td { padding: 10px 12px; }
 }
@@ -199,6 +217,17 @@
         border-color: rgba(217, 119, 6, 0.15);
         color: var(--amber-light);
     }
+    /* SVG architecture diagram dark mode */
+    .arch-svg text[fill="#92400e"] { fill: #f59e0b; }
+    .arch-svg text[fill="#78350f"] { fill: #fbbf24; }
+    .arch-svg text[fill="#78716c"] { fill: #a8a29e; }
+    .arch-svg text[fill="#a8a29e"] { fill: #78716c; }
+    .arch-svg text[fill="#166534"] { fill: #86efac; }
+    .arch-svg rect[stroke="#16a34a"] { stroke: #4ade80; }
+    .arch-svg rect[fill="rgba(22,163,74,0.08)"] { fill: rgba(74,222,128,0.1); }
+    .arch-svg rect[fill="rgba(22,163,74,0.04)"] { fill: rgba(74,222,128,0.06); }
+    .arch-svg path[stroke="rgba(22,163,74,0.3)"] { stroke: rgba(74,222,128,0.3); }
+
     .comparison-table {
         border-color: rgba(217, 119, 6, 0.12);
     }
@@ -448,9 +477,21 @@
     border-radius: 10px; border-left: 3px solid var(--amber);
     font-family: 'Inter', sans-serif; font-size: 0.88rem;
     line-height: 1.6; color: var(--text-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.mechanism:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(120, 53, 15, 0.06);
 }
 .mechanism strong {
     color: var(--dark);
+}
+.mechanism code {
+    padding: 2px 8px; border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.82em;
+    background: rgba(217, 119, 6, 0.06);
+    color: var(--amber-dark);
+    border: 1px solid rgba(217, 119, 6, 0.1);
 }
 
 /* === ACTOR DEEP SECTIONS === */
@@ -495,6 +536,11 @@
     display: flex; gap: 16px; align-items: flex-start;
     padding: 20px 24px; background: var(--cream);
     border-radius: 12px; border: 1px solid rgba(217, 119, 6, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.commitment:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(120, 53, 15, 0.06);
 }
 .commitment-icon {
     flex-shrink: 0; color: var(--amber);
@@ -713,6 +759,14 @@
         border-color: rgba(217, 119, 6, 0.1);
     }
     .mechanism { border-left-color: var(--amber); }
+    .mechanism code {
+        background: rgba(217, 119, 6, 0.1);
+        border-color: rgba(217, 119, 6, 0.15);
+        color: var(--amber-light);
+    }
+    .pipeline-step:hover {
+        background: rgba(217, 119, 6, 0.06);
+    }
 
     .article-references {
         border-top-color: rgba(217, 119, 6, 0.2);
