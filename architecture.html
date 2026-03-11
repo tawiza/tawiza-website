@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture technique \&mdash; Tawiza</title>
+    <meta name="description" content="Architecture technique de Tawiza : ce qui fonctionne aujourd'hui (site statique, analyses sourcées, code ouvert) et ce qu'on construit (pipeline de données, agent TAJINE, dashboard interactif).">
+    <meta name="keywords" content="architecture technique, open data, pipeline données, TAJINE, intelligence territoriale, open source, FastAPI, PostgreSQL, pgvector, Ollama, D3.js">
+    <meta name="author" content="Tawiza Community">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#b45309">
+    <link rel="canonical" href="https://tawiza.fr/architecture.html">
+
+    <meta property="og:title" content="Architecture technique \&mdash; Tawiza">
+    <meta property="og:description" content="Ce qui fonctionne aujourd'hui et ce qu'on construit : l'architecture technique d'une plateforme d'intelligence territoriale ouverte.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://tawiza.fr/architecture.html">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Tawiza">
+    <meta property="og:image" content="https://tawiza.fr/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Architecture technique \&mdash; Tawiza">
+    <meta name="twitter:description" content="Ce qui fonctionne aujourd'hui et ce qu'on construit : l'architecture technique de Tawiza.">
+    <meta name="twitter:image" content="https://tawiza.fr/og-image.png">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d97706'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='18'%3ET%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=7">
+    <link rel="stylesheet" href="manifeste.css?v=2">
+
+    <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.js"></script>
+</head>
+<body>
+    <!-- READING PROGRESS BAR -->
+    <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <nav class="nav" role="navigation" aria-label="Navigation principale">
+        <div class="nav-inner">
+            <a href="/" class="logo" aria-label="Tawiza - Accueil">
+                <img src="img/logo-tawiza-amber.svg" alt="Tawiza" class="logo-img logo-light-only" height="32">
+                <img src="img/logo-tawiza-white.svg" alt="Tawiza" class="logo-img logo-dark-only" height="32">
+            </a>
+            <div class="nav-links">
+                <a href="analyses/">Analyses</a>
+                <a href="manifeste.html">Manifeste</a>
+                <a href="contribuer.html">Contribuer</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">Code source</a>
+            </div>
+            <button class="nav-mobile" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="article-hero">
+        <div class="article-hero-inner">
+            <p class="article-eyebrow">Architecture technique</p>
+            <h1>De la donnée brute à l'<span class="highlight">intelligence territoriale</span></h1>
+            <p class="article-subtitle">Ce qui fonctionne aujourd'hui, ce qu'on construit, et comment chaque brique s'assemble pour transformer des données publiques dispersées en analyses accessibles à tous.</p>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="article">
+        <div class="article-container">
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- CE QUI FONCTIONNE AUJOURD'HUI          -->
+            <!-- ═══════════════════════════════════════ -->
+
+            <div class="section-divider fade-up"><span>Aujourd'hui</span></div>
+
+            <section class="article-section">
+                <h2 class="fade-up">Ce qui fonctionne aujourd'hui</h2>
+                <p class="article-lead">Tawiza n'est pas un concept. C'est un outil qui produit déjà des analyses. Voici ce qui est opérationnel.</p>
+
+                <div class="pipeline-steps fade-up">
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        </div>
+                        <div>
+                            <h4>Site statique avec analyses sourcées</h4>
+                            <p>Chaque analyse publiée sur tawiza.fr est un document HTML autonome, avec des graphiques interactifs et des sources vérifiables. Pas de framework lourd, pas de base de données : du HTML, du CSS, du JavaScript.</p>
+                            <div class="pipeline-tech">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>D3.js</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2a10 10 0 0 1 10 10M12 2a10 10 0 0 0-10 10M12 2v4M2 12h4m14 0h-4m-4 4v4m0 0a10 10 0 0 0 10-10m-10 10a10 10 0 0 1-10-10"/></svg>
+                        </div>
+                        <div>
+                            <h4>Collecte manuelle de données publiques</h4>
+                            <p>Les données sont collectées manuellement depuis les portails publics : INSEE (recensement, emploi, revenus), DVF (transactions immobilières), BODACC (annonces légales), SIRENE (entreprises), France Travail (demandeurs d'emploi). Chaque source est citée et vérifiable.</p>
+                            <div class="pipeline-tech">
+                                <span>INSEE</span><span>DVF</span><span>BODACC</span><span>SIRENE</span><span>France Travail</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+                        </div>
+                        <div>
+                            <h4>Graphiques et visualisations interactives</h4>
+                            <p>Les analyses intègrent des graphiques D3.js interactifs : barres comparatives, cartes, courbes d'évolution. Chaque visualisation est construite à partir des données brutes, sans intermédiaire opaque.</p>
+                            <div class="pipeline-tech">
+                                <span>D3.js</span><span>SVG</span><span>CSS custom properties</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </div>
+                        <div>
+                            <h4>Code source ouvert</h4>
+                            <p>Tout le code est sur GitHub sous licence MIT. N'importe qui peut vérifier les méthodes, reproduire les analyses, proposer des corrections. La transparence n'est pas un slogan, c'est le fonctionnement par défaut.</p>
+                            <div class="pipeline-tech">
+                                <span>GitHub</span><span>MIT</span><span>Open source</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <blockquote class="article-quote">
+                    <p>Un outil utile aujourd'hui vaut mieux qu'un outil parfait jamais livré. On publie ce qui marche, on construit le reste en public.</p>
+                </blockquote>
+            </section>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- CE QU'ON CONSTRUIT                      -->
+            <!-- ═══════════════════════════════════════ -->
+
+            <div class="section-divider fade-up"><span>En construction</span></div>
+
+            <section class="article-section">
+                <h2 class="fade-up">Ce qu'on construit</h2>
+                <p>L'objectif est d'automatiser la collecte, d'enrichir les données par croisement entre sources, et de rendre l'analyse accessible via un agent IA local. Voici l'architecture cible.</p>
+
+                <div class="architecture-diagram fade-up">
+                    <h4>Architecture cible du pipeline</h4>
+                    <img src="img/pipeline-architecture.svg" alt="Pipeline de données Tawiza - de la source à l'insight : Sources (APIs publiques, Web crawling, data.gouv.fr) → Collecteurs & Adaptateurs → PostgreSQL + pgvector / Ollama → Agent TAJINE → Dashboard → Citoyens, Élus, Associations" class="arch-img" loading="lazy">
+                </div>
+
+                <h3>Le pipeline en détail</h3>
+
+                <div class="pipeline-steps fade-up">
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2a10 10 0 0 1 10 10M12 2a10 10 0 0 0-10 10M12 2v4M2 12h4m14 0h-4m-4 4v4m0 0a10 10 0 0 0 10-10m-10 10a10 10 0 0 1-10-10"/></svg>
+                        </div>
+                        <div>
+                            <h4>1. Collecte multi-sources automatisée</h4>
+                            <p>Chaque API gouvernementale est encapsulée dans un <strong>connecteur indépendant</strong>. Rate limiting intelligent, cache distribué, gestion des erreurs gracieuse. Le Data Hunter complète avec du crawling ciblé sur les sources web territoriales.</p>
+                            <div class="pipeline-tech">
+                                <span>FastAPI</span><span>httpx</span><span>Redis</span><span>Celery</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="20" cy="18" r="2"/></svg>
+                        </div>
+                        <div>
+                            <h4>2. Normalisation et enrichissement</h4>
+                            <p>Les données brutes sont nettoyées, géocodées, normalisées au référentiel COG (Code Officiel Géographique). Croisement automatique entre sources : une entreprise SIRENE est liée à ses annonces BODACC, ses marchés BOAMP, ses données DVF.</p>
+                            <div class="pipeline-tech">
+                                <span>Python</span><span>Pydantic</span><span>API Géo</span><span>COG INSEE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                        </div>
+                        <div>
+                            <h4>3. Stockage vectoriel et sémantique</h4>
+                            <p>Les données sont stockées dans PostgreSQL avec l'extension <strong>pgvector</strong> pour la recherche sémantique. Chaque document territorial est transformé en embedding vectoriel, permettant des requêtes en langage naturel : « quelles communes du Pas-de-Calais perdent des entreprises ? ».</p>
+                            <div class="pipeline-tech">
+                                <span>PostgreSQL</span><span>pgvector</span><span>nomic-embed-text</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon tajine-icon">
+                            <img src="img/tajine-logo-light.png" alt="" class="tajine-light-only" width="56" height="56">
+                            <img src="img/tajine-logo-dark.png" alt="" class="tajine-dark-only" width="56" height="56">
+                        </div>
+                        <div>
+                            <h4>4. Analyse cognitive (TAJINE)</h4>
+                            <p>L'agent TAJINE opère sur <strong>5 niveaux cognitifs</strong> : constat factuel, analyse de tendances, corrélation inter-sources, projection de scénarios, recommandation d'action. Pipeline ReAct avec des outils spécialisés par domaine. IA 100% locale via Ollama.</p>
+                            <div class="pipeline-tech">
+                                <span>Ollama</span><span>ReAct</span><span>LangChain</span><span>qwen3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        </div>
+                        <div>
+                            <h4>5. Visualisation et restitution</h4>
+                            <p>Les résultats sont présentés dans un <strong>dashboard interactif</strong> : cartes choroplèthes, graphiques D3.js, tableaux de bord par territoire. L'objectif : qu'un élu ou un citoyen comprenne en 30 secondes ce qu'un data analyst mettrait 3 jours à produire.</p>
+                            <div class="pipeline-tech">
+                                <span>Next.js 14</span><span>D3.js</span><span>shadcn/ui</span><span>Tailwind</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <blockquote class="article-quote">
+                    <p>La technologie la plus sophistiquée est celle qui disparaît. L'utilisateur ne devrait jamais avoir à penser au pipeline, seulement à sa question et à la réponse.</p>
+                </blockquote>
+            </section>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- STACK TECHNIQUE                         -->
+            <!-- ═══════════════════════════════════════ -->
+
+            <div class="section-divider fade-up"><span>Stack technique</span></div>
+
+            <section class="article-section">
+                <h2 class="fade-up">La stack complète</h2>
+                <p>Chaque choix technique est guidé par trois principes : <strong>souveraineté</strong> (pas de dépendance à un cloud propriétaire), <strong>accessibilité</strong> (un VPS suffit), et <strong>transparence</strong> (tout est open source).</p>
+
+                <div class="comparison-table fade-up">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Couche</th>
+                                <th>Technologie</th>
+                                <th>Rôle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Frontend (actuel)</td>
+                                <td>HTML, CSS, D3.js</td>
+                                <td>Site statique, analyses et graphiques interactifs</td>
+                            </tr>
+                            <tr>
+                                <td>Frontend (cible)</td>
+                                <td>Next.js 14, shadcn/ui, Tailwind</td>
+                                <td>Dashboard interactif avec cartes et tableaux de bord</td>
+                            </tr>
+                            <tr>
+                                <td>Backend API</td>
+                                <td>FastAPI, Python</td>
+                                <td>Connecteurs API, orchestration du pipeline</td>
+                            </tr>
+                            <tr>
+                                <td>Base de données</td>
+                                <td>PostgreSQL + pgvector</td>
+                                <td>Stockage relationnel + recherche sémantique vectorielle</td>
+                            </tr>
+                            <tr>
+                                <td>Cache & files</td>
+                                <td>Redis, Celery</td>
+                                <td>Cache distribué, file de tâches asynchrones</td>
+                            </tr>
+                            <tr>
+                                <td>IA locale</td>
+                                <td>Ollama, qwen3.5 27B</td>
+                                <td>Agent TAJINE, analyse cognitive 100% locale</td>
+                            </tr>
+                            <tr>
+                                <td>Embeddings</td>
+                                <td>nomic-embed-text</td>
+                                <td>Vectorisation des documents pour la recherche sémantique</td>
+                            </tr>
+                            <tr>
+                                <td>Orchestration</td>
+                                <td>LangChain, ReAct</td>
+                                <td>Pipeline d'agents avec outils spécialisés par domaine</td>
+                            </tr>
+                            <tr>
+                                <td>Déploiement</td>
+                                <td>Docker Compose</td>
+                                <td>Installation en une commande, auto-hébergeable</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- EXIGENCES MINIMALES                     -->
+            <!-- ═══════════════════════════════════════ -->
+
+            <div class="section-divider fade-up"><span>Infrastructure</span></div>
+
+            <section class="article-section">
+                <h2 class="fade-up">Exigences minimales</h2>
+                <p>Tawiza est conçu pour être auto-hébergé sur un <strong>simple VPS</strong>. Pas besoin d'un cluster Kubernetes ou d'un budget cloud à cinq chiffres :</p>
+
+                <div class="mechanism-list fade-up">
+                    <div class="mechanism">
+                        <strong>Serveur :</strong> 4 vCPU, 16 Go RAM, 100 Go SSD. Un VPS à ~30 €/mois suffit pour couvrir un département entier.
+                    </div>
+                    <div class="mechanism">
+                        <strong>GPU (optionnel) :</strong> Recommandé pour l'IA locale (Ollama). AMD RX 7900 XTX ou NVIDIA RTX 3090+ pour les modèles 27B paramètres. Sans GPU, des modèles plus légers (7B) tournent en CPU.
+                    </div>
+                    <div class="mechanism">
+                        <strong>Dépendances :</strong> Docker, PostgreSQL, Redis, Ollama. Tout s'installe en une commande <code>docker compose up</code>.
+                    </div>
+                </div>
+
+                <blockquote class="article-quote">
+                    <p>Si un lycéen avec un VPS à 5 € ne peut pas faire tourner Tawiza, c'est qu'on a raté quelque chose. L'accessibilité technique est une forme de justice.</p>
+                </blockquote>
+            </section>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!-- CONTRIBUER AU CODE                      -->
+            <!-- ═══════════════════════════════════════ -->
+
+            <div class="section-divider fade-up"><span>Contribuer</span></div>
+
+            <section class="article-section">
+                <h2 class="fade-up">Contribuer au code</h2>
+                <p>Tawiza est un projet communautaire. Que vous soyez développeur, data analyst, designer ou simplement curieux, il y a une place pour vous.</p>
+
+                <div class="pipeline-steps fade-up">
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </div>
+                        <div>
+                            <h4>Explorer le code source</h4>
+                            <p>Le dépôt GitHub contient tout : le site, les analyses, les scripts de collecte. Les issues tagguées <code>good first issue</code> sont un bon point d'entrée.</p>
+                            <div class="pipeline-tech">
+                                <span><a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">github.com/tawiza/tawiza</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <div>
+                            <h4>Rejoindre la communauté</h4>
+                            <p>Les discussions sur l'architecture, la roadmap et les choix techniques se font sur GitHub Discussions. Pas de Slack privé, pas de canal réservé aux initiés : tout est public.</p>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="pipeline-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        </div>
+                        <div>
+                            <h4>Proposer une analyse</h4>
+                            <p>Vous avez des données sur votre territoire ? Vous voulez croiser des sources qu'on n'a pas encore intégrées ? Ouvrez une issue ou soumettez directement une PR avec votre analyse.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem; text-align: center;">
+                    <a href="contribuer.html" class="action-link">Voir tous les profils de contribution</a>
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-links">
+                    <a href="analyses/">Analyses</a>
+                    <a href="manifeste.html">Manifeste</a>
+                    <a href="contribuer.html">Contribuer</a>
+                    <a href="a-propos.html">À propos</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.threads.net/@tawiza" target="_blank" rel="noopener">Threads</a>
+                    <a href="https://bsky.app/profile/tawiza.fr" target="_blank" rel="noopener">Bluesky</a>
+                </div>
+                <p class="footer-legal">Licence MIT. Données collectées depuis des sources publiques ouvertes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Mobile nav
+    document.querySelector('.nav-mobile')?.addEventListener('click', function() {
+        const links = document.querySelector('.nav-links');
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        links.classList.toggle('open');
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Reading progress bar
+    const progressBar = document.getElementById('reading-progress');
+    if (progressBar) {
+        window.addEventListener('scroll', () => {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = Math.min((window.scrollY / docHeight) * 100, 100);
+            progressBar.style.width = progress + '%';
+        }, { passive: true });
+    }
+    </script>
+</body>
+</html>
