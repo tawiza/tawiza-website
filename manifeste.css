@@ -56,15 +56,7 @@
     text-align: center; margin-bottom: 32px;
     text-transform: uppercase; letter-spacing: 0.08em;
 }
-.arch-svg { width: 100%; max-width: 620px; margin: 0 auto; display: block; }
-
-/* Architecture nodes */
-.arch-node {
-    transition: transform 0.3s ease;
-}
-.arch-node:hover {
-    transform: scale(1.05);
-}
+.arch-img { width: 100%; max-width: 620px; margin: 0 auto; display: block; height: auto; }
 
 /* === PIPELINE STEPS === */
 .pipeline-steps {
@@ -86,10 +78,8 @@
     flex-shrink: 0;
     width: 48px; height: 48px;
     background: rgba(217, 119, 6, 0.08);
-    border: 2px solid rgba(217, 119, 6, 0.15);
     border-radius: 12px; color: var(--amber);
     display: flex; align-items: center; justify-content: center;
-    position: relative; z-index: 1;
 }
 .pipeline-step h4 {
     font-size: 0.95rem; margin-bottom: 6px; color: var(--dark);
@@ -203,24 +193,12 @@
     }
     .pipeline-icon {
         background: rgba(217, 119, 6, 0.12);
-        border-color: rgba(217, 119, 6, 0.2);
     }
     .pipeline-tech span {
         background: rgba(217, 119, 6, 0.1);
         border-color: rgba(217, 119, 6, 0.15);
         color: var(--amber-light);
     }
-    /* SVG architecture diagram dark mode */
-    .arch-svg text[fill="#92400e"] { fill: #f59e0b; }
-    .arch-svg text[fill="#78350f"] { fill: #fbbf24; }
-    .arch-svg text[fill="#78716c"] { fill: #a8a29e; }
-    .arch-svg text[fill="#a8a29e"] { fill: #78716c; }
-    .arch-svg text[fill="#166534"] { fill: #86efac; }
-    .arch-svg rect[stroke="#16a34a"] { stroke: #4ade80; }
-    .arch-svg rect[fill="rgba(22,163,74,0.08)"] { fill: rgba(74,222,128,0.1); }
-    .arch-svg rect[fill="rgba(22,163,74,0.04)"] { fill: rgba(74,222,128,0.06); }
-    .arch-svg path[stroke="rgba(22,163,74,0.3)"] { stroke: rgba(74,222,128,0.3); }
-
     .comparison-table {
         border-color: rgba(217, 119, 6, 0.12);
     }
