@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tawiza &mdash; Analyses</title>
+        <description>Analyses économiques territoriales à partir de données publiques françaises. Open source, bien commun numérique.</description>
+        <link>https://tawiza.fr/analyses/</link>
+        <atom:link href="https://tawiza.fr/feed.xml" rel="self" type="application/rss+xml"/>
+        <language>fr</language>
+        <lastBuildDate>Thu, 13 Mar 2026 21:00:00 +0100</lastBuildDate>
+
+        <item>
+            <title>Deux villes, un miroir &mdash; Clichy-sous-Bois vs Hénin-Beaumont</title>
+            <link>https://tawiza.fr/analyses/deux-villes-un-miroir.html</link>
+            <guid>https://tawiza.fr/analyses/deux-villes-un-miroir.html</guid>
+            <pubDate>Wed, 12 Mar 2026 10:00:00 +0100</pubDate>
+            <description>Clichy-sous-Bois vote à gauche, Hénin-Beaumont vote RN. Mêmes difficultés, choix opposés. Les programmes changent-ils quelque chose dans les données ? On a vérifié.</description>
+        </item>
+
+        <item>
+            <title>Pourquoi les communs numériques fonctionnent &mdash; De Hardin à Ostrom</title>
+            <link>https://tawiza.fr/communs.html</link>
+            <guid>https://tawiza.fr/communs.html</guid>
+            <pubDate>Tue, 11 Mar 2026 10:00:00 +0100</pubDate>
+            <description>En 1968, Hardin publia un article justifiant un demi-siècle de privatisations. En 1990, Ostrom démontra qu'il avait tort. Pourquoi les communs numériques fonctionnent.</description>
+        </item>
+    </channel>
+</rss>
