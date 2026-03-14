@@ -114,6 +114,30 @@
             </div>
         </section>
 
+        <!-- TRANSPARENCE & TÉLÉMÉTRIE -->
+        <section>
+            <div class="container-narrow fade-up">
+                <h2>Transparence &amp; télémétrie</h2>
+                <p>Tawiza collecte des données de télémétrie <strong>anonymes</strong> pour améliorer la plateforme. C'est <strong>opt-out</strong> &mdash; vous pouvez désactiver à tout moment.</p>
+                <div class="steps">
+                    <div class="step">
+                        <strong>Ce qui est collecté</strong>
+                        <p>Version de Tawiza, système d'exploitation, fonctionnalités utilisées, sources de données interrogées, durée des requêtes agents. Un identifiant anonyme (hash aléatoire) est généré localement, sans aucune information personnelle.</p>
+                    </div>
+                    <div class="step">
+                        <strong>Ce qui n'est PAS collecté</strong>
+                        <p>Aucune adresse IP, aucun email, aucun nom, aucun contenu de chat ou de requête, aucune donnée d'entreprise ou territoriale, aucun token ou clé API.</p>
+                    </div>
+                    <div class="step">
+                        <strong>Infrastructure</strong>
+                        <p><a href="https://posthog.com/" target="_blank" rel="noopener">PostHog</a> hébergé en UE (<code>eu.i.posthog.com</code>). Clé write-only (ne peut pas lire vos données). Rétention 90 jours. RGPD conforme. Le code de télémétrie est <a href="https://github.com/tawiza/tawiza/blob/main/src/core/telemetry.py" target="_blank" rel="noopener">100% transparent</a>.</p>
+                    </div>
+                </div>
+                <p>Pour désactiver : <code>TELEMETRY_ENABLED=false</code> dans votre fichier <code>.env</code>. C'est tout.</p>
+                <p>Le site web (tawiza.fr) utilise <a href="https://plausible.io/" target="_blank" rel="noopener">Plausible Analytics</a> self-hosté &mdash; sans cookies, conforme RGPD.</p>
+            </div>
+        </section>
+
         <!-- LIENS -->
         <section>
             <div class="container-narrow fade-up">
