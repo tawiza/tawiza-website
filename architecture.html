@@ -87,7 +87,7 @@
                         </div>
                         <div>
                             <h4>Site statique avec analyses sourcées</h4>
-                            <p>Chaque analyse publiée sur tawiza.fr est un document HTML autonome, avec des graphiques interactifs et des sources vérifiables. Pas de framework lourd, pas de base de données : du HTML, du CSS, du JavaScript.</p>
+                            <p>Chaque analyse publiée sur tawiza.fr est un document HTML autonome, avec des graphiques interactifs et des sources vérifiables. Pas de framework lourd, pas de base de données&nbsp;: du HTML, du CSS, du JavaScript.</p>
                             <div class="pipeline-tech">
                                 <span>HTML</span><span>CSS</span><span>JavaScript</span><span>D3.js</span>
                             </div>
@@ -99,7 +99,7 @@
                         </div>
                         <div>
                             <h4>Collecte manuelle de données publiques</h4>
-                            <p>Les données sont collectées manuellement depuis les portails publics : INSEE (recensement, emploi, revenus), DVF (transactions immobilières), BODACC (annonces légales), SIRENE (entreprises), France Travail (demandeurs d'emploi). Chaque source est citée et vérifiable.</p>
+                            <p>Les données sont collectées manuellement depuis les portails publics&nbsp;: INSEE (recensement, emploi, revenus), DVF (transactions immobilières), BODACC (annonces légales), SIRENE (entreprises), France Travail (demandeurs d'emploi). Chaque source est citée et vérifiable.</p>
                             <div class="pipeline-tech">
                                 <span>INSEE</span><span>DVF</span><span>BODACC</span><span>SIRENE</span><span>France Travail</span>
                             </div>
@@ -111,7 +111,7 @@
                         </div>
                         <div>
                             <h4>Graphiques et visualisations interactives</h4>
-                            <p>Les analyses intègrent des graphiques D3.js interactifs : barres comparatives, cartes, courbes d'évolution. Chaque visualisation est construite à partir des données brutes, sans intermédiaire opaque.</p>
+                            <p>Les analyses intègrent des graphiques D3.js interactifs&nbsp;: barres comparatives, cartes, courbes d'évolution. Chaque visualisation est construite à partir des données brutes, sans intermédiaire opaque.</p>
                             <div class="pipeline-tech">
                                 <span>D3.js</span><span>SVG</span><span>CSS custom properties</span>
                             </div>
@@ -172,7 +172,7 @@
                         </div>
                         <div>
                             <h4>2. Normalisation et enrichissement</h4>
-                            <p>Les données brutes sont nettoyées, géocodées, normalisées au référentiel COG (Code Officiel Géographique). Croisement automatique entre sources : une entreprise SIRENE est liée à ses annonces BODACC, ses marchés BOAMP, ses données DVF.</p>
+                            <p>Les données brutes sont nettoyées, géocodées, normalisées au référentiel COG (Code Officiel Géographique). Croisement automatique entre sources&nbsp;: une entreprise SIRENE est liée à ses annonces BODACC, ses marchés BOAMP, ses données DVF.</p>
                             <div class="pipeline-tech">
                                 <span>Python</span><span>Pydantic</span><span>API Géo</span><span>COG INSEE</span>
                             </div>
@@ -184,7 +184,7 @@
                         </div>
                         <div>
                             <h4>3. Stockage vectoriel et sémantique</h4>
-                            <p>Les données sont stockées dans PostgreSQL avec l'extension <strong>pgvector</strong> pour la recherche sémantique. Chaque document territorial est transformé en embedding vectoriel, permettant des requêtes en langage naturel : « quelles communes du Pas-de-Calais perdent des entreprises ? ».</p>
+                            <p>Les données sont stockées dans PostgreSQL avec l'extension <strong>pgvector</strong> pour la recherche sémantique. Chaque document territorial est transformé en embedding vectoriel, permettant des requêtes en langage naturel&nbsp;: « quelles communes du Pas-de-Calais perdent des entreprises&nbsp;? ».</p>
                             <div class="pipeline-tech">
                                 <span>PostgreSQL</span><span>pgvector</span><span>nomic-embed-text</span>
                             </div>
@@ -209,7 +209,7 @@
                         </div>
                         <div>
                             <h4>5. Visualisation et restitution</h4>
-                            <p>Les résultats sont présentés dans un <strong>dashboard interactif</strong> : cartes choroplèthes, graphiques D3.js, tableaux de bord par territoire. L'objectif : qu'un élu ou un citoyen comprenne en 30 secondes ce qu'un data analyst mettrait 3 jours à produire.</p>
+                            <p>Les résultats sont présentés dans un <strong>dashboard interactif</strong> : cartes choroplèthes, graphiques D3.js, tableaux de bord par territoire. L'objectif&nbsp;: qu'un élu ou un citoyen comprenne en 30 secondes ce qu'un data analyst mettrait 3 jours à produire.</p>
                             <div class="pipeline-tech">
                                 <span>Next.js 14</span><span>D3.js</span><span>shadcn/ui</span><span>Tailwind</span>
                             </div>
@@ -230,7 +230,7 @@
 
             <section class="article-section">
                 <h2 class="fade-up">La stack complète</h2>
-                <p>Chaque choix technique est guidé par trois principes : <strong>souveraineté</strong> (pas de dépendance à un cloud propriétaire), <strong>accessibilité</strong> (un VPS suffit), et <strong>transparence</strong> (tout est open source).</p>
+                <p>Chaque choix technique est guidé par trois principes&nbsp;: <strong>souveraineté</strong> (pas de dépendance à un cloud propriétaire), <strong>accessibilité</strong> (un VPS suffit), et <strong>transparence</strong> (tout est open source).</p>
 
                 <div class="comparison-table fade-up">
                     <table>
@@ -300,22 +300,22 @@
 
             <section class="article-section">
                 <h2 class="fade-up">Exigences minimales</h2>
-                <p>Tawiza est conçu pour être auto-hébergé sur un <strong>simple VPS</strong>. Pas besoin d'un cluster Kubernetes ou d'un budget cloud à cinq chiffres :</p>
+                <p>Tawiza est conçu pour être auto-hébergé sur un <strong>simple VPS</strong>. Pas besoin d'un cluster Kubernetes ou d'un budget cloud à cinq chiffres&nbsp;:</p>
 
                 <div class="mechanism-list fade-up">
                     <div class="mechanism">
-                        <strong>Serveur :</strong> 4 vCPU, 16 Go RAM, 100 Go SSD. Un VPS à ~30 €/mois suffit pour couvrir un département entier.
+                        <strong>Serveur&nbsp;:</strong> 4 vCPU, 16 Go RAM, 100 Go SSD. Un VPS à ~30&nbsp;€/mois suffit pour couvrir un département entier.
                     </div>
                     <div class="mechanism">
-                        <strong>GPU (optionnel) :</strong> Recommandé pour l'IA locale (Ollama). AMD RX 7900 XTX ou NVIDIA RTX 3090+ pour les modèles 27B paramètres. Sans GPU, des modèles plus légers (7B) tournent en CPU.
+                        <strong>GPU (optionnel)&nbsp;:</strong> Recommandé pour l'IA locale (Ollama). AMD RX 7900 XTX ou NVIDIA RTX 3090+ pour les modèles 27B paramètres. Sans GPU, des modèles plus légers (7B) tournent en CPU.
                     </div>
                     <div class="mechanism">
-                        <strong>Dépendances :</strong> Docker, PostgreSQL, Redis, Ollama. Tout s'installe en une commande <code>docker compose up</code>.
+                        <strong>Dépendances&nbsp;:</strong> Docker, PostgreSQL, Redis, Ollama. Tout s'installe en une commande <code>docker compose up</code>.
                     </div>
                 </div>
 
                 <blockquote class="article-quote">
-                    <p>Si un lycéen avec un VPS à 5 € ne peut pas faire tourner Tawiza, c'est qu'on a raté quelque chose. L'accessibilité technique est une forme de justice.</p>
+                    <p>Si un lycéen avec un VPS à 5&nbsp;€ ne peut pas faire tourner Tawiza, c'est qu'on a raté quelque chose. L'accessibilité technique est une forme de justice.</p>
                 </blockquote>
             </section>
 
@@ -336,7 +336,7 @@
                         </div>
                         <div>
                             <h4>Explorer le code source</h4>
-                            <p>Le dépôt GitHub contient tout : le site, les analyses, les scripts de collecte. Les issues tagguées <code>good first issue</code> sont un bon point d'entrée.</p>
+                            <p>Le dépôt GitHub contient tout&nbsp;: le site, les analyses, les scripts de collecte. Les issues tagguées <code>good first issue</code> sont un bon point d'entrée.</p>
                             <div class="pipeline-tech">
                                 <span><a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">github.com/tawiza/tawiza</a></span>
                             </div>
@@ -348,7 +348,7 @@
                         </div>
                         <div>
                             <h4>Rejoindre la communauté</h4>
-                            <p>Les discussions sur l'architecture, la roadmap et les choix techniques se font sur GitHub Discussions. Pas de Slack privé, pas de canal réservé aux initiés : tout est public.</p>
+                            <p>Les discussions sur l'architecture, la roadmap et les choix techniques se font sur GitHub Discussions. Pas de Slack privé, pas de canal réservé aux initiés&nbsp;: tout est public.</p>
                         </div>
                     </div>
                     <div class="pipeline-step">
@@ -357,7 +357,7 @@
                         </div>
                         <div>
                             <h4>Proposer une analyse</h4>
-                            <p>Vous avez des données sur votre territoire ? Vous voulez croiser des sources qu'on n'a pas encore intégrées ? Ouvrez une issue ou soumettez directement une PR avec votre analyse.</p>
+                            <p>Vous avez des données sur votre territoire&nbsp;? Vous voulez croiser des sources qu'on n'a pas encore intégrées&nbsp;? Ouvrez une issue ou soumettez directement une PR avec votre analyse.</p>
                         </div>
                     </div>
                 </div>
@@ -382,7 +382,6 @@
                 </div>
                 <div class="footer-links">
                     <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">GitHub</a>
-                    <a href="https://www.threads.net/@tawiza" target="_blank" rel="noopener">Threads</a>
                     <a href="https://bsky.app/profile/tawiza.fr" target="_blank" rel="noopener">Bluesky</a>
                 </div>
                 <p class="footer-legal">Licence MIT. Données collectées depuis des sources publiques ouvertes.</p>
