@@ -62,6 +62,159 @@ h1 {
 }
 strong { font-weight: 600; color: var(--text); }
 
+/* === ZELLIGE — Motifs géométriques marocains === */
+
+/* Motif étoile 8 branches — fond hero */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23b45309' stroke-width='1.2'%3E%3Cpath d='M60 10L72 30L90 22L80 42L100 48L80 54L90 74L72 66L60 86L48 66L30 74L40 54L20 48L40 42L30 22L48 30Z'/%3E%3Ccircle cx='60' cy='48' r='8'/%3E%3Cpath d='M60 10L60 0M60 86L60 96' opacity='0.4'/%3E%3Cpath d='M20 48L10 48M100 48L110 48' opacity='0.4'/%3E%3Cpath d='M0 0L20 18M120 0L100 18M0 96L20 78M120 96L100 78' opacity='0.25'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 120px 96px;
+    pointer-events: none;
+    z-index: 0;
+}
+.hero > * { position: relative; z-index: 1; }
+
+/* Bande zellige — séparateur entre sections */
+.zellige-frise {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3px;
+    position: relative;
+    margin: 0;
+    padding: 1.5rem 24px;
+    box-sizing: border-box;
+}
+.zellige-frise::before {
+    content: '';
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: 1px;
+    background: var(--separator);
+    position: relative;
+}
+.zellige-frise::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='40' viewBox='0 0 280 40'%3E%3Cg fill='none' stroke='%23b45309' opacity='0.35'%3E%3C!-- Centre star --%3E%3Cpath d='M140 4L148 16L160 12L154 24L166 28L154 32L160 44' stroke-width='1.2'/%3E%3Cpath d='M140 4L132 16L120 12L126 24L114 28L126 32L120 44' stroke-width='1.2'/%3E%3Ccircle cx='140' cy='24' r='5' stroke-width='1' fill='%23b45309' fill-opacity='0.08'/%3E%3C!-- Left diamonds --%3E%3Cpath d='M80 20L90 10L100 20L90 30Z' stroke-width='0.9'/%3E%3Ccircle cx='90' cy='20' r='3' stroke-width='0.8' fill='%23b45309' fill-opacity='0.06'/%3E%3Cpath d='M40 20L50 12L60 20L50 28Z' stroke-width='0.8' opacity='0.6'/%3E%3Ccircle cx='50' cy='20' r='2' stroke-width='0.7' opacity='0.5'/%3E%3Cpath d='M10 20L16 14L22 20L16 26Z' stroke-width='0.6' opacity='0.3'/%3E%3C!-- Right diamonds --%3E%3Cpath d='M180 20L190 10L200 20L190 30Z' stroke-width='0.9'/%3E%3Ccircle cx='190' cy='20' r='3' stroke-width='0.8' fill='%23b45309' fill-opacity='0.06'/%3E%3Cpath d='M220 20L230 12L240 20L230 28Z' stroke-width='0.8' opacity='0.6'/%3E%3Ccircle cx='230' cy='20' r='2' stroke-width='0.7' opacity='0.5'/%3E%3Cpath d='M258 20L264 14L270 20L264 26Z' stroke-width='0.6' opacity='0.3'/%3E%3C!-- Connecting lines --%3E%3Cline x1='100' y1='20' x2='114' y2='28' stroke-width='0.6' opacity='0.3'/%3E%3Cline x1='166' y1='28' x2='180' y2='20' stroke-width='0.6' opacity='0.3'/%3E%3Cline x1='60' y1='20' x2='80' y2='20' stroke-width='0.5' opacity='0.25'/%3E%3Cline x1='200' y1='20' x2='220' y2='20' stroke-width='0.5' opacity='0.25'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Frise fine — variante discrète */
+.zellige-frise--fine {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3px;
+    position: relative;
+    margin: 0;
+    padding: 1rem 24px;
+    box-sizing: border-box;
+}
+.zellige-frise--fine::before {
+    content: '';
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: 1px;
+    background: var(--separator);
+}
+.zellige-frise--fine::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 28px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='28' viewBox='0 0 120 28'%3E%3Cg fill='none' stroke='%23b45309' opacity='0.3'%3E%3Cpath d='M60 2L70 14L60 26L50 14Z' stroke-width='1'/%3E%3Ccircle cx='60' cy='14' r='3.5' stroke-width='0.8' fill='%23b45309' fill-opacity='0.07'/%3E%3Cpath d='M28 14L36 7L44 14L36 21Z' stroke-width='0.8' opacity='0.5'/%3E%3Cpath d='M76 14L84 7L92 14L84 21Z' stroke-width='0.8' opacity='0.5'/%3E%3Cline x1='10' y1='14' x2='28' y2='14' stroke-width='0.5' opacity='0.3'/%3E%3Cline x1='92' y1='14' x2='110' y2='14' stroke-width='0.5' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--bg);
+    padding: 0 8px;
+}
+
+/* Footer zellige — motif subtil */
+.footer {
+    position: relative;
+    overflow: hidden;
+}
+.footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23d4a574' stroke-width='0.8'%3E%3Cpath d='M40 6L50 20L62 14L56 28L70 32L56 36L62 50L50 44L40 58L30 44L18 50L24 36L10 32L24 28L18 14L30 20Z'/%3E%3Ccircle cx='40' cy='32' r='6'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 80px 64px;
+    pointer-events: none;
+}
+.footer > * { position: relative; z-index: 1; }
+
+/* Footer — bande zellige en haut */
+.footer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--accent) 15%,
+        var(--accent-hover) 35%,
+        var(--accent) 50%,
+        var(--accent-hover) 65%,
+        var(--accent) 85%,
+        transparent 100%
+    );
+    opacity: 0.5;
+}
+
+/* Section problème — accent zellige au bord gauche */
+.problem {
+    position: relative;
+}
+.problem::after {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    bottom: 2rem;
+    left: 0;
+    width: 3px;
+    background: repeating-linear-gradient(
+        to bottom,
+        var(--accent) 0px,
+        var(--accent) 8px,
+        transparent 8px,
+        transparent 12px,
+        var(--accent-hover) 12px,
+        var(--accent-hover) 16px,
+        transparent 16px,
+        transparent 24px
+    );
+    opacity: 0.5;
+    border-radius: 2px;
+}
+
 /* === ANIMATIONS === */
 .fade-up {
     opacity: 0;
@@ -861,6 +1014,19 @@ code {
     .problem { background: var(--bg-alt); }
 
     .footer { background: #0a0908; }
+
+    /* Zellige dark mode — swap amber → gold, adjust bg for frise overlays */
+    .hero::before {
+        opacity: 0.04;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23d4a574' stroke-width='1.2'%3E%3Cpath d='M60 10L72 30L90 22L80 42L100 48L80 54L90 74L72 66L60 86L48 66L30 74L40 54L20 48L40 42L30 22L48 30Z'/%3E%3Ccircle cx='60' cy='48' r='8'/%3E%3Cpath d='M60 10L60 0M60 86L60 96' opacity='0.4'/%3E%3Cpath d='M20 48L10 48M100 48L110 48' opacity='0.4'/%3E%3Cpath d='M0 0L20 18M120 0L100 18M0 96L20 78M120 96L100 78' opacity='0.25'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .zellige-frise::after,
+    .zellige-frise--fine::after {
+        filter: hue-rotate(15deg) brightness(1.3);
+    }
+    .zellige-frise--fine::after {
+        background-color: var(--bg);
+    }
 
     .newsletter { background: var(--bg-alt); }
     .newsletter-input-group input {
