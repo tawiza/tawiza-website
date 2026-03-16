@@ -6,7 +6,15 @@
         <link>https://tawiza.fr/analyses/</link>
         <atom:link href="https://tawiza.fr/feed.xml" rel="self" type="application/rss+xml"/>
         <language>fr</language>
-        <lastBuildDate>Thu, 13 Mar 2026 21:00:00 +0100</lastBuildDate>
+        <lastBuildDate>Tue, 17 Mar 2026 21:00:00 +0100</lastBuildDate>
+
+        <item>
+            <title>Plus pauvre, mieux gérée &mdash; Les comptes de quatre communes</title>
+            <link>https://tawiza.fr/analyses/deux-villes-comptes.html</link>
+            <guid>https://tawiza.fr/analyses/deux-villes-comptes.html</guid>
+            <pubDate>Tue, 17 Mar 2026 10:00:00 +0100</pubDate>
+            <description>Liévin est plus pauvre qu'Hénin-Beaumont. Pourtant elle investit 2,7 fois plus et capte 2 fois plus de subventions. On a ouvert les comptes de quatre communes pour comprendre ce que chaque choix politique produit.</description>
+        </item>
 
         <item>
             <title>Deux villes, un miroir &mdash; Clichy-sous-Bois vs Hénin-Beaumont</title>
