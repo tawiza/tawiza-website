@@ -505,6 +505,10 @@ code {
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 1.25rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphenate-limit-chars: 6 3 2;
 }
 .article-body p strong {
     color: var(--text);
@@ -637,6 +641,9 @@ code {
     font-size: 1.05rem;
     color: var(--text);
     line-height: 1.7;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 /* Article - images arrondies */
