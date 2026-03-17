@@ -31,12 +31,36 @@ body {
     line-height: 1.7;
     font-size: 18px;
     overflow-x: hidden;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphenate-limit-chars: 6 3 2;
 }
 
 .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
 .container-narrow { max-width: 680px; margin: 0 auto; padding: 0 24px; }
 a { color: var(--link); text-decoration: none; transition: color 0.2s; }
 a:hover { color: var(--link-hover); }
+
+/* Elements exclus du justify global */
+h1, h2, h3, h4, h5, h6,
+nav, .nav-links,
+button, .btn, .action-link, .action-link-secondary,
+.footer, .footer-inner,
+.article-meta, .article-tag, .article-share,
+.chart-caption, .data-download,
+.key-figure, .calc-box,
+.sources-list, .source-ref,
+.id-card-col dt, .id-card-col dd,
+.pair-card__commune-name, .pair-card__region,
+.hero-stat__label, .hero-stat__sub, .hero-stat__val,
+.detail-row,
+code, pre, .synthesis-table,
+.update-date, .tawiza-badge {
+    text-align: left;
+    hyphens: manual;
+}
+
 h2 {
     font-family: var(--font-heading);
     font-size: clamp(1.5rem, 3.5vw, 2.2rem);
@@ -505,10 +529,6 @@ code {
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 1.25rem;
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphenate-limit-chars: 6 3 2;
 }
 .article-body p strong {
     color: var(--text);
@@ -641,9 +661,6 @@ code {
     font-size: 1.05rem;
     color: var(--text);
     line-height: 1.7;
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
 }
 
 /* Article - images arrondies */
