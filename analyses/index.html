@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analyses - Tawiza</title>
-    <meta name="description" content="Analyses économiques territoriales à partir de données publiques françaises. Sourcées, vérifiées, lisibles.">
+    <meta name="description" content="Analyses &#233;conomiques territoriales &#224; partir de donn&#233;es publiques fran&#231;aises. Sourc&#233;es, v&#233;rifi&#233;es, lisibles.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#b45309">
     <link rel="canonical" href="https://tawiza.fr/analyses/">
 
     <meta property="og:title" content="Analyses - Tawiza">
-    <meta property="og:description" content="Analyses économiques territoriales à partir de données publiques françaises. Sourcées, vérifiées, lisibles.">
+    <meta property="og:description" content="Analyses &#233;conomiques territoriales &#224; partir de donn&#233;es publiques fran&#231;aises.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tawiza.fr/analyses/">
     <meta property="og:locale" content="fr_FR">
@@ -20,43 +20,162 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Analyses - Tawiza">
-    <meta name="twitter:description" content="Analyses économiques territoriales à partir de données publiques françaises.">
+    <meta name="twitter:description" content="Analyses &#233;conomiques territoriales &#224; partir de donn&#233;es publiques fran&#231;aises.">
     <meta name="twitter:image" content="https://tawiza.fr/og-image.png">
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23b45309'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='18'%3ET%3C/text%3E%3C/svg%3E">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css?v=4">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=10">
     <link rel="alternate" type="application/rss+xml" title="Tawiza - Analyses" href="https://tawiza.fr/feed.xml">
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org", "@type": "CollectionPage",
         "name": "Analyses - Tawiza",
-        "description": "Analyses économiques territoriales à partir de données publiques françaises.",
-        "url": "https://tawiza.fr/analyses/",
-        "publisher": { "@type": "Organization", "name": "Tawiza", "url": "https://tawiza.fr", "logo": { "@type": "ImageObject", "url": "https://tawiza.fr/img/logo-tawiza-amber.svg" } },
-        "inLanguage": "fr"
-    }
-    </script><script type="application/ld+json">
-    {
-        "@context": "https://schema.org", "@type": "CollectionPage",
-        "name": "Analyses - Tawiza",
-        "description": "Analyses économiques territoriales à partir de données publiques françaises.",
+        "description": "Analyses &#233;conomiques territoriales &#224; partir de donn&#233;es publiques fran&#231;aises.",
         "url": "https://tawiza.fr/analyses/",
         "publisher": { "@type": "Organization", "name": "Tawiza", "url": "https://tawiza.fr", "logo": { "@type": "ImageObject", "url": "https://tawiza.fr/img/logo-tawiza-amber.svg" } },
         "inLanguage": "fr"
     }
     </script>
 
-    <!-- Analytics - Plausible self-hosted (no cookies, GDPR compliant) -->
-    <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.js"></script>
+    <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.tagged-events.pageview-props.outbound-links.file-downloads.js"></script>
+
+    <style>
+    .idx { padding-top: 7rem; min-height: 80vh; }
+
+    /* Header */
+    .idx h1 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 0.25rem; }
+    .idx-sub { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.02em; }
+
+    /* Series */
+    .idx-series { margin-top: 3rem; }
+    .idx-series-head {
+        display: flex; align-items: baseline; gap: 0.75rem;
+        padding-bottom: 0.5rem; margin-bottom: 0;
+    }
+    .idx-series-label {
+        font-family: var(--font-mono); font-size: 0.65rem; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 0.08em; color: var(--bg);
+        background: var(--accent); padding: 0.2rem 0.5rem; border-radius: 3px;
+    }
+    .idx-series-title { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 500; color: var(--text-secondary); }
+
+    /* Timeline connector */
+    .idx-timeline { position: relative; padding-left: 2rem; }
+    .idx-timeline::before {
+        content: ''; position: absolute; left: 0.45rem; top: 0; bottom: 0;
+        width: 1px; background: var(--separator);
+    }
+
+    /* Entry */
+    .idx-entry {
+        position: relative; display: block;
+        padding: 1.25rem 0 1.25rem 0; text-decoration: none;
+        border-bottom: 1px solid color-mix(in srgb, var(--separator) 40%, transparent);
+    }
+    .idx-entry:last-child { border-bottom: none; }
+
+    /* Timeline dot */
+    .idx-entry::before {
+        content: ''; position: absolute; left: -2rem;
+        top: 1.55rem; width: 9px; height: 9px;
+        border-radius: 50%; border: 2px solid var(--separator);
+        background: var(--bg); z-index: 1;
+        transition: border-color 0.2s, background 0.2s;
+    }
+    .idx-entry:first-child::before { border-color: var(--accent); background: var(--accent); }
+    .idx-entry:hover::before { border-color: var(--accent); background: var(--accent); }
+
+    /* Entry layout */
+    .idx-entry-head { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.3rem; }
+    .idx-num { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); min-width: 1.2rem; }
+    .idx-title {
+        font-family: var(--font-heading); font-size: 1.15rem; font-weight: 500;
+        color: var(--text); line-height: 1.3; transition: color 0.2s;
+    }
+    .idx-entry:hover .idx-title { color: var(--accent); }
+
+    .idx-question {
+        font-family: var(--font-heading); font-style: italic;
+        font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;
+        margin: 0.15rem 0 0.5rem;
+    }
+
+    .idx-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+    .idx-chip {
+        font-family: var(--font-mono); font-size: 0.62rem;
+        color: var(--text-muted); letter-spacing: 0.02em;
+        padding: 0.15rem 0.45rem; border-radius: 3px;
+        border: 1px solid color-mix(in srgb, var(--separator) 70%, transparent);
+    }
+    .idx-chip--accent { color: var(--accent); border-color: rgba(180,83,9,0.2); }
+    .idx-dot { width: 2px; height: 2px; border-radius: 50%; background: var(--text-muted); }
+
+    /* Standalone section */
+    .idx-standalone { margin-top: 2.5rem; }
+    .idx-standalone-head {
+        display: flex; align-items: baseline; gap: 0.75rem;
+        padding-bottom: 0.5rem;
+    }
+    .idx-standalone-label {
+        font-family: var(--font-mono); font-size: 0.65rem; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);
+        border: 1px solid var(--separator); padding: 0.2rem 0.5rem; border-radius: 3px;
+    }
+
+    .idx-solo {
+        display: block; text-decoration: none;
+        padding: 1rem 0; transition: opacity 0.2s;
+    }
+    .idx-solo:hover { opacity: 0.7; }
+    .idx-solo-title {
+        font-family: var(--font-heading); font-size: 1rem; font-weight: 500;
+        color: var(--text); line-height: 1.3;
+    }
+    .idx-solo-desc {
+        font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;
+        margin-top: 0.15rem;
+    }
+    .idx-solo-date { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); margin-top: 0.3rem; }
+
+    /* Status bar */
+    .idx-status {
+        margin-top: 3rem; padding: 0.75rem 0;
+        border-top: 1px solid var(--separator);
+        display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+    }
+    .idx-status-item { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.02em; }
+    .idx-status-sep { color: var(--separator); font-size: 0.7rem; }
+    .idx-status a { color: var(--accent); text-decoration: none; }
+    .idx-status a:hover { text-decoration: underline; }
+    .idx-cursor { display: inline-block; width: 6px; height: 12px; background: var(--accent); animation: blink 1s step-end infinite; vertical-align: text-bottom; border-radius: 1px; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+        .idx-entry::before { background: var(--bg); }
+        .idx-entry:first-child::before { background: var(--accent); }
+        .idx-entry:hover::before { background: var(--accent); }
+        .idx-series-label { color: var(--bg); }
+    }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+        .idx-timeline { padding-left: 1.5rem; }
+        .idx-entry::before { left: -1.5rem; width: 7px; height: 7px; }
+        .idx-title { font-size: 1.05rem; }
+        .idx-question { font-size: 0.82rem; }
+        .idx-chips { gap: 0.3rem; }
+        .idx-status { flex-direction: column; gap: 0.25rem; align-items: flex-start; }
+        .idx-status-sep { display: none; }
+    }
+    </style>
 </head>
 <body>
-    <!-- NAV -->
     <nav class="nav" role="navigation" aria-label="Navigation principale">
         <div class="nav-inner">
             <a href="/" class="logo" aria-label="Tawiza - Accueil">
@@ -67,48 +186,111 @@
                 <a href="/analyses/" aria-current="page">Analyses</a>
                 <a href="/manifeste.html">Manifeste</a>
                 <a href="/contribuer.html">Contribuer</a>
-                <a href="/a-propos.html">À propos</a>
+                <a href="/a-propos.html">&#192; propos</a>
                 <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">Code source</a>
             </div>
-            <button class="nav-mobile" aria-label="Menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
+            <button class="nav-mobile" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
     <main>
-        <section>
-            <div class="container-narrow fade-up page-header">
+        <div class="container-narrow idx">
+
+            <div class="fade-up">
                 <h1>Analyses</h1>
-                <p>Des analyses économiques territoriales à partir de données publiques françaises. Sourcées, vérifiées, lisibles.</p>
+                <p class="idx-sub">donn&#233;es publiques &middot; sources v&#233;rifi&#233;es &middot; calculs montr&#233;s</p>
             </div>
 
-            <div class="container fade-up">
-                <div class="analyses-grid">
-                    <article class="analysis-card">
-                        <time datetime="2026-03-17">17 mars 2026</time>
-                        <h3><a href="deux-villes-comptes.html">Plus pauvre, mieux gérée</a></h3>
-                        <p>Liévin est plus pauvre qu'Hénin-Beaumont. Pourtant elle investit 2,7 fois plus. On a ouvert les comptes de quatre communes. Euro par euro.</p>
-                        <span class="article-tag" style="margin-top:0.5rem;display:inline-block">Partie 2</span>
-                    </article>
-                    <article class="analysis-card">
-                        <time datetime="2026-03-12">12 mars 2026</time>
-                        <h3><a href="deux-villes-un-miroir.html">Deux villes, un miroir</a></h3>
-                        <p>Clichy-sous-Bois vote &#224; gauche, H&#233;nin-Beaumont vote RN. M&#234;mes difficult&#233;s, choix oppos&#233;s. Les programmes changent-ils quelque chose dans les donn&#233;es ?</p>
-                        <span class="article-tag" style="margin-top:0.5rem;display:inline-block">Partie 1</span>
-                    </article>
-                    <article class="analysis-card">
-                        <time datetime="2026-03-11">11 mars 2026</time>
-                        <h3><a href="/communs.html">Pourquoi les communs numériques fonctionnent</a></h3>
-                        <p>De Hardin à Ostrom, de la théorie des jeux aux biens publics&nbsp;: pourquoi les données publiques sont un bien commun, et pourquoi la coopération bat la prédation.</p>
-                        <span class="article-tag" style="margin-top:0.5rem;display:inline-block">Essai</span>
-                    </article>
+            <!-- SÉRIE : Municipales 2026 -->
+            <div class="idx-series fade-up">
+                <div class="idx-series-head">
+                    <span class="idx-series-label">S&#233;rie</span>
+                    <span class="idx-series-title">Municipales 2026 &mdash; ce que les donn&#233;es racontent</span>
+                </div>
+
+                <div class="idx-timeline">
+
+                    <a href="ce-que-le-maire-controle.html" class="idx-entry">
+                        <div class="idx-entry-head">
+                            <span class="idx-num">03</span>
+                            <span class="idx-title">Ce que le maire contr&#244;le</span>
+                        </div>
+                        <p class="idx-question">Que peut r&#233;ellement changer un maire&nbsp;? Et pourquoi vote-t-on comme on vote&nbsp;?</p>
+                        <div class="idx-chips">
+                            <span class="idx-chip idx-chip--accent">quiz interactif</span>
+                            <span class="idx-chip">s&#233;curit&#233; SSMSI</span>
+                            <span class="idx-chip">loi NOTRe</span>
+                            <span class="idx-dot"></span>
+                            <span class="idx-chip">10 sources</span>
+                            <span class="idx-chip">18 mars 2026</span>
+                        </div>
+                    </a>
+
+                    <a href="deux-villes-comptes.html" class="idx-entry">
+                        <div class="idx-entry-head">
+                            <span class="idx-num">02</span>
+                            <span class="idx-title">Plus pauvre, mieux g&#233;r&#233;e</span>
+                        </div>
+                        <p class="idx-question">O&#249; se voient les choix politiques dans les comptes administratifs&nbsp;?</p>
+                        <div class="idx-chips">
+                            <span class="idx-chip">4 communes</span>
+                            <span class="idx-chip">OFGL 2017-2024</span>
+                            <span class="idx-chip">266 vs 721 &#8364;/hab</span>
+                            <span class="idx-dot"></span>
+                            <span class="idx-chip">6 sources</span>
+                            <span class="idx-chip">17 mars 2026</span>
+                        </div>
+                    </a>
+
+                    <a href="deux-villes-un-miroir.html" class="idx-entry">
+                        <div class="idx-entry-head">
+                            <span class="idx-num">01</span>
+                            <span class="idx-title">Deux villes, un miroir</span>
+                        </div>
+                        <p class="idx-question">Les programmes municipaux changent-ils les indicateurs &#233;conomiques&nbsp;?</p>
+                        <div class="idx-chips">
+                            <span class="idx-chip">Clichy vs H&#233;nin</span>
+                            <span class="idx-chip">INSEE Filosofi</span>
+                            <span class="idx-chip">DVF</span>
+                            <span class="idx-dot"></span>
+                            <span class="idx-chip">11 sources</span>
+                            <span class="idx-chip">12 mars 2026</span>
+                        </div>
+                    </a>
+
                 </div>
             </div>
-        </section>
+
+            <!-- ESSAIS -->
+            <div class="idx-standalone fade-up">
+                <div class="idx-standalone-head">
+                    <span class="idx-standalone-label">Essais</span>
+                </div>
+
+                <a href="/communs.html" class="idx-solo">
+                    <div class="idx-solo-title">Pourquoi les communs num&#233;riques fonctionnent</div>
+                    <div class="idx-solo-desc">De Hardin &#224; Ostrom, de la th&#233;orie des jeux aux biens publics. Pourquoi la coop&#233;ration bat la pr&#233;dation.</div>
+                    <div class="idx-solo-date">11 mars 2026</div>
+                </a>
+            </div>
+
+            <!-- Status bar -->
+            <div class="idx-status fade-up">
+                <span class="idx-status-item">4 publications</span>
+                <span class="idx-status-sep">/</span>
+                <span class="idx-status-item">27 sources</span>
+                <span class="idx-status-sep">/</span>
+                <span class="idx-status-item">donn&#233;es ouvertes</span>
+                <span class="idx-status-sep">/</span>
+                <span class="idx-status-item"><a href="https://github.com/tawiza/tawiza-website">github</a></span>
+                <span class="idx-status-sep">/</span>
+                <span class="idx-status-item"><a href="/feed.xml">rss</a></span>
+                <span class="idx-cursor"></span>
+            </div>
+
+        </div>
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-inner">
@@ -116,36 +298,29 @@
                     <a href="/analyses/">Analyses</a>
                     <a href="/manifeste.html">Manifeste</a>
                     <a href="/contribuer.html">Contribuer</a>
-                    <a href="/a-propos.html">À propos</a>
+                    <a href="/a-propos.html">&#192; propos</a>
                 </div>
                 <div class="footer-links">
                     <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">GitHub</a>
                     <a href="https://bsky.app/profile/tawiza.fr" target="_blank" rel="noopener">Bluesky</a>
                 </div>
-                <p class="footer-legal">Licence MIT. Données collectées depuis des sources publiques ouvertes.</p>
+                <p class="footer-legal">Licence MIT. Donn&#233;es collect&#233;es depuis des sources publiques ouvertes.</p>
             </div>
         </div>
     </footer>
 
     <script>
-    // Mobile nav
     document.querySelector('.nav-mobile')?.addEventListener('click', function() {
         const links = document.querySelector('.nav-links');
         const expanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !expanded);
         links.classList.toggle('open');
     });
-
-    // Scroll animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
+            if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     </script>
 </body>
