@@ -17,7 +17,7 @@
     --surface-border: rgba(28, 25, 23, 0.06);
 
     /* Typographie */
-    --font-heading: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --font-heading: 'El Messiri', Georgia, 'Times New Roman', serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 }
@@ -86,9 +86,9 @@ h1 {
 }
 strong { font-weight: 600; color: var(--text); }
 
-/* === ZELLIGE — Motifs géométriques marocains === */
+/* === ZELLIGE - Motifs géométriques marocains === */
 
-/* Motif étoile 8 branches — fond hero */
+/* Motif étoile 8 branches - fond hero */
 .hero {
     position: relative;
     overflow: hidden;
@@ -105,7 +105,7 @@ strong { font-weight: 600; color: var(--text); }
 }
 .hero > * { position: relative; z-index: 1; }
 
-/* Bande zellige — séparateur entre sections */
+/* Bande zellige - séparateur entre sections */
 .zellige-frise {
     display: flex;
     align-items: center;
@@ -140,7 +140,7 @@ strong { font-weight: 600; color: var(--text); }
     background-position: center;
 }
 
-/* Frise fine — variante discrète */
+/* Frise fine - variante discrète */
 .zellige-frise--fine {
     display: flex;
     align-items: center;
@@ -176,7 +176,7 @@ strong { font-weight: 600; color: var(--text); }
     padding: 0 8px;
 }
 
-/* Footer zellige — motif subtil */
+/* Footer zellige - motif subtil */
 .footer {
     position: relative;
     overflow: hidden;
@@ -192,7 +192,7 @@ strong { font-weight: 600; color: var(--text); }
 }
 .footer > * { position: relative; z-index: 1; }
 
-/* Footer — bande zellige en haut */
+/* Footer - bande zellige en haut */
 .footer::after {
     content: '';
     position: absolute;
@@ -213,7 +213,7 @@ strong { font-weight: 600; color: var(--text); }
     opacity: 0.5;
 }
 
-/* Section problème — accent zellige au bord gauche */
+/* Section problème - accent zellige au bord gauche */
 .problem {
     position: relative;
 }
@@ -262,8 +262,9 @@ section + section { padding-top: 3rem; }
     display: flex; justify-content: space-between; align-items: center;
 }
 .logo { display: inline-flex; align-items: center; }
-.logo:hover { opacity: 0.85; }
-.logo-img { height: 28px; width: auto; display: block; }
+.logo:hover { opacity: 1; }
+.logo-img { height: 28px; width: auto; display: block; transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.logo:hover .logo-img { transform: rotate(-6deg) scale(1.08); }
 .logo-light-only { display: block; }
 .logo-dark-only { display: none; }
 .nav-links { display: flex; align-items: center; gap: 24px; }
@@ -281,7 +282,7 @@ section + section { padding-top: 3rem; }
     transition: color 0.2s;
 }
 .action-link:hover { color: var(--accent-hover); }
-.action-link::after { content: ' →'; }
+.action-link::after { content: ' ->'; }
 
 .action-link-secondary {
     font-family: var(--font-body);
@@ -1039,7 +1040,7 @@ code {
 
     .footer { background: #0a0908; }
 
-    /* Zellige dark mode — swap amber → gold, adjust bg for frise overlays */
+    /* Zellige dark mode - swap amber -> gold, adjust bg for frise overlays */
     .hero::before {
         opacity: 0.04;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23d4a574' stroke-width='1.2'%3E%3Cpath d='M60 10L72 30L90 22L80 42L100 48L80 54L90 74L72 66L60 86L48 66L30 74L40 54L20 48L40 42L30 22L48 30Z'/%3E%3Ccircle cx='60' cy='48' r='8'/%3E%3Cpath d='M60 10L60 0M60 86L60 96' opacity='0.4'/%3E%3Cpath d='M20 48L10 48M100 48L110 48' opacity='0.4'/%3E%3Cpath d='M0 0L20 18M120 0L100 18M0 96L20 78M120 96L100 78' opacity='0.25'/%3E%3C/g%3E%3C/svg%3E");
