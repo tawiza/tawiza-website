@@ -1,0 +1,72 @@
+[
+  {
+    "x": 0.40,
+    "y": 0.30,
+    "w": 0.12,
+    "h": 0.10,
+    "label": "Hotel de Ville",
+    "conf": 98.5,
+    "cat": "Equipement public",
+    "desc": "Mairie - budget total : 68M, dette : 42M"
+  },
+  {
+    "x": 0.15,
+    "y": 0.10,
+    "w": 0.25,
+    "h": 0.25,
+    "label": "Cites minieres",
+    "conf": 93.1,
+    "cat": "Habitat",
+    "desc": "Patrimoine minier UNESCO - 3 200 logements, renovation ANRU 2"
+  },
+  {
+    "x": 0.60,
+    "y": 0.45,
+    "w": 0.20,
+    "h": 0.15,
+    "label": "Parc des Iles",
+    "conf": 87.4,
+    "cat": "Espace vert",
+    "desc": "Reconversion friche miniere - 15 ha, inauguration 2019"
+  },
+  {
+    "x": 0.70,
+    "y": 0.15,
+    "w": 0.18,
+    "h": 0.12,
+    "label": "ZAC Sainte-Henriette",
+    "conf": 90.8,
+    "cat": "Activite economique",
+    "desc": "Zone en developpement - objectif : 500 emplois d'ici 2027"
+  },
+  {
+    "x": 0.02,
+    "y": 0.60,
+    "w": 0.96,
+    "h": 0.05,
+    "label": "Canal de la Deule",
+    "conf": 95.3,
+    "cat": "Hydrographie",
+    "desc": "Voie navigable - axe Lens-Douai, projet veloroute en cours"
+  },
+  {
+    "x": 0.30,
+    "y": 0.50,
+    "w": 0.15,
+    "h": 0.10,
+    "label": "Centre-ville",
+    "conf": 91.2,
+    "cat": "Habitat",
+    "desc": "Mixte commerce/habitat - renovation facades en cours"
+  },
+  {
+    "x": 0.00,
+    "y": 0.40,
+    "w": 1.00,
+    "h": 0.04,
+    "label": "RD 301",
+    "conf": 97.0,
+    "cat": "Infrastructure",
+    "desc": "Route departementale - axe est-ouest, budget voirie : 1.8M/an"
+  }
+]
