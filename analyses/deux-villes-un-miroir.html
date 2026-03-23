@@ -28,6 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css?v=4">
+    <link rel="stylesheet" href="../assets/css/tracking.css">
 
     <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.js"></script>
 
@@ -121,11 +122,11 @@
                     <p><strong>Hénin-Beaumont</strong> (Pas-de-Calais, 62) a élu Steeve Briois (RN) en 2014 dès le premier tour, avec 50,26&nbsp;%. Réélu en 2020 avec 57&nbsp;%. Ancien bassin minier, la ville a perdu son industrie et n'a jamais vraiment trouvé de relais économique. Le RN y applique sa politique depuis plus de 10 ans maintenant&nbsp;: baisse revendiquée de la fiscalité locale, mise en avant de la sécurité, communication offensive.<a href="#src-2" class="source-ref" title="Résultats municipales 2014, Ministère de l'Intérieur">[2]</a></p>
 
                     <div class="article-figure-duo">
-                        <figure>
+                        <figure data-tracking="both" data-zones="clichy-sous-bois">
                             <img src="../img/clichy-sous-bois.jpg" alt="Boulevard Gagarine à Clichy-sous-Bois, immeubles HLM et bus RATP">
                             <figcaption>Clichy-sous-Bois (93) - Boulevard Gagarine <span class="photo-credit">CC BY-SA 2.5</span></figcaption>
                         </figure>
-                        <figure>
+                        <figure data-tracking="both" data-zones="henin-beaumont">
                             <img src="../img/henin-beaumont.jpg" alt="Terril n°92 à Hénin-Beaumont, patrimoine minier UNESCO">
                             <figcaption>Hénin-Beaumont (62) - Terril n°92, patrimoine UNESCO <span class="photo-credit">Domaine public</span></figcaption>
                         </figure>
@@ -486,5 +487,6 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     </script>
+    <script type="module" src="../assets/js/tracking-init.js"></script>
 </body>
 </html>
