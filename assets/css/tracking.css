@@ -1,0 +1,50 @@
+[data-tracking] {
+  position: relative;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+[data-tracking] img {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+[data-tracking] .tracking-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+[data-tracking] .tracking-hud {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 8;
+  pointer-events: none;
+}
+
+[data-tracking] .tracking-hud span {
+  display: block;
+  font-family: monospace;
+  font-size: 10px;
+  line-height: 1.7;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+@media (hover: none) {
+  [data-tracking] .tracking-svg,
+  [data-tracking] .tracking-hud { display: none; }
+  [data-tracking] { cursor: default; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-tracking] .tracking-svg,
+  [data-tracking] .tracking-hud { display: none; }
+  [data-tracking] { cursor: default; }
+}

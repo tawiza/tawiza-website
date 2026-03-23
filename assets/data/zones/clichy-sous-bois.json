@@ -1,0 +1,72 @@
+[
+  {
+    "x": 0.35,
+    "y": 0.25,
+    "w": 0.10,
+    "h": 0.08,
+    "label": "Mairie",
+    "conf": 97.2,
+    "cat": "Equipement public",
+    "desc": "Hotel de ville - budget total : 52M"
+  },
+  {
+    "x": 0.20,
+    "y": 0.15,
+    "w": 0.20,
+    "h": 0.20,
+    "label": "Quartier du Chene Pointu",
+    "conf": 94.5,
+    "cat": "Habitat",
+    "desc": "QPV - 5 000 logements sociaux, demolition-reconstruction ANRU"
+  },
+  {
+    "x": 0.50,
+    "y": 0.10,
+    "w": 0.22,
+    "h": 0.18,
+    "label": "Quartier du Haut-Clichy",
+    "conf": 91.3,
+    "cat": "Habitat",
+    "desc": "Pavillonnaire dense - revenus medians : 14 200/an"
+  },
+  {
+    "x": 0.55,
+    "y": 0.55,
+    "w": 0.30,
+    "h": 0.25,
+    "label": "Foret de Bondy",
+    "conf": 96.8,
+    "cat": "Espace vert",
+    "desc": "170 ha - foret domaniale, gestion ONF"
+  },
+  {
+    "x": 0.10,
+    "y": 0.45,
+    "w": 0.15,
+    "h": 0.12,
+    "label": "Groupe scolaire",
+    "conf": 89.7,
+    "cat": "Equipement public",
+    "desc": "3 ecoles - IPS moyen : 62 (national : 103)"
+  },
+  {
+    "x": 0.75,
+    "y": 0.30,
+    "w": 0.15,
+    "h": 0.10,
+    "label": "Zone commerciale",
+    "conf": 85.4,
+    "cat": "Activite economique",
+    "desc": "Centre commercial + marche - taux vacance : 22%"
+  },
+  {
+    "x": 0.00,
+    "y": 0.35,
+    "w": 1.00,
+    "h": 0.04,
+    "label": "RN 3",
+    "conf": 98.0,
+    "cat": "Infrastructure",
+    "desc": "Route nationale - axe Paris-Meaux, 25 000 veh/jour"
+  }
+]

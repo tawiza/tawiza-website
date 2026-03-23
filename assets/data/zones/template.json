@@ -1,0 +1,12 @@
+[
+  {
+    "x": 0.40,
+    "y": 0.30,
+    "w": 0.10,
+    "h": 0.08,
+    "label": "Nom de la zone",
+    "conf": 90.0,
+    "cat": "Equipement public",
+    "desc": "Description factuelle avec chiffres"
+  }
+]
