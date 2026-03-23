@@ -28,6 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css?v=9">
+    <link rel="stylesheet" href="../assets/css/tracking.css">
 
     <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.js"></script>
 
@@ -497,7 +498,7 @@
                     <!-- PROFIL COMPARÉ -->
                     <h2>Le profil financier en un coup d'oeil</h2>
 
-                    <div class="chart-container">
+                    <div class="chart-container" data-tracking="edge">
                         <img src="graphs/g7_radar.svg" alt="Graphique radar comparant les 4 communes en 2024 sur 6 axes. Deux profils se distinguent : Li&#233;vin et Clichy-sous-Bois investissent fortement, H&#233;nin-Beaumont et Montfermeil privil&#233;gient la sobri&#233;t&#233;. Clichy a les d&#233;penses de fonctionnement les plus &#233;lev&#233;es (1 911 euros par habitant)." loading="lazy">
                         <div class="chart-caption">Profil financier compar&#233; 2024, quatre communes (euros/hab). Le radar r&#233;v&#232;le deux mod&#232;les : Li&#233;vin et Clichy-sous-Bois investissent fortement et captent des subventions ; HB et Montfermeil privil&#233;gient la sobri&#233;t&#233; budg&#233;taire. Clichy se distingue par ses d&#233;penses de fonctionnement &#233;lev&#233;es (1 911 &#8364;/hab) mais aussi par la DGF la plus haute (925). Source : OFGL.</div>
                     </div>
@@ -610,5 +611,6 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     </script>
+    <script type="module" src="../assets/js/tracking-init.js"></script>
 </body>
 </html>
