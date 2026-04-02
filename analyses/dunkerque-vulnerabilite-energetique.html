@@ -40,129 +40,242 @@
     <link rel="stylesheet" href="../style.css?v=10">
     <link rel="stylesheet" href="../assets/css/tracking.css">
     <style>
-        /* ── Graphiques : conteneurs éditoriaux ── */
+        /* ═══ DESIGN ÉDITORIAL v2 ═══ */
+
+        /* ── Hero éditorial typographique ── */
+        .hero-editorial {
+            position: relative;
+            padding: 8rem 24px 4rem;
+            overflow: hidden;
+            background: var(--bg);
+        }
+        .hero-editorial::before {
+            content: '';
+            position: absolute; inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23b45309' stroke-width='1.2'%3E%3Cpath d='M60 10L72 30L90 22L80 42L100 48L80 54L90 74L72 66L60 86L48 66L30 74L40 54L20 48L40 42L30 22L48 30Z'/%3E%3Ccircle cx='60' cy='48' r='8'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 120px 96px;
+            pointer-events: none;
+        }
+        .hero-editorial__content {
+            position: relative; z-index: 2;
+            max-width: 680px;
+            margin: 0 auto;
+            animation: heroSlideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        @keyframes heroSlideUp {
+            from { opacity: 0; transform: translateY(32px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-editorial .article-meta {
+            margin-bottom: 1.5rem;
+        }
+        .hero-editorial h1 {
+            font-size: clamp(2rem, 4.8vw, 3rem);
+            line-height: 1.18;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+        }
+        .hero-editorial .article-intro {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+        .hero-editorial__accent-line {
+            display: block;
+            width: 48px; height: 3px;
+            background: var(--accent);
+            margin-bottom: 2rem;
+            border-radius: 2px;
+        }
+
+        /* Sections aérées avec séparateurs */
+        .article-body h2 {
+            margin-top: 4.5rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--separator);
+            position: relative;
+        }
+        .article-body h2::before {
+            content: '';
+            position: absolute; top: -1px; left: 0;
+            width: 40px; height: 3px;
+            background: var(--accent);
+        }
+        .article-body h3 { margin-top: 2.5rem; }
+
+        /* Paragraphes plus aérés */
+        .article-body p { margin-bottom: 1.4em; }
+
+        /* ── Chiffre clé en vedette ── */
+        .key-num {
+            display: block; text-align: center;
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 700; color: var(--accent);
+            padding: 2.5rem 1rem; line-height: 1.15;
+            margin: 2rem 0;
+            position: relative;
+        }
+        .key-num::before, .key-num::after {
+            content: '';
+            display: block; width: 40px; height: 1px;
+            background: var(--accent); opacity: 0.3;
+            margin: 0 auto;
+        }
+        .key-num::before { margin-bottom: 1.5rem; }
+        .key-num::after { margin-top: 1.5rem; }
+        .key-num small {
+            display: block; font-family: var(--font-body);
+            font-size: 0.38em; font-weight: 400;
+            color: var(--text-secondary); margin-top: 0.4em;
+            letter-spacing: 0.01em; line-height: 1.5;
+        }
+
+        /* ── Citation / pull quote ── */
+        .pull-quote {
+            font-family: var(--font-heading);
+            font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+            font-weight: 500;
+            color: var(--text); line-height: 1.55;
+            border-left: 3px solid var(--accent);
+            padding: 0.8rem 0 0.8rem 1.5rem;
+            margin: 3rem 0;
+            position: relative;
+        }
+        .pull-quote::before {
+            content: '';
+            position: absolute; left: -3px; top: 0;
+            width: 3px; height: 12px;
+            background: var(--accent-hover);
+        }
+
+        /* ── Graphiques ── */
         .article-body figure {
             position: relative;
-            margin: 2.5rem -2rem;
-            padding: 1.5rem;
+            margin: 3rem -2rem;
+            padding: 1.5rem 1.5rem 1rem;
             background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(28,25,23,0.04), 0 8px 24px rgba(28,25,23,0.03);
+            border-top: 1px solid var(--separator);
+            border-bottom: 1px solid var(--separator);
             text-align: center;
-            transition: box-shadow 0.3s ease;
-        }
-        .article-body figure:hover {
-            box-shadow: 0 2px 8px rgba(28,25,23,0.06), 0 12px 32px rgba(28,25,23,0.06);
         }
         .article-body figure img {
-            max-width: 100%; height: auto; border-radius: 6px;
-            cursor: pointer; transition: transform 0.25s ease;
+            max-width: 100%; height: auto;
+            cursor: pointer; transition: opacity 0.2s;
         }
-        .article-body figure img:hover { transform: scale(1.005); }
+        .article-body figure img:hover { opacity: 0.93; }
         .article-body figcaption {
-            font-size: 0.82em; color: var(--text-secondary); margin-top: 1rem;
-            text-align: left; line-height: 1.6;
-            padding-top: 0.75rem; border-top: 1px solid var(--separator);
+            max-width: 680px; margin: 1rem auto 0;
+            font-size: 0.82em; color: var(--text-muted); line-height: 1.6;
+            text-align: left;
         }
-
-        /* Numéro de figure discret */
         .article-body figure::before {
             content: attr(data-fig);
-            position: absolute; top: 12px; left: 16px;
-            font-family: var(--font-mono); font-size: 0.65rem;
-            color: var(--accent); opacity: 0.6;
-            letter-spacing: 0.05em; text-transform: uppercase;
+            position: absolute; top: 10px; left: 16px;
+            font-family: var(--font-mono); font-size: 0.62rem;
+            color: var(--accent); opacity: 0.5;
+            letter-spacing: 0.04em; text-transform: uppercase;
         }
+
+        /* ── Éléments avec fade-up ── */
+        .article-body figure.fade-up,
+        .article-body .key-num,
+        .article-body .pull-quote {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .article-body figure.fade-up.visible,
+        .article-body .key-num.visible,
+        .article-body .pull-quote.visible { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 720px) {
-            .article-body figure { margin-left: -12px; margin-right: -12px; padding: 1rem; }
+            .article-body figure { margin-left: -24px; margin-right: -24px; padding: 1rem; }
         }
 
-        /* ── Bloc dépliable ── */
+        /* ── Blocs dépliables ── */
         details.graph-explain {
-            margin: -0.5rem -2rem 2.5rem;
-            border-radius: 0 0 12px 12px;
-            overflow: hidden;
+            max-width: 680px; margin: -0.5rem auto 3rem;
         }
         details.graph-explain summary {
-            cursor: pointer; padding: 12px 20px;
+            cursor: pointer; padding: 10px 0;
             font-size: 0.82em; font-weight: 500;
             color: var(--accent); list-style: none; user-select: none;
-            background: color-mix(in srgb, var(--accent) 4%, var(--bg));
-            border-top: 1px solid var(--separator);
-            transition: background 0.2s;
-        }
-        details.graph-explain summary:hover {
-            background: color-mix(in srgb, var(--accent) 8%, var(--bg));
         }
         details.graph-explain summary::before { content: "▸ "; font-size: 0.8em; }
         details.graph-explain[open] summary::before { content: "▾ "; }
-        details.graph-explain[open] summary {
-            border-bottom: 1px solid var(--separator);
-        }
         details.graph-explain .explain-content {
-            padding: 16px 20px 20px;
+            padding: 12px 16px 16px;
             font-size: 0.88em; line-height: 1.75; color: var(--text-secondary);
-            background: color-mix(in srgb, var(--accent) 2%, var(--bg));
+            background: var(--bg-alt); border-radius: 6px; margin-top: 4px;
         }
         details.graph-explain .explain-content p { margin: 0.5em 0; }
         details.graph-explain .explain-content strong { color: var(--text); }
 
-        @media (max-width: 720px) {
-            details.graph-explain { margin-left: -12px; margin-right: -12px; }
-        }
-
-        /* ── Définitions inline ── */
+        /* ── Définitions ── */
         dfn {
             font-style: normal;
             border-bottom: 1px dotted var(--accent);
             cursor: help;
-            transition: border-color 0.2s;
         }
         dfn:hover { border-bottom-style: solid; }
 
         /* ── Bouton agrandir ── */
         .fig-zoom {
-            position: absolute; top: 12px; right: 12px;
-            background: rgba(28,25,23,0.7); color: white;
-            border: none; border-radius: 6px; padding: 5px 12px;
-            font-size: 0.72rem; cursor: pointer; letter-spacing: 0.03em;
+            position: absolute; top: 10px; right: 14px;
+            background: rgba(28,25,23,0.65); color: white;
+            border: none; border-radius: 5px; padding: 4px 10px;
+            font-size: 0.7rem; cursor: pointer;
             font-family: var(--font-mono); text-transform: uppercase;
-            opacity: 0; transition: opacity 0.25s; pointer-events: none;
-            backdrop-filter: blur(4px);
+            opacity: 0; transition: opacity 0.2s; pointer-events: none;
         }
         figure:hover .fig-zoom { opacity: 1; pointer-events: auto; }
 
         /* ── Lightbox ── */
         .lightbox {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(28,25,23,0.94); z-index: 9999;
+            display: none; position: fixed; inset: 0;
+            background: rgba(28,25,23,0.95); z-index: 9999;
             align-items: center; justify-content: center;
-            cursor: pointer; backdrop-filter: blur(2px);
+            cursor: pointer;
         }
         .lightbox.active { display: flex; }
         .lightbox img {
-            max-width: 94vw; max-height: 90vh; border-radius: 10px;
+            max-width: 95vw; max-height: 92vh; border-radius: 8px;
             box-shadow: 0 8px 40px rgba(0,0,0,0.4);
-            animation: lb-in 0.2s ease-out;
+            animation: lb-in 0.15s ease-out;
         }
-        @keyframes lb-in { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        @keyframes lb-in { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
         .lightbox-close {
-            position: fixed; top: 20px; right: 24px; color: rgba(255,255,255,0.7);
-            font-size: 1.8rem; cursor: pointer; z-index: 10000;
-            font-family: var(--font-body); line-height: 1;
-            transition: color 0.2s;
+            position: fixed; top: 18px; right: 22px; color: rgba(255,255,255,0.6);
+            font-size: 2rem; cursor: pointer; z-index: 10000; line-height: 1;
         }
         .lightbox-close:hover { color: white; }
 
         /* ── Tableau scénarios ── */
         .synthesis-table table {
-            border-radius: 8px; overflow: hidden;
+            border-radius: 6px; overflow: hidden;
             border: 1px solid var(--separator);
         }
-        .synthesis-table th { background: var(--bg-alt); }
+        .synthesis-table th { background: var(--bg-alt); font-size: 0.9em; }
         .synthesis-table td, .synthesis-table th { padding: 10px 14px; }
+
+        /* ── Note méthodo ambrée ── */
+        .method-note {
+            border-left: 3px solid var(--accent);
+            padding-left: 1.25rem;
+            margin: 2rem 0;
+            font-size: 0.9em;
+            color: var(--text-secondary);
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 720px) {
+            .hero-editorial { padding: 6.5rem 20px 3rem; }
+            .hero-editorial h1 { font-size: 1.6rem; }
+            .key-num { padding: 2rem 0.5rem; }
+        }
     </style>
 
     <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.tagged-events.pageview-props.outbound-links.file-downloads.js"></script>
@@ -205,24 +318,50 @@
     </nav>
 
     <main>
+        <!-- ═══ HERO ═══ -->
         <article>
-            <div class="container-narrow">
-                <header class="article-header fade-up">
+            <header class="hero-editorial">
+                <div class="hero-editorial__content">
                     <div class="article-meta">
                         <time datetime="2026-04-02">2 avril 2026</time>
                         <span class="article-tag">Analyse #4</span>
                     </div>
-                    <h1>Dunkerque, vitrine de la réindustrialisation. À quel point vulnérable&nbsp;?</h1>
-                    <p class="article-intro">Le détroit d'Ormuz est fermé depuis un mois. Le baril flambe. À 6&nbsp;000&nbsp;km de là, Dunkerque, plus grand complexe sidérurgique de France, deuxième terminal GNL d'Europe, et vitrine des gigafactories de demain. On a empilé six couches de données publiques pour regarder dans quel état est le sol sous la vitrine.</p>
-                </header>
+                    <span class="hero-editorial__accent-line"></span>
+                    <h1>Dunkerque, vitrine de la réindustrialisation.<br>À quel point vulnérable&nbsp;?</h1>
+                    <p class="article-intro">Le détroit d'Ormuz est fermé depuis un mois. Le baril flambe. À 6&nbsp;000&nbsp;km de là, Dunkerque, plus grand complexe sidérurgique de France, deuxième terminal GNL d'Europe, et vitrine des gigafactories de demain.</p>
+                </div>
+            </header>
 
+            <!-- Hero chiffres -->
+            <div style="background: var(--bg-alt); border-top: 1px solid var(--separator); border-bottom: 1px solid var(--separator); padding: 2.5rem 24px; margin: 0;">
+                <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center;">
+                    <div>
+                        <div style="font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; color: #C1554D; line-height: 1;">7 419</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">emplois dans les<br>secteurs énergivores</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">10 % de l'emploi total</div>
+                    </div>
+                    <div>
+                        <div style="font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; color: #2D6A4F; line-height: 1;">5 400</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">emplois annoncés<br>en gigafactories</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">mais 350 créés à ce jour</div>
+                    </div>
+                    <div>
+                        <div style="font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; color: #D4A843; line-height: 1;">48 %</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">de logements<br>passoires énergétiques</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">classés E, F ou G</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accroche sous le hero -->
+            <div class="container-narrow" style="padding-top: 2.5rem;">
+                <p style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">On a empilé six couches de données publiques pour regarder dans quel état est le sol sous la vitrine. Du trafic portuaire aux logements passoires, en passant par l'emploi, les défaillances et le tissu social.</p>
+            </div>
+
+            <div class="zellige-frise"></div>
+
+            <div class="container-narrow">
                 <div class="article-body">
-
-                    <figure style="margin: 0 0 2rem; text-align: center;">
-                        <img src="../img/dunkerque/hero_dunkerque.png"
-                             alt="Dunkerque en 3 chiffres : 7 419 emplois énergivores, 5 400 emplois annoncés en gigafactories, 48 % de passoires énergétiques."
-                             loading="eager" width="900" style="max-width: 100%; border-radius: 8px;">
-                    </figure>
 
                     <div class="method-note">
                         <p><strong>Note méthodologique.</strong> Cette analyse utilise exclusivement des données publiques françaises&nbsp;: <abbr title="Système Informatisé du Répertoire National des Entreprises et des Établissements">SIRENE</abbr> stock géolocalisé (data.gouv.fr), <abbr title="Bulletin Officiel des Annonces Civiles et Commerciales">BODACC</abbr> procédures collectives (bodacc-datadila), Urssaf open data (effectifs salariés par zone d'emploi et secteur NA88), rapports du Grand Port Maritime de Dunkerque, Géorisques (ICPE). Les données sociales (médecins, écoles, associations, DPE) sont des ordres de grandeur issus de publications ARS, Rectorat et ADEME. Les millésimes sont indiqués pour chaque chiffre. Les scénarios ne sont pas des prédictions. Tout le code est disponible sur <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -248,7 +387,7 @@
 
                     <p>Mais les minerais, le pouls d'ArcelorMittal, racontent une autre histoire.</p>
 
-                    <figure data-fig="fig. 1 -trafic portuaire">
+                    <figure data-fig="fig. 1 -trafic portuaire" class="fade-up">
                         <img src="../img/dunkerque/01_trajectoire_portuaire.png"
                              alt="Graphique : trajectoire du trafic portuaire de Dunkerque 2019-2025, base 100. Les minerais n'ont jamais retrouvé leur niveau d'avant-crise."
                              loading="lazy" width="900">
@@ -266,9 +405,11 @@
 
                     <p>Après le plongeon du Covid, puis un rebond en 2021, le trafic de minerais a rechuté lors du choc gazier de 2022, quand ArcelorMittal a mis un haut fourneau sous cocon. En 2023, un nouvel arrêt technique. En 2025, un autre encore au second semestre. Chaque crise emporte un morceau, et le rebond ne ramène jamais au point de départ.</p>
 
+                    <p class="pull-quote">Le GNL transite en volumes record, mais il devient inabordable pour les usines juste à côté du terminal.</p>
+
                     <p>Le GNL, lui, coule à flots. Mais c'est un transit&nbsp;: le gaz passe par Dunkerque, il ne nourrit pas forcément l'industrie locale. Et quand les prix explosent, comme en 2022, comme maintenant, le GNL transite mais devient inabordable pour les usines à côté du terminal.</p>
 
-                    <figure data-fig="fig. 2 -ciseau gnl/prix">
+                    <figure data-fig="fig. 2 -ciseau gnl/prix" class="fade-up">
                         <img src="../img/dunkerque/02_ciseau_gnl_prix.png"
                              alt="Graphique : ciseau entre le volume de GNL (en hausse) et le prix de l'énergie pour l'industrie (pics en 2022 et 2026)."
                              loading="lazy" width="900">
@@ -285,12 +426,17 @@
                     </details>
 
                     <!-- COUCHE 2 -->
+                </div>
+            </div>
+            <div class="zellige-frise--fine"></div>
+            <div class="container-narrow">
+                <div class="article-body">
 
-                    <h2>Ce dont vit réellement Dunkerque</h2>
+                    <h2 style="border-top: none; padding-top: 1rem;">Ce dont vit réellement Dunkerque</h2>
 
                     <p>Oublions les annonces. Regardons les fiches de paie. Qui emploie à Dunkerque en 2024, selon l'Urssaf&nbsp;?</p>
 
-                    <figure data-fig="fig. 3 -emploi sectoriel">
+                    <figure data-fig="fig. 3 -emploi sectoriel" class="fade-up">
                         <img src="../img/dunkerque/03_emploi_sectoriel.png"
                              alt="Graphique : emploi salarié par secteur à Dunkerque. L'industrie énergivore (métallurgie, chimie, verre) représente 7 400 emplois, soit 10% du total."
                              loading="lazy" width="900">
@@ -306,6 +452,8 @@
                         </div>
                     </details>
 
+                    <span class="key-num">7 419<small>emplois dans les secteurs directement dépendants du prix de l'énergie&nbsp;&ndash; 10&nbsp;% de l'emploi total</small></span>
+
                     <p>Les services dominent, comme partout. Mais l'industrie pèse <strong>30&nbsp;% de l'emploi salarié</strong>, soit deux fois la moyenne nationale. Et dans cette industrie, un bloc massif&nbsp;: la métallurgie (ArcelorMittal principalement, avec plus de 6&nbsp;000 emplois), la chimie (1&nbsp;100 emplois) et les minéraux non métalliques. <strong>7&nbsp;400 emplois</strong> dans des secteurs directement dépendants du prix de l'énergie. 10&nbsp;% de l'emploi total.</p>
 
                     <p>Ajoutez les secteurs liés (fabrication de produits métalliques, réparation et installation de machines), qui gravitent en partie autour des grands sites industriels, et l'exposition grimpe. L'Urssaf compte 5&nbsp;700 emplois dans ces secteurs. Tous ne sont pas de la sous-traitance pure, mais une part significative dépend des mêmes donneurs d'ordre. <strong>Au total, entre 10&nbsp;000 et 13&nbsp;000 emplois</strong> sont liés de près ou de loin au coût de l'énergie. C'est entre 14 et 18&nbsp;% de l'emploi salarié privé du territoire.</p>
@@ -314,11 +462,13 @@
 
                     <p>Et ce n'est pas que les 7&nbsp;400 emplois énergivores qui comptent. Quand ArcelorMittal réduit sa production, ce n'est pas seulement ses salariés qui sont touchés&nbsp;: c'est le sous-traitant de 15 salariés qui perd son unique client, le restaurant d'entreprise qui ferme, le commerçant qui voit moins de monde.</p>
 
+                    <p class="pull-quote">Le sous-traitant de 15 salariés qui perd son unique client ne fait pas la une. Mais c'est lui qui craque en premier.</p>
+
                     <h3>Les petits craquent en premier</h3>
 
                     <p>Les défaillances d'entreprises dans la zone de Dunkerque augmentent depuis 2022. Pas spectaculairement, mais la tendance est là.</p>
 
-                    <figure data-fig="fig. 4 -défaillances">
+                    <figure data-fig="fig. 4 -défaillances" class="fade-up">
                         <img src="../img/dunkerque/04_defaillances.png"
                              alt="Graphique : évolution des procédures collectives dans la zone de Dunkerque, 2019-2025. Tendance à la hausse depuis 2022."
                              loading="lazy" width="900">
@@ -340,7 +490,7 @@
 
                     <p>Les créations d'entreprises montent. En apparence, c'est une bonne nouvelle. Mais quand on décompose&nbsp;:</p>
 
-                    <figure data-fig="fig. 5 -créations">
+                    <figure data-fig="fig. 5 -créations" class="fade-up">
                         <img src="../img/dunkerque/05_creations_decomposition.png"
                              alt="Graphique : créations d'entreprises à Dunkerque, décomposées en sociétés et micro-entrepreneurs. Les micro-entrepreneurs représentent 90% des créations."
                              loading="lazy" width="900">
@@ -361,8 +511,13 @@
                     <p>On ne dit pas que c'est mal. On dit que ce n'est pas ce que le chiffre brut «&nbsp;créations en hausse&nbsp;» laisse entendre.</p>
 
                     <!-- COUCHE 3 -->
+                </div>
+            </div>
+            <div class="zellige-frise"></div>
+            <div class="container-narrow">
+                <div class="article-body">
 
-                    <h2>Ce que l'analyse industrielle ne regarde pas</h2>
+                    <h2 style="border-top: none; padding-top: 1rem;">Ce que l'analyse industrielle ne regarde pas</h2>
 
                     <p>D'habitude, on s'arrête là. L'emploi, les entreprises, le port. Mais un territoire, ce n'est pas qu'une économie. C'est aussi des médecins, des écoles, des associations, des logements. Et ces signaux-là bougent souvent avant les chiffres économiques.</p>
 
@@ -370,7 +525,7 @@
                         <p><strong>Transparence.</strong> Les données sociales ci-dessous (densité médicale, effectifs scolaires, tissu associatif, DPE) sont des <strong>ordres de grandeur estimés</strong> à partir de publications régionales (ARS, Rectorat, ADEME), pas des données brutes vérifiées. Les fichiers sources (BPE, RNA) n'étaient pas disponibles au téléchargement au moment de la production. Les tendances sont cohérentes avec les publications nationales, mais les valeurs exactes peuvent différer. On les présente pour ce qu'ils sont&nbsp;: des signaux directionnels, pas des chiffres précis.</p>
                     </div>
 
-                    <figure data-fig="fig. 6 -signaux sociaux">
+                    <figure data-fig="fig. 6 -signaux sociaux" class="fade-up">
                         <img src="../img/dunkerque/06_dashboard_social.png"
                              alt="Dashboard de 4 micro-signaux sociaux : médecins en baisse de 11%, effectifs scolaires en baisse de 8%, tissu associatif qui se contracte, 48% de logements passoires énergétiques."
                              loading="lazy" width="900">
@@ -393,15 +548,24 @@
 
                     <p><strong>Le tissu associatif se contracte.</strong> Le solde créations-dissolutions d'associations a été divisé par deux en cinq ans. Ce n'est pas spectaculaire, mais c'est le lien social qui s'effiloche. Moins d'associations, c'est moins de lieux où les gens se croisent, s'organisent, amortissent les chocs ensemble.</p>
 
+                    <span class="key-num">48 %<small>des logements classés E, F ou G&nbsp;&ndash; passoires énergétiques</small></span>
+
                     <p><strong>Près d'un logement sur deux est une passoire énergétique.</strong> 48&nbsp;% des logements diagnostiqués sont classés E, F ou G. Quand le prix de l'énergie flambe, ces ménages prennent le choc de plein fouet. C'est le volet humain de la crise d'Ormuz&nbsp;: avant même de toucher les usines, elle touche les factures.</p>
 
                     <!-- COUCHE 4 -->
+                </div>
+            </div>
+            <div class="zellige-frise--fine"></div>
+            <div class="container-narrow">
+                <div class="article-body">
 
-                    <h2>La fenêtre de vulnérabilité</h2>
+                    <h2 style="border-top: none; padding-top: 1rem;">La fenêtre de vulnérabilité</h2>
+
+                    <span class="key-num">5 400 annoncés<small>mais 350 emplois effectivement créés à ce jour dans les gigafactories</small></span>
 
                     <p>C'est la tension au cœur du récit dunkerquois. D'un côté, la promesse&nbsp;: 5&nbsp;400 emplois annoncés dans les gigafactories de batteries. De l'autre, la réalité&nbsp;: environ 350 emplois effectivement créés à ce jour.</p>
 
-                    <figure data-fig="fig. 7 -vulnérabilité">
+                    <figure data-fig="fig. 7 -vulnérabilité" class="fade-up">
                         <img src="../img/dunkerque/07_timeline_vulnerabilite.png"
                              alt="Graphique : comparaison entre les 10 900 emplois énergivores existants (maintenant) et les 5 400 emplois de gigafactories annoncés (2027-2029)."
                              loading="lazy" width="900">
@@ -421,11 +585,16 @@
 
                     <p>Entre les emplois qui existent <em>maintenant</em> et qui sont exposés, et les emplois qui arriveront <em>peut-être</em> dans trois à cinq ans, il y a une fenêtre. C'est dans cette fenêtre que le choc d'Ormuz frappe.</p>
 
-                    <p>La réindustrialisation arrive. Mais le choc arrive plus vite.</p>
+                    <p class="pull-quote">La réindustrialisation arrive. Mais le choc arrive plus vite. La fenêtre de vulnérabilité est ouverte.</p>
 
                     <!-- COUCHE 5 -->
+                </div>
+            </div>
+            <div class="zellige-frise"></div>
+            <div class="container-narrow">
+                <div class="article-body">
 
-                    <h2>Trois scénarios</h2>
+                    <h2 style="border-top: none; padding-top: 1rem;">Trois scénarios</h2>
 
                     <p>On ne prédit rien. On pose trois hypothèses basées sur ce qu'on sait du lien entre prix de l'énergie et emploi industriel, notamment à partir du précédent de 2022.</p>
 
@@ -472,7 +641,7 @@
                         </table>
                     </div>
 
-                    <figure data-fig="fig. 8 -scénarios">
+                    <figure data-fig="fig. 8 -scénarios" class="fade-up">
                         <img src="../img/dunkerque/08_fan_chart_scenarios.png"
                              alt="Fan chart : trajectoire de l'emploi énergivore 2019-2024 puis éventail de trois scénarios (court en vert, prolongé en ambre, sévère en rouge)."
                              loading="lazy" width="900">
@@ -492,8 +661,13 @@
                     <p>Soyons clairs sur les limites. Ces scénarios sont des ordres de grandeur. Ils ne prennent pas en compte les amortisseurs (chômage partiel, aides publiques, contrats long terme d'approvisionnement d'ArcelorMittal). Ils ne modélisent pas les effets indirects sur le commerce et les services. Et surtout, 2026 n'est pas 2022&nbsp;: la France est moins directement dépendante du pétrole d'Ormuz que du gaz russe. Mais les prix de l'énergie sont mondiaux, et les industries énergivores de Dunkerque y sont exposées quelle que soit l'origine du baril.</p>
 
                     <!-- COUCHE 6 -->
+                </div>
+            </div>
+            <div class="zellige-frise--fine"></div>
+            <div class="container-narrow">
+                <div class="article-body">
 
-                    <h2>Le paysage</h2>
+                    <h2 style="border-top: none; padding-top: 1rem;">Le paysage</h2>
 
                     <p>La carte dit ce que les chiffres ne montrent pas&nbsp;: la proximité. Sur quelques kilomètres carrés le long du littoral, on trouve des sites classés <dfn title="Directive européenne sur les sites industriels à haut risque, nommée d'après la catastrophe de Seveso (Italie, 1976). Les sites Seveso stockent ou utilisent des substances dangereuses en grandes quantités.">Seveso</dfn>, les hauts fourneaux d'ArcelorMittal, le terminal GNL, l'aluminerie. Et juste à côté, les chantiers des gigafactories de batteries. Le passé et le futur partagent le même sol.</p>
 
@@ -515,8 +689,13 @@
                     </details>
 
                     <!-- FERMETURE -->
+                </div>
+            </div>
+            <div class="zellige-frise"></div>
+            <div class="container-narrow">
+                <div class="article-body">
 
-                    <h2>Ce qu'on ne sait pas</h2>
+                    <h2 style="border-top: none; padding-top: 1rem;">Ce qu'on ne sait pas</h2>
 
                     <p>On a empilé six couches de données. Voici ce qu'elles montrent&nbsp;:</p>
 
@@ -538,7 +717,7 @@
                         <li>Qu'est-ce qui a changé depuis 2022, et qu'est-ce qui n'a pas changé&nbsp;?</li>
                     </ul>
 
-                    <p>On ne conclut pas. Ce portrait n'est pas un verdict. C'est un état des lieux au moment où un choc frappe un territoire en transition. Si la résilience de Dunkerque se confirme dans les mois qui viennent, on le documentera.</p>
+                    <p class="pull-quote">On ne conclut pas. Ce portrait n'est pas un verdict. C'est un état des lieux au moment où un choc frappe un territoire en transition. Si la résilience de Dunkerque se confirme dans les mois qui viennent, on le documentera.</p>
 
                     <!-- APPEL À CONTRIBUTION -->
 
@@ -610,8 +789,8 @@
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up, .article-body .key-num, .article-body .pull-quote').forEach(el => observer.observe(el));
     </script>
 
     <!-- Lightbox -->
