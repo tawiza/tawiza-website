@@ -6,7 +6,15 @@
         <link>https://tawiza.fr/analyses/</link>
         <atom:link href="https://tawiza.fr/feed.xml" rel="self" type="application/rss+xml"/>
         <language>fr</language>
-        <lastBuildDate>Tue, 17 Mar 2026 21:00:00 +0100</lastBuildDate>
+        <lastBuildDate>Wed, 02 Apr 2026 18:00:00 +0200</lastBuildDate>
+
+        <item>
+            <title>Dunkerque, vitrine de la réindustrialisation &mdash; mais à quel point vulnérable ?</title>
+            <link>https://tawiza.fr/analyses/dunkerque-vulnerabilite-energetique.html</link>
+            <guid>https://tawiza.fr/analyses/dunkerque-vulnerabilite-energetique.html</guid>
+            <pubDate>Wed, 02 Apr 2026 10:00:00 +0200</pubDate>
+            <description>Le détroit d'Ormuz est fermé. À Dunkerque, 18% de l'emploi dépend de secteurs énergivores. Les gigafactories arrivent, mais le choc arrive plus vite. Six couches de données publiques pour un portrait honnête.</description>
+        </item>
 
         <item>
             <title>Plus pauvre, mieux gérée &mdash; Les comptes de quatre communes</title>
