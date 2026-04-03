@@ -214,13 +214,54 @@
         details.graph-explain .explain-content p { margin: 0.5em 0; }
         details.graph-explain .explain-content strong { color: var(--text); }
 
-        /* ── Définitions ── */
+        /* ── Définitions (popover au clic) ── */
         dfn {
             font-style: normal;
             border-bottom: 1px dotted var(--accent);
-            cursor: help;
+            cursor: pointer;
+            position: relative;
         }
         dfn:hover { border-bottom-style: solid; }
+        .dfn-pop {
+            position: absolute;
+            left: 50%; transform: translateX(-50%);
+            top: calc(100% + 8px);
+            width: max(260px, min(90vw, 380px));
+            padding: 12px 16px;
+            background: var(--bg-alt, #292524);
+            color: var(--text, #e7e5e4);
+            border: 1px solid var(--accent, #b45309);
+            border-radius: 8px;
+            font-size: 0.85rem; line-height: 1.6;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            z-index: 1000;
+            pointer-events: auto;
+            animation: dfn-fade .15s ease-out;
+        }
+        .dfn-pop::before {
+            content: ''; position: absolute;
+            top: -6px; left: 50%; transform: translateX(-50%) rotate(45deg);
+            width: 10px; height: 10px;
+            background: var(--bg-alt, #292524);
+            border-left: 1px solid var(--accent, #b45309);
+            border-top: 1px solid var(--accent, #b45309);
+        }
+        @keyframes dfn-fade { from { opacity: 0; transform: translateX(-50%) translateY(4px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+
+        /* ── Appels de notes ── */
+        sup.fn a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+        sup.fn a:hover { text-decoration: underline; }
+        .sources-list li:target {
+            background: rgba(180, 83, 9, 0.15);
+            border-radius: 4px;
+            padding: 2px 6px;
+            margin-left: -6px;
+        }
 
         /* ── Bouton agrandir ── */
         .fig-zoom {
@@ -391,7 +432,7 @@
                         <img src="../img/dunkerque/01_trajectoire_portuaire.png"
                              alt="Graphique : trajectoire du trafic portuaire de Dunkerque 2019-2025, base 100. Les minerais n'ont jamais retrouvé leur niveau d'avant-crise."
                              loading="lazy" width="900">
-                        <figcaption>Trafic portuaire de Dunkerque, base 100 = 2019. Les minerais (tirets rouges) n'ont jamais retrouvé leur niveau d'avant-crise. <em>Source&nbsp;: rapports annuels GPMD.</em></figcaption>
+                        <figcaption>Trafic portuaire de Dunkerque, base 100 = 2019. Les minerais (tirets rouges) n'ont jamais retrouvé leur niveau d'avant-crise. <em>Source&nbsp;: rapports annuels GPMD&nbsp;<sup class="fn"><a href="#src-5">[5]</a></sup>.</em></figcaption>
                     </figure>
 
                     <details class="graph-explain">
@@ -413,7 +454,7 @@
                         <img src="../img/dunkerque/02_ciseau_gnl_prix.png"
                              alt="Graphique : ciseau entre le volume de GNL (en hausse) et le prix de l'énergie pour l'industrie (pics en 2022 et 2026)."
                              loading="lazy" width="900">
-                        <figcaption>Le ciseau&nbsp;: le GNL transite en volumes record, mais le prix de l'énergie pour l'industrie a été multiplié par 2,5 en 2022. <em>Source&nbsp;: GPMD (volumes), Eurostat/INSEE (prix).</em></figcaption>
+                        <figcaption>Le ciseau&nbsp;: le GNL transite en volumes record, mais le prix de l'énergie pour l'industrie a été multiplié par 2,5 en 2022. <em>Source&nbsp;: GPMD&nbsp;<sup class="fn"><a href="#src-5">[5]</a></sup> (volumes), Eurostat&nbsp;<sup class="fn"><a href="#src-8">[8]</a></sup> (prix).</em></figcaption>
                     </figure>
 
                     <details class="graph-explain">
@@ -440,7 +481,7 @@
                         <img src="../img/dunkerque/03_emploi_sectoriel.png"
                              alt="Graphique : emploi salarié par secteur à Dunkerque. L'industrie énergivore (métallurgie, chimie, verre) représente 7 400 emplois, soit 10% du total."
                              loading="lazy" width="900">
-                        <figcaption>Emploi salarié dans la zone d'emploi de Dunkerque. <em>Source&nbsp;: <dfn title="Union de Recouvrement des cotisations de Sécurité Sociale. L'Urssaf publie des données sur l'emploi salarié privé, plus récentes que celles de l'INSEE.">Urssaf</dfn>, open.urssaf.fr (données au 31/12/2024).</em></figcaption>
+                        <figcaption>Emploi salarié dans la zone d'emploi de Dunkerque. <em>Source&nbsp;: <dfn title="Union de Recouvrement des cotisations de Sécurité Sociale. L'Urssaf publie des données sur l'emploi salarié privé, plus récentes que celles de l'INSEE.">Urssaf</dfn>, open.urssaf.fr (données au 31/12/2024)&nbsp;<sup class="fn"><a href="#src-3">[3]</a></sup>.</em></figcaption>
                     </figure>
 
                     <details class="graph-explain">
@@ -472,7 +513,7 @@
                         <img src="../img/dunkerque/04_defaillances.png"
                              alt="Graphique : évolution des procédures collectives dans la zone de Dunkerque, 2019-2025. Tendance à la hausse depuis 2022."
                              loading="lazy" width="900">
-                        <figcaption><dfn title="Bulletin Officiel des Annonces Civiles et Commerciales. Journal officiel qui publie les créations, modifications et cessations d'entreprises, ainsi que les procédures collectives (redressement, liquidation).">Procédures collectives</dfn> (redressements, liquidations) enregistrées au BODACC, zone de Dunkerque. <em>Source&nbsp;: BODACC, bodacc-datadila.opendatasoft.com.</em></figcaption>
+                        <figcaption><dfn title="Bulletin Officiel des Annonces Civiles et Commerciales. Journal officiel qui publie les créations, modifications et cessations d'entreprises, ainsi que les procédures collectives (redressement, liquidation).">Procédures collectives</dfn> (redressements, liquidations) enregistrées au BODACC, zone de Dunkerque. <em>Source&nbsp;: BODACC, bodacc-datadila.opendatasoft.com&nbsp;<sup class="fn"><a href="#src-2">[2]</a></sup>.</em></figcaption>
                     </figure>
 
                     <details class="graph-explain">
@@ -494,7 +535,7 @@
                         <img src="../img/dunkerque/05_creations_decomposition.png"
                              alt="Graphique : créations d'entreprises à Dunkerque, décomposées en sociétés et micro-entrepreneurs. Les micro-entrepreneurs représentent 90% des créations."
                              loading="lazy" width="900">
-                        <figcaption>Créations d'établissements dans la zone de Dunkerque. <em>Source&nbsp;: <dfn title="Système Informatisé du Répertoire National des Entreprises et des Établissements. La base de données de toutes les entreprises et associations en France.">SIRENE</dfn> stock géolocalisé, data.gouv.fr.</em></figcaption>
+                        <figcaption>Créations d'établissements dans la zone de Dunkerque. <em>Source&nbsp;: <dfn title="Système Informatisé du Répertoire National des Entreprises et des Établissements. La base de données de toutes les entreprises et associations en France.">SIRENE</dfn> stock géolocalisé, data.gouv.fr&nbsp;<sup class="fn"><a href="#src-1">[1]</a></sup>.</em></figcaption>
                     </figure>
 
                     <details class="graph-explain">
@@ -530,7 +571,7 @@
                         <img src="../img/dunkerque/06_dashboard_social.png"
                              alt="Dashboard de 4 micro-signaux sociaux : médecins en baisse de 11%, effectifs scolaires en baisse de 8%, tissu associatif qui se contracte, 48% de logements passoires énergétiques."
                              loading="lazy" width="900">
-                        <figcaption>Quatre signaux sociaux dans la zone de Dunkerque. <em>Sources&nbsp;: ARS, Rectorat, <dfn title="Répertoire National des Associations">RNA</dfn>, <dfn title="Agence de l'Environnement et de la Maîtrise de l'Énergie">ADEME</dfn> (ordres de grandeur).</em></figcaption>
+                        <figcaption>Quatre signaux sociaux dans la zone de Dunkerque. <em>Sources&nbsp;: ARS, Rectorat, <dfn title="Répertoire National des Associations">RNA</dfn>, <dfn title="Agence de l'Environnement et de la Maîtrise de l'Énergie">ADEME</dfn> (ordres de grandeur)&nbsp;<sup class="fn"><a href="#src-9">[9]</a></sup>.</em></figcaption>
                     </figure>
 
                     <details class="graph-explain">
@@ -568,7 +609,7 @@
                         <img src="../img/dunkerque/07_timeline_vulnerabilite.png"
                              alt="Graphique : comparaison entre les 10 900 emplois énergivores existants (maintenant) et les 5 400 emplois de gigafactories annoncés (2027-2029)."
                              loading="lazy" width="900">
-                        <figcaption>Emplois existants exposés au prix de l'énergie vs emplois annoncés dans les gigafactories. <em>Sources&nbsp;: Urssaf (emplois), communiqués d'entreprises (annonces).</em></figcaption>
+                        <figcaption>Emplois existants exposés au prix de l'énergie vs emplois annoncés dans les gigafactories. <em>Sources&nbsp;: Urssaf&nbsp;<sup class="fn"><a href="#src-3">[3]</a></sup> (emplois), communiqués d'entreprises (annonces).</em></figcaption>
                     </figure>
 
                     <details class="graph-explain">
@@ -597,7 +638,7 @@
 
                     <p>On ne prédit rien. Les boules de cristal, on les laisse à ceux qui ont des certitudes. Nous, on pose trois hypothèses basées sur ce qu'on sait du lien entre prix de l'énergie et emploi industriel, et on regarde ce que ça donne.</p>
 
-                    <p>En 2022, lors du choc gazier, la Banque de France a publié des analyses sur l'impact des prix de l'énergie sur la production industrielle. Les secteurs énergivores (métallurgie, chimie) étaient les plus touchés. ArcelorMittal a mis un haut fourneau sous cocon. L'emploi énergivore à Dunkerque a reculé de 5&nbsp;% entre 2019 et 2021, avant de remonter et de dépasser son niveau initial en 2024.</p>
+                    <p>En 2022, lors du choc gazier, la Banque de France a publié des analyses sur l'impact des prix de l'énergie sur la production industrielle&nbsp;<sup class="fn"><a href="#src-7">[7]</a></sup>. Les secteurs énergivores (métallurgie, chimie) étaient les plus touchés. ArcelorMittal a mis un haut fourneau sous cocon. L'emploi énergivore à Dunkerque a reculé de 5&nbsp;% entre 2019 et 2021, avant de remonter et de dépasser son niveau initial en 2024.</p>
 
                     <p>On applique des fourchettes d'impact à trois niveaux de choc. <strong>Ces fourchettes sont nos estimations</strong>, inspirées de la littérature sur le choc de 2022 mais pas extraites d'un modèle économétrique. Ce sont des ordres de grandeur, pas des calculs précis&nbsp;:</p>
 
@@ -672,7 +713,7 @@
 
                     <p>Zoomez. Sur quelques kilomètres carrés le long du littoral, vous trouverez les hauts fourneaux d'ArcelorMittal, le terminal GNL, la plus grande aluminerie d'Europe, des usines chimiques classées <dfn title="Directive européenne sur les sites industriels à haut risque, nommée d'après la catastrophe de Seveso (Italie, 1976). Les sites Seveso stockent ou utilisent des substances dangereuses en grandes quantités.">Seveso</dfn>, la centrale nucléaire de Gravelines (la plus grande d'Europe de l'Ouest, un détail), et, au milieu de tout ça, les chantiers des gigafactories de batteries. Le passé et le futur partagent le même sol. Littéralement.</p>
 
-                    <p>Les 288 <dfn title="Installation Classée pour la Protection de l'Environnement. Toute usine, entrepôt ou site qui présente un risque pour l'environnement ou le voisinage est classée ICPE et soumise à des contrôles.">installations classées</dfn> du secteur côtoient les friches des crises précédentes. Cliquez sur les marqueurs pour voir le détail de chaque site. Passez en vue satellite pour mesurer l'échelle.</p>
+                    <p>Les 288 <dfn title="Installation Classée pour la Protection de l'Environnement. Toute usine, entrepôt ou site qui présente un risque pour l'environnement ou le voisinage est classée ICPE et soumise à des contrôles.">installations classées</dfn>&nbsp;<sup class="fn"><a href="#src-6">[6]</a></sup> du secteur côtoient les friches des crises précédentes. Cliquez sur les marqueurs pour voir le détail de chaque site. Passez en vue satellite pour mesurer l'échelle.</p>
 
                     <p style="text-align:center; margin: 2rem 0;">
                         <a href="../img/dunkerque/10_carte_dunkerque.html" target="_blank" rel="noopener" style="display:inline-block; padding: 12px 24px; background: #b45309; color: white; border-radius: 6px; font-weight: 600; text-decoration: none;">Ouvrir la carte interactive</a>
@@ -838,6 +879,45 @@
         lb.addEventListener('click', closeLb);
         lbClose.addEventListener('click', closeLb);
         document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLb(); });
+    })();
+    </script>
+
+    <!-- Popover définitions -->
+    <script>
+    (function() {
+        let activePop = null;
+        function closePop() {
+            if (activePop) { activePop.remove(); activePop = null; }
+        }
+        document.querySelectorAll('dfn[title]').forEach(function(el) {
+            const def = el.getAttribute('title');
+            el.removeAttribute('title');
+            el.dataset.def = def;
+            el.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (activePop && activePop.parentElement === el) { closePop(); return; }
+                closePop();
+                const pop = document.createElement('span');
+                pop.className = 'dfn-pop';
+                pop.textContent = def;
+                el.appendChild(pop);
+                activePop = pop;
+                // Empêcher le débordement horizontal
+                const rect = pop.getBoundingClientRect();
+                if (rect.right > window.innerWidth - 12) {
+                    pop.style.left = 'auto';
+                    pop.style.right = '0';
+                    pop.style.transform = 'none';
+                    pop.querySelector || (pop.style.setProperty('--arrow-fix', '1'));
+                }
+                if (rect.left < 12) {
+                    pop.style.left = '0';
+                    pop.style.transform = 'none';
+                }
+            });
+        });
+        document.addEventListener('click', closePop);
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePop(); });
     })();
     </script>
 </body>
