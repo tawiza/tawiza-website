@@ -35,7 +35,9 @@
     { "@context": "https://schema.org", "@type": "WebSite", "name": "Tawiza", "description": "Donn&#233;es publiques fran&#231;aises, crois&#233;es et racont&#233;es.", "url": "https://tawiza.fr", "inLanguage": "fr", "author": { "@type": "Organization", "name": "Tawiza", "url": "https://github.com/tawiza" } }
     </script>
     <style>
-    .t-hero { min-height: 70vh; display: flex; align-items: center; padding: 120px 24px 60px; }
+    .t-hero { min-height: 70vh; display: flex; align-items: center; padding: 120px 24px 60px; position: relative; overflow: hidden; }
+    #topo { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.55; }
+    @media (prefers-color-scheme: dark) { #topo { opacity: 0.4; } }
     .t-prompt { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1.5rem; }
     .t-prompt span { color: var(--accent); }
     .t-tagline { font-family: var(--font-heading); font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 600; color: var(--text); line-height: 1.35; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
@@ -119,7 +121,8 @@
     </nav>
 
     <header class="t-hero">
-        <div class="container-narrow fade-up">
+        <canvas id="topo" aria-hidden="true"></canvas>
+        <div class="container-narrow fade-up" style="position:relative;z-index:1;">
             <div class="t-prompt"><span>$</span> tawiza</div>
             <h1 class="t-tagline">Donn&#233;es publiques fran&#231;aises.<br>Crois&#233;es, v&#233;rifi&#233;es, racont&#233;es.</h1>
             <p class="t-tagline-sub">sourc&#233;es &middot; open source &middot; bien commun</p>
@@ -244,6 +247,268 @@
             else { status.textContent = 'Erreur.'; status.style.color = '#dc2626'; btn.disabled = false; btn.textContent = '\u21b5'; }
         }).catch(() => { status.textContent = 'Erreur r\u00e9seau.'; status.style.color = '#dc2626'; btn.disabled = false; btn.textContent = '\u21b5'; });
     });
+    </script>
+
+    <!-- Territorial Pulse - generative art with word formation -->
+    <script>
+    (function() {
+        const canvas = document.getElementById('topo');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let W, H, signals, field, fieldCols, fieldRows, t = 0;
+        let raf, textMask = null, textPixels = [];
+
+        // Words that cycle - subtle, drole, tawiza
+        const WORDS = [
+            'open data', 'on verifie', 'pas de mock',
+            'bien commun', 'le social craque', 'zero bullshit',
+            'donnees reelles', 'tawiza', 'servez le the',
+            'code source', 'on empile', 'spoiler: pas d\'usines',
+        ];
+        let wordIdx = 0;
+
+        // Timing: flow 8s → converge 6s → hold 3s → dissolve 3s → next
+        const PHASE_FLOW = 480;      // ~8s at 60fps
+        const PHASE_CONVERGE = 360;  // ~6s
+        const PHASE_HOLD = 180;      // ~3s
+        const PHASE_DISSOLVE = 180;  // ~3s
+        const CYCLE = PHASE_FLOW + PHASE_CONVERGE + PHASE_HOLD + PHASE_DISSOLVE;
+        let cycleT = 0;
+
+        const daySeed = new Date().toISOString().slice(0, 10).split('').reduce((a, c) => a * 31 + c.charCodeAt(0), 7);
+
+        function mulberry32(a) {
+            return function() {
+                a |= 0; a = a + 0x6D2B79F5 | 0;
+                var t = Math.imul(a ^ a >>> 15, 1 | a);
+                t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+                return ((t ^ t >>> 14) >>> 0) / 4294967296;
+            };
+        }
+        const rng = mulberry32(daySeed);
+
+        const noiseGrid = [];
+        const NG = 128;
+        for (let i = 0; i < NG * NG; i++) noiseGrid[i] = rng();
+
+        function vnoise(x, y) {
+            const xi = Math.floor(x) & (NG - 1), yi = Math.floor(y) & (NG - 1);
+            const xf = x - Math.floor(x), yf = y - Math.floor(y);
+            const sx = xf * xf * (3 - 2 * xf), sy = yf * yf * (3 - 2 * yf);
+            const x1 = (xi + 1) & (NG - 1), y1 = (yi + 1) & (NG - 1);
+            const a = noiseGrid[xi + yi * NG], b = noiseGrid[x1 + yi * NG];
+            const c = noiseGrid[xi + y1 * NG], d = noiseGrid[x1 + y1 * NG];
+            return a + sx * (b - a) + sy * (c - a) + sx * sy * (a - b - c + d);
+        }
+
+        function fbm(x, y, oct) {
+            let v = 0, amp = 1, freq = 1, tot = 0;
+            for (let o = 0; o < oct; o++) { v += vnoise(x * freq, y * freq) * amp; tot += amp; amp *= 0.5; freq *= 2.2; }
+            return v / tot;
+        }
+
+        function isDark() { return window.matchMedia('(prefers-color-scheme: dark)').matches; }
+
+        function getColors() {
+            return isDark()
+                ? { bg: [28,25,23], stone: [168,162,158], amber: [212,165,116], alert: [193,85,77] }
+                : { bg: [250,249,245], stone: [168,162,158], amber: [180,83,9], alert: [193,85,77] };
+        }
+
+        // ── Text mask: render word to hidden canvas, extract pixel positions ──
+        function buildTextMask(word) {
+            const off = document.createElement('canvas');
+            off.width = W; off.height = H;
+            const octx = off.getContext('2d');
+
+            // Size to fit canvas width with margin
+            let fontSize = Math.min(W / (word.length * 0.55), H * 0.25);
+            fontSize = Math.max(fontSize, 28);
+            octx.font = `700 ${fontSize}px 'El Messiri', Georgia, serif`;
+            octx.textAlign = 'center';
+            octx.textBaseline = 'middle';
+            octx.fillStyle = '#000';
+            octx.fillText(word, W / 2, H / 2);
+
+            // Sample pixels at grid spacing
+            const data = octx.getImageData(0, 0, W, H).data;
+            const step = Math.max(3, Math.floor(Math.min(W, H) / 200));
+            textPixels = [];
+            for (let y = 0; y < H; y += step) {
+                for (let x = 0; x < W; x += step) {
+                    const idx = (y * W + x) * 4;
+                    if (data[idx + 3] > 128) {
+                        textPixels.push({ x, y });
+                    }
+                }
+            }
+        }
+
+        function resize() {
+            const rect = canvas.parentElement.getBoundingClientRect();
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            W = rect.width; H = rect.height;
+            canvas.width = W * dpr; canvas.height = H * dpr;
+            canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            const cols = getColors();
+            ctx.fillStyle = `rgb(${cols.bg[0]},${cols.bg[1]},${cols.bg[2]})`;
+            ctx.fillRect(0, 0, W, H);
+
+            initField(); initSignals();
+            buildTextMask(WORDS[wordIdx]);
+        }
+
+        function initField() {
+            fieldCols = Math.ceil(W / 12); fieldRows = Math.ceil(H / 12);
+            field = new Float32Array(fieldCols * fieldRows);
+            updateField();
+        }
+
+        function updateField() {
+            const scale = 0.004, tSlow = t * 0.0004;
+            for (let y = 0; y < fieldRows; y++)
+                for (let x = 0; x < fieldCols; x++)
+                    field[x + y * fieldCols] = fbm(x * scale + tSlow, y * scale + tSlow * 0.7, 3) * Math.PI * 4;
+        }
+
+        function initSignals() {
+            const count = Math.min(Math.floor(W * H / 500), 1600);
+            signals = [];
+            for (let i = 0; i < count; i++) {
+                signals.push({
+                    x: rng() * W, y: rng() * H,
+                    vx: 0, vy: 0,
+                    age: Math.floor(rng() * 400),
+                    maxAge: 200 + Math.floor(rng() * 500),
+                    weight: 0.3 + rng() * 1.0,
+                    type: rng() < 0.65 ? 0 : (rng() < 0.7 ? 1 : 2),
+                    targetIdx: -1,
+                });
+            }
+            assignTargets();
+        }
+
+        function assignTargets() {
+            if (!textPixels.length) return;
+            for (let i = 0; i < signals.length; i++) {
+                // Only some particles get attracted (40%)
+                signals[i].targetIdx = (rng() < 0.40)
+                    ? Math.floor(rng() * textPixels.length)
+                    : -1;
+            }
+        }
+
+        function lerp3(a, b, t) {
+            return [a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t, a[2]+(b[2]-a[2])*t];
+        }
+
+        function frame() {
+            t++; cycleT++;
+            if (t % 12 === 0) updateField();
+
+            // Determine phase
+            let phase, phaseProgress;
+            if (cycleT < PHASE_FLOW) {
+                phase = 'flow'; phaseProgress = cycleT / PHASE_FLOW;
+            } else if (cycleT < PHASE_FLOW + PHASE_CONVERGE) {
+                phase = 'converge'; phaseProgress = (cycleT - PHASE_FLOW) / PHASE_CONVERGE;
+            } else if (cycleT < PHASE_FLOW + PHASE_CONVERGE + PHASE_HOLD) {
+                phase = 'hold'; phaseProgress = (cycleT - PHASE_FLOW - PHASE_CONVERGE) / PHASE_HOLD;
+            } else if (cycleT < CYCLE) {
+                phase = 'dissolve'; phaseProgress = (cycleT - PHASE_FLOW - PHASE_CONVERGE - PHASE_HOLD) / PHASE_DISSOLVE;
+            } else {
+                // Next word
+                cycleT = 0; phase = 'flow'; phaseProgress = 0;
+                wordIdx = (wordIdx + 1) % WORDS.length;
+                buildTextMask(WORDS[wordIdx]);
+                assignTargets();
+                // Fade progressif au lieu de reset brutal
+                const cols = getColors();
+                ctx.fillStyle = `rgba(${cols.bg[0]},${cols.bg[1]},${cols.bg[2]},0.15)`;
+                ctx.fillRect(0, 0, W, H);
+            }
+
+            // Attraction strength based on phase
+            let attractStrength = 0;
+            if (phase === 'converge') attractStrength = phaseProgress * phaseProgress * 0.08;
+            else if (phase === 'hold') attractStrength = 0.08;
+            else if (phase === 'dissolve') attractStrength = 0.08 * (1 - phaseProgress);
+
+            const cols = getColors();
+            const inertia = 0.96;
+            const flowForce = 0.35;
+
+            for (const s of signals) {
+                // Flow field force
+                const col = Math.min(Math.floor(s.x / 12), fieldCols - 1);
+                const row = Math.min(Math.floor(s.y / 12), fieldRows - 1);
+                if (col >= 0 && row >= 0) {
+                    const angle = field[col + row * fieldCols];
+                    s.vx = s.vx * inertia + Math.cos(angle) * flowForce * (1 - inertia);
+                    s.vy = s.vy * inertia + Math.sin(angle) * flowForce * (1 - inertia);
+                }
+
+                // Text attractor force
+                if (attractStrength > 0 && s.targetIdx >= 0 && s.targetIdx < textPixels.length) {
+                    const tp = textPixels[s.targetIdx];
+                    const dx = tp.x - s.x, dy = tp.y - s.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy) + 1;
+                    const pull = attractStrength * Math.min(dist * 0.01, 1);
+                    s.vx += (dx / dist) * pull;
+                    s.vy += (dy / dist) * pull;
+                }
+
+                s.x += s.vx; s.y += s.vy; s.age++;
+
+                if (s.x < 0) s.x += W; if (s.x > W) s.x -= W;
+                if (s.y < 0) s.y += H; if (s.y > H) s.y -= H;
+
+                if (s.age > s.maxAge) {
+                    s.x = rng() * W; s.y = rng() * H;
+                    s.vx = 0; s.vy = 0; s.age = 0;
+                    s.maxAge = 200 + Math.floor(rng() * 500);
+                }
+
+                // Draw
+                const speed = Math.sqrt(s.vx * s.vx + s.vy * s.vy);
+                const life = 1 - s.age / s.maxAge;
+                const fade = life < 0.1 ? life * 10 : (life > 0.85 ? (1 - life) * 6.67 : 1);
+                let alpha = 0.04 * fade * s.weight;
+
+                // Particles near their target glow slightly during hold
+                if (phase === 'hold' && s.targetIdx >= 0 && s.targetIdx < textPixels.length) {
+                    const tp = textPixels[s.targetIdx];
+                    const dist = Math.sqrt((tp.x - s.x) ** 2 + (tp.y - s.y) ** 2);
+                    if (dist < 15) alpha *= 1.8;
+                }
+
+                let c;
+                if (s.type === 0) c = cols.stone;
+                else if (s.type === 1) c = lerp3(cols.stone, cols.amber, Math.min(speed * 3, 1));
+                else c = lerp3(cols.amber, cols.alert, Math.min(speed * 4, 1));
+
+                ctx.fillStyle = `rgba(${c[0]|0},${c[1]|0},${c[2]|0},${alpha})`;
+                const r = s.weight * (0.4 + speed * 0.6);
+                ctx.fillRect(s.x - r * 0.5, s.y - r * 0.5, r, r);
+            }
+
+            raf = requestAnimationFrame(frame);
+        }
+
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) { if (!raf) raf = requestAnimationFrame(frame); }
+            else { if (raf) { cancelAnimationFrame(raf); raf = null; } }
+        }, { threshold: 0.05 });
+
+        resize();
+        observer.observe(canvas);
+
+        let resizeTimer;
+        window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(resize, 200); });
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', resize);
+    })();
     </script>
 </body>
 </html>
