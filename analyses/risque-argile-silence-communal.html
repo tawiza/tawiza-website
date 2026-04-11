@@ -304,6 +304,41 @@
             font-size: 0.9em;
             color: var(--text-secondary);
         }
+        .method-note pre {
+            background: #292524;
+            color: #e7e5e4;
+            padding: 0.85rem 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            line-height: 1.55;
+            margin: 1rem 0;
+            max-width: 100%;
+            box-sizing: border-box;
+            white-space: pre;
+        }
+        .method-note pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+            font-family: inherit;
+            font-size: inherit;
+            white-space: pre;
+        }
+        .method-note ul {
+            margin: 0.6em 0;
+            padding-left: 1.5em;
+        }
+        .method-note ul li { margin-bottom: 0.5em; }
+        .method-note code {
+            background: rgba(180, 83, 9, 0.08);
+            color: var(--accent);
+            padding: 0.1em 0.35em;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+        }
 
         /* ── Mobile ── */
         @media (max-width: 720px) {
