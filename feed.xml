@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Tawiza &mdash; Analyses</title>
+        <title>Tawiza &#8212; Analyses</title>
         <description>Analyses économiques territoriales à partir de données publiques françaises. Open source, bien commun numérique.</description>
         <link>https://tawiza.fr/analyses/</link>
         <atom:link href="https://tawiza.fr/feed.xml" rel="self" type="application/rss+xml"/>
@@ -9,7 +9,7 @@
         <lastBuildDate>Sat, 11 Apr 2026 10:00:00 +0200</lastBuildDate>
 
         <item>
-            <title>Risque argile &mdash; 65 % des communes concernées n'ont jamais prévenu leurs habitants</title>
+            <title>Risque argile &#8212; 65 % des communes concernées n'ont jamais prévenu leurs habitants</title>
             <link>https://tawiza.fr/analyses/risque-argile-silence-communal.html</link>
             <guid>https://tawiza.fr/analyses/risque-argile-silence-communal.html</guid>
             <pubDate>Sat, 11 Apr 2026 10:00:00 +0200</pubDate>
@@ -17,7 +17,7 @@
         </item>
 
         <item>
-            <title>Dunkerque, vitrine de la réindustrialisation &mdash; mais à quel point vulnérable ?</title>
+            <title>Dunkerque, vitrine de la réindustrialisation &#8212; mais à quel point vulnérable ?</title>
             <link>https://tawiza.fr/analyses/dunkerque-vulnerabilite-energetique.html</link>
             <guid>https://tawiza.fr/analyses/dunkerque-vulnerabilite-energetique.html</guid>
             <pubDate>Wed, 02 Apr 2026 10:00:00 +0200</pubDate>
@@ -25,7 +25,7 @@
         </item>
 
         <item>
-            <title>Plus pauvre, mieux gérée &mdash; Les comptes de quatre communes</title>
+            <title>Plus pauvre, mieux gérée &#8212; Les comptes de quatre communes</title>
             <link>https://tawiza.fr/analyses/deux-villes-comptes.html</link>
             <guid>https://tawiza.fr/analyses/deux-villes-comptes.html</guid>
             <pubDate>Tue, 17 Mar 2026 10:00:00 +0100</pubDate>
@@ -33,7 +33,7 @@
         </item>
 
         <item>
-            <title>Deux villes, un miroir &mdash; Clichy-sous-Bois vs Hénin-Beaumont</title>
+            <title>Deux villes, un miroir &#8212; Clichy-sous-Bois vs Hénin-Beaumont</title>
             <link>https://tawiza.fr/analyses/deux-villes-un-miroir.html</link>
             <guid>https://tawiza.fr/analyses/deux-villes-un-miroir.html</guid>
             <pubDate>Wed, 12 Mar 2026 10:00:00 +0100</pubDate>
@@ -41,7 +41,7 @@
         </item>
 
         <item>
-            <title>Pourquoi les communs numériques fonctionnent &mdash; De Hardin à Ostrom</title>
+            <title>Pourquoi les communs numériques fonctionnent &#8212; De Hardin à Ostrom</title>
             <link>https://tawiza.fr/communs.html</link>
             <guid>https://tawiza.fr/communs.html</guid>
             <pubDate>Tue, 11 Mar 2026 10:00:00 +0100</pubDate>
