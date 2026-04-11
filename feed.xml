@@ -6,7 +6,15 @@
         <link>https://tawiza.fr/analyses/</link>
         <atom:link href="https://tawiza.fr/feed.xml" rel="self" type="application/rss+xml"/>
         <language>fr</language>
-        <lastBuildDate>Wed, 02 Apr 2026 18:00:00 +0200</lastBuildDate>
+        <lastBuildDate>Sat, 11 Apr 2026 10:00:00 +0200</lastBuildDate>
+
+        <item>
+            <title>Risque argile &mdash; 65 % des communes concernées n'ont jamais prévenu leurs habitants</title>
+            <link>https://tawiza.fr/analyses/risque-argile-silence-communal.html</link>
+            <guid>https://tawiza.fr/analyses/risque-argile-silence-communal.html</guid>
+            <pubDate>Sat, 11 Apr 2026 10:00:00 +0200</pubDate>
+            <description>12,1 millions de maisons françaises sont exposées au retrait-gonflement des argiles. 8 031 communes n'ont jamais produit le document légal d'information. Et plus précisément : 3 902 communes ont reçu la transmission préfectorale officielle (TIM) et n'ont jamais publié de DICRIM. On a croisé trois tables GASPAR pour le démontrer.</description>
+        </item>
 
         <item>
             <title>Dunkerque, vitrine de la réindustrialisation &mdash; mais à quel point vulnérable ?</title>
