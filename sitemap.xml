@@ -78,4 +78,22 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
+    <url>
+        <loc>https://tawiza.fr/threatscape.html</loc>
+        <lastmod>2026-04-11</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://tawiza.fr/art/la-chaine-brisee.html</loc>
+        <lastmod>2026-04-11</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://tawiza.fr/art/territorial-pulse.html</loc>
+        <lastmod>2026-04-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
 </urlset>
