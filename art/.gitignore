@@ -1,0 +1,4 @@
+# Override the global `data/` exclusion to allow versioning
+# the geojson assets used by the generative art pieces.
+!data/
+!data/**
