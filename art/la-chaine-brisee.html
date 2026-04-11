@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La chaîne brisée &mdash; Tawiza</title>
+    <meta name="description" content="Pièce d'art génératif Tawiza. Un signal préfectoral voyage de département en département, avec une probabilité de s'arrêter à chaque relais. Métaphore visuelle de la chaîne d'information cassée.">
+    <link rel="canonical" href="https://tawiza.fr/art/la-chaine-brisee.html">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=El+Messiri:wght@500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <link rel="stylesheet" href="../style.css?v=10">
+    <style>
+        :root {
+            --bg: #fafaf9;
+            --text: #1c1917;
+            --text-muted: #78716c;
+            --text-secondary: #57534e;
+            --accent: #b45309;
+            --accent-soft: #d97757;
+            --separator: #e7e5e4;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+        }
+        .art-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 6rem 1.5rem 4rem;
+        }
+        .art-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: artFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        @keyframes artFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .art-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--accent);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+        .art-header h1 {
+            font-family: 'El Messiri', serif;
+            font-size: clamp(2rem, 4.5vw, 2.8rem);
+            font-weight: 500;
+            line-height: 1.15;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+        .art-header .subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-style: italic;
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        .canvas-frame {
+            display: flex;
+            justify-content: center;
+            margin: 2.5rem 0 1rem;
+        }
+        #p5canvas {
+            border-radius: 6px;
+            cursor: crosshair;
+            background: var(--bg);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04),
+                        0 0 0 1px rgba(0, 0, 0, 0.04);
+        }
+        #p5canvas canvas { display: block; }
+        .hint {
+            text-align: center;
+            font-family: 'El Messiri', serif;
+            font-size: 1rem;
+            color: var(--accent);
+            margin: 0.5rem 0;
+            opacity: 0.75;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin: 1.5rem 0 2rem;
+            flex-wrap: wrap;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.02em;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .legend-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .manifesto {
+            max-width: 640px;
+            margin: 4rem auto 2rem;
+            font-size: 0.96rem;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            font-style: italic;
+            text-align: justify;
+            border-top: 1px solid var(--separator);
+            padding-top: 3rem;
+        }
+        .manifesto p {
+            margin-bottom: 1.3rem;
+        }
+        .manifesto strong {
+            color: var(--text);
+            font-style: normal;
+            font-weight: 600;
+        }
+        .manifesto a {
+            color: var(--accent);
+            text-decoration: none;
+            font-style: normal;
+            border-bottom: 1px dotted var(--accent);
+        }
+        .manifesto a:hover {
+            border-bottom-style: solid;
+        }
+        .params {
+            max-width: 640px;
+            margin: 0 auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-align: center;
+            opacity: 0.6;
+        }
+        .params span {
+            display: inline-block;
+            margin: 0 0.6rem;
+        }
+        @media (max-width: 768px) {
+            .art-container { padding: 5rem 1rem 3rem; }
+            #p5canvas { max-width: 100%; }
+            .legend { gap: 1.2rem; font-size: 0.7rem; }
+            .manifesto { font-size: 0.92rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav" role="navigation" aria-label="Navigation principale">
+        <div class="nav-inner">
+            <a href="/" class="logo" aria-label="Tawiza - Accueil">
+                <img src="../img/logo-tawiza-amber.svg" alt="Tawiza" class="logo-img logo-light-only" height="28">
+                <img src="../img/logo-tawiza-white.svg" alt="Tawiza" class="logo-img logo-dark-only" height="28">
+            </a>
+            <div class="nav-links">
+                <a href="/analyses/">Analyses</a>
+                <a href="/manifeste.html">Manifeste</a>
+                <a href="/contribuer.html">Contribuer</a>
+                <a href="/a-propos.html">&Agrave; propos</a>
+                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">Code source</a>
+            </div>
+            <button class="nav-mobile" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="art-container">
+        <div class="art-header">
+            <div class="art-eyebrow">tawiza generative art &middot; pi&egrave;ce 02</div>
+            <h1>La cha&icirc;ne bris&eacute;e</h1>
+            <p class="subtitle">Cliquez n'importe o&ugrave;. Regardez o&ugrave; le signal s'arr&ecirc;te.</p>
+        </div>
+
+        <div class="canvas-frame">
+            <div id="p5canvas"></div>
+        </div>
+
+        <p class="hint" id="hint">&darr; cliquez sur un d&eacute;partement &darr;</p>
+
+        <div class="legend">
+            <div class="legend-item"><span class="legend-dot" style="background:#a8a29e"></span>silencieux</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#b45309"></span>signal actif</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#d97757;opacity:0.5"></span>&eacute;cho qui s'&eacute;teint</div>
+        </div>
+
+        <div class="params">
+            <span>96 d&eacute;partements</span>&middot;
+            <span>5 voisins par n&oelig;ud</span>&middot;
+            <span>p(propagation) = 0.7</span>&middot;
+            <span>d&eacute;lai 600&ndash;900 ms</span>
+        </div>
+
+        <div class="manifesto">
+            <p><strong>Causalit&eacute; cumulative invers&eacute;e.</strong> Gunnar Myrdal d&eacute;crivait comment un avantage initial s'auto-renforce et un d&eacute;savantage s'aggrave&nbsp;: c'est la causalit&eacute; cumulative circulaire. Un m&eacute;decin part, les familles suivent, l'&eacute;cole ferme, le tissu se d&eacute;fait. Ce n'est jamais lin&eacute;aire, c'est un champ de forces.</p>
+
+            <p>Cette pi&egrave;ce inverse le mouvement. Au lieu d'un signal qui se propage et amplifie, on voit un signal qui se diffuse et s'&eacute;teint. Un pr&eacute;fet &eacute;met une alerte officielle. Elle voyage de d&eacute;partement en d&eacute;partement. Mais &agrave; chaque relais, une probabilit&eacute; qu'elle s'arr&ecirc;te. Au bout de quelques n&oelig;uds, le signal a disparu.</p>
+
+            <p>C'est exactement ce qui arrive aux <strong>8 031 communes silencieuses</strong> du risque argile, dont <strong>3 902 ont re&ccedil;u la transmission pr&eacute;fectorale officielle</strong> sans jamais publier de DICRIM en aval. La cha&icirc;ne d'information existe, elle a &eacute;t&eacute; activ&eacute;e, elle n'a rien d&eacute;clench&eacute;. Le signal voyage moins loin qu'on ne le croit.</p>
+
+            <p>Cliquez plusieurs fois &agrave; partir du m&ecirc;me d&eacute;partement&nbsp;: la m&ecirc;me propagation ne donne jamais le m&ecirc;me r&eacute;sultat. C'est l'essence des syst&egrave;mes territoriaux&nbsp;: ce sont des r&eacute;seaux probabilistes, pas des arbres d&eacute;terministes. Et c'est aussi pour cela qu'on ne peut pas dire en avance &agrave; quel maire l'information est arriv&eacute;e&nbsp;: il faut compter, source par source, chiffre par chiffre.</p>
+
+            <p>L'analyse compl&egrave;te qui sous-tend cette pi&egrave;ce&nbsp;: <a href="../analyses/risque-argile-silence-communal.html">Risque argile, le silence communal</a>. Le code de la pi&egrave;ce est dans <a href="https://github.com/tawiza/tawiza-website/blob/main/art/la-chaine-brisee.html" target="_blank" rel="noopener">art/la-chaine-brisee.html</a>.</p>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-eye">
+                <img src="../img/tawiza-eye.svg" alt="L'oeil Tawiza" class="footer-eye-img">
+                <p class="footer-eye-tagline">L'&oelig;il qui dort jamais</p>
+            </div>
+            <div class="footer-inner">
+                <div class="footer-links">
+                    <a href="/analyses/">Analyses</a>
+                    <a href="/manifeste.html">Manifeste</a>
+                    <a href="/contribuer.html">Contribuer</a>
+                    <a href="/a-propos.html">&Agrave; propos</a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://bsky.app/profile/tawiza.fr" target="_blank" rel="noopener">Bluesky</a>
+                </div>
+                <p class="footer-legal">Licence MIT. Donn&eacute;es collect&eacute;es depuis des sources publiques ouvertes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ════════════════════════════════════════════════════════════════
+        // La chaine brisee - generative art
+        // 96 départements, propagation SIR-like avec p=0.7 par voisin
+        // ════════════════════════════════════════════════════════════════
+
+        let geojson;
+        let depts = [];
+        let bbox;
+        let canvasW = 720, canvasH = 740;
+        let hintFading = false;
+        let lastEmitTime = 0;
+
+        const COLORS = {
+            bg: [250, 250, 249],
+            outline: [0, 0, 0, 22],
+            silent: [168, 162, 158],
+            active: [180, 83, 9],
+            decayed: [217, 119, 87],
+        };
+
+        const CONFIG = {
+            kNeighbors: 5,
+            propProb: 0.7,
+            propDelayMin: 600,
+            propDelayMax: 900,
+            activeDuration: 1500,
+            decayDuration: 4500,
+            pulseMaxRadius: 36,
+        };
+
+        function preload() {
+            geojson = loadJSON('data/departements.geojson');
+        }
+
+        function setup() {
+            const cnv = createCanvas(canvasW, canvasH);
+            cnv.parent('p5canvas');
+            // Adapt to mobile
+            if (windowWidth < 760) {
+                const scale = (windowWidth - 32) / canvasW;
+                cnv.style('width', (canvasW * scale) + 'px');
+                cnv.style('height', (canvasH * scale) + 'px');
+            }
+            background(...COLORS.bg);
+            parseDepartments();
+            computeNeighbors();
+            drawSilhouette();
+        }
+
+        function flatten(coords) {
+            const result = [];
+            (function recurse(c) {
+                if (Array.isArray(c) && c.length > 0) {
+                    if (typeof c[0] === 'number') {
+                        if (c.length === 2) result.push(c);
+                    } else {
+                        for (const x of c) recurse(x);
+                    }
+                }
+            })(coords);
+            return result;
+        }
+
+        function parseDepartments() {
+            // Compute bbox over all features
+            let allCoords = [];
+            for (const f of geojson.features) {
+                allCoords = allCoords.concat(flatten(f.geometry.coordinates));
+            }
+            const lons = allCoords.map(c => c[0]);
+            const lats = allCoords.map(c => c[1]);
+            bbox = {
+                minLon: Math.min(...lons),
+                maxLon: Math.max(...lons),
+                minLat: Math.min(...lats),
+                maxLat: Math.max(...lats),
+            };
+
+            // Parse each feature into a department object
+            for (const f of geojson.features) {
+                // Build a simplified polygon (sample every Nth point for perf)
+                const allPolyPoints = flatten(f.geometry.coordinates);
+                const sampleStep = Math.max(1, Math.floor(allPolyPoints.length / 80));
+                const polygon = [];
+                for (let i = 0; i < allPolyPoints.length; i += sampleStep) {
+                    polygon.push(geoToScreen(allPolyPoints[i][0], allPolyPoints[i][1]));
+                }
+                const cLon = allPolyPoints.reduce((s, c) => s + c[0], 0) / allPolyPoints.length;
+                const cLat = allPolyPoints.reduce((s, c) => s + c[1], 0) / allPolyPoints.length;
+                const centroid = geoToScreen(cLon, cLat);
+
+                depts.push({
+                    code: f.properties.code,
+                    name: f.properties.nom,
+                    polygon,
+                    centroid,
+                    state: 'silent',
+                    signalTime: -10000,
+                    pulseStart: -10000,
+                    neighbors: [],
+                });
+            }
+        }
+
+        function geoToScreen(lon, lat) {
+            const pad = 36;
+            const availW = canvasW - 2 * pad;
+            const availH = canvasH - 2 * pad - 30;
+            const lonRange = bbox.maxLon - bbox.minLon;
+            const latRange = bbox.maxLat - bbox.minLat;
+            const avgLat = (bbox.minLat + bbox.maxLat) / 2;
+            const lonScale = Math.cos(avgLat * Math.PI / 180);
+            const scaledLonRange = lonRange * lonScale;
+            const scale = Math.min(availW / scaledLonRange, availH / latRange);
+            const x = pad + (lon - bbox.minLon) * lonScale * scale + (availW - scaledLonRange * scale) / 2;
+            const y = pad + (bbox.maxLat - lat) * scale + (availH - latRange * scale) / 2 + 12;
+            return { x, y };
+        }
+
+        function computeNeighbors() {
+            for (const d of depts) {
+                const dists = depts.map(other => ({
+                    other,
+                    dist: other === d ? Infinity :
+                        Math.hypot(other.centroid.x - d.centroid.x, other.centroid.y - d.centroid.y)
+                }));
+                dists.sort((a, b) => a.dist - b.dist);
+                d.neighbors = dists.slice(0, CONFIG.kNeighbors).map(x => x.other);
+            }
+        }
+
+        function drawSilhouette() {
+            stroke(...COLORS.outline);
+            strokeWeight(0.7);
+            noFill();
+            for (const d of depts) {
+                beginShape();
+                for (const p of d.polygon) vertex(p.x, p.y);
+                endShape(CLOSE);
+            }
+        }
+
+        function emit(dept, delay) {
+            setTimeout(() => {
+                if (dept.state !== 'silent') return;
+                dept.state = 'active';
+                dept.signalTime = millis();
+                dept.pulseStart = millis();
+                for (const n of dept.neighbors) {
+                    if (Math.random() < CONFIG.propProb) {
+                        emit(n, CONFIG.propDelayMin + Math.random() * (CONFIG.propDelayMax - CONFIG.propDelayMin));
+                    }
+                }
+            }, delay || 0);
+        }
+
+        function draw() {
+            // Trail effect (palimpsest)
+            noStroke();
+            fill(...COLORS.bg, 16);
+            rect(0, 0, canvasW, canvasH);
+
+            // Draw silhouette outlines on top of trail (subtle)
+            stroke(0, 0, 0, 18);
+            strokeWeight(0.6);
+            noFill();
+            for (const d of depts) {
+                beginShape();
+                for (const p of d.polygon) vertex(p.x, p.y);
+                endShape(CLOSE);
+            }
+
+            // Update states
+            const now = millis();
+            for (const d of depts) {
+                if (d.state === 'active' && now - d.signalTime > CONFIG.activeDuration) {
+                    d.state = 'decayed';
+                }
+                if (d.state === 'decayed' && now - d.signalTime > CONFIG.activeDuration + CONFIG.decayDuration) {
+                    d.state = 'silent';
+                }
+            }
+
+            // Draw nodes
+            for (const d of depts) {
+                const elapsed = now - d.signalTime;
+                const pulse = now - d.pulseStart;
+
+                if (d.state === 'silent') {
+                    fill(...COLORS.silent);
+                    noStroke();
+                    circle(d.centroid.x, d.centroid.y, 3.5);
+                } else if (d.state === 'active') {
+                    // Outer pulse ring
+                    const t = pulse / CONFIG.activeDuration;
+                    const rad = 6 + CONFIG.pulseMaxRadius * (1 - Math.exp(-t * 3));
+                    const ringAlpha = 110 * Math.max(0, 1 - t);
+                    noFill();
+                    stroke(180, 83, 9, ringAlpha);
+                    strokeWeight(1.4);
+                    circle(d.centroid.x, d.centroid.y, rad);
+                    // Inner solid dot
+                    fill(...COLORS.active);
+                    noStroke();
+                    circle(d.centroid.x, d.centroid.y, 8);
+                } else if (d.state === 'decayed') {
+                    const t = (elapsed - CONFIG.activeDuration) / CONFIG.decayDuration;
+                    const a = 200 * Math.max(0, 1 - t);
+                    fill(217, 119, 87, a);
+                    noStroke();
+                    circle(d.centroid.x, d.centroid.y, 5 + 3 * (1 - t));
+                }
+            }
+        }
+
+        function mousePressed() {
+            // Throttle clicks (avoid hammering)
+            if (millis() - lastEmitTime < 500) return;
+            lastEmitTime = millis();
+
+            // Find closest department
+            let closest = null;
+            let minDist = Infinity;
+            for (const d of depts) {
+                const dist = Math.hypot(d.centroid.x - mouseX, d.centroid.y - mouseY);
+                if (dist < minDist) {
+                    minDist = dist;
+                    closest = d;
+                }
+            }
+            if (closest && minDist < 60) {
+                // Reset all
+                for (const d of depts) {
+                    d.state = 'silent';
+                    d.signalTime = -10000;
+                }
+                background(...COLORS.bg);
+                emit(closest, 0);
+                // Fade out the hint after first click
+                if (!hintFading) {
+                    hintFading = true;
+                    const hint = document.getElementById('hint');
+                    if (hint) hint.style.transition = 'opacity 0.8s';
+                    setTimeout(() => { if (hint) hint.style.opacity = '0'; }, 800);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
