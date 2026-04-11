@@ -458,25 +458,25 @@ code {
 .footer-eye {
     text-align: center;
     margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 .footer-eye-img {
-    width: 100px;
-    max-width: 30vw;
+    width: 72px;
+    max-width: 18vw;
     height: auto;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     display: inline-block;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
 }
 .footer-eye-tagline {
     font-family: 'El Messiri', serif;
-    font-size: 0.9rem;
+    font-size: 0.78rem;
     color: var(--accent);
     letter-spacing: 0.08em;
     margin: 0;
-    opacity: 0.85;
+    opacity: 0.75;
 }
 @media (prefers-reduced-motion: reduce) {
     .footer-eye-img { animation: none !important; }
