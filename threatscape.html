@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threatscape &mdash; Tawiza</title>
+    <meta name="description" content="L'oeil qui dort jamais. Sauf 0,4 seconde toutes les 3 secondes. Une piece d'art generatif Tawiza.">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="canonical" href="https://tawiza.fr/threatscape.html">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=El+Messiri:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0a0a0a;
+            --bg-soft: #141414;
+            --text: #e7e5e4;
+            --text-dim: #78716c;
+            --accent: #d4a843;
+            --accent-hot: #b45309;
+            --alert: #C1554D;
+            --separator: rgba(231, 229, 228, 0.06);
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'JetBrains Mono', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        a { color: var(--accent); text-decoration: none; }
+
+        /* === NAV minimaliste pour cette page noire === */
+        .nav-dark {
+            position: fixed; top: 0; left: 0; right: 0;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.2rem 2rem;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--separator);
+            z-index: 100;
+            font-size: 0.78rem;
+            letter-spacing: 0.06em;
+        }
+        .nav-dark a { color: var(--text-dim); transition: color 0.2s; }
+        .nav-dark a:hover { color: var(--accent); }
+        .nav-dark .brand { color: var(--text); font-weight: 600; }
+        .nav-dark .links { display: flex; gap: 1.5rem; }
+
+        /* === Hero header === */
+        .threat-header {
+            text-align: center;
+            padding: 6rem 2rem 2rem;
+            position: relative;
+            z-index: 5;
+        }
+        .threat-eyebrow {
+            font-size: 0.7rem;
+            color: var(--accent);
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+        .threat-header h1 {
+            font-family: 'El Messiri', serif;
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+        .threat-header .subtitle {
+            font-family: 'El Messiri', serif;
+            font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+            color: var(--text-dim);
+            font-style: italic;
+            max-width: 540px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* === Main grid : 3 columns x 2 rows + center eye === */
+        .threat-stage {
+            position: relative;
+            max-width: 1300px;
+            margin: 2rem auto 4rem;
+            padding: 0 2rem;
+            min-height: 680px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1.5rem;
+            min-height: 680px;
+        }
+        .thread {
+            background: var(--bg-soft);
+            border: 1px solid var(--separator);
+            border-radius: 4px;
+            padding: 1rem 1.1rem;
+            font-size: 0.74rem;
+            line-height: 1.55;
+            color: var(--text);
+            overflow: hidden;
+            position: relative;
+            min-height: 200px;
+        }
+        .thread-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--separator);
+        }
+        .thread-header .topic { font-weight: 700; }
+        .thread-header .pid { color: var(--text-dim); font-weight: 400; opacity: 0.6; }
+        .thread-log {
+            font-size: 0.72rem;
+            color: var(--text);
+            opacity: 0.78;
+            line-height: 1.6;
+        }
+        .thread-log .ts { color: var(--text-dim); opacity: 0.6; }
+        .thread-log .num { color: var(--accent); font-weight: 500; }
+        .thread-log .alert { color: var(--alert); font-weight: 700; }
+        .thread-log .ok { color: #788c5d; }
+        .thread-log .line { display: block; }
+
+        /* === Eye floating center === */
+        .eye-anchor {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 280px; height: 84px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            z-index: 10;
+            background: radial-gradient(ellipse at center,
+                rgba(10, 10, 10, 0.95) 0%,
+                rgba(10, 10, 10, 0.85) 40%,
+                rgba(10, 10, 10, 0) 80%);
+            padding: 30px 40px;
+        }
+        .eye-anchor img {
+            width: 100%; height: auto;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            filter: drop-shadow(0 0 20px rgba(212, 168, 67, 0.25));
+        }
+
+        /* === Glitch effect === */
+        .glitch .thread-log {
+            animation: glitch 0.4s steps(2, end);
+        }
+        .glitch .thread {
+            border-color: var(--alert);
+            box-shadow: inset 0 0 20px rgba(193, 85, 77, 0.08);
+        }
+        @keyframes glitch {
+            0%   { transform: translate(0, 0); opacity: 0.78; }
+            10%  { transform: translate(-2px, 1px); opacity: 0.4; }
+            20%  { transform: translate(2px, -1px); opacity: 0.6; }
+            30%  { transform: translate(-1px, 0); opacity: 0.3; }
+            45%  { transform: translate(2px, 1px); opacity: 0.7; }
+            60%  { transform: translate(-2px, -1px); opacity: 0.5; }
+            80%  { transform: translate(1px, 0); opacity: 0.6; }
+            100% { transform: translate(0, 0); opacity: 0.78; }
+        }
+        @keyframes scanline {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 0.04; }
+        }
+        .threat-stage::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(231, 229, 228, 0.01) 2px,
+                rgba(231, 229, 228, 0.01) 4px
+            );
+            pointer-events: none;
+            animation: scanline 4s ease-in-out infinite;
+        }
+
+        /* === Tagline live === */
+        .live-tagline {
+            text-align: center;
+            margin: 1rem auto 3rem;
+            max-width: 540px;
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            opacity: 0.6;
+            letter-spacing: 0.05em;
+        }
+        .live-dot {
+            display: inline-block;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--alert);
+            margin-right: 0.4rem;
+            vertical-align: middle;
+            animation: livePulse 1.5s ease-in-out infinite;
+        }
+        @keyframes livePulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* === Manifesto === */
+        .manifesto {
+            max-width: 640px;
+            margin: 4rem auto 3rem;
+            padding: 3rem 2rem 0;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            color: var(--text-dim);
+            font-family: 'El Messiri', serif;
+            font-style: italic;
+            border-top: 1px solid var(--separator);
+            text-align: justify;
+        }
+        .manifesto p { margin-bottom: 1.4rem; }
+        .manifesto strong { color: var(--text); font-style: normal; font-weight: 600; }
+        .manifesto a { border-bottom: 1px dotted var(--accent); }
+
+        /* === Footer === */
+        .threat-footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--separator);
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            opacity: 0.5;
+        }
+        .threat-footer a { color: var(--text-dim); margin: 0 0.5rem; }
+        .threat-footer a:hover { color: var(--accent); }
+
+        /* === Mobile === */
+        @media (max-width: 880px) {
+            .grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(6, auto);
+            }
+            .eye-anchor {
+                position: relative;
+                top: auto; left: auto;
+                transform: none;
+                margin: 1.5rem auto;
+                background: transparent;
+            }
+            .threat-header { padding: 5rem 1rem 1.5rem; }
+            .thread { min-height: 150px; }
+            .threat-stage { padding: 0 1rem; min-height: auto; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-dark" role="navigation">
+        <a href="/" class="brand">TAWIZA</a>
+        <div class="links">
+            <a href="/analyses/">Analyses</a>
+            <a href="/manifeste.html">Manifeste</a>
+            <a href="/a-propos.html">&Agrave; propos</a>
+        </div>
+    </nav>
+
+    <header class="threat-header">
+        <div class="threat-eyebrow">tawiza generative art &middot; piece 03</div>
+        <h1>Threatscape</h1>
+        <p class="subtitle">L'&oelig;il qui dort jamais. Sauf 0,4 seconde toutes les 3 secondes.</p>
+    </header>
+
+    <p class="live-tagline">
+        <span class="live-dot"></span>
+        6 menaces en parall&egrave;le &middot; donn&eacute;es publiques fran&ccedil;aises &middot; observation continue
+    </p>
+
+    <section class="threat-stage">
+        <div class="grid" id="grid">
+            <div class="thread" data-topic="climat">
+                <div class="thread-header"><span class="topic">[climat]</span><span class="pid">pid 0</span></div>
+                <div class="thread-log"></div>
+            </div>
+            <div class="thread" data-topic="industrie">
+                <div class="thread-header"><span class="topic">[industrie]</span><span class="pid">pid 1</span></div>
+                <div class="thread-log"></div>
+            </div>
+            <div class="thread" data-topic="information">
+                <div class="thread-header"><span class="topic">[information]</span><span class="pid">pid 2</span></div>
+                <div class="thread-log"></div>
+            </div>
+            <div class="thread" data-topic="demographie">
+                <div class="thread-header"><span class="topic">[demographie]</span><span class="pid">pid 3</span></div>
+                <div class="thread-log"></div>
+            </div>
+            <div class="thread" data-topic="democratie">
+                <div class="thread-header"><span class="topic">[democratie]</span><span class="pid">pid 4</span></div>
+                <div class="thread-log"></div>
+            </div>
+            <div class="thread" data-topic="infrastructure">
+                <div class="thread-header"><span class="topic">[infrastructure]</span><span class="pid">pid 5</span></div>
+                <div class="thread-log"></div>
+            </div>
+        </div>
+
+        <div class="eye-anchor">
+            <img src="img/tawiza-eye.svg" alt="L'oeil Tawiza">
+        </div>
+    </section>
+
+    <div class="manifesto">
+        <p><strong>Six menaces tournent en parall&egrave;le sur la m&ecirc;me machine.</strong> Climat, industrie, information, d&eacute;mographie, d&eacute;mocratie, infrastructure. Elles ne se parlent pas. Elles ne se voient pas. Mais elles partagent le m&ecirc;me territoire.</p>
+
+        <p>Tawiza est l'&oelig;il qui les regarde toutes &agrave; la fois. Mais m&ecirc;me l'&oelig;il qui dort jamais cligne. <strong>0,4 seconde toutes les 3 secondes.</strong> Et c'est dans ces 0,4 secondes que les threads d&eacute;rivent, glitchent, perdent une ligne, en r&eacute;cup&egrave;rent une autre. L'observation cr&eacute;e l'ordre. L'absence d'observation laisse le bruit.</p>
+
+        <p>L'inspiration vient de <em>The Persistence of Chaos</em> de Guo O Dong (2019)&nbsp;: un ordinateur portable infect&eacute; par six malwares dangereux, vendu comme &oelig;uvre d'art. Le concept&nbsp;: isoler plusieurs menaces dans un m&ecirc;me contenant pour qu'on les voie ensemble, pas s&eacute;par&eacute;ment. Ici, le contenant n'est pas une machine, c'est un territoire. Et les menaces ne sont pas des malwares, ce sont des dynamiques territoriales que les bases publiques fran&ccedil;aises documentent en temps r&eacute;el.</p>
+
+        <p>Les chiffres affich&eacute;s sont r&eacute;els. Ils viennent de <a href="/analyses/risque-argile-silence-communal.html">l'article RGA</a>, de <a href="/analyses/dunkerque-vulnerabilite-energetique.html">l'article Dunkerque</a>, des bases <a href="https://www.georisques.gouv.fr">G&eacute;orisques</a>, INSEE, BODACC, OFGL, CCR, du Code de l'environnement, des rapports parlementaires Ledoux et S&eacute;nat. Ils ne sont pas g&eacute;n&eacute;r&eacute;s par un algorithme ni embellish&eacute;s. Ils sont seulement choreographi&eacute;s dans le temps de l'&oelig;il.</p>
+
+        <p>Cette pi&egrave;ce d&eacute;finit l'identit&eacute; visuelle de Tawiza&nbsp;: <strong>l'observation continue de plusieurs menaces qui se croisent sans se parler</strong>. C'est notre travail. C'est notre m&eacute;thode.</p>
+    </div>
+
+    <footer class="threat-footer">
+        <a href="/">tawiza.fr</a>
+        &middot;
+        <a href="/analyses/">analyses</a>
+        &middot;
+        <a href="/manifeste.html">manifeste</a>
+        &middot;
+        <a href="https://github.com/tawiza/tawiza-website" target="_blank" rel="noopener">code source</a>
+    </footer>
+
+    <script>
+    // ════════════════════════════════════════════════════════════════
+    // Threatscape - six threads, real data, eye-synchronised glitch
+    // No innerHTML - uses createElement + textContent for safety
+    // ════════════════════════════════════════════════════════════════
+
+    const THREADS = {
+        climat: [
+            { ts: '2003-08', txt: 'canicule [+15000 deces estimes]', cls: 'alert' },
+            { ts: '2018-12', txt: '4092 catnat secheresse [annee record]', cls: 'num' },
+            { ts: '2019-12', txt: '3330 catnat secheresse', cls: 'num' },
+            { ts: '2020-12', txt: '2612 catnat secheresse', cls: 'num' },
+            { ts: '2022-12', txt: '7946 catnat secheresse [+89% vs 2003]', cls: 'alert' },
+            { ts: '2023-12', txt: '1274 catnat secheresse', cls: 'num' },
+            { ts: '2025-08', txt: '38 deg en septembre [Loiret]', cls: 'num' },
+            { ts: '2024-Q3', txt: 'CCR cumule sinistres RGA = 1,5 Md/an', cls: 'alert' },
+            { ts: '2025-12', txt: 'arrete CatNat etendu 55% territoire', cls: 'num' },
+            { ts: '2026-04', txt: 'observation continue. signal: stable.', cls: 'ok' },
+        ],
+        industrie: [
+            { ts: '2024-Q1', txt: 'BODACC -39% emploi CDI Dunkerque/3mois', cls: 'alert' },
+            { ts: '2024-04', txt: 'Verkor 1200 promis, ~300 crees', cls: 'num' },
+            { ts: '2024-06', txt: 'ProLogium permis construire annee 4', cls: 'num' },
+            { ts: '2024-Q3', txt: 'AESC: encore aux permis', cls: 'num' },
+            { ts: '2024-12', txt: '10900 emplois exposes detroit Ormuz', cls: 'alert' },
+            { ts: '2025-02', txt: '5400 emplois batterie annonces', cls: 'num' },
+            { ts: '2025-Q4', txt: 'Choc Ormuz hypothese: -18% emploi local', cls: 'alert' },
+            { ts: '2026-03', txt: 'Dunkerque port: trafic conteneurs -3%', cls: 'num' },
+            { ts: '2026-04', txt: 'observation continue. signal: tendu.', cls: 'ok' },
+        ],
+        information: [
+            { ts: '1995-01', txt: 'L.125-2 CE: DICRIM obligatoire', cls: 'num' },
+            { ts: '2010-02', txt: 'Xynthia: 29 morts La Faute-sur-Mer', cls: 'alert' },
+            { ts: '2013-12', txt: '534 DICRIM publies dans communes RGA', cls: 'num' },
+            { ts: '2018-12', txt: '129 DICRIM publies (effondrement 4x)', cls: 'alert' },
+            { ts: '2020-12', txt: '182 DICRIM publies', cls: 'num' },
+            { ts: '2022-12', txt: '108 DICRIM publies (annee record CatNat)', cls: 'alert' },
+            { ts: '2023-12', txt: '91 DICRIM publies', cls: 'num' },
+            { ts: '2024-12', txt: '80 DICRIM publies', cls: 'num' },
+            { ts: '2025-12', txt: '30 DICRIM publies. 8031 communes silencieuses.', cls: 'alert' },
+            { ts: '2025-12', txt: '3902 communes prevenues TIM, sans suite', cls: 'alert' },
+            { ts: '2026-04', txt: 'observation continue. signal: critique.', cls: 'alert' },
+        ],
+        demographie: [
+            { ts: '2017-01', txt: 'Lievin 30877 hab', cls: 'num' },
+            { ts: '2024-01', txt: 'Lievin 30521 hab [-1.2% sur 7 ans]', cls: 'num' },
+            { ts: '2024-Q2', txt: 'Henin-Beaumont +0.8% [redynamisation]', cls: 'ok' },
+            { ts: '2024-Q3', txt: 'Clichy-sous-Bois -2.1% jeunes 25-35', cls: 'alert' },
+            { ts: '2025-Q1', txt: 'Dunkerque solde migratoire negatif', cls: 'num' },
+            { ts: '2025-Q2', txt: 'Vieillissement Dordogne 33% +65 ans', cls: 'num' },
+            { ts: '2025-Q3', txt: '12 lits maternite fermes en 2024 [Nord]', cls: 'alert' },
+            { ts: '2026-Q1', txt: 'Bilan INSEE: 14% communes -5% population', cls: 'alert' },
+            { ts: '2026-04', txt: 'observation continue. signal: erosion.', cls: 'num' },
+        ],
+        democratie: [
+            { ts: '2023-04-06', txt: 'PL RGA vote quasi-unanime AN', cls: 'ok' },
+            { ts: '2024-05-30', txt: 'Senat REJETTE PL RGA', cls: 'alert' },
+            { ts: '2024-06', txt: 'abstention municipales partielles 62%', cls: 'alert' },
+            { ts: '2025-Q1', txt: 'rapport Ledoux 30 reco: 2 retenues', cls: 'num' },
+            { ts: '2025-10', txt: 'fonds prevention argile 11 dpts pilotes', cls: 'num' },
+            { ts: '2026-04', txt: 'fonds prevention 6 mois: 0 bilan public', cls: 'alert' },
+            { ts: '2026-06', txt: '[a venir] municipales 1er tour', cls: 'num' },
+            { ts: '2026-04', txt: 'observation continue. signal: opaque.', cls: 'alert' },
+        ],
+        infrastructure: [
+            { ts: '2020-Q4', txt: 'BRGM cartographie RGA 48% territoire', cls: 'num' },
+            { ts: '2026-01-09', txt: 'arrete RGA: 55% territoire metropole', cls: 'alert' },
+            { ts: '2026-Q1', txt: '12,1 millions maisons exposees argile', cls: 'alert' },
+            { ts: '2025-12', txt: '12354 communes exposees [GASPAR]', cls: 'num' },
+            { ts: '2025-12', txt: '8031 communes sans DICRIM (65%)', cls: 'alert' },
+            { ts: '2025-12', txt: 'Marne 2.6% conformite. Pas-de-Calais 1.3%', cls: 'alert' },
+            { ts: '2025-12', txt: 'Gard 99.4% [animation prefectorale]', cls: 'ok' },
+            { ts: '2026-Q1', txt: 'CCR projection 2020-2050: 43 Mds EUR', cls: 'alert' },
+            { ts: '2026-04', txt: 'observation continue. signal: persistant.', cls: 'alert' },
+        ],
+    };
+
+    const threads = document.querySelectorAll('.thread');
+    const grid = document.getElementById('grid');
+    const states = {};
+
+    function buildLineNode(item) {
+        const line = document.createElement('span');
+        line.className = 'line';
+        const tsSpan = document.createElement('span');
+        tsSpan.className = 'ts';
+        tsSpan.textContent = item.ts;
+        const space = document.createTextNode(' ');
+        const contentSpan = document.createElement('span');
+        contentSpan.className = item.cls;
+        contentSpan.textContent = '> ' + item.txt;
+        line.appendChild(tsSpan);
+        line.appendChild(space);
+        line.appendChild(contentSpan);
+        return line;
+    }
+
+    function initThread(threadEl) {
+        const topic = threadEl.dataset.topic;
+        const log = threadEl.querySelector('.thread-log');
+        const data = THREADS[topic];
+        states[topic] = {
+            log,
+            data,
+            index: 0,
+            lines: [],
+            maxLines: 8,
+        };
+        for (let i = 0; i < 6; i++) {
+            tickThread(topic);
+        }
+    }
+
+    function tickThread(topic) {
+        const s = states[topic];
+        const item = s.data[s.index % s.data.length];
+        s.index++;
+        const line = buildLineNode(item);
+        s.lines.push(line);
+        if (s.lines.length > s.maxLines) {
+            const removed = s.lines.shift();
+            removed.remove();
+        }
+        s.log.appendChild(line);
+    }
+
+    function tickAll() {
+        const topics = Object.keys(THREADS);
+        const count = 1 + Math.floor(Math.random() * 2);
+        for (let i = 0; i < count; i++) {
+            tickThread(topics[Math.floor(Math.random() * topics.length)]);
+        }
+    }
+
+    function applyGlitch() {
+        grid.classList.add('glitch');
+        setTimeout(() => grid.classList.remove('glitch'), 380);
+    }
+
+    // === Initialise ===
+    threads.forEach(initThread);
+
+    // === Heartbeat: tick threads every 1.2s ===
+    setInterval(tickAll, 1200);
+
+    // === Glitch sync with eye blink ===
+    // Eye SMIL cycle = 3000ms. Glitch fires once per cycle, near the
+    // start (when the eye is in the CLOSED frame, ~0-400ms in cycle).
+    setInterval(applyGlitch, 3000);
+    </script>
+</body>
+</html>
