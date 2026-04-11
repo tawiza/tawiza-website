@@ -462,21 +462,21 @@ code {
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 .footer-eye-img {
-    width: 72px;
-    max-width: 18vw;
+    width: 56px;
+    max-width: 14vw;
     height: auto;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     display: inline-block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 .footer-eye-tagline {
     font-family: 'El Messiri', serif;
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     color: var(--accent);
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     margin: 0;
-    opacity: 0.75;
+    opacity: 0.7;
 }
 @media (prefers-reduced-motion: reduce) {
     .footer-eye-img { animation: none !important; }
