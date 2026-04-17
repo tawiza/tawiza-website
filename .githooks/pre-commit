@@ -15,6 +15,9 @@ STAGED=$(git diff --cached --name-only --diff-filter=ACM | \
     grep -v '\.githooks/' | \
     grep -v '^\.github/scripts/check-exposure' | \
     grep -v '^_notebooks-src/' | \
+    grep -v '_files/libs/' | \
+    grep -v '^notebooks/.*/assets/' | \
+    grep -vE '\.min\.(css|js)$' | \
     grep -vE '\.(jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|pdf)$')
 if [ -z "$STAGED" ]; then
     exit 0
