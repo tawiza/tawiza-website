@@ -1,0 +1,69 @@
+name: Build marimo notebooks
+
+# Rebuilds notebook WASM exports when a .py in _notebooks-src/ changes.
+# Disabled by default (workflow_dispatch only). Uncomment the push trigger
+# below to enable auto-rebuild on commits.
+#
+# Security note: no untrusted event payloads (issue titles, PR bodies, etc.)
+# are interpolated into run: commands. Only trusted file contents are read.
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches: [main]
+  #   paths:
+  #     - '_notebooks-src/**.py'
+  #     - '.github/workflows/notebooks.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install marimo
+        run: uv tool install marimo --python 3.12
+
+      - name: Export each notebook to WASM
+        run: |
+          set -euo pipefail
+          if [[ ! -d _notebooks-src ]]; then
+            echo "No _notebooks-src/ directory, nothing to build."
+            exit 0
+          fi
+          for src in _notebooks-src/*.py; do
+            [[ -f "$src" ]] || continue
+            slug=$(basename "$src" .py)
+            outdir="notebooks/${slug}"
+            mkdir -p "$outdir"
+            echo "Building $slug..."
+            uv tool run marimo export html-wasm "$src" -o "${outdir}/index.html" --mode edit
+          done
+
+      - name: Remove marimo internal files from public dirs
+        run: |
+          find notebooks -name CLAUDE.md -delete
+          find notebooks -name README.md -delete
+          find notebooks -name .gitignore -delete
+          find notebooks -name .marimo -type d -exec rm -rf {} + 2>/dev/null || true
+
+      - name: Inject Tawiza branding
+        run: python3 .github/scripts/brand-notebooks.py
+
+      - name: Commit rebuilt notebooks
+        run: |
+          git config user.name "tawiza-bot"
+          git config user.email "bot@tawiza.fr"
+          git add notebooks/
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(notebooks): rebuild WASM exports"
+            git push
+          fi
