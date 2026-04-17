@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tawiza">
+
+<title>La dette est-elle le vrai problème ?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+
+/* Iframes viz responsive (sankey, comparateur, trajectoire, simulation) */
+iframe[src$=".html"] {
+    width: 100% !important; max-width: 100% !important;
+    border: 1px solid rgba(29,53,87,.10) !important;
+    border-radius: 6px !important;
+    margin: 16px 0 !important;
+}
+@media (max-width: 768px) {
+    iframe[src$=".html"] {
+        height: 420px !important;  /* plus compact sur tablette */
+    }
+}
+@media (max-width: 640px) {
+    iframe[src$=".html"] {
+        height: 360px !important;  /* adapte mobile */
+    }
+    /* Callouts Quarto : marges réduites */
+    div.callout, .callout-warning, .callout-note, .callout-important { margin: 14px 0 !important; padding: 10px !important; }
+    div.callout .callout-body-container { padding: 8px !important; }
+    /* Table mermaid : scroll horizontal */
+    .cell-output-display, div.sourceCode, pre { overflow-x: auto !important; max-width: 100% !important; }
+    svg.mermaid, svg[id^="mermaid-"] { max-width: 100% !important; height: auto !important; }
+    /* Grid "Trois chiffres" : 1 colonne au lieu de 3 */
+    .grid { display: block !important; }
+    .grid .g-col-4 { margin-bottom: 12px !important; }
+    /* Typo corps plus aérée */
+    p, li { font-size: .95rem !important; line-height: 1.6 !important; }
+    h1 { font-size: 1.6rem !important; }
+    h2 { font-size: 1.3rem !important; }
+    h3 { font-size: 1.1rem !important; }
+    /* Tableau responsive : scroll horizontal */
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+}
+
+
+/* tawiza-iframe-mobile-strong */
+@media (max-width: 768px) {
+    iframe[src$=".html"] {
+        height: 68vh !important;
+        min-height: 420px !important;
+        max-height: 560px !important;
+    }
+}
+@media (max-width: 640px) {
+    iframe[src$=".html"] {
+        height: 72vh !important;
+        min-height: 440px !important;
+        max-height: 520px !important;
+    }
+}
+
+</style>
+
+
+<script src="acte2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="acte2_files/libs/quarto-html/quarto.js"></script>
+<script src="acte2_files/libs/quarto-html/popper.min.js"></script>
+<script src="acte2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="acte2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="acte2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="acte2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="acte2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="acte2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="acte2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<meta name="mermaid-theme" content="default">
+<script src="acte2_files/libs/quarto-diagram/mermaid.min.js"></script>
+<script src="acte2_files/libs/quarto-diagram/mermaid-init.js"></script>
+<link href="acte2_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="style.css">
+<!-- tawiza-branding -->
+<link rel="stylesheet" href="/assets/fonts/tawiza-fonts.css">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.outbound-links.js"></script>
+<style>
+    body { font-family: "Inter", system-ui, sans-serif !important; background: #fafaf9; color: #1D3557; }
+    h1, h2, h3, h4 { font-family: "El Messiri", serif !important; color: #1D3557; }
+    a { color: #b45309; }
+    .tawiza-bar {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+        background: #fafaf9; border-bottom: 1px solid rgba(29,53,87,.15);
+        padding: 8px 20px; font-family: "Inter", sans-serif; font-size: 13px;
+        color: #1D3557; display: flex; justify-content: space-between; align-items: center;
+        gap: 8px;
+    }
+    .tawiza-bar a { color: #b45309; text-decoration: none; font-weight: 600; }
+    .tawiza-bar a:hover { text-decoration: underline; }
+    body { padding-top: 42px !important; }
+    /* Quarto TOC – override pour style Tawiza sticky */
+    #quarto-margin-sidebar, .quarto-margin-sidebar { top: 60px !important; }
+    nav#TOC {
+        font-family: "Inter", sans-serif; font-size: .88rem;
+        border-left: 2px solid rgba(180,83,9,.15);
+        padding: 8px 0 8px 14px;
+    }
+    nav#TOC h2 {
+        font-family: "El Messiri", serif !important;
+        font-size: .95rem !important;
+        color: #b45309 !important;
+        margin: 0 0 12px !important;
+        text-transform: uppercase; letter-spacing: .06em;
+    }
+    nav#TOC a.nav-link { color: #5B7BA5; padding: 4px 0; border: none; display: block; }
+    nav#TOC a.nav-link.active { color: #b45309; font-weight: 600; border-left: 3px solid #b45309; padding-left: 8px; margin-left: -10px; }
+    nav#TOC a.nav-link:hover { color: #b45309; }
+    /* Footnotes Tawiza */
+    .tawiza-footnote-ref {
+        font-size: .72em; color: #b45309; text-decoration: none;
+        font-weight: 600; vertical-align: super; padding: 0 1px;
+    }
+    .tawiza-footnote-ref:hover { text-decoration: underline; }
+    section.tawiza-footnotes {
+        margin-top: 48px; padding-top: 18px;
+        border-top: 1px solid rgba(29,53,87,.15);
+        font-size: .88rem; color: #5B7BA5;
+    }
+    section.tawiza-footnotes h3 {
+        font-family: "El Messiri", serif !important;
+        color: #b45309 !important; font-size: 1.05rem;
+        text-transform: uppercase; letter-spacing: .06em;
+    }
+    section.tawiza-footnotes ol { padding-left: 20px; }
+    section.tawiza-footnotes li { margin-bottom: 8px; line-height: 1.5; }
+    section.tawiza-footnotes li a { word-break: break-all; }
+    .tawiza-simul-cta {
+        display: inline-block; margin: 16px 0; padding: 10px 18px;
+        background: #b45309; color: #fff !important; border-radius: 6px;
+        text-decoration: none; font-weight: 600;
+    }
+    .tawiza-simul-cta:hover { background: #92400e; }
+    @media (max-width: 640px) {
+        .tawiza-bar { font-size: 11px !important; padding: 6px 10px !important; }
+        .tawiza-bar > span:last-child { display: none !important; }
+        body { padding-top: 36px !important; }
+        nav#TOC { display: none !important; } /* TOC caché mobile, toc-tools suffit */
+    }
+</style>
+
+</head>
+
+<body><div class="tawiza-bar">
+    <span><a href="/">Tawiza</a> &middot; <a href="/articles/">Articles</a> &middot; <a href="/notebooks/">Notebooks</a></span>
+    <span>Feuilleton Paris v&eacute;lo 2026</span>
+</div>
+
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sommaire</h2>
+   
+  <ul>
+  <li><a href="#trois-chiffres" id="toc-trois-chiffres" class="nav-link active" data-scroll-target="#trois-chiffres">Trois chiffres</a></li>
+  <li><a href="#cest-rien" id="toc-cest-rien" class="nav-link" data-scroll-target="#cest-rien">“C’est rien”</a></li>
+  <li><a href="#la-courbe" id="toc-la-courbe" class="nav-link" data-scroll-target="#la-courbe">La courbe</a></li>
+  <li><a href="#ce-que-mesure-18-ans" id="toc-ce-que-mesure-18-ans" class="nav-link" data-scroll-target="#ce-que-mesure-18-ans">Ce que mesure “18 ans”</a></li>
+  <li><a href="#cest-bizarre" id="toc-cest-bizarre" class="nav-link" data-scroll-target="#cest-bizarre">“C’est bizarre”</a></li>
+  <li><a href="#paris-comparée-brutalement" id="toc-paris-comparée-brutalement" class="nav-link" data-scroll-target="#paris-comparée-brutalement">Paris comparée, brutalement</a></li>
+  <li><a href="#la-plomberie-de-la-dette" id="toc-la-plomberie-de-la-dette" class="nav-link" data-scroll-target="#la-plomberie-de-la-dette">La plomberie de la dette</a></li>
+  <li><a href="#cest-trop-tard" id="toc-cest-trop-tard" class="nav-link" data-scroll-target="#cest-trop-tard">“C’est trop tard ?”</a>
+  <ul class="collapse">
+  <li><a href="#checklist-dette" id="toc-checklist-dette" class="nav-link" data-scroll-target="#checklist-dette">Checklist dette</a></li>
+  </ul></li>
+  <li><a href="#ce-que-lacte-3-tranchera" id="toc-ce-que-lacte-3-tranchera" class="nav-link" data-scroll-target="#ce-que-lacte-3-tranchera">Ce que l’Acte 3 tranchera</a></li>
+  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">La dette est-elle le vrai problème ?</h1>
+<p><a class="tawiza-simul-cta" href="/notebooks/acte1-paris-velo/">
+&rarr; Tu pr&eacute;f&egrave;res jouer ? Essayer le simulateur Paris v&eacute;lo 2026-2031
+</a></p>
+
+<p class="subtitle lead">Paris doit 9,4 milliards. Un chiffre qui impose tout, ou qui cache autre chose ?</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur·rice</div>
+    <div class="quarto-title-meta-contents">
+             <p>Tawiza </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">16 avril 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Avertissement
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Acte 2 du feuilleton Tawiza.</strong> Pour le point de départ, voir <a href="acte1.html">Acte 1, Qui paie le vélo à Paris ?</a>. La checklist des signaux sera mise à jour au fur et à mesure.</p>
+</div>
+</div>
+<section id="trois-chiffres" class="level2">
+<h2 class="anchored" data-anchor-id="trois-chiffres">Trois chiffres</h2>
+<div class="grid">
+<section id="section" class="level3 g-col-4">
+<h3 class="anchored" data-anchor-id="section">9,4</h3>
+<p><strong>milliards d’euros</strong> de dette municipale fin 2025, selon la Chambre régionale des comptes.</p>
+</section>
+<section id="x-7" class="level3 g-col-4">
+<h3 class="anchored" data-anchor-id="x-7">x 7</h3>
+<p><strong>en 25 ans</strong> la dette est passée de 1,4 à 9,4 Md€ entre 2001 et 2025.</p>
+</section>
+<section id="section-1" class="level3 g-col-4">
+<h3 class="anchored" data-anchor-id="section-1">&gt; 18</h3>
+<p><strong>ans</strong> capacité de désendettement, au-dessus du seuil dit critique de 15 ans.</p>
+</section>
+</div>
+<hr>
+</section>
+<section id="cest-rien" class="level2">
+<h2 class="anchored" data-anchor-id="cest-rien">“C’est rien”</h2>
+<p>La dette d’une collectivité, c’est la norme. Toutes les grandes villes françaises en ont. Lyon, Marseille, Lille, Bordeaux. Paris n’invente rien.</p>
+<p>Sauf que <strong>Paris est un cas à part</strong>. Ville et département en même temps. Capitale. Budget de 11 milliards d’euros annuels. Statut juridique unique depuis la loi PLM de 1982.</p>
+<p>Alors quand la Chambre régionale des comptes d’Île-de-France publie en septembre 2025 un rapport sur la gestion financière de la Ville, tout le monde lit. Le chiffre retenu par la presse : <strong>9,4 milliards d’euros de dette fin 2025</strong>, projetée à 9,9 milliards en 2026.</p>
+<p><em>C’est rien</em>, dirait-on. Paris est riche. Ses recettes sont massives. Qu’une ville comme elle doive 9 milliards, c’est dans l’ordre des choses.</p>
+<p>Sauf qu’un autre chiffre, plus discret, fait tiquer les analystes : <strong>18 ans de capacité de désendettement</strong>.</p>
+</section>
+<section id="la-courbe" class="level2">
+<h2 class="anchored" data-anchor-id="la-courbe">La courbe</h2>
+<iframe src="trajectoire_dette.html" width="100%" style="height:520px;min-height:320px;border:0;" loading="lazy"></iframe>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Lecture.</strong> La courbe est en milliards d’euros courants. En euros constants (corrigés de l’inflation), le multiplicateur tombe à environ ×4,5. Ce qui reste une accélération marquée.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="ce-que-mesure-18-ans" class="level2">
+<h2 class="anchored" data-anchor-id="ce-que-mesure-18-ans">Ce que mesure “18 ans”</h2>
+<p>La capacité de désendettement rapporte la dette totale à l’épargne brute annuelle. Traduction simple : combien d’années la collectivité devrait-elle consacrer <strong>toute</strong> son épargne à rembourser sa dette, sans plus rien investir.</p>
+<p>Les préfets utilisent cet indicateur comme seuil d’alerte depuis les années 2010. Sous 8 ans, sain. Entre 8 et 12, à surveiller. Entre 12 et 15, alerte. <strong>Au-delà de 15, critique</strong>.</p>
+<p>Paris est à plus de 18.</p>
+<p>Ce seuil n’a rien de scientifique. Il a été fabriqué par Bercy, affiné par la Cour des comptes, puis popularisé auprès des préfets. Il est cité dans les lettres de cadrage budgétaire, les rapports CRC, les notations Moody’s et Fitch.</p>
+<p>Il est devenu un <strong>fait politique</strong>, pas seulement un fait comptable.</p>
+</section>
+<section id="cest-bizarre" class="level2">
+<h2 class="anchored" data-anchor-id="cest-bizarre">“C’est bizarre”</h2>
+<p>Trois éléments méritent qu’on s’y arrête.</p>
+<p><strong>Un.</strong> La dette a été multipliée par sept en 25 ans. De 1,4 milliard en 2001 à 9,4 milliards fin 2025. Sur la même période, l’inflation cumulée est d’environ 55 %. Mécaniquement, la dette en euros constants a été multipliée par <strong>environ 4,5</strong>. Ce n’est pas négligeable, mais c’est beaucoup moins spectaculaire que le x 7 affiché dans les titres.</p>
+<p><strong>Deux.</strong> Le dénominateur compte. 9,4 Md€ de dette divisés par 2,1 millions de Parisiens font <strong>environ 4 476 € par habitant</strong>. Paris collecte en moyenne trois fois plus de recettes par habitant que Marseille (départementalité + fiscalité locale + DMTO sur un marché immobilier dense). Rapporter la dette à la population sans rapporter les recettes donne une image tronquée. Mais comparer quand même, ça donne une idée.</p>
+<p><strong>Trois.</strong> Le seuil des 15 ans ne tient pas compte du <strong>coût de la dette</strong>. Taux moyen de la dette parisienne fin 2024 : environ 2,1 %. La charge d’intérêts annuelle représente moins de 2 % du budget de fonctionnement. En comparaison, une commune endettée à 4 ou 5 % avec 10 ans de capacité de désendettement peut être plus fragile qu’une ville à 18 ans avec des taux bas.</p>
+<p>Personne ne ment. Tout le monde simplifie.</p>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>À vérifier dans l’Acte 2 v2 (enquête terrain).</strong> Le taux moyen cité ici (2,1 %) est à recroiser avec le <a href="https://www.paris.fr/pages/budgets-de-la-ville-retrouvez-toutes-les-infos-27792">Compte administratif 2024 de la Ville de Paris</a> annexe dette. L’hypothèse 4 476 €/habitant est calculée (9,4 Md€ / 2,1 M hab).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="paris-comparée-brutalement" class="level2">
+<h2 class="anchored" data-anchor-id="paris-comparée-brutalement">Paris comparée, brutalement</h2>
+<p>Voici la même division pour quatre autres grandes villes françaises. Sans correction par les recettes. Sans correction par le statut ville-département. Dette directe fin 2024, divisée par le nombre d’habitants.</p>
+<iframe src="comparateur_dette.html" width="100%" style="height:360px;min-height:320px;border:0;" loading="lazy"></iframe>
+<p>Paris est à <strong>×3,75 Lyon</strong>, ×2,5 Lille, ×3 Marseille. Le statut ville-département explique une partie de l’écart (Paris porte les compétences départementales, donc des dépenses sociales que les autres communes n’ont pas). Mais pas un écart de 3,75.</p>
+<p>Une partie vient d’un modèle économique parisien spécifique : plus de recettes, plus de dépenses, plus de besoins d’emprunt pour porter les investissements d’image (Jeux, aménagements patrimoniaux, grands équipements). Une autre partie tient au coût unitaire de tout ce qu’on fait à Paris : quelques kilomètres de voirie refaits coûtent ce qu’une commune moyenne investit en une année.</p>
+<p>Le chiffre n’est pas une condamnation. C’est une position dans un paysage. Paris est seule dans sa zone. C’est en soi une information.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Lecture Hamide, rue de Rivoli.</strong> <em>« La dette ? C’est pas la mienne. Je paie pas d’impôt sur le revenu. Je paie la TVA sur les sandwichs. »</em> Son observation n’est pas un contre-argument. C’est un rappel : la dette municipale est portée par une partie de la population plus étroite qu’on ne dit, et ignorée par une autre. Elle n’est pas un problème abstrait qui concerne « les gens ». Elle concerne des gens précis – les propriétaires, les imposables, les usagers d’équipements. Hamide n’est dans aucune de ces catégories.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="la-plomberie-de-la-dette" class="level2">
+<h2 class="anchored" data-anchor-id="la-plomberie-de-la-dette">La plomberie de la dette</h2>
+<p>Qui a prêté à Paris ? La question est rarement posée.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    V[Ville de Paris]:::ville
+    O[Emprunts obligataires&lt;br/&gt;marches financiers]:::obli
+    CDC[Banque des Territoires&lt;br/&gt;Caisse des Depots]:::pub
+    PB[Prets bancaires&lt;br/&gt;banques privees]:::priv
+    AFL[Agence France Locale]:::pub
+    PUB[Public credits&lt;br/&gt;supranational BEI]:::sup
+
+    O --&gt;|part majeure| V
+    CDC --&gt;|prets bonifies long terme| V
+    PB --&gt;|lignes de credit| V
+    AFL --&gt;|collectivites actionnaires| V
+    PUB --&gt;|projets cibles| V
+
+    classDef ville fill:#C1554D,color:#fff,stroke:#1D3557
+    classDef obli fill:#1D3557,color:#fff,stroke:#1D3557
+    classDef pub fill:#F1A208,color:#1D3557,stroke:#1D3557
+    classDef priv fill:#5B7BA5,color:#fff,stroke:#1D3557
+    classDef sup fill:#457B9D,color:#fff,stroke:#1D3557
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>La majorité de la dette parisienne n’est pas empruntée à des banques. Elle est émise sur les <strong>marchés obligataires</strong>, sous forme d’emprunts publics cotés. Paris vend des obligations à des investisseurs institutionnels, qui les détiennent ou les revendent.</p>
+<p>Ça change tout.</p>
+<p>Une ville qui emprunte à une banque négocie avec un partenaire. Une ville qui émet des obligations négocie avec un marché anonyme, piloté par des notations (Moody’s, Fitch, S&amp;P). <strong>Quand une agence de notation dégrade la note, tous les porteurs d’obligations exigent un rendement plus élevé pour conserver le papier.</strong> Les taux montent. Le coût de la dette monte. L’arbitrage entre investissement et remboursement se durcit.</p>
+<p>Ce qui rend la situation instable n’est pas tant le stock de dette que le <strong>rapport au marché</strong>. Or ce rapport est sensible aux signaux, pas aux ratios.</p>
+</section>
+<section id="cest-trop-tard" class="level2">
+<h2 class="anchored" data-anchor-id="cest-trop-tard">“C’est trop tard ?”</h2>
+<p>Non. Pas encore. Mais plusieurs signaux convergent :</p>
+<ol type="1">
+<li><strong>Le rapport CRC IDF de septembre 2025</strong> est public et chargé de recommandations.</li>
+<li><strong>Les agences de notation</strong> surveillent Paris. Moody’s n’a pas dégradé mais met en garde.</li>
+<li><strong>Les charges de fonctionnement</strong> représentent plus de 85 % des dépenses, laissant peu de marge sur l’investissement.</li>
+<li><strong>Les Jeux Olympiques 2024</strong> ont poussé des dépenses d’investissement qui n’ont pas toutes été refinancées par les recettes attendues.</li>
+<li><strong>Le budget 2026</strong> maintient un investissement élevé (1,6 Md€) mais au prix de nouveaux emprunts.</li>
+</ol>
+<p>Si l’un de ces signaux bascule (dégradation Moody’s, refus préfectoral d’une délibération, hausse des taux), l’arbitrage se déplace. Pas d’un coup. Progressivement. Et la variable d’ajustement la plus visible sera l’investissement discrétionnaire. Dont le plan vélo fait partie.</p>
+<section id="checklist-dette" class="level3">
+<h3 class="anchored" data-anchor-id="checklist-dette">Checklist dette</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Signal</th>
+<th>État au <code>16 avril 2026</code></th>
+<th>Seuil</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Notation Moody’s Paris</td>
+<td>🟡 surveillance</td>
+<td>AA- maintenu</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Notation Fitch Paris</td>
+<td>🟡 surveillance</td>
+<td>AA maintenu</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Capacité de désendettement</td>
+<td>🔴 &gt; 18 ans</td>
+<td>&lt; 15 ans</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Masse salariale / dépenses fonctionnement</td>
+<td>🟠 en cours vérification</td>
+<td>&lt; 60 %</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Taux moyen de la dette parisienne</td>
+<td>🟡 ~2,1 %</td>
+<td>hausse &gt; 50 pb</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Charge annuelle intérêts / recettes</td>
+<td>🟢 &lt; 2 %</td>
+<td>&gt; 4 %</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ce-que-lacte-3-tranchera" class="level2">
+<h2 class="anchored" data-anchor-id="ce-que-lacte-3-tranchera">Ce que l’Acte 3 tranchera</h2>
+<p>Juin 2026, Emmanuel Grégoire vote son premier Budget Primitif. Trois options se dessinent, déjà visibles dans les signaux de l’Acte 1 et de cet Acte 2.</p>
+<ol type="1">
+<li><strong>Continuité</strong> des investissements, pari sur la hausse des recettes DMTO et la stabilité des taux.</li>
+<li><strong>Moratoire ciblé</strong> sur les programmes discrétionnaires (dont plan vélo), pour garder de la marge.</li>
+<li><strong>Réforme structurelle</strong> de la dépense, avec cible masse salariale et externalisations.</li>
+</ol>
+<p>Chacune de ces options a un scénario associé, un coût politique, un impact économique. L’Acte 3 les détaille.</p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Acte 3, Juin 2026 : le choix Grégoire.</strong> Publication dans la fenêtre du premier Budget Primitif de la nouvelle mandature. Les scénarios seront présentés avec leurs triggers observables, pas en prédiction.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="méthodologie" class="level2">
+<h2 class="anchored" data-anchor-id="méthodologie">Méthodologie</h2>
+<p><strong>Sources au 2026-04-17.</strong></p>
+<ul>
+<li><a href="https://www.ccomptes.fr/fr/institutions/chambre-regionale-des-comptes-ile-de-france">Chambre régionale des comptes Île-de-France, rapport gestion Ville de Paris, septembre 2025</a></li>
+<li><a href="https://www.paris.fr/pages/budgets-de-la-ville-retrouvez-toutes-les-infos-27792">Budgets de la Ville, retrouvez toutes les infos, paris.fr</a></li>
+<li><a href="https://mesinfos.fr/75000-paris/municipales-2026-a-paris-la-dette-s-impose-au-coeur-de-la-bataille-electorale-239190.html">Article, Municipales 2026 à Paris : la dette s’impose, Mes Infos</a></li>
+<li><a href="https://lessentieldeleco.fr/3502-paris-asphyxiee-par-les-dettes-le-rapport-qui-accable-anne-hidalgo/">Article, Paris asphyxiée par les dettes, L’Essentiel de l’Éco</a></li>
+</ul>
+<p><strong>À vérifier en enquête terrain pour v2.</strong></p>
+<ul>
+<li>Composition exacte de la dette (part obligataire vs bancaire vs Banque des Territoires), via annexe dette du Compte Administratif 2024.</li>
+<li>Maturité moyenne de la dette et échéancier 2026-2030.</li>
+<li>Comparaison recettes par habitant Paris vs Lyon vs Marseille vs Lille.</li>
+<li>Si existe, rapport Cour des comptes nationale sur la fabrique du seuil 15 ans.</li>
+</ul>
+<p><strong>Limites.</strong></p>
+<ul>
+<li>Le seuil de 15 ans utilisé par la CRC est institutionnel, pas scientifique. On le signale mais on l’applique parce que c’est lui qui pilote les décisions réelles.</li>
+<li>Les comparaisons inter-collectivités sont à prendre avec précaution. Paris est ville-département, pas comparable directement à Lyon ou Marseille.</li>
+<li>La dette cachée (engagements hors bilan, garanties d’emprunts aux bailleurs sociaux) n’est pas dans les 9,4 Md€ du rapport CRC. <a href="https://www.ifrap.org/etat-et-collectivites/ville-de-paris-une-dette-totale-colossale-de-107-mdseu">La Fondation IFRAP</a> chiffre la dette <em>totale</em> (capital + garanties) à <strong>10,7 Md€</strong>. Les chiffres ne sont pas contradictoires, ils mesurent deux périmètres différents. L’écart est politique : selon ce qu’on compte, l’alerte change de couleur.</li>
+</ul>
+<p><strong>Règle éditoriale.</strong> On balise, on ne prédit pas. La dette n’est pas l’ennemi. Ce qui fragilise une ville, c’est le <strong>rapport au marché</strong> qu’elle finit par accepter, et les arbitrages silencieux qu’elle fait en conséquence.</p>
+</section>
+
+<section class="tawiza-footnotes" role="doc-endnotes" aria-label="Références"><h3>R&eacute;f&eacute;rences</h3><ol><li id="ref-1">Compte administratif 2024 de la Ville de Paris &ndash; <a href="https://www.paris.fr/pages/budgets-de-la-ville-retrouvez-toutes-les-infos-27792" target="_blank" rel="noopener">https://www.paris.fr/pages/budgets-de-la-ville-retrouvez-toutes-les-infos-27792</a></li><li id="ref-2">Chambre régionale des comptes Île-de-France, rapport gestion Ville de Paris, septembre 2025 &ndash; <a href="https://www.ccomptes.fr/fr/institutions/chambre-regionale-des-comptes-ile-de-france" target="_blank" rel="noopener">https://www.ccomptes.fr/fr/institutions/chambre-regionale-des-comptes-ile-de-france</a></li><li id="ref-3">Article, Municipales 2026 à Paris : la dette s’impose, Mes Infos &ndash; <a href="https://mesinfos.fr/75000-paris/municipales-2026-a-paris-la-dette-s-impose-au-coeur-de-la-bataille-electorale-239190.html" target="_blank" rel="noopener">https://mesinfos.fr/75000-paris/municipales-2026-a-paris-la-dette-s-impose-au-coeur-de-la-bataille-electorale-239190.html</a></li><li id="ref-4">Article, Paris asphyxiée par les dettes, L’Essentiel de l’Éco &ndash; <a href="https://lessentieldeleco.fr/3502-paris-asphyxiee-par-les-dettes-le-rapport-qui-accable-anne-hidalgo/" target="_blank" rel="noopener">https://lessentieldeleco.fr/3502-paris-asphyxiee-par-les-dettes-le-rapport-qui-accable-anne-hidalgo/</a></li><li id="ref-5">La Fondation IFRAP &ndash; <a href="https://www.ifrap.org/etat-et-collectivites/ville-de-paris-une-dette-totale-colossale-de-107-mdseu" target="_blank" rel="noopener">https://www.ifrap.org/etat-et-collectivites/ville-de-paris-une-dette-totale-colossale-de-107-mdseu</a></li></ol></section>
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

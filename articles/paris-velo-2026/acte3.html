@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tawiza">
+
+<title>Juin 2026 : le choix Grégoire</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+
+/* Iframes viz responsive (sankey, comparateur, trajectoire, simulation) */
+iframe[src$=".html"] {
+    width: 100% !important; max-width: 100% !important;
+    border: 1px solid rgba(29,53,87,.10) !important;
+    border-radius: 6px !important;
+    margin: 16px 0 !important;
+}
+@media (max-width: 768px) {
+    iframe[src$=".html"] {
+        height: 420px !important;  /* plus compact sur tablette */
+    }
+}
+@media (max-width: 640px) {
+    iframe[src$=".html"] {
+        height: 360px !important;  /* adapte mobile */
+    }
+    /* Callouts Quarto : marges réduites */
+    div.callout, .callout-warning, .callout-note, .callout-important { margin: 14px 0 !important; padding: 10px !important; }
+    div.callout .callout-body-container { padding: 8px !important; }
+    /* Table mermaid : scroll horizontal */
+    .cell-output-display, div.sourceCode, pre { overflow-x: auto !important; max-width: 100% !important; }
+    svg.mermaid, svg[id^="mermaid-"] { max-width: 100% !important; height: auto !important; }
+    /* Grid "Trois chiffres" : 1 colonne au lieu de 3 */
+    .grid { display: block !important; }
+    .grid .g-col-4 { margin-bottom: 12px !important; }
+    /* Typo corps plus aérée */
+    p, li { font-size: .95rem !important; line-height: 1.6 !important; }
+    h1 { font-size: 1.6rem !important; }
+    h2 { font-size: 1.3rem !important; }
+    h3 { font-size: 1.1rem !important; }
+    /* Tableau responsive : scroll horizontal */
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+}
+
+
+/* tawiza-iframe-mobile-strong */
+@media (max-width: 768px) {
+    iframe[src$=".html"] {
+        height: 68vh !important;
+        min-height: 420px !important;
+        max-height: 560px !important;
+    }
+}
+@media (max-width: 640px) {
+    iframe[src$=".html"] {
+        height: 72vh !important;
+        min-height: 440px !important;
+        max-height: 520px !important;
+    }
+}
+
+</style>
+
+
+<script src="acte3_files/libs/clipboard/clipboard.min.js"></script>
+<script src="acte3_files/libs/quarto-html/quarto.js"></script>
+<script src="acte3_files/libs/quarto-html/popper.min.js"></script>
+<script src="acte3_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="acte3_files/libs/quarto-html/anchor.min.js"></script>
+<link href="acte3_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="acte3_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="acte3_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="acte3_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="acte3_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<meta name="mermaid-theme" content="default">
+<script src="acte3_files/libs/quarto-diagram/mermaid.min.js"></script>
+<script src="acte3_files/libs/quarto-diagram/mermaid-init.js"></script>
+<link href="acte3_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="style.css">
+<!-- tawiza-branding -->
+<link rel="stylesheet" href="/assets/fonts/tawiza-fonts.css">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.outbound-links.js"></script>
+<style>
+    body { font-family: "Inter", system-ui, sans-serif !important; background: #fafaf9; color: #1D3557; }
+    h1, h2, h3, h4 { font-family: "El Messiri", serif !important; color: #1D3557; }
+    a { color: #b45309; }
+    .tawiza-bar {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+        background: #fafaf9; border-bottom: 1px solid rgba(29,53,87,.15);
+        padding: 8px 20px; font-family: "Inter", sans-serif; font-size: 13px;
+        color: #1D3557; display: flex; justify-content: space-between; align-items: center;
+        gap: 8px;
+    }
+    .tawiza-bar a { color: #b45309; text-decoration: none; font-weight: 600; }
+    .tawiza-bar a:hover { text-decoration: underline; }
+    body { padding-top: 42px !important; }
+    /* Quarto TOC – override pour style Tawiza sticky */
+    #quarto-margin-sidebar, .quarto-margin-sidebar { top: 60px !important; }
+    nav#TOC {
+        font-family: "Inter", sans-serif; font-size: .88rem;
+        border-left: 2px solid rgba(180,83,9,.15);
+        padding: 8px 0 8px 14px;
+    }
+    nav#TOC h2 {
+        font-family: "El Messiri", serif !important;
+        font-size: .95rem !important;
+        color: #b45309 !important;
+        margin: 0 0 12px !important;
+        text-transform: uppercase; letter-spacing: .06em;
+    }
+    nav#TOC a.nav-link { color: #5B7BA5; padding: 4px 0; border: none; display: block; }
+    nav#TOC a.nav-link.active { color: #b45309; font-weight: 600; border-left: 3px solid #b45309; padding-left: 8px; margin-left: -10px; }
+    nav#TOC a.nav-link:hover { color: #b45309; }
+    /* Footnotes Tawiza */
+    .tawiza-footnote-ref {
+        font-size: .72em; color: #b45309; text-decoration: none;
+        font-weight: 600; vertical-align: super; padding: 0 1px;
+    }
+    .tawiza-footnote-ref:hover { text-decoration: underline; }
+    section.tawiza-footnotes {
+        margin-top: 48px; padding-top: 18px;
+        border-top: 1px solid rgba(29,53,87,.15);
+        font-size: .88rem; color: #5B7BA5;
+    }
+    section.tawiza-footnotes h3 {
+        font-family: "El Messiri", serif !important;
+        color: #b45309 !important; font-size: 1.05rem;
+        text-transform: uppercase; letter-spacing: .06em;
+    }
+    section.tawiza-footnotes ol { padding-left: 20px; }
+    section.tawiza-footnotes li { margin-bottom: 8px; line-height: 1.5; }
+    section.tawiza-footnotes li a { word-break: break-all; }
+    .tawiza-simul-cta {
+        display: inline-block; margin: 16px 0; padding: 10px 18px;
+        background: #b45309; color: #fff !important; border-radius: 6px;
+        text-decoration: none; font-weight: 600;
+    }
+    .tawiza-simul-cta:hover { background: #92400e; }
+    @media (max-width: 640px) {
+        .tawiza-bar { font-size: 11px !important; padding: 6px 10px !important; }
+        .tawiza-bar > span:last-child { display: none !important; }
+        body { padding-top: 36px !important; }
+        nav#TOC { display: none !important; } /* TOC caché mobile, toc-tools suffit */
+    }
+</style>
+
+</head>
+
+<body><div class="tawiza-bar">
+    <span><a href="/">Tawiza</a> &middot; <a href="/articles/">Articles</a> &middot; <a href="/notebooks/">Notebooks</a></span>
+    <span>Feuilleton Paris v&eacute;lo 2026</span>
+</div>
+
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sommaire</h2>
+   
+  <ul>
+  <li><a href="#trois-chiffres" id="toc-trois-chiffres" class="nav-link active" data-scroll-target="#trois-chiffres">Trois chiffres</a></li>
+  <li><a href="#cest-rien" id="toc-cest-rien" class="nav-link" data-scroll-target="#cest-rien">“C’est rien”</a></li>
+  <li><a href="#le-choix-vu-de-près" id="toc-le-choix-vu-de-près" class="nav-link" data-scroll-target="#le-choix-vu-de-près">Le choix, vu de près</a>
+  <ul class="collapse">
+  <li><a href="#scénario-1-la-charte-partagée" id="toc-scénario-1-la-charte-partagée" class="nav-link" data-scroll-target="#scénario-1-la-charte-partagée">Scénario 1 : la charte partagée</a></li>
+  <li><a href="#scénario-2-le-péage-urbain" id="toc-scénario-2-le-péage-urbain" class="nav-link" data-scroll-target="#scénario-2-le-péage-urbain">Scénario 2 : le péage urbain</a></li>
+  <li><a href="#scénario-3-la-coalition-précarité" id="toc-scénario-3-la-coalition-précarité" class="nav-link" data-scroll-target="#scénario-3-la-coalition-précarité">Scénario 3 : la coalition précarité</a></li>
+  </ul></li>
+  <li><a href="#cest-bizarre" id="toc-cest-bizarre" class="nav-link" data-scroll-target="#cest-bizarre">“C’est bizarre”</a></li>
+  <li><a href="#thermomètre-où-en-est-la-plomberie" id="toc-thermomètre-où-en-est-la-plomberie" class="nav-link" data-scroll-target="#thermomètre-où-en-est-la-plomberie">Thermomètre : où en est la plomberie</a></li>
+  <li><a href="#les-six-signaux-qui-comptent" id="toc-les-six-signaux-qui-comptent" class="nav-link" data-scroll-target="#les-six-signaux-qui-comptent">Les six signaux qui comptent</a></li>
+  <li><a href="#cest-trop-tard" id="toc-cest-trop-tard" class="nav-link" data-scroll-target="#cest-trop-tard">“C’est trop tard ?”</a></li>
+  <li><a href="#les-questions-qui-restent-ouvertes" id="toc-les-questions-qui-restent-ouvertes" class="nav-link" data-scroll-target="#les-questions-qui-restent-ouvertes">Les questions qui restent ouvertes</a></li>
+  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Juin 2026 : le choix Grégoire</h1>
+<p><a class="tawiza-simul-cta" href="/notebooks/acte1-paris-velo/">
+&rarr; Tu pr&eacute;f&egrave;res jouer ? Essayer le simulateur Paris v&eacute;lo 2026-2031
+</a></p>
+
+<p class="subtitle lead">Premier Budget Primitif du nouveau maire. Trois scénarios. Six signaux. Pas de prédiction.</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur·rice</div>
+    <div class="quarto-title-meta-contents">
+             <p>Tawiza </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">16 avril 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Avertissement
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Acte 3 du feuilleton Tawiza.</strong> Suite de <a href="acte1.html">Acte 1, Qui paie le vélo à Paris ?</a> et <a href="acte2.html">Acte 2, La dette est-elle le vrai problème ?</a>. Article paraît dans la fenêtre du premier Budget Primitif Grégoire.</p>
+</div>
+</div>
+<section id="trois-chiffres" class="level2">
+<h2 class="anchored" data-anchor-id="trois-chiffres">Trois chiffres</h2>
+<div class="grid">
+<section id="juin" class="level3 g-col-4">
+<h3 class="anchored" data-anchor-id="juin">juin</h3>
+<p><strong>2026</strong> date du vote du premier Budget Primitif du maire Emmanuel Grégoire.</p>
+</section>
+<section id="section" class="level3 g-col-4">
+<h3 class="anchored" data-anchor-id="section">3</h3>
+<p><strong>scénarios possibles</strong> selon l’arbitrage que la Ville fera entre désendettement et investissement.</p>
+</section>
+<section id="section-1" class="level3 g-col-4">
+<h3 class="anchored" data-anchor-id="section-1">6</h3>
+<p><strong>signaux observables</strong> qui vous diront, dans les 18 prochains mois, lequel des scénarios s’installe.</p>
+</section>
+</div>
+<hr>
+</section>
+<section id="cest-rien" class="level2">
+<h2 class="anchored" data-anchor-id="cest-rien">“C’est rien”</h2>
+<p>Un nouveau maire vote son premier budget. C’est un rituel municipal. Juin 2026, Emmanuel Grégoire présentera le sien. Successeur désigné d’Anne Hidalgo. Socialiste. Adjoint depuis dix ans. Rompu aux arbitrages.</p>
+<p>Il hérite : - <strong>D’un plan vélo</strong> qui a livré 40 % de ses 180 km promis, dont 20 M€ pour les pistes neuves en 2026 (voir <a href="acte1.html">Acte 1</a>). - <strong>D’une dette</strong> de 9,4 milliards, capacité de désendettement supérieure à 18 ans (voir <a href="acte2.html">Acte 2</a>). - <strong>D’une capitale politique</strong> encore intacte, 18 mois après l’élection municipale.</p>
+<p><em>C’est rien</em>, dirait-on. Tous les maires votent un budget. Tous héritent de quelque chose. Le métier.</p>
+<p>Sauf que Juin 2026 tombe dans un moment rare : une <strong>fenêtre d’opportunité politique</strong>. Grégoire dispose d’une légitimité fraîche (mandat juste commencé), d’un capital politique non érodé, d’une actualité qui concentre l’attention (rapport CRC encore commenté, PLF 2026 contesté). C’est le moment le plus libre du mandat.</p>
+<p>C’est ce qu’il en fait qui compte.</p>
+</section>
+<section id="le-choix-vu-de-près" class="level2">
+<h2 class="anchored" data-anchor-id="le-choix-vu-de-près">Le choix, vu de près</h2>
+<p>Trois options se dessinent. Elles ne sont pas symétriques.</p>
+<section id="scénario-1-la-charte-partagée" class="level3">
+<h3 class="anchored" data-anchor-id="scénario-1-la-charte-partagée">Scénario 1 : la charte partagée</h3>
+<p>Grégoire requalifie le moratoire ciblé sur le plan vélo, en pause doctrine. Il associe les élus d’opposition, les associations d’usagers cyclistes, la FUB, l’APF (personnes en situation de handicap), les commerçants. Il publie, à l’automne 2026, un <strong>plan accessibilité globale des mobilités 2027-2032</strong>, co-signé, qui élargit le cadre.</p>
+<p>Coût en capital politique : faible, peut-être positif. Coût financier : environ 5 M€ pour la concertation. Faisable avant fin 2026.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Trigger observable.</strong> Une délibération de concertation inscrite à l’ordre du jour du Conseil de Paris avant décembre 2026. Suivie d’un document co-signé pluraliste avant mars 2027.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="scénario-2-le-péage-urbain" class="level3">
+<h3 class="anchored" data-anchor-id="scénario-2-le-péage-urbain">Scénario 2 : le péage urbain</h3>
+<p>Grégoire actionne le levier autorisé depuis la loi d’Orientation des Mobilités de 2019. Zone à Faibles Émissions élargie, tarification différenciée (livraisons pros exonérées, diesel surtaxé). Recettes sanctuarisées pour les mobilités actives. Modèle Stockholm 2006, Milan 2008.</p>
+<p>Obstacle réel : l’instruction légale exige étude d’impact, enquête publique, décret. Durée minimum 12 à 18 mois. <strong>Le péage ne peut pas être voté avant mi-2027</strong>, donc pas avant le tournant médian du mandat Grégoire. Fait techniquement possible, politiquement impossible pré-élection nationale 2027.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Trigger observable.</strong> Un décret municipal lançant l’étude d’impact ZFE élargie. S’il n’est pas publié avant l’été 2026, la fenêtre est fermée jusqu’en 2028.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="scénario-3-la-coalition-précarité" class="level3">
+<h3 class="anchored" data-anchor-id="scénario-3-la-coalition-précarité">Scénario 3 : la coalition précarité</h3>
+<p>Hors des élus et des associations établies. Des travailleurs du rez-de-chaussée, livreurs vélo-cargo, commerçants des quartiers populaires, agents de propreté, se constituent en groupe informel puis en association loi 1901. Revendication : consultation systématique avant tout chantier de plus de trois semaines. Pouvoir d’alerte reconnu.</p>
+<p>Peu coûteux (0 €), pas de verrou institutionnel (association = 48h), mais nécessite un entrepreneur politique pour relayer. Pas de déclencheur clair pour l’instant.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Trigger observable.</strong> Un dépôt de statuts au greffe associatif. Puis un article de presse qui cite le collectif. Puis une reprise par le Conseil de Paris.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="cest-bizarre" class="level2">
+<h2 class="anchored" data-anchor-id="cest-bizarre">“C’est bizarre”</h2>
+<p>Les trois scénarios ne sont pas équivalents. Ils ont été stress-testés, en interne, selon trois grilles : faisabilité institutionnelle (verrous légaux), soutenabilité financière (coût annuel, ratios prudentiels), et coût politique (capital de l’élu porteur).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    C["Juin 2026&lt;br/&gt;Budget Primitif Grégoire"]:::start
+    S1["Scénario 1&lt;br/&gt;Charte PMR-Mobilités"]:::viable
+    S2["Scénario 2&lt;br/&gt;Péage urbain"]:::horsfenetre
+    S3["Scénario 3&lt;br/&gt;Coalition précarité"]:::latent
+
+    C --&gt; S1
+    C --&gt; S2
+    C --&gt; S3
+
+    S1 --&gt; R1["Viable avant fin 2026&lt;br/&gt;Coût capital politique : faible"]:::box
+    S2 --&gt; R2["Hors fenêtre avant 2028&lt;br/&gt;Instruction légale 12-18 mois"]:::box
+    S3 --&gt; R3["Latent, sans entrepreneur&lt;br/&gt;Coût : 0 €"]:::box
+
+    classDef start fill:#1D3557,color:#fff,stroke:#1D3557,stroke-width:2px
+    classDef viable fill:#2D6A4F,color:#fff,stroke:#1D3557,stroke-width:2px
+    classDef horsfenetre fill:#C1554D,color:#fff,stroke:#1D3557,stroke-width:2px
+    classDef latent fill:#D4A843,color:#1D3557,stroke:#1D3557,stroke-width:2px
+    classDef box fill:#fff,color:#1D3557,stroke:#1D3557,stroke-width:1px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Deux scénarios ont une fenêtre ouverte dans les 18 prochains mois. Un seul a un <strong>calendrier institutionnel qui colle</strong>.</p>
+<p>Ce qui rend le scénario 1 plus probable n’est pas la volonté d’un acteur. C’est <strong>l’enchaînement des contraintes institutionnelles</strong> qui rend les deux autres difficiles à ce moment. Le péage est hors fenêtre. La coalition précarité n’a pas d’entrepreneur.</p>
+<p>Par défaut, ce qui reste compatible avec l’agenda juin 2026 est la charte.</p>
+<p>Personne ne le prédit. Tawiza le balise.</p>
+</section>
+<section id="thermomètre-où-en-est-la-plomberie" class="level2">
+<h2 class="anchored" data-anchor-id="thermomètre-où-en-est-la-plomberie">Thermomètre : où en est la plomberie</h2>
+<p>Avant de regarder les signaux, regardons l’état général. Pas un pronostic, une lecture instantanée à partir de cinq variables publiques et vérifiables :</p>
+<ul>
+<li>la part du plan vélo parisien financée par l’État (aujourd’hui sous 1 % hors CPER) ;</li>
+<li>la continuité du plan national vélo-marche entre deux PLF (oui/non) ;</li>
+<li>la part du CPER IDF 2023-2027 fléchée intra-Paris (estimée 17,5 %) ;</li>
+<li>l’alerte de notation en cours sur la Ville (oui/non) ;</li>
+<li>le niveau observé de participation aux concertations locales (faible à modéré).</li>
+</ul>
+<p>Pondéré, ça donne un <strong>indice de 4,9 sur 10</strong>. Pas critique, pas aligné non plus. Un léger désalignement : l’État n’a pas coupé le robinet, il ne le remplit pas non plus ; la Ville absorbe, sans dégrader.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Lecture.</strong> 0 = État et Ville financent et décident en cohérence. 10 = découplage institutionnel complet. Entre 3 et 5, on est dans la zone grise des démocraties fatiguées : ça ne casse pas, mais ça ne tient que par la Ville elle-même. C’est à ce stade que les scénarios comme le péage urbain deviennent inenvisageables dans les fenêtres courtes : il faut plus d’alignement pour enclencher un levier aussi coûteux politiquement.</p>
+</div>
+</div>
+</div>
+<p>Ce thermomètre sera mis à jour à chaque Acte suivant. S’il monte (au-delà de 6), les scénarios qui dépendent de l’État (péage, plan accessibilité co-signé) deviennent plus fragiles. S’il baisse, la fenêtre s’ouvre.</p>
+</section>
+<section id="les-six-signaux-qui-comptent" class="level2">
+<h2 class="anchored" data-anchor-id="les-six-signaux-qui-comptent">Les six signaux qui comptent</h2>
+<p>Le scénario s’installe si les signaux suivants se cochent dans l’ordre.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ordre</th>
+<th>Signal observable</th>
+<th>Quand</th>
+<th>État au <code>16 avril 2026</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Vote BP 2026 sans coupe brutale sur ligne vélo</td>
+<td>juin 2026</td>
+<td>🟡 en attente</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Mission ou délibération concertation inscrite CP</td>
+<td>avant octobre 2026</td>
+<td>🟡 à surveiller</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Plan national vélo-marche rétabli ou stabilisé PLF 2027</td>
+<td>septembre 2026</td>
+<td>🔴 plan 2026 à 50 M€ (signal Acte 1)</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Notation Moody’s Paris maintenue ou améliorée</td>
+<td>permanent</td>
+<td>🟡 en surveillance</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Publication plan accessibilité mobilités co-signé</td>
+<td>mars 2027</td>
+<td>⬜ non encore déclenché</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Adoption définitive du plan par le Conseil de Paris</td>
+<td>juin 2027</td>
+<td>⬜ non encore déclenché</td>
+</tr>
+</tbody>
+</table>
+<p>Si trois de ces signaux se cochent vert dans l’ordre, le scénario 1 s’installe. Si un ou plusieurs se cochent rouge, on bascule vers un autre scénario.</p>
+<p>L’article reviendra à chaque déclenchement. Cet Acte 3 est la clé. Les prochains actes seront des mises à jour.</p>
+</section>
+<section id="cest-trop-tard" class="level2">
+<h2 class="anchored" data-anchor-id="cest-trop-tard">“C’est trop tard ?”</h2>
+<p>Pas du tout. Le mandat Grégoire commence. L’espace de manœuvre est ouvert. Ce qui rend la période intéressante est justement qu’elle reste indéterminée.</p>
+<p>Ce qui peut se passer, c’est : - Que <strong>Grégoire tienne la doctrine vélo</strong> et ouvre le chantier accessibilité. Le plan s’étend, se remet en crédibilité, survit au moratoire budgétaire. Paris bascule dans une phase de consolidation. - Que <strong>Grégoire cède aux signaux de marché</strong> (dégradation Moody’s, sévérité CRC) et réduise discrètement l’ambition. Le plan vélo recule, pas brutalement, pas officiellement, mais dans les faits. Paris entre dans une phase d’érosion. - Qu’un <strong>événement externe</strong> (accident médiatisé, choc budgétaire, crise économique) force la main. Le scénario change. Tawiza le dit quand ça arrive, pas avant.</p>
+<p>Dans tous les cas, ce n’est pas trop tard. C’est juste maintenant.</p>
+</section>
+<section id="les-questions-qui-restent-ouvertes" class="level2">
+<h2 class="anchored" data-anchor-id="les-questions-qui-restent-ouvertes">Les questions qui restent ouvertes</h2>
+<p>Elles ne sont pas rhétoriques.</p>
+<ol type="1">
+<li><strong>Le maire peut-il réformer la masse salariale</strong> sans briser son contrat politique avec les agents (53 000 agents Ville de Paris, deuxième employeur francilien après l’AP-HP) ?</li>
+<li><strong>La Métropole Grand Paris va-t-elle prendre une compétence voirie</strong> dans les années 2027-2030, comme certains élus métropolitains le demandent ? Ça redistribuerait entièrement la plomberie.</li>
+<li><strong>Qui portera la parole des usagers invisibles</strong> (personnes en fauteuil, enfants cyclistes, livreurs précaires, touristes, personnes sans domicile) dans les arbitrages ? Aucun n’est représenté aujourd’hui dans les concertations officielles. Rue de Rivoli, à la question « tu voterais juin prochain ? », Hamide répond <em>« j’ai pas de domicile fixe, alors non »</em>. L’arbitrage de juin 2026 se fait sans lui et sans quelques dizaines de milliers de personnes dans sa situation. Ce n’est pas un oubli technique, c’est une conséquence du cadre électoral. Les scénarios qui s’ouvrent juin 2026 ne lui parlent pas. Ils nous parlent de lui sans lui.</li>
+<li><strong>Et si le scénario 1 ne se réalise pas</strong> ? Que regardera Tawiza comme signaux de bascule ?</li>
+</ol>
+<p>Ce sont les questions des prochains Actes.</p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>La suite du feuilleton.</strong> À chaque trigger qui se coche, Tawiza publie une mise à jour courte, datée, sourcée. L’article ne se termine pas avec cet Acte 3. Il vit.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="méthodologie" class="level2">
+<h2 class="anchored" data-anchor-id="méthodologie">Méthodologie</h2>
+<p><strong>Sources au 2026-04-17.</strong></p>
+<p>Les trois scénarios ont été produits par une <strong>simulation exploratoire interne</strong>, stress-testée avec : - Une grille théorique (fenêtres d’opportunité politiques, causation cumulative, ordres de changement, gouvernance des communs). - Une grille institutionnelle (calendrier Commune-Région-État, veto points CRC et Préfet, délais légaux). - Une grille d’impact (financier, politique, économique).</p>
+<p>Puis filtrés : seuls les scénarios passant les trois grilles sont retenus. Les autres sont écartés (voir scénario 2).</p>
+<p>Les scénarios ne sont pas des prédictions. Ce sont des <strong>futurs possibles</strong> avec leurs triggers observables. Tawiza balise, ne prédit pas.</p>
+<p><strong>À vérifier en enquête terrain pour l’Acte 3 v2.</strong></p>
+<ul>
+<li>Entretien avec un conseiller de Paris LR sur l’hypothèse de charte cross-parti (réaliste ?).</li>
+<li>Entretien avec un représentant APF sur l’état des demandes de plan accessibilité.</li>
+<li>Entretien avec un livreur vélo-cargo sur la fréquence des chantiers impactants.</li>
+<li>Données précises : composition de la dette Paris et échéancier 2026-2030.</li>
+</ul>
+<p><strong>Limites.</strong></p>
+<ul>
+<li>La simulation est un outil de cadrage éditorial, pas une prédiction. Les probabilités implicites ne sont pas à publier comme données.</li>
+<li>Les dialogues et propos attribués à des personas simulées restent strictement internes. Seules les conclusions méthodologiques sont exposées ici.</li>
+<li>L’analyse n’inclut pas les choix budgétaires non-vélo qui peuvent peser lourd (fonctionnement, social, sécurité).</li>
+</ul>
+<p><strong>Règle éditoriale.</strong> <em>Les six signaux sont à surveiller dans les 18 prochains mois. Tawiza les cochera au fur et à mesure. À vous de décider ce qu’ils racontent.</em></p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

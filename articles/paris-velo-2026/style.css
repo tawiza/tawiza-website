@@ -1,0 +1,251 @@
+/* Tawiza – Acte 1 · DA alignée sur tawiza.fr
+   Fonts : El Messiri (titres) · Inter (corps)
+   Palette : #fafaf9 / #b45309 / #C1554D / #2D6A4F / #1D3557
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --tawiza-bg:        #fafaf9;
+  --tawiza-ink:       #1D3557;
+  --tawiza-accent:    #C1554D;
+  --tawiza-ochre:     #b45309;
+  --tawiza-positif:   #2D6A4F;
+  --tawiza-alerte:    #C1554D;
+  --tawiza-attention: #D4A843;
+  --tawiza-neutre:    #5B7BA5;
+  --tawiza-social:    #8B5E83;
+  --tawiza-muted:     #6C757D;
+
+  --font-serif: "El Messiri", "Georgia", serif;
+  --font-sans:  "Inter", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+}
+
+/* ===== Base ===== */
+body {
+  background: var(--tawiza-bg);
+  color: var(--tawiza-ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem 5rem;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Sankey et Mermaid pleine largeur */
+iframe, .mermaid {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 1.5rem 0;
+}
+iframe { min-height: 560px; }
+
+/* Figures Quarto (img schema) pleine largeur */
+figure, .figure { margin: 2rem 0; width: 100%; }
+
+/* ===== Titres (El Messiri) ===== */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  color: var(--tawiza-ink);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2.6rem;
+  border-bottom: 3px solid var(--tawiza-accent);
+  padding-bottom: .5rem;
+  margin-bottom: .2rem;
+}
+
+.subtitle, .quarto-title .subtitle {
+  font-family: var(--font-sans);
+  color: var(--tawiza-positif);
+  font-style: italic;
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.7rem;
+  margin-top: 3.2rem;
+  margin-bottom: .8rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  color: var(--tawiza-accent);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+/* ===== Paragraphes & liens ===== */
+p { margin: 0 0 1.15rem; }
+
+a {
+  color: var(--tawiza-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color .15s;
+}
+a:hover { color: var(--tawiza-ochre); text-decoration-thickness: 2px; }
+
+strong { color: var(--tawiza-ink); font-weight: 600; }
+em { color: var(--tawiza-muted); }
+
+/* ===== Callouts Quarto ===== */
+.callout, blockquote {
+  border-left: 4px solid var(--tawiza-ochre);
+  background: rgba(180, 83, 9, 0.06);
+  padding: 1rem 1.2rem;
+  border-radius: 0 6px 6px 0;
+  margin: 1.8rem 0;
+  font-size: 15.5px;
+}
+.callout-warning { border-left-color: var(--tawiza-alerte); background: rgba(193, 85, 77, 0.07); }
+.callout-note    { border-left-color: var(--tawiza-neutre); background: rgba(91, 123, 165, 0.07); }
+.callout-tip     { border-left-color: var(--tawiza-positif); background: rgba(45, 106, 79, 0.06); }
+
+/* ===== Tableaux ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.8rem 0;
+  font-size: 15px;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+th, td {
+  padding: .7rem .9rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(29, 53, 87, .08);
+  vertical-align: top;
+}
+th {
+  background: rgba(29, 53, 87, .04);
+  font-weight: 600;
+  color: var(--tawiza-ink);
+  font-size: 13.5px;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+}
+tr:last-child td { border-bottom: none; }
+
+/* ===== Images & iframes ===== */
+iframe, img, svg {
+  max-width: 100%;
+  border-radius: 6px;
+  margin: 1rem auto;
+  display: block;
+}
+iframe { border: 1px solid rgba(29, 53, 87, .1); box-shadow: 0 2px 12px rgba(29, 53, 87, .04); }
+figure { margin: 2rem 0; }
+figcaption { font-size: 13.5px; color: var(--tawiza-muted); font-style: italic; text-align: center; margin-top: .5rem; }
+
+/* ===== TOC (right side Quarto) ===== */
+#TOC, .toc-active {
+  font-size: 14px;
+}
+#TOC a, #TOC ul li a {
+  color: var(--tawiza-muted);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  padding: .2rem .6rem;
+  display: block;
+  transition: all .15s;
+}
+#TOC a:hover, #TOC a.active {
+  color: var(--tawiza-accent);
+  border-left-color: var(--tawiza-accent);
+}
+
+/* ===== Code inline ===== */
+code {
+  background: rgba(29, 53, 87, .06);
+  padding: .12em .4em;
+  border-radius: 3px;
+  font-size: .9em;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  color: var(--tawiza-ink);
+}
+pre code { display: block; padding: 1rem; overflow-x: auto; }
+
+/* ===== Séparateurs ===== */
+hr {
+  border: none;
+  border-top: 1px dashed rgba(29, 53, 87, .2);
+  margin: 3.2rem 0;
+}
+
+/* ===== Listes ===== */
+ul, ol { padding-left: 1.3rem; margin: 1rem 0 1.3rem; }
+li { margin: .45rem 0; }
+li::marker { color: var(--tawiza-accent); }
+
+/* ===== Encadré méthodo (h2 final) ===== */
+h2:has(+ p) + p,
+h2#encadré-méthodologie ~ * {
+  font-size: 14.5px;
+  color: rgba(29, 53, 87, .85);
+}
+
+/* ===== Bloc "3 chiffres-chocs" ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin: 2rem 0 2.5rem;
+}
+.g-col-4 {
+  background: #fff;
+  border-top: 4px solid var(--tawiza-accent);
+  padding: 1.2rem 1.3rem 1.3rem;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 8px rgba(29, 53, 87, .04);
+}
+.g-col-4 h3 {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  color: var(--tawiza-ochre);
+  margin: 0 0 .2rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.g-col-4 p { font-size: 14.5px; color: var(--tawiza-ink); margin: 0; line-height: 1.45; }
+.g-col-4 strong { display: block; font-size: 13px; color: var(--tawiza-accent); text-transform: uppercase; letter-spacing: .04em; margin-bottom: .4rem; font-weight: 600; }
+
+/* ===== Mermaid (schéma acteurs) ===== */
+.mermaid {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 12px rgba(29, 53, 87, .05);
+}
+
+/* ===== Sections "3 temps" : C'est rien / C'est bizarre / C'est trop tard ===== */
+h2:is(#cest-rien, #cest-bizarre, #cest-trop-tard) {
+  color: var(--tawiza-accent);
+  font-style: italic;
+  letter-spacing: 0;
+}
+
+/* ===== Responsive mobile ===== */
+@media (max-width: 640px) {
+  body { padding: 1.5rem 1rem 3rem; font-size: 16px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.4rem; }
+  .grid { grid-template-columns: 1fr; gap: .8rem; }
+  .g-col-4 h3 { font-size: 2.6rem; }
+  table { font-size: 13.5px; }
+  th, td { padding: .5rem .6rem; }
+}
