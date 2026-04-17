@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tawiza &mdash; comprendre son territoire, par les données</title>
+  <meta name="description" content="Données publiques françaises, croisées et racontées. Open source, sourcé, lisible.">
+  <meta name="theme-color" content="#b45309">
+  <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23faf5ef'/%3E%3Crect x='6' y='12' width='20' height='8' fill='%23b45309'/%3E%3Crect x='13' y='14' width='6' height='4' fill='%231a1612'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="../assets/v2/design-system.css">
+
+  <style>
+  .preview-banner {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999;
+    background: #1a1612;
+    color: #faf5ef;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    padding: 6px 14px;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 2px solid #b45309;
+  }
+  .preview-banner b { color: #b45309; }
+  body { padding-top: 32px; }
+  .wordmark { top: 44px !important; }
+  .glyph-slot { top: 40px !important; }
+  @media (prefers-color-scheme: dark) {
+    .preview-banner { background: #faf5ef; color: #1a1612; }
+  }
+  </style>
+</head>
+<body>
+  <div class="preview-banner" role="status">
+    preview <b>design v2</b> &middot; non indexe &middot;
+    comparez avec <a href="/" style="color:inherit">tawiza.fr</a> &middot;
+    PR sur github
+  </div>
+
+
+  <!-- Wordmark discret (provocation 19) -->
+  <a href="/" class="wordmark">tawiza.fr</a>
+
+  <!-- Glyph génératif unique (provocation 18) -->
+  <div class="glyph-slot" aria-hidden="true"></div>
+
+  <!-- 01. Territoires chauds &mdash; la première chose qu'on voit (provocation 1) -->
+  <section class="hot-zones" aria-labelledby="hot-title">
+    <div class="terrain-dense">
+      <div class="hot-zones-header">
+        <span id="hot-title">// territoires observés &mdash; score composite CDI 2026-04-17</span>
+        <time datetime="2026-04-17">17.04.26 · dernière passe 20h30</time>
+      </div>
+
+      <div class="hot-grid">
+
+        <a class="hot-cell" href="#dunkerque">
+          <span class="hot-cell-code">FR-59 · Dunkerque</span>
+          <div class="hot-cell-spark">▂▃▄▅▆▇█▇▆</div>
+          <div class="hot-cell-name">Dunkerque</div>
+          <div class="hot-cell-score" data-level="critical">86</div>
+          <div class="hot-cell-meta">
+            <span>vuln. énergétique</span>
+            <span>+12 pts · 30j</span>
+          </div>
+        </a>
+
+        <a class="hot-cell" href="#henin">
+          <span class="hot-cell-code">FR-62 · Hénin-Beaumont</span>
+          <div class="hot-cell-spark">▁▂▃▅▆▆▇▇▇</div>
+          <div class="hot-cell-name">Hénin-Beaumont</div>
+          <div class="hot-cell-score" data-level="warning">72</div>
+          <div class="hot-cell-meta">
+            <span>désert de services</span>
+            <span>+4 pts · 30j</span>
+          </div>
+        </a>
+
+        <a class="hot-cell" href="#clichy">
+          <span class="hot-cell-code">FR-93 · Clichy-sous-Bois</span>
+          <div class="hot-cell-spark">▅▅▅▆▆▅▅▆▇</div>
+          <div class="hot-cell-name">Clichy-sous-Bois</div>
+          <div class="hot-cell-score" data-level="warning">68</div>
+          <div class="hot-cell-meta">
+            <span>mobilité · emploi</span>
+            <span>stable · 30j</span>
+          </div>
+        </a>
+
+        <a class="hot-cell" href="#lyon">
+          <span class="hot-cell-code">FR-69 · Lyon 7</span>
+          <div class="hot-cell-spark">▇▇▇▆▆▅▅▄▃</div>
+          <div class="hot-cell-name">Lyon 7<sup>e</sup></div>
+          <div class="hot-cell-score" data-level="stable">41</div>
+          <div class="hot-cell-meta">
+            <span>pression foncière</span>
+            <span>&minus;6 pts · 30j</span>
+          </div>
+        </a>
+
+        <a class="hot-cell" href="#paris">
+          <span class="hot-cell-code">FR-75 · Paris</span>
+          <div class="hot-cell-spark">▆▆▇▇▇▆▆▆▅</div>
+          <div class="hot-cell-name">Paris vélo</div>
+          <div class="hot-cell-score" data-level="warning">63</div>
+          <div class="hot-cell-meta">
+            <span>modèle exportable ?</span>
+            <span>+2 pts · 30j</span>
+          </div>
+        </a>
+
+        <a class="hot-cell" href="#hdf">
+          <span class="hot-cell-code">FR-HDF · Hauts-de-France</span>
+          <div class="hot-cell-spark">▄▅▆▇▇▇▇▇▇</div>
+          <div class="hot-cell-name">Hauts-de-France</div>
+          <div class="hot-cell-score" data-level="critical">78</div>
+          <div class="hot-cell-meta">
+            <span>zone test ZIBAC</span>
+            <span>+8 pts · 90j</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. Manifeste dense &mdash; la home EST le manifeste (provocation 3) -->
+  <section class="manifeste">
+    <div class="terrain">
+      <div class="manifeste-label">manifeste · ni sommaire, ni landing</div>
+
+      <p class="manifeste-verse">
+        Les données publiques françaises sont <em>théoriquement ouvertes</em>,
+        <strong>pratiquement fermées</strong>.
+      </p>
+
+      <div class="manifeste-body">
+        <p>Tawiza les rend lisibles. On croise des fichiers SIRENE, Sitadel,
+        DVF, BODACC, OpenSanctions, et on raconte ce que ça donne quand on les pose côte à côte.
+        Pas d'analyse de comptoir &mdash; des chiffres, des sources, et assez
+        de honnêteté pour dire <em>"là, on ne sait pas"</em>.</p>
+
+        <p>Le site que vous lisez est un laboratoire. Chaque page est
+        un territoire observé pendant des semaines, parfois des mois,
+        avant qu'on ose écrire quoi que ce soit.
+        Si vous cherchez du <span data-source="néologisme journalistique : article qui lit trois communiqués et invente le reste">packaged&nbsp;content</span>,
+        vous n'êtes pas au bon endroit.</p>
+
+        <p>Le code est open source, les données sont reproductibles,
+        les conclusions sont datées. Quand on se trompe, on publie le
+        correctif sur la même URL &mdash; jamais de <em>rewrite silencieux</em>.</p>
+      </div>
+
+      <div class="principes">
+        <div class="principe">
+          <span class="principe-num">01</span>
+          <div class="principe-body">
+            <strong>Source avant conclusion.</strong><br>
+            Chaque chiffre a une URL. Chaque URL est vérifiable en 2 clics.
+          </div>
+        </div>
+        <div class="principe">
+          <span class="principe-num">02</span>
+          <div class="principe-body">
+            <strong>Le silence est un signal.</strong><br>
+            Ce qu'une commune ne publie pas se lit dans son absence des bases OFGL, DVF, HATVP.
+          </div>
+        </div>
+        <div class="principe">
+          <span class="principe-num">03</span>
+          <div class="principe-body">
+            <strong>L'algorithme doute.</strong><br>
+            Chaque alerte passe par une boucle de vérification Hermes (LLM local).
+            Si les sources dérivent, l'alerte est bloquée.
+          </div>
+        </div>
+        <div class="principe">
+          <span class="principe-num">04</span>
+          <div class="principe-body">
+            <strong>Stock ≠ flow.</strong><br>
+            On ne confond pas un état avec une tendance. Emploi à 39 000 ≠ emploi qui chute de &minus;400/mois.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03. Archive &mdash; liste brutaliste d'articles (provocation 14) -->
+  <section class="archive">
+    <div class="terrain">
+      <div class="archive-heading">
+        <span></span>
+        <span>nº</span>
+        <span>titre</span>
+        <span>date</span>
+        <span>territoire</span>
+        <span></span>
+      </div>
+
+      <a class="archive-row" href="#">
+        <div class="archive-row-glyph" data-glyph data-seed="/articles/paris-velo-2026" data-size="32" data-cells="7" data-frame="false"></div>
+        <span class="archive-row-num">007</span>
+        <span class="archive-row-title">Paris vélo &mdash; <em>le modèle Parisien est-il exportable à Lyon et Marseille</em> ?</span>
+        <span class="archive-row-meta">2026-04-16</span>
+        <span class="archive-row-tag">feuilleton · 3 actes</span>
+        <span class="archive-row-arrow">→</span>
+      </a>
+
+      <a class="archive-row" href="#">
+        <div class="archive-row-glyph" data-glyph data-seed="/articles/dunkerque-zibac" data-size="32" data-cells="7" data-frame="false"></div>
+        <span class="archive-row-num">006</span>
+        <span class="archive-row-title">Dunkerque &mdash; <em>l'angle mort ZIBAC</em> que 3 sources presse confirment</span>
+        <span class="archive-row-meta">2026-04-10</span>
+        <span class="archive-row-tag">observation</span>
+        <span class="archive-row-arrow">→</span>
+      </a>
+
+      <a class="archive-row" href="article-v2.html">
+        <div class="archive-row-glyph" data-glyph data-seed="/articles/rga-silence" data-size="32" data-cells="7" data-frame="false"></div>
+        <span class="archive-row-num">005</span>
+        <span class="archive-row-title">Risque argile, silence communal &mdash; <em>4 739 communes exposées, 312 qui n'ont rien dit</em></span>
+        <span class="archive-row-meta">2026-03-28</span>
+        <span class="archive-row-tag">analyse · long</span>
+        <span class="archive-row-arrow">→</span>
+      </a>
+
+      <a class="archive-row" href="#">
+        <div class="archive-row-glyph" data-glyph data-seed="/articles/deux-villes-miroir" data-size="32" data-cells="7" data-frame="false"></div>
+        <span class="archive-row-num">004</span>
+        <span class="archive-row-title">Deux villes, un miroir &mdash; <em>Clichy-sous-Bois vs Hénin-Beaumont</em></span>
+        <span class="archive-row-meta">2026-03-11</span>
+        <span class="archive-row-tag">comparaison</span>
+        <span class="archive-row-arrow">→</span>
+      </a>
+
+      <a class="archive-row" href="#">
+        <div class="archive-row-glyph" data-glyph data-seed="/articles/dunkerque-energie" data-size="32" data-cells="7" data-frame="false"></div>
+        <span class="archive-row-num">003</span>
+        <span class="archive-row-title">Vulnérabilité énergétique &mdash; <em>Dunkerque dans la balance géopolitique du Golfe</em></span>
+        <span class="archive-row-meta">2026-02-24</span>
+        <span class="archive-row-tag">géopolitique</span>
+        <span class="archive-row-arrow">→</span>
+      </a>
+
+      <a class="archive-row" href="#">
+        <div class="archive-row-glyph" data-glyph data-seed="/articles/maire-controle" data-size="32" data-cells="7" data-frame="false"></div>
+        <span class="archive-row-num">002</span>
+        <span class="archive-row-title">Ce que le maire contrôle &mdash; <em>cartographie du vrai pouvoir municipal</em></span>
+        <span class="archive-row-meta">2026-02-10</span>
+        <span class="archive-row-tag">méthode</span>
+        <span class="archive-row-arrow">→</span>
+      </a>
+
+      <a class="archive-row" href="#">
+        <div class="archive-row-glyph" data-glyph data-seed="/articles/deux-villes-comptes" data-size="32" data-cells="7" data-frame="false"></div>
+        <span class="archive-row-num">001</span>
+        <span class="archive-row-title">Deux villes, deux comptes &mdash; <em>lire le budget municipal pour ce qu'il est</em></span>
+        <span class="archive-row-meta">2026-01-24</span>
+        <span class="archive-row-tag">pédagogie</span>
+        <span class="archive-row-arrow">→</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- 04. 3AYNE &mdash; l'œil qui regarde (bas de page, avec jeu) -->
+  <section class="eye-zone">
+    <div class="terrain">
+      <div class="eye-zone-label">3ayne · <span>l'œil qui dort jamais</span></div>
+
+      <div class="eye-root" role="img" aria-label="3AYNE &mdash; l'œil Tawiza, cliquez pour un clin">
+        <!-- le SVG sera injecté via include -->
+        <object data="assets/eye.svg" type="image/svg+xml" class="eye-svg-object" style="display:none"></object>
+      </div>
+
+      <div class="eye-caption">il regarde, il compte, il doute</div>
+    </div>
+  </section>
+
+  <!-- 05. Footer 3 liens (provocation 4) -->
+  <footer class="footer">
+    <div class="terrain" style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span>tawiza · observatoire territorial · 2026</span>
+      <div class="footer-links">
+        <a href="glyphs.html">glyphs</a>
+        <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">source</a>
+        <a href="mailto:hamide@tawiza.fr">contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Inject eye SVG inline via DOMParser (safe) -->
+  <script>
+    fetch('../assets/v2/eye.svg').then(function (r) { return r.text(); }).then(function (svgText) {
+      var mount = document.querySelector('.eye-root');
+      if (!mount) return;
+      var obj = mount.querySelector('.eye-svg-object'); if (obj) obj.remove();
+      var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
+      mount.appendChild(svgEl);
+    }).then(function () {
+      var s = document.createElement('script');
+      s.src = '../assets/v2/eye.js';
+      document.body.appendChild(s);
+    });
+  </script>
+
+  <script src="../assets/v2/glyph.js" defer></script>
+
+</body>
+</html>
