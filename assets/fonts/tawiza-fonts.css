@@ -1,0 +1,68 @@
+/* Tawiza fonts - self-hosted pour respect R16 (pas de tracking Google Fonts).
+ *
+ * Fichiers woff2 depuis fontsource.org (versions open source des mêmes fonts).
+ * Chargé via <link rel="stylesheet" href="/assets/fonts/tawiza-fonts.css">
+ * Pas de @import (bloquant au rendu), juste @font-face.
+ *
+ * font-display: swap = affichage immédiat en fallback system-ui, puis swap
+ * dès que la font est téléchargée. Meilleur comportement perçu.
+ */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/inter-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/inter-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/inter-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/inter-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "El Messiri";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/el-messiri-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "El Messiri";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/el-messiri-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "El Messiri";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/el-messiri-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/jetbrains-mono-400.woff2") format("woff2");
+}

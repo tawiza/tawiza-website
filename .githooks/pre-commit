@@ -1,11 +1,21 @@
 #!/bin/bash
-# Pre-commit hook: bloque les secrets et les tirets longs Unicode
+# Pre-commit hook Tawiza
+# Bloque : secrets, tirets Unicode, accents français manquants, patterns exposition doctrine
 
 RED='\033[0;31m'
+YELLOW='\033[1;33m'
+GREEN='\033[0;32m'
 NC='\033[0m'
 BLOCKED=0
+WARNINGS=0
 
-STAGED=$(git diff --cached --name-only --diff-filter=ACM | grep -v '\.gitleaks\.toml$' | grep -v '^docs/' | grep -v '\.githooks/' | grep -vE '\.(jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|pdf)$')
+STAGED=$(git diff --cached --name-only --diff-filter=ACM | \
+    grep -v '\.gitleaks\.toml$' | \
+    grep -v '^docs/' | \
+    grep -v '\.githooks/' | \
+    grep -v '^\.github/scripts/check-exposure' | \
+    grep -v '^_notebooks-src/' | \
+    grep -vE '\.(jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|pdf)$')
 if [ -z "$STAGED" ]; then
     exit 0
 fi
@@ -47,12 +57,67 @@ while IFS= read -r file; do
             echo "  (Ce n'est pas bloquant, mais pensez a corriger)"
         fi
     fi
+    # 4. Patterns exposition Tawiza (doctrine 33 règles)
+    # Chemins internes / IPs / noms MPtoO-V2 privés
+    if echo "$content" | grep -qE '/root/|/data/projects/|/opt/tawiza-cli'; then
+        echo -e "${RED}BLOQUE (R3): chemin interne dans $file${NC}"
+        BLOCKED=1
+    fi
+    if echo "$content" | grep -qE '\b100\.(116|105)\.[0-9]+\.[0-9]+\b|\b192\.168\.1\.[0-9]+\b'; then
+        echo -e "${RED}BLOQUE (R3): IP interne/Tailscale dans $file${NC}"
+        BLOCKED=1
+    fi
+    if echo "$content" | grep -qE '\b(MPtoO|moltbot|tawiza-cli)\b'; then
+        echo -e "${RED}BLOQUE (R3): nom infra interne dans $file${NC}"
+        BLOCKED=1
+    fi
+
+    # Darija internes (R14)
+    if echo "$content" | grep -qwE '(jamaa|sahrij|khirta|lemma|choufiya|hdidane)'; then
+        echo -e "${RED}BLOQUE (R14): darija interne dans $file${NC}"
+        BLOCKED=1
+    fi
+
+    # Dossiers/skills internes (R2)
+    if echo "$content" | grep -qE 'tawiza-agora|_bmad-output|agora-runs|MiroFish|OpenClaw'; then
+        echo -e "${RED}BLOQUE (R2): référence à skill/dossier interne dans $file${NC}"
+        BLOCKED=1
+    fi
+
+    # Théories hétérodoxes citées (R12) - warning seulement
+    # (elles peuvent apparaître dans docs publics avec précaution)
+    if echo "$content" | grep -qE '\b(Myrdal|Hirschman|Polanyi|Harvey|Wallerstein|Bourdieu|Amartya Sen)\b'; then
+        echo -e "${YELLOW}ATTENTION (R12): théorie hétérodoxe citée dans $file — vérifier que c'est acceptable en public${NC}"
+        WARNINGS=$((WARNINGS + 1))
+    fi
+
+    # Claude/Anthropic mentions — warning
+    if echo "$content" | grep -qE '\bClaude\s+(Opus|Sonnet|Haiku)|Anthropic'; then
+        echo -e "${YELLOW}ATTENTION (R10): mention LLM dans méthodologie $file${NC}"
+        WARNINGS=$((WARNINGS + 1))
+    fi
 done <<< "$STAGED"
 
 if [ $BLOCKED -eq 1 ]; then
     echo ""
-    echo "Corrigez les problemes avant de commiter."
+    echo -e "${RED}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${RED}✗ COMMIT REFUSÉ par hooks Tawiza${NC}"
+    echo ""
+    echo "Références doctrine (docs/doctrine-tawiza.md) :"
+    echo "  R2 - tawiza/tawiza (public) vs MPtoO-V2 (privé)"
+    echo "  R3 - pas de secrets / chemins / IPs / noms infra"
+    echo "  R12 - filtres hétérodoxes invisibles dans public"
+    echo "  R14 - darija réservée au code interne"
+    echo ""
+    echo "Pour forcer (déconseillé) : git commit --no-verify"
+    echo -e "${RED}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     exit 1
 fi
 
+if [ $WARNINGS -gt 0 ]; then
+    echo ""
+    echo -e "${YELLOW}⚠ $WARNINGS warnings — commit autorisé mais vérifie manuellement.${NC}"
+fi
+
+echo -e "${GREEN}✓ Scan pre-commit Tawiza OK${NC}"
 exit 0

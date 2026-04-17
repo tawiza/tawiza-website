@@ -1,0 +1,41 @@
+name: Pre-deploy checks (exposure + accessibility)
+
+# Vérifications doctrine Tawiza avant merge.
+# Désactivé par défaut (workflow_dispatch only).
+# Activer : décommenter pull_request.
+#
+# Sécurité : aucun event payload non-fiable (issue titles, PR bodies) utilisé
+# dans les run: blocks. Seul du code contrôlé check-in est exécuté.
+
+on:
+  workflow_dispatch:
+  # pull_request:
+  #   branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  exposure-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scan patterns exposition Tawiza
+        run: bash .github/scripts/check-exposure-ci.sh
+
+  accessibility-check:
+    runs-on: ubuntu-latest
+    # Désactivé tant que R32 pas green. Activation S19 accessibility sprint.
+    if: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install pa11y + lighthouse
+        run: npm install -g pa11y-ci lighthouse
+      - name: Run Pa11y
+        run: pa11y-ci --config .pa11yci.json
+      - name: Run Lighthouse + check R32
+        run: bash .github/scripts/check-accessibility-ci.sh
