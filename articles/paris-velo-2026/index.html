@@ -1,98 +1,223 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Paris vélo 2026 – Feuilleton Tawiza</title>
-    <meta name="description" content="Qui paie le vélo à Paris ? La dette est-elle le vrai problème ? Juin 2026 : le choix Grégoire. Un feuilleton en trois actes.">
-    <link rel="stylesheet" href="/assets/fonts/tawiza-fonts.css">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.outbound-links.js"></script>
-    <style>
-        * { box-sizing: border-box; }
-        body {
-            font-family: "Inter", system-ui, sans-serif;
-            background: #fafaf9; color: #1D3557;
-            margin: 0; padding: 0; line-height: 1.6;
-        }
-        h1, h2, h3 { font-family: "El Messiri", serif; color: #1D3557; }
-        .tawiza-bar {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
-            background: #fafaf9; border-bottom: 1px solid rgba(29,53,87,.15);
-            padding: 8px 20px; font-size: 13px;
-            display: flex; justify-content: space-between; align-items: center; gap: 8px;
-        }
-        .tawiza-bar a { color: #b45309; text-decoration: none; font-weight: 600; }
-        main { max-width: 900px; margin: 0 auto; padding: 70px 24px 48px; }
-        header.intro { margin-bottom: 48px; }
-        header.intro h1 { font-size: 2.2rem; margin: 0 0 12px; }
-        header.intro p.lead { font-size: 1.15rem; color: #5B7BA5; margin: 0 0 24px; }
-        .acts { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .act-card {
-            background: #fff; border: 1px solid rgba(29,53,87,.12);
-            border-radius: 10px; padding: 22px; text-decoration: none;
-            color: inherit; transition: transform .12s, box-shadow .12s;
-            display: flex; flex-direction: column;
-        }
-        .act-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(29,53,87,.08); }
-        .act-num { font-size: .8rem; color: #b45309; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
-        .act-title { font-family: "El Messiri", serif; font-size: 1.3rem; margin: 6px 0 10px; color: #1D3557; }
-        .act-lead { color: #5B7BA5; font-size: .95rem; flex: 1; }
-        .simul-box {
-            margin-top: 40px; padding: 24px; background: #fff;
-            border: 2px solid #b45309; border-radius: 10px;
-        }
-        .simul-box h2 { margin: 0 0 10px; font-size: 1.3rem; }
-        .simul-box a { color: #b45309; font-weight: 700; text-decoration: none; }
-        .simul-box a:hover { text-decoration: underline; }
-        .meta { color: #5B7BA5; font-size: .9rem; margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(29,53,87,.08); }
-        @media (max-width: 640px) {
-            header.intro h1 { font-size: 1.6rem; }
-            main { padding-top: 60px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paris v&eacute;lo 2026 - feuilleton Tawiza</title>
+  <meta name="description" content="Qui paie le v&eacute;lo &agrave; Paris ? La dette est-elle le vrai probl&egrave;me ? Juin 2026 : le choix Gr&eacute;goire. Un feuilleton en trois actes.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#b45309">
+  <link rel="canonical" href="https://tawiza.fr/articles/paris-velo-2026/">
+  <meta property="og:title" content="Paris v&eacute;lo 2026 - feuilleton Tawiza">
+  <meta property="og:description" content="Qui paie le v&eacute;lo &agrave; Paris ? La dette ? Le choix Gr&eacute;goire. Trois actes + simulateur interactif.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tawiza.fr/articles/paris-velo-2026/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Tawiza">
+  <meta property="og:image" content="https://tawiza.fr/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23faf5ef'/%3E%3Crect x='6' y='12' width='20' height='8' fill='%23b45309'/%3E%3Crect x='13' y='14' width='6' height='4' fill='%231a1612'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/v2/design-system.css">
+  <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.outbound-links.js"></script>
+  <style>
+    .acts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      margin-top: 40px;
+    }
+    .act-card {
+      background: var(--bg);
+      padding: 28px 24px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      min-height: 200px;
+      transition: background 0.18s;
+    }
+    .act-card:hover { background: var(--bg-deep); text-decoration: none; }
+    .act-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ocre);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .act-title {
+      font-family: var(--serif-display);
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1.25;
+      margin: 0 0 10px;
+      letter-spacing: -0.01em;
+    }
+    .act-title em { font-style: italic; color: var(--terre); }
+    .act-lead {
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: 15.5px;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0;
+      flex: 1;
+    }
+    .act-arrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-mute);
+      margin-top: 16px;
+      letter-spacing: 0.06em;
+    }
+    .act-card:hover .act-arrow { color: var(--ocre); }
+
+    .simul-box {
+      margin-top: 56px;
+      padding: 32px 28px;
+      background: var(--bg-deep);
+      border: 1px solid var(--ocre);
+      position: relative;
+    }
+    .simul-box::before {
+      content: "";
+      position: absolute; left: -1px; top: -1px; bottom: -1px;
+      width: 4px;
+      background: var(--ocre);
+    }
+    .simul-kicker {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ocre);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .simul-box h2 {
+      font-family: var(--serif-display);
+      font-weight: 400;
+      font-size: 1.75rem;
+      line-height: 1.15;
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+    }
+    .simul-box p {
+      font-size: 16px;
+      line-height: 1.55;
+      margin: 0 0 16px;
+      color: var(--ink-soft);
+    }
+    .simul-cta {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--ocre);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .simul-cta:hover { text-decoration: underline; }
+
+    .methodo {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink-mute);
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+    }
+    .methodo strong { color: var(--ink); font-weight: 500; }
+  </style>
 </head>
 <body>
-<div class="tawiza-bar">
-    <span><a href="/">Tawiza</a> &middot; <a href="/articles/">Articles</a> &middot; <a href="/notebooks/">Notebooks</a></span>
-    <span>Feuilleton Paris v&eacute;lo</span>
-</div>
-<main>
-    <header class="intro">
-        <h1>Paris v&eacute;lo 2026 &ndash; un feuilleton en trois actes</h1>
-        <p class="lead">
-            Paris a promis 180 km de pistes cyclables. Quatre ans plus tard, 40&nbsp;% sont l&agrave;.
-            Cette plomberie raconte quelque chose sur les finances de la Ville, sur la dette qui arrive, sur le premier budget du maire Gr&eacute;goire en juin 2026. Ce feuilleton baliser, ne pr&eacute;dit pas.
-        </p>
+
+  <a href="/" class="wordmark">tawiza.fr</a>
+  <div class="glyph-slot" aria-hidden="true" data-seed="/articles/paris-velo-2026"></div>
+
+  <article>
+    <header class="article-masthead terrain">
+      <div class="glyph-hero" data-seed="/articles/paris-velo-2026" data-size="280" data-cells="21" data-label="false"></div>
+      <div class="article-kicker">feuilleton &middot; 3 actes + simulateur &middot; 2026-04-16</div>
+      <h1 class="article-title">Paris v&eacute;lo 2026 - <em>un feuilleton en trois actes</em></h1>
+      <p class="article-subtitle">
+        Paris a promis 180 km de pistes cyclables. Quatre ans plus tard, 40&nbsp;% sont l&agrave;. Cette plomberie raconte quelque chose sur les finances de la Ville, sur la dette qui arrive, sur le premier budget du maire Gr&eacute;goire en juin 2026. Ce feuilleton balise, ne pr&eacute;dit pas.
+      </p>
     </header>
 
-    <section class="acts">
+    <main class="terrain" style="max-width: 900px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 48px) 160px;">
+
+      <section class="acts">
         <a class="act-card" href="acte1.html">
-            <span class="act-num">Acte 1</span>
-            <h2 class="act-title">Qui paie le v&eacute;lo &agrave; Paris ?</h2>
-            <p class="act-lead">La plomberie budg&eacute;taire : qui finance les 250 M&euro; annonc&eacute;s, qui peut couper le robinet, et ce que le Budget Primitif 2026 a vraiment vot&eacute;.</p>
+          <span class="act-num">Acte 1</span>
+          <h2 class="act-title">Qui paie <em>le v&eacute;lo</em> &agrave; Paris&nbsp;?</h2>
+          <p class="act-lead">La plomberie budg&eacute;taire&nbsp;: qui finance les 250 M&euro; annonc&eacute;s, qui peut couper le robinet, et ce que le Budget Primitif 2026 a vraiment vot&eacute;.</p>
+          <span class="act-arrow">lire l'acte 1 &rarr;</span>
         </a>
         <a class="act-card" href="acte2.html">
-            <span class="act-num">Acte 2</span>
-            <h2 class="act-title">La dette est-elle le vrai probl&egrave;me ?</h2>
-            <p class="act-lead">9,4 milliards d'euros de dette. Multiplication par 7 en 25 ans. Capacit&eacute; de d&eacute;sendettement au-dessus de 18 ans. Lecture honn&ecirc;te.</p>
+          <span class="act-num">Acte 2</span>
+          <h2 class="act-title">La dette est-elle <em>le vrai probl&egrave;me</em>&nbsp;?</h2>
+          <p class="act-lead">9,4 milliards d'euros de dette. Multiplication par 7 en 25 ans. Capacit&eacute; de d&eacute;sendettement au-dessus de 18 ans. Lecture honn&ecirc;te.</p>
+          <span class="act-arrow">lire l'acte 2 &rarr;</span>
         </a>
         <a class="act-card" href="acte3.html">
-            <span class="act-num">Acte 3</span>
-            <h2 class="act-title">Juin 2026 : le choix Gr&eacute;goire</h2>
-            <p class="act-lead">Premier Budget Primitif du nouveau maire. Trois sc&eacute;narios d'arbitrage possibles. Six signaux pour dire lequel s'installe.</p>
+          <span class="act-num">Acte 3</span>
+          <h2 class="act-title">Juin 2026&nbsp;: <em>le choix Gr&eacute;goire</em></h2>
+          <p class="act-lead">Premier Budget Primitif du nouveau maire. Trois sc&eacute;narios d'arbitrage possibles. Six signaux pour dire lequel s'installe.</p>
+          <span class="act-arrow">lire l'acte 3 &rarr;</span>
         </a>
-    </section>
+      </section>
 
-    <div class="simul-box">
-        <h2>&raquo; Tu pr&eacute;f&egrave;res jouer ?</h2>
+      <div class="simul-box">
+        <div class="simul-kicker">&raquo; tu pr&eacute;f&egrave;res jouer&nbsp;?</div>
+        <h2>Simulateur <em>Paris v&eacute;lo 2026-2031</em></h2>
         <p>Un simulateur interactif te laisse endosser le r&ocirc;le du maire 2026-2031. Quatre leviers, six ans, &eacute;v&eacute;nements al&eacute;atoires calibr&eacute;s sur le r&eacute;el.</p>
-        <p><a href="/notebooks/acte1-paris-velo/">&rarr; Essayer le simulateur Paris v&eacute;lo 2026-2031</a></p>
-    </div>
+        <a href="/notebooks/acte1-paris-velo/" class="simul-cta">&rarr; essayer le simulateur</a>
+      </div>
 
-    <div class="meta">
-        <p><strong>M&eacute;thodologie Tawiza.</strong> Chaque acte ne cite que des donn&eacute;es ouvertes, retrouvables, recopiables. Sources list&eacute;es en fin d'article. Code source ouvert. R&egrave;gle &eacute;ditoriale : on balise, on ne pr&eacute;dit pas.</p>
+      <div class="methodo">
+        <strong>M&eacute;thodologie Tawiza.</strong> Chaque acte ne cite que des donn&eacute;es ouvertes, retrouvables, recopiables. Sources list&eacute;es en fin d'article. Code source ouvert. R&egrave;gle &eacute;ditoriale&nbsp;: on balise, on ne pr&eacute;dit pas.
+      </div>
+
+    </main>
+  </article>
+
+  <section class="eye-zone">
+    <div class="terrain">
+      <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui dort jamais</span></div>
+      <div class="eye-root" role="img" aria-label="3AYNE - l'&oelig;il Tawiza"></div>
+      <div class="eye-caption">il regarde, il compte, il doute</div>
     </div>
-</main>
+  </section>
+
+  <footer class="footer">
+    <div class="terrain" style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span>tawiza &middot; feuilleton paris v&eacute;lo &middot; 2026</span>
+      <div class="footer-links">
+        <a href="/articles/">articles</a>
+        <a href="/analyses/">analyses</a>
+        <a href="/notebooks/">notebooks</a>
+        <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">source</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('/assets/v2/eye.svg').then(function (r) { return r.text(); }).then(function (svgText) {
+      var mount = document.querySelector('.eye-root');
+      if (!mount) return;
+      var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
+      mount.appendChild(svgEl);
+    }).then(function () {
+      var s = document.createElement('script');
+      s.src = '/assets/v2/eye.js';
+      document.body.appendChild(s);
+    });
+  </script>
+  <script src="/assets/v2/glyph.js" defer></script>
 </body>
 </html>
