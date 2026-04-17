@@ -1,530 +1,410 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tawiza - Comprendre son territoire avec des donn&#233;es</title>
-    <meta name="description" content="Donn&#233;es publiques fran&#231;aises, crois&#233;es et racont&#233;es. Open source, sourc&#233;, lisible.">
-    <meta name="author" content="Tawiza">
-    <meta name="msvalidate.01" content="56E9E95FBE8E8DB33578C48877BFCE13">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#b45309">
-    <link rel="canonical" href="https://tawiza.fr">
-    <link rel="alternate" type="application/rss+xml" title="Tawiza - Analyses" href="https://tawiza.fr/feed.xml">
-    <meta property="og:title" content="Tawiza - Comprendre son territoire avec des donn&#233;es">
-    <meta property="og:description" content="Donn&#233;es publiques fran&#231;aises, crois&#233;es et racont&#233;es. Open source.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tawiza.fr">
-    <meta property="og:locale" content="fr_FR">
-    <meta property="og:site_name" content="Tawiza">
-    <meta property="og:image" content="https://tawiza.fr/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tawiza">
-    <meta name="twitter:description" content="Donn&#233;es publiques fran&#231;aises, crois&#233;es et racont&#233;es.">
-    <meta name="twitter:image" content="https://tawiza.fr/og-image.png">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23b45309'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='18'%3ET%3C/text%3E%3C/svg%3E">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=11">
-    <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.tagged-events.pageview-props.outbound-links.file-downloads.js"></script>
-    <script type="application/ld+json">
-    { "@context": "https://schema.org", "@type": "WebSite", "name": "Tawiza", "description": "Donn&#233;es publiques fran&#231;aises, crois&#233;es et racont&#233;es.", "url": "https://tawiza.fr", "inLanguage": "fr", "author": { "@type": "Organization", "name": "Tawiza", "url": "https://github.com/tawiza" } }
-    </script>
-    <style>
-    .t-hero { min-height: 70vh; display: flex; align-items: center; padding: 120px 24px 60px; position: relative; overflow: hidden; }
-    #topo { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.55; }
-    @media (prefers-color-scheme: dark) { #topo { opacity: 0.4; } }
-    .t-prompt { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1.5rem; }
-    .t-prompt span { color: var(--accent); }
-    .t-tagline { font-family: var(--font-heading); font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 600; color: var(--text); line-height: 1.35; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
-    .t-tagline-sub { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.02em; margin-bottom: 2.5rem; }
-    .t-latest { padding: 1.25rem 1.5rem; border: 1px solid var(--separator); border-radius: 8px; background: var(--bg-alt); }
-    .t-latest-label { font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; margin-bottom: 0.5rem; }
-    .t-latest-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 600; color: var(--text); line-height: 1.3; }
-    .t-latest-title a { color: var(--text); text-decoration: none; }
-    .t-latest-title a:hover { color: var(--accent); }
-    .t-latest-meta { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); margin-top: 0.35rem; }
-    .t-cursor { display: inline-block; width: 7px; height: 14px; background: var(--accent); animation: blink 1s step-end infinite; vertical-align: text-bottom; border-radius: 1px; }
-    @keyframes blink { 50% { opacity: 0; } }
-    .t-section { padding: 3rem 0; }
-    .t-section-prompt { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-bottom: 1rem; }
-    .t-section-prompt span { color: var(--accent); }
-    .t-listing { border-top: 1px solid var(--separator); }
-    .t-row { display: grid; grid-template-columns: 2rem 1fr auto auto; gap: 0.75rem; align-items: baseline; padding: 0.75rem 0; border-bottom: 1px solid color-mix(in srgb, var(--separator) 50%, transparent); text-decoration: none; transition: background 0.15s; }
-    .t-row:hover { background: var(--bg-alt); margin: 0 -0.75rem; padding-left: 0.75rem; padding-right: 0.75rem; border-radius: 4px; }
-    .t-row-num { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); }
-    .t-row-title { font-family: var(--font-heading); font-size: 1rem; font-weight: 500; color: var(--text); transition: color 0.15s; }
-    .t-row:hover .t-row-title { color: var(--accent); }
-    .t-row-date { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); white-space: nowrap; }
-    .t-row-meta { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); white-space: nowrap; text-align: right; }
-    .t-cd { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-top: 0.75rem; display: inline-block; text-decoration: none; }
-    .t-cd:hover { text-decoration: underline; }
-    .t-manifeste { padding: 3rem 0; border-top: 1px solid var(--separator); }
-    .t-cat { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-bottom: 1.25rem; }
-    .t-cat span { color: var(--accent); }
-    .t-verse { font-family: var(--font-heading); font-size: 1.15rem; font-weight: 400; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem; }
-    .t-verse strong { color: var(--text); font-weight: 500; }
-    .t-methodo { margin-top: 1.5rem; }
-    .t-methodo-row { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0.5rem; padding: 0.3rem 0; }
-    .t-methodo-label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); font-weight: 600; }
-    .t-methodo-val { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
-    .t-less { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-top: 1rem; display: inline-block; text-decoration: none; }
-    .t-less:hover { text-decoration: underline; }
-    .t-subscribe { padding: 3rem 0; border-top: 1px solid var(--separator); }
-    .t-sub-prompt { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-bottom: 1rem; }
-    .t-sub-prompt span { color: var(--accent); }
-    .t-sub-text { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem; }
-    .t-sub-form { display: flex; gap: 0; max-width: 420px; }
-    .t-sub-input { flex: 1; padding: 0.6rem 0.75rem; border: 1px solid var(--separator); border-right: none; border-radius: 6px 0 0 6px; font-family: var(--font-mono); font-size: 0.82rem; background: var(--surface); color: var(--text); }
-    .t-sub-input::placeholder { color: var(--text-muted); }
-    .t-sub-input:focus { outline: none; border-color: var(--accent); }
-    .t-sub-btn { padding: 0.6rem 1rem; border: 1px solid var(--separator); border-left: none; border-radius: 0 6px 6px 0; background: var(--bg-alt); color: var(--text-muted); font-family: var(--font-mono); font-size: 0.9rem; cursor: pointer; transition: all 0.15s; }
-    .t-sub-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
-    .t-sub-status { font-family: var(--font-mono); font-size: 0.75rem; margin-top: 0.5rem; }
-    .t-footer-t { padding: 2rem 0 1.5rem; border-top: 1px solid var(--separator); }
-    .t-footer-inner { display: flex; flex-direction: column; gap: 0.75rem; }
-    .t-footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
-    .t-footer-links a { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-decoration: none; }
-    .t-footer-links a:hover { color: var(--accent); }
-    .t-footer-meta { font-family: var(--font-mono); font-size: 0.65rem; color: color-mix(in srgb, var(--text-muted) 60%, transparent); }
-    @media (max-width: 640px) {
-        .t-hero { padding: 100px 20px 40px; min-height: auto; }
-        .t-row { grid-template-columns: 1.5rem 1fr; gap: 0.4rem; }
-        .t-row-date, .t-row-meta { grid-column: 2; }
-        .t-methodo-row { grid-template-columns: 1fr; }
-        .t-sub-form { flex-direction: column; }
-        .t-sub-input { border-right: 1px solid var(--separator); border-radius: 6px; }
-        .t-sub-btn { border-left: 1px solid var(--separator); border-radius: 6px; margin-top: -1px; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tawiza - comprendre son territoire, par les donn&eacute;es</title>
+  <meta name="description" content="Donn&eacute;es publiques fran&ccedil;aises, crois&eacute;es et racont&eacute;es. Open source, sourc&eacute;, lisible.">
+  <meta name="author" content="Tawiza">
+  <meta name="msvalidate.01" content="56E9E95FBE8E8DB33578C48877BFCE13">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#b45309">
+  <link rel="canonical" href="https://tawiza.fr">
+  <link rel="alternate" type="application/rss+xml" title="Tawiza - Analyses" href="https://tawiza.fr/feed.xml">
+
+  <meta property="og:title" content="Tawiza - comprendre son territoire par les donn&eacute;es">
+  <meta property="og:description" content="Donn&eacute;es publiques fran&ccedil;aises, crois&eacute;es et racont&eacute;es. Open source.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tawiza.fr">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Tawiza">
+  <meta property="og:image" content="https://tawiza.fr/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tawiza">
+  <meta name="twitter:description" content="Donn&eacute;es publiques fran&ccedil;aises, crois&eacute;es et racont&eacute;es.">
+  <meta name="twitter:image" content="https://tawiza.fr/og-image.png">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23faf5ef'/%3E%3Crect x='6' y='12' width='20' height='8' fill='%23b45309'/%3E%3Crect x='13' y='14' width='6' height='4' fill='%231a1612'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/v2/design-system.css">
+  <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.tagged-events.pageview-props.outbound-links.file-downloads.js"></script>
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "WebSite", "name": "Tawiza", "description": "Donn&eacute;es publiques fran&ccedil;aises, crois&eacute;es et racont&eacute;es.", "url": "https://tawiza.fr", "inLanguage": "fr", "author": { "@type": "Organization", "name": "Tawiza", "url": "https://github.com/tawiza" } }
+  </script>
+
+  <style>
+    /* Home-specific : featured (paris velo), archive rows, subscribe form */
+    .featured {
+      padding: 120px 0 48px;
+      border-bottom: 1px solid var(--line);
     }
-    </style>
+    .featured-kicker {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ocre);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 24px;
+    }
+    .featured-kicker::before { content: "// "; }
+    .featured-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 32px;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      padding: 32px 0;
+      border-top: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      transition: background 0.18s;
+    }
+    .featured-card:hover { background: var(--bg-deep); }
+    .featured-glyph { width: 200px; height: 200px; }
+    .featured-title {
+      font-family: var(--serif-display);
+      font-weight: 400;
+      font-size: clamp(1.8rem, 4.5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      margin: 0 0 12px;
+    }
+    .featured-title em { font-style: italic; color: var(--terre); }
+    .featured-meta {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink-mute);
+      letter-spacing: 0.04em;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .featured-meta a { color: var(--ocre); }
+    @media (max-width: 640px) {
+      .featured { padding: 96px 0 32px; }
+      .featured-card { grid-template-columns: 1fr; padding: 24px 0; gap: 20px; }
+      .featured-glyph { width: 140px; height: 140px; }
+    }
+
+    /* Archive listing, mini glyph per row */
+    .home-archive { padding: 64px 0; border-bottom: 1px solid var(--line); }
+    .home-archive-kicker {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ocre);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 24px;
+    }
+    .home-archive-kicker::before { content: "$ "; color: var(--ocre); }
+    .home-row {
+      display: grid;
+      grid-template-columns: 44px 3ch 1fr auto auto;
+      gap: 16px;
+      align-items: baseline;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line-soft);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.18s, color 0.18s;
+    }
+    .home-row:hover { transform: translateX(6px); color: var(--ocre); }
+    .home-row-glyph { width: 36px; height: 36px; align-self: center; }
+    .home-row-num { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); }
+    .home-row-title { font-family: var(--serif-display); font-size: 19px; line-height: 1.25; }
+    .home-row-title em { font-style: italic; color: var(--terre); }
+    .home-row-date { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); white-space: nowrap; }
+    .home-row-meta { font-family: var(--mono); font-size: 11px; color: var(--ocre); letter-spacing: 0.04em; white-space: nowrap; text-align: right; min-width: 6ch; }
+    .home-archive-cd {
+      display: inline-block;
+      margin-top: 20px;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--ocre);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .home-archive-cd::before { content: "$ "; }
+    .home-archive-cd:hover { text-decoration: underline; }
+    @media (max-width: 640px) {
+      .home-row {
+        display: block;
+        position: relative;
+        padding: 18px 0 18px 56px;
+        min-height: 56px;
+      }
+      .home-row-glyph { position: absolute; left: 0; top: 18px; }
+      .home-row-num, .home-row-date, .home-row-meta { display: inline-block; font-size: 10.5px; margin-right: 12px; }
+      .home-row-title { display: block; font-size: 17px; margin: 4px 0; }
+      .home-row:hover { transform: none; }
+    }
+
+    /* Manifeste section on home */
+    .home-manifeste { padding: 96px 0; border-bottom: 1px solid var(--line); }
+    .home-manifeste-kicker { font-family: var(--mono); font-size: 11px; color: var(--ocre); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 32px; }
+    .home-manifeste-kicker::before { content: "$ "; }
+    .home-manifeste-verse {
+      font-family: var(--serif-display);
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      line-height: 1.35;
+      max-width: 30ch;
+      margin: 0 0 48px;
+      color: var(--ink);
+    }
+    .home-manifeste-verse strong { color: var(--terre); font-weight: 400; }
+    .home-methodo {
+      display: grid;
+      grid-template-columns: 8rem 1fr;
+      gap: 8px 32px;
+      font-family: var(--mono);
+      font-size: 13px;
+      max-width: 600px;
+    }
+    .home-methodo-label { color: var(--ocre); letter-spacing: 0.06em; }
+    .home-methodo-val { color: var(--ink-soft); }
+    .home-manifeste-more {
+      display: inline-block;
+      margin-top: 32px;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--ocre);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .home-manifeste-more::before { content: "$ "; }
+    .home-manifeste-more:hover { text-decoration: underline; }
+    @media (max-width: 640px) {
+      .home-methodo { grid-template-columns: 1fr; gap: 2px 0; }
+      .home-methodo-label { margin-top: 8px; }
+    }
+
+    /* Subscribe */
+    .home-subscribe { padding: 72px 0 96px; }
+    .home-sub-kicker { font-family: var(--mono); font-size: 11px; color: var(--ocre); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 20px; }
+    .home-sub-kicker::before { content: "$ "; }
+    .home-sub-text { font-family: var(--serif-display); font-size: 1.2rem; line-height: 1.5; color: var(--ink-soft); max-width: 48ch; margin: 0 0 24px; }
+    .home-sub-form { display: flex; gap: 0; max-width: 400px; border: 1px solid var(--line); }
+    .home-sub-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 14px 16px;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--ink);
+      outline: none;
+    }
+    .home-sub-input::placeholder { color: var(--ink-mute); }
+    .home-sub-btn {
+      background: var(--ocre);
+      border: none;
+      color: var(--bg);
+      padding: 0 20px;
+      font-family: var(--mono);
+      font-size: 14px;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+    }
+    .home-sub-btn:hover:not(:disabled) { background: var(--ink); }
+    .home-sub-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .home-sub-status { font-family: var(--mono); font-size: 12px; margin-top: 12px; min-height: 1em; }
+  </style>
 </head>
 <body>
-    <nav class="nav" role="navigation" aria-label="Navigation principale">
-        <div class="nav-inner">
-            <a href="/" class="logo" aria-label="Tawiza - Accueil">
-                <img src="img/logo-tawiza-amber.svg" alt="Tawiza" class="logo-img logo-light-only" height="28">
-                <img src="img/logo-tawiza-white.svg" alt="Tawiza" class="logo-img logo-dark-only" height="28">
-            </a>
-            <div class="nav-links">
-                <a href="analyses/">Analyses</a>
-                <a href="manifeste.html">Manifeste</a>
-                <a href="contribuer.html">Contribuer</a>
-                <a href="a-propos.html">&#192; propos</a>
-                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">Code source</a>
-            </div>
-            <button class="nav-mobile" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+
+  <a href="/" class="wordmark">tawiza.fr</a>
+  <div class="glyph-slot" aria-hidden="true" data-seed="/"></div>
+
+  <!-- 01. Featured : dernier feuilleton -->
+  <section class="featured">
+    <div class="terrain">
+      <div class="featured-kicker">dernier feuilleton &middot; 17 avril 2026</div>
+
+      <a href="/articles/paris-velo-2026/" class="featured-card">
+        <div class="featured-glyph" data-glyph data-seed="/articles/paris-velo-2026" data-size="200" data-cells="17"></div>
+        <div>
+          <h2 class="featured-title">Paris v&eacute;lo 2026 - <em>qui paie, quelle dette, quel choix en juin&nbsp;?</em></h2>
+          <p style="font-family: var(--serif-display); font-style: italic; font-size: 1.1rem; line-height: 1.45; color: var(--ink-soft); margin: 0;">
+            Paris a promis 180 km de pistes cyclables. Quatre ans plus tard, 40&nbsp;% sont l&agrave;. Un feuilleton en trois actes pour lire la plomberie budg&eacute;taire derri&egrave;re l'annonce.
+          </p>
+          <div class="featured-meta">
+            <span>3 actes</span>
+            <span>1 simulateur interactif</span>
+            <a href="/notebooks/acte1-paris-velo/">&rarr; jouer le mandat</a>
+          </div>
         </div>
-    </nav>
+      </a>
+    </div>
+  </section>
 
-    <header class="t-hero">
-        <canvas id="topo" aria-hidden="true"></canvas>
-        <div class="container-narrow fade-up" style="position:relative;z-index:1;">
-            <div class="t-prompt"><span>$</span> tawiza</div>
-            <h1 class="t-tagline">Donn&#233;es publiques fran&#231;aises.<br>Crois&#233;es, v&#233;rifi&#233;es, racont&#233;es.</h1>
-            <p class="t-tagline-sub">sourc&#233;es &middot; open source &middot; bien commun</p>
-            <div class="t-latest">
-                <div class="t-latest-label">&gt; dernier feuilleton</div>
-                <div class="t-latest-title"><a href="articles/paris-velo-2026/">Paris v&#233;lo 2026&nbsp;: qui paie, quelle dette, quel choix en juin</a></div>
-                <div class="t-latest-meta">17 avril 2026 &middot; 3 actes &middot; 1 simulateur interactif &middot; <a href="notebooks/acte1-paris-velo/" style="color:var(--accent)">jouer le mandat</a> <span class="t-cursor"></span></div>
-            </div>
-        </div>
-    </header>
+  <!-- 02. Archive listing -->
+  <section class="home-archive">
+    <div class="terrain">
+      <div class="home-archive-kicker">ls analyses/</div>
 
-    <main>
-        <div class="container-narrow">
-            <div class="t-section fade-up">
-                <div class="t-section-prompt"><span>$</span> ls analyses/</div>
-                <div class="t-listing">
-                    <a href="articles/paris-velo-2026/" class="t-row">
-                        <span class="t-row-num">06</span>
-                        <span class="t-row-title">Paris v&#233;lo 2026, feuilleton en 3 actes &middot; <em>+ simulateur</em></span>
-                        <span class="t-row-date">17 avril</span>
-                        <span class="t-row-meta">3 actes</span>
-                    </a>
-                    <a href="analyses/risque-argile-silence-communal.html" class="t-row">
-                        <span class="t-row-num">05</span>
-                        <span class="t-row-title">Risque argile, le silence communal</span>
-                        <span class="t-row-date">11 avril</span>
-                        <span class="t-row-meta">11 src</span>
-                    </a>
-                    <a href="analyses/dunkerque-vulnerabilite-energetique.html" class="t-row">
-                        <span class="t-row-num">04</span>
-                        <span class="t-row-title">Dunkerque, vuln&#233;rabilit&#233; &#233;nerg&#233;tique</span>
-                        <span class="t-row-date">2 avril</span>
-                        <span class="t-row-meta">9 src</span>
-                    </a>
-                    <a href="analyses/ce-que-le-maire-controle.html" class="t-row">
-                        <span class="t-row-num">03</span>
-                        <span class="t-row-title">Ce que le maire contr&#244;le</span>
-                        <span class="t-row-date">18 mars</span>
-                        <span class="t-row-meta">12 src</span>
-                    </a>
-                    <a href="analyses/deux-villes-comptes.html" class="t-row">
-                        <span class="t-row-num">02</span>
-                        <span class="t-row-title">Plus pauvre, mieux g&#233;r&#233;e</span>
-                        <span class="t-row-date">17 mars</span>
-                        <span class="t-row-meta">6 src</span>
-                    </a>
-                    <a href="analyses/deux-villes-un-miroir.html" class="t-row">
-                        <span class="t-row-num">01</span>
-                        <span class="t-row-title">Deux villes, un miroir</span>
-                        <span class="t-row-date">12 mars</span>
-                        <span class="t-row-meta">11 src</span>
-                    </a>
-                    <a href="communs.html" class="t-row">
-                        <span class="t-row-num">&#9670;</span>
-                        <span class="t-row-title">Pourquoi les communs fonctionnent</span>
-                        <span class="t-row-date">11 mars</span>
-                        <span class="t-row-meta">essai</span>
-                    </a>
-                </div>
-                <a href="analyses/" class="t-cd">$ cd analyses/ &#8594;</a>
-            </div>
+      <a href="/articles/paris-velo-2026/" class="home-row">
+        <div class="home-row-glyph" data-glyph data-seed="/articles/paris-velo-2026" data-size="36" data-cells="7" data-frame="false"></div>
+        <span class="home-row-num">06</span>
+        <span class="home-row-title">Paris v&eacute;lo 2026, feuilleton en 3 actes &middot; <em>+ simulateur</em></span>
+        <span class="home-row-date">17 avril</span>
+        <span class="home-row-meta">3 actes</span>
+      </a>
 
-            <div class="t-manifeste fade-up">
-                <div class="t-cat"><span>$</span> cat manifeste.txt</div>
-                <div class="t-verse">
-                    800&nbsp;000 lignes de CSV.<br>
-                    14 portails qui n'ont pas boug&#233; depuis 2014.<br>
-                    Des donn&#233;es que le citoyen finance<br>
-                    mais qu'il faut un ing&#233;nieur pour lire.<br><br>
-                    <strong>On les transforme en histoires lisibles.</strong><br>
-                    Sourc&#233;es. Chaque chiffre v&#233;rifiable.
-                </div>
-                <div class="t-methodo">
-                    <div class="t-methodo-row"><span class="t-methodo-label">collecter</span><span class="t-methodo-val">INSEE &middot; SIRENE &middot; BODACC &middot; DVF &middot; SSMSI &middot; OFGL</span></div>
-                    <div class="t-methodo-row"><span class="t-methodo-label">croiser</span><span class="t-methodo-val">un signal seul ne dit rien</span></div>
-                    <div class="t-methodo-row"><span class="t-methodo-label">raconter</span><span class="t-methodo-val">pas un tableau Excel, une histoire</span></div>
-                </div>
-                <a href="manifeste.html" class="t-less">$ less manifeste.html &#8594;</a>
-            </div>
+      <a href="/analyses/risque-argile-silence-communal.html" class="home-row">
+        <div class="home-row-glyph" data-glyph data-seed="/analyses/risque-argile" data-size="36" data-cells="7" data-frame="false"></div>
+        <span class="home-row-num">05</span>
+        <span class="home-row-title">Risque argile, <em>le silence communal</em></span>
+        <span class="home-row-date">11 avril</span>
+        <span class="home-row-meta">11 src</span>
+      </a>
 
-            <div class="t-subscribe fade-up">
-                <div class="t-sub-prompt"><span>$</span> subscribe</div>
-                <p class="t-sub-text">Une analyse par mois. Pas de spam. Donn&#233;es publiques, pas de tracking.</p>
-                <form class="t-sub-form" id="home-sub-form">
-                    <input type="email" class="t-sub-input" id="home-sub-email" placeholder="votre@email.fr" required autocomplete="email" aria-label="Email">
-                    <button type="submit" class="t-sub-btn" aria-label="S'inscrire">&#8629;</button>
-                </form>
-                <p class="t-sub-status" id="home-sub-status"></p>
-            </div>
-        </div>
-    </main>
+      <a href="/analyses/dunkerque-vulnerabilite-energetique.html" class="home-row">
+        <div class="home-row-glyph" data-glyph data-seed="/analyses/dunkerque-energie" data-size="36" data-cells="7" data-frame="false"></div>
+        <span class="home-row-num">04</span>
+        <span class="home-row-title">Dunkerque, <em>vuln&eacute;rabilit&eacute; &eacute;nerg&eacute;tique</em></span>
+        <span class="home-row-date">2 avril</span>
+        <span class="home-row-meta">9 src</span>
+      </a>
 
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-eye">
-                <img src="img/tawiza-eye.svg" alt="L'œil Tawiza" class="footer-eye-img">
-                <p class="footer-eye-tagline">L'œil qui dort jamais</p>
-            </div>
-            <div class="footer-inner">
-                <div class="footer-links">
-                    <a href="analyses/">Analyses</a>
-                    <a href="manifeste.html">Manifeste</a>
-                    <a href="contribuer.html">Contribuer</a>
-                    <a href="a-propos.html">&#192; propos</a>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">GitHub</a>
-                    <a href="https://bsky.app/profile/tawiza.fr" target="_blank" rel="noopener">Bluesky</a>
-                </div>
-                <p class="footer-legal">Licence MIT. Donn&#233;es collect&#233;es depuis des sources publiques ouvertes.</p>
-            </div>
-        </div>
-    </footer>
+      <a href="/analyses/ce-que-le-maire-controle.html" class="home-row">
+        <div class="home-row-glyph" data-glyph data-seed="/analyses/maire-controle" data-size="36" data-cells="7" data-frame="false"></div>
+        <span class="home-row-num">03</span>
+        <span class="home-row-title">Ce que <em>le maire contr&ocirc;le</em></span>
+        <span class="home-row-date">18 mars</span>
+        <span class="home-row-meta">12 src</span>
+      </a>
 
-    <script>
-    document.querySelector('.nav-mobile')?.addEventListener('click', function() {
-        const links = document.querySelector('.nav-links');
-        const expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !expanded);
-        links.classList.toggle('open');
-    });
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+      <a href="/analyses/deux-villes-comptes.html" class="home-row">
+        <div class="home-row-glyph" data-glyph data-seed="/analyses/deux-villes-comptes" data-size="36" data-cells="7" data-frame="false"></div>
+        <span class="home-row-num">02</span>
+        <span class="home-row-title"><em>Plus pauvre, mieux g&eacute;r&eacute;e</em></span>
+        <span class="home-row-date">17 mars</span>
+        <span class="home-row-meta">6 src</span>
+      </a>
 
+      <a href="/analyses/deux-villes-un-miroir.html" class="home-row">
+        <div class="home-row-glyph" data-glyph data-seed="/analyses/deux-villes-miroir" data-size="36" data-cells="7" data-frame="false"></div>
+        <span class="home-row-num">01</span>
+        <span class="home-row-title">Deux villes, <em>un miroir</em></span>
+        <span class="home-row-date">12 mars</span>
+        <span class="home-row-meta">11 src</span>
+      </a>
+
+      <a href="/communs.html" class="home-row">
+        <div class="home-row-glyph" data-glyph data-seed="/communs" data-size="36" data-cells="7" data-frame="false"></div>
+        <span class="home-row-num">&#9670;</span>
+        <span class="home-row-title">Pourquoi <em>les communs fonctionnent</em></span>
+        <span class="home-row-date">11 mars</span>
+        <span class="home-row-meta">essai</span>
+      </a>
+
+      <a href="/analyses/" class="home-archive-cd">cd analyses/ &rarr;</a>
+    </div>
+  </section>
+
+  <!-- 03. Manifeste -->
+  <section class="home-manifeste">
+    <div class="terrain">
+      <div class="home-manifeste-kicker">cat manifeste.txt</div>
+
+      <p class="home-manifeste-verse">
+        800&nbsp;000 lignes de CSV. 14 portails qui n'ont pas boug&eacute; depuis 2014. Des donn&eacute;es que le citoyen finance mais qu'il faut un ing&eacute;nieur pour lire. <strong>On les transforme en histoires lisibles.</strong> Sourc&eacute;es. Chaque chiffre v&eacute;rifiable.
+      </p>
+
+      <div class="home-methodo">
+        <span class="home-methodo-label">collecter</span><span class="home-methodo-val">INSEE &middot; SIRENE &middot; BODACC &middot; DVF &middot; SSMSI &middot; OFGL</span>
+        <span class="home-methodo-label">croiser</span><span class="home-methodo-val">un signal seul ne dit rien</span>
+        <span class="home-methodo-label">raconter</span><span class="home-methodo-val">pas un tableau Excel, une histoire</span>
+      </div>
+
+      <a href="/manifeste.html" class="home-manifeste-more">less manifeste.html &rarr;</a>
+    </div>
+  </section>
+
+  <!-- 04. Subscribe -->
+  <section class="home-subscribe">
+    <div class="terrain">
+      <div class="home-sub-kicker">subscribe</div>
+      <p class="home-sub-text">Une analyse par mois. Pas de spam. Donn&eacute;es publiques, pas de tracking.</p>
+      <form class="home-sub-form" id="home-sub-form">
+        <input type="email" class="home-sub-input" id="home-sub-email" placeholder="votre@email.fr" required autocomplete="email" aria-label="Email">
+        <button type="submit" class="home-sub-btn" aria-label="S'inscrire">envoyer &rarr;</button>
+      </form>
+      <p class="home-sub-status" id="home-sub-status"></p>
+    </div>
+  </section>
+
+  <!-- 05. 3AYNE -->
+  <section class="eye-zone">
+    <div class="terrain">
+      <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui dort jamais</span></div>
+      <div class="eye-root" role="img" aria-label="3AYNE - l'&oelig;il Tawiza"></div>
+      <div class="eye-caption">il regarde, il compte, il doute</div>
+    </div>
+  </section>
+
+  <!-- 06. Footer -->
+  <footer class="footer">
+    <div class="terrain" style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span>tawiza &middot; observatoire territorial &middot; 2026</span>
+      <div class="footer-links">
+        <a href="/analyses/">analyses</a>
+        <a href="/articles/">articles</a>
+        <a href="/notebooks/">notebooks</a>
+        <a href="/manifeste.html">manifeste</a>
+        <a href="/a-propos.html">&agrave; propos</a>
+        <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">source</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Newsletter form (preserves existing listmonk integration) -->
+  <script>
     document.getElementById('home-sub-form')?.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = document.getElementById('home-sub-email').value;
-        const status = document.getElementById('home-sub-status');
-        const btn = this.querySelector('.t-sub-btn');
-        btn.disabled = true; btn.textContent = '...';
-        fetch('https://nl.tawiza.fr/api/public/subscription', {
-            method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email, name: '', list_uuids: ['19c245e5-dd64-40f3-be27-97768c6a50ab'] })
-        }).then(r => r.json()).then(data => {
-            if (data.data) { status.textContent = data.data.has_optin ? 'D\u00e9j\u00e0 inscrit.' : 'V\u00e9rifiez votre bo\u00eete mail.'; status.style.color = '#16a34a'; this.style.display = 'none'; }
-            else { status.textContent = 'Erreur.'; status.style.color = '#dc2626'; btn.disabled = false; btn.textContent = '\u21b5'; }
-        }).catch(() => { status.textContent = 'Erreur r\u00e9seau.'; status.style.color = '#dc2626'; btn.disabled = false; btn.textContent = '\u21b5'; });
+      e.preventDefault();
+      var email = document.getElementById('home-sub-email').value;
+      var status = document.getElementById('home-sub-status');
+      var btn = this.querySelector('.home-sub-btn');
+      btn.disabled = true; btn.textContent = '...';
+      fetch('https://nl.tawiza.fr/api/public/subscription', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, name: '', list_uuids: ['19c245e5-dd64-40f3-be27-97768c6a50ab'] })
+      }).then(function (r) { return r.json(); }).then(function (data) {
+        if (data.data) {
+          status.textContent = data.data.has_optin ? 'D\u00e9j\u00e0 inscrit.' : 'V\u00e9rifiez votre bo\u00eete mail.';
+          status.style.color = 'var(--foret)';
+          e.target.style.display = 'none';
+        } else {
+          status.textContent = 'Erreur.'; status.style.color = 'var(--terre)';
+          btn.disabled = false; btn.textContent = 'envoyer \u2192';
+        }
+      }).catch(function () {
+        status.textContent = 'Erreur r\u00e9seau.'; status.style.color = 'var(--terre)';
+        btn.disabled = false; btn.textContent = 'envoyer \u2192';
+      });
     });
-    </script>
+  </script>
 
-    <!-- Territorial Pulse - generative art with word formation -->
-    <script>
-    (function() {
-        const canvas = document.getElementById('topo');
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        let W, H, signals, field, fieldCols, fieldRows, t = 0;
-        let raf, textMask = null, textPixels = [];
-
-        // Words that cycle - subtle, drole, tawiza
-        const WORDS = [
-            'open data', 'on verifie', 'pas de mock',
-            'bien commun', 'le social craque', 'zero bullshit',
-            'donnees reelles', 'tawiza', 'servez le the',
-            'code source', 'on empile', 'spoiler: pas d\'usines',
-        ];
-        let wordIdx = 0;
-
-        // Timing: flow 8s → converge 6s → hold 3s → dissolve 3s → next
-        const PHASE_FLOW = 480;      // ~8s at 60fps
-        const PHASE_CONVERGE = 360;  // ~6s
-        const PHASE_HOLD = 180;      // ~3s
-        const PHASE_DISSOLVE = 180;  // ~3s
-        const CYCLE = PHASE_FLOW + PHASE_CONVERGE + PHASE_HOLD + PHASE_DISSOLVE;
-        let cycleT = 0;
-
-        const daySeed = new Date().toISOString().slice(0, 10).split('').reduce((a, c) => a * 31 + c.charCodeAt(0), 7);
-
-        function mulberry32(a) {
-            return function() {
-                a |= 0; a = a + 0x6D2B79F5 | 0;
-                var t = Math.imul(a ^ a >>> 15, 1 | a);
-                t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
-                return ((t ^ t >>> 14) >>> 0) / 4294967296;
-            };
-        }
-        const rng = mulberry32(daySeed);
-
-        const noiseGrid = [];
-        const NG = 128;
-        for (let i = 0; i < NG * NG; i++) noiseGrid[i] = rng();
-
-        function vnoise(x, y) {
-            const xi = Math.floor(x) & (NG - 1), yi = Math.floor(y) & (NG - 1);
-            const xf = x - Math.floor(x), yf = y - Math.floor(y);
-            const sx = xf * xf * (3 - 2 * xf), sy = yf * yf * (3 - 2 * yf);
-            const x1 = (xi + 1) & (NG - 1), y1 = (yi + 1) & (NG - 1);
-            const a = noiseGrid[xi + yi * NG], b = noiseGrid[x1 + yi * NG];
-            const c = noiseGrid[xi + y1 * NG], d = noiseGrid[x1 + y1 * NG];
-            return a + sx * (b - a) + sy * (c - a) + sx * sy * (a - b - c + d);
-        }
-
-        function fbm(x, y, oct) {
-            let v = 0, amp = 1, freq = 1, tot = 0;
-            for (let o = 0; o < oct; o++) { v += vnoise(x * freq, y * freq) * amp; tot += amp; amp *= 0.5; freq *= 2.2; }
-            return v / tot;
-        }
-
-        function isDark() { return window.matchMedia('(prefers-color-scheme: dark)').matches; }
-
-        function getColors() {
-            return isDark()
-                ? { bg: [28,25,23], stone: [168,162,158], amber: [212,165,116], alert: [193,85,77] }
-                : { bg: [250,249,245], stone: [168,162,158], amber: [180,83,9], alert: [193,85,77] };
-        }
-
-        // ── Text mask: render word to hidden canvas, extract pixel positions ──
-        function buildTextMask(word) {
-            const off = document.createElement('canvas');
-            off.width = W; off.height = H;
-            const octx = off.getContext('2d');
-
-            // Size to fit canvas width with margin
-            let fontSize = Math.min(W / (word.length * 0.55), H * 0.25);
-            fontSize = Math.max(fontSize, 28);
-            octx.font = `700 ${fontSize}px 'El Messiri', Georgia, serif`;
-            octx.textAlign = 'center';
-            octx.textBaseline = 'middle';
-            octx.fillStyle = '#000';
-            octx.fillText(word, W / 2, H / 2);
-
-            // Sample pixels at grid spacing
-            const data = octx.getImageData(0, 0, W, H).data;
-            const step = Math.max(3, Math.floor(Math.min(W, H) / 200));
-            textPixels = [];
-            for (let y = 0; y < H; y += step) {
-                for (let x = 0; x < W; x += step) {
-                    const idx = (y * W + x) * 4;
-                    if (data[idx + 3] > 128) {
-                        textPixels.push({ x, y });
-                    }
-                }
-            }
-        }
-
-        function resize() {
-            const rect = canvas.parentElement.getBoundingClientRect();
-            const dpr = Math.min(window.devicePixelRatio || 1, 2);
-            W = rect.width; H = rect.height;
-            canvas.width = W * dpr; canvas.height = H * dpr;
-            canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
-            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-            const cols = getColors();
-            ctx.fillStyle = `rgb(${cols.bg[0]},${cols.bg[1]},${cols.bg[2]})`;
-            ctx.fillRect(0, 0, W, H);
-
-            initField(); initSignals();
-            buildTextMask(WORDS[wordIdx]);
-        }
-
-        function initField() {
-            fieldCols = Math.ceil(W / 12); fieldRows = Math.ceil(H / 12);
-            field = new Float32Array(fieldCols * fieldRows);
-            updateField();
-        }
-
-        function updateField() {
-            const scale = 0.004, tSlow = t * 0.0004;
-            for (let y = 0; y < fieldRows; y++)
-                for (let x = 0; x < fieldCols; x++)
-                    field[x + y * fieldCols] = fbm(x * scale + tSlow, y * scale + tSlow * 0.7, 3) * Math.PI * 4;
-        }
-
-        function initSignals() {
-            const count = Math.min(Math.floor(W * H / 500), 1600);
-            signals = [];
-            for (let i = 0; i < count; i++) {
-                signals.push({
-                    x: rng() * W, y: rng() * H,
-                    vx: 0, vy: 0,
-                    age: Math.floor(rng() * 400),
-                    maxAge: 200 + Math.floor(rng() * 500),
-                    weight: 0.3 + rng() * 1.0,
-                    type: rng() < 0.65 ? 0 : (rng() < 0.7 ? 1 : 2),
-                    targetIdx: -1,
-                });
-            }
-            assignTargets();
-        }
-
-        function assignTargets() {
-            if (!textPixels.length) return;
-            for (let i = 0; i < signals.length; i++) {
-                // Only some particles get attracted (40%)
-                signals[i].targetIdx = (rng() < 0.40)
-                    ? Math.floor(rng() * textPixels.length)
-                    : -1;
-            }
-        }
-
-        function lerp3(a, b, t) {
-            return [a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t, a[2]+(b[2]-a[2])*t];
-        }
-
-        function frame() {
-            t++; cycleT++;
-            if (t % 12 === 0) updateField();
-
-            // Determine phase
-            let phase, phaseProgress;
-            if (cycleT < PHASE_FLOW) {
-                phase = 'flow'; phaseProgress = cycleT / PHASE_FLOW;
-            } else if (cycleT < PHASE_FLOW + PHASE_CONVERGE) {
-                phase = 'converge'; phaseProgress = (cycleT - PHASE_FLOW) / PHASE_CONVERGE;
-            } else if (cycleT < PHASE_FLOW + PHASE_CONVERGE + PHASE_HOLD) {
-                phase = 'hold'; phaseProgress = (cycleT - PHASE_FLOW - PHASE_CONVERGE) / PHASE_HOLD;
-            } else if (cycleT < CYCLE) {
-                phase = 'dissolve'; phaseProgress = (cycleT - PHASE_FLOW - PHASE_CONVERGE - PHASE_HOLD) / PHASE_DISSOLVE;
-            } else {
-                // Next word
-                cycleT = 0; phase = 'flow'; phaseProgress = 0;
-                wordIdx = (wordIdx + 1) % WORDS.length;
-                buildTextMask(WORDS[wordIdx]);
-                assignTargets();
-                // Fade progressif au lieu de reset brutal
-                const cols = getColors();
-                ctx.fillStyle = `rgba(${cols.bg[0]},${cols.bg[1]},${cols.bg[2]},0.15)`;
-                ctx.fillRect(0, 0, W, H);
-            }
-
-            // Attraction strength based on phase
-            let attractStrength = 0;
-            if (phase === 'converge') attractStrength = phaseProgress * phaseProgress * 0.08;
-            else if (phase === 'hold') attractStrength = 0.08;
-            else if (phase === 'dissolve') attractStrength = 0.08 * (1 - phaseProgress);
-
-            const cols = getColors();
-            const inertia = 0.96;
-            const flowForce = 0.35;
-
-            for (const s of signals) {
-                // Flow field force
-                const col = Math.min(Math.floor(s.x / 12), fieldCols - 1);
-                const row = Math.min(Math.floor(s.y / 12), fieldRows - 1);
-                if (col >= 0 && row >= 0) {
-                    const angle = field[col + row * fieldCols];
-                    s.vx = s.vx * inertia + Math.cos(angle) * flowForce * (1 - inertia);
-                    s.vy = s.vy * inertia + Math.sin(angle) * flowForce * (1 - inertia);
-                }
-
-                // Text attractor force
-                if (attractStrength > 0 && s.targetIdx >= 0 && s.targetIdx < textPixels.length) {
-                    const tp = textPixels[s.targetIdx];
-                    const dx = tp.x - s.x, dy = tp.y - s.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy) + 1;
-                    const pull = attractStrength * Math.min(dist * 0.01, 1);
-                    s.vx += (dx / dist) * pull;
-                    s.vy += (dy / dist) * pull;
-                }
-
-                s.x += s.vx; s.y += s.vy; s.age++;
-
-                if (s.x < 0) s.x += W; if (s.x > W) s.x -= W;
-                if (s.y < 0) s.y += H; if (s.y > H) s.y -= H;
-
-                if (s.age > s.maxAge) {
-                    s.x = rng() * W; s.y = rng() * H;
-                    s.vx = 0; s.vy = 0; s.age = 0;
-                    s.maxAge = 200 + Math.floor(rng() * 500);
-                }
-
-                // Draw
-                const speed = Math.sqrt(s.vx * s.vx + s.vy * s.vy);
-                const life = 1 - s.age / s.maxAge;
-                const fade = life < 0.1 ? life * 10 : (life > 0.85 ? (1 - life) * 6.67 : 1);
-                let alpha = 0.04 * fade * s.weight;
-
-                // Particles near their target glow slightly during hold
-                if (phase === 'hold' && s.targetIdx >= 0 && s.targetIdx < textPixels.length) {
-                    const tp = textPixels[s.targetIdx];
-                    const dist = Math.sqrt((tp.x - s.x) ** 2 + (tp.y - s.y) ** 2);
-                    if (dist < 15) alpha *= 1.8;
-                }
-
-                let c;
-                if (s.type === 0) c = cols.stone;
-                else if (s.type === 1) c = lerp3(cols.stone, cols.amber, Math.min(speed * 3, 1));
-                else c = lerp3(cols.amber, cols.alert, Math.min(speed * 4, 1));
-
-                ctx.fillStyle = `rgba(${c[0]|0},${c[1]|0},${c[2]|0},${alpha})`;
-                const r = s.weight * (0.4 + speed * 0.6);
-                ctx.fillRect(s.x - r * 0.5, s.y - r * 0.5, r, r);
-            }
-
-            raf = requestAnimationFrame(frame);
-        }
-
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) { if (!raf) raf = requestAnimationFrame(frame); }
-            else { if (raf) { cancelAnimationFrame(raf); raf = null; } }
-        }, { threshold: 0.05 });
-
-        resize();
-        observer.observe(canvas);
-
-        let resizeTimer;
-        window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(resize, 200); });
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', resize);
-    })();
-    </script>
+  <!-- 3AYNE eye + glyph system -->
+  <script>
+    fetch('/assets/v2/eye.svg').then(function (r) { return r.text(); }).then(function (svgText) {
+      var mount = document.querySelector('.eye-root');
+      if (!mount) return;
+      var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
+      mount.appendChild(svgEl);
+    }).then(function () {
+      var s = document.createElement('script');
+      s.src = '/assets/v2/eye.js';
+      document.body.appendChild(s);
+    });
+  </script>
+  <script src="/assets/v2/glyph.js" defer></script>
 </body>
 </html>

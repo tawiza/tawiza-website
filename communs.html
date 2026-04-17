@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pourquoi les communs num&eacute;riques fonctionnent &mdash; De Hardin &agrave; Ostrom | Tawiza</title>
+    <title>Pourquoi les communs num&eacute;riques fonctionnent - De Hardin &agrave; Ostrom | Tawiza</title>
     <meta name="description" content="En 1968, Garrett Hardin justifia un demi-si&egrave;cle de privatisations. En 1990, Elinor Ostrom d&eacute;montra qu'il avait tort. Th&eacute;orie des communs, th&eacute;orie des jeux et donn&eacute;es publiques.">
     <meta name="keywords" content="communs num&eacute;riques, Elinor Ostrom, Garrett Hardin, trag&eacute;die des communs, th&eacute;orie des jeux, dilemme du prisonnier, Axelrod, Nash, open data, bien commun, coop&eacute;ration, donn&eacute;es publiques">
     <meta name="author" content="Tawiza">
@@ -34,6 +34,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="/assets/v2/design-system.css">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="manifeste.css?v=3">
 
     <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.js"></script>
@@ -70,26 +72,9 @@
     <!-- READING PROGRESS BAR -->
     <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
 
-    <!-- NAV -->
-    <nav class="nav" role="navigation" aria-label="Navigation principale">
-        <div class="nav-inner">
-            <a href="/" class="logo" aria-label="Tawiza - Accueil">
-                <img src="img/logo-tawiza-amber.svg" alt="Tawiza" class="logo-img logo-light-only" height="28">
-                <img src="img/logo-tawiza-white.svg" alt="Tawiza" class="logo-img logo-dark-only" height="28">
-            </a>
-            <div class="nav-links">
-                <a href="analyses/">Analyses</a>
-                <a href="manifeste.html">Manifeste</a>
-                <a href="contribuer.html">Contribuer</a>
-                <a href="a-propos.html">&Agrave; propos</a>
-                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">Code source</a>
-            </div>
-            <button class="nav-mobile" aria-label="Menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
-
+        <!-- v2: wordmark + generative glyph (replaces legacy nav) -->
+    <a href="/" class="wordmark">tawiza.fr</a>
+    <div class="glyph-slot" aria-hidden="true" data-seed="/communs"></div>
     <!-- HERO -->
     <header class="article-hero">
         <div class="article-hero-inner">
@@ -311,7 +296,7 @@
                 <p>Un commun num&eacute;rique n'est pas un acte de charit&eacute;. C'est une <strong>infrastructure de coop&eacute;ration</strong>. En r&eacute;duisant le co&ucirc;t d'acc&egrave;s, en rendant la contribution visible, et en structurant la communaut&eacute; selon les principes d'Ostrom, on cr&eacute;e les conditions pour que la coop&eacute;ration devienne la strat&eacute;gie dominante.</p>
 
                 <div class="method-note">
-                    <p>La th&eacute;orie des jeux d&eacute;crit les conditions n&eacute;cessaires &agrave; la coop&eacute;ration. Elle ne garantit pas qu'un projet sp&eacute;cifique r&eacute;ussira. Tawiza fait le pari que ces conditions peuvent &ecirc;tre r&eacute;unies &mdash; code ouvert, contribution visible, gouvernance transparente. Ce pari reste &agrave; prouver.</p>
+                    <p>La th&eacute;orie des jeux d&eacute;crit les conditions n&eacute;cessaires &agrave; la coop&eacute;ration. Elle ne garantit pas qu'un projet sp&eacute;cifique r&eacute;ussira. Tawiza fait le pari que ces conditions peuvent &ecirc;tre r&eacute;unies - code ouvert, contribution visible, gouvernance transparente. Ce pari reste &agrave; prouver.</p>
                 </div>
             </section>
 
@@ -402,29 +387,27 @@
         </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-eye">
-                <img src="img/tawiza-eye.svg" alt="L'œil Tawiza" class="footer-eye-img">
-                <p class="footer-eye-tagline">L'œil qui dort jamais</p>
-            </div>
-            <div class="footer-inner">
-                <div class="footer-links">
-                    <a href="analyses/">Analyses</a>
-                    <a href="manifeste.html">Manifeste</a>
-                    <a href="contribuer.html">Contribuer</a>
-                    <a href="a-propos.html">&Agrave; propos</a>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">GitHub</a>
-                    <a href="https://bsky.app/profile/tawiza.fr" target="_blank" rel="noopener">Bluesky</a>
-                </div>
-                <p class="footer-legal">Licence MIT. Donn&eacute;es collect&eacute;es depuis des sources publiques ouvertes.</p>
+        <!-- v2: 3AYNE eye + minimal footer -->
+    <section class="eye-zone">
+        <div class="terrain">
+            <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui dort jamais</span></div>
+            <div class="eye-root" role="img" aria-label="3AYNE - l'&oelig;il Tawiza"></div>
+            <div class="eye-caption">il regarde, il compte, il doute</div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="terrain" style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+            <span>tawiza &middot; observatoire territorial &middot; 2026</span>
+            <div class="footer-links">
+                <a href="/analyses/">analyses</a>
+                <a href="/articles/">articles</a>
+                <a href="/manifeste.html">manifeste</a>
+                <a href="/a-propos.html">&agrave; propos</a>
+                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">source</a>
             </div>
         </div>
     </footer>
-
     <script>
     document.querySelector('.nav-mobile')?.addEventListener('click', function() {
         const links = document.querySelector('.nav-links');
@@ -448,5 +431,19 @@
         }, { passive: true });
     }
     </script>
+    <!-- v2: inject 3AYNE eye + load eye.js + glyph.js -->
+    <script>
+        fetch('/assets/v2/eye.svg').then(function (r) { return r.text(); }).then(function (svgText) {
+            var mount = document.querySelector('.eye-root');
+            if (!mount) return;
+            var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
+            mount.appendChild(svgEl);
+        }).then(function () {
+            var s = document.createElement('script');
+            s.src = '/assets/v2/eye.js';
+            document.body.appendChild(s);
+        });
+    </script>
+    <script src="/assets/v2/glyph.js" defer></script>
 </body>
 </html>

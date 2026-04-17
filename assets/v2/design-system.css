@@ -1,0 +1,1038 @@
+/* ============================================================
+   TAWIZA - Design System Prototype v0.1
+   Refonte 2026-04-17 - appliquant les 20 provocations
+   ============================================================ */
+
+/* ----- 01. DESIGN TOKENS ----- */
+:root {
+  /* Minéral cream, pas blanc pur */
+  --bg:        #faf5ef;
+  --bg-deep:   #f3ebdd;
+  --ink:       #1a1612;
+  --ink-soft:  #3a342c;
+  --ink-mute:  #7a6e5e;
+
+  /* Accents - utilisés comme du sang, parcimonieusement */
+  --ocre:      #b45309;
+  --terre:     #C1554D;
+  --foret:     #2D6A4F;
+
+  /* Structural */
+  --line:      #1a1612;
+  --line-soft: rgba(26, 22, 18, 0.18);
+  --hatch:     rgba(26, 22, 18, 0.08);
+
+  /* Typo */
+  --serif-display: "Instrument Serif", "Playfair Display", Georgia, "Times New Roman", serif;
+  --serif-body:    ui-serif, Georgia, "Iowan Old Style", "Apple Garamond", "Times New Roman", serif;
+  --mono:          "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Rythme vertical - basé sur baseline 24px */
+  --base: 24px;
+  --ch:   1ch;
+
+  /* Measure */
+  --read: 62ch;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #0d0b09;
+    --bg-deep:   #14110d;
+    --ink:       #e8dfd0;
+    --ink-soft:  #c4b8a3;
+    --ink-mute:  #85796a;
+    --line:      #e8dfd0;
+    --line-soft: rgba(232, 223, 208, 0.18);
+    --hatch:     rgba(232, 223, 208, 0.08);
+
+    --ocre:      #e08935;
+    --terre:     #e07a6f;
+    --foret:     #5fa982;
+  }
+}
+
+/* ----- 02. RESET MINIMALISTE ----- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; tab-size: 4; }
+body {
+  margin: 0;
+  font-family: var(--serif-body);
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--bg);
+  font-feature-settings: "kern", "liga", "onum";
+  text-rendering: optimizeLegibility;
+}
+
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--line-soft); }
+a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
+
+/* Accessibilité : reduced motion par défaut */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* ----- 03. WORDMARK DISCRET (provocation 19) ----- */
+.wordmark {
+  position: fixed;
+  top: 18px; left: 20px;
+  z-index: 100;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: var(--ink);
+  text-decoration: none;
+  mix-blend-mode: difference;
+  color: var(--bg);
+}
+.wordmark:hover { color: var(--ocre); }
+.wordmark::before { content: "//"; color: var(--ocre); margin-right: 6px; }
+
+/* ----- 04. GRILLE MONOSPACE (inspirée ASTA) ----- */
+.terrain {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 48px);
+}
+
+.terrain-dense {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+}
+
+/* ----- 05. HACHURES CSS (pas de gradients - provocation 8) ----- */
+.hatch-ocre {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--ocre),
+    var(--ocre) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+}
+.hatch-ink {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--hatch),
+    var(--hatch) 1px,
+    transparent 1px,
+    transparent 5px
+  );
+}
+
+/* ============================================================
+   06. HOME - MANIFESTE DENSE (provocations 1, 3, 5)
+   ============================================================ */
+
+/* Pas de hero image - grille territoires chauds en tête */
+.hot-zones {
+  padding: 96px 0 32px;
+  border-bottom: 1px solid var(--line);
+}
+.hot-zones-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 24px;
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-mute);
+}
+.hot-zones-header time { color: var(--ocre); }
+
+.hot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.hot-cell {
+  background: var(--bg);
+  padding: 20px 24px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 140px;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.18s;
+}
+.hot-cell:hover {
+  background: var(--bg-deep);
+  text-decoration: none;
+}
+.hot-cell-code {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.08em;
+}
+.hot-cell-name {
+  font-family: var(--serif-display);
+  font-size: 28px;
+  line-height: 1.1;
+  margin: 4px 0 auto;
+  letter-spacing: -0.01em;
+}
+.hot-cell-score {
+  font-family: var(--mono);
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.hot-cell-score[data-level="critical"] { color: var(--terre); }
+.hot-cell-score[data-level="warning"]  { color: var(--ocre); }
+.hot-cell-score[data-level="stable"]   { color: var(--foret); }
+.hot-cell-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ASCII sparkline - pur texte */
+.hot-cell-spark {
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: -0.05em;
+  color: var(--ink-soft);
+  line-height: 1;
+  margin: 4px 0;
+  white-space: pre;
+}
+
+/* ----- 07. MANIFESTE (home = manifeste, provocation 3) ----- */
+.manifeste {
+  padding: 120px 0;
+  border-bottom: 1px solid var(--line);
+}
+.manifeste-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ocre);
+  margin-bottom: 48px;
+}
+.manifeste-label::before { content: "§ "; }
+
+.manifeste-verse {
+  font-family: var(--serif-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+  max-width: 22ch;
+  margin: 0 0 48px;
+  color: var(--ink);
+}
+.manifeste-verse em {
+  font-style: italic;
+  color: var(--terre);
+}
+.manifeste-verse strong {
+  font-weight: 400;
+  background: linear-gradient(transparent 55%, color-mix(in srgb, var(--ocre) 35%, transparent) 55%);
+  padding: 0 2px;
+}
+
+.manifeste-body {
+  max-width: var(--read);
+  font-size: 19px;
+  line-height: 1.65;
+}
+.manifeste-body p + p { margin-top: 1.25em; }
+.manifeste-body p:first-child::first-line {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
+/* Principes en colonnes mono */
+.principes {
+  margin-top: 72px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.principe {
+  padding: 24px;
+  border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.principe:last-child { border-right: none; }
+.principe-num {
+  color: var(--ocre);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.principe-body strong { color: var(--terre); font-weight: 400; }
+
+/* ============================================================
+   08. ARCHIVE / ROW LIST (provocation 14 - pas de carrousel)
+   ============================================================ */
+.archive {
+  padding: 96px 0;
+}
+.archive-heading {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-mute);
+  margin-bottom: 32px;
+  display: grid;
+  grid-template-columns: 4ch 1fr 12ch 18ch 6ch;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--line);
+}
+.archive-row {
+  display: grid;
+  grid-template-columns: 4ch 1fr 12ch 18ch 6ch;
+  gap: 16px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s, color 0.18s;
+}
+.archive-row:hover {
+  transform: translateX(8px);
+  color: var(--ocre);
+  text-decoration: none;
+}
+.archive-row:hover .archive-row-title { color: var(--ocre); }
+.archive-row-num {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-mute);
+}
+.archive-row-title {
+  font-family: var(--serif-display);
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.archive-row-title em {
+  font-style: italic;
+  color: var(--terre);
+}
+.archive-row-meta {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-mute);
+  letter-spacing: 0.04em;
+}
+.archive-row-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ocre);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.archive-row-arrow {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--ink-mute);
+  text-align: right;
+  transition: transform 0.18s, color 0.18s;
+}
+.archive-row:hover .archive-row-arrow { color: var(--ocre); transform: translateX(4px); }
+
+/* ----- Archive responsive (≤ 720px) : block + glyph/arrow absolus ----- */
+@media (max-width: 720px) {
+  .archive-heading {
+    display: block;
+    grid-template-columns: none;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--ink-mute);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+    margin-bottom: 4px;
+  }
+  .archive-heading > span { display: none; }
+  .archive-heading::before {
+    content: "// archive · 7 pièces";
+    display: block;
+    color: var(--ocre);
+  }
+
+  .archive-row {
+    display: block;
+    position: relative;
+    padding: 22px 26px 22px 64px;
+    min-height: 88px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .archive-row:hover {
+    transform: none; /* pas de slide sur tactile */
+    color: inherit;
+  }
+
+  .archive-row-glyph {
+    position: absolute;
+    left: 0; top: 22px;
+    width: 44px; height: 44px;
+  }
+  .archive-row-glyph canvas { width: 44px !important; height: 44px !important; }
+
+  .archive-row-arrow {
+    position: absolute;
+    right: 0; top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+  }
+
+  .archive-row-title {
+    display: block;
+    font-size: 19px;
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+    margin: 0 0 8px;
+  }
+
+  /* Meta-line : num · date · tag, inline naturel, séparateurs en ::after */
+  .archive-row-num,
+  .archive-row-meta,
+  .archive-row-tag {
+    display: inline;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+  .archive-row-num,
+  .archive-row-meta {
+    color: var(--ink-mute);
+  }
+  .archive-row-num::after,
+  .archive-row-meta::after {
+    content: " · ";
+    color: var(--line-soft);
+    margin: 0 2px;
+  }
+  .archive-row-tag {
+    color: var(--ocre);
+  }
+}
+
+/* Très petit écran (≤ 400px) */
+@media (max-width: 400px) {
+  .archive-row {
+    padding: 20px 22px 20px 50px;
+  }
+  .archive-row-glyph {
+    width: 36px; height: 36px;
+    top: 22px;
+  }
+  .archive-row-glyph canvas { width: 36px !important; height: 36px !important; }
+  .archive-row-title { font-size: 17px; }
+}
+
+/* ----- Autres ajustements mobile globaux ----- */
+@media (max-width: 720px) {
+  /* Wordmark : moins agressif sur mobile + backdrop for legibility */
+  .wordmark {
+    top: 12px; left: 14px;
+    font-size: 10px;
+    mix-blend-mode: normal;
+    color: var(--ocre);
+    background: color-mix(in srgb, var(--bg) 75%, transparent);
+    padding: 2px 6px;
+    backdrop-filter: blur(4px);
+  }
+  .wordmark::before { content: "//"; color: var(--ocre); margin-right: 4px; opacity: 0.5; }
+  /* Hide fixed glyph-slot on mobile (redundant with inline glyph-hero, avoids text overlap) */
+  .glyph-slot {
+    display: none;
+  }
+
+  /* Hot zones : header en colonne sur mobile */
+  .hot-zones {
+    padding: 72px 0 24px;
+  }
+  .hot-zones-header {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .hot-zones-header time {
+    justify-self: start;
+    font-size: 11px;
+  }
+  .hot-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hot-cell {
+    padding: 14px 16px;
+    min-height: 120px;
+  }
+  .hot-cell-name { font-size: 22px; }
+  .hot-cell-score { font-size: 34px; }
+
+  /* Manifeste : moins d'air */
+  .manifeste {
+    padding: 72px 0;
+  }
+  .manifeste-verse {
+    max-width: 100%;
+  }
+  .principes {
+    grid-template-columns: 1fr 1fr;
+  }
+  .principe {
+    padding: 18px 16px;
+  }
+
+  /* Archive section padding */
+  .archive {
+    padding: 72px 0;
+  }
+
+  /* Footer en colonne */
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 0;
+  }
+  .footer-links { flex-wrap: wrap; gap: 20px; }
+
+  /* Article masthead : moins de padding-top */
+  .article-masthead {
+    padding: 96px 0 48px;
+  }
+  .glyph-hero {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 32px;
+  }
+
+  /* Article typographie mobile - tailles réduites */
+  .article-title {
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+    line-height: 1.12;
+    margin-bottom: 22px;
+  }
+  .article-subtitle {
+    font-size: 1rem;
+    line-height: 1.45;
+    margin-bottom: 32px;
+  }
+  .article-meta {
+    font-size: 10.5px;
+    gap: 10px 22px;
+    padding-top: 18px;
+    line-height: 1.6;
+  }
+  .article-body {
+    font-size: 15.5px;
+    line-height: 1.62;
+    padding: 0 0 96px;
+  }
+  .article-body > p:first-of-type::first-letter {
+    font-size: 3.2em;
+    padding: 5px 10px 0 0;
+  }
+  .article-body h2 {
+    font-size: clamp(1.2rem, 4.5vw, 1.55rem);
+    margin: 2em 0 0.7em;
+    line-height: 1.2;
+  }
+  .article-body h2::before { font-size: 0.6em; }
+  .article-body h3 {
+    font-size: 10.5px;
+    margin: 1.8em 0 0.7em;
+  }
+  .article-body blockquote {
+    font-size: 1em;
+    margin: 1.6em 0 1.6em -0.5em;
+    padding: 0.2em 0 0.2em 0.75em;
+  }
+  .article-body pre {
+    font-size: 11.5px;
+    line-height: 1.65;
+    padding: 14px 16px;
+    margin: 1.6em -6px;
+  }
+  .article-body code { font-size: 0.85em; }
+}
+
+/* Mobile très étroit : hot-grid en 1 colonne */
+@media (max-width: 460px) {
+  .hot-grid { grid-template-columns: 1fr; }
+  .principes { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   09. GLYPH CANVAS (provocation 18 - glyph génératif par page)
+   ============================================================ */
+.glyph-slot {
+  position: fixed;
+  right: 24px;
+  top: 18px;
+  width: 88px;
+  height: 88px;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.85;
+  mix-blend-mode: multiply;
+}
+@media (prefers-color-scheme: dark) {
+  .glyph-slot { mix-blend-mode: screen; opacity: 0.9; }
+}
+.glyph-slot canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+/* glyph-slot hidden on mobile via above breakpoint */
+
+/* Responsive glyph : force canvas to fill its container override inline style.width */
+.glyph-slot canvas,
+.glyph-hero canvas,
+.entry-glyph canvas,
+.home-row-glyph canvas,
+.archive-row-glyph canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+}
+.glyph-slot,
+.entry-glyph,
+.home-row-glyph,
+.archive-row-glyph {
+  overflow: hidden;
+}
+
+
+/* ============================================================
+   10. ARTICLE LONG FORMAT (provocations 10, 11, 15)
+   ============================================================ */
+.article-masthead {
+  padding: 140px 0 56px;
+  max-width: var(--read);
+  margin: 0 auto;
+}
+.article-kicker {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ocre);
+  margin-bottom: 28px;
+}
+.article-kicker::before { content: "→ "; }
+.article-title {
+  font-family: var(--serif-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 5.5vw, 3.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin: 0 0 28px;
+  color: var(--ink);
+}
+.article-title em { font-style: italic; color: var(--terre); }
+.article-subtitle {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  line-height: 1.35;
+  color: var(--ink-soft);
+  margin: 0 0 48px;
+  max-width: 44ch;
+}
+.article-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.06em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.article-meta span strong {
+  color: var(--ink);
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+.article-body {
+  max-width: var(--read);
+  margin: 0 auto;
+  padding: 0 0 160px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.article-body > p:first-of-type::first-letter {
+  font-family: var(--serif-display);
+  font-size: 4.2em;
+  float: left;
+  line-height: 0.88;
+  padding: 8px 14px 0 0;
+  color: var(--terre);
+  font-weight: 400;
+}
+.article-body p { margin: 0 0 1.4em; }
+.article-body h2 {
+  font-family: var(--serif-display);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 2.4em 0 0.9em;
+  color: var(--ink);
+}
+.article-body h2::before {
+  content: "§ ";
+  color: var(--ocre);
+  font-family: var(--mono);
+  font-size: 0.55em;
+  vertical-align: 0.2em;
+  margin-right: 8px;
+  letter-spacing: 0.1em;
+}
+.article-body h3 {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ocre);
+  margin: 2.5em 0 0.75em;
+}
+.article-body blockquote {
+  margin: 2.2em 0 2.2em -0.75em;
+  padding: 0.2em 0 0.2em 1em;
+  border-left: 3px solid var(--terre);
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-size: 1.25em;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+.article-body code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--bg-deep);
+  padding: 1px 6px;
+  border-radius: 2px;
+}
+.article-body pre {
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 20px 24px;
+  overflow-x: auto;
+  margin: 2.2em 0;
+  border-left: 3px solid var(--ocre);
+}
+.article-body pre code { background: transparent; padding: 0; color: inherit; }
+
+/* Hover informationnel (provocation 17) : data-tip révèle source */
+[data-source] { border-bottom: 1px dotted var(--ocre); cursor: help; position: relative; }
+[data-source]:hover::after {
+  content: attr(data-source);
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 4px;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 4px 8px;
+  white-space: nowrap;
+  border-radius: 2px;
+  z-index: 10;
+}
+
+/* ============================================================
+   11. FOOTER MINIMAL (provocation 4)
+   ============================================================ */
+.footer {
+  padding: 48px 0;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-mute);
+  letter-spacing: 0.06em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer a { color: var(--ink-mute); text-decoration: none; }
+.footer a:hover { color: var(--ocre); }
+.footer-links { display: flex; gap: 32px; }
+
+/* ============================================================
+   12. UTILS
+   ============================================================ */
+.rule { height: 1px; background: var(--line); border: 0; margin: 0; }
+.rule-double { height: 4px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: transparent; margin: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* Focus ring accessible */
+:focus-visible {
+  outline: 2px solid var(--ocre);
+  outline-offset: 3px;
+}
+
+/* Nav invisible qui disparaît au scroll (provocation 2) */
+/* On n'ajoute PAS de nav. Le wordmark fixe suffit. */
+
+/* ============================================================
+   13. 3AYNE - L'ŒIL EN BAS DE PAGE
+   ============================================================ */
+.eye-zone {
+  padding: 96px 0 64px;
+  border-top: 1px solid var(--line);
+  background: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
+}
+.eye-zone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    var(--hatch),
+    var(--hatch) 1px,
+    transparent 1px,
+    transparent 32px
+  );
+  pointer-events: none;
+}
+.eye-zone-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-mute);
+  text-align: center;
+  margin-bottom: 32px;
+  position: relative;
+}
+.eye-zone-label span { color: var(--terre); }
+
+.eye-root {
+  display: block;
+  width: min(60vw, 560px);
+  margin: 0 auto;
+  color: var(--ink);
+  position: relative;
+  user-select: none;
+  transition: filter 0.3s;
+}
+.eye-root:hover { filter: drop-shadow(0 0 12px color-mix(in srgb, var(--ocre) 35%, transparent)); }
+.eye-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.eye-caption {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-align: center;
+  color: var(--ink-mute);
+  margin-top: 24px;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  position: relative;
+}
+.eye-caption::before,
+.eye-caption::after {
+  content: " - ";
+  color: var(--ocre);
+}
+
+/* ============================================================
+   14. GLYPH - hero XL, mini row, pattern book
+   ============================================================ */
+
+/* Glyph hero XL (masthead article) */
+.glyph-hero {
+  width: 320px;
+  height: 320px;
+  margin: 0 auto 48px;
+  display: block;
+  position: relative;
+}
+.glyph-hero canvas { margin: 0 auto; }
+.glyph-hero::after {
+  content: attr(data-seed) " · 23×23 · generated";
+  display: block;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 12px;
+}
+@media (max-width: 560px) {
+  .glyph-hero { width: 220px; height: 220px; }
+}
+
+/* Mini glyph dans les rows d'archive */
+.archive-heading {
+  grid-template-columns: 40px 4ch 1fr 12ch 18ch 6ch;
+}
+.archive-row {
+  grid-template-columns: 40px 4ch 1fr 12ch 18ch 6ch;
+}
+.archive-row-glyph {
+  width: 32px;
+  height: 32px;
+  margin-top: -4px;
+  align-self: center;
+  opacity: 0.85;
+  transition: opacity 0.18s;
+}
+.archive-row:hover .archive-row-glyph { opacity: 1; }
+
+/* Pattern book page */
+.patterns-page {
+  padding: 120px 0;
+}
+.patterns-header {
+  max-width: 62ch;
+  margin: 0 auto 72px;
+}
+.patterns-kicker {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ocre);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 16px;
+}
+.patterns-title {
+  font-family: var(--serif-display);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 24px;
+}
+.patterns-title em { font-style: italic; color: var(--terre); }
+.patterns-lede {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.patterns-lede code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--bg-deep);
+  padding: 1px 6px;
+}
+
+.patterns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 32px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.pattern-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.pattern-card .glyph-root {
+  background: var(--bg);
+  padding: 8px;
+  border: 1px solid var(--line-soft);
+}
+.pattern-card-slug {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  text-align: center;
+  letter-spacing: 0.04em;
+  word-break: break-all;
+  max-width: 140px;
+}
+
+.patterns-rules {
+  max-width: 62ch;
+  margin: 96px auto 0;
+  padding-top: 48px;
+  border-top: 2px solid var(--line);
+}
+.patterns-rules h2 {
+  font-family: var(--serif-display);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+}
+.patterns-rules ol {
+  list-style: none;
+  counter-reset: rule;
+  padding: 0;
+}
+.patterns-rules li {
+  counter-increment: rule;
+  padding: 16px 0 16px 48px;
+  border-bottom: 1px solid var(--line-soft);
+  position: relative;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.patterns-rules li::before {
+  content: counter(rule, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 16px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ocre);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+.patterns-rules li strong {
+  display: block;
+  font-family: var(--serif-display);
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+/* Cils animés - léger tremblement permanent très discret */
+@keyframes lash-shiver {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-0.3px); }
+}
+.eye-lashes-top rect { animation: lash-shiver 4.2s ease-in-out infinite; }
+.eye-lashes-top rect:nth-child(2) { animation-delay: 0.6s; }
+.eye-lashes-top rect:nth-child(3) { animation-delay: 1.1s; }
+.eye-lashes-top rect:nth-child(4) { animation-delay: 1.7s; }
+.eye-lashes-top rect:nth-child(5) { animation-delay: 2.4s; }

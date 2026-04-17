@@ -1,241 +1,259 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contribuer - Tawiza</title>
-    <meta name="description" content="Projet open source d'intelligence territoriale. D&#233;veloppeurs, data scientists, r&#233;dacteurs : voici comment contribuer.">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#b45309">
-    <link rel="canonical" href="https://tawiza.fr/contribuer.html">
-    <meta property="og:title" content="Contribuer - Tawiza">
-    <meta property="og:description" content="Projet open source. On cherche des gens qui veulent que les donn&#233;es publiques servent &#224; quelque chose.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tawiza.fr/contribuer.html">
-    <meta property="og:locale" content="fr_FR">
-    <meta property="og:site_name" content="Tawiza">
-    <meta property="og:image" content="https://tawiza.fr/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contribuer - Tawiza">
-    <meta name="twitter:description" content="Open source. Donn&#233;es publiques fran&#231;aises.">
-    <meta name="twitter:image" content="https://tawiza.fr/og-image.png">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23b45309'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='18'%3ET%3C/text%3E%3C/svg%3E">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=11">
-    <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.tagged-events.pageview-props.outbound-links.file-downloads.js"></script>
-    <style>
-    .tc { padding-top: 7rem; }
-    .tc-prompt { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-bottom: 1.25rem; }
-    .tc-prompt span { color: var(--accent); }
-    .tc-intro { font-family: var(--font-heading); font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; margin: 1rem 0 2rem; }
-    .tc-section { padding: 2rem 0; border-bottom: 1px solid color-mix(in srgb, var(--separator) 50%, transparent); }
-    .tc-section:last-child { border-bottom: none; }
-    .tc-label { font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
-    .tc-text { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 0.75rem; }
-    .tc-text:last-child { margin-bottom: 0; }
-    .tc-text strong { color: var(--text); }
-    .tc-text a { color: var(--accent); }
-    .tc-text code { font-size: 0.82rem; }
-
-    /* Profile cards */
-    .tc-profiles { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem; }
-    .tc-profile {
-        display: grid; grid-template-columns: 6rem 1fr auto;
-        gap: 0.75rem; align-items: baseline;
-        padding: 0.9rem 1rem; border: 1px solid var(--separator);
-        border-radius: 6px; background: var(--surface);
-        text-decoration: none; transition: border-color 0.2s;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contribuer - Tawiza</title>
+  <meta name="description" content="Projet open source d'intelligence territoriale. D&eacute;veloppeurs, data scientists, r&eacute;dacteurs : voici comment contribuer.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#b45309">
+  <link rel="canonical" href="https://tawiza.fr/contribuer.html">
+  <meta property="og:title" content="Contribuer - Tawiza">
+  <meta property="og:description" content="Projet open source. On cherche des gens qui veulent que les donn&eacute;es publiques servent &agrave; quelque chose.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tawiza.fr/contribuer.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Tawiza">
+  <meta property="og:image" content="https://tawiza.fr/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contribuer - Tawiza">
+  <meta name="twitter:description" content="Open source. Donn&eacute;es publiques fran&ccedil;aises.">
+  <meta name="twitter:image" content="https://tawiza.fr/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23faf5ef'/%3E%3Crect x='6' y='12' width='20' height='8' fill='%23b45309'/%3E%3Crect x='13' y='14' width='6' height='4' fill='%231a1612'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/v2/design-system.css">
+  <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.tagged-events.pageview-props.outbound-links.file-downloads.js"></script>
+  <style>
+    /* Page-specific : profile cards + stack grid + steps */
+    .profile-card {
+      display: grid;
+      grid-template-columns: 8rem 1fr auto;
+      gap: 20px;
+      align-items: baseline;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line-soft);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.18s, color 0.18s;
     }
-    .tc-profile:hover { border-color: var(--accent); }
-    .tc-profile-role { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; color: var(--accent); }
-    .tc-profile-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
-    .tc-profile-link { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); white-space: nowrap; }
-    .tc-profile:hover .tc-profile-link { color: var(--accent); }
-
-    /* Quick start */
-    .tc-steps { display: flex; flex-direction: column; gap: 0; margin-top: 0.5rem; }
-    .tc-step { display: grid; grid-template-columns: 2rem 1fr; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid color-mix(in srgb, var(--separator) 40%, transparent); }
-    .tc-step:last-child { border-bottom: none; }
-    .tc-step-num { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); font-weight: 600; padding-top: 0.1rem; }
-    .tc-step-content {}
-    .tc-step-title { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
-    .tc-step-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
-    .tc-step-desc code { font-size: 0.78rem; }
-
-    /* Stack */
-    .tc-stack { display: grid; grid-template-columns: 6rem 1fr; gap: 0.25rem 1rem; margin-top: 0.5rem; }
-    .tc-stack-label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); padding: 0.25rem 0; }
-    .tc-stack-val { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); padding: 0.25rem 0; }
-    .tc-stack-val a { color: var(--accent); text-decoration: none; }
-    .tc-stack-val a:hover { text-decoration: underline; }
-
-    /* Non-dev contributions */
-    .tc-contrib-list { list-style: none; padding: 0; margin: 0.5rem 0 0; }
-    .tc-contrib-list li { display: flex; align-items: baseline; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid color-mix(in srgb, var(--separator) 30%, transparent); font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; }
-    .tc-contrib-list li:last-child { border-bottom: none; }
-    .tc-contrib-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.45rem; opacity: 0.5; }
-    .tc-contrib-list a { color: var(--accent); }
-
-    .tc-cta { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); display: inline-block; text-decoration: none; margin-top: 1rem; }
-    .tc-cta:hover { text-decoration: underline; }
-
+    .profile-card:hover { transform: translateX(6px); color: var(--ocre); text-decoration: none; }
+    .profile-card:hover .profile-arrow { color: var(--ocre); transform: translateX(4px); }
+    .profile-role {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--ocre);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .profile-desc {
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+    }
+    .profile-arrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-mute);
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+      transition: transform 0.18s, color 0.18s;
+    }
     @media (max-width: 640px) {
-        .tc-profile { grid-template-columns: 1fr; gap: 0.25rem; }
-        .tc-profile-link { display: none; }
-        .tc-stack { grid-template-columns: 1fr; }
+      .profile-card { grid-template-columns: 1fr; gap: 4px; }
+      .profile-arrow { display: none; }
     }
-    </style>
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: 8rem 1fr;
+      gap: 8px 24px;
+      font-family: var(--mono);
+      font-size: 13px;
+      margin-top: 16px;
+    }
+    .stack-label { color: var(--ocre); letter-spacing: 0.06em; }
+    .stack-val   { color: var(--ink-soft); }
+    .stack-val a { color: inherit; text-decoration: underline; text-decoration-color: var(--line-soft); }
+    .stack-val a:hover { color: var(--ocre); text-decoration-color: var(--ocre); }
+    @media (max-width: 640px) { .stack-grid { grid-template-columns: 1fr; gap: 2px 0; } .stack-label { margin-top: 8px; } }
+
+    .steps { margin-top: 16px; }
+    .step {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .step-num {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--ocre);
+      letter-spacing: 0.08em;
+    }
+    .step-title {
+      font-family: var(--serif-display);
+      font-size: 20px;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .step-desc { font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
+    .step-desc code { font-family: var(--mono); font-size: 0.85em; background: var(--bg-deep); padding: 1px 5px; }
+
+    .contrib-list { list-style: none; padding: 0; margin: 16px 0 0; }
+    .contrib-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line-soft);
+      font-size: 15px;
+      line-height: 1.55;
+      position: relative;
+      padding-left: 20px;
+    }
+    .contrib-list li::before {
+      content: "&middot;";
+      position: absolute; left: 6px; top: 12px;
+      color: var(--ocre);
+      font-family: var(--mono);
+      font-weight: 700;
+    }
+    .cta-line {
+      font-family: var(--mono);
+      font-size: 13px;
+      display: block;
+      margin-top: 16px;
+    }
+    .cta-line::before { content: "$ "; color: var(--ocre); }
+  </style>
 </head>
 <body>
-    <nav class="nav" role="navigation" aria-label="Navigation principale">
-        <div class="nav-inner">
-            <a href="/" class="logo" aria-label="Tawiza - Accueil">
-                <img src="img/logo-tawiza-amber.svg" alt="Tawiza" class="logo-img logo-light-only" height="28">
-                <img src="img/logo-tawiza-white.svg" alt="Tawiza" class="logo-img logo-dark-only" height="28">
-            </a>
-            <div class="nav-links">
-                <a href="analyses/">Analyses</a>
-                <a href="manifeste.html">Manifeste</a>
-                <a href="contribuer.html" aria-current="page">Contribuer</a>
-                <a href="a-propos.html">&#192; propos</a>
-                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">Code source</a>
-            </div>
-            <button class="nav-mobile" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+
+  <a href="/" class="wordmark">tawiza.fr</a>
+  <div class="glyph-slot" aria-hidden="true" data-seed="/contribuer"></div>
+
+  <article>
+    <header class="article-masthead terrain">
+      <div class="glyph-hero" data-seed="/contribuer" data-size="240" data-cells="19" data-label="false"></div>
+      <div class="article-kicker">$ cat CONTRIBUTING.md</div>
+      <h1 class="article-title"><em>Contribuer</em></h1>
+      <p class="article-subtitle">
+        C'est un projet open source, pas une startup. Personne ne l&egrave;ve de fonds. Personne ne pr&eacute;pare un pivot. Les donn&eacute;es publiques fran&ccedil;aises m&eacute;ritent mieux qu'un portail que personne ne visite.
+      </p>
+    </header>
+
+    <div class="article-body terrain">
+
+      <h2>Profils recherch&eacute;s</h2>
+
+      <a href="https://github.com/tawiza/tawiza/labels/backend" target="_blank" rel="noopener" class="profile-card">
+        <span class="profile-role">python</span>
+        <span class="profile-desc">Backend FastAPI + Ollama. Chaque API gouvernementale est un connecteur ind&eacute;pendant. Si tu as d&eacute;j&agrave; bataill&eacute; avec les formats de l'open data fran&ccedil;ais, tu sais.</span>
+        <span class="profile-arrow">issues/backend &rarr;</span>
+      </a>
+      <a href="https://github.com/tawiza/tawiza-website" target="_blank" rel="noopener" class="profile-card">
+        <span class="profile-role">frontend</span>
+        <span class="profile-desc">HTML/CSS/JS statique. Visualisations en Chart.js et SVG inline. Pas de framework, pas de build. Tu ouvres le fichier, tu modifies, tu recharges.</span>
+        <span class="profile-arrow">tawiza-website &rarr;</span>
+      </a>
+      <a href="https://github.com/tawiza/tawiza/labels/data" target="_blank" rel="noopener" class="profile-card">
+        <span class="profile-role">data</span>
+        <span class="profile-desc">Pipelines de collecte, normalisation, croisement. Transformer un CSV de 800 000 lignes en signal lisible. Si tu connais SIRENE, BODACC, DVF ou Filosofi, c'est ici.</span>
+        <span class="profile-arrow">issues/data &rarr;</span>
+      </a>
+      <a href="https://github.com/tawiza/tawiza/discussions" target="_blank" rel="noopener" class="profile-card">
+        <span class="profile-role">r&eacute;daction</span>
+        <span class="profile-desc">&Eacute;crire des analyses, v&eacute;rifier des sources, relire des articles. Une analyse &eacute;crite par quelqu'un qui vit sur le territoire vaut dix dashboards g&eacute;n&eacute;r&eacute;s automatiquement.</span>
+        <span class="profile-arrow">discussions &rarr;</span>
+      </a>
+
+      <h2>$ git clone</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div>
+            <div class="step-title">Cloner</div>
+            <div class="step-desc"><code>git clone https://github.com/tawiza/tawiza.git</code><br><code>docker compose up</code> et c'est parti. Le README explique le reste.</div>
+          </div>
         </div>
-    </nav>
-
-    <main>
-        <div class="container-narrow tc">
-
-            <div class="fade-up">
-                <div class="tc-prompt"><span>$</span> cat CONTRIBUTING.md</div>
-                <h1>Contribuer</h1>
-                <p class="tc-intro">C'est un projet open source, pas une startup. Personne ne l&#232;ve de fonds. Personne ne pr&#233;pare un pivot. Les donn&#233;es publiques fran&#231;aises m&#233;ritent mieux qu'un portail que personne ne visite.</p>
-            </div>
-
-            <!-- PROFILS -->
-            <div class="tc-section fade-up">
-                <div class="tc-label">profils recherch&#233;s</div>
-                <div class="tc-profiles">
-                    <a href="https://github.com/tawiza/tawiza/labels/backend" target="_blank" rel="noopener" class="tc-profile">
-                        <span class="tc-profile-role">python</span>
-                        <span class="tc-profile-desc">Backend FastAPI + Ollama. Chaque API gouvernementale est un connecteur ind&#233;pendant. Si tu as d&#233;j&#224; bataill&#233; avec les formats de l'open data fran&#231;ais, tu sais.</span>
-                        <span class="tc-profile-link">issues/backend &#8594;</span>
-                    </a>
-                    <a href="https://github.com/tawiza/tawiza-website" target="_blank" rel="noopener" class="tc-profile">
-                        <span class="tc-profile-role">frontend</span>
-                        <span class="tc-profile-desc">HTML/CSS/JS statique. Visualisations en Chart.js et SVG inline. Pas de framework, pas de build. Tu ouvres le fichier, tu modifies, tu recharges.</span>
-                        <span class="tc-profile-link">tawiza-website &#8594;</span>
-                    </a>
-                    <a href="https://github.com/tawiza/tawiza/labels/data" target="_blank" rel="noopener" class="tc-profile">
-                        <span class="tc-profile-role">data</span>
-                        <span class="tc-profile-desc">Pipelines de collecte, normalisation, croisement. Transformer un CSV de 800 000 lignes en signal lisible. Si tu connais SIRENE, BODACC, DVF ou Filosofi, c'est ici.</span>
-                        <span class="tc-profile-link">issues/data &#8594;</span>
-                    </a>
-                    <a href="https://github.com/tawiza/tawiza/discussions" target="_blank" rel="noopener" class="tc-profile">
-                        <span class="tc-profile-role">r&#233;daction</span>
-                        <span class="tc-profile-desc">&#201;crire des analyses, v&#233;rifier des sources, relire des articles. Une analyse &#233;crite par quelqu'un qui vit sur le territoire vaut dix dashboards g&#233;n&#233;r&#233;s automatiquement.</span>
-                        <span class="tc-profile-link">discussions &#8594;</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- QUICK START DEV -->
-            <div class="tc-section fade-up">
-                <div class="tc-label">$ git clone</div>
-                <div class="tc-steps">
-                    <div class="tc-step">
-                        <span class="tc-step-num">1</span>
-                        <div class="tc-step-content">
-                            <div class="tc-step-title">Cloner</div>
-                            <div class="tc-step-desc"><code>git clone https://github.com/tawiza/tawiza.git</code><br><code>docker compose up</code> et c'est parti. Le README explique le reste.</div>
-                        </div>
-                    </div>
-                    <div class="tc-step">
-                        <span class="tc-step-num">2</span>
-                        <div class="tc-step-content">
-                            <div class="tc-step-title">Choisir une issue</div>
-                            <div class="tc-step-desc">Les issues <code>good first issue</code> sont document&#233;es et d&#233;limit&#233;es. Personne ne juge si tu poses des questions.</div>
-                        </div>
-                    </div>
-                    <div class="tc-step">
-                        <span class="tc-step-num">3</span>
-                        <div class="tc-step-content">
-                            <div class="tc-step-title">Proposer une PR</div>
-                            <div class="tc-step-desc">Branche, push, PR. On relit, on discute, on merge. Pas de process bureaucratique.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- STACK -->
-            <div class="tc-section fade-up">
-                <div class="tc-label">stack technique</div>
-                <div class="tc-stack">
-                    <span class="tc-stack-label">backend</span><span class="tc-stack-val">Python 3.12 &middot; FastAPI &middot; PostgreSQL &middot; Redis</span>
-                    <span class="tc-stack-label">ia</span><span class="tc-stack-val">Ollama (local) &middot; agent TAJINE (PPDSL)</span>
-                    <span class="tc-stack-label">donn&#233;es</span><span class="tc-stack-val">INSEE &middot; SIRENE &middot; BODACC &middot; DVF &middot; SSMSI &middot; OFGL</span>
-                    <span class="tc-stack-label">frontend</span><span class="tc-stack-val">Next.js 14 &middot; shadcn/ui &middot; Chart.js &middot; D3.js</span>
-                    <span class="tc-stack-label">site web</span><span class="tc-stack-val">HTML/CSS/JS statique &middot; GitHub Pages</span>
-                    <span class="tc-stack-label">infra</span><span class="tc-stack-val">Proxmox &middot; Docker &middot; Caddy &middot; Cloudflare Tunnel</span>
-                    <span class="tc-stack-label">licence</span><span class="tc-stack-val">MIT</span>
-                    <span class="tc-stack-label">code</span><span class="tc-stack-val"><a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">github.com/tawiza/tawiza</a></span>
-                </div>
-            </div>
-
-            <!-- SANS CODE -->
-            <div class="tc-section fade-up">
-                <div class="tc-label">contribuer sans code</div>
-                <ul class="tc-contrib-list">
-                    <li><strong>Signaler une erreur</strong> dans une analyse : <a href="https://github.com/tawiza/tawiza/issues" target="_blank" rel="noopener">ouvrir une issue</a></li>
-                    <li><strong>Proposer un sujet</strong> d'analyse : <a href="https://github.com/tawiza/tawiza/discussions" target="_blank" rel="noopener">GitHub Discussions</a></li>
-                    <li><strong>Relire et v&#233;rifier</strong> les sources d'un article publi&#233;</li>
-                    <li><strong>&#201;crire une analyse</strong> sur votre territoire : nous contacter avec vos donn&#233;es et votre angle</li>
-                    <li><strong>Partager</strong> une analyse qui vous a parl&#233;</li>
-                </ul>
-            </div>
-
-            <!-- NOTE -->
-            <div class="tc-section fade-up">
-                <div class="tc-label">note</div>
-                <p class="tc-text">Tawiza est un projet solo pour l'instant. Chaque contribution, m&#234;me minime, fait une vraie diff&#233;rence. Si vous contribuez, vous serez parmi les premiers.</p>
-                <a href="https://github.com/tawiza/tawiza" class="tc-cta" target="_blank" rel="noopener">$ open github.com/tawiza &#8594;</a>
-                <br>
-                <a href="https://github.com/tawiza/tawiza/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" class="tc-cta" target="_blank" rel="noopener">$ grep "good first issue" &#8594;</a>
-            </div>
-
+        <div class="step">
+          <span class="step-num">02</span>
+          <div>
+            <div class="step-title">Choisir une issue</div>
+            <div class="step-desc">Les issues <code>good first issue</code> sont document&eacute;es et d&eacute;limit&eacute;es. Personne ne juge si tu poses des questions.</div>
+          </div>
         </div>
-    </main>
-
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-eye">
-                <img src="img/tawiza-eye.svg" alt="L'œil Tawiza" class="footer-eye-img">
-                <p class="footer-eye-tagline">L'œil qui dort jamais</p>
-            </div>
-            <div class="footer-inner">
-                <div class="footer-links">
-                    <a href="analyses/">Analyses</a>
-                    <a href="manifeste.html">Manifeste</a>
-                    <a href="contribuer.html">Contribuer</a>
-                    <a href="a-propos.html">&#192; propos</a>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">GitHub</a>
-                    <a href="https://bsky.app/profile/tawiza.fr" target="_blank" rel="noopener">Bluesky</a>
-                </div>
-                <p class="footer-legal">Licence MIT. Donn&#233;es collect&#233;es depuis des sources publiques ouvertes.</p>
-            </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div>
+            <div class="step-title">Proposer une PR</div>
+            <div class="step-desc">Branche, push, PR. On relit, on discute, on merge. Pas de process bureaucratique.</div>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script>
-    document.querySelector('.nav-mobile')?.addEventListener('click', function() { const l = document.querySelector('.nav-links'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') !== 'true'); l.classList.toggle('open'); });
-    const observer = new IntersectionObserver(e => { e.forEach(el => { if (el.isIntersecting) { el.target.classList.add('visible'); observer.unobserve(el.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-    </script>
+      <h2>Stack technique</h2>
+      <div class="stack-grid">
+        <span class="stack-label">backend</span>   <span class="stack-val">Python 3.12 &middot; FastAPI &middot; PostgreSQL &middot; Redis</span>
+        <span class="stack-label">ia</span>        <span class="stack-val">Ollama (local) &middot; agent TAJINE (PPDSL)</span>
+        <span class="stack-label">donn&eacute;es</span>  <span class="stack-val">INSEE &middot; SIRENE &middot; BODACC &middot; DVF &middot; SSMSI &middot; OFGL</span>
+        <span class="stack-label">frontend</span>  <span class="stack-val">Next.js 14 &middot; shadcn/ui &middot; Chart.js &middot; D3.js</span>
+        <span class="stack-label">site web</span>  <span class="stack-val">HTML/CSS/JS statique &middot; GitHub Pages</span>
+        <span class="stack-label">infra</span>     <span class="stack-val">Proxmox &middot; Docker &middot; Caddy &middot; Cloudflare Tunnel</span>
+        <span class="stack-label">licence</span>   <span class="stack-val">MIT</span>
+        <span class="stack-label">code</span>      <span class="stack-val"><a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">github.com/tawiza/tawiza &rarr;</a></span>
+      </div>
+
+      <h2>Contribuer sans code</h2>
+      <ul class="contrib-list">
+        <li><strong>Signaler une erreur</strong> dans une analyse&nbsp;: <a href="https://github.com/tawiza/tawiza/issues" target="_blank" rel="noopener">ouvrir une issue</a></li>
+        <li><strong>Proposer un sujet</strong> d'analyse&nbsp;: <a href="https://github.com/tawiza/tawiza/discussions" target="_blank" rel="noopener">GitHub Discussions</a></li>
+        <li><strong>Relire et v&eacute;rifier</strong> les sources d'un article publi&eacute;</li>
+        <li><strong>&Eacute;crire une analyse</strong> sur votre territoire&nbsp;: nous contacter avec vos donn&eacute;es et votre angle</li>
+        <li><strong>Partager</strong> une analyse qui vous a parl&eacute;</li>
+      </ul>
+
+      <h2>Note</h2>
+      <p>Tawiza est un projet solo pour l'instant. Chaque contribution, m&ecirc;me minime, fait une vraie diff&eacute;rence. Si vous contribuez, vous serez parmi les premiers.</p>
+      <a href="https://github.com/tawiza/tawiza" class="cta-line" target="_blank" rel="noopener">open github.com/tawiza &rarr;</a>
+      <a href="https://github.com/tawiza/tawiza/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" class="cta-line" target="_blank" rel="noopener">grep "good first issue" &rarr;</a>
+
+    </div>
+  </article>
+
+  <section class="eye-zone">
+    <div class="terrain">
+      <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui dort jamais</span></div>
+      <div class="eye-root" role="img" aria-label="3AYNE - l'&oelig;il Tawiza"></div>
+      <div class="eye-caption">il regarde, il compte, il doute</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="terrain" style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span>tawiza &middot; observatoire territorial &middot; 2026</span>
+      <div class="footer-links">
+        <a href="/analyses/">analyses</a>
+        <a href="/manifeste.html">manifeste</a>
+        <a href="/a-propos.html">&agrave; propos</a>
+        <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">source</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('/assets/v2/eye.svg').then(function (r) { return r.text(); }).then(function (svgText) {
+      var mount = document.querySelector('.eye-root');
+      if (!mount) return;
+      var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
+      mount.appendChild(svgEl);
+    }).then(function () {
+      var s = document.createElement('script');
+      s.src = '/assets/v2/eye.js';
+      document.body.appendChild(s);
+    });
+  </script>
+  <script src="/assets/v2/glyph.js" defer></script>
 </body>
 </html>
