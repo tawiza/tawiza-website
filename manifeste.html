@@ -29,6 +29,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="/assets/v2/design-system.css">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="manifeste.css?v=3">
 
     <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.js"></script>
@@ -61,26 +63,9 @@
     <!-- READING PROGRESS BAR -->
     <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
 
-    <!-- NAV -->
-    <nav class="nav" role="navigation" aria-label="Navigation principale">
-        <div class="nav-inner">
-            <a href="/" class="logo" aria-label="Tawiza - Accueil">
-                <img src="img/logo-tawiza-amber.svg" alt="Tawiza" class="logo-img logo-light-only" height="32">
-                <img src="img/logo-tawiza-white.svg" alt="Tawiza" class="logo-img logo-dark-only" height="32">
-            </a>
-            <div class="nav-links">
-                <a href="analyses/">Analyses</a>
-                <a href="manifeste.html" aria-current="page">Manifeste</a>
-                <a href="contribuer.html">Contribuer</a>
-                <a href="a-propos.html">À propos</a>
-                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">Code source</a>
-            </div>
-            <button class="nav-mobile" aria-label="Menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
-
+        <!-- v2: wordmark + generative glyph (replaces legacy nav) -->
+    <a href="/" class="wordmark">tawiza.fr</a>
+    <div class="glyph-slot" aria-hidden="true" data-seed="/manifeste"></div>
     <!-- HERO ARTICLE -->
     <header class="article-hero">
         <div class="article-hero-inner">
@@ -106,7 +91,7 @@
                 <p class="article-lead">Chaque jour, la France produit des milliers de jeux de données publiques. Créations d'entreprises, marchés publics, transactions immobilières, indicateurs de santé, chiffres de l'emploi. Ces données sont financées par les citoyens. Elles racontent l'histoire de nos territoires&nbsp;: leur vitalité, leurs fragilités, leurs mutations silencieuses.</p>
                 <p>Pourtant, personne ne les lit.</p>
 
-                <p>Un journaliste local enquête sur la dévitalisation d'un centre-ville. Les chiffres existent &mdash;BODACC, INSEE, DVF, recensement &mdash;mais éparpillés entre six plateformes, dans des formats incompatibles. La mission « Data et Territoires » remise au gouvernement en 2023 le documente&nbsp;: l'exploitation transversale des données reste un angle mort des collectivités<a href="#ref-13" class="footnote-ref">[1]</a>. Et 84&nbsp;% des collectivités soumises à l'obligation légale d'ouverture n'ont toujours pas publié un seul jeu de données<a href="#ref-14" class="footnote-ref">[2]</a>.</p>
+                <p>Un journaliste local enquête sur la dévitalisation d'un centre-ville. Les chiffres existent -BODACC, INSEE, DVF, recensement -mais éparpillés entre six plateformes, dans des formats incompatibles. La mission « Data et Territoires » remise au gouvernement en 2023 le documente&nbsp;: l'exploitation transversale des données reste un angle mort des collectivités<a href="#ref-13" class="footnote-ref">[1]</a>. Et 84&nbsp;% des collectivités soumises à l'obligation légale d'ouverture n'ont toujours pas publié un seul jeu de données<a href="#ref-14" class="footnote-ref">[2]</a>.</p>
 
                 <p>Un père de famille veut comprendre les résultats de l'école de ses enfants. Les données de la DEPP existent, elles sont « ouvertes ». Mais entre un fichier CSV de 800&nbsp;000 lignes et une réponse à sa question, il y a un gouffre que seul un ingénieur peut franchir.</p>
 
@@ -114,7 +99,7 @@
 
                 <p>Ces gens ne sont pas incompétents. Ils sont <strong>exclus</strong>. Exclus d'une ressource qui leur appartient, par une barrière technique que personne n'a décidé de construire mais que personne ne prend la peine d'abattre.</p>
 
-                <p>Les données publiques sont théoriquement ouvertes, mais pratiquement fermées. Ouvertes pour les bureaux d'études facturant 800 euros la journée. Fermées pour le citoyen, l'élu local, l'association de quartier &mdash;ceux-là mêmes qui en auraient le plus besoin.</p>
+                <p>Les données publiques sont théoriquement ouvertes, mais pratiquement fermées. Ouvertes pour les bureaux d'études facturant 800 euros la journée. Fermées pour le citoyen, l'élu local, l'association de quartier -ceux-là mêmes qui en auraient le plus besoin.</p>
             </section>
 
             <!-- PHOTO 1 -->
@@ -129,8 +114,8 @@
 
             <section class="article-section">
                 <h2>Pourquoi les communs</h2>
-                <p>En 1968, Garrett Hardin publia un article influent&nbsp;: toute ressource partagée est vouée à la destruction. Privatiser ou contrôler, il n'y aurait pas d'autre issue. Pendant quarante ans, cette idée a justifié la privatisation de tout &mdash;y compris, implicitement, des données publiques.</p>
-                <p>En 1990, l'économiste Elinor Ostrom démontra qu'il avait tort. En étudiant des centaines de communautés réelles &mdash;pêcheurs japonais, irrigants népalais, forêts suisses gérées depuis le XIII<sup>e</sup> siècle &mdash;elle identifia huit principes qui permettent aux communs de fonctionner durablement. Elle reçut le prix Nobel d'économie en 2009.</p>
+                <p>En 1968, Garrett Hardin publia un article influent&nbsp;: toute ressource partagée est vouée à la destruction. Privatiser ou contrôler, il n'y aurait pas d'autre issue. Pendant quarante ans, cette idée a justifié la privatisation de tout -y compris, implicitement, des données publiques.</p>
+                <p>En 1990, l'économiste Elinor Ostrom démontra qu'il avait tort. En étudiant des centaines de communautés réelles -pêcheurs japonais, irrigants népalais, forêts suisses gérées depuis le XIII<sup>e</sup> siècle -elle identifia huit principes qui permettent aux communs de fonctionner durablement. Elle reçut le prix Nobel d'économie en 2009.</p>
                 <p>Tawiza applique ces principes aux données publiques&nbsp;: frontières claires (code ouvert, données publiques uniquement), gouvernance participative (GitHub), transparence totale (chaque décision documentée). <a href="communs.html">Lire l'essai complet sur les communs</a>.</p>
             </section>
 
@@ -150,7 +135,7 @@
                             </div>
                             <h3>Le citoyen</h3>
                         </div>
-                        <p>Il voit sa ville changer &mdash;vitrines vides, collège qui ferme. Il voudrait des chiffres. Pas pour se plaindre, pour comprendre.</p>
+                        <p>Il voit sa ville changer -vitrines vides, collège qui ferme. Il voudrait des chiffres. Pas pour se plaindre, pour comprendre.</p>
                         <div class="actor-role">Utiliser l'outil. Poser des questions. Signaler les données manquantes.</div>
                     </div>
 
@@ -245,19 +230,19 @@
 
                 <div class="mechanism-list fade-up">
                     <div class="mechanism">
-                        <strong>Observatoire des territoires (ANCT)</strong> &mdash; Indicateurs nationaux, maille communale. Pas de croisement entre sources, pas d'analyses narratives.
+                        <strong>Observatoire des territoires (ANCT)</strong> - Indicateurs nationaux, maille communale. Pas de croisement entre sources, pas d'analyses narratives.
                     </div>
                     <div class="mechanism">
-                        <strong>Geoclip / cartographie statistique</strong> &mdash; Utilisé par beaucoup de collectivités. Propriétaire, payant, pas de narration.
+                        <strong>Geoclip / cartographie statistique</strong> - Utilisé par beaucoup de collectivités. Propriétaire, payant, pas de narration.
                     </div>
                     <div class="mechanism">
-                        <strong>Comparateur INSEE</strong> &mdash; Comparaison de communes, données fiables. Données brutes, pas de croisement, pas d'analyse.
+                        <strong>Comparateur INSEE</strong> - Comparaison de communes, données fiables. Données brutes, pas de croisement, pas d'analyse.
                     </div>
                     <div class="mechanism">
-                        <strong>Agences d'urbanisme (FNAU)</strong> &mdash; 50 agences, expertise locale. Chaque agence a ses outils, pas de mutualisation nationale, accès réservé.
+                        <strong>Agences d'urbanisme (FNAU)</strong> - 50 agences, expertise locale. Chaque agence a ses outils, pas de mutualisation nationale, accès réservé.
                     </div>
                     <div class="mechanism">
-                        <strong>Cabinets de conseil</strong> &mdash; Expertise humaine de qualité. 5&nbsp;000 à 50&nbsp;000 &euro; par diagnostic.
+                        <strong>Cabinets de conseil</strong> - Expertise humaine de qualité. 5&nbsp;000 à 50&nbsp;000 &euro; par diagnostic.
                     </div>
                 </div>
 
@@ -270,7 +255,7 @@
 
             <section class="article-section">
                 <h2>Ce qu'on construit</h2>
-                <p>Tawiza collecte les données publiques françaises (INSEE, SIRENE, BODACC, DVF, Banque de France...), les croise et les transforme en analyses lisibles. Pas un tableau Excel &mdash;une histoire que vous pouvez comprendre.</p>
+                <p>Tawiza collecte les données publiques françaises (INSEE, SIRENE, BODACC, DVF, Banque de France...), les croise et les transforme en analyses lisibles. Pas un tableau Excel -une histoire que vous pouvez comprendre.</p>
 
                 <div class="mechanism-list fade-up">
                     <div class="mechanism">
@@ -360,7 +345,7 @@
                         <a href="https://numeum.fr/" target="_blank" rel="noopener" class="ref-source-link">numeum.fr</a>
                     </li>
                     <li id="ref-9" data-ref="[4]">
-                        data.gouv.fr &mdash;Plateforme ouverte des données publiques françaises. Catalogue au 1er mars 2026.
+                        data.gouv.fr -Plateforme ouverte des données publiques françaises. Catalogue au 1er mars 2026.
                         <a href="https://www.data.gouv.fr/fr/dashboard/" target="_blank" rel="noopener" class="ref-source-link">data.gouv.fr/dashboard</a>
                     </li>
                     <li id="ref-10" data-ref="[5]">
@@ -381,7 +366,7 @@
             <section class="article-section article-closing">
                 <h2>Rejoignez le mouvement</h2>
                 <p>Tawiza n'est pas un produit. C'est un pari&nbsp;: celui que des citoyens, des développeurs, des élus, des associations et des entrepreneurs peuvent construire ensemble l'infrastructure d'intelligence territoriale que la France mérite.</p>
-                <p>Pas besoin de coder. Signaler un bug, poser une question, partager le projet, tester un territoire, écrire de la documentation &mdash;chaque contribution compte.</p>
+                <p>Pas besoin de coder. Signaler un bug, poser une question, partager le projet, tester un territoire, écrire de la documentation -chaque contribution compte.</p>
 
                 <div class="manifesto-logo">
                     <img src="img/logo-tawiza-amber.svg" alt="Logo Tawiza" class="logo-light-only">
@@ -402,29 +387,27 @@
         </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-eye">
-                <img src="img/tawiza-eye.svg" alt="L'œil Tawiza" class="footer-eye-img">
-                <p class="footer-eye-tagline">L'œil qui dort jamais</p>
-            </div>
-            <div class="footer-inner">
-                <div class="footer-links">
-                    <a href="analyses/">Analyses</a>
-                    <a href="manifeste.html">Manifeste</a>
-                    <a href="contribuer.html">Contribuer</a>
-                    <a href="a-propos.html">À propos</a>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">GitHub</a>
-                    <a href="https://bsky.app/profile/tawiza.fr" target="_blank" rel="noopener">Bluesky</a>
-                </div>
-                <p class="footer-legal">Licence MIT. Données collectées depuis des sources publiques ouvertes.</p>
+        <!-- v2: 3AYNE eye + minimal footer -->
+    <section class="eye-zone">
+        <div class="terrain">
+            <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui dort jamais</span></div>
+            <div class="eye-root" role="img" aria-label="3AYNE - l'&oelig;il Tawiza"></div>
+            <div class="eye-caption">il regarde, il compte, il doute</div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="terrain" style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+            <span>tawiza &middot; observatoire territorial &middot; 2026</span>
+            <div class="footer-links">
+                <a href="/analyses/">analyses</a>
+                <a href="/articles/">articles</a>
+                <a href="/manifeste.html">manifeste</a>
+                <a href="/a-propos.html">&agrave; propos</a>
+                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">source</a>
             </div>
         </div>
     </footer>
-
     <script>
     // Mobile nav
     document.querySelector('.nav-mobile')?.addEventListener('click', function() {
@@ -480,5 +463,19 @@
     }, { threshold: 0.5 });
     document.querySelectorAll('.stat-number[data-target]').forEach(el => statObserver.observe(el));
     </script>
+    <!-- v2: inject 3AYNE eye + load eye.js + glyph.js -->
+    <script>
+        fetch('/assets/v2/eye.svg').then(function (r) { return r.text(); }).then(function (svgText) {
+            var mount = document.querySelector('.eye-root');
+            if (!mount) return;
+            var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
+            mount.appendChild(svgEl);
+        }).then(function () {
+            var s = document.createElement('script');
+            s.src = '/assets/v2/eye.js';
+            document.body.appendChild(s);
+        });
+    </script>
+    <script src="/assets/v2/glyph.js" defer></script>
 </body>
 </html>
