@@ -607,20 +607,29 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
 }
 /* glyph-slot hidden on mobile via above breakpoint */
 
-/* Responsive glyph : force canvas to fill its container override inline style.width */
+/* Responsive glyph : any canvas inside a glyph container is fully CSS-sized.
+   glyph.js no longer sets inline width/height; CSS is now the single source of truth. */
 .glyph-slot canvas,
 .glyph-hero canvas,
 .entry-glyph canvas,
 .home-row-glyph canvas,
-.archive-row-glyph canvas {
+.archive-row-glyph canvas,
+.featured-glyph canvas,
+[class*="glyph-"] canvas,
+[data-glyph] canvas {
   width: 100% !important;
   height: 100% !important;
   max-width: 100%;
+  display: block;
 }
 .glyph-slot,
 .entry-glyph,
 .home-row-glyph,
-.archive-row-glyph {
+.archive-row-glyph,
+.featured-glyph,
+.glyph-hero,
+[class*="glyph-"],
+[data-glyph] {
   overflow: hidden;
 }
 

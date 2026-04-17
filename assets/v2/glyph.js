@@ -101,9 +101,14 @@
     const c = document.createElement('canvas');
     c.width  = size * dpr;
     c.height = (size + labelH) * dpr;
-    c.style.width  = size + 'px';
-    c.style.height = (size + labelH) + 'px';
+    // Do NOT fix inline pixel dimensions here; let CSS size the canvas
+    // via its parent container. This allows responsive layouts to work
+    // naturally (the render buffer stays at size*dpr so image remains crisp).
     c.style.display = 'block';
+    c.style.width = '100%';
+    c.style.height = '100%';
+    c.style.maxWidth = '100%';
+    c.style.maxHeight = '100%';
     container.appendChild(c);
 
     const ctx = c.getContext('2d');
