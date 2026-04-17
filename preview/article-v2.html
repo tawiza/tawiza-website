@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Risque argile, silence communal &mdash; Tawiza</title>
+  <meta name="description" content="4 739 communes exposées au retrait-gonflement des argiles. 312 n'ont rien publié depuis 2020.">
+  <meta name="theme-color" content="#b45309">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="../assets/v2/design-system.css">
+
+  <style>
+  .preview-banner {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999;
+    background: #1a1612;
+    color: #faf5ef;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    padding: 6px 14px;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 2px solid #b45309;
+  }
+  .preview-banner b { color: #b45309; }
+  body { padding-top: 32px; }
+  .wordmark { top: 44px !important; }
+  .glyph-slot { top: 40px !important; }
+  @media (prefers-color-scheme: dark) {
+    .preview-banner { background: #faf5ef; color: #1a1612; }
+  }
+  </style>
+</head>
+<body>
+  <div class="preview-banner" role="status">
+    preview <b>design v2</b> &middot; non indexe &middot;
+    comparez avec <a href="/" style="color:inherit">tawiza.fr</a> &middot;
+    PR sur github
+  </div>
+
+
+  <a href="/" class="wordmark">tawiza.fr</a>
+  <div class="glyph-slot" aria-hidden="true"></div>
+
+  <article>
+    <header class="article-masthead terrain">
+
+      <!-- Glyph hero XL, signature de l'article -->
+      <div class="glyph-hero"
+           data-seed="/articles/rga-silence"
+           data-size="320"
+           data-cells="23"
+           data-label="false"></div>
+
+      <div class="article-kicker">nº 005 · analyse longue · 2026-03-28</div>
+      <h1 class="article-title">Risque argile, <em>silence communal</em></h1>
+      <p class="article-subtitle">
+        4 739 communes françaises sont exposées au retrait-gonflement des argiles.
+        312 n'ont rien publié sur le sujet depuis 2020. Dont douze qui ont subi
+        un arrêté de catastrophe naturelle la même année.
+      </p>
+      <div class="article-meta">
+        <span>temps de lecture <strong>18 min</strong></span>
+        <span>sources <strong>Géorisques · BODACC · INSEE · OFGL</strong></span>
+        <span>dernière mise à jour <strong>2026-04-02</strong></span>
+        <span>code <strong>github.com/tawiza</strong></span>
+      </div>
+    </header>
+
+    <div class="article-body terrain">
+      <p>Le retrait-gonflement des argiles est un phénomène géologique lent,
+      invisible à l'œil nu, et pourtant la deuxième cause de sinistralité
+      habitation en France &mdash; derrière la grêle, devant l'inondation.
+      <span data-source="Caisse centrale de réassurance, bilan RGA 2024">12,1 Md€ de dégâts
+      depuis 1989</span>. Plus de la moitié du territoire est concernée.</p>
+
+      <p>Nous avons croisé trois bases :
+      <span data-source="Géorisques · IGN · BRGM">la cartographie officielle</span> des zones d'exposition,
+      <span data-source="arrêtés CatNat publiés au Journal officiel">le registre des arrêtés de catastrophe naturelle</span>,
+      et
+      <span data-source="Plans Locaux d'Urbanisme déposés à la préfecture">les documents d'urbanisme communaux</span>
+      déposés au-delà de 2020.</p>
+
+      <h2>Ce que les chiffres disent</h2>
+
+      <p>Sur les 4 739 communes classées en exposition <em>moyenne</em> ou <em>forte</em>,
+      la majorité a intégré le risque à son PLU, son règlement d'urbanisme,
+      ou à tout le moins à une carte communale mise à jour. Mais 312 sont restées silencieuses &mdash;
+      c'est-à-dire qu'aucun document public datant d'après 2020 ne mentionne le RGA.</p>
+
+      <blockquote>
+      Ce silence n'est pas une absence. C'est une donnée.
+      Il mesure l'écart entre ce qu'un territoire subit
+      et ce qu'il reconnaît officiellement subir.
+      </blockquote>
+
+      <h3>Méthodologie</h3>
+
+      <p>Chaque commune a été évaluée sur trois axes :
+      exposition (Géorisques), sinistralité (CatNat), publication (dépôt légal).
+      Un score de <em>silence</em> est calculé quand l'exposition est élevée,
+      la sinistralité observée, et la publication absente. Le code est ici :</p>
+
+      <pre><code># calcul du score silence
+def silence_score(commune):
+    expo = geomatrix.exposure(commune.insee)
+    sin  = catnat.count(commune.insee, since='2020')
+    pub  = plu.has_rga_mention(commune.insee)
+    if expo >= 2 and sin &gt;= 1 and not pub:
+        return min(100, expo * 20 + sin * 10)
+    return 0</code></pre>
+
+      <h2>Douze cas qui interrogent</h2>
+
+      <p>Parmi les 312 communes silencieuses, douze ont subi un arrêté
+      CatNat la même année que leur dernière mise à jour PLU, <em>sans que le RGA n'y soit mentionné</em>.
+      On ne conclut rien de ces douze cas &mdash; il peut s'agir d'un retard administratif,
+      d'un arrêté tombé juste après le dépôt, d'un découpage cadastral particulier.
+      Mais ces douze cas sont listés, avec leur code INSEE, leur date de PLU,
+      et la date de l'arrêté. Libre au lecteur d'aller vérifier.</p>
+
+      <h3>Ce qu'on ne sait pas</h3>
+
+      <p>On ne sait pas pourquoi ces 312 communes n'ont rien publié.
+      On ne sait pas si c'est par négligence, par choix politique,
+      par manque de personnel, ou parce que le risque est considéré
+      comme traité ailleurs. On n'a pas appelé les mairies &mdash;
+      ce n'est pas le rôle de cet article. Ce qu'on constate,
+      c'est qu'une donnée publique <em>manque là où elle devrait être</em>.
+      C'est le signal. C'est ce qu'on rend lisible.</p>
+
+      <h2>Suite</h2>
+
+      <p>Les données sont reproductibles. Le notebook marimo qui a produit cette
+      analyse est publié à l'adresse <code>tawiza.fr/notebooks/rga-silence</code>.
+      Les corrections et mises à jour se font sur la même URL &mdash; jamais de réécriture
+      silencieuse. Si vous êtes maire d'une des 312 communes et que vous avez publié
+      depuis notre dernière passe, écrivez-nous.</p>
+    </div>
+  </article>
+
+  <!-- 3AYNE footer -->
+  <section class="eye-zone">
+    <div class="terrain">
+      <div class="eye-zone-label">3ayne · <span>l'œil qui dort jamais</span></div>
+      <div class="eye-root" role="img" aria-label="3AYNE &mdash; l'œil Tawiza">
+        <object data="assets/eye.svg" type="image/svg+xml" style="display:none"></object>
+      </div>
+      <div class="eye-caption">il regarde, il compte, il doute</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="terrain" style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span>tawiza · observatoire territorial · 2026</span>
+      <div class="footer-links">
+        <a href="/">← retour</a>
+        <a href="#">pdf</a>
+        <a href="#">citer</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('../assets/v2/eye.svg').then(function (r) { return r.text(); }).then(function (svgText) {
+      var mount = document.querySelector('.eye-root');
+      if (!mount) return;
+      var obj = mount.querySelector('object'); if (obj) obj.remove();
+      var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
+      mount.appendChild(svgEl);
+    }).then(function () {
+      var s = document.createElement('script');
+      s.src = '../assets/v2/eye.js';
+      document.body.appendChild(s);
+    });
+  </script>
+  <script src="../assets/v2/glyph.js" defer></script>
+</body>
+</html>
