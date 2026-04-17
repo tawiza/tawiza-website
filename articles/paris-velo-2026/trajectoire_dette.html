@@ -1,0 +1,99 @@
+<html>
+<head><meta charset="utf-8" />
+
+<!-- tawiza-strong-plotly-fix --><style>
+    html, body { margin: 0; padding: 4px; height: 100%; }
+    body { font-family: "Inter", system-ui, sans-serif; background: #FDFBF7; }
+    /* Force le div Plotly à prendre toute la place dispo */
+    .plotly-graph-div, .js-plotly-plot {
+        width: 100% !important; height: 100% !important; min-height: 320px !important;
+    }
+    @media (max-width: 640px) {
+        .plotly-graph-div, .js-plotly-plot { min-height: 420px !important; }
+        .legend text, text.legendtext { font-size: 10px !important; }
+        .gtitle { font-size: 12px !important; }
+        .xtick text, .ytick text { font-size: 9px !important; }
+    }
+</style>
+<script>
+(function(){
+    function forceAutosize(){
+        if (!window.Plotly) return;
+        document.querySelectorAll('.js-plotly-plot, .plotly-graph-div').forEach(function(el){
+            try {
+                // Retire height fixe + active autosize
+                el.style.height = '';
+                Plotly.relayout(el, { autosize: true, height: null, width: null });
+                Plotly.Plots.resize(el);
+            } catch(e){}
+        });
+    }
+    // Multiple triggers : dès que Plotly a fini d'initialiser
+    var iv = setInterval(function(){
+        if (window.Plotly && document.querySelector('.js-plotly-plot')) {
+            forceAutosize();
+            clearInterval(iv);
+        }
+    }, 100);
+    // Backfill : resize à tout moment utile
+    [200, 500, 1000, 2000].forEach(function(t){ setTimeout(forceAutosize, t); });
+    window.addEventListener('resize', forceAutosize);
+    window.addEventListener('load', forceAutosize);
+})();
+</script>
+
+<!-- tawiza-mobile-declutter --><script>
+(function(){
+    // Sur mobile : ne garder que les 3 annotations structurantes (début Hidalgo, COVID, CRC)
+    // + réduire le "×7" à une taille lisible
+    var KEEP_MOBILE = ['Début mandat Hidalgo', 'COVID', 'Rapport CRC'];
+    function declutter(){
+        if (!window.Plotly) return;
+        var isMobile = window.innerWidth <= 640;
+        document.querySelectorAll('.js-plotly-plot').forEach(function(el){
+            try {
+                var layout = el.layout || {};
+                var anns = layout.annotations || [];
+                if (!isMobile) return; // desktop : pas touché
+                var filtered = anns.filter(function(a){
+                    if (!a.text) return false;
+                    // Garde le "×7" mais réduit sa taille
+                    if (a.text.indexOf('×7') >= 0 || a.text.indexOf('x7') >= 0) {
+                        if (a.font) a.font.size = 22;
+                        return true;
+                    }
+                    // Garde seulement les 3 annotations structurantes
+                    return KEEP_MOBILE.some(function(k){
+                        return a.text.indexOf(k) >= 0;
+                    });
+                }).map(function(a){
+                    // Simplifie les annotations restantes : font plus petit, pas de box
+                    if (a.font) a.font.size = Math.min(9, a.font.size || 10);
+                    return a;
+                });
+                Plotly.relayout(el, {
+                    annotations: filtered,
+                    'margin.l': 35,
+                    'margin.r': 15,
+                    'margin.t': 50,
+                    'margin.b': 45,
+                });
+            } catch(e) { console.warn('declutter fail', e); }
+        });
+    }
+    var iv = setInterval(function(){
+        if (window.Plotly && document.querySelector('.js-plotly-plot')) {
+            declutter(); clearInterval(iv);
+        }
+    }, 100);
+    [300, 800, 1500].forEach(function(t){ setTimeout(declutter, t); });
+    window.addEventListener('resize', declutter);
+})();
+</script>
+
+</head>
+<body>
+    <div>                        <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.5.0.min.js" integrity="sha256-fHbNLP+GlIXN+efbQec78UkemUz3NJp7UmfGxC1tNxs=" crossorigin="anonymous"></script>                <div id="a0f4e7b2-12e0-44c7-a1f9-d8fa587a83c7" class="plotly-graph-div" style="height:500px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("a0f4e7b2-12e0-44c7-a1f9-d8fa587a83c7")) {                    Plotly.newPlot(                        "a0f4e7b2-12e0-44c7-a1f9-d8fa587a83c7",                        [{"fill":"tozeroy","fillcolor":"rgba(193, 85, 77, 0.12)","hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003e%{y:.1f} Md€\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#C1554D","shape":"spline","width":3},"mode":"lines","name":"Dette directe (Md€)","x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026],"y":[1.4,1.6,1.8,2.0,2.2,2.4,2.6,2.8,3.0,3.2,3.5,3.8,4.1,4.5,5.1,5.7,6.3,6.6,7.0,7.4,7.8,8.2,8.6,9.0,9.4,9.9],"type":"scatter"},{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e (projection CRC)\u003cbr\u003e%{y:.1f} Md€\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#C1554D","dash":"dash","width":3},"mode":"lines","showlegend":false,"x":[2025,2026],"y":[9.4,9.9],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"annotations":[{"arrowcolor":"#6C757D","arrowhead":0,"ax":0,"ay":-28,"bgcolor":"rgba(250, 250, 249, 0.85)","bordercolor":"rgba(29,53,87,.15)","borderpad":3,"borderwidth":1,"font":{"color":"#6C757D","size":10.5},"showarrow":true,"text":"\u003ci\u003eDébut mandat Delanoë\u003c\u002fi\u003e","x":2001,"y":2.2},{"arrowcolor":"#6C757D","arrowhead":0,"ax":0,"ay":-28,"bgcolor":"rgba(250, 250, 249, 0.85)","bordercolor":"rgba(29,53,87,.15)","borderpad":3,"borderwidth":1,"font":{"color":"#6C757D","size":10.5},"showarrow":true,"text":"\u003ci\u003eDébut mandat Hidalgo\u003c\u002fi\u003e","x":2014,"y":5.3},{"arrowcolor":"#6C757D","arrowhead":0,"ax":0,"ay":-28,"bgcolor":"rgba(250, 250, 249, 0.85)","bordercolor":"rgba(29,53,87,.15)","borderpad":3,"borderwidth":1,"font":{"color":"#6C757D","size":10.5},"showarrow":true,"text":"\u003ci\u003eCOVID + stimulus\u003c\u002fi\u003e","x":2020,"y":8.200000000000001},{"arrowcolor":"#6C757D","arrowhead":0,"ax":0,"ay":-28,"bgcolor":"rgba(250, 250, 249, 0.85)","bordercolor":"rgba(29,53,87,.15)","borderpad":3,"borderwidth":1,"font":{"color":"#6C757D","size":10.5},"showarrow":true,"text":"\u003ci\u003eJO 2024\u003c\u002fi\u003e","x":2024,"y":9.8},{"arrowcolor":"#6C757D","arrowhead":0,"ax":0,"ay":-28,"bgcolor":"rgba(250, 250, 249, 0.85)","bordercolor":"rgba(29,53,87,.15)","borderpad":3,"borderwidth":1,"font":{"color":"#6C757D","size":10.5},"showarrow":true,"text":"\u003ci\u003eRapport CRC sévère\u003c\u002fi\u003e","x":2025,"y":10.200000000000001},{"arrowcolor":"#6C757D","arrowhead":0,"ax":0,"ay":-28,"bgcolor":"rgba(250, 250, 249, 0.85)","bordercolor":"rgba(29,53,87,.15)","borderpad":3,"borderwidth":1,"font":{"color":"#6C757D","size":10.5},"showarrow":true,"text":"\u003ci\u003eProjection CRC\u003c\u002fi\u003e","x":2026,"y":10.700000000000001},{"font":{"color":"#C1554D","family":"El Messiri, serif","size":36},"showarrow":false,"text":"\u003cb\u003e×7\u003c\u002fb\u003e\u003cbr\u003e\u003csub\u003een 25 ans\u003c\u002fsub\u003e","x":2013,"y":8.5},{"font":{"color":"#6C757D","size":11},"showarrow":false,"text":"\u003csub\u003e1,4 Md€ en 2001 → 9,9 Md€ en 2026\u003c\u002fsub\u003e","x":2013,"y":6.8}],"title":{"font":{"size":18},"text":"\u003cb\u003eTrajectoire dette Ville de Paris 2001-2026\u003c\u002fb\u003e\u003cbr\u003e\u003csub style='color:#6C757D'\u003eEn milliards d'euros · dette directe (hors garanties bailleurs sociaux) · projection 2026 en pointillés\u003c\u002fsub\u003e","x":0.02,"xanchor":"left"},"xaxis":{"tickfont":{"size":11},"title":{"text":""},"showgrid":false,"tickmode":"linear","tick0":2001,"dtick":3,"tickangle":0},"yaxis":{"title":{"text":"Milliards d'euros"},"showgrid":true,"gridcolor":"rgba(29,53,87,.08)","tickmode":"linear","tick0":0,"dtick":2,"range":[0,11]},"font":{"family":"Inter, system-ui","size":12,"color":"#1D3557"},"margin":{"l":60,"r":60,"t":90,"b":50},"plot_bgcolor":"#fafaf9","paper_bgcolor":"#fafaf9","height":500,"showlegend":false},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div>
+</body>
+</html>

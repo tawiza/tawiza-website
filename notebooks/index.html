@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebooks – Tawiza</title>
+    <meta name="description" content="Notebooks interactifs Tawiza. Analyses territoriales reproductibles, exécutées dans votre navigateur.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#b45309">
+    <link rel="canonical" href="https://tawiza.fr/notebooks/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=10">
+
+    <meta property="og:title" content="Notebooks – Tawiza">
+    <meta property="og:description" content="Analyses territoriales interactives, exécutées dans votre navigateur. Modifiez les chiffres, l'analyse se recalcule.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tawiza.fr/notebooks/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Tawiza">
+    <meta property="og:image" content="https://tawiza.fr/og-image.png">
+
+    <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.tagged-events.pageview-props.outbound-links.file-downloads.js"></script>
+
+    <style>
+    .nb-idx { padding-top: 7rem; min-height: 80vh; max-width: 860px; margin: 0 auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+    .nb-idx h1 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 0.25rem; }
+    .nb-sub { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.02em; margin-bottom: 2rem; }
+    .nb-intro { font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 3rem; max-width: 640px; }
+
+    .nb-list { list-style: none; padding: 0; margin: 0; }
+    .nb-card {
+        border: 1px solid var(--separator); border-radius: 8px; padding: 1.5rem 1.75rem;
+        margin-bottom: 1rem; transition: border-color 0.2s, transform 0.2s;
+        background: var(--bg);
+    }
+    .nb-card:hover { border-color: var(--accent); transform: translateX(4px); }
+    .nb-card a { text-decoration: none; color: inherit; display: block; }
+    .nb-title { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 0.35rem; }
+    .nb-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.5rem; }
+    .nb-tags { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.03em; }
+    .nb-tags span { display: inline-block; margin-right: 1rem; }
+
+    .nb-meta {
+        margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--separator);
+        font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;
+    }
+    .nb-meta a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <nav style="position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 1.5rem;background:var(--bg);border-bottom:1px solid var(--separator);font-family:Inter,sans-serif;"><a href="/" style="text-decoration:none;color:var(--accent);font-weight:700;">Tawiza</a><span style="color:var(--text-muted);margin:0 0.5rem;">/</span><a href="/notebooks/" style="text-decoration:none;color:var(--text);">Notebooks</a></nav>
+    <main class="nb-idx">
+        <h1>Notebooks</h1>
+        <p class="nb-sub">ANALYSES REPRODUCTIBLES · PYTHON DANS LE NAVIGATEUR</p>
+
+        <p class="nb-intro">
+            Chaque notebook tourne directement dans votre navigateur. Aucune installation, aucun compte. Modifiez les chiffres, déplacez les curseurs, l'analyse se recalcule. Le code source est public et reproductible chez vous.
+        </p>
+
+        <ul class="nb-list">
+            <li class="nb-card">
+                <a href="acte1-paris-velo/">
+                    <div class="nb-title">Qui paie le vélo à Paris ?</div>
+                    <div class="nb-desc">À 20 M€/an, en combien d'années Paris atteindrait les 180 km promis du Plan Vélo ? Déplacez le curseur du budget et voyez la date d'atteinte évoluer.</div>
+                    <div class="nb-tags">
+                        <span>PARIS · MOBILITÉS · BUDGET MUNICIPAL · 2026</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+        <div class="nb-meta">
+            Notebooks construits avec <a href="https://marimo.io" rel="noopener">marimo</a> exécuté via Pyodide (Python 3.12 en WebAssembly). Les sources Python sont dans <a href="https://github.com/tawiza/tawiza-website/tree/main/_notebooks-src">_notebooks-src/</a>.<br/>
+            Temps de démarrage premier chargement : 3 à 8 secondes selon votre connexion.
+        </div>
+    </main>
+    
+</body>
+</html>

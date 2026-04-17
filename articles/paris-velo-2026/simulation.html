@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'arrière-cuisine · Paris vélo 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root {
+  --bg: #fafaf9; --ink: #1D3557; --accent: #C1554D; --ochre: #b45309;
+  --positif: #2D6A4F; --muted: #6C757D; --card: #fff;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+  max-width: 1120px; margin: 0 auto; padding: 3rem 2rem 5rem;
+  line-height: 1.7; -webkit-font-smoothing: antialiased;
+}
+h1 {
+  font-family: "El Messiri", serif; font-size: 2.6rem; font-weight: 700;
+  border-bottom: 3px solid var(--accent); padding-bottom: .4rem; margin: 0 0 .4rem;
+}
+.subtitle { color: var(--positif); font-style: italic; font-size: 1.05rem; margin-bottom: 2rem; }
+h2 { font-family: "El Messiri", serif; color: var(--accent); font-size: 1.55rem;
+      margin-top: 3.5rem; margin-bottom: .6rem; font-weight: 600; }
+h2 + p { margin-top: 0; margin-bottom: 2rem; font-size: 15.5px; color: var(--ink); }
+p em { color: var(--muted); }
+.warning {
+  border-left: 4px solid var(--ochre); background: rgba(180, 83, 9, .07);
+  padding: 1rem 1.2rem; border-radius: 0 6px 6px 0; margin: 1.5rem 0 3rem; font-size: 14.5px;
+}
+.personas-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem; margin: 1rem 0 3rem;
+}
+.persona-card {
+  background: var(--card); padding: 1rem 1.2rem; border-radius: 0 0 8px 8px;
+  border-top: 4px solid var(--accent); box-shadow: 0 2px 8px rgba(29,53,87,.06);
+  font-size: 13.5px;
+}
+.persona-outsider {
+  background: rgba(139, 94, 131, .06);
+  border-top-style: dashed !important;
+}
+.p-meta { font-size: 11.5px; color: var(--muted); text-transform: uppercase;
+           letter-spacing: .05em; margin-bottom: .2rem; }
+.p-name { font-family: "El Messiri", serif; font-size: 1.15rem; font-weight: 600;
+           margin-bottom: .5rem; }
+.p-tags { margin-bottom: .6rem; }
+.p-tags .tag { display: inline-block; padding: 2px 8px; border-radius: 10px;
+                background: rgba(29,53,87,.08); font-size: 11.5px; margin-right: .3rem; }
+.p-section { margin: .3rem 0; font-size: 13px; line-height: 1.45; }
+.p-section strong { display: block; color: var(--accent); font-weight: 600;
+                     font-size: 11.5px; text-transform: uppercase; letter-spacing: .04em; }
+.chart { background: var(--card); border-radius: 8px; padding: 1rem;
+          margin: 1rem 0 3rem; box-shadow: 0 2px 10px rgba(29,53,87,.05);
+          overflow: hidden; }
+.verdict { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+            margin: 1rem 0 3rem; }
+.verdict-card { background: var(--card); padding: 1rem 1.2rem; border-radius: 8px;
+                 border-left: 4px solid; }
+.verdict-card h3 { font-family: "El Messiri", serif; margin: .3rem 0 .2rem; font-size: 1.1rem; }
+.verdict-card .vlabel { display: inline-block; padding: 2px 10px; border-radius: 10px;
+                         font-size: 11.5px; font-weight: 600; color: #fff; }
+.verdict-card p { margin: .4rem 0 0; font-size: 13.5px; color: var(--muted); }
+.methodo { background: var(--card); border-radius: 8px; padding: 1.5rem 1.8rem;
+            font-size: 14.5px; color: var(--ink); border-left: 4px solid var(--positif);
+            margin: 1.5rem 0 3rem; line-height: 1.7; }
+.methodo p { margin: .8rem 0; }
+.questions-hamide { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1rem 0 3rem; }
+.question-card { background: rgba(139, 94, 131, .08); border-left: 4px solid #8B5E83;
+                  padding: 1rem 1.3rem; border-radius: 0 6px 6px 0; position: relative; }
+.q-tour { position: absolute; top: .8rem; right: 1rem; font-family: "El Messiri", serif;
+           font-size: 1.3rem; font-weight: 700; color: #8B5E83; }
+.q-citation { font-family: "El Messiri", serif; font-size: 1.1rem; font-style: italic;
+                color: #1D3557; margin: 0 3rem .6rem 0; line-height: 1.5; }
+.q-terrain { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+.q-terrain strong { display: inline-block; color: var(--accent); font-size: 11.5px;
+                     text-transform: uppercase; letter-spacing: .04em; margin-right: .4rem; }
+.s4-box { background: rgba(139, 94, 131, .08); border: 1px dashed #8B5E83;
+           border-radius: 8px; padding: 1.5rem 1.8rem; margin: 1rem 0 3rem; }
+.s4-box h3 { font-family: "El Messiri", serif; color: #8B5E83; margin: 0 0 .6rem;
+              font-size: 1.3rem; font-weight: 600; }
+.s4-box .vlabel { display: inline-block; padding: 2px 10px; border-radius: 10px;
+                   font-size: 11.5px; font-weight: 600; color: #fff;
+                   background: #8B5E83; margin-bottom: .5rem; }
+.s4-box p { font-size: 14.5px; color: var(--ink); line-height: 1.65; margin: 0; }
+#map { height: 420px; border-radius: 8px; box-shadow: 0 2px 10px rgba(29,53,87,.05);
+        margin: 1rem 0 3rem; }
+.whatif { background: var(--card); border-radius: 8px; padding: 1.5rem 1.8rem;
+           margin: 1rem 0 3rem; border-left: 4px solid var(--ochre); }
+.whatif h3 { font-family: "El Messiri", serif; margin: 0 0 .5rem; color: var(--ochre);
+              font-size: 1.2rem; font-weight: 600; }
+.whatif textarea { width: 100%; min-height: 80px; padding: .7rem .9rem;
+                    font-family: inherit; font-size: 14.5px; color: var(--ink);
+                    border: 1px solid rgba(29,53,87,.15); border-radius: 6px;
+                    resize: vertical; background: var(--bg); }
+.whatif textarea:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+.whatif .note { font-size: 13px; color: var(--muted); margin: .6rem 0 0; }
+a.back { display: inline-block; margin-top: 2rem; color: var(--accent); font-weight: 500; }
+@media (max-width: 720px) {
+  body { padding: 1.5rem 1rem 3rem; }
+  .verdict { grid-template-columns: 1fr; }
+}
+</style>
+
+
+<!-- tawiza-strong-plotly-fix --><style>
+    html, body { margin: 0; padding: 4px; height: 100%; }
+    body { font-family: "Inter", system-ui, sans-serif; background: #FDFBF7; }
+    /* Force le div Plotly à prendre toute la place dispo */
+    .plotly-graph-div, .js-plotly-plot {
+        width: 100% !important; height: 100% !important; min-height: 320px !important;
+    }
+    @media (max-width: 640px) {
+        .plotly-graph-div, .js-plotly-plot { min-height: 420px !important; }
+        .legend text, text.legendtext { font-size: 10px !important; }
+        .gtitle { font-size: 12px !important; }
+        .xtick text, .ytick text { font-size: 9px !important; }
+    }
+</style>
+<script>
+(function(){
+    function forceAutosize(){
+        if (!window.Plotly) return;
+        document.querySelectorAll('.js-plotly-plot, .plotly-graph-div').forEach(function(el){
+            try {
+                // Retire height fixe + active autosize
+                el.style.height = '';
+                Plotly.relayout(el, { autosize: true, height: null, width: null });
+                Plotly.Plots.resize(el);
+            } catch(e){}
+        });
+    }
+    // Multiple triggers : dès que Plotly a fini d'initialiser
+    var iv = setInterval(function(){
+        if (window.Plotly && document.querySelector('.js-plotly-plot')) {
+            forceAutosize();
+            clearInterval(iv);
+        }
+    }, 100);
+    // Backfill : resize à tout moment utile
+    [200, 500, 1000, 2000].forEach(function(t){ setTimeout(forceAutosize, t); });
+    window.addEventListener('resize', forceAutosize);
+    window.addEventListener('load', forceAutosize);
+})();
+</script>
+
+<!-- tawiza-mobile-declutter --><script>
+(function(){
+    function simplify(){
+        if (!window.Plotly) return;
+        var isMobile = window.innerWidth <= 640;
+        if (!isMobile) return;
+        document.querySelectorAll('.js-plotly-plot').forEach(function(el){
+            try {
+                Plotly.relayout(el, {
+                    'margin.l': 20, 'margin.r': 20, 'margin.t': 55, 'margin.b': 90,
+                    'title.font.size': 12,
+                    'legend.font.size': 10,
+                });
+            } catch(e){}
+        });
+    }
+    var iv = setInterval(function(){
+        if (window.Plotly && document.querySelector('.js-plotly-plot')) {
+            simplify(); clearInterval(iv);
+        }
+    }, 100);
+    [300, 800].forEach(function(t){ setTimeout(simplify, t); });
+    window.addEventListener('resize', simplify);
+})();
+</script>
+
+</head>
+<body>
+
+<h1>L'arrière-cuisine</h1>
+<p class="subtitle">Ce qu'on a fait avant d'écrire les trois actes. Qui a le droit de savoir, parfois, ce n'est pas le lecteur : c'est nous.</p>
+
+<div class="warning">
+Tout ce qui suit est <strong>fictif</strong>. Les six personnes autour de la table n'existent pas. Le SDF non plus. On les a inventés pour tester nos angles. Ils parlent en nous à la place des gens qu'on devrait interviewer, et qu'on interviewera ensuite. <em>Ceci n'est pas une enquête. C'est une répétition.</em>
+</div>
+
+<h2>Les six voix à la table</h2>
+<p>Six personnes qui ne se rencontreraient probablement jamais autour d'un vrai café. On les a mises dans la même pièce, on a posé le plan vélo sur la table, on a attendu.</p>
+
+<div class="personas-grid">
+
+        <div class="persona-card" style="border-top-color: #C1554D;">
+            <div class="p-meta">Maire successeur</div>
+            <div class="p-name">Emmanuel Grégoire</div>
+            <div class="p-tags">
+                <span class="tag">55 ans</span>
+                <span class="tag">INTJ</span>
+            </div>
+            <div class="p-section"><strong>Enjeu</strong> Réélection + premier BP juin 2026</div>
+            <div class="p-section"><strong>R1</strong> <em>Prudence technocratique</em></div>
+            <div class="p-section"><strong>R7</strong> <em>Requalification doctrinale</em></div>
+        </div>
+        
+
+        <div class="persona-card" style="border-top-color: #1D3557;">
+            <div class="p-meta">Magistrate CRC IDF</div>
+            <div class="p-name">Cécile D.</div>
+            <div class="p-tags">
+                <span class="tag">50 ans</span>
+                <span class="tag">INTP</span>
+            </div>
+            <div class="p-section"><strong>Enjeu</strong> Respect des ratios prudentiels</div>
+            <div class="p-section"><strong>R1</strong> <em>Neutralité comptable</em></div>
+            <div class="p-section"><strong>R7</strong> <em>Offre sortie par 3 critères</em></div>
+        </div>
+        
+
+        <div class="persona-card" style="border-top-color: #F9844A;">
+            <div class="p-meta">Livreur vélo-cargo</div>
+            <div class="p-name">Ahmed B.</div>
+            <div class="p-tags">
+                <span class="tag">34 ans</span>
+                <span class="tag">ISFP</span>
+            </div>
+            <div class="p-section"><strong>Enjeu</strong> Loyer + enfants + santé physique</div>
+            <div class="p-section"><strong>R1</strong> <em>Pragmatisme précaire</em></div>
+            <div class="p-section"><strong>R7</strong> <em>Accepte concertation PMR</em></div>
+        </div>
+        
+
+        <div class="persona-card" style="border-top-color: #D4A843;">
+            <div class="p-meta">Commerçante rue Turenne</div>
+            <div class="p-name">Sylvie R.</div>
+            <div class="p-tags">
+                <span class="tag">58 ans</span>
+                <span class="tag">ESFJ</span>
+            </div>
+            <div class="p-section"><strong>Enjeu</strong> CA + bail commercial 2027</div>
+            <div class="p-section"><strong>R1</strong> <em>Scepticisme usé</em></div>
+            <div class="p-section"><strong>R7</strong> <em>Solidarité avec Ahmed</em></div>
+        </div>
+        
+
+        <div class="persona-card" style="border-top-color: #5B7BA5;">
+            <div class="p-meta">Élu LR 16e</div>
+            <div class="p-name">Jean-Marc V.</div>
+            <div class="p-tags">
+                <span class="tag">62 ans</span>
+                <span class="tag">ESTJ</span>
+            </div>
+            <div class="p-section"><strong>Enjeu</strong> Candidature LR Paris 2026</div>
+            <div class="p-section"><strong>R1</strong> <em>Retour de la voiture</em></div>
+            <div class="p-section"><strong>R7</strong> <em>Propose charte cross-parti</em></div>
+        </div>
+        
+
+        <div class="persona-card" style="border-top-color: #2D6A4F;">
+            <div class="p-meta">Cycliste quotidienne</div>
+            <div class="p-name">Léa M.</div>
+            <div class="p-tags">
+                <span class="tag">28 ans</span>
+                <span class="tag">ENFP</span>
+            </div>
+            <div class="p-section"><strong>Enjeu</strong> Sécurité + qualité de vie</div>
+            <div class="p-section"><strong>R1</strong> <em>Militante confiante</em></div>
+            <div class="p-section"><strong>R7</strong> <em>Reconnaît oubli PMR</em></div>
+        </div>
+        
+
+        <div class="persona-card persona-outsider" style="border-top-color: #8B5E83;">
+            <div class="p-meta">SDF rue de Rivoli</div>
+            <div class="p-name">Hamide (témoin)</div>
+            <div class="p-tags">
+                <span class="tag">52 ans</span>
+                <span class="tag">–</span>
+            </div>
+            <div class="p-section"><strong>Enjeu</strong> Dormir. Traverser la journée.</div>
+            <div class="p-section"><strong>R1</strong> <em>Observation hors jeu</em></div>
+            <div class="p-section"><strong>R7</strong> <em>Révèle l'angle mort PMR</em></div>
+        </div>
+        
+</div>
+
+<h2>Et Hamide, qui écoute</h2>
+<p>Hamide n'est pas autour de la table. Il dort sur la grille de ventilation de la rue de Rivoli depuis trois ans. Il observe. On lui a donné une carte à part, en pointillé. Sa fonction n'est pas d'avoir raison. Sa fonction est de poser les questions que les six autres ont oublié de se poser. <em>Ce qu'il dit, c'est ce qu'on n'avait pas vu.</em></p>
+
+<h2>Les cinq questions de Hamide</h2>
+<p>Au fil des tours, il a posé cinq questions. On les garde. Elles deviennent le début de l'enquête terrain des prochains actes.</p>
+<div class="questions-hamide">
+
+        <div class="question-card">
+            <div class="q-tour">R1</div>
+            <div class="q-citation">« Jamais ils m'ont demandé. »</div>
+            <div class="q-terrain"><strong>À poser en vrai</strong> Qui est consulté dans les concertations du Plan Vélo 2021-2026 ? Liste publique des participants. Quels absents systématiques ?</div>
+        </div>
+        
+
+        <div class="question-card">
+            <div class="q-tour">R2</div>
+            <div class="q-citation">« Les types qui creusent, ils ont changé deux fois d'équipe en trois ans. »</div>
+            <div class="q-terrain"><strong>À poser en vrai</strong> Combien de sous-traitants différents sur les chantiers rue de Rivoli 2021-2026 ? Surcoût lié aux malfaçons ? À demander à la Direction de la voirie.</div>
+        </div>
+        
+
+        <div class="question-card">
+            <div class="q-tour">R3</div>
+            <div class="q-citation">« Moody's, c'est quoi ? Dites-moi avec des mots. »</div>
+            <div class="q-terrain"><strong>À poser en vrai</strong> Existe-t-il une vulgarisation de l'impact d'une dégradation de notation pour le grand public ? Sinon, c'est un sujet éditorial à part entière.</div>
+        </div>
+        
+
+        <div class="question-card">
+            <div class="q-tour">R4</div>
+            <div class="q-citation">« Vous parlez « demain » comme si c'était une durée. On ne vit pas la même ville. »</div>
+            <div class="q-terrain"><strong>À poser en vrai</strong> Comment articuler temporalités politiques (18 mois d'instruction) et temporalités vécues (16 heures jusqu'à la prochaine nuit) ? Anthropologie urbaine.</div>
+        </div>
+        
+
+        <div class="question-card">
+            <div class="q-tour">R7</div>
+            <div class="q-citation">« La dame au fauteuil, je la connaissais. Je l'aurais dit qu'elle traversait à cet endroit. »</div>
+            <div class="q-terrain"><strong>À poser en vrai</strong> L'Apur a-t-il cartographié les traversées PMR observées sur les axes cyclables parisiens ? Sinon, pourquoi ? C'est une donnée cruciale.</div>
+        </div>
+        
+</div>
+
+<h2>Où vivent-ils, les sept voix</h2>
+<p>Chaque persona a un ancrage géographique réel. Pas abstrait. Pas interchangeable. Rue de Rivoli pour Hamide et Ahmed, rue de Turenne pour Sylvie, le 16e pour Jean-Marc. <em>Si on déplace les personas, on déplace ce qu'elles voient.</em></p>
+<div id="map"></div>
+
+<h2>Sept tours, trois coups de théâtre</h2>
+<p>On les laisse parler. Sept tours. Entre les tours, on injecte un événement qu'ils n'attendaient pas : Moody's dégrade Paris, Grégoire décrète un moratoire, un cycliste percute une personne en fauteuil. On regarde qui bouge, qui tient.</p>
+
+<div class="chart" id="chart-timeline"></div>
+
+<h2>Qui bouge, quand</h2>
+<p>Chaque ligne est une voix. Chaque colonne est un tour. Le rouge, c'est le rejet. Le vert, c'est l'adhésion. Le reste est entre les deux. On lit de gauche à droite. On voit Jean-Marc rester glacial pendant six tours, puis proposer soudain une alliance. On voit Léa chanceler sous le choc de l'accident. On voit Martin ne pas bouger du tout, sauf à la fin, quand il reconnaît la dame au fauteuil.</p>
+
+<div class="chart" id="chart-heatmap"></div>
+
+<h2>Le tri final</h2>
+<p>Trois scénarios sortent de l'exercice. On les passe dans trois tamis : est-ce que ça tient théoriquement, est-ce que c'est faisable dans les délais légaux, est-ce que quelqu'un peut politiquement le payer. Un seul passe les trois.</p>
+
+<div class="chart" id="chart-radar"></div>
+
+<h2>Qui est avec qui, à la fin</h2>
+<p>Au dernier tour, on regarde qui a noué quoi. Certaines alliances étaient prévisibles. D'autres beaucoup moins. Ahmed et Sylvie, opposés sur presque tout, se retrouvent sur une chose : ils subissent les arbitrages qu'ils ne font pas. Jean-Marc, qu'on n'attendait pas là, tend la main à Grégoire. Hamide tend la sienne à Léa.</p>
+<div class="chart" id="chart-alliances"></div>
+
+<div class="verdict">
+
+        <div class="verdict-card" style="border-left-color: #2D6A4F;">
+            <span class="vlabel" style="background: #2D6A4F;">VIABLE</span>
+            <h3>Charte PMR-Mobilités</h3>
+            <p>Faisable avant : <strong>Automne 2026</strong></p>
+        </div>
+        
+
+        <div class="verdict-card" style="border-left-color: #C1554D;">
+            <span class="vlabel" style="background: #C1554D;">ÉCARTER</span>
+            <h3>Péage urbain</h3>
+            <p>Faisable avant : <strong>Juin 2028 minimum</strong></p>
+        </div>
+        
+
+        <div class="verdict-card" style="border-left-color: #D4A843;">
+            <span class="vlabel" style="background: #D4A843;">À SURVEILLER</span>
+            <h3>Coalition précarité</h3>
+            <p>Faisable avant : <strong>Continu</strong></p>
+        </div>
+        
+</div>
+
+<h2>Le quatrième scénario, hors champ</h2>
+<p>Les trois scénarios ci-dessus sont ceux que la table a produits. Il y en a un quatrième, qu'aucune des six voix n'a formulé. C'est Hamide qui l'a vu, depuis la grille.</p>
+
+<div class="s4-box">
+<span class="vlabel">HORS-CHAMP · ce que la table n'a pas vu</span>
+<h3>Ce que Hamide voit</h3>
+<p>Le plan vélo ralentit. L'argent manque. Mais la rue de Rivoli, elle, redevient praticable pour ceux qui dorment dessus. Moins de camions-bennes la nuit, moins de grilles arrachées, moins de chantiers sans-fin. Un scénario que personne n'a prévu parce que personne ne l'habite.</p>
+</div>
+
+<h2>À votre tour : un choc de plus ?</h2>
+<p>Qu'est-ce qui, selon vous, changerait la donne ? Un député RN élu à Paris. Un incendie dans un parking Vélib'. La Seine qui déborde. Un scandale de corruption à la mairie. Écrivez-le. Le prochain acte du feuilleton intégrera les propositions les plus fréquentes.</p>
+
+<div class="whatif">
+<h3>Injectez un choc</h3>
+<textarea placeholder="Un choc externe que les six personas n'ont pas vu venir. Trois lignes max."></textarea>
+<p class="note">Pour l'instant le champ est local. Dans le prochain acte, on branchera un formulaire qui remonte à la rédaction.</p>
+</div>
+
+<h2>Ce que ça change, pour vous</h2>
+<div class="methodo">
+<p>Rien. Ou presque. Les chiffres des trois actes viennent tous de documents publics : le rapport CRC, le Budget Primitif, le CPER, les comptages d'open data. On les cite, on les lie, on les source.</p>
+
+<p>Ce que cet exercice a fait, c'est nous obliger à regarder ce qu'on n'avait pas prévu de regarder. L'accessibilité des pistes cyclables aux personnes en fauteuil. Le fait que les livreurs et les commerçants, opposés sur tout, se retrouvent parfois sur ce qu'ils subissent tous les deux. Le fait qu'un élu LR peut avoir intérêt à signer une charte avec un maire PS par peur d'une colère qui les dépasserait tous les deux.</p>
+
+<p>Toutes ces hypothèses devront être confrontées à des vrais gens. L'<a href="index.html">Acte 3</a> balise les signaux qui diront, dans les dix-huit mois, ce qu'il s'est réellement passé. À vous de juger.</p>
+</div>
+
+<a class="back" href="index.html">← Retour au feuilleton</a>
+
+<script>
+const timeline = {"data": [{"hoverinfo": "skip", "line": {"color": "#1D3557", "width": 3}, "marker": {"color": "#fafaf9", "line": {"color": "#1D3557", "width": 2}, "size": 18}, "mode": "lines+markers+text", "name": "Rounds", "text": ["1", "2", "3", "4", "5", "6", "7"], "textfont": {"color": "#1D3557", "size": 10}, "textposition": "middle center", "x": [1, 2, 3, 4, 5, 6, 7], "y": [1, 1, 1, 1, 1, 1, 1], "type": "scatter"}, {"hovertemplate": "<b>CHOC R3</b><br>Moody's d\u00e9grade Paris \u2192 BBB+<extra></extra>", "marker": {"color": "#C1554D", "line": {"color": "#fafaf9", "width": 2}, "size": 34, "symbol": "star"}, "mode": "markers", "name": "R3", "showlegend": false, "x": [3], "y": [1], "type": "scatter"}, {"hovertemplate": "<b>CHOC R5</b><br>Gr\u00e9goire annonce moratoire 18 mois<extra></extra>", "marker": {"color": "#C1554D", "line": {"color": "#fafaf9", "width": 2}, "size": 34, "symbol": "star"}, "mode": "markers", "name": "R5", "showlegend": false, "x": [5], "y": [1], "type": "scatter"}, {"hovertemplate": "<b>CHOC R7</b><br>Accident mortel piste cyclable \u00d7 PMR<extra></extra>", "marker": {"color": "#C1554D", "line": {"color": "#fafaf9", "width": 2}, "size": 34, "symbol": "star"}, "mode": "markers", "name": "R7", "showlegend": false, "x": [7], "y": [1], "type": "scatter"}], "layout": {"template": {"data": {"histogram2dcontour": [{"type": "histogram2dcontour", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "choropleth": [{"type": "choropleth", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "histogram2d": [{"type": "histogram2d", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "heatmap": [{"type": "heatmap", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "contourcarpet": [{"type": "contourcarpet", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "contour": [{"type": "contour", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "surface": [{"type": "surface", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "mesh3d": [{"type": "mesh3d", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "scatter": [{"fillpattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}, "type": "scatter"}], "parcoords": [{"type": "parcoords", "line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterpolargl": [{"type": "scatterpolargl", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}, "pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "bar"}], "scattergeo": [{"type": "scattergeo", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterpolar": [{"type": "scatterpolar", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "histogram": [{"marker": {"pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "histogram"}], "scattergl": [{"type": "scattergl", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatter3d": [{"type": "scatter3d", "line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattermap": [{"type": "scattermap", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattermapbox": [{"type": "scattermapbox", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterternary": [{"type": "scatterternary", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattercarpet": [{"type": "scattercarpet", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}, "pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "barpolar"}], "pie": [{"automargin": true, "type": "pie"}]}, "layout": {"autotypenumbers": "strict", "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "hovermode": "closest", "hoverlabel": {"align": "left"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"bgcolor": "#E5ECF6", "angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "ternary": {"bgcolor": "#E5ECF6", "aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]]}, "xaxis": {"gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2}, "yaxis": {"gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "geo": {"bgcolor": "white", "landcolor": "#E5ECF6", "subunitcolor": "white", "showland": true, "showlakes": true, "lakecolor": "white"}, "title": {"x": 0.05}, "mapbox": {"style": "light"}}}, "annotations": [{"font": {"color": "#C1554D", "size": 11}, "showarrow": false, "text": "<b>\u26a1 Moody's d\u00e9grade Paris \u2192 BBB+</b>", "x": 3, "y": 1.4}, {"font": {"color": "#C1554D", "size": 11}, "showarrow": false, "text": "<b>\u26a1 Gr\u00e9goire annonce moratoire 18 mois</b>", "x": 5, "y": 1.4}, {"font": {"color": "#C1554D", "size": 11}, "showarrow": false, "text": "<b>\u26a1 Accident mortel piste cyclable \u00d7 PMR</b>", "x": 7, "y": 1.4}], "xaxis": {"tickfont": {"size": 10}, "range": [0.5, 7.5], "tickmode": "array", "tickvals": [1, 2, 3, 4, 5, 6, 7], "ticktext": ["Baseline", "Clivages", "CHOC", "Reconfig", "CHOC", "Coalitions", "CHOC"], "showgrid": false, "zeroline": false}, "yaxis": {"range": [0.3, 1.9], "showgrid": false, "zeroline": false, "showticklabels": false}, "font": {"family": "Inter, system-ui", "size": 11, "color": "#1D3557"}, "margin": {"l": 30, "r": 30, "t": 70, "b": 60}, "title": {"text": "<b>Timeline des 7 rounds + 3 chocs</b>"}, "plot_bgcolor": "#fafaf9", "paper_bgcolor": "#fafaf9", "height": 220, "autosize": true, "showlegend": false}};
+const heatmap = {"data": [{"colorbar": {"tickmode": "array", "ticktext": ["contre", "sceptique", "neutre", "soutien", "pro"], "tickvals": [0, 2, 5, 8, 10], "title": {"text": "Position<br>(0=contre 10=pro)"}}, "colorscale": [[0.0, "#C1554D"], [0.3, "#D4A843"], [0.5, "#F9F1E7"], [0.7, "#8FB99A"], [1.0, "#2D6A4F"]], "hovertemplate": "<b>%{y}</b><br>%{x}: position %{z}/10<extra></extra>", "x": ["R1 Baseline", "R2 Clivages", "R3 CHOC Moody's", "R4 Reconfig", "R5 CHOC Moratoire", "R6 Coalitions", "R7 CHOC Accident PMR"], "y": ["Emmanuel Gr\u00e9goire", "C\u00e9cile D.", "Ahmed B.", "Sylvie R.", "Jean-Marc V.", "L\u00e9a M.", "Hamide (t\u00e9moin)"], "z": [[7, 7, 6, 6, 5, 6, 8], [5, 5, 5, 6, 5, 7, 7], [6, 6, 5, 4, 3, 5, 7], [3, 3, 4, 4, 5, 6, 7], [2, 2, 3, 3, 4, 6, 6], [9, 9, 8, 8, 6, 7, 9], [5, 5, 5, 5, 5, 5, 8]], "zmax": 10, "zmin": 0, "type": "heatmap"}], "layout": {"template": {"data": {"histogram2dcontour": [{"type": "histogram2dcontour", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "choropleth": [{"type": "choropleth", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "histogram2d": [{"type": "histogram2d", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "heatmap": [{"type": "heatmap", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "contourcarpet": [{"type": "contourcarpet", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "contour": [{"type": "contour", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "surface": [{"type": "surface", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "mesh3d": [{"type": "mesh3d", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "scatter": [{"fillpattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}, "type": "scatter"}], "parcoords": [{"type": "parcoords", "line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterpolargl": [{"type": "scatterpolargl", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}, "pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "bar"}], "scattergeo": [{"type": "scattergeo", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterpolar": [{"type": "scatterpolar", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "histogram": [{"marker": {"pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "histogram"}], "scattergl": [{"type": "scattergl", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatter3d": [{"type": "scatter3d", "line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattermap": [{"type": "scattermap", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattermapbox": [{"type": "scattermapbox", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterternary": [{"type": "scatterternary", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattercarpet": [{"type": "scattercarpet", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}, "pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "barpolar"}], "pie": [{"automargin": true, "type": "pie"}]}, "layout": {"autotypenumbers": "strict", "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "hovermode": "closest", "hoverlabel": {"align": "left"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"bgcolor": "#E5ECF6", "angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "ternary": {"bgcolor": "#E5ECF6", "aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]]}, "xaxis": {"gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2}, "yaxis": {"gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "geo": {"bgcolor": "white", "landcolor": "#E5ECF6", "subunitcolor": "white", "showland": true, "showlakes": true, "lakecolor": "white"}, "title": {"x": 0.05}, "mapbox": {"style": "light"}}}, "font": {"family": "Inter, system-ui", "size": 11, "color": "#1D3557"}, "margin": {"l": 140, "r": 30, "t": 70, "b": 50}, "title": {"text": "<b>Matrice des basculements au long des 7 rounds</b><br><sub style='color:#6C757D'>Chaque choc (R3, R5, R7) d\u00e9clenche un mouvement diff\u00e9rent selon la persona</sub>"}, "plot_bgcolor": "#fafaf9", "paper_bgcolor": "#fafaf9", "height": 380, "autosize": true}};
+const radar = {"data": [{"fill": "toself", "fillcolor": "#2D6A4F", "hovertemplate": "<b>Charte PMR-Mobilit\u00e9s</b><br>%{theta}: %{r}/10<extra></extra>", "line": {"color": "#2D6A4F", "width": 2.5}, "name": "<b>Charte PMR-Mobilit\u00e9s</b> \u2014 VIABLE", "opacity": 0.35, "r": [9, 7, 9, 7, 9, 8, 9], "theta": ["Fen\u00eatre politique", "Boucle cumulative", "Ordre institutionnel", "Gouvernance des communs", "Faisabilit\u00e9 l\u00e9ga", "Co\u00fbt politique", "Fen\u00eatre politique"], "type": "scatterpolar"}, {"fill": "toself", "fillcolor": "#C1554D", "hovertemplate": "<b>P\u00e9age urbain</b><br>%{theta}: %{r}/10<extra></extra>", "line": {"color": "#C1554D", "width": 2.5}, "name": "<b>P\u00e9age urbain</b> \u2014 \u00c9CARTER", "opacity": 0.35, "r": [3, 6, 6, 5, 2, 3, 3], "theta": ["Fen\u00eatre politique", "Boucle cumulative", "Ordre institutionnel", "Gouvernance des communs", "Faisabilit\u00e9 l\u00e9ga", "Co\u00fbt politique", "Fen\u00eatre politique"], "type": "scatterpolar"}, {"fill": "toself", "fillcolor": "#D4A843", "hovertemplate": "<b>Coalition pr\u00e9carit\u00e9</b><br>%{theta}: %{r}/10<extra></extra>", "line": {"color": "#D4A843", "width": 2.5}, "name": "<b>Coalition pr\u00e9carit\u00e9</b> \u2014 \u00c0 SURVEILLER", "opacity": 0.35, "r": [5, 5, 4, 6, 8, 9, 5], "theta": ["Fen\u00eatre politique", "Boucle cumulative", "Ordre institutionnel", "Gouvernance des communs", "Faisabilit\u00e9 l\u00e9ga", "Co\u00fbt politique", "Fen\u00eatre politique"], "type": "scatterpolar"}], "layout": {"template": {"data": {"histogram2dcontour": [{"type": "histogram2dcontour", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "choropleth": [{"type": "choropleth", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "histogram2d": [{"type": "histogram2d", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "heatmap": [{"type": "heatmap", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "contourcarpet": [{"type": "contourcarpet", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "contour": [{"type": "contour", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "surface": [{"type": "surface", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "mesh3d": [{"type": "mesh3d", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "scatter": [{"fillpattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}, "type": "scatter"}], "parcoords": [{"type": "parcoords", "line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterpolargl": [{"type": "scatterpolargl", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}, "pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "bar"}], "scattergeo": [{"type": "scattergeo", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterpolar": [{"type": "scatterpolar", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "histogram": [{"marker": {"pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "histogram"}], "scattergl": [{"type": "scattergl", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatter3d": [{"type": "scatter3d", "line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattermap": [{"type": "scattermap", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattermapbox": [{"type": "scattermapbox", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterternary": [{"type": "scatterternary", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattercarpet": [{"type": "scattercarpet", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}, "pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "barpolar"}], "pie": [{"automargin": true, "type": "pie"}]}, "layout": {"autotypenumbers": "strict", "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "hovermode": "closest", "hoverlabel": {"align": "left"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"bgcolor": "#E5ECF6", "angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "ternary": {"bgcolor": "#E5ECF6", "aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]]}, "xaxis": {"gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2}, "yaxis": {"gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "geo": {"bgcolor": "white", "landcolor": "#E5ECF6", "subunitcolor": "white", "showland": true, "showlakes": true, "lakecolor": "white"}, "title": {"x": 0.05}, "mapbox": {"style": "light"}}}, "polar": {"radialaxis": {"tickfont": {"size": 10}, "visible": true, "range": [0, 10], "gridcolor": "rgba(29,53,87,.15)"}, "angularaxis": {"tickfont": {"size": 11, "color": "#1D3557"}, "gridcolor": "rgba(29,53,87,.15)"}, "bgcolor": "#fafaf9"}, "font": {"family": "Inter, system-ui", "size": 11, "color": "#1D3557"}, "legend": {"font": {"size": 11}, "orientation": "h", "yanchor": "bottom", "y": -0.15, "xanchor": "center", "x": 0.5}, "margin": {"l": 50, "r": 50, "t": 70, "b": 80}, "title": {"text": "<b>Grille 3D des 3 sc\u00e9narios</b><br><sub style='color:#6C757D'>Th\u00e9ories (Fenêtre politique / Boucles / Institutions / Communs) \u00d7 Institutions \u00d7 Dimensions</sub>"}, "plot_bgcolor": "#fafaf9", "paper_bgcolor": "#fafaf9", "height": 450, "autosize": true}};
+const alliances = {"data": [{"hovertemplate": "<b>Ahmed B. \u00d7 Sylvie R.</b><br>force 8/10<extra></extra>", "line": {"color": "rgba(29, 53, 87, 0.63)", "width": 7.2}, "mode": "lines", "showlegend": false, "x": [-0.9749279121818236, -0.4338837391175583], "y": [-0.22252093395631428, -0.900968867902419], "type": "scatter"}, {"hovertemplate": "<b>L\u00e9a M. \u00d7 C\u00e9cile D.</b><br>force 7/10<extra></extra>", "line": {"color": "rgba(29, 53, 87, 0.57)", "width": 6.3}, "mode": "lines", "showlegend": false, "x": [0.9749279121818235, -0.7818314824680298], "y": [-0.22252093395631464, 0.6234898018587336], "type": "scatter"}, {"hovertemplate": "<b>Jean-Marc V. \u00d7 Emmanuel Gr\u00e9goire</b><br>force 6/10<extra></extra>", "line": {"color": "rgba(29, 53, 87, 0.51)", "width": 5.4}, "mode": "lines", "showlegend": false, "x": [0.43388373911755795, 6.123233995736766e-17], "y": [-0.9009688679024193, 1.0], "type": "scatter"}, {"hovertemplate": "<b>L\u00e9a M. \u00d7 Emmanuel Gr\u00e9goire</b><br>force 5/10<extra></extra>", "line": {"color": "rgba(29, 53, 87, 0.45)", "width": 4.5}, "mode": "lines", "showlegend": false, "x": [0.9749279121818235, 6.123233995736766e-17], "y": [-0.22252093395631464, 1.0], "type": "scatter"}, {"hovertemplate": "<b>Hamide (t\u00e9moin) \u00d7 L\u00e9a M.</b><br>force 7/10<extra></extra>", "line": {"color": "rgba(29, 53, 87, 0.57)", "width": 6.3}, "mode": "lines", "showlegend": false, "x": [0.78183148246803, 0.9749279121818235], "y": [0.6234898018587334, -0.22252093395631464], "type": "scatter"}, {"hovertemplate": "<b>Sylvie R. \u00d7 Emmanuel Gr\u00e9goire</b><br>force 4/10<extra></extra>", "line": {"color": "rgba(29, 53, 87, 0.39)", "width": 3.6}, "mode": "lines", "showlegend": false, "x": [-0.4338837391175583, 6.123233995736766e-17], "y": [-0.900968867902419, 1.0], "type": "scatter"}, {"hovertemplate": "<b>%{text}</b><extra></extra>", "marker": {"color": ["#C1554D", "#1D3557", "#F9844A", "#D4A843", "#5B7BA5", "#2D6A4F", "#8B5E83"], "line": {"color": "#1D3557", "width": 2}, "size": 44}, "mode": "markers+text", "showlegend": false, "text": ["Gr\u00e9goire", "C\u00e9cile D.", "Ahmed B.", "Sylvie R.", "Jean-Marc V.", "L\u00e9a M.", "Hamide"], "textfont": {"color": "#1D3557", "family": "Inter, system-ui", "size": 11}, "textposition": "bottom center", "x": [6.123233995736766e-17, -0.7818314824680298, -0.9749279121818236, -0.4338837391175583, 0.43388373911755795, 0.9749279121818235, 0.78183148246803], "y": [1.0, 0.6234898018587336, -0.22252093395631428, -0.900968867902419, -0.9009688679024193, -0.22252093395631464, 0.6234898018587334], "type": "scatter"}], "layout": {"template": {"data": {"histogram2dcontour": [{"type": "histogram2dcontour", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "choropleth": [{"type": "choropleth", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "histogram2d": [{"type": "histogram2d", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "heatmap": [{"type": "heatmap", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "contourcarpet": [{"type": "contourcarpet", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "contour": [{"type": "contour", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "surface": [{"type": "surface", "colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}], "mesh3d": [{"type": "mesh3d", "colorbar": {"outlinewidth": 0, "ticks": ""}}], "scatter": [{"fillpattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}, "type": "scatter"}], "parcoords": [{"type": "parcoords", "line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterpolargl": [{"type": "scatterpolargl", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}, "pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "bar"}], "scattergeo": [{"type": "scattergeo", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterpolar": [{"type": "scatterpolar", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "histogram": [{"marker": {"pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "histogram"}], "scattergl": [{"type": "scattergl", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatter3d": [{"type": "scatter3d", "line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattermap": [{"type": "scattermap", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattermapbox": [{"type": "scattermapbox", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scatterternary": [{"type": "scatterternary", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "scattercarpet": [{"type": "scattercarpet", "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}, "pattern": {"fillmode": "overlay", "size": 10, "solidity": 0.2}}, "type": "barpolar"}], "pie": [{"automargin": true, "type": "pie"}]}, "layout": {"autotypenumbers": "strict", "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "hovermode": "closest", "hoverlabel": {"align": "left"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"bgcolor": "#E5ECF6", "angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "ternary": {"bgcolor": "#E5ECF6", "aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]]}, "xaxis": {"gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2}, "yaxis": {"gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "geo": {"bgcolor": "white", "landcolor": "#E5ECF6", "subunitcolor": "white", "showland": true, "showlakes": true, "lakecolor": "white"}, "title": {"x": 0.05}, "mapbox": {"style": "light"}}}, "xaxis": {"visible": false, "range": [-1.5, 1.5]}, "yaxis": {"visible": false, "range": [-1.5, 1.5], "scaleanchor": "x", "scaleratio": 1}, "font": {"family": "Inter, system-ui", "color": "#1D3557"}, "margin": {"l": 30, "r": 30, "t": 70, "b": 30}, "title": {"text": "<b>Les alliances \u00e0 la fin du 7e tour</b><br><sub style='color:#6C757D'>\u00c9paisseur des liens = force de l'alliance observ\u00e9e</sub>"}, "plot_bgcolor": "#fafaf9", "paper_bgcolor": "#fafaf9", "height": 420, "autosize": true}};
+const cfg = {displaylogo: false, responsive: true, modeBarButtonsToRemove: ['lasso2d','select2d']};
+
+Plotly.newPlot("chart-timeline",  timeline.data,  timeline.layout,  cfg);
+Plotly.newPlot("chart-heatmap",   heatmap.data,   heatmap.layout,   cfg);
+Plotly.newPlot("chart-radar",     radar.data,     radar.layout,     cfg);
+Plotly.newPlot("chart-alliances", alliances.data, alliances.layout, cfg);
+
+// Carte Leaflet
+const map = L.map('map').setView([48.859, 2.360], 12);
+L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap France',
+  maxZoom: 18
+}).addTo(map);
+
+const lieux = [{"persona": "hamide", "label": "Rue de Rivoli, grille d'aération", "lat": 48.8598, "lng": 2.344, "note": "Où Hamide dort depuis 3 ans", "color": "#8B5E83", "persona_nom": "Hamide (témoin)", "letter": "H"}, {"persona": "ahmed", "label": "Circuit livraisons rue de Rivoli", "lat": 48.8565, "lng": 2.3522, "note": "Outil de travail quotidien", "color": "#F9844A", "persona_nom": "Ahmed B.", "letter": "A"}, {"persona": "sylvie", "label": "Rue de Turenne (3e)", "lat": 48.8588, "lng": 2.365, "note": "Quatre fois refaite en six ans", "color": "#D4A843", "persona_nom": "Sylvie R.", "letter": "S"}, {"persona": "lea", "label": "Trajet 11e → 2e", "lat": 48.865, "lng": 2.3778, "note": "Cycliste quotidienne", "color": "#2D6A4F", "persona_nom": "Léa M.", "letter": "L"}, {"persona": "jeanmarc", "label": "Mairie du 16e", "lat": 48.8639, "lng": 2.2758, "note": "Arrondissement d'élu LR", "color": "#5B7BA5", "persona_nom": "Jean-Marc V.", "letter": "J"}, {"persona": "gregoire", "label": "Hôtel de Ville", "lat": 48.8566, "lng": 2.3522, "note": "Arbitrages municipaux", "color": "#C1554D", "persona_nom": "Emmanuel Grégoire", "letter": "E"}, {"persona": "cecile", "label": "CRC IDF, Noisiel", "lat": 48.8535, "lng": 2.6245, "note": "Juridiction financière", "color": "#1D3557", "persona_nom": "Cécile D.", "letter": "C"}];
+lieux.forEach(l => {
+  const icon = L.divIcon({
+    html: `<div style="background:${l.color};color:#fff;border-radius:50%;width:26px;height:26px;line-height:26px;text-align:center;font-weight:600;font-size:12px;border:2px solid #fafaf9;box-shadow:0 2px 6px rgba(29,53,87,.3);">${l.letter}</div>`,
+    iconSize: [26, 26], iconAnchor: [13, 13], className: 'persona-marker'
+  });
+  L.marker([l.lat, l.lng], {icon})
+   .addTo(map)
+   .bindPopup(`<strong>${l.persona_nom}</strong><br>${l.label}<br><em style="color:#6C757D">${l.note}</em>`);
+});
+</script>
+
+</body>
+</html>
