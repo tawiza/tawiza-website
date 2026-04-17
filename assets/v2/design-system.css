@@ -383,8 +383,8 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
   .archive-row {
     display: block;
     position: relative;
-    padding: 22px 26px 22px 60px;
-    min-height: 80px;
+    padding: 22px 26px 22px 64px;
+    min-height: 88px;
     border-bottom: 1px solid var(--line-soft);
   }
   .archive-row:hover {
@@ -452,15 +452,20 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
 
 /* ----- Autres ajustements mobile globaux ----- */
 @media (max-width: 720px) {
-  /* Wordmark : un peu moins agressif sur mobile */
+  /* Wordmark : moins agressif sur mobile + backdrop for legibility */
   .wordmark {
     top: 12px; left: 14px;
     font-size: 10px;
+    mix-blend-mode: normal;
+    color: var(--ocre);
+    background: color-mix(in srgb, var(--bg) 75%, transparent);
+    padding: 2px 6px;
+    backdrop-filter: blur(4px);
   }
-  /* Glyph slot (top-right) plus petit */
+  .wordmark::before { content: "//"; color: var(--ocre); margin-right: 4px; opacity: 0.5; }
+  /* Hide fixed glyph-slot on mobile (redundant with inline glyph-hero, avoids text overlap) */
   .glyph-slot {
-    width: 48px; height: 48px;
-    top: 10px; right: 12px;
+    display: none;
   }
 
   /* Hot zones : header en colonne sur mobile */
@@ -600,9 +605,7 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
   height: 100% !important;
   display: block;
 }
-@media (max-width: 640px) {
-  .glyph-slot { width: 56px; height: 56px; top: 12px; right: 16px; }
-}
+/* glyph-slot hidden on mobile via above breakpoint */
 
 /* Responsive glyph : force canvas to fill its container override inline style.width */
 .glyph-slot canvas,
