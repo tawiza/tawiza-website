@@ -96,7 +96,7 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
 .terrain {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 4vw, 48px);
+  padding: 0 clamp(24px, 5vw, 48px);
 }
 
 .terrain-dense {
@@ -514,7 +514,7 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
 
   /* Article masthead : moins de padding-top */
   .article-masthead {
-    padding: 110px 0 40px;
+    padding: 96px 0 48px;
   }
   .glyph-hero {
     width: 220px;
@@ -524,47 +524,50 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
 
   /* Article typographie mobile - tailles réduites */
   .article-title {
-    font-size: clamp(1.8rem, 9vw, 2.6rem);
-    line-height: 1.08;
-    margin-bottom: 20px;
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+    line-height: 1.12;
+    margin-bottom: 22px;
   }
   .article-subtitle {
-    font-size: 1.05rem;
-    line-height: 1.4;
-    margin-bottom: 28px;
+    font-size: 1rem;
+    line-height: 1.45;
+    margin-bottom: 32px;
   }
   .article-meta {
-    font-size: 11px;
-    gap: 10px 18px;
-    padding-top: 16px;
+    font-size: 10.5px;
+    gap: 10px 22px;
+    padding-top: 18px;
+    line-height: 1.6;
   }
   .article-body {
-    font-size: 16.5px;
-    line-height: 1.6;
+    font-size: 15.5px;
+    line-height: 1.62;
     padding: 0 0 96px;
   }
   .article-body > p:first-of-type::first-letter {
-    font-size: 3.6em;
-    padding: 4px 8px 0 0;
+    font-size: 3.2em;
+    padding: 5px 10px 0 0;
   }
   .article-body h2 {
-    font-size: clamp(1.3rem, 5vw, 1.75rem);
-    margin: 2.2em 0 0.6em;
+    font-size: clamp(1.2rem, 4.5vw, 1.55rem);
+    margin: 2em 0 0.7em;
+    line-height: 1.2;
   }
   .article-body h2::before { font-size: 0.6em; }
   .article-body h3 {
-    font-size: 11px;
-    margin: 2em 0 0.6em;
+    font-size: 10.5px;
+    margin: 1.8em 0 0.7em;
   }
   .article-body blockquote {
-    font-size: 1.05em;
-    margin: 1.5em 0 1.5em -0.5em;
-    padding-left: 0.75em;
+    font-size: 1em;
+    margin: 1.6em 0 1.6em -0.5em;
+    padding: 0.2em 0 0.2em 0.75em;
   }
   .article-body pre {
-    font-size: 12px;
+    font-size: 11.5px;
+    line-height: 1.65;
     padding: 14px 16px;
-    margin: 1.5em -8px;  /* dépasse un peu pour récupérer de l'air */
+    margin: 1.6em -6px;
   }
   .article-body code { font-size: 0.85em; }
 }
@@ -605,33 +608,33 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
    10. ARTICLE LONG FORMAT (provocations 10, 11, 15)
    ============================================================ */
 .article-masthead {
-  padding: 180px 0 72px;
+  padding: 140px 0 56px;
   max-width: var(--read);
   margin: 0 auto;
 }
 .article-kicker {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   color: var(--ocre);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 .article-kicker::before { content: "→ "; }
 .article-title {
   font-family: var(--serif-display);
   font-weight: 400;
-  font-size: clamp(2.2rem, 6vw, 4.5rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin: 0 0 32px;
+  font-size: clamp(2rem, 5.5vw, 3.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin: 0 0 28px;
   color: var(--ink);
 }
 .article-title em { font-style: italic; color: var(--terre); }
 .article-subtitle {
   font-family: var(--serif-display);
   font-style: italic;
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
   line-height: 1.35;
   color: var(--ink-soft);
   margin: 0 0 48px;
@@ -639,13 +642,13 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
 }
 .article-meta {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 11px;
   color: var(--ink-mute);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  padding-top: 24px;
+  gap: 12px 32px;
+  padding-top: 20px;
   border-top: 1px solid var(--line);
 }
 .article-meta span strong {
@@ -658,26 +661,26 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
   max-width: var(--read);
   margin: 0 auto;
   padding: 0 0 160px;
-  font-size: 20px;
-  line-height: 1.65;
+  font-size: 18px;
+  line-height: 1.6;
 }
 .article-body > p:first-of-type::first-letter {
   font-family: var(--serif-display);
-  font-size: 4.8em;
+  font-size: 4.2em;
   float: left;
-  line-height: 0.85;
-  padding: 6px 12px 0 0;
+  line-height: 0.88;
+  padding: 8px 14px 0 0;
   color: var(--terre);
   font-weight: 400;
 }
-.article-body p { margin: 0 0 1.25em; }
+.article-body p { margin: 0 0 1.4em; }
 .article-body h2 {
   font-family: var(--serif-display);
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.2;
   letter-spacing: -0.01em;
-  margin: 3em 0 0.75em;
+  margin: 2.4em 0 0.9em;
   color: var(--ink);
 }
 .article-body h2::before {
@@ -691,15 +694,15 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
 }
 .article-body h3 {
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--ocre);
   margin: 2.5em 0 0.75em;
 }
 .article-body blockquote {
-  margin: 2em 0 2em -1em;
-  padding: 0 0 0 1em;
+  margin: 2.2em 0 2.2em -0.75em;
+  padding: 0.2em 0 0.2em 1em;
   border-left: 3px solid var(--terre);
   font-family: var(--serif-display);
   font-style: italic;
@@ -717,12 +720,12 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
 .article-body pre {
   font-family: var(--mono);
   font-size: 13px;
-  line-height: 1.55;
+  line-height: 1.6;
   background: var(--ink);
   color: var(--bg);
   padding: 20px 24px;
   overflow-x: auto;
-  margin: 2em 0;
+  margin: 2.2em 0;
   border-left: 3px solid var(--ocre);
 }
 .article-body pre code { background: transparent; padding: 0; color: inherit; }
