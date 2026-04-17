@@ -38,6 +38,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css?v=10">
+    <link rel="stylesheet" href="/assets/v2/design-system.css">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/tracking.css">
     <style>
         /* ═══ DESIGN ÉDITORIAL v2 ═══ */
@@ -338,26 +340,9 @@
     </script>
 </head>
 <body>
-    <!-- NAV -->
-    <nav class="nav" role="navigation" aria-label="Navigation principale">
-        <div class="nav-inner">
-            <a href="/" class="logo" aria-label="Tawiza - Accueil">
-                <img src="../img/logo-tawiza-amber.svg" alt="Tawiza" class="logo-img logo-light-only" height="28">
-                <img src="../img/logo-tawiza-white.svg" alt="Tawiza" class="logo-img logo-dark-only" height="28">
-            </a>
-            <div class="nav-links">
-                <a href="/analyses/">Analyses</a>
-                <a href="/manifeste.html">Manifeste</a>
-                <a href="/contribuer.html">Contribuer</a>
-                <a href="/a-propos.html">À propos</a>
-                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">Code source</a>
-            </div>
-            <button class="nav-mobile" aria-label="Menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
-
+        <!-- v2: wordmark + generative glyph (replaces legacy nav) -->
+    <a href="/" class="wordmark">tawiza.fr</a>
+    <div class="glyph-slot" aria-hidden="true" data-seed="/analyses/dunkerque-energie"></div>
     <main>
         <!-- ═══ HERO ═══ -->
         <article>
@@ -804,28 +789,27 @@
         </article>
     </main>
 
-    <!-- FOOTER -->
+        <!-- v2: 3AYNE eye + minimal footer -->
+    <section class="eye-zone">
+        <div class="terrain">
+            <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui dort jamais</span></div>
+            <div class="eye-root" role="img" aria-label="3AYNE &mdash; l'&oelig;il Tawiza"></div>
+            <div class="eye-caption">il regarde, il compte, il doute</div>
+        </div>
+    </section>
+
     <footer class="footer">
-        <div class="footer-eye">
-                <img src="../img/tawiza-eye.svg" alt="L'œil Tawiza" class="footer-eye-img">
-                <p class="footer-eye-tagline">L'œil qui dort jamais</p>
-            </div>
-            <div class="footer-inner">
-            <div>
-                <span class="tawiza-badge">Tawiza</span>
-                <span class="footer-tagline">Intelligence territoriale open source</span>
-            </div>
+        <div class="terrain" style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+            <span>tawiza &middot; observatoire territorial &middot; 2026</span>
             <div class="footer-links">
-                <a href="/analyses/">Analyses</a>
-                <a href="/manifeste.html">Manifeste</a>
-                <a href="/contribuer.html">Contribuer</a>
-                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">GitHub</a>
-                <a href="/feed.xml">RSS</a>
+                <a href="/analyses/">analyses</a>
+                <a href="/manifeste.html">manifeste</a>
+                <a href="/contribuer.html">contribuer</a>
+                <a href="/a-propos.html">&agrave; propos</a>
+                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">source</a>
             </div>
-            <p class="footer-copy">Données publiques, code ouvert, analyses vérifiables.</p>
         </div>
     </footer>
-
     <!-- Fade-up observer -->
     <script>
     const observer = new IntersectionObserver((entries) => {
@@ -924,5 +908,19 @@
         document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePop(); });
     })();
     </script>
+    <!-- v2: inject 3AYNE eye + load eye.js + glyph.js -->
+    <script>
+        fetch('/assets/v2/eye.svg').then(function (r) { return r.text(); }).then(function (svgText) {
+            var mount = document.querySelector('.eye-root');
+            if (!mount) return;
+            var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
+            mount.appendChild(svgEl);
+        }).then(function () {
+            var s = document.createElement('script');
+            s.src = '/assets/v2/eye.js';
+            document.body.appendChild(s);
+        });
+    </script>
+    <script src="/assets/v2/glyph.js" defer></script>
 </body>
 </html>
