@@ -604,6 +604,24 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
   .glyph-slot { width: 56px; height: 56px; top: 12px; right: 16px; }
 }
 
+/* Responsive glyph : force canvas to fill its container override inline style.width */
+.glyph-slot canvas,
+.glyph-hero canvas,
+.entry-glyph canvas,
+.home-row-glyph canvas,
+.archive-row-glyph canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+}
+.glyph-slot,
+.entry-glyph,
+.home-row-glyph,
+.archive-row-glyph {
+  overflow: hidden;
+}
+
+
 /* ============================================================
    10. ARTICLE LONG FORMAT (provocations 10, 11, 15)
    ============================================================ */
