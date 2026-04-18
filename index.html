@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260418">
+  <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260418b">
   <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.tagged-events.pageview-props.outbound-links.file-downloads.js"></script>
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "WebSite", "name": "Tawiza", "description": "Donn&eacute;es publiques fran&ccedil;aises, crois&eacute;es et racont&eacute;es.", "url": "https://tawiza.fr", "inLanguage": "fr", "author": { "@type": "Organization", "name": "Tawiza", "url": "https://github.com/tawiza" } }
@@ -39,59 +39,6 @@
 
   <style>
     /* Home-specific : featured (paris velo), archive rows, subscribe form */
-    .featured {
-      padding: 120px 0 48px;
-      border-bottom: 1px solid var(--line);
-    }
-    .featured-kicker {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--ocre);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      margin-bottom: 24px;
-    }
-    .featured-kicker::before { content: "// "; }
-    .featured-card {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 32px;
-      align-items: center;
-      text-decoration: none;
-      color: inherit;
-      padding: 32px 0;
-      border-top: 2px solid var(--line);
-      border-bottom: 2px solid var(--line);
-      transition: background 0.18s;
-    }
-    .featured-card:hover { background: var(--bg-deep); }
-    .featured-glyph { width: 200px; height: 200px; }
-    .featured-title {
-      font-family: var(--serif-display);
-      font-weight: 400;
-      font-size: clamp(1.8rem, 4.5vw, 3rem);
-      line-height: 1.1;
-      letter-spacing: -0.015em;
-      margin: 0 0 12px;
-    }
-    .featured-title em { font-style: italic; color: var(--terre); }
-    .featured-meta {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--ink-mute);
-      letter-spacing: 0.04em;
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-    .featured-meta a { color: var(--ocre); }
-    @media (max-width: 640px) {
-      .featured { padding: 96px 0 32px; }
-      .featured-card { grid-template-columns: 1fr; padding: 24px 0; gap: 20px; }
-      .featured-glyph { width: 140px; height: 140px; }
-    }
-
     /* Archive listing, mini glyph per row */
     .home-archive { padding: 64px 0; border-bottom: 1px solid var(--line); }
     .home-archive-kicker {
@@ -222,18 +169,18 @@
   <div class="glyph-slot" aria-hidden="true" data-seed="/"></div>
 
   <!-- 01. Featured : dernier feuilleton -->
-  <section class="featured">
+  <section class="f-hero-wrap">
     <div class="terrain">
-      <div class="featured-kicker">dernier feuilleton &middot; 17 avril 2026</div>
+      <div class="f-hero-kicker">dernier feuilleton &middot; 17 avril 2026</div>
 
-      <a href="/articles/paris-velo-2026/" class="featured-card">
-        <div class="featured-glyph" data-glyph data-seed="/articles/paris-velo-2026" data-size="200" data-cells="17"></div>
-        <div>
-          <h2 class="featured-title">Paris v&eacute;lo 2026 - <em>qui paie, quelle dette, quel choix en juin&nbsp;?</em></h2>
-          <p style="font-family: var(--serif-display); font-style: italic; font-size: 1.1rem; line-height: 1.45; color: var(--ink-soft); margin: 0;">
+      <a href="/articles/paris-velo-2026/" class="f-hero">
+        <div class="f-hero-glyph" data-glyph data-seed="/articles/paris-velo-2026" data-size="200" data-cells="17"></div>
+        <div class="f-hero-body">
+          <h2 class="f-hero-title">Paris v&eacute;lo 2026 - <em>qui paie, quelle dette, quel choix en juin&nbsp;?</em></h2>
+          <p class="f-hero-subtitle">
             Paris a promis 180 km de pistes cyclables. Quatre ans plus tard, 40&nbsp;% sont l&agrave;. Un feuilleton en trois actes pour lire la plomberie budg&eacute;taire derri&egrave;re l'annonce.
           </p>
-          <div class="featured-meta">
+          <div class="f-hero-meta">
             <span>3 actes</span>
             <span>1 simulateur interactif</span>
             <a href="/notebooks/acte1-paris-velo/">&rarr; jouer le mandat</a>
@@ -394,17 +341,17 @@
 
   <!-- 3AYNE eye + glyph system -->
   <script>
-    fetch('/assets/v2/eye.svg?v=20260418').then(function (r) { return r.text(); }).then(function (svgText) {
+    fetch('/assets/v2/eye.svg?v=20260418b').then(function (r) { return r.text(); }).then(function (svgText) {
       var mount = document.querySelector('.eye-root');
       if (!mount) return;
       var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
       mount.appendChild(svgEl);
     }).then(function () {
       var s = document.createElement('script');
-      s.src = '/assets/v2/eye.js?v=20260418';
+      s.src = '/assets/v2/eye.js?v=20260418b';
       document.body.appendChild(s);
     });
   </script>
-  <script src="/assets/v2/glyph.js?v=20260418" defer></script>
+  <script src="/assets/v2/glyph.js?v=20260418b" defer></script>
 </body>
 </html>
