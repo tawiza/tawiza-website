@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-  <link rel="stylesheet" href="../assets/v2/design-system.css?v=20260418i">
+  <link rel="stylesheet" href="../assets/v2/design-system.css?v=20260418j">
 
   <style>
   .preview-banner {
@@ -300,7 +300,7 @@
 
   <!-- Inject eye SVG inline via DOMParser (safe) -->
   <script>
-    fetch('../assets/v2/eye.svg?v=20260418i').then(function (r) { return r.text(); }).then(function (svgText) {
+    fetch('../assets/v2/eye.svg?v=20260418j').then(function (r) { return r.text(); }).then(function (svgText) {
       var mount = document.querySelector('.eye-root');
       if (!mount) return;
       var obj = mount.querySelector('.eye-svg-object'); if (obj) obj.remove();
@@ -308,12 +308,12 @@
       mount.appendChild(svgEl);
     }).then(function () {
       var s = document.createElement('script');
-      s.src = '../assets/v2/eye.js?v=20260418i';
+      s.src = '../assets/v2/eye.js?v=20260418j';
       document.body.appendChild(s);
     });
   </script>
 
-  <script src="../assets/v2/glyph.js?v=20260418i" defer></script>
+  <script src="../assets/v2/glyph.js?v=20260418j" defer></script>
 
 </body>
 </html>

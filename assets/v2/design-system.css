@@ -1612,7 +1612,7 @@ abbr[title]:hover {
   max-width: 1000px;
 }
 
-@media (min-width: 780px) {
+@media (min-width: 720px) {
   .article-masthead--hero, .article-masthead:has(.glyph-hero) {
     display: grid;
     grid-template-columns: minmax(220px, 320px) 1fr;

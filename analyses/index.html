@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260418i">
+  <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260418j">
   <link rel="alternate" type="application/rss+xml" title="Tawiza - Analyses" href="https://tawiza.fr/feed.xml">
 
   <script type="application/ld+json">
@@ -188,7 +188,8 @@
   <a href="/" class="wordmark">tawiza.fr</a>
   <div class="glyph-slot" aria-hidden="true" data-seed="/analyses"></div>
 
-  <header class="article-masthead terrain">
+  <header class="article-masthead article-masthead--hero terrain">
+    <div class="glyph-hero" data-glyph data-seed="/analyses" data-size="280" data-cells="21"></div>
     <div class="article-kicker">index &middot; 5 publications &middot; 38 sources</div>
     <h1 class="article-title"><em>Analyses</em></h1>
     <p class="article-subtitle">donn&eacute;es publiques &middot; sources v&eacute;rifi&eacute;es &middot; calculs montr&eacute;s</p>
@@ -356,18 +357,18 @@
   </footer>
 
   <script>
-    fetch('/assets/v2/eye.svg?v=20260418i').then(function (r) { return r.text(); }).then(function (svgText) {
+    fetch('/assets/v2/eye.svg?v=20260418j').then(function (r) { return r.text(); }).then(function (svgText) {
       var mount = document.querySelector('.eye-root');
       if (!mount) return;
       var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
       mount.appendChild(svgEl);
     }).then(function () {
       var s = document.createElement('script');
-      s.src = '/assets/v2/eye.js?v=20260418i';
+      s.src = '/assets/v2/eye.js?v=20260418j';
       document.body.appendChild(s);
     });
   </script>
-  <script src="/assets/v2/glyph.js?v=20260418i" defer></script>
-  <script src="/assets/v2/annotate.js?v=20260418i" defer></script>
+  <script src="/assets/v2/glyph.js?v=20260418j" defer></script>
+  <script src="/assets/v2/annotate.js?v=20260418j" defer></script>
 </body>
 </html>
