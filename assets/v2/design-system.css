@@ -1192,12 +1192,13 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
 
 
 /* ============================================================
-   F-HERO: home featured card, rewritten from scratch with clean
-   class names (f-hero*) to avoid any cascade collision with old
-   .featured-* rules that may still live in inline <style> blocks.
+   F-HERO: home featured card - explicit CSS Grid for reliable
+   side-by-side layout. Below 780px: stack. Above: glyph-left,
+   content-right. Internal body always stacks h2 -> p -> meta
+   vertically, no matter the viewport.
    ============================================================ */
 .f-hero-wrap {
-  padding: 64px 0 48px;
+  padding: 48px 0 40px;
   border-bottom: 1px solid var(--line);
 }
 .f-hero-kicker {
@@ -1206,39 +1207,48 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
   color: var(--ocre);
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 .f-hero-kicker::before { content: "// "; }
 
+/* Default (<780px) : single column stack */
 .f-hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  padding: 32px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 28px 0;
   border-top: 2px solid var(--line);
   border-bottom: 2px solid var(--line);
   text-decoration: none;
   color: inherit;
   transition: background 0.18s;
+  align-items: center;
+  justify-items: center;
 }
 .f-hero:hover { background: var(--bg-deep); }
 
 .f-hero-glyph {
-  width: clamp(160px, 38vw, 240px);
-  height: clamp(160px, 38vw, 240px);
+  width: clamp(160px, 38vw, 220px);
+  height: clamp(160px, 38vw, 220px);
   flex-shrink: 0;
 }
 
 .f-hero-body {
+  /* Always stacks internally no matter what */
+  display: block;
+  width: 100%;
   max-width: 62ch;
   text-align: center;
+}
+.f-hero-body > * {
+  display: block;
   width: 100%;
 }
+
 .f-hero-title {
   font-family: var(--serif-display);
   font-weight: 400;
-  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
   line-height: 1.12;
   letter-spacing: -0.015em;
   margin: 0 0 14px;
@@ -1249,10 +1259,10 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
 .f-hero-subtitle {
   font-family: var(--serif-display);
   font-style: italic;
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-size: clamp(1rem, 1.7vw, 1.2rem);
   line-height: 1.5;
   color: var(--ink-soft);
-  margin: 0 auto 24px;
+  margin: 0 auto 20px;
   max-width: 56ch;
 }
 
@@ -1270,25 +1280,30 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
 .f-hero-meta a { color: var(--ocre); text-decoration: none; }
 .f-hero-meta a:hover { text-decoration: underline; }
 
-/* Desktop >=960px : side-by-side row */
-@media (min-width: 960px) {
+/* >=780px : glyph left, content right. Explicit grid. */
+@media (min-width: 780px) {
   .f-hero {
-    flex-direction: row;
+    grid-template-columns: minmax(200px, 280px) 1fr;
+    column-gap: 48px;
+    row-gap: 0;
+    padding: 36px 0;
     align-items: center;
-    gap: 48px;
-    padding: 40px 0;
+    justify-items: stretch;
     text-align: left;
   }
   .f-hero-glyph {
-    width: 260px;
-    height: 260px;
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1;
+    height: auto;
   }
   .f-hero-body {
     text-align: left;
     max-width: none;
-    flex: 1 1 auto;
+    margin: 0;
   }
   .f-hero-subtitle {
+    text-align: left;
     margin: 0 0 20px;
     max-width: 60ch;
   }
@@ -1296,7 +1311,6 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
     justify-content: flex-start;
   }
 }
-
 
 /* ============================================================
    ANNOTATE: abbr + data-explain styling
