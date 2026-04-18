@@ -6,7 +6,15 @@
         <link>https://tawiza.fr/analyses/</link>
         <atom:link href="https://tawiza.fr/feed.xml" rel="self" type="application/rss+xml"/>
         <language>fr</language>
-        <lastBuildDate>Sat, 11 Apr 2026 10:00:00 +0200</lastBuildDate>
+        <lastBuildDate>Fri, 17 Apr 2026 18:00:00 +0200</lastBuildDate>
+
+        <item>
+            <title>Paris vélo 2026 &#8212; qui paie, quelle dette, quel choix en juin</title>
+            <link>https://tawiza.fr/articles/paris-velo-2026/</link>
+            <guid>https://tawiza.fr/articles/paris-velo-2026/</guid>
+            <pubDate>Fri, 17 Apr 2026 18:00:00 +0200</pubDate>
+            <description>Paris a promis 180 km de pistes cyclables. Quatre ans plus tard, 40 % sont là. Feuilleton en trois actes : qui paie le vélo à Paris ?, la dette est-elle le vrai problème ?, juin 2026 le choix Grégoire. 9,4 Md€ de dette municipale, 20 M€/an au Budget Primitif 2026, 108 km restant à construire. Avec un simulateur interactif (marimo/Pyodide) pour endosser le rôle du maire 2026-2031.</description>
+        </item>
 
         <item>
             <title>Risque argile &#8212; 65 % des communes concernées n'ont jamais prévenu leurs habitants</title>
