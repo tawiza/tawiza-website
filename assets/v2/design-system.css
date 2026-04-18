@@ -1601,3 +1601,52 @@ abbr[title]:hover {
   em { color: var(--terre) !important; font-style: italic; }
 }
 
+/* ============================================================
+   ARTICLE MASTHEAD with glyph-hero : 2-column layout on desktop
+   Uses CSS :has() to detect pages that have a big glyph
+   in their masthead (articles/paris-velo-2026/, article.html, etc.)
+   ============================================================ */
+
+/* Default (all viewports) : keep stacked behavior */
+.article-masthead:has(.glyph-hero) {
+  max-width: 1000px;
+}
+
+@media (min-width: 780px) {
+  .article-masthead:has(.glyph-hero) {
+    display: grid;
+    grid-template-columns: minmax(220px, 320px) 1fr;
+    grid-template-rows: auto;
+    column-gap: 56px;
+    row-gap: 0;
+    align-items: center;
+    padding: 120px 0 72px;
+  }
+  .article-masthead:has(.glyph-hero) .glyph-hero {
+    grid-column: 1;
+    grid-row: 1 / span 10;   /* span all rows */
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1;
+    height: auto;
+    margin: 0;
+    align-self: center;
+    justify-self: start;
+  }
+  .article-masthead:has(.glyph-hero) > :not(.glyph-hero) {
+    grid-column: 2;
+    text-align: left;
+  }
+  .article-masthead:has(.glyph-hero) .article-title {
+    margin-top: 0;
+  }
+  .article-masthead:has(.glyph-hero) .article-meta {
+    margin-top: 24px;
+  }
+  /* Hide the generated "// slug · NxN · generated" label below glyph-hero
+     in 2-col layout - it clashes visually with the text column */
+  .article-masthead:has(.glyph-hero) .glyph-hero::after {
+    display: none;
+  }
+}
+
