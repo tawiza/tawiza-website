@@ -1297,3 +1297,202 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
   }
 }
 
+
+/* ============================================================
+   ANNOTATE: abbr + data-explain styling
+   Feutre-surligne Tawiza: subtle highlight + tooltip on hover.
+   ============================================================ */
+
+/* Acronyms auto-wrapped by annotate.js */
+abbr.tz-abbr,
+abbr[title] {
+  text-decoration: none;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 62%,
+    color-mix(in srgb, var(--ocre) 34%, transparent) 62%,
+    color-mix(in srgb, var(--ocre) 34%, transparent) 94%,
+    transparent 94%
+  );
+  padding: 0 2px;
+  border-radius: 1px;
+  cursor: help;
+  transition: background 0.18s;
+  font-weight: 500;
+}
+abbr.tz-abbr:hover,
+abbr[title]:hover {
+  background: color-mix(in srgb, var(--ocre) 52%, transparent);
+  color: var(--ink);
+}
+
+/* Manual term explanations: data-explain attribute */
+.tz-explain,
+[data-explain] {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 55%,
+    color-mix(in srgb, var(--terre) 40%, transparent) 55%,
+    color-mix(in srgb, var(--terre) 40%, transparent) 94%,
+    transparent 94%
+  );
+  padding: 0 3px;
+  border-radius: 1px;
+  cursor: help;
+  transition: background 0.18s;
+}
+.tz-explain:hover,
+.tz-explain:focus-visible,
+[data-explain]:hover,
+[data-explain]:focus-visible {
+  background: color-mix(in srgb, var(--terre) 55%, transparent);
+  outline: none;
+}
+.tz-explain::after,
+[data-explain]::after {
+  content: attr(data-explain);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  z-index: 100;
+  display: none;
+  width: max-content;
+  max-width: min(320px, 70vw);
+  padding: 10px 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--bg);
+  background: var(--ink);
+  border-left: 3px solid var(--terre);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  white-space: normal;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+.tz-explain:hover::after,
+.tz-explain:focus-visible::after,
+[data-explain]:hover::after,
+[data-explain]:focus-visible::after {
+  display: block;
+}
+
+/* ============================================================
+   QUARTO ACTS (acte1/2/3): dark-mode + v2 palette overrides
+   The Quarto-generated HTML has its own hardcoded colors that
+   look fine in light mode but ignore prefers-color-scheme.
+   We override the most visible ones with our CSS vars so dark
+   mode looks coherent with the rest of the site.
+   ============================================================ */
+
+@media (prefers-color-scheme: dark) {
+  /* Body background + text */
+  body.quarto-light-bg,
+  body[class*="quarto"] {
+    background: var(--bg) !important;
+    color: var(--ink) !important;
+  }
+
+  /* Content wrappers */
+  #quarto-content,
+  .quarto-content,
+  main.content,
+  #quarto-document-content,
+  .page-columns {
+    background: var(--bg) !important;
+    color: var(--ink) !important;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--ink) !important;
+  }
+  h1.title, .title {
+    color: var(--ink) !important;
+  }
+
+  /* Links : keep ocre */
+  main a:not(.wordmark):not(.footer-links a) {
+    color: var(--ocre) !important;
+  }
+
+  /* Code blocks + inline code */
+  pre,
+  .sourceCode,
+  pre.sourceCode {
+    background: var(--bg-deep) !important;
+    color: var(--ink) !important;
+    border: 1px solid var(--line-soft);
+  }
+  code, code.inline-code {
+    background: var(--bg-deep) !important;
+    color: var(--terre) !important;
+  }
+
+  /* Tables */
+  table, .table {
+    color: var(--ink) !important;
+    background: transparent !important;
+  }
+  th, td {
+    border-color: var(--line-soft) !important;
+  }
+  thead tr {
+    border-bottom: 2px solid var(--line) !important;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    color: var(--ink-soft) !important;
+    border-left-color: var(--terre) !important;
+  }
+
+  /* TOC sidebar */
+  #TOC,
+  #quarto-margin-sidebar,
+  .sidebar {
+    background: transparent !important;
+    color: var(--ink-soft) !important;
+  }
+  #TOC .toc-title,
+  #TOC h2 {
+    color: var(--ink-mute) !important;
+  }
+  #TOC a,
+  .sidebar a {
+    color: var(--ink-soft) !important;
+  }
+  #TOC a:hover,
+  #TOC a.active,
+  .sidebar a:hover,
+  .sidebar a.active {
+    color: var(--ocre) !important;
+  }
+
+  /* Horizontal rules */
+  hr {
+    border-color: var(--line-soft) !important;
+  }
+
+  /* Figures + captions */
+  figcaption, .figure-caption {
+    color: var(--ink-mute) !important;
+  }
+
+  /* Navigation / buttons */
+  .nav-pills .nav-link.active,
+  .btn-primary {
+    background: var(--ocre) !important;
+    color: var(--bg) !important;
+    border-color: var(--ocre) !important;
+  }
+}
+
+/* Also harmonize light mode so it does not clash with v2 cream */
+body[class*="quarto"] {
+  background: var(--bg);
+}
+

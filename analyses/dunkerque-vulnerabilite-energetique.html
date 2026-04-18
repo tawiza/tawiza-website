@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css?v=10">
-    <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260418b">
+    <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260418c">
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/tracking.css">
     <style>
@@ -910,17 +910,18 @@
     </script>
     <!-- v2: inject 3AYNE eye + load eye.js + glyph.js -->
     <script>
-        fetch('/assets/v2/eye.svg?v=20260418b').then(function (r) { return r.text(); }).then(function (svgText) {
+        fetch('/assets/v2/eye.svg?v=20260418c').then(function (r) { return r.text(); }).then(function (svgText) {
             var mount = document.querySelector('.eye-root');
             if (!mount) return;
             var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
             mount.appendChild(svgEl);
         }).then(function () {
             var s = document.createElement('script');
-            s.src = '/assets/v2/eye.js?v=20260418b';
+            s.src = '/assets/v2/eye.js?v=20260418c';
             document.body.appendChild(s);
         });
     </script>
-    <script src="/assets/v2/glyph.js?v=20260418b" defer></script>
+    <script src="/assets/v2/glyph.js?v=20260418c" defer></script>
+  <script src="/assets/v2/annotate.js?v=20260418c" defer></script>
 </body>
 </html>
