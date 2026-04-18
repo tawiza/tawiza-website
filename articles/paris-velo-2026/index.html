@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260418j">
+  <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260418k">
   <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.outbound-links.js"></script>
   <style>
     .acts {
@@ -301,18 +301,18 @@
   </footer>
 
   <script>
-    fetch('/assets/v2/eye.svg?v=20260418j').then(function (r) { return r.text(); }).then(function (svgText) {
+    fetch('/assets/v2/eye.svg?v=20260418k').then(function (r) { return r.text(); }).then(function (svgText) {
       var mount = document.querySelector('.eye-root');
       if (!mount) return;
       var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
       mount.appendChild(svgEl);
     }).then(function () {
       var s = document.createElement('script');
-      s.src = '/assets/v2/eye.js?v=20260418j';
+      s.src = '/assets/v2/eye.js?v=20260418k';
       document.body.appendChild(s);
     });
   </script>
-  <script src="/assets/v2/glyph.js?v=20260418j" defer></script>
-  <script src="/assets/v2/annotate.js?v=20260418j" defer></script>
+  <script src="/assets/v2/glyph.js?v=20260418k" defer></script>
+  <script src="/assets/v2/annotate.js?v=20260418k" defer></script>
 </body>
 </html>

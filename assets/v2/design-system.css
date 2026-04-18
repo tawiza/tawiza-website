@@ -1650,3 +1650,80 @@ abbr[title]:hover {
   }
 }
 
+/* ============================================================
+   ACTE NAV - navigation between acts of the Paris velo feuilleton
+   ============================================================ */
+.acte-nav {
+  max-width: 1000px;
+  margin: 80px auto 48px;
+  padding: 24px 24px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: stretch;
+  border-top: 2px solid var(--line);
+  border-bottom: 2px solid var(--line);
+}
+.acte-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.18s, background 0.18s;
+  font-family: var(--mono);
+}
+.acte-nav-link:hover {
+  color: var(--ocre);
+  background: var(--bg-deep);
+}
+.acte-nav-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.acte-nav-link:hover .acte-nav-label { color: var(--ocre); }
+.acte-nav-title {
+  font-family: var(--serif-display);
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.acte-nav-link:hover .acte-nav-title { color: var(--ocre); }
+.acte-nav-prev { text-align: left; }
+.acte-nav-home {
+  text-align: center;
+  align-items: center;
+  border-left: 1px solid var(--line-soft);
+  border-right: 1px solid var(--line-soft);
+  padding: 12px 28px;
+}
+.acte-nav-home .acte-nav-label { color: var(--ocre); }
+.acte-nav-next { text-align: right; align-items: flex-end; }
+.acte-nav-placeholder {
+  /* empty cell to maintain the 3-col grid on acte1/acte3 */
+  min-height: 1px;
+}
+@media (max-width: 720px) {
+  .acte-nav {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 16px;
+  }
+  .acte-nav-link {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .acte-nav-link:last-child { border-bottom: 0; }
+  .acte-nav-prev, .acte-nav-next, .acte-nav-home {
+    text-align: left;
+    align-items: flex-start;
+    border-left: 0;
+    border-right: 0;
+  }
+  .acte-nav-placeholder { display: none; }
+}
+

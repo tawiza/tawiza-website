@@ -127,7 +127,7 @@ window.Quarto = {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/v2/design-system.css?v=20260418j">
+<link rel="stylesheet" href="/assets/v2/design-system.css?v=20260418k">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.outbound-links.js"></script>
 <style>
@@ -938,6 +938,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 <!-- v2: 3AYNE eye + minimal footer -->
+
+    <!-- v2: inter-acte navigation -->
+    <nav class="acte-nav" role="navigation" aria-label="Navigation entre les actes du feuilleton">
+      <span class="acte-nav-placeholder"></span>
+      <a class="acte-nav-link acte-nav-home" href="/articles/paris-velo-2026/">
+        <span class="acte-nav-label">feuilleton</span>
+        <span class="acte-nav-title">3 actes &middot; simulateur</span>
+      </a>
+      <a class="acte-nav-link acte-nav-next" href="acte2.html" rel="next">
+        <span class="acte-nav-label">acte suivant &rarr;</span>
+        <span class="acte-nav-title">La dette est-elle le vrai problème ?</span>
+      </a>
+    </nav>
+
 <section class="eye-zone">
   <div class="terrain">
     <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui dort jamais</span></div>
@@ -960,18 +974,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 <!-- v2: inject 3AYNE eye + load eye.js + glyph.js -->
 <script>
-  fetch('/assets/v2/eye.svg?v=20260418j').then(function (r) { return r.text(); }).then(function (svgText) {
+  fetch('/assets/v2/eye.svg?v=20260418k').then(function (r) { return r.text(); }).then(function (svgText) {
     var mount = document.querySelector('.eye-root');
     if (!mount) return;
     var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
     mount.appendChild(svgEl);
   }).then(function () {
     var s = document.createElement('script');
-    s.src = '/assets/v2/eye.js?v=20260418j';
+    s.src = '/assets/v2/eye.js?v=20260418k';
     document.body.appendChild(s);
   });
 </script>
-<script src="/assets/v2/glyph.js?v=20260418j" defer></script>
-  <script src="/assets/v2/annotate.js?v=20260418j" defer></script>
+<script src="/assets/v2/glyph.js?v=20260418k" defer></script>
+  <script src="/assets/v2/annotate.js?v=20260418k" defer></script>
 
 </body></html>
