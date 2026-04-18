@@ -77,6 +77,87 @@
     }
     .act-card:hover .act-arrow { color: var(--ocre); }
 
+    /* 4e cellule : visuel */
+    .act-card--visual {
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+      background: var(--bg-deep);
+    }
+    .act-visual {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 45%;
+      z-index: 0;
+      filter: contrast(1.02) saturate(0.92);
+      transition: transform 0.4s ease-out;
+    }
+    .act-card--visual:hover .act-visual { transform: scale(1.03); background: transparent; }
+    .act-visual-overlay {
+      position: relative;
+      z-index: 1;
+      padding: 24px 22px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(
+        180deg,
+        rgba(250, 245, 239, 0.55) 0%,
+        rgba(250, 245, 239, 0.15) 30%,
+        rgba(26, 22, 18, 0.60) 75%,
+        rgba(26, 22, 18, 0.82) 100%
+      );
+      color: var(--ink);
+    }
+    @media (prefers-color-scheme: dark) {
+      .act-visual-overlay {
+        background: linear-gradient(
+          180deg,
+          rgba(13, 11, 9, 0.45) 0%,
+          rgba(13, 11, 9, 0.12) 30%,
+          rgba(13, 11, 9, 0.60) 75%,
+          rgba(13, 11, 9, 0.85) 100%
+        );
+      }
+    }
+    .act-card--visual .act-num {
+      color: var(--ocre);
+      position: relative;
+      align-self: flex-start;
+    }
+    .act-visual-line {
+      font-family: var(--serif-display);
+      font-weight: 400;
+      font-size: clamp(20px, 2.4vw, 28px);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: #faf5ef;
+      text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+      margin-top: auto;
+    }
+    .act-visual-line em { font-style: italic; color: var(--ocre); }
+    .act-visual-credit {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: #c8bfb2;
+      letter-spacing: 0.04em;
+      margin-top: 12px;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+    /* Fallback when image 404s : show hatching pattern so cell isn't blank */
+    .act-card--visual {
+      background-image:
+        repeating-linear-gradient(45deg, var(--ocre) 0 1px, transparent 1px 14px),
+        repeating-linear-gradient(-45deg, var(--terre) 0 1px, transparent 1px 14px);
+      background-color: var(--bg-deep);
+    }
+
     .simul-box {
       margin-top: 56px;
       padding: 32px 28px;
@@ -170,6 +251,16 @@
           <p class="act-lead">Premier Budget Primitif du nouveau maire. Trois sc&eacute;narios d'arbitrage possibles. Six signaux pour dire lequel s'installe.</p>
           <span class="act-arrow">lire l'acte 3 &rarr;</span>
         </a>
+
+        <!-- 4e cellule : visuel, chaise longue comme m&eacute;taphore du pouvoir municipal -->
+        <div class="act-card act-card--visual">
+          <img src="img/chaise-longue.jpg" alt="Chaise longue, illustration de Leonard Battee (Index of American Design, ca. 1937)" class="act-visual" loading="lazy" onerror="this.style.display='none'">
+          <div class="act-visual-overlay">
+            <span class="act-num">&Eacute;pilogue</span>
+            <span class="act-visual-line">Sur quoi s'assiera <em>le maire</em><br>en juin 2026&nbsp;?</span>
+            <span class="act-visual-credit">chaise longue &middot; Leonard Battee, ca 1937<br>Index of American Design, NGA</span>
+          </div>
+        </div>
       </section>
 
       <div class="simul-box">
