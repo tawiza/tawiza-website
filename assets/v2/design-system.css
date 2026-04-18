@@ -1389,43 +1389,76 @@ abbr[title]:hover {
    ============================================================ */
 
 @media (prefers-color-scheme: dark) {
-  /* Body background + text */
-  body.quarto-light-bg,
-  body[class*="quarto"] {
+  /* =====================================================
+     HIGH-LEVEL REMAP: redefine the local --tawiza-* vars
+     used by page-specific stylesheets (paris-velo-2026/
+     style.css for the acts, etc.) so that ANY rule using
+     them picks up the v2 dark palette without touching
+     the local CSS files.
+     ===================================================== */
+  :root {
+    --tawiza-bg:        var(--bg)         !important;
+    --tawiza-ink:       var(--ink)        !important;
+    --tawiza-muted:     var(--ink-mute)   !important;
+    --tawiza-neutre:    var(--ink-soft)   !important;
+    --tawiza-accent:    var(--terre)      !important;
+    --tawiza-alerte:    var(--terre)      !important;
+    --tawiza-ochre:     var(--ocre)       !important;
+    --tawiza-positif:   var(--foret)      !important;
+    --tawiza-attention: var(--ocre)       !important;
+    --tawiza-social:    var(--terre)      !important;
+  }
+
+  /* Force body styling for pages that do not use --tawiza-bg */
+  body {
     background: var(--bg) !important;
     color: var(--ink) !important;
   }
 
-  /* Content wrappers */
-  #quarto-content,
-  .quarto-content,
-  main.content,
-  #quarto-document-content,
-  .page-columns {
-    background: var(--bg) !important;
-    color: var(--ink) !important;
-  }
-
-  /* Headings */
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--ink) !important;
-  }
-  h1.title, .title {
-    color: var(--ink) !important;
-  }
-
-  /* Links : keep ocre */
-  main a:not(.wordmark):not(.footer-links a) {
-    color: var(--ocre) !important;
-  }
-
-  /* Code blocks + inline code */
-  pre,
-  .sourceCode,
-  pre.sourceCode {
+  /* Override hardcoded white card backgrounds (Quarto + manifeste) */
+  .persona-card, .card, .chart, .methodo,
+  .verdict-card, .callout,
+  .feature-card, .nb-card {
     background: var(--bg-deep) !important;
     color: var(--ink) !important;
-    border: 1px solid var(--line-soft);
+  }
+
+  /* Override hardcoded #fff fills on illustrations/charts backgrounds */
+  [style*="background: #fff"],
+  [style*="background:#fff"],
+  [style*="background-color: #fff"],
+  [style*="background-color:#fff"] {
+    background-color: var(--bg-deep) !important;
+  }
+
+  /* Callouts keep their hue but on deep bg */
+  .callout-warning { background: color-mix(in srgb, var(--terre) 10%, transparent) !important; }
+  .callout-note    { background: color-mix(in srgb, var(--ink-soft) 10%, transparent) !important; }
+  .callout-tip     { background: color-mix(in srgb, var(--foret) 10%, transparent) !important; }
+
+  /* Plotly / Chart.js panels with light backgrounds */
+  .plot-container .plotly .bg,
+  .js-plotly-plot .plotly .bg,
+  .chart > div > div { background: var(--bg-deep) !important; }
+
+  /* Quarto content wrappers */
+  #quarto-content, .quarto-content, main.content,
+  #quarto-document-content, .page-columns {
+    background: var(--bg) !important;
+    color: var(--ink) !important;
+  }
+
+  /* Headings colored by local vars already get remapped.
+     For rules using hardcoded colors, enforce. */
+  h1, h2, h3, h4, h5, h6, h1.title, .title {
+    color: var(--ink) !important;
+  }
+
+  /* Code blocks */
+  pre, .sourceCode, pre.sourceCode {
+    background: var(--bg-deep) !important;
+    color: var(--ink) !important;
+    border-color: var(--line-soft) !important;
   }
   code, code.inline-code {
     background: var(--bg-deep) !important;
@@ -1433,66 +1466,39 @@ abbr[title]:hover {
   }
 
   /* Tables */
-  table, .table {
-    color: var(--ink) !important;
-    background: transparent !important;
-  }
-  th, td {
-    border-color: var(--line-soft) !important;
-  }
-  thead tr {
-    border-bottom: 2px solid var(--line) !important;
-  }
+  table, .table { color: var(--ink) !important; background: transparent !important; }
+  th, td { border-color: var(--line-soft) !important; }
+  thead tr { border-bottom: 2px solid var(--line) !important; }
 
   /* Blockquotes */
   blockquote {
     color: var(--ink-soft) !important;
     border-left-color: var(--terre) !important;
+    background: color-mix(in srgb, var(--terre) 6%, transparent);
   }
 
   /* TOC sidebar */
-  #TOC,
-  #quarto-margin-sidebar,
-  .sidebar {
+  #TOC, #quarto-margin-sidebar, .sidebar {
     background: transparent !important;
     color: var(--ink-soft) !important;
   }
-  #TOC .toc-title,
-  #TOC h2 {
-    color: var(--ink-mute) !important;
-  }
-  #TOC a,
-  .sidebar a {
-    color: var(--ink-soft) !important;
-  }
-  #TOC a:hover,
-  #TOC a.active,
-  .sidebar a:hover,
-  .sidebar a.active {
-    color: var(--ocre) !important;
-  }
+  #TOC .toc-title, #TOC h2 { color: var(--ink-mute) !important; }
+  #TOC a, .sidebar a { color: var(--ink-soft) !important; }
+  #TOC a:hover, #TOC a.active,
+  .sidebar a:hover, .sidebar a.active { color: var(--ocre) !important; }
 
   /* Horizontal rules */
-  hr {
-    border-color: var(--line-soft) !important;
-  }
+  hr { border-color: var(--line-soft) !important; }
 
   /* Figures + captions */
-  figcaption, .figure-caption {
-    color: var(--ink-mute) !important;
-  }
+  figcaption, .figure-caption { color: var(--ink-mute) !important; }
 
-  /* Navigation / buttons */
-  .nav-pills .nav-link.active,
-  .btn-primary {
-    background: var(--ocre) !important;
-    color: var(--bg) !important;
-    border-color: var(--ocre) !important;
-  }
-}
-
-/* Also harmonize light mode so it does not clash with v2 cream */
-body[class*="quarto"] {
-  background: var(--bg);
+  /* Hardcoded inline styles using tawiza palette colors */
+  [style*="color: #1D3557"],
+  [style*="color:#1D3557"] { color: var(--ink) !important; }
+  [style*="color: #5B7BA5"],
+  [style*="color:#5B7BA5"] { color: var(--ink-soft) !important; }
+  [style*="color: #fff"],
+  [style*="color:#fff"] { color: var(--ink) !important; }
 }
 
