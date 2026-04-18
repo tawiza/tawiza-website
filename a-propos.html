@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260418h">
+  <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260418i">
   <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.tagged-events.pageview-props.outbound-links.file-downloads.js"></script>
 </head>
 <body>
@@ -33,7 +33,7 @@
   <div class="glyph-slot" aria-hidden="true" data-seed="/a-propos"></div>
 
   <article>
-    <header class="article-masthead terrain">
+    <header class="article-masthead article-masthead--hero terrain">
       <div class="glyph-hero" data-seed="/a-propos" data-size="240" data-cells="19" data-label="false"></div>
       <div class="article-kicker">$ cat a-propos.txt</div>
       <h1 class="article-title">&Agrave; <em>propos</em></h1>
@@ -110,18 +110,18 @@
   </footer>
 
   <script>
-    fetch('/assets/v2/eye.svg?v=20260418h').then(function (r) { return r.text(); }).then(function (svgText) {
+    fetch('/assets/v2/eye.svg?v=20260418i').then(function (r) { return r.text(); }).then(function (svgText) {
       var mount = document.querySelector('.eye-root');
       if (!mount) return;
       var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
       mount.appendChild(svgEl);
     }).then(function () {
       var s = document.createElement('script');
-      s.src = '/assets/v2/eye.js?v=20260418h';
+      s.src = '/assets/v2/eye.js?v=20260418i';
       document.body.appendChild(s);
     });
   </script>
-  <script src="/assets/v2/glyph.js?v=20260418h" defer></script>
-  <script src="/assets/v2/annotate.js?v=20260418h" defer></script>
+  <script src="/assets/v2/glyph.js?v=20260418i" defer></script>
+  <script src="/assets/v2/annotate.js?v=20260418i" defer></script>
 </body>
 </html>

@@ -1608,12 +1608,12 @@ abbr[title]:hover {
    ============================================================ */
 
 /* Default (all viewports) : keep stacked behavior */
-.article-masthead:has(.glyph-hero) {
+.article-masthead--hero, .article-masthead:has(.glyph-hero) {
   max-width: 1000px;
 }
 
 @media (min-width: 780px) {
-  .article-masthead:has(.glyph-hero) {
+  .article-masthead--hero, .article-masthead:has(.glyph-hero) {
     display: grid;
     grid-template-columns: minmax(220px, 320px) 1fr;
     grid-template-rows: auto;
@@ -1622,7 +1622,7 @@ abbr[title]:hover {
     align-items: center;
     padding: 120px 0 72px;
   }
-  .article-masthead:has(.glyph-hero) .glyph-hero {
+  .article-masthead--hero, .article-masthead:has(.glyph-hero) .glyph-hero {
     grid-column: 1;
     grid-row: 1 / span 10;   /* span all rows */
     width: 100%;
@@ -1633,19 +1633,19 @@ abbr[title]:hover {
     align-self: center;
     justify-self: start;
   }
-  .article-masthead:has(.glyph-hero) > :not(.glyph-hero) {
+  .article-masthead--hero, .article-masthead:has(.glyph-hero) > :not(.glyph-hero) {
     grid-column: 2;
     text-align: left;
   }
-  .article-masthead:has(.glyph-hero) .article-title {
+  .article-masthead--hero, .article-masthead:has(.glyph-hero) .article-title {
     margin-top: 0;
   }
-  .article-masthead:has(.glyph-hero) .article-meta {
+  .article-masthead--hero, .article-masthead:has(.glyph-hero) .article-meta {
     margin-top: 24px;
   }
   /* Hide the generated "// slug · NxN · generated" label below glyph-hero
      in 2-col layout - it clashes visually with the text column */
-  .article-masthead:has(.glyph-hero) .glyph-hero::after {
+  .article-masthead--hero, .article-masthead:has(.glyph-hero) .glyph-hero::after {
     display: none;
   }
 }
