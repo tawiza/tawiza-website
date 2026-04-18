@@ -1054,7 +1054,8 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
 .eye-zone {
   position: fixed !important;
   top: 12px !important;
-  left: 128px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
   right: auto !important;
   z-index: 95;
   padding: 0 !important;
@@ -1089,7 +1090,8 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
 @media (max-width: 640px) {
   .eye-zone {
     top: 10px !important;
-    left: 108px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
   .eye-zone .eye-root {
     width: 72px;
@@ -1152,5 +1154,39 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
   .featured-title { text-align: left; }
   .featured-card .featured-title + p { text-align: left; margin-left: 0 !important; }
   .featured-meta { justify-content: flex-start !important; }
+}
+
+
+/* ============================================================
+   Featured-card: enforce strict block layout for inner content
+   so title, subtitle and meta always stack vertically (never
+   get laid out side-by-side by residual CSS or browser quirks).
+   ============================================================ */
+.featured-card > div:last-child {
+  display: block !important;
+  max-width: none !important;
+  flex: 1 1 auto;
+}
+.featured-card > div:last-child > h2,
+.featured-card > div:last-child > p,
+.featured-card > div:last-child > div {
+  display: block !important;
+  width: 100%;
+  max-width: 62ch;
+  margin-left: auto;
+  margin-right: auto;
+  float: none !important;
+  columns: auto !important;
+}
+
+/* Desktop >=960px: same stacking but left-aligned, no auto margin */
+@media (min-width: 960px) {
+  .featured-card > div:last-child > h2,
+  .featured-card > div:last-child > p,
+  .featured-card > div:last-child > div {
+    max-width: 60ch;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
