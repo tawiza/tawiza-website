@@ -1431,6 +1431,39 @@ abbr[title]:hover {
     background-color: var(--bg-deep) !important;
   }
 
+  /* Bootstrap grid cards with hardcoded white bg (Quarto .g-col-* columns,
+     used for "Trois chiffres" and similar feature grids) */
+  .g-col-1, .g-col-2, .g-col-3, .g-col-4, .g-col-5, .g-col-6,
+  .g-col-7, .g-col-8, .g-col-9, .g-col-10, .g-col-11, .g-col-12 {
+    background: var(--bg-deep) !important;
+    color: var(--ink) !important;
+    border-top-color: var(--terre) !important;
+  }
+
+  /* Quarto tables */
+  .quarto-table, table.quarto-table, .gt_table, table.dataframe {
+    background: var(--bg-deep) !important;
+    color: var(--ink) !important;
+  }
+
+  /* Mermaid diagrams : light bg container */
+  .mermaid, div.mermaid {
+    background: var(--bg-deep) !important;
+    filter: invert(0.92) hue-rotate(180deg);
+  }
+
+  /* Callout headers / Quarto date banner */
+  .callout-header, .callout-body,
+  div.callout, .quarto-callout {
+    background: var(--bg-deep) !important;
+    color: var(--ink) !important;
+  }
+
+  /* Any container explicitly styled light (tr striped etc) */
+  tr, tr.odd, tr.even {
+    background: transparent !important;
+  }
+
   /* Callouts keep their hue but on deep bg */
   .callout-warning { background: color-mix(in srgb, var(--terre) 10%, transparent) !important; }
   .callout-note    { background: color-mix(in srgb, var(--ink-soft) 10%, transparent) !important; }
