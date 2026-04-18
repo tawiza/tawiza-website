@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>L'arrière-cuisine · Paris vélo 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/v2/design-system.css?v=20260418k">
+<link rel="stylesheet" href="/assets/v2/design-system.css?v=20260418l">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -460,19 +460,19 @@ lieux.forEach(l => {
 </footer>
 
 <script>
-  fetch('/assets/v2/eye.svg?v=20260418k').then(function (r) { return r.text(); }).then(function (svgText) {
+  fetch('/assets/v2/eye.svg?v=20260418l').then(function (r) { return r.text(); }).then(function (svgText) {
     var mount = document.querySelector('.eye-root');
     if (!mount) return;
     var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
     mount.appendChild(svgEl);
   }).then(function () {
     var s = document.createElement('script');
-    s.src = '/assets/v2/eye.js?v=20260418k';
+    s.src = '/assets/v2/eye.js?v=20260418l';
     document.body.appendChild(s);
   });
 </script>
-<script src="/assets/v2/glyph.js?v=20260418k" defer></script>
-  <script src="/assets/v2/annotate.js?v=20260418k" defer></script>
+<script src="/assets/v2/glyph.js?v=20260418l" defer></script>
+  <script src="/assets/v2/annotate.js?v=20260418l" defer></script>
 
 </body>
 </html>
