@@ -1533,5 +1533,57 @@ abbr[title]:hover {
   [style*="color:#5B7BA5"] { color: var(--ink-soft) !important; }
   [style*="color: #fff"],
   [style*="color:#fff"] { color: var(--ink) !important; }
+
+  /* Hardcoded rgba(29,53,87,.85) used for "Encadré méthodologie" text
+     in articles/paris-velo-2026/style.css : invisible on dark bg. */
+  h2:has(+ p) + p,
+  h2#encadr\00e9-m\00e9thodologie ~ *,
+  h2[id*="m\00e9thodologie"] ~ *,
+  h2[id*="methodologie"] ~ * {
+    color: var(--ink-soft) !important;
+  }
+
+  /* Catch-all: any text coloured with hex #1D3557 or rgba(29,53,87,...) */
+  [style*="color: #1D3557"],
+  [style*="color:#1D3557"],
+  [style*="color: #1d3557"],
+  [style*="color:#1d3557"],
+  [style*="color: rgba(29"],
+  [style*="color:rgba(29"] {
+    color: var(--ink) !important;
+  }
+
+  /* Body links inside article : make them ocre not terre for better contrast */
+  .article-body a,
+  main p a,
+  main li a,
+  main blockquote a,
+  article a,
+  .quarto-content a,
+  #quarto-document-content a {
+    color: var(--ocre) !important;
+    text-decoration-color: color-mix(in srgb, var(--ocre) 45%, transparent);
+  }
+  .article-body a:hover,
+  main p a:hover,
+  article a:hover {
+    color: var(--terre) !important;
+    text-decoration-color: var(--terre);
+  }
+
+  /* Ensure generic paragraph text in quarto articles is readable */
+  .quarto-content p,
+  .quarto-content li,
+  .quarto-content td,
+  #quarto-document-content p,
+  #quarto-document-content li,
+  main p,
+  main li {
+    color: var(--ink) !important;
+  }
+
+  /* Make strong/em stand out but readable */
+  strong { color: var(--ink) !important; }
+  em { color: var(--terre) !important; font-style: italic; }
 }
 
