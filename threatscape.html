@@ -43,40 +43,45 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
+            /* Dark stage palette aligned on Tawiza v2 design tokens */
             --bg: #0a0a0a;
             --bg-soft: #141414;
             --text: #e7e5e4;
             --text-dim: #78716c;
-            --accent: #d4a843;
-            --accent-hot: #b45309;
+            --accent: #d4a843;     /* veille - distinct du ocre v2 car sur fond noir */
+            --ocre: #b45309;       /* v2 */
+            --terre: #C1554D;      /* v2 */
             --alert: #C1554D;
             --separator: rgba(231, 229, 228, 0.06);
+            --line-soft: rgba(231, 229, 228, 0.08);
         }
         body {
             background: var(--bg);
             color: var(--text);
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
             min-height: 100vh;
             overflow-x: hidden;
         }
         a { color: var(--accent); text-decoration: none; }
 
-        /* === NAV minimaliste pour cette page noire === */
-        .nav-dark {
-            position: fixed; top: 0; left: 0; right: 0;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1.2rem 2rem;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--separator);
+        /* === Wordmark (aligné sur la v2, version sombre) === */
+        .wordmark {
+            position: fixed;
+            top: 18px; left: 20px;
             z-index: 100;
-            font-size: 0.78rem;
-            letter-spacing: 0.06em;
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: lowercase;
+            color: var(--text);
+            text-decoration: none;
         }
-        .nav-dark a { color: var(--text-dim); transition: color 0.2s; }
-        .nav-dark a:hover { color: var(--accent); }
-        .nav-dark .brand { color: var(--text); font-weight: 600; }
-        .nav-dark .links { display: flex; gap: 1.5rem; }
+        .wordmark:hover { color: var(--ocre); }
+        .wordmark::before { content: "//"; color: var(--ocre); margin-right: 6px; }
+        @media (max-width: 640px) {
+            .wordmark { top: 12px; left: 14px; font-size: 10px; }
+            .wordmark::before { margin-right: 4px; }
+        }
 
         /* === Hero header === */
         .threat-header {
@@ -266,17 +271,28 @@
         .manifesto strong { color: var(--text); font-style: normal; font-weight: 600; }
         .manifesto a { border-bottom: 1px dotted var(--accent); }
 
-        /* === Footer === */
+        /* === Footer (version sombre du footer unifié) === */
         .threat-footer {
-            text-align: center;
-            padding: 3rem 2rem;
-            border-top: 1px solid var(--separator);
-            font-size: 0.72rem;
+            padding: 48px 2rem;
+            border-top: 1px solid var(--line-soft);
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 12px;
             color: var(--text-dim);
-            opacity: 0.5;
+            letter-spacing: 0.06em;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .threat-footer a { color: var(--text-dim); margin: 0 0.5rem; }
-        .threat-footer a:hover { color: var(--accent); }
+        .threat-footer a { color: var(--text-dim); text-decoration: none; }
+        .threat-footer a:hover { color: var(--ocre); }
+        .threat-footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+        @media (max-width: 640px) {
+            .threat-footer { flex-direction: column; align-items: flex-start; padding: 32px 1.5rem; }
+            .threat-footer-links { gap: 18px; }
+        }
 
         /* === Mobile === */
         @media (max-width: 880px) {
@@ -299,14 +315,7 @@
     <script defer data-domain="tawiza.fr" src="https://t.tawiza.fr/js/script.js"></script>
 </head>
 <body>
-    <nav class="nav-dark" role="navigation">
-        <a href="/" class="brand">TAWIZA</a>
-        <div class="links">
-            <a href="/analyses/">Analyses</a>
-            <a href="/manifeste.html">Manifeste</a>
-            <a href="/a-propos.html">&Agrave; propos</a>
-        </div>
-    </nav>
+    <a href="/" class="wordmark">tawiza.fr</a>
 
     <header class="threat-header">
         <div class="threat-eyebrow">tawiza generative art &middot; piece 03</div>
@@ -365,13 +374,16 @@
     </div>
 
     <footer class="threat-footer">
-        <a href="/">tawiza.fr</a>
-        &middot;
-        <a href="/analyses/">analyses</a>
-        &middot;
-        <a href="/manifeste.html">manifeste</a>
-        &middot;
-        <a href="https://github.com/tawiza/tawiza-website" target="_blank" rel="noopener">code source</a>
+        <span>tawiza &middot; bien commun num&eacute;rique &middot; 2026</span>
+        <div class="threat-footer-links">
+            <a href="/analyses/">analyses</a>
+            <a href="/articles/">articles</a>
+            <a href="/notebooks/">notebooks</a>
+            <a href="/manifeste.html">manifeste</a>
+            <a href="/a-propos.html">&agrave; propos</a>
+            <a href="/contribuer.html">contribuer</a>
+            <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">source</a>
+        </div>
     </footer>
 
     <script>
