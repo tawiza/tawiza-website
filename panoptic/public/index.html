@@ -72,33 +72,74 @@
   .top .kicker { text-transform: none; }
   .top .status { display: flex; align-items: center; gap: 8px; }
 
-  /* ---- Surlignage crème façon stabilo ---- */
-  /* Gradient monte à 15% pour couvrir 85% de la hauteur de ligne :
-     le corps des lettres repose sur le crème, seuls les ascendants
-     dépassent dans l'ocre. Texte en ink pur (pas ink-soft) pour
-     garder un contraste fort sur petite typo mono. */
+  /* ---- Surlignage crème façon stabilo - version "tracé main" ---- */
+  /* Principe : chaque .mark a un micro-tilt unique (--tilt), un trait
+     crème qui couvre 82% de la hauteur, et s'anime à l'entrée de la
+     gauche vers la droite comme si quelqu'un passait un feutre.
+     Bords adoucis par SVG turbulence (filter #roughen) pour l'effet
+     "feutre qui bave un peu". */
   .mark {
-    background: linear-gradient(
-      transparent 12%,
-      rgba(250, 245, 239, 0.96) 12%,
-      rgba(250, 245, 239, 0.96) 94%,
-      transparent 94%
-    );
-    padding: 0 0.35em;
+    --tilt: -0.4deg;
+    --mark-color: rgba(250, 245, 239, 0.96);
+    position: relative;
+    display: inline-block;
+    padding: 0.08em 0.38em;
     color: var(--ink);
     font-weight: 500;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-    transition: background 0.15s ease, color 0.15s ease;
+    transform: rotate(var(--tilt));
+    transform-origin: 50% 100%;
+    background-image: linear-gradient(
+      transparent 10%,
+      var(--mark-color) 10%,
+      var(--mark-color) 92%,
+      transparent 92%
+    );
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 0% 100%;
+    filter: url(#roughen);
+    animation: mark-in 0.7s cubic-bezier(0.25, 0.6, 0.2, 1) forwards;
+    animation-delay: var(--d, 0.2s);
+    transition: color 0.2s ease, transform 0.25s cubic-bezier(.2,.9,.3,1.2);
   }
-  .mark:hover,
-  a.mark:hover {
-    background: rgba(250, 245, 239, 1);
-    color: var(--ocre);
+  @keyframes mark-in {
+    from { background-size: 0% 100%; }
+    to   { background-size: 100% 100%; }
   }
-  a.mark {
-    text-decoration: none;
-    cursor: pointer;
+
+  /* Variations de tilt et de délai pour casser l'uniformité */
+  .mark[data-variant="a"] { --tilt: -0.6deg; --d: 0.25s; }
+  .mark[data-variant="b"] { --tilt:  0.8deg; --d: 0.55s; }
+  .mark[data-variant="c"] { --tilt: -0.3deg; --d: 1.1s; }
+  .mark[data-variant="d"] { --tilt:  0.5deg; --d: 1.4s; }
+
+  /* Hover : cycle 3 couleurs palette Tawiza + tilt corrigé (droit) */
+  a.mark { text-decoration: none; cursor: pointer; }
+  .mark:hover {
+    transform: rotate(0deg) scale(1.02);
+    animation: hue-cycle 1.2s ease-in-out infinite;
+  }
+  @keyframes hue-cycle {
+    0%   { --mark-color: rgba(250, 245, 239, 1); color: var(--ink);  }
+    33%  { --mark-color: rgba(250, 245, 239, 1); color: var(--ocre); }
+    66%  { --mark-color: rgba(250, 245, 239, 1); color: var(--terre);}
+    100% { --mark-color: rgba(250, 245, 239, 1); color: var(--foret);}
+  }
+
+  /* Sur un vieux navigateur sans @property, le keyframe peut ne pas animer
+     les custom properties. Fallback : on change juste la couleur du texte. */
+  @supports not (background: paint(something)) {
+    .mark:hover { animation: none; color: var(--ocre); }
+  }
+
+  /* Reduced motion : pas d'animation de tracé, highlight direct */
+  @media (prefers-reduced-motion: reduce) {
+    .mark {
+      background-size: 100% 100%;
+      animation: none;
+      transform: none;
+    }
+    .mark:hover { animation: none; color: var(--ocre); }
   }
   .top .status .dot {
     width: 8px; height: 8px; border-radius: 50%;
@@ -207,15 +248,25 @@
 </style>
 </head>
 <body>
+<!-- Filtre SVG global : rugosité des bords du stabilo (feutre qui bave) -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <defs>
+    <filter id="roughen" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
 <div class="hatch" aria-hidden="true"></div>
 
 <div class="wrap">
 
   <div class="top">
-    <span class="kicker"><span class="mark">// panoptic - un regard</span></span>
+    <span class="kicker"><span class="mark" data-variant="a">// panoptic - un regard</span></span>
     <span class="status">
       <span class="dot"></span>
-      <span class="mark">work_in_progress</span>
+      <span class="mark" data-variant="b">work_in_progress</span>
     </span>
   </div>
 
@@ -282,9 +333,9 @@
   <footer class="foot">
     <span>tawiza - panoptic · <span id="count">626</span> projets croisés</span>
     <span>
-      <a class="mark" href="mailto:tawiza.v0@gmail.com">tawiza.v0@gmail.com</a>
+      <a class="mark" data-variant="c" href="mailto:tawiza.v0@gmail.com">tawiza.v0@gmail.com</a>
       &nbsp;·&nbsp;
-      <a class="mark" href="https://tawiza.fr">tawiza.fr</a>
+      <a class="mark" data-variant="d" href="https://tawiza.fr">tawiza.fr</a>
     </span>
   </footer>
 </div>
