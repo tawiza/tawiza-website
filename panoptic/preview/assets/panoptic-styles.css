@@ -1,0 +1,421 @@
+/* ============================================================
+   PANOPTIC - Cartes Instagram 1080×1350
+   Système repris du design-system Tawiza v2
+   ============================================================ */
+
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../../assets/fonts/instrument-serif-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../../assets/fonts/instrument-serif-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../../assets/fonts/jetbrains-mono-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../../../assets/fonts/jetbrains-mono-500.woff2") format("woff2");
+}
+
+:root {
+  --bg:        #faf5ef;
+  --bg-deep:   #f3ebdd;
+  --ink:       #1a1612;
+  --ink-soft:  #3a342c;
+  --ink-mute:  #7a6e5e;
+  --line:      #d8cfbf;
+  --ocre:      #b45309;
+  --terre:     #C1554D;
+  --foret:     #2D6A4F;
+  --serif:     "Instrument Serif", Georgia, "Iowan Old Style", ui-serif, serif;
+  --mono:      "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: var(--serif);
+  color: var(--ink);
+  background: var(--bg-deep);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Carte (commun aux 8) ---------- */
+.card {
+  width: 1080px;
+  height: 1350px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  padding: 96px 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Fond noir (cartes 3 et 6) */
+.card--dark {
+  background: #0d0b09;
+  color: #f1e7d8;
+}
+.card--dark .card__kicker { color: var(--ocre); }
+.card--dark .card__source { color: #a39683; }
+.card--dark .card__sub { color: #d7ccbb; }
+
+/* ---------- Kicker (haut gauche) ---------- */
+.card__kicker {
+  font-family: var(--mono);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---------- Contenu principal ---------- */
+.card__main {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.card__hero {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+/* Chiffre-héros gigantesque */
+.card__hero--number {
+  font-size: 420px;
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+}
+.card--dark .card__hero--number {
+  color: var(--ocre);
+}
+.card__hero--number-m {
+  font-size: 280px;
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+}
+
+/* Phrase-héros (texte long) */
+.card__hero--quote {
+  font-size: 96px;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+}
+.card__hero--quote em { font-style: italic; }
+
+.card--dark .card__hero {
+  color: var(--ocre);
+}
+
+/* ---------- Sous-titre (italic serif) ---------- */
+.card__sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 34px;
+  line-height: 1.32;
+  color: var(--ink-soft);
+  max-width: 820px;
+}
+
+.card__sub strong {
+  font-weight: 400;
+  font-style: normal;
+  color: var(--ocre);
+}
+.card--terre .card__sub strong { color: var(--terre); }
+.card--foret .card__sub strong { color: var(--foret); }
+
+/* ---------- Source (bas) ---------- */
+/* Layout auto : sur 1 ligne quand les sources sont courtes (wordmark à droite),
+   sur 2 lignes quand les sources débordent (wordmark passe en dessous, aligné à droite).*/
+.card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 14px 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.card--dark .card__footer { border-top-color: rgba(255,255,255,0.08); }
+
+.card__source {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  line-height: 1.5;
+  flex: 1 1 620px;
+  min-width: 0;
+}
+.card__source::before { content: "// "; }
+
+.card__wordmark {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  flex: 0 0 auto;
+  margin-left: auto;  /* Reste à droite même quand il wrap sur sa propre ligne */
+  white-space: nowrap;
+}
+.card__wordmark::before { content: "// "; color: var(--ocre); }
+.card--dark .card__wordmark { color: #a39683; }
+.card--dark .card__wordmark::before { color: var(--ocre); }
+
+/* ---------- Hachures ocre (carte 1) ---------- */
+.hatch-ocre {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--ocre),
+    var(--ocre) 2px,
+    transparent 2px,
+    transparent 7px
+  );
+}
+
+.glyph-hatch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 360px;
+  height: 480px;
+  opacity: 0.85;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* ---------- Accents terre / foret ---------- */
+.card--terre .card__hero { color: var(--ink); }
+.card--terre .accent { color: var(--terre); }
+
+.card--foret .card__hero { color: var(--ink); }
+.card--foret .accent { color: var(--foret); }
+
+/* Rule - discrète */
+.card__rule {
+  width: 80px;
+  height: 1px;
+  background: var(--ink-soft);
+  margin: 8px 0;
+}
+.card--dark .card__rule { background: #a39683; }
+
+/* ============================================================
+   GALLERY index.html
+   ============================================================ */
+.gallery {
+  font-family: var(--serif);
+  color: var(--ink);
+  background: var(--bg-deep);
+  min-height: 100vh;
+  padding: 64px 48px;
+}
+
+.gallery__header {
+  max-width: 1400px;
+  margin: 0 auto 48px;
+}
+.gallery__kicker {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.gallery__kicker::before { content: "// "; color: var(--ocre); }
+.gallery__title {
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  margin-top: 12px;
+  line-height: 1.05;
+}
+.gallery__subtitle {
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink-soft);
+  margin-top: 14px;
+  max-width: 820px;
+}
+
+.gallery__tabs {
+  display: flex;
+  gap: 0;
+  max-width: 1400px;
+  margin: 32px auto 48px;
+  border-bottom: 1px solid var(--line);
+}
+.gallery__tab {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  color: var(--ink-mute);
+  cursor: pointer;
+  border: 0;
+  background: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.gallery__tab--active {
+  color: var(--ink);
+  border-bottom-color: var(--ocre);
+}
+.gallery__tab[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.gallery__grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.gallery__cell {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gallery__frame {
+  width: 100%;
+  aspect-ratio: 1080 / 1350;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  position: relative;
+  background: var(--bg);
+}
+
+.gallery__frame iframe {
+  border: 0;
+  width: 1080px;
+  height: 1350px;
+  transform-origin: top left;
+  /* sera calculé en JS via ResizeObserver - fallback scale */
+  transform: scale(0.625);
+}
+
+.gallery__caption {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.gallery__caption a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--ocre); }
+.gallery__caption a:hover { color: var(--ocre); }
+
+.gallery__foot {
+  max-width: 1400px;
+  margin: 72px auto 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-mute);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+}
+
+/* ============================================================
+   3AYNE - œil pixel-art Tawiza en position subtile
+   Chaque carte définit --eye-px / --eye-py pour orienter le regard.
+   Narration panoptic : balayage des registres, retour au lecteur.
+   ============================================================ */
+
+.eye-watcher {
+  position: absolute;
+  top: 78px;
+  right: 88px;
+  width: 180px;
+  height: 72px;
+  pointer-events: none;
+  opacity: 0.72;
+  color: var(--ink-soft);
+  z-index: 2;
+}
+.card--dark .eye-watcher {
+  color: #6d6250;
+  opacity: 0.78;
+}
+/* Accent de la carte se reflète dans l'iris */
+.card--dark .eye-watcher { --eye-iris: #b45309; }
+.card-5 .eye-watcher { --eye-iris: #C1554D; }  /* accent terre */
+.card-8 .eye-watcher { --eye-iris: #2D6A4F; }  /* accent forêt */
+
+.eye-watcher .eye-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* Les CSS vars sont héritées vers l'intérieur du SVG */
+}
+
+/* Couleurs internes SVG (overridables par carte) */
+.eye-watcher {
+  --eye-sclera:      #f3ebdd;
+  --eye-iris:        #b45309;
+  --eye-iris-inner:  #C1554D;
+  --eye-pupil:       #1a1612;
+  --eye-highlight:   #faf5ef;
+}
+.card--dark .eye-watcher {
+  --eye-sclera:      #1a1612;       /* œil inversé sur fond noir : sclera sombre */
+  --eye-iris:        #b45309;
+  --eye-iris-inner:  #7a3a08;
+  --eye-pupil:       #faf5ef;       /* pupille claire */
+  --eye-highlight:   #1a1612;
+}
+
+/* Narration du regard, carte par carte - unités = pixels SVG (plage ±3 H, ±2 V) */
+.card-1 .eye-watcher { --pupil-x: 0px;  --pupil-y: 0px;  }  /* centre - accueil */
+.card-2 .eye-watcher { --pupil-x: 1px;  --pupil-y: 0px;  }  /* scan léger droite */
+.card-3 .eye-watcher { --pupil-x: 3px;  --pupil-y: 0px;  }  /* regard fixé source */
+.card-4 .eye-watcher { --pupil-x: 2px;  --pupil-y: -2px; }  /* haut-droite : capital */
+.card-5 .eye-watcher { --pupil-x: 2px;  --pupil-y: 2px;  }  /* bas-droite : territoire */
+.card-6 .eye-watcher { --pupil-x: -3px; --pupil-y: 0px;  }  /* gauche : derrière façade */
+.card-7 .eye-watcher { --pupil-x: -2px; --pupil-y: 2px;  }  /* bas-gauche : France sud */
+.card-8 .eye-watcher { --pupil-x: 0px;  --pupil-y: 0px;  }  /* centre : retour lecteur */
+
+/* Propagation CSS vars vers SVG inline */
+.eye-watcher .eye-svg .eye-pupil {
+  transform: translate(var(--pupil-x, 0px), var(--pupil-y, 0px));
+  transform-origin: 20px 8px;
+  transition: transform 420ms cubic-bezier(.22,.9,.35,1);
+}

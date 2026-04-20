@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Panoptic - Avatar IG · 3AYNE nous regarde</title>
+<meta name="viewport" content="width=1080">
+<link rel="stylesheet" href="../assets/panoptic-styles.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  .avatar {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    background: var(--ocre);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* Œil 3AYNE remplit le cercle IG */
+  .avatar__eye {
+    position: relative;
+    /* viewBox 40×16 - ratio 2.5:1. Pour occuper le cercle IG : */
+    width: 1000px;       /* remplit presque toute la largeur */
+    height: 400px;
+    color: #1a1612;      /* cils + paupières en noir profond */
+    z-index: 2;
+    --eye-sclera:      #faf5ef;  /* scléra crème clair, très visible sur fond ocre */
+    --eye-iris:        #1a1612;  /* iris noir → contraste max, "il te fixe" */
+    --eye-iris-inner:  #3a342c;  /* iris interne gris chaud, profondeur */
+    --eye-pupil:       #b45309;  /* pupille ocre (inversion dramatique) */
+    --eye-highlight:   #faf5ef;  /* reflet crème dans la pupille */
+    --pupil-x:         0px;      /* pupille CENTRÉE = regarde droit vers le lecteur */
+    --pupil-y:         0px;
+  }
+
+  .avatar__eye svg { width: 100%; height: 100%; display: block; }
+  .avatar__eye svg .eye-pupil {
+    transform: translate(var(--pupil-x), var(--pupil-y));
+    transform-origin: 20px 8px;
+  }
+</style>
+</head>
+<body>
+<div class="avatar">
+  <div class="avatar__eye">
+    <?xml version="1.0" encoding="utf-8"?>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16" shape-rendering="crispEdges" class="eye-svg">
+      <!-- Cils supérieurs -->
+      <g class="eye-lashes-top" fill="currentColor">
+        <rect x="8"  y="0" width="1" height="2"/>
+        <rect x="14" y="0" width="1" height="2"/>
+        <rect x="20" y="0" width="1" height="2"/>
+        <rect x="26" y="0" width="1" height="2"/>
+        <rect x="32" y="0" width="1" height="2"/>
+      </g>
+
+      <!-- Paupière supérieure épaisse -->
+      <g class="eye-lid-top" fill="currentColor">
+        <rect x="6"  y="3" width="1" height="1"/>
+        <rect x="7"  y="2" width="2" height="1"/>
+        <rect x="9"  y="2" width="4" height="1"/>
+        <rect x="13" y="2" width="4" height="1"/>
+        <rect x="17" y="2" width="6" height="1"/>
+        <rect x="23" y="2" width="4" height="1"/>
+        <rect x="27" y="2" width="4" height="1"/>
+        <rect x="31" y="2" width="2" height="1"/>
+        <rect x="33" y="3" width="1" height="1"/>
+      </g>
+
+      <!-- Scléra -->
+      <g class="eye-sclera" fill="var(--eye-sclera)">
+        <rect x="8"  y="4"  width="24" height="8"/>
+        <rect x="9"  y="3"  width="22" height="1"/>
+        <rect x="9"  y="12" width="22" height="1"/>
+        <rect x="11" y="13" width="18" height="1"/>
+      </g>
+
+      <!-- Iris externe (noir) -->
+      <g class="eye-iris" fill="var(--eye-iris)">
+        <rect x="15" y="4"  width="10" height="1"/>
+        <rect x="14" y="5"  width="12" height="1"/>
+        <rect x="13" y="6"  width="14" height="1"/>
+        <rect x="13" y="7"  width="14" height="1"/>
+        <rect x="13" y="8"  width="14" height="1"/>
+        <rect x="13" y="9"  width="14" height="1"/>
+        <rect x="14" y="10" width="12" height="1"/>
+        <rect x="15" y="11" width="10" height="1"/>
+      </g>
+
+      <!-- Iris interne (gris chaud) - profondeur -->
+      <g class="eye-iris-inner" fill="var(--eye-iris-inner)">
+        <rect x="16" y="5"  width="8" height="1"/>
+        <rect x="15" y="6"  width="10" height="1"/>
+        <rect x="15" y="7"  width="10" height="1"/>
+        <rect x="15" y="8"  width="10" height="1"/>
+        <rect x="15" y="9"  width="10" height="1"/>
+        <rect x="16" y="10" width="8" height="1"/>
+      </g>
+
+      <!-- Reflet supplémentaire dans l'iris (petit arc crème en haut-gauche, subtil) -->
+      <g fill="var(--eye-highlight)" opacity="0.18">
+        <rect x="15" y="5" width="3" height="1"/>
+        <rect x="14" y="6" width="2" height="1"/>
+        <rect x="14" y="7" width="1" height="1"/>
+      </g>
+
+      <!-- Pupille ocre - centre du regard -->
+      <g class="eye-pupil" fill="var(--eye-pupil)">
+        <rect x="18" y="6" width="4" height="4"/>
+        <!-- Highlight renforcé : 2 pixels lumineux en haut-gauche pour effet "vivant" -->
+        <rect x="18" y="6" width="1" height="1" fill="var(--eye-highlight)"/>
+        <rect x="19" y="6" width="1" height="1" fill="var(--eye-highlight)" opacity="0.55"/>
+      </g>
+
+      <!-- Paupière inférieure fine -->
+      <g class="eye-lid-bottom" fill="currentColor">
+        <rect x="8"  y="13" width="2" height="1"/>
+        <rect x="10" y="14" width="20" height="1"/>
+        <rect x="30" y="13" width="2" height="1"/>
+      </g>
+    </svg>
+  </div>
+</div>
+</body>
+</html>

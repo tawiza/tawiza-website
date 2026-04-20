@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Panoptic - Carte 8/8 · la sortie</title>
+<meta name="viewport" content="width=1080">
+<link rel="stylesheet" href="../assets/panoptic-styles.css">
+<style>
+  .card-8 .card__hero--quote { font-size: 104px; line-height: 0.98; }
+  .card-8 .big {
+    color: var(--foret);
+    font-style: italic;
+  }
+  .card-8 .cta-block {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card-8 .cta-block .url { color: var(--foret); font-size: 24px; letter-spacing: 0.08em; }
+  .card-8 .cta-block .meta { color: var(--ink-mute); font-size: 13px; }
+</style>
+</head>
+<body>
+<article class="card card--foret card-8">
+  <div class="eye-watcher" role="img" aria-label="3AYNE - le regard panoptic">
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 3AYNE - l'œil Tawiza pixel-art CSS-playable
+     viewBox 40x16, 1 unité = 1 pixel, pupille contrôlable via CSS custom properties -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 40 16"
+     shape-rendering="crispEdges"
+     role="img"
+     aria-label="3AYNE - l'œil qui regarde Tawiza"
+     class="eye-svg">
+  <title>3AYNE</title>
+
+  <!-- Cils supérieurs (petits ticks) -->
+  <g class="eye-lashes-top" fill="currentColor">
+    <rect x="8"  y="0" width="1" height="2"/>
+    <rect x="14" y="0" width="1" height="2"/>
+    <rect x="20" y="0" width="1" height="2"/>
+    <rect x="26" y="0" width="1" height="2"/>
+    <rect x="32" y="0" width="1" height="2"/>
+  </g>
+
+  <!-- Paupière supérieure (trait épais) -->
+  <g class="eye-lid-top" fill="currentColor">
+    <rect x="6"  y="3" width="1" height="1"/>
+    <rect x="7"  y="2" width="2" height="1"/>
+    <rect x="9"  y="2" width="4" height="1"/>
+    <rect x="13" y="2" width="4" height="1"/>
+    <rect x="17" y="2" width="6" height="1"/>
+    <rect x="23" y="2" width="4" height="1"/>
+    <rect x="27" y="2" width="4" height="1"/>
+    <rect x="31" y="2" width="2" height="1"/>
+    <rect x="33" y="3" width="1" height="1"/>
+  </g>
+
+  <!-- Sclera (le blanc de l'œil, en cream) -->
+  <g class="eye-sclera" fill="var(--eye-sclera, #f3ebdd)">
+    <rect x="8"  y="4" width="24" height="8"/>
+    <rect x="9"  y="3" width="22" height="1"/>
+    <rect x="9"  y="12" width="22" height="1"/>
+    <rect x="11" y="13" width="18" height="1"/>
+  </g>
+
+  <!-- Iris ring - anneau extérieur ocre -->
+  <g class="eye-iris" fill="var(--eye-iris, #b45309)">
+    <rect x="15" y="4"  width="10" height="1"/>
+    <rect x="14" y="5"  width="12" height="1"/>
+    <rect x="13" y="6"  width="14" height="1"/>
+    <rect x="13" y="7"  width="14" height="1"/>
+    <rect x="13" y="8"  width="14" height="1"/>
+    <rect x="13" y="9"  width="14" height="1"/>
+    <rect x="14" y="10" width="12" height="1"/>
+    <rect x="15" y="11" width="10" height="1"/>
+  </g>
+
+  <!-- Iris inner ring - rouge terre -->
+  <g class="eye-iris-inner" fill="var(--eye-iris-inner, #C1554D)">
+    <rect x="16" y="5"  width="8" height="1"/>
+    <rect x="15" y="6"  width="10" height="1"/>
+    <rect x="15" y="7"  width="10" height="1"/>
+    <rect x="15" y="8"  width="10" height="1"/>
+    <rect x="15" y="9"  width="10" height="1"/>
+    <rect x="16" y="10" width="8" height="1"/>
+  </g>
+
+  <!-- Pupille (carré central, déplaçable via transform) -->
+  <g class="eye-pupil"
+     fill="var(--eye-pupil, #1a1612)"
+     style="transform: translate(var(--pupil-x, 0px), var(--pupil-y, 0px));
+            transform-origin: 20px 8px;
+            transition: transform 0.18s cubic-bezier(.22,.9,.35,1);">
+    <rect x="18" y="6" width="4" height="4"/>
+    <!-- Highlight (un pixel cream en haut-gauche) -->
+    <rect x="18" y="6" width="1" height="1" fill="var(--eye-highlight, #faf5ef)"/>
+  </g>
+
+  <!-- Paupière inférieure (trait fin) -->
+  <g class="eye-lid-bottom" fill="currentColor">
+    <rect x="8"  y="13" width="2" height="1"/>
+    <rect x="10" y="14" width="20" height="1"/>
+    <rect x="30" y="13" width="2" height="1"/>
+  </g>
+
+  <!-- Paupière de clignement - rectangle cream qui descend -->
+  <g class="eye-blinker" fill="var(--eye-sclera, #f3ebdd)">
+    <rect class="blink-top" x="8" y="3" width="24" height="0"/>
+  </g>
+</svg>
+
+</div>
+<header>
+    <p class="card__kicker">// panoptic - 8/8 · la sortie</p>
+  </header>
+
+  <section class="card__main">
+    <h1 class="card__hero card__hero--quote">
+      <span class="big">93 %</span> des projets ne sont visibles que dans <em>UN</em> registre à la fois. Panoptic croise les <span class="big">4</span>.
+    </h1>
+    <div class="card__rule"></div>
+    <p class="card__sub">
+      Seuls 7 % des projets apparaissent dans plusieurs registres. <strong>Cette opacité entre systèmes publics n'est pas un hasard</strong> : c'est le produit d'une gouvernance fragmentée. Panoptic rend visible ce que l'État documente sans consolider.
+    </p>
+    <div class="cta-block">
+      <span class="url">panoptic.tawiza.fr</span>
+      <span class="meta">données libres CC-BY-SA · code AGPL-3.0</span>
+    </div>
+  </section>
+
+  <footer class="card__footer">
+    <p class="card__source">panoptic - un regard sur l'agrivoltaïsme français</p>
+    <p class="card__wordmark">tawiza</p>
+  </footer>
+</article>
+</body>
+</html>

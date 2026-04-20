@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Panoptic - Preview cartes Instagram</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/panoptic-styles.css">
+<style>
+  body { background: var(--bg-deep); }
+  .gallery__grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery__frame iframe {
+    width: 1080px;
+    height: 1350px;
+    transform-origin: 0 0;
+  }
+  .tabpanel { display: none; }
+  .tabpanel--active { display: block; }
+  .tabpanel__placeholder {
+    max-width: 1400px;
+    margin: 48px auto;
+    padding: 64px;
+    border: 1px dashed var(--line);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-mute);
+    text-align: center;
+  }
+
+  /* ---------- 3AYNE maître - œil "chef d'orchestre" au-dessus de la galerie ---------- */
+  .eye-master {
+    position: sticky;
+    top: 8px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    max-width: 1400px;
+    margin: 0 auto 24px;
+    padding: 14px 28px;
+    background: rgba(250, 245, 239, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .eye-master__svg {
+    width: 160px;
+    height: 64px;
+    color: var(--ink-soft);
+    flex: 0 0 auto;
+    --eye-sclera: #f3ebdd;
+    --eye-iris: #b45309;
+    --eye-iris-inner: #C1554D;
+    --eye-pupil: #1a1612;
+    --eye-highlight: #faf5ef;
+    /* Pupille pilotée par JS en fonction de la carte active */
+    --pupil-x: 0px;
+    --pupil-y: 0px;
+    transition: color 400ms;
+  }
+  .eye-master__svg .eye-pupil {
+    transform: translate(var(--pupil-x), var(--pupil-y));
+    transform-origin: 20px 8px;
+    transition: transform 500ms cubic-bezier(.22, .9, .35, 1);
+  }
+  .eye-master__label {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .eye-master__label b {
+    color: var(--ocre);
+    font-weight: 500;
+  }
+
+  /* Cell hover fait remonter l'orientation */
+  .gallery__cell {
+    cursor: pointer;
+    transition: outline-color 300ms;
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+  }
+  .gallery__cell:hover,
+  .gallery__cell--focus { outline-color: var(--ocre); }
+</style>
+</head>
+<body class="gallery">
+
+<header class="gallery__header">
+  <p class="gallery__kicker">panoptic - un regard sur l'agrivoltaïsme français · preview</p>
+  <h1 class="gallery__title">8 cartes · carrousel Instagram</h1>
+  <p class="gallery__subtitle">
+    Chaque carte fait 1080×1350 px, rendue ici à l'échelle pour validation visuelle. Le carrousel Instagram est le seul onglet activé ; les autres formats (Threads, page Tawiza) seront produits dans un second temps.
+  </p>
+</header>
+
+<div class="eye-master" id="eyeMaster">
+  <!-- SVG œil 3AYNE injecté au load. -->
+  <div class="eye-master__label">
+    <span>// 3AYNE suit le regard</span>
+    <span id="eyeCaption"><b>Carte 1/8</b> · centre · accueil</span>
+  </div>
+</div>
+
+<nav class="gallery__tabs" role="tablist" aria-label="Formats de publication">
+  <button class="gallery__tab gallery__tab--active" role="tab" aria-selected="true" data-tab="ig">Carrousel IG</button>
+  <button class="gallery__tab" role="tab" aria-selected="false" data-tab="threads" disabled>Threads</button>
+  <button class="gallery__tab" role="tab" aria-selected="false" data-tab="page" disabled>Tawiza page</button>
+</nav>
+
+<section id="tab-ig" class="tabpanel tabpanel--active" role="tabpanel">
+  <div class="gallery__grid" id="grid">
+
+    <div class="gallery__cell">
+      <div class="gallery__frame"><iframe src="cards/card-1.html" loading="lazy" title="Carte 1 - Hook 626"></iframe></div>
+      <div class="gallery__caption"><span>// carte 1/8 - Hook · 626 projets</span><a href="cards/card-1.html" target="_blank">voir 1:1</a></div>
+    </div>
+
+    <div class="gallery__cell">
+      <div class="gallery__frame"><iframe src="cards/card-2.html" loading="lazy" title="Carte 2 - Doublet énergétique"></iframe></div>
+      <div class="gallery__caption"><span>// carte 2/8 - Doublet énergétique</span><a href="cards/card-2.html" target="_blank">voir 1:1</a></div>
+    </div>
+
+    <div class="gallery__cell">
+      <div class="gallery__frame"><iframe src="cards/card-3.html" loading="lazy" title="Carte 3 - Pivot 43,8 %"></iframe></div>
+      <div class="gallery__caption"><span>// carte 3/8 - Pivot · 43,8 %</span><a href="cards/card-3.html" target="_blank">voir 1:1</a></div>
+    </div>
+
+    <div class="gallery__cell">
+      <div class="gallery__frame"><iframe src="cards/card-4.html" loading="lazy" title="Carte 4 - Actionnariat GLHD"></iframe></div>
+      <div class="gallery__caption"><span>// carte 4/8 - Actionnariat GLHD</span><a href="cards/card-4.html" target="_blank">voir 1:1</a></div>
+    </div>
+
+    <div class="gallery__cell">
+      <div class="gallery__frame"><iframe src="cards/card-5.html" loading="lazy" title="Carte 5 - Terr'Arbouts"></iframe></div>
+      <div class="gallery__caption"><span>// carte 5/8 - Terr'Arbouts · 460 MW</span><a href="cards/card-5.html" target="_blank">voir 1:1</a></div>
+    </div>
+
+    <div class="gallery__cell">
+      <div class="gallery__frame"><iframe src="cards/card-6.html" loading="lazy" title="Carte 6 - Paradoxe"></iframe></div>
+      <div class="gallery__caption"><span>// carte 6/8 - Paradoxe · 133 vs 0</span><a href="cards/card-6.html" target="_blank">voir 1:1</a></div>
+    </div>
+
+    <div class="gallery__cell">
+      <div class="gallery__frame"><iframe src="cards/card-7.html" loading="lazy" title="Carte 7 - Ceinture de résistance"></iframe></div>
+      <div class="gallery__caption"><span>// carte 7/8 - Ceinture de résistance</span><a href="cards/card-7.html" target="_blank">voir 1:1</a></div>
+    </div>
+
+    <div class="gallery__cell">
+      <div class="gallery__frame"><iframe src="cards/card-8.html" loading="lazy" title="Carte 8 - Sortie 93 %"></iframe></div>
+      <div class="gallery__caption"><span>// carte 8/8 - Sortie · 93 %</span><a href="cards/card-8.html" target="_blank">voir 1:1</a></div>
+    </div>
+
+  </div>
+</section>
+
+<section id="tab-threads" class="tabpanel" role="tabpanel">
+  <p class="tabpanel__placeholder">Chaîne Threads - à produire (5 posts).</p>
+</section>
+
+<section id="tab-page" class="tabpanel" role="tabpanel">
+  <p class="tabpanel__placeholder">Page Tawiza compacte - à produire.</p>
+</section>
+
+<footer class="gallery__foot">
+  <p>tawiza - panoptic preview · règles éditoriales A (doublet) · B (sources) · théorie invisible respectées</p>
+</footer>
+
+<script>
+  function rescale() {
+    var frames = document.querySelectorAll(".gallery__frame");
+    for (var i = 0; i < frames.length; i++) {
+      var frame = frames[i];
+      var iframe = frame.querySelector("iframe");
+      if (!iframe) continue;
+      var w = frame.clientWidth;
+      var scale = w / 1080;
+      iframe.style.transform = "scale(" + scale + ")";
+      frame.style.height = (1350 * scale) + "px";
+    }
+  }
+  window.addEventListener("resize", rescale);
+  window.addEventListener("load", rescale);
+  requestAnimationFrame(rescale);
+
+  var tabs = document.querySelectorAll(".gallery__tab");
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener("click", function(e) {
+      var tab = e.currentTarget;
+      if (tab.disabled) return;
+      var all = document.querySelectorAll(".gallery__tab");
+      for (var j = 0; j < all.length; j++) {
+        all[j].classList.remove("gallery__tab--active");
+        all[j].setAttribute("aria-selected", "false");
+      }
+      tab.classList.add("gallery__tab--active");
+      tab.setAttribute("aria-selected", "true");
+      var target = tab.dataset.tab;
+      var panels = document.querySelectorAll(".tabpanel");
+      for (var k = 0; k < panels.length; k++) panels[k].classList.remove("tabpanel--active");
+      var panel = document.getElementById("tab-" + target);
+      if (panel) panel.classList.add("tabpanel--active");
+      rescale();
+    });
+  }
+
+  // ============================================================
+  // 3AYNE maître - œil qui suit l'index de la carte en focus
+  // ============================================================
+
+  // Narration : mêmes orientations que les CSS vars par carte
+  var EYE_NARRATION = [
+    { x: 0,  y: 0,  caption: "Carte 1/8 · centre · accueil" },
+    { x: 1,  y: 0,  caption: "Carte 2/8 · scan léger · 2,7 GW" },
+    { x: 3,  y: 0,  caption: "Carte 3/8 · fixé · 43,8 %" },
+    { x: 2,  y: -2, caption: "Carte 4/8 · haut · EDF + Macquarie" },
+    { x: 2,  y: 2,  caption: "Carte 5/8 · bas · Terr'Arbouts" },
+    { x: -3, y: 0,  caption: "Carte 6/8 · derrière · paradoxe" },
+    { x: -2, y: 2,  caption: "Carte 7/8 · France sud · résistance" },
+    { x: 0,  y: 0,  caption: "Carte 8/8 · retour lecteur · 93 %" }
+  ];
+
+  var eyeMaster = document.getElementById("eyeMaster");
+  var eyeCaption = document.getElementById("eyeCaption");
+
+  // Injecter le SVG œil dans l'œil-maître
+  fetch("assets/eye.svg")
+    .then(function(r) { return r.text(); })
+    .then(function(svg) {
+      var wrapper = document.createElement("div");
+      wrapper.className = "eye-master__svg";
+      wrapper.innerHTML = svg;
+      eyeMaster.insertBefore(wrapper, eyeMaster.firstChild);
+      // Restyle : la classe doit être sur le SVG pour que les CSS vars
+      // --pupil-x/--pupil-y appliquées sur wrapper descendent jusqu'au SVG.
+      var svgEl = wrapper.querySelector("svg");
+      if (svgEl) {
+        svgEl.style.width = "100%";
+        svgEl.style.height = "100%";
+      }
+    })
+    .catch(function() { /* silent */ });
+
+  function setEye(idx) {
+    var n = EYE_NARRATION[idx] || EYE_NARRATION[0];
+    var wrapper = eyeMaster.querySelector(".eye-master__svg");
+    if (wrapper) {
+      wrapper.style.setProperty("--pupil-x", n.x + "px");
+      wrapper.style.setProperty("--pupil-y", n.y + "px");
+    }
+    if (eyeCaption) eyeCaption.innerHTML = "<b>" + n.caption.split(" · ")[0] + "</b> · " + n.caption.split(" · ").slice(1).join(" · ");
+    var cells = document.querySelectorAll(".gallery__cell");
+    for (var i = 0; i < cells.length; i++) cells[i].classList.toggle("gallery__cell--focus", i === idx);
+  }
+
+  // Hover sur une cellule : l'œil-maître s'oriente vers la narration de cette carte
+  var cells = document.querySelectorAll(".gallery__cell");
+  for (var i = 0; i < cells.length; i++) {
+    (function(idx) {
+      cells[idx].addEventListener("mouseenter", function() { setEye(idx); });
+      cells[idx].addEventListener("focusin",   function() { setEye(idx); });
+    })(i);
+  }
+
+  // Auto-scroll : détecte la carte la plus centrée dans le viewport
+  var ticking = false;
+  function updateFromScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function() {
+      var mid = window.innerHeight / 2;
+      var bestIdx = -1, bestDist = Infinity;
+      var cs = document.querySelectorAll(".gallery__cell");
+      for (var i = 0; i < cs.length; i++) {
+        var r = cs[i].getBoundingClientRect();
+        var center = (r.top + r.bottom) / 2;
+        var d = Math.abs(center - mid);
+        if (d < bestDist) { bestDist = d; bestIdx = i; }
+      }
+      if (bestIdx >= 0) setEye(bestIdx);
+      ticking = false;
+    });
+  }
+  window.addEventListener("scroll", updateFromScroll, { passive: true });
+  window.addEventListener("load", function() { setTimeout(updateFromScroll, 200); });
+
+  // Initialisation
+  setTimeout(function() { setEye(0); }, 50);
+</script>
+</body>
+</html>

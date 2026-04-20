@@ -1,0 +1,33 @@
+DESCRIPTION INSTAGRAM - panoptic teaser
+=========================================
+
+panoptic - un regard sur l'agrivoltaïsme français.
+
+Aucun registre public seul ne voit l'ensemble du pipeline agrivoltaïque en France. On a croisé 3 registres officiels (ADEME, projets-environnement.gouv.fr, MRAe) + la carte associative CNPrV. Ce qu'on a trouvé :
+
+→ +600 projets tracés, à peine 7 % visibles dans plusieurs registres à la fois
+→ 43,8 % de la puissance recensée pour un seul acteur, GLHD - contrôlé 50/50 par EDF et le fonds Macquarie depuis juillet 2025
+→ 133 projets bloqués par des collectifs locaux, mais 0 victoire qui nomme GLHD
+→ une "ceinture de résistance" en moyenne montagne (04, 12, 07, 63) où 80-92 % des projets sont stoppés
+
+Teaser. Dossier complet + carte + méthodologie open source : on publie la suite.
+
+#agrivoltaïsme #transition #opendata #agriculture #tawiza
+
+
+ORDRE DES SLIDES CARROUSEL (respecter strictement)
+===================================================
+1. panoptic-carte-1.png  → hook +600 projets
+2. panoptic-carte-2.png  → doublet énergétique 2,7 GW
+3. panoptic-carte-3.png  → pivot 43,8 %
+4. panoptic-carte-4.png  → EDF + Macquarie 50/50
+5. panoptic-carte-5.png  → Terr'Arbouts 460 MW
+6. panoptic-carte-6.png  → paradoxe 133 vs 0
+7. panoptic-carte-7.png  → ceinture de résistance
+8. panoptic-carte-8.png  → sortie 93 %
+
+STORY
+=====
+panoptic-story-1.png  →  format 9:16 (1080×1920)
+Publier avant ou pendant le post carrousel,
+ajouter un sticker "lien" vers le post IG une fois publié.

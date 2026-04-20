@@ -1,0 +1,18 @@
+# Dépendances Next.js (quand présent)
+node_modules/
+.next/
+out/
+dist/
+
+# Données locales de test (les vrais exports sont générés par le pipeline)
+public/data/*.json.bak
+public/data/*.geojson.bak
+
+# Divers
+.DS_Store
+.env*.local
+npm-debug.log*
+
+# Artefacts de preview IG (régénérables depuis preview/cards/*.html)
+preview/exports/*.png
+preview/exports/*.zip

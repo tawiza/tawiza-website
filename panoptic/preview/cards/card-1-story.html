@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Panoptic - Story Instagram 1080×1920</title>
+<meta name="viewport" content="width=1080">
+<link rel="stylesheet" href="../assets/panoptic-styles.css">
+<style>
+  /* ------------- Adaptations format STORY 9:16 ------------- */
+  .card--story {
+    width: 1080px;
+    height: 1920px;
+    padding: 140px 96px 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card--story .card__kicker { font-size: 22px; }
+  .card--story .card__hero--number {
+    font-size: 480px;            /* réduit de 620 - "+600" ne déborde plus dans la hachure */
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+  }
+  .card--story .card__sub {
+    font-size: 38px;
+    line-height: 1.35;
+    max-width: 860px;
+  }
+  .card--story .glyph-hatch {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;                /* réduit de 420 pour dégager le chiffre */
+    height: 560px;
+    opacity: 0.85;
+  }
+  .card--story .eye-watcher {
+    top: 112px;
+    right: 96px;
+    width: 240px;
+    height: 96px;
+  }
+  .card--story .card__footer {
+    padding-top: 28px;
+    gap: 20px 32px;
+  }
+  .card--story .card__source,
+  .card--story .card__wordmark {
+    font-size: 18px;
+  }
+  .card--story .story-cta {
+    margin-top: 44px;
+    font-family: var(--mono);
+    font-size: 24px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ocre);
+    border-top: 1px solid var(--line);
+    padding-top: 32px;
+  }
+  .card--story .story-cta::before { content: "→ "; }
+</style>
+</head>
+<body>
+<article class="card card-1 card--story">
+  <div class="eye-watcher" role="img" aria-label="3AYNE">
+    <?xml version="1.0" encoding="utf-8"?>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16" shape-rendering="crispEdges" class="eye-svg">
+      <g class="eye-lashes-top" fill="currentColor">
+        <rect x="8"  y="0" width="1" height="2"/><rect x="14" y="0" width="1" height="2"/>
+        <rect x="20" y="0" width="1" height="2"/><rect x="26" y="0" width="1" height="2"/>
+        <rect x="32" y="0" width="1" height="2"/>
+      </g>
+      <g class="eye-lid-top" fill="currentColor">
+        <rect x="6" y="3" width="1" height="1"/><rect x="7" y="2" width="2" height="1"/>
+        <rect x="9" y="2" width="4" height="1"/><rect x="13" y="2" width="4" height="1"/>
+        <rect x="17" y="2" width="6" height="1"/><rect x="23" y="2" width="4" height="1"/>
+        <rect x="27" y="2" width="4" height="1"/><rect x="31" y="2" width="2" height="1"/>
+        <rect x="33" y="3" width="1" height="1"/>
+      </g>
+      <g class="eye-sclera" fill="var(--eye-sclera, #f3ebdd)">
+        <rect x="8" y="4" width="24" height="8"/><rect x="9" y="3" width="22" height="1"/>
+        <rect x="9" y="12" width="22" height="1"/><rect x="11" y="13" width="18" height="1"/>
+      </g>
+      <g class="eye-iris" fill="var(--eye-iris, #b45309)">
+        <rect x="15" y="4" width="10" height="1"/><rect x="14" y="5" width="12" height="1"/>
+        <rect x="13" y="6" width="14" height="1"/><rect x="13" y="7" width="14" height="1"/>
+        <rect x="13" y="8" width="14" height="1"/><rect x="13" y="9" width="14" height="1"/>
+        <rect x="14" y="10" width="12" height="1"/><rect x="15" y="11" width="10" height="1"/>
+      </g>
+      <g class="eye-iris-inner" fill="var(--eye-iris-inner, #C1554D)">
+        <rect x="16" y="5" width="8" height="1"/><rect x="15" y="6" width="10" height="1"/>
+        <rect x="15" y="7" width="10" height="1"/><rect x="15" y="8" width="10" height="1"/>
+        <rect x="15" y="9" width="10" height="1"/><rect x="16" y="10" width="8" height="1"/>
+      </g>
+      <g class="eye-pupil" fill="var(--eye-pupil, #1a1612)"
+         style="transform: translate(var(--pupil-x, 0px), var(--pupil-y, 0px)); transform-origin: 20px 8px;">
+        <rect x="18" y="6" width="4" height="4"/>
+        <rect x="18" y="6" width="1" height="1" fill="var(--eye-highlight, #faf5ef)"/>
+      </g>
+      <g class="eye-lid-bottom" fill="currentColor">
+        <rect x="8" y="13" width="2" height="1"/><rect x="10" y="14" width="20" height="1"/>
+        <rect x="30" y="13" width="2" height="1"/>
+      </g>
+    </svg>
+  </div>
+  <div class="glyph-hatch hatch-ocre" aria-hidden="true"></div>
+
+  <header>
+    <p class="card__kicker">// panoptic - un regard</p>
+  </header>
+
+  <section class="card__main">
+    <h1 class="card__hero card__hero--number">+600</h1>
+    <div class="card__rule"></div>
+    <p class="card__sub">
+      projets agrivoltaïques croisés dans <strong>3 registres officiels</strong> + la carte des contestations CNPrV. Aucune source seule ne voit le pipeline complet.
+    </p>
+    <p class="story-cta">Le dossier en post</p>
+  </section>
+
+  <footer class="card__footer">
+    <p class="card__source">ADEME · projets-environnement.gouv.fr · MRAe · CNPrV</p>
+    <p class="card__wordmark">tawiza - panoptic</p>
+  </footer>
+</article>
+</body>
+</html>
