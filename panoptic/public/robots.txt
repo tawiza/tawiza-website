@@ -1,0 +1,10 @@
+# panoptic.tawiza.fr - work_in_progress
+# Indexation bloquée jusqu'au lancement public (Sprint 1 S6)
+
+User-agent: *
+Disallow: /
+
+# Une fois le site stabilisé, remplacer par :
+# User-agent: *
+# Allow: /
+# Sitemap: https://panoptic.tawiza.fr/sitemap.xml

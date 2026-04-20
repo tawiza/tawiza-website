@@ -1,0 +1,54 @@
+DATA LICENSE - Creative Commons Attribution-ShareAlike 4.0 International
+========================================================================
+
+Les jeux de données publiés dans `panoptic/public/data/` sont distribués
+sous licence Creative Commons Attribution-ShareAlike 4.0 International
+(CC BY-SA 4.0).
+
+Texte complet : https://creativecommons.org/licenses/by-sa/4.0/legalcode
+Résumé officiel : https://creativecommons.org/licenses/by-sa/4.0/
+
+Vous êtes libre de :
+  - PARTAGER : copier, distribuer, communiquer la base de données par tous
+    moyens et sous tous formats
+  - ADAPTER : remixer, transformer et créer à partir de cette base, y compris
+    pour un usage commercial
+
+Selon les conditions suivantes :
+  - ATTRIBUTION : vous devez créditer "tawiza / panoptic", fournir un lien
+    vers la licence CC BY-SA 4.0, et indiquer si des modifications ont été
+    effectuées.
+  - PARTAGE DANS LES MÊMES CONDITIONS : si vous remixez, transformez ou
+    créez à partir de cette base, vous devez diffuser votre contribution
+    sous la même licence (CC BY-SA 4.0) que l'originale.
+
+SOURCES PRIMAIRES
+-----------------
+
+Les données panoptic sont dérivées de registres publics sous leurs
+licences propres. Panoptic respecte et transmet ces licences :
+
+  - ADEME (Base Open Data Énergies Renouvelables)
+      Licence Ouverte / Open Licence v2.0 (Etalab)
+  - projets-environnement.gouv.fr
+      Licence Ouverte / Open Licence v2.0 (Etalab)
+  - Missions Régionales d'Autorité Environnementale (MRAe)
+      Documents publics, Licence Ouverte Etalab v2.0
+  - CNPrV (Collectif National Photovoltaïque Rural)
+      Données publiques, citation des auteurs originaux conservée
+
+La valeur ajoutée panoptic (croisement, déduplication, géolocalisation
+enrichie, enrichissement NER, détection d'opérateurs) est diffusée en
+CC BY-SA 4.0.
+
+CITATION RECOMMANDÉE
+--------------------
+
+> tawiza / panoptic (AAAA). Base de données agrivoltaïque française
+> croisée (ADEME, projets-environnement, MRAe, CNPrV).
+> https://panoptic.tawiza.fr -- CC BY-SA 4.0.
+
+CONTACT
+-------
+
+panoptic@tawiza.fr

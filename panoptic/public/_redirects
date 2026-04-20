@@ -1,0 +1,13 @@
+# Cloudflare Pages redirects
+# Pattern   Destination   [Status]
+
+# Racines alternatives vers index
+/home   /   301
+/index  /   301
+
+# Placeholder pour les futures routes (à activer après lancement)
+# /projets/:id    /projets/index.html?id=:id    200
+# /carte          /carte/index.html              200
+
+# Fallback 404 sur SPA future (désactivé pour l'instant)
+# /*   /index.html   200
