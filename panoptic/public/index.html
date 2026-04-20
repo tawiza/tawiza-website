@@ -269,76 +269,99 @@
   .caption .line.err   { color: #8B0000; }
   .caption .prompt { color: var(--ink-soft); user-select: none; }
 
-  /* ---- Section contribution : continuation du terminal, style Python REPL ---- */
+  /* ---- Section contribution : boîte crème + liste + gros bouton ---- */
   .contrib {
     max-width: 640px;
     width: calc(100% - 48px);
-    margin-top: 32px;
-    font-family: var(--mono);
-    font-size: clamp(12px, 1.4vw, 14px);
-    line-height: 1.8;
+    margin-top: 48px;
+    padding: 28px 32px;
+    background: rgba(250, 245, 239, 0.92);
+    border: 1px solid rgba(26, 22, 18, 0.25);
+    border-radius: 4px;
+    box-shadow: 6px 6px 0 var(--ink);
     color: var(--ink);
   }
-  .contrib__header {
-    padding: 14px 0 8px;
-    border-top: 1px dashed rgba(26, 22, 18, 0.3);
+  .contrib h3 {
+    font-family: var(--serif);
+    font-size: clamp(24px, 3vw, 30px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .contrib__intro {
+    font-family: var(--serif);
+    font-size: clamp(15px, 1.5vw, 17px);
+    line-height: 1.5;
     color: var(--ink-soft);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    margin-bottom: 18px;
   }
-  .contrib__code {
-    background: rgba(250, 245, 239, 0.92);
-    border: 1px solid var(--ink);
-    border-radius: 4px;
-    padding: 18px 22px;
-    box-shadow: 6px 6px 0 var(--ink);
+  .contrib__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px 0;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.9;
   }
-  .contrib__code .row {
-    display: block;
-    white-space: pre-wrap;
+  .contrib__list li {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    color: var(--ink);
   }
-  .contrib__code .tok-comment { color: var(--ink-mute, #7a6e5e); font-style: italic; }
-  .contrib__code .tok-keyword { color: var(--ocre); font-weight: 500; }
-  .contrib__code .tok-func    { color: var(--ink); font-weight: 600; }
-  .contrib__code .tok-kwarg   { color: var(--terre); }
-  .contrib__code .tok-op      { color: var(--ink-soft); }
-  .contrib__code .indent      { padding-left: 4ch; }
-
-  /* Le CTA ressemble à un appel de fonction cliquable */
-  .contrib__code .cta-call {
+  .contrib__list li::before {
+    content: "→";
+    color: var(--ocre);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .contrib__list .tag {
     display: inline-block;
-    margin-top: 10px;
-    padding: 4px 10px;
+    min-width: 82px;
+    padding: 1px 8px;
     background: var(--ink);
     color: var(--cream);
-    text-decoration: none;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     border-radius: 2px;
-    transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-    position: relative;
+    text-align: center;
   }
-  .contrib__code .cta-call::before {
-    content: "▶ ";
-    color: var(--ocre);
+  .cta-mail {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 14px 22px;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   }
-  .contrib__code .cta-call:hover,
-  .contrib__code .cta-call:focus-visible {
+  .cta-mail::before { content: "→ "; margin-right: 2px; }
+  .cta-mail:hover,
+  .cta-mail:focus-visible {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--ocre);
     background: var(--ocre);
-    transform: translate(-1px, -1px);
-    box-shadow: 2px 2px 0 var(--ink);
     outline: none;
   }
-  .contrib__code .cta-call:active {
+  .cta-mail:active {
     transform: translate(0, 0);
-    box-shadow: 0 0 0 var(--ink);
+    box-shadow: 0 0 0 var(--ocre);
   }
-
   .contrib__privacy {
-    margin-top: 10px;
-    font-size: 10.5px;
+    margin-top: 14px;
+    font-family: var(--mono);
+    font-size: 11px;
     color: var(--ink-soft);
-    letter-spacing: 0.05em;
-    text-align: right;
+    letter-spacing: 0.03em;
   }
 
   /* ---- Footer ---- */
@@ -464,29 +487,32 @@
       <span class="line muted">&gt; désolé - on revient bientôt.</span>
     </div>
 
-    <!-- Section contribution : continuation du terminal, l'utilisateur
-         "appelle" la fonction panoptic.tuyau() en envoyant un mail
-         pre-rempli avec des cases a cocher. -->
+    <!-- Section contribution : boîte crème avec titre, liste, gros bouton.
+         Le mailto est pré-rempli avec un template à cases à cocher
+         pour faciliter le remplissage côté utilisateur. -->
     <section class="contrib" aria-labelledby="contrib-title">
-      <p class="contrib__header" id="contrib-title"># vous avez quelque chose à partager ?</p>
+      <h3 id="contrib-title">vous avez quelque chose à partager ?</h3>
+      <p class="contrib__intro">
+        Un projet qu'on n'a pas croisé, un opérateur qu'on a raté, un angle de
+        lecture qu'on devrait creuser. On prend tout, on trie après.
+      </p>
 
-      <div class="contrib__code" role="group" aria-label="Envoyer une contribution">
-        <span class="row"><span class="tok-comment"># tous les champs sont optionnels. envoie ce que tu as.</span></span>
-        <span class="row"><span class="tok-op">&gt;&gt;&gt;</span> <span class="tok-keyword">from</span> <span class="tok-func">panoptic</span> <span class="tok-keyword">import</span> <span class="tok-func">tuyau</span></span>
-        <span class="row"><span class="tok-op">&gt;&gt;&gt;</span> <span class="tok-func">tuyau</span>.<span class="tok-func">envoyer</span>(</span>
-        <span class="row indent"><span class="tok-kwarg">projet</span><span class="tok-op">=</span>...,      <span class="tok-comment"># un parc qu'aucun registre ne voit</span></span>
-        <span class="row indent"><span class="tok-kwarg">operateur</span><span class="tok-op">=</span>...,   <span class="tok-comment"># qui se cache derrière une SPV</span></span>
-        <span class="row indent"><span class="tok-kwarg">collectif</span><span class="tok-op">=</span>...,   <span class="tok-comment"># qu'on n'a pas croisé dans CNPrV</span></span>
-        <span class="row indent"><span class="tok-kwarg">decision</span><span class="tok-op">=</span>...,    <span class="tok-comment"># MRAe, TA, Conseil d'État</span></span>
-        <span class="row indent"><span class="tok-kwarg">angle</span><span class="tok-op">=</span>...,       <span class="tok-comment"># foncier, élevage, fiscalité</span></span>
-        <span class="row indent"><span class="tok-kwarg">correction</span><span class="tok-op">=</span>...,  <span class="tok-comment"># un chiffre mal croisé</span></span>
-        <span class="row">)</span>
-        <span class="row"><span class="tok-comment">&nbsp;</span></span>
-        <span class="row"><a class="cta-call"
-            href="mailto:tawiza.v0@gmail.com?subject=%5Bpanoptic%5D%20tuyau%20%C3%A0%20partager&amp;body=Bonjour%2C%0D%0A%0D%0ACoche%20ce%20que%20tu%20partages%20(une%20ou%20plusieurs%20cases)%20%3A%0D%0A%0D%0A%5B%20%5D%20un%20projet%20manqu%C3%A9%0D%0A%5B%20%5D%20un%20op%C3%A9rateur%20cach%C3%A9%20derri%C3%A8re%20une%20SPV%0D%0A%5B%20%5D%20un%20collectif%20local%0D%0A%5B%20%5D%20une%20d%C3%A9cision%20de%20justice%0D%0A%5B%20%5D%20un%20angle%20%C3%A0%20creuser%0D%0A%5B%20%5D%20une%20correction%20de%20donn%C3%A9es%0D%0A%0D%0A----%0D%0A%0D%0ANom%20%2F%20r%C3%A9f%C3%A9rence%20%3A%0D%0A%0D%0A%0D%0ALocalisation%20(commune%2C%20d%C3%A9partement)%20%3A%0D%0A%0D%0A%0D%0ACe%20que%20tu%20sais%20(qui%2C%20quoi%2C%20quand)%20%3A%0D%0A%0D%0A%0D%0ALien(s)%20public(s)%20si%20possible%20%3A%0D%0A%0D%0A%0D%0A----%0D%0Amerci%2C%0D%0A">envoyer le mail pré-rempli</a></span>
-      </div>
+      <ul class="contrib__list">
+        <li><span class="tag">projet</span> un parc agrivoltaïque qu'aucun registre public ne liste.</li>
+        <li><span class="tag">opérateur</span> qui se cache derrière une SPV au nom champêtre.</li>
+        <li><span class="tag">collectif</span> local qu'on n'a pas croisé dans la carto CNPrV.</li>
+        <li><span class="tag">décision</span> de MRAe, tribunal admin ou Conseil d'État qu'on devrait lire.</li>
+        <li><span class="tag">angle</span> sur le foncier, l'élevage, l'autorisation, la fiscalité.</li>
+        <li><span class="tag">correction</span> un chiffre qu'on a mal croisé.</li>
+      </ul>
 
-      <p class="contrib__privacy">aucun formulaire. aucun tracker. juste un mail qui arrive dans une boîte humaine.</p>
+      <a class="cta-mail"
+         href="mailto:tawiza.v0@gmail.com?subject=%5Bpanoptic%5D%20tuyau%20%C3%A0%20partager&amp;body=Bonjour%2C%0D%0A%0D%0ACoche%20ce%20que%20tu%20partages%20(une%20ou%20plusieurs%20cases)%20%3A%0D%0A%0D%0A%5B%20%5D%20un%20projet%20manqu%C3%A9%0D%0A%5B%20%5D%20un%20op%C3%A9rateur%20cach%C3%A9%20derri%C3%A8re%20une%20SPV%0D%0A%5B%20%5D%20un%20collectif%20local%0D%0A%5B%20%5D%20une%20d%C3%A9cision%20de%20justice%0D%0A%5B%20%5D%20un%20angle%20%C3%A0%20creuser%0D%0A%5B%20%5D%20une%20correction%20de%20donn%C3%A9es%0D%0A%0D%0A----%0D%0A%0D%0ANom%20%2F%20r%C3%A9f%C3%A9rence%20%3A%0D%0A%0D%0A%0D%0ALocalisation%20(commune%2C%20d%C3%A9partement)%20%3A%0D%0A%0D%0A%0D%0ACe%20que%20tu%20sais%20(qui%2C%20quoi%2C%20quand)%20%3A%0D%0A%0D%0A%0D%0ALien(s)%20public(s)%20si%20possible%20%3A%0D%0A%0D%0A%0D%0A----%0D%0Amerci%2C%0D%0A">
+        envoyer un tuyau
+      </a>
+      <p class="contrib__privacy">
+        Aucun formulaire, aucun tracker. Juste un mail qui arrive dans une boîte humaine.
+      </p>
     </section>
   </main>
 
