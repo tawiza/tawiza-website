@@ -42,4 +42,4 @@ Voir la page Tawiza dédiée (à venir) et les 3 règles éditoriales :
 
 ## Contribuer
 
-Le pipeline de collecte est open source (AGPL-3.0). Pour signaler un projet manquant ou une erreur : panoptic@tawiza.fr.
+Le pipeline de collecte est open source (AGPL-3.0). Pour signaler un projet manquant ou une erreur : tawiza.v0@gmail.com.

@@ -253,7 +253,7 @@
   <footer class="foot">
     <span>tawiza - panoptic · <span id="count">626</span> projets croisés</span>
     <span>
-      <a href="mailto:panoptic@tawiza.fr">panoptic@tawiza.fr</a>
+      <a href="mailto:tawiza.v0@gmail.com">tawiza.v0@gmail.com</a>
       &nbsp;·&nbsp;
       <a href="https://tawiza.fr">tawiza.fr</a>
     </span>
@@ -270,18 +270,18 @@
   const blink = eye.querySelector('.blink-top');
 
   // --- Pupille suit curseur (amplitude en unités viewBox) ---
-  const MAX_X = 5, MAX_Y = 3;
+  // viewBox 40×16. Iris utile x=13→27 (14u), y=4→12 (8u). Pupille 4u×4u centrée en (20,8).
+  // Amplitude safe : ±2.5u horizontal, ±1.5u vertical pour rester dans l'iris.
+  const MAX_X = 2.5, MAX_Y = 1.5;
   function track(x, y) {
     const rect = svg.getBoundingClientRect();
     const cx = rect.left + rect.width / 2;
     const cy = rect.top  + rect.height / 2;
-    // Normalisation douce - rayon de 500px pour réaction progressive
     const nx = Math.max(-1, Math.min(1, (x - cx) / 500));
     const ny = Math.max(-1, Math.min(1, (y - cy) / 400));
-    // On applique en pixels SVG - CSS transform sur le <g>
-    // viewBox 40×16 → 1 unité viewBox ≈ (width px / 40) = par ex 18px
-    eye.style.setProperty('--pupil-x', nx * MAX_X + 'px');
-    eye.style.setProperty('--pupil-y', ny * MAX_Y + 'px');
+    // Les unités CSS sur un transform SVG = unités viewBox, pas pixels écran.
+    eye.style.setProperty('--pupil-x', (nx * MAX_X) + 'px');
+    eye.style.setProperty('--pupil-y', (ny * MAX_Y) + 'px');
   }
 
   if (!reduced) {
