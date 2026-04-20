@@ -1,131 +1,226 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Territorial Pulse &mdash; Tawiza Generative Art</title>
-    <meta name="description" content="Le battement des donnees publiques. Piece d'art generatif Tawiza par Hamide.">
-    <link rel="canonical" href="https://tawiza.fr/art/territorial-pulse.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Territorial Pulse &mdash; Tawiza Generative Art</title>
+  <meta name="description" content="Le battement des donn&eacute;es publiques. Pi&egrave;ce d'art g&eacute;n&eacute;ratif Tawiza.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#b45309">
+  <link rel="canonical" href="https://tawiza.fr/art/territorial-pulse.html">
 
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Tawiza">
-    <meta property="og:locale" content="fr_FR">
-    <meta property="og:title" content="Territorial Pulse &mdash; Tawiza">
-    <meta property="og:description" content="Le battement des donnees publiques. Une piece d'art generatif Tawiza.">
-    <meta property="og:url" content="https://tawiza.fr/art/territorial-pulse.html">
-    <meta property="og:image" content="https://tawiza.fr/img/og/territorial-pulse.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Rayons convergeant vers l'oeil Tawiza">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Territorial Pulse &mdash; Tawiza">
-    <meta name="twitter:description" content="Le battement des donnees publiques.">
-    <meta name="twitter:image" content="https://tawiza.fr/img/og/territorial-pulse.png">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "VisualArtwork",
-        "name": "Territorial Pulse",
-        "creator": {"@type": "Organization", "name": "Tawiza", "url": "https://tawiza.fr"},
-        "inLanguage": "fr",
-        "url": "https://tawiza.fr/art/territorial-pulse.html",
-        "image": "https://tawiza.fr/img/og/territorial-pulse.png",
-        "artMedium": "HTML, JavaScript, p5.js",
-        "artform": "Generative art"
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tawiza">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Territorial Pulse &mdash; Tawiza">
+  <meta property="og:description" content="Le battement des donn&eacute;es publiques. Une pi&egrave;ce d'art g&eacute;n&eacute;ratif Tawiza.">
+  <meta property="og:url" content="https://tawiza.fr/art/territorial-pulse.html">
+  <meta property="og:image" content="https://tawiza.fr/img/og/territorial-pulse.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rayons convergeant vers l'oeil Tawiza">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Territorial Pulse &mdash; Tawiza">
+  <meta name="twitter:description" content="Le battement des donn&eacute;es publiques.">
+  <meta name="twitter:image" content="https://tawiza.fr/img/og/territorial-pulse.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VisualArtwork",
+    "name": "Territorial Pulse",
+    "creator": {"@type": "Organization", "name": "Tawiza", "url": "https://tawiza.fr"},
+    "inLanguage": "fr",
+    "url": "https://tawiza.fr/art/territorial-pulse.html",
+    "image": "https://tawiza.fr/img/og/territorial-pulse.png",
+    "artMedium": "HTML, JavaScript, p5.js",
+    "artform": "Generative art"
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23faf5ef'/%3E%3Crect x='6' y='12' width='20' height='8' fill='%23b45309'/%3E%3Crect x='13' y='14' width='6' height='4' fill='%231a1612'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/fonts/tawiza-fonts.css?v=20260420a">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+  <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.tagged-events.pageview-props.outbound-links.file-downloads.js"></script>
+  <style>
+    /* Tokens alignés sur le design v2 Tawiza */
+    :root {
+      --bg:        #faf5ef;
+      --bg-deep:   #f3ebdd;
+      --ink:       #1a1612;
+      --ink-soft:  #3a342c;
+      --ink-mute:  #7a6e5e;
+      --line:      #1a1612;
+      --line-soft: rgba(26, 22, 18, 0.18);
+      --ocre:      #b45309;
+      --terre:     #c1554d;
+      --foret:     #2d6a4f;
+      --serif-display: "Instrument Serif", Georgia, serif;
+      --mono:      "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
     }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --anthropic-dark: #141413;
-            --anthropic-light: #faf9f5;
-            --anthropic-mid-gray: #b0aea5;
-            --anthropic-light-gray: #e8e6dc;
-            --anthropic-orange: #d97757;
-            --anthropic-blue: #6a9bcc;
-            --anthropic-green: #788c5d;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, var(--anthropic-light) 0%, #f5f3ee 100%);
-            min-height: 100vh;
-            color: var(--anthropic-dark);
-        }
-        .container { display: flex; min-height: 100vh; padding: 20px; gap: 20px; }
-        .sidebar {
-            width: 320px; flex-shrink: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 24px; border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(20, 20, 19, 0.1);
-            overflow-y: auto; overflow-x: hidden;
-        }
-        .sidebar h1 { font-family: 'Lora', serif; font-size: 24px; font-weight: 500; color: var(--anthropic-dark); margin-bottom: 8px; }
-        .sidebar .subtitle { color: var(--anthropic-mid-gray); font-size: 14px; margin-bottom: 32px; line-height: 1.4; }
-        .control-section { margin-bottom: 32px; }
-        .control-section h3 {
-            font-size: 16px; font-weight: 600; color: var(--anthropic-dark);
-            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
-        }
-        .control-section h3::before { content: '•'; color: var(--anthropic-orange); font-weight: bold; }
-        .seed-input {
-            width: 100%; background: var(--anthropic-light); padding: 12px; border-radius: 8px;
-            font-family: 'Courier New', monospace; font-size: 14px; margin-bottom: 12px;
-            border: 1px solid var(--anthropic-light-gray); text-align: center;
-        }
-        .seed-input:focus { outline: none; border-color: var(--anthropic-orange); box-shadow: 0 0 0 2px rgba(217, 119, 87, 0.1); background: white; }
-        .seed-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
-        .control-group { margin-bottom: 20px; }
-        .control-group label { display: block; font-size: 14px; font-weight: 500; color: var(--anthropic-dark); margin-bottom: 8px; }
-        .slider-container { display: flex; align-items: center; gap: 12px; }
-        .slider-container input[type="range"] { flex: 1; height: 4px; background: var(--anthropic-light-gray); border-radius: 2px; outline: none; -webkit-appearance: none; }
-        .slider-container input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; background: var(--anthropic-orange); border-radius: 50%; cursor: pointer; transition: all 0.2s ease; }
-        .slider-container input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.1); background: #c86641; }
-        .slider-container input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; background: var(--anthropic-orange); border-radius: 50%; border: none; cursor: pointer; }
-        .value-display { font-family: 'Courier New', monospace; font-size: 12px; color: var(--anthropic-mid-gray); min-width: 60px; text-align: right; }
-        .color-group { margin-bottom: 16px; }
-        .color-group label { display: block; font-size: 12px; color: var(--anthropic-mid-gray); margin-bottom: 4px; }
-        .color-picker-container { display: flex; align-items: center; gap: 8px; }
-        .color-picker-container input[type="color"] { width: 32px; height: 32px; border: none; border-radius: 6px; cursor: pointer; background: none; padding: 0; }
-        .color-value { font-family: 'Courier New', monospace; font-size: 12px; color: var(--anthropic-mid-gray); }
-        .button {
-            background: var(--anthropic-orange); color: white; border: none; padding: 10px 16px;
-            border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer;
-            transition: all 0.2s ease; width: 100%;
-        }
-        .button:hover { background: #c86641; transform: translateY(-1px); }
-        .button:active { transform: translateY(0); }
-        .button.secondary { background: var(--anthropic-blue); }
-        .button.secondary:hover { background: #5a8bb8; }
-        .button.tertiary { background: var(--anthropic-green); }
-        .button.tertiary:hover { background: #6b7b52; }
-        .button-row { display: flex; gap: 8px; }
-        .button-row .button { flex: 1; }
-        .canvas-area { flex: 1; display: flex; align-items: center; justify-content: center; min-width: 0; }
-        #canvas-container {
-            width: 100%; max-width: 1000px; border-radius: 12px; overflow: hidden;
-            box-shadow: 0 20px 40px rgba(20, 20, 19, 0.1); background: white;
-        }
-        #canvas-container canvas { display: block; width: 100% !important; height: auto !important; }
-        .loading { display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--anthropic-mid-gray); padding: 200px 0; }
-        @media (max-width: 600px) {
-            .container { flex-direction: column; }
-            .sidebar { width: 100%; }
-        }
-    </style>
-    <script defer data-domain="tawiza.fr" src="https://t.tawiza.fr/js/script.js"></script>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d0b09; --bg-deep: #14110d;
+        --ink: #e8dfd0; --ink-soft: #c4b8a3; --ink-mute: #85796a;
+        --line: #e8dfd0; --line-soft: rgba(232, 223, 208, 0.18);
+        --ocre: #e08935; --terre: #e07a6f; --foret: #5fa982;
+      }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--mono);
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* Wordmark (aligné v2) */
+    .wordmark {
+      position: fixed; top: 18px; left: 20px; z-index: 100;
+      font-family: var(--mono); font-size: 12px;
+      letter-spacing: 0.08em; text-transform: lowercase;
+      color: var(--ink); text-decoration: none;
+    }
+    .wordmark:hover { color: var(--ocre); }
+    .wordmark::before { content: "//"; color: var(--ocre); margin-right: 6px; }
+
+    .container { display: flex; min-height: 100vh; padding: 60px 20px 20px; gap: 20px; }
+    .sidebar {
+      width: 320px; flex-shrink: 0;
+      background: var(--bg);
+      border: 1px solid var(--line-soft);
+      padding: 24px;
+      overflow-y: auto; overflow-x: hidden;
+    }
+    .sidebar h1 {
+      font-family: var(--serif-display);
+      font-size: 28px; font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--ink); margin-bottom: 8px;
+    }
+    .sidebar h1 em { font-style: italic; color: var(--terre); }
+    .sidebar .subtitle {
+      font-family: var(--serif-display); font-style: italic;
+      color: var(--ink-soft); font-size: 14px;
+      margin-bottom: 32px; line-height: 1.5;
+    }
+    .control-section { margin-bottom: 32px; }
+    .control-section h3 {
+      font-family: var(--mono);
+      font-size: 11px; font-weight: 500;
+      color: var(--ocre); text-transform: uppercase;
+      letter-spacing: 0.14em; margin-bottom: 16px;
+    }
+    .control-section h3::before { content: "§ "; }
+    .seed-input {
+      width: 100%; background: var(--bg-deep); padding: 12px; border-radius: 2px;
+      font-family: var(--mono); font-size: 14px; color: var(--ink);
+      margin-bottom: 12px;
+      border: 1px solid var(--line-soft); text-align: center;
+    }
+    .seed-input:focus { outline: none; border-color: var(--ocre); background: var(--bg); }
+    .seed-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+    .control-group { margin-bottom: 20px; }
+    .control-group label {
+      display: block; font-family: var(--mono); font-size: 11px;
+      color: var(--ink-mute); letter-spacing: 0.04em;
+      text-transform: lowercase; margin-bottom: 8px;
+    }
+    .slider-container { display: flex; align-items: center; gap: 12px; }
+    .slider-container input[type="range"] {
+      flex: 1; height: 2px; background: var(--line-soft);
+      outline: none; -webkit-appearance: none;
+    }
+    .slider-container input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 14px; height: 14px;
+      background: var(--ocre); border-radius: 50%; cursor: pointer;
+      transition: transform 0.15s;
+    }
+    .slider-container input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15); background: var(--terre);
+    }
+    .slider-container input[type="range"]::-moz-range-thumb {
+      width: 14px; height: 14px; background: var(--ocre);
+      border-radius: 50%; border: none; cursor: pointer;
+    }
+    .value-display {
+      font-family: var(--mono); font-size: 11px;
+      color: var(--ink-mute); min-width: 56px; text-align: right;
+      letter-spacing: 0.04em;
+    }
+    .color-group { margin-bottom: 16px; }
+    .color-group label {
+      display: block; font-family: var(--mono);
+      font-size: 11px; color: var(--ink-mute);
+      letter-spacing: 0.04em; margin-bottom: 4px;
+    }
+    .color-picker-container { display: flex; align-items: center; gap: 10px; }
+    .color-picker-container input[type="color"] {
+      width: 32px; height: 32px; border: 1px solid var(--line-soft);
+      cursor: pointer; background: none; padding: 0;
+    }
+    .color-value {
+      font-family: var(--mono); font-size: 11px;
+      color: var(--ink-mute); letter-spacing: 0.04em;
+    }
+    .button {
+      background: var(--ocre); color: var(--bg); border: none;
+      padding: 10px 16px; font-family: var(--mono); font-size: 12px;
+      letter-spacing: 0.04em; cursor: pointer;
+      transition: background 0.18s;
+      width: 100%;
+    }
+    .button:hover { background: var(--ink); }
+    .button.secondary { background: var(--ink-soft); }
+    .button.secondary:hover { background: var(--ink); }
+    .button.tertiary { background: var(--foret); }
+    .button.tertiary:hover { background: var(--ink); }
+    .button-row { display: flex; gap: 8px; }
+    .button-row .button { flex: 1; }
+    .canvas-area { flex: 1; display: flex; align-items: center; justify-content: center; min-width: 0; }
+    #canvas-container {
+      width: 100%; max-width: 1000px;
+      border: 1px solid var(--line-soft);
+      overflow: hidden;
+      background: var(--bg);
+    }
+    #canvas-container canvas { display: block; width: 100% !important; height: auto !important; }
+    .loading {
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 13px; color: var(--ink-mute);
+      padding: 200px 0; letter-spacing: 0.04em;
+    }
+
+    .tp-footer {
+      padding: 32px 20px;
+      border-top: 1px solid var(--line-soft);
+      font-family: var(--mono); font-size: 12px;
+      color: var(--ink-mute); letter-spacing: 0.06em;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+      max-width: 1400px; margin: 0 auto;
+    }
+    .tp-footer a { color: var(--ink-mute); text-decoration: none; }
+    .tp-footer a:hover { color: var(--ocre); }
+    .tp-footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+
+    @media (max-width: 760px) {
+      .container { flex-direction: column; padding: 60px 12px 12px; }
+      .sidebar { width: 100%; }
+      .tp-footer { flex-direction: column; align-items: flex-start; padding: 24px 16px; }
+      .tp-footer-links { gap: 16px; }
+    }
+  </style>
 </head>
 <body>
+  <a href="/" class="wordmark">tawiza.fr</a>
+
     <div class="container">
         <div class="sidebar">
-            <h1>Territorial Pulse</h1>
-            <div class="subtitle">Causalite cumulative - micro-signaux territoriaux rendus visibles par leurs trajectoires dans un champ de forces invisible.</div>
+            <h1><em>Territorial Pulse</em></h1>
+            <div class="subtitle">Causalit&eacute; cumulative &mdash; micro-signaux territoriaux rendus visibles par leurs trajectoires dans un champ de forces invisible.</div>
 
             <div class="control-section">
                 <h3>Seed</h3>
@@ -225,10 +320,23 @@
 
         <div class="canvas-area">
             <div id="canvas-container">
-                <div class="loading">Initialisation des signaux territoriaux...</div>
+                <div class="loading">Initialisation des signaux territoriaux&hellip;</div>
             </div>
         </div>
     </div>
+
+    <footer class="tp-footer">
+        <span>tawiza &middot; bien commun num&eacute;rique &middot; 2026</span>
+        <div class="tp-footer-links">
+            <a href="/analyses/">analyses</a>
+            <a href="/articles/">articles</a>
+            <a href="/notebooks/">notebooks</a>
+            <a href="/manifeste.html">manifeste</a>
+            <a href="/a-propos.html">&agrave; propos</a>
+            <a href="/contribuer.html">contribuer</a>
+            <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">source</a>
+        </div>
+    </footer>
 
     <script>
         // ═══════════════════════════════════════════════════════════════
