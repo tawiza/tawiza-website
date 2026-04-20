@@ -183,6 +183,73 @@
     transition: transform 0.08s linear;
   }
 
+  /* ---- Micro-définitions au hover (tooltip style terminal) ---- */
+  .def {
+    position: relative;
+    border-bottom: 1px dotted var(--ink-soft);
+    cursor: help;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .def:hover,
+  .def:focus-visible {
+    color: var(--ocre);
+    border-bottom-color: var(--ocre);
+    border-bottom-style: solid;
+  }
+  .def::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    min-width: 200px;
+    max-width: min(340px, 80vw);
+    padding: 10px 14px;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+    white-space: normal;
+    text-align: left;
+    border-radius: 3px;
+    box-shadow: 3px 3px 0 rgba(26, 22, 18, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.18s ease 0.05s, transform 0.18s ease 0.05s;
+  }
+  .def::before {
+    content: "";
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--ink);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 11;
+    transition: opacity 0.18s ease 0.05s;
+  }
+  .def:hover::after,
+  .def:focus-visible::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  .def:hover::before,
+  .def:focus-visible::before {
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .def::after, .def::before { transition: opacity 0.1s ease; }
+  }
+
   /* ---- Terminal-style caption ---- */
   .caption {
     font-family: var(--mono);
@@ -320,8 +387,21 @@
     <div class="caption" aria-live="polite">
       <span class="line muted">$ panoptic --status</span>
       <span class="line">&gt; croisement de 4 registres publics…</span>
-      <span class="line muted">&gt; ADEME · projets-environnement · MRAe · CNPrV</span>
-      <span class="line">&gt; <strong>la personne est longue.</strong></span>
+      <span class="line muted">&gt; <span class="def" tabindex="0"
+             title="Agence de la transition ecologique. Publie la base ouverte des raccordements photovoltaiques - les projets deja en production."
+             data-tip="Agence de la transition écologique. Publie la base ouverte des raccordements photovoltaïques - ce qui est déjà en production.">ADEME</span>
+        · <span class="def" tabindex="0"
+             title="Portail gouv.fr qui liste les projets soumis a evaluation environnementale - ce qui est en file d'attente avant autorisation."
+             data-tip="Portail gouv.fr qui liste les projets soumis à évaluation environnementale - ce qui est en file d'attente avant autorisation.">projets-environnement</span>
+        · <span class="def" tabindex="0"
+             title="Missions Regionales d'Autorite Environnementale. Rendent un avis public sur chaque projet avant decision prefectorale."
+             data-tip="Missions Régionales d'Autorité Environnementale. Rendent un avis public sur chaque projet avant décision préfectorale.">MRAe</span>
+        · <span class="def" tabindex="0"
+             title="Collectif National Photovoltaique Rural. Carto associative des projets contestes localement."
+             data-tip="Collectif National Photovoltaïque Rural. Carto associative des projets contestés localement.">CNPrV</span></span>
+      <span class="line">&gt; <strong><span class="def" tabindex="0"
+             title="un humain + sa volonte + son nombre de cafes. desole."
+             data-tip="un humain · sa volonté · son nombre de cafés. désolé.">la personne est longue.</span></strong></span>
       <span class="line muted">&gt; désolé - on revient bientôt.</span>
       <span class="line">
         <span class="prompt">$</span>
