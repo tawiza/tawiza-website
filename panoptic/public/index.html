@@ -71,6 +71,24 @@
   }
   .top .kicker { text-transform: none; }
   .top .status { display: flex; align-items: center; gap: 8px; }
+
+  /* ---- Surlignage crème façon stabilo ---- */
+  .mark {
+    background: linear-gradient(transparent 52%, rgba(250, 245, 239, 0.88) 52%);
+    padding: 0 0.25em;
+    color: var(--ink);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: background 0.15s ease;
+  }
+  .mark:hover,
+  a.mark:hover {
+    background: linear-gradient(transparent 0%, rgba(250, 245, 239, 0.98) 0%);
+  }
+  a.mark {
+    text-decoration: none;
+    cursor: pointer;
+  }
   .top .status .dot {
     width: 8px; height: 8px; border-radius: 50%;
     background: var(--cream);
@@ -183,10 +201,10 @@
 <div class="wrap">
 
   <div class="top">
-    <span class="kicker">// panoptic - un regard</span>
+    <span class="kicker"><span class="mark">// panoptic - un regard</span></span>
     <span class="status">
       <span class="dot"></span>
-      <span>work_in_progress</span>
+      <span class="mark">work_in_progress</span>
     </span>
   </div>
 
@@ -253,9 +271,9 @@
   <footer class="foot">
     <span>tawiza - panoptic · <span id="count">626</span> projets croisés</span>
     <span>
-      <a href="mailto:tawiza.v0@gmail.com">tawiza.v0@gmail.com</a>
+      <a class="mark" href="mailto:tawiza.v0@gmail.com">tawiza.v0@gmail.com</a>
       &nbsp;·&nbsp;
-      <a href="https://tawiza.fr">tawiza.fr</a>
+      <a class="mark" href="https://tawiza.fr">tawiza.fr</a>
     </span>
   </footer>
 </div>
