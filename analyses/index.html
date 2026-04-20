@@ -27,10 +27,8 @@
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23faf5ef'/%3E%3Crect x='6' y='12' width='20' height='8' fill='%23b45309'/%3E%3Crect x='13' y='14' width='6' height='4' fill='%231a1612'/%3E%3C/svg%3E">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260419a">
+  <link rel="stylesheet" href="/assets/fonts/tawiza-fonts.css?v=20260420a">
+  <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260420a">
   <link rel="alternate" type="application/rss+xml" title="Tawiza - Analyses" href="https://tawiza.fr/feed.xml">
 
   <script type="application/ld+json">
@@ -340,7 +338,7 @@
 
   <section class="eye-zone">
     <div class="terrain">
-      <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui dort jamais</span></div>
+      <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui ne dort jamais</span></div>
       <div class="eye-root" role="img" aria-label="3AYNE - l'&oelig;il Tawiza"></div>
       <div class="eye-caption">il regarde, il compte, il doute</div>
     </div>
@@ -350,27 +348,30 @@
     <div class="terrain" style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
       <span>tawiza &middot; bien commun num&eacute;rique &middot; 2026</span>
       <div class="footer-links">
+        <a href="/analyses/">analyses</a>
+        <a href="/articles/">articles</a>
+        <a href="/notebooks/">notebooks</a>
         <a href="/manifeste.html">manifeste</a>
-        <a href="/contribuer.html">contribuer</a>
         <a href="/a-propos.html">&agrave; propos</a>
+        <a href="/contribuer.html">contribuer</a>
         <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">source</a>
       </div>
     </div>
   </footer>
 
   <script>
-    fetch('/assets/v2/eye.svg?v=20260419a').then(function (r) { return r.text(); }).then(function (svgText) {
+    fetch('/assets/v2/eye.svg?v=20260420a').then(function (r) { return r.text(); }).then(function (svgText) {
       var mount = document.querySelector('.eye-root');
       if (!mount) return;
       var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
       mount.appendChild(svgEl);
     }).then(function () {
       var s = document.createElement('script');
-      s.src = '/assets/v2/eye.js?v=20260419a';
+      s.src = '/assets/v2/eye.js?v=20260420a';
       document.body.appendChild(s);
     });
   </script>
-  <script src="/assets/v2/glyph.js?v=20260419a" defer></script>
-  <script src="/assets/v2/annotate.js?v=20260419a" defer></script>
+  <script src="/assets/v2/glyph.js?v=20260420a" defer></script>
+  <script src="/assets/v2/annotate.js?v=20260420a" defer></script>
 </body>
 </html>

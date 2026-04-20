@@ -1231,7 +1231,19 @@ a:hover { text-decoration-color: var(--ocre); color: var(--ocre); }
   width: clamp(160px, 38vw, 220px);
   height: clamp(160px, 38vw, 220px);
   flex-shrink: 0;
+  /* When rendered as <a> (since HTML5 forbids nested <a>, the hero link
+     is split into glyph-link + content-link) */
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
+
+.f-hero-content {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.f-hero-content:hover .f-hero-title { color: var(--ocre); }
 
 .f-hero-body {
   /* Always stacks internally no matter what */
@@ -1605,15 +1617,20 @@ abbr[title]:hover {
    ARTICLE MASTHEAD with glyph-hero : 2-column layout on desktop
    Uses CSS :has() to detect pages that have a big glyph
    in their masthead (articles/paris-velo-2026/, article.html, etc.)
+   Selectors are duplicated explicitly (not factorised with :where)
+   so specificity stays consistent with the rest of the stylesheet.
    ============================================================ */
 
-/* Default (all viewports) : keep stacked behavior */
-.article-masthead--hero, .article-masthead:has(.glyph-hero) {
+.article-masthead--hero,
+.article-masthead:has(.glyph-hero) {
   max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 720px) {
-  .article-masthead--hero, .article-masthead:has(.glyph-hero) {
+  .article-masthead--hero,
+  .article-masthead:has(.glyph-hero) {
     display: grid;
     grid-template-columns: minmax(220px, 320px) 1fr;
     grid-template-rows: auto;
@@ -1621,10 +1638,13 @@ abbr[title]:hover {
     row-gap: 0;
     align-items: center;
     padding: 120px 0 72px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .article-masthead--hero, .article-masthead:has(.glyph-hero) .glyph-hero {
+  .article-masthead--hero .glyph-hero,
+  .article-masthead:has(.glyph-hero) .glyph-hero {
     grid-column: 1;
-    grid-row: 1 / span 10;   /* span all rows */
+    grid-row: 1 / span 10;
     width: 100%;
     max-width: 320px;
     aspect-ratio: 1;
@@ -1633,19 +1653,22 @@ abbr[title]:hover {
     align-self: center;
     justify-self: start;
   }
-  .article-masthead--hero, .article-masthead:has(.glyph-hero) > :not(.glyph-hero) {
+  .article-masthead--hero > :not(.glyph-hero),
+  .article-masthead:has(.glyph-hero) > :not(.glyph-hero) {
     grid-column: 2;
     text-align: left;
   }
-  .article-masthead--hero, .article-masthead:has(.glyph-hero) .article-title {
+  .article-masthead--hero .article-title,
+  .article-masthead:has(.glyph-hero) .article-title {
     margin-top: 0;
   }
-  .article-masthead--hero, .article-masthead:has(.glyph-hero) .article-meta {
+  .article-masthead--hero .article-meta,
+  .article-masthead:has(.glyph-hero) .article-meta {
     margin-top: 24px;
   }
-  /* Hide the generated "// slug · NxN · generated" label below glyph-hero
-     in 2-col layout - it clashes visually with the text column */
-  .article-masthead--hero, .article-masthead:has(.glyph-hero) .glyph-hero::after {
+  /* Hide the generated "// slug · NxN · generated" label in 2-col layout */
+  .article-masthead--hero .glyph-hero::after,
+  .article-masthead:has(.glyph-hero) .glyph-hero::after {
     display: none;
   }
 }

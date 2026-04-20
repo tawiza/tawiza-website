@@ -38,12 +38,9 @@
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23b45309'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='18'%3ET%3C/text%3E%3C/svg%3E">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=El+Messiri:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/fonts/tawiza-fonts.css?v=20260420a">
     <link rel="stylesheet" href="../style.css?v=10">
-    <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260419a">
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260420a">
     <link rel="stylesheet" href="../assets/css/tracking.css">
     <style>
         /* ═══ DESIGN ÉDITORIAL v2 ═══ */
@@ -936,7 +933,7 @@ python3 scripts/03_preview.py</code></pre>
         <!-- v2: 3AYNE eye + minimal footer -->
     <section class="eye-zone">
         <div class="terrain">
-            <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui dort jamais</span></div>
+            <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui ne dort jamais</span></div>
             <div class="eye-root" role="img" aria-label="3AYNE - l'&oelig;il Tawiza"></div>
             <div class="eye-caption">il regarde, il compte, il doute</div>
         </div>
@@ -1054,18 +1051,18 @@ python3 scripts/03_preview.py</code></pre>
     </script>
     <!-- v2: inject 3AYNE eye + load eye.js + glyph.js -->
     <script>
-        fetch('/assets/v2/eye.svg?v=20260419a').then(function (r) { return r.text(); }).then(function (svgText) {
+        fetch('/assets/v2/eye.svg?v=20260420a').then(function (r) { return r.text(); }).then(function (svgText) {
             var mount = document.querySelector('.eye-root');
             if (!mount) return;
             var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
             mount.appendChild(svgEl);
         }).then(function () {
             var s = document.createElement('script');
-            s.src = '/assets/v2/eye.js?v=20260419a';
+            s.src = '/assets/v2/eye.js?v=20260420a';
             document.body.appendChild(s);
         });
     </script>
-    <script src="/assets/v2/glyph.js?v=20260419a" defer></script>
-  <script src="/assets/v2/annotate.js?v=20260419a" defer></script>
+    <script src="/assets/v2/glyph.js?v=20260420a" defer></script>
+  <script src="/assets/v2/annotate.js?v=20260420a" defer></script>
 </body>
 </html>

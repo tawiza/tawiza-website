@@ -1,11 +1,17 @@
 /* Tawiza fonts - self-hosted pour respect R16 (pas de tracking Google Fonts).
  *
- * Fichiers woff2 depuis fontsource.org (versions open source des mêmes fonts).
- * Chargé via <link rel="stylesheet" href="/assets/fonts/tawiza-fonts.css">
+ * Fichiers woff2 depuis fontsource.org (versions open source des memes fonts).
+ * Charge via <link rel="stylesheet" href="/assets/fonts/tawiza-fonts.css">
  * Pas de @import (bloquant au rendu), juste @font-face.
  *
- * font-display: swap = affichage immédiat en fallback system-ui, puis swap
- * dès que la font est téléchargée. Meilleur comportement perçu.
+ * font-display: swap = affichage immediat en fallback system-ui, puis swap
+ * des que la font est telechargee. Meilleur comportement percu.
+ *
+ * Contenu :
+ *   - Inter 400/500/600/700  (reserve, non utilisee en v2 - conservee pour compat)
+ *   - El Messiri 400/600/700 (reserve, non utilisee en v2 - conservee pour compat)
+ *   - JetBrains Mono 400/500 (MONO principale)
+ *   - Instrument Serif 400 normal/italic (DISPLAY principale)
  */
 
 @font-face {
@@ -65,4 +71,26 @@
   font-weight: 400;
   font-display: swap;
   src: url("/assets/fonts/jetbrains-mono-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/jetbrains-mono-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/instrument-serif-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/instrument-serif-400-italic.woff2") format("woff2");
 }

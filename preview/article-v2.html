@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-  <link rel="stylesheet" href="../assets/v2/design-system.css?v=20260419a">
+  <link rel="stylesheet" href="../assets/v2/design-system.css?v=20260420a">
 
   <style>
   .preview-banner {
@@ -150,7 +150,7 @@ def silence_score(commune):
   <!-- 3AYNE footer -->
   <section class="eye-zone">
     <div class="terrain">
-      <div class="eye-zone-label">3ayne · <span>l'œil qui dort jamais</span></div>
+      <div class="eye-zone-label">3ayne · <span>l'œil qui ne dort jamais</span></div>
       <div class="eye-root" role="img" aria-label="3AYNE - l'œil Tawiza">
         <object data="assets/eye.svg" type="image/svg+xml" style="display:none"></object>
       </div>
@@ -170,7 +170,7 @@ def silence_score(commune):
   </footer>
 
   <script>
-    fetch('../assets/v2/eye.svg?v=20260419a').then(function (r) { return r.text(); }).then(function (svgText) {
+    fetch('../assets/v2/eye.svg?v=20260420a').then(function (r) { return r.text(); }).then(function (svgText) {
       var mount = document.querySelector('.eye-root');
       if (!mount) return;
       var obj = mount.querySelector('object'); if (obj) obj.remove();
@@ -178,10 +178,10 @@ def silence_score(commune):
       mount.appendChild(svgEl);
     }).then(function () {
       var s = document.createElement('script');
-      s.src = '../assets/v2/eye.js?v=20260419a';
+      s.src = '../assets/v2/eye.js?v=20260420a';
       document.body.appendChild(s);
     });
   </script>
-  <script src="../assets/v2/glyph.js?v=20260419a" defer></script>
+  <script src="../assets/v2/glyph.js?v=20260420a" defer></script>
 </body>
 </html>
