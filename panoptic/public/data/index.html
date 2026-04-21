@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>panoptic · données brutes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Les données brutes de panoptic : 416 projets agrivoltaïques + 133 contestations croisés sur 4 registres publics. SQLite, JSON, GeoJSON. Licence CC-BY-SA-4.0.">
+<meta name="robots" content="index, follow">
+
+<style>
+:root {
+  --bg:       #faf5ef;
+  --bg-deep:  #f3ebdd;
+  --ink:      #1a1612;
+  --ink-soft: #3a342c;
+  --ink-mute: #7a6e5e;
+  --line:     #d8cfbf;
+  --ocre:     #b45309;
+  --terre:    #C1554D;
+  --serif:    "Instrument Serif", Georgia, ui-serif, serif;
+  --mono:     "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:       #1a1612;
+    --bg-deep:  #26201a;
+    --ink:      #faf5ef;
+    --ink-soft: #d8cfbf;
+    --ink-mute: #8a8070;
+    --line:     #3a342c;
+  }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  line-height: 1.55;
+  padding: 48px 24px 96px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-decoration: none;
+  margin-bottom: 28px;
+  transition: color 120ms;
+}
+.back:hover { color: var(--ocre); }
+.kicker {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ocre);
+  margin-bottom: 12px;
+}
+h1 {
+  font-size: 44px;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+h1 em { font-style: italic; color: var(--ocre); }
+.dek {
+  font-size: 19px;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-bottom: 40px;
+  max-width: 620px;
+}
+h2 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  margin: 40px 0 14px;
+}
+h2 .num {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--ink-mute);
+  display: block;
+  margin-bottom: 4px;
+}
+p {
+  font-size: 17px;
+  margin-bottom: 16px;
+  color: var(--ink-soft);
+}
+a { color: var(--ocre); text-decoration: underline; text-underline-offset: 3px; }
+a:hover { color: var(--terre); }
+
+.files {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 32px;
+}
+.file {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 18px 20px;
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--ocre);
+  border-radius: 0 4px 4px 0;
+  margin: 10px 0;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 140ms ease, border-color 140ms;
+}
+.file:hover {
+  transform: translateX(3px);
+  border-left-color: var(--ink);
+  color: var(--ink);
+}
+.file__meta {
+  flex: 0 0 auto;
+  width: 92px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-mute);
+  padding-top: 3px;
+}
+.file__name {
+  flex: 1;
+  min-width: 0;
+}
+.file__name strong {
+  display: block;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--ocre);
+  margin-bottom: 4px;
+  word-break: break-all;
+}
+.file__name span {
+  display: block;
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+.footer-note {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--ink-mute);
+}
+
+@media (max-width: 560px) {
+  h1 { font-size: 32px; }
+  .dek { font-size: 17px; }
+  .file { flex-direction: column; gap: 6px; padding: 14px 16px; }
+  .file__meta { width: auto; }
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="/">&larr; retour</a>
+
+<p class="kicker">// panoptic · données brutes</p>
+<h1>Les données publiées, <em>telles qu'on les a utilisées.</em></h1>
+<p class="dek">
+  416 projets agrivoltaïques croisés, 133 contestations CNPrV, 4 registres publics fusionnés inter-sources. Tu peux tout télécharger. Licence CC-BY-SA-4.0.
+</p>
+
+<h2><span class="num">I · SQLite complète</span>La base embarquée dans la CLI panoptic</h2>
+<p>
+  C'est le fichier que <code>panoptic update</code> télécharge pour rafraîchir la DB locale. Schéma lisible, projets + contestations + matches + opérateurs. Le plus pratique si tu veux faire tes propres requêtes SQL.
+</p>
+<ul class="files">
+  <li><a class="file" href="panoptic.sqlite">
+    <span class="file__meta">SQLite · 372 KB</span>
+    <span class="file__name">
+      <strong>panoptic.sqlite</strong>
+      <span>base complète : projects, contestations, project_contestation_match, source_freshness, meta</span>
+    </span>
+  </a></li>
+  <li><a class="file" href="manifest.json">
+    <span class="file__meta">JSON · 1 KB</span>
+    <span class="file__name">
+      <strong>manifest.json</strong>
+      <span>métadonnées version + compteurs + SHA-256 signé de la SQLite (vérifie l'intégrité avant usage)</span>
+    </span>
+  </a></li>
+</ul>
+
+<h2><span class="num">II · Projets</span>Listés plat ou géolocalisés</h2>
+<p>
+  Les 416 projets fusionnés après croisement ADEME + MRAe + projets-environnement. Pour traiter dans un tableur, un notebook ou un outil de carto.
+</p>
+<ul class="files">
+  <li><a class="file" href="projects.json">
+    <span class="file__meta">JSON · 532 KB</span>
+    <span class="file__name">
+      <strong>projects.json</strong>
+      <span>tous les projets en JSON plat, avec nom, commune, opérateur, puissance, surface, statut, sources</span>
+    </span>
+  </a></li>
+  <li><a class="file" href="projects.geojson">
+    <span class="file__meta">GeoJSON · ≈500 KB</span>
+    <span class="file__name">
+      <strong>projects.geojson</strong>
+      <span>projets avec latitude / longitude pour afficher sur une carte (QGIS, Leaflet, MapLibre, etc.)</span>
+    </span>
+  </a></li>
+  <li><a class="file" href="projects-by-dept.json">
+    <span class="file__meta">JSON · 17 KB</span>
+    <span class="file__name">
+      <strong>projects-by-dept.json</strong>
+      <span>agrégats par département : nombre de projets, puissance totale, hectares, top opérateurs</span>
+    </span>
+  </a></li>
+</ul>
+
+<h2><span class="num">III · Contestations</span>Les 133 victoires CNPrV</h2>
+<p>
+  Le registre associatif des mobilisations locales victorieuses contre des projets photovoltaïques sur terres agricoles ou naturelles. Source : Coordination Nationale Photorévoltée.
+</p>
+<ul class="files">
+  <li><a class="file" href="contestations.json">
+    <span class="file__meta">JSON · 64 KB</span>
+    <span class="file__name">
+      <strong>contestations.json</strong>
+      <span>toutes les contestations en JSON plat : commune, date, acteur, statut, résumé</span>
+    </span>
+  </a></li>
+  <li><a class="file" href="contestations.geojson">
+    <span class="file__meta">GeoJSON · ≈90 KB</span>
+    <span class="file__name">
+      <strong>contestations.geojson</strong>
+      <span>contestations géolocalisées pour cartographie</span>
+    </span>
+  </a></li>
+</ul>
+
+<h2><span class="num">IV · Le code qui a produit ces données</span></h2>
+<p>
+  La règle de fusion inter-sources, les collectors, les filtres de métadonnées MRAe : tout est ouvert et reproductible. Fork, bug, pull request bienvenus.
+</p>
+<ul class="files">
+  <li><a class="file" href="https://github.com/tawiza/panoptic-cli" target="_blank" rel="noopener">
+    <span class="file__meta">GitHub · public</span>
+    <span class="file__name">
+      <strong>tawiza/panoptic-cli</strong>
+      <span>CLI Python open-source, licence AGPL-3.0, installable via <code>pipx install panoptic-tawiza</code></span>
+    </span>
+  </a></li>
+</ul>
+
+<p class="footer-note">
+  données sous licence CC-BY-SA-4.0 · code sous licence AGPL-3.0-or-later · extraction 2026-04-21 · panoptic.tawiza.fr
+</p>
+
+</body>
+</html>
