@@ -400,9 +400,17 @@ details.rm summary:hover .rm-line { color: var(--ocre); }
 
 /* ---------- 3AYNE zone (convention tawiza.fr) ---------- */
 .eye-zone {
-  padding: 24px 24px 0;
-  background: transparent;
-  position: relative;
+  padding: 14px 24px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+/* fallback pour les navigateurs sans color-mix : fond opaque */
+@supports not (background: color-mix(in srgb, red, blue)) {
+  .eye-zone { background: var(--bg); }
 }
 /* .eye-zone::before hachures : retirées en mode masthead compact */
 .eye-zone-inner {
@@ -425,7 +433,7 @@ details.rm summary:hover .rm-line { color: var(--ocre); }
 .eye-zone-label span { color: var(--terre); }
 .eye-root {
   display: block;
-  width: min(30vw, 120px);
+  width: min(24vw, 88px);
   margin: 0 auto;
   color: var(--ink);
   user-select: none;
