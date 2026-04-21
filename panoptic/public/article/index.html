@@ -848,12 +848,12 @@ footer.colophon li { margin: 4px 0; }
   <p>
     panoptic est un paquet Python ouvert. La base de données est embarquée (≈ 400 Ko), l'outil marche hors-ligne, et le code est vérifiable ligne à ligne.
   </p>
-  <code class="cmd">pipx install panoptic-tawiza</code>
+  <code class="cmd">pipx install git+https://github.com/tawiza/panoptic-cli</code>
   <p class="meta" style="text-transform:none; letter-spacing:0.02em; font-size:14px; color:var(--ink-soft); margin-top:14px;">
-    On recommande <strong>pipx</strong> plutôt que <code>pip</code> classique : ça installe panoptic dans un environnement Python isolé, séparé du reste de ta machine. Aucun conflit avec les autres paquets Python que tu aurais déjà. Si tu n'as pas pipx : <code>sudo apt install pipx</code> (Debian/Ubuntu) ou <code>brew install pipx</code> (macOS).
+    On recommande <strong>pipx</strong> plutôt que <code>pip</code> classique : ça installe panoptic dans un environnement Python isolé, séparé du reste de ta machine. Aucun conflit avec les autres paquets Python que tu aurais déjà. Si tu n'as pas pipx : <code>sudo apt install pipx</code> (Debian/Ubuntu) ou <code>brew install pipx</code> (macOS). Publication PyPI en attente : quand <code>panoptic-tawiza</code> y sera, la commande deviendra <code>pipx install panoptic-tawiza</code>.
   </p>
   <p class="meta" style="text-transform:none; letter-spacing:0.02em; font-size:14px; color:var(--ink-soft); margin-top:12px;">
-    Alternative si tu préfères : créer un venv à la main : <code>python -m venv ~/.panoptic-venv &amp;&amp; ~/.panoptic-venv/bin/pip install panoptic-tawiza</code>. Toujours dans un environnement séparé. Jamais <code>sudo pip</code>, jamais dans le Python système.
+    Alternative si tu préfères : créer un venv à la main : <code>python -m venv ~/.panoptic-venv &amp;&amp; ~/.panoptic-venv/bin/pip install git+https://github.com/tawiza/panoptic-cli</code>. Toujours dans un environnement séparé. Jamais <code>sudo pip</code>, jamais dans le Python système.
   </p>
   <p class="meta">
     python 3.10+ · code <abbr title="licence libre copyleft forte : toute modification publiée doit l'être sous la même licence">AGPL-3.0</abbr> · data <abbr title="Creative Commons Attribution – Partage dans les Mêmes Conditions">CC-BY-SA-4.0</abbr> · rafraîchissement via <code>panoptic update</code>
