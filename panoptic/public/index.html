@@ -421,6 +421,96 @@
     .top .status .dot { animation: none; }
     .cta-mail:hover { transform: none; }
   }
+
+  /* Section ressources : 3 cartes des pièces du chantier */
+  .resources {
+    max-width: 720px;
+    margin: 56px auto 16px;
+    padding: 0 24px;
+  }
+  .resources h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+    margin-bottom: 20px;
+  }
+  .resources__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .res-card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 18px 18px;
+    background: var(--cream);
+    border: 1px solid var(--line, rgba(26,22,18,0.15));
+    border-left: 3px solid var(--ocre);
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+    min-height: 160px;
+  }
+  .res-card:hover, .res-card:focus-visible {
+    transform: translateY(-2px);
+    border-left-color: var(--ink);
+    box-shadow: 0 10px 24px rgba(26,22,18,0.08);
+    outline: none;
+  }
+  .res-card__kick {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ocre);
+    margin-bottom: 10px;
+  }
+  .res-card__title {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .res-card__meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    line-height: 1.5;
+    color: rgba(26,22,18,0.55);
+    margin-bottom: 12px;
+    flex: 1;
+    word-break: break-word;
+  }
+  .res-card__meta code {
+    background: rgba(180,83,9,0.08);
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-size: 10.5px;
+  }
+  .res-card__go {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    margin-top: auto;
+  }
+  .res-card:hover .res-card__go { color: var(--ocre); }
+
+  @media (max-width: 640px) {
+    .resources__grid { grid-template-columns: 1fr; gap: 10px; }
+    .resources { margin-top: 36px; }
+    .res-card { min-height: auto; padding: 16px 14px 14px; }
+    .res-card__title { font-size: 16px; }
+    /* header top compact : retrouver la place pour le CTA sur très petit écran */
+    .top { gap: 12px; align-items: flex-start; }
+    .cta-article { padding: 5px 12px; font-size: 10px; }
+    /* mascotte swiper : caption plus compacte */
+    .caption { font-size: 13px; }
+  }
+
 </style>
 </head>
 <body>
@@ -513,6 +603,31 @@
              data-tip="un humain · sa volonté · son nombre de cafés. désolé.">la personne est longue.</span></strong></span>
       <span class="line muted">&gt; la note est publiée &rarr; <a href="/article/" style="color:inherit;text-decoration:underline;">lire panoptic</a></span>
     </div>
+
+    <!-- Section ressources : 3 cartes pour les 3 pièces du chantier. -->
+    <section class="resources" aria-labelledby="resources-title">
+      <h3 id="resources-title">les trois pièces du chantier</h3>
+      <div class="resources__grid">
+        <a class="res-card" href="/article/">
+          <span class="res-card__kick">la note</span>
+          <span class="res-card__title">un regard sur l'agrivoltaïsme français</span>
+          <span class="res-card__meta">article · 10 min</span>
+          <span class="res-card__go">lire &rarr;</span>
+        </a>
+        <a class="res-card" href="https://github.com/tawiza/panoptic-cli" target="_blank" rel="noopener">
+          <span class="res-card__kick">le code</span>
+          <span class="res-card__title">panoptic-cli · la CLI locale</span>
+          <span class="res-card__meta">python · AGPL-3.0 · <code>pipx install panoptic-tawiza</code></span>
+          <span class="res-card__go">github &rarr;</span>
+        </a>
+        <a class="res-card" href="/data/manifest.json">
+          <span class="res-card__kick">les données</span>
+          <span class="res-card__title">416 projets · 133 contestations</span>
+          <span class="res-card__meta">sqlite · json · geojson · CC-BY-SA</span>
+          <span class="res-card__go">manifest &rarr;</span>
+        </a>
+      </div>
+    </section>
 
     <!-- Section contribution : boîte crème avec titre, liste, gros bouton.
          Le mailto est pré-rempli avec un template à cases à cocher
