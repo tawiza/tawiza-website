@@ -17,3 +17,6 @@ npm-debug.log*
 preview/exports/*.png
 preview/exports/*.zip
 preview/exports/*.mp4
+
+# Frames intermediaires du reel (regenerables via reels/methodo/record.py)
+preview/exports/frames/
