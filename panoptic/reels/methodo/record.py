@@ -25,7 +25,7 @@ FRAMES_DIR.mkdir(exist_ok=True)
 
 WIDTH, HEIGHT = 1080, 1920
 FPS = 30
-DURATION = 30  # secondes
+DURATION = 40  # secondes
 TOTAL_FRAMES = DURATION * FPS
 SERVE_PORT = 8899
 

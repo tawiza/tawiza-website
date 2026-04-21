@@ -86,24 +86,32 @@ html, body {
 }
 .scene .bg { position: absolute; inset: 0; }
 
-/* Timeline 30s - opacity masks per scene */
-@keyframes show-s1 { 0%, 9.5% { opacity: 1; } 12%, 100% { opacity: 0; } }
-@keyframes show-s2 { 0%, 9% { opacity: 0; } 12%, 19% { opacity: 1; } 21.5%, 100% { opacity: 0; } }
-@keyframes show-s3 { 0%, 19% { opacity: 0; } 21.5%, 32% { opacity: 1; } 34.5%, 100% { opacity: 0; } }
-@keyframes show-s4 { 0%, 32% { opacity: 0; } 34.5%, 45.5% { opacity: 1; } 48%, 100% { opacity: 0; } }
-@keyframes show-s5 { 0%, 45.5% { opacity: 0; } 48%, 59% { opacity: 1; } 61%, 100% { opacity: 0; } }
-@keyframes show-s6 { 0%, 59% { opacity: 0; } 61%, 72% { opacity: 1; } 74%, 100% { opacity: 0; } }
-@keyframes show-s7 { 0%, 72% { opacity: 0; } 74%, 85% { opacity: 1; } 87%, 100% { opacity: 0; } }
-@keyframes show-s8 { 0%, 85% { opacity: 0; } 87%, 100% { opacity: 1; } }
+/* Timeline 40s - opacity masks per scene
+   s1: 0-4s   (0-10%)     hero+title
+   s2: 4-10s  (10-25%)    4 cartes registres
+   s3: 10-14s (25-35%)    ADEME
+   s4: 14-19s (35-47.5%)  4 registres combines
+   s5: 19-26s (47.5-65%)  Venn + descriptions
+   s6: 26-30s (65-75%)    paradoxe 21
+   s7: 30-36s (75-90%)    terminal code
+   s8: 36-40s (90-100%)   end card + wink */
+@keyframes show-s1 { 0%, 8.75% { opacity: 1; } 10%, 100% { opacity: 0; } }
+@keyframes show-s2 { 0%, 8.75% { opacity: 0; } 10%, 23.75% { opacity: 1; } 25%, 100% { opacity: 0; } }
+@keyframes show-s3 { 0%, 23.75% { opacity: 0; } 25%, 33.75% { opacity: 1; } 35%, 100% { opacity: 0; } }
+@keyframes show-s4 { 0%, 33.75% { opacity: 0; } 35%, 46.25% { opacity: 1; } 47.5%, 100% { opacity: 0; } }
+@keyframes show-s5 { 0%, 46.25% { opacity: 0; } 47.5%, 63.75% { opacity: 1; } 65%, 100% { opacity: 0; } }
+@keyframes show-s6 { 0%, 63.75% { opacity: 0; } 65%, 73.75% { opacity: 1; } 75%, 100% { opacity: 0; } }
+@keyframes show-s7 { 0%, 73.75% { opacity: 0; } 75%, 88.75% { opacity: 1; } 90%, 100% { opacity: 0; } }
+@keyframes show-s8 { 0%, 88.75% { opacity: 0; } 90%, 100% { opacity: 1; } }
 
-.scene.s1 { animation: show-s1 30s linear forwards; }
-.scene.s2 { animation: show-s2 30s linear forwards; }
-.scene.s3 { animation: show-s3 30s linear forwards; }
-.scene.s4 { animation: show-s4 30s linear forwards; }
-.scene.s5 { animation: show-s5 30s linear forwards; }
-.scene.s6 { animation: show-s6 30s linear forwards; }
-.scene.s7 { animation: show-s7 30s linear forwards; }
-.scene.s8 { animation: show-s8 30s linear forwards; }
+.scene.s1 { animation: show-s1 40s linear forwards; }
+.scene.s2 { animation: show-s2 40s linear forwards; }
+.scene.s3 { animation: show-s3 40s linear forwards; }
+.scene.s4 { animation: show-s4 40s linear forwards; }
+.scene.s5 { animation: show-s5 40s linear forwards; }
+.scene.s6 { animation: show-s6 40s linear forwards; }
+.scene.s7 { animation: show-s7 40s linear forwards; }
+.scene.s8 { animation: show-s8 40s linear forwards; }
 
 .eye-svg { shape-rendering: crispEdges; display: block; }
 
@@ -177,7 +185,7 @@ html, body {
   text-align: center;
   opacity: 0;
   animation: s2-head 30s var(--ease-out) forwards;
-  animation-delay: 3s;
+  animation-delay: 4s;
 }
 @keyframes s2-head {
   0% { opacity: 0; transform: translateY(20px); }
@@ -221,10 +229,10 @@ html, body {
   transform: translateX(-40px);
   animation: s2-card 30s var(--ease-out) forwards;
 }
-.s2 .card-1 { animation-delay: 3.4s; }
-.s2 .card-2 { animation-delay: 3.7s; }
-.s2 .card-3 { animation-delay: 4.0s; }
-.s2 .card-4 { animation-delay: 4.3s; }
+.s2 .card-1 { animation-delay: 4.4s; }
+.s2 .card-2 { animation-delay: 4.8s; }
+.s2 .card-3 { animation-delay: 5.2s; }
+.s2 .card-4 { animation-delay: 5.6s; }
 @keyframes s2-card {
   0% { opacity: 0; transform: translateX(-40px); }
   3% { opacity: 1; transform: translateX(0); }
@@ -292,10 +300,10 @@ html, body {
 .s3 .france path, .s4 .france path { fill: none; stroke: var(--ink); stroke-width: 3; }
 .s3 .france .mainland, .s4 .france .mainland { stroke-dasharray: 10000; stroke-dashoffset: 10000; }
 .s3 .france .corse, .s4 .france .corse { stroke-dasharray: 1000; stroke-dashoffset: 1000; }
-.s3 .france .mainland { animation: draw-m 30s var(--ease-out) forwards; animation-delay: 6.1s; }
-.s3 .france .corse    { animation: draw-c 30s var(--ease-out) forwards; animation-delay: 6.4s; }
-.s4 .france .mainland { animation: draw-m 30s var(--ease-out) forwards; animation-delay: 10.1s; }
-.s4 .france .corse    { animation: draw-c 30s var(--ease-out) forwards; animation-delay: 10.3s; }
+.s3 .france .mainland { animation: draw-m 30s var(--ease-out) forwards; animation-delay: 10.1s; }
+.s3 .france .corse    { animation: draw-c 30s var(--ease-out) forwards; animation-delay: 10.4s; }
+.s4 .france .mainland { animation: draw-m 30s var(--ease-out) forwards; animation-delay: 14.1s; }
+.s4 .france .corse    { animation: draw-c 30s var(--ease-out) forwards; animation-delay: 14.3s; }
 @keyframes draw-m { 0% { stroke-dashoffset: 10000; } 5% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; } }
 @keyframes draw-c { 0% { stroke-dashoffset: 1000; } 3% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; } }
 
@@ -305,7 +313,7 @@ html, body {
   text-align: center;
   opacity: 0;
   animation: s3-count 30s var(--ease-out) forwards;
-  animation-delay: 7.5s;
+  animation-delay: 11.5s;
 }
 @keyframes s3-count {
   0% { opacity: 0; }
@@ -338,7 +346,7 @@ html, body {
   font-family: var(--serif); font-size: 220px; color: var(--ocre);
   letter-spacing: -0.05em; line-height: 1;
   opacity: 0;
-  animation: s4-total 30s var(--ease-spring) forwards; animation-delay: 10.7s;
+  animation: s4-total 30s var(--ease-spring) forwards; animation-delay: 14.7s;
 }
 .s4 .total-label {
   position: absolute; left: 0; right: 0; top: calc(var(--safe-y) + 380px);
@@ -346,7 +354,7 @@ html, body {
   font-family: var(--mono); font-size: 22px;
   color: var(--ink-soft); letter-spacing: 0.08em;
   opacity: 0;
-  animation: s4-total 30s var(--ease-out) forwards; animation-delay: 11s;
+  animation: s4-total 30s var(--ease-out) forwards; animation-delay: 15s;
 }
 @keyframes s4-total {
   0% { opacity: 0; transform: scale(0.75); }
@@ -360,7 +368,7 @@ html, body {
   width: var(--content-w);
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
   opacity: 0;
-  animation: s4-legend 30s var(--ease-out) forwards; animation-delay: 11s;
+  animation: s4-legend 30s var(--ease-out) forwards; animation-delay: 15s;
 }
 @keyframes s4-legend {
   0% { opacity: 0; }
@@ -412,10 +420,10 @@ html, body {
   opacity: 0;
   animation: s5-circle 30s var(--ease-out) forwards;
 }
-.s5 .c1 { fill: var(--ocre);  animation-delay: 14.3s; }
-.s5 .c2 { fill: var(--terre); animation-delay: 14.5s; }
-.s5 .c3 { fill: var(--foret); animation-delay: 14.7s; }
-.s5 .c4 { fill: var(--ink);   animation-delay: 14.9s; }
+.s5 .c1 { fill: var(--ocre);  animation-delay: 19.3s; }
+.s5 .c2 { fill: var(--terre); animation-delay: 19.5s; }
+.s5 .c3 { fill: var(--foret); animation-delay: 19.7s; }
+.s5 .c4 { fill: var(--ink);   animation-delay: 19.9s; }
 @keyframes s5-circle {
   0% { opacity: 0; transform: scale(0); }
   4% { opacity: 0.55; transform: scale(1.1); }
@@ -433,7 +441,7 @@ html, body {
   font-family: var(--mono);
   opacity: 0;
   animation: s5-labels 30s var(--ease-out) forwards;
-  animation-delay: 15.5s;
+  animation-delay: 20.5s;
   max-width: 210px;
   line-height: 1.3;
 }
@@ -478,7 +486,7 @@ html, body {
   font-family: var(--serif); font-size: 520px; line-height: 0.85;
   color: var(--ink); letter-spacing: -0.06em;
   opacity: 0;
-  animation: s6-hero 30s var(--ease-spring) forwards; animation-delay: 18.2s;
+  animation: s6-hero 30s var(--ease-spring) forwards; animation-delay: 26.2s;
 }
 @keyframes s6-hero {
   0% { opacity: 0; transform: scale(0.65); }
@@ -493,7 +501,7 @@ html, body {
   font-family: var(--serif); font-style: italic; font-size: 68px;
   line-height: 1.15; color: var(--ink);
   opacity: 0;
-  animation: s6-sub 30s var(--ease-out) forwards; animation-delay: 19.2s;
+  animation: s6-sub 30s var(--ease-out) forwards; animation-delay: 27.2s;
 }
 @keyframes s6-sub {
   0% { opacity: 0; transform: translateY(20px); }
@@ -508,7 +516,7 @@ html, body {
   font-family: var(--mono); font-size: var(--t-caption); color: var(--ocre);
   letter-spacing: 0.1em;
   opacity: 0;
-  animation: s6-micro 30s var(--ease-out) forwards; animation-delay: 19.8s;
+  animation: s6-micro 30s var(--ease-out) forwards; animation-delay: 27.8s;
 }
 @keyframes s6-micro {
   0% { opacity: 0; } 6% { opacity: 1; } 25% { opacity: 1; } 30% { opacity: 0; }
@@ -530,14 +538,14 @@ html, body {
   opacity: 0;
   transform: translateY(8px);
 }
-.s7 .term .r1 { animation: s7-row 30s var(--ease-out) forwards; animation-delay: 22.2s; font-size: 32px; color: var(--ocre); }
+.s7 .term .r1 { animation: s7-row 30s var(--ease-out) forwards; animation-delay: 30.2s; font-size: 32px; color: var(--ocre); }
 .s7 .term .gap { height: var(--b); }
-.s7 .term .r2 { animation: s7-row 30s var(--ease-out) forwards; animation-delay: 22.9s; font-family: var(--serif); font-style: italic; font-size: 64px; line-height: 1.15; }
-.s7 .term .r3 { animation: s7-row 30s var(--ease-out) forwards; animation-delay: 23.3s; font-family: var(--serif); font-style: italic; font-size: 64px; line-height: 1.15; }
-.s7 .term .r4 { animation: s7-row 30s var(--ease-out) forwards; animation-delay: 24.0s; font-size: 36px; }
-.s7 .term .r5 { animation: s7-row 30s var(--ease-out) forwards; animation-delay: 24.3s; font-size: 36px; }
-.s7 .term .r6 { animation: s7-row 30s var(--ease-out) forwards; animation-delay: 24.6s; font-size: 36px; }
-.s7 .term .r7 { animation: s7-row 30s var(--ease-out) forwards; animation-delay: 25.3s; font-size: 36px; color: var(--ocre); font-weight: 500; }
+.s7 .term .r2 { animation: s7-row 30s var(--ease-out) forwards; animation-delay: 30.9s; font-family: var(--serif); font-style: italic; font-size: 64px; line-height: 1.15; }
+.s7 .term .r3 { animation: s7-row 30s var(--ease-out) forwards; animation-delay: 31.3s; font-family: var(--serif); font-style: italic; font-size: 64px; line-height: 1.15; }
+.s7 .term .r4 { animation: s7-row 30s var(--ease-out) forwards; animation-delay: 32.0s; font-size: 36px; }
+.s7 .term .r5 { animation: s7-row 30s var(--ease-out) forwards; animation-delay: 32.3s; font-size: 36px; }
+.s7 .term .r6 { animation: s7-row 30s var(--ease-out) forwards; animation-delay: 32.6s; font-size: 36px; }
+.s7 .term .r7 { animation: s7-row 30s var(--ease-out) forwards; animation-delay: 33.3s; font-size: 36px; color: var(--ocre); font-weight: 500; }
 @keyframes s7-row {
   0% { opacity: 0; transform: translateY(8px); }
   4% { opacity: 1; transform: translateY(0); }
@@ -545,15 +553,31 @@ html, body {
   100% { opacity: 0; }
 }
 
-/* ===== SCENE 8 - End ===== */
+/* ===== SCENE 8 - End + clignement ===== */
 .s8 .bg { background: var(--ocre); }
+.s8 .blink-lid {
+  transform: scaleY(0);
+  transform-origin: center top;
+  transform-box: fill-box;
+  animation: eye-blink 4s linear forwards;
+  animation-delay: 37s;
+}
+@keyframes eye-blink {
+  /* 2 clignements rapides pendant les 4s de scene 8 */
+  0%, 9%    { transform: scaleY(0); }
+  12%       { transform: scaleY(1); }
+  15%, 44%  { transform: scaleY(0); }
+  47%       { transform: scaleY(1); }
+  50%, 100% { transform: scaleY(0); }
+}
+
 .s8 .eye-wrap {
   position: absolute;
   left: 50%; top: 30%;
   transform: translate(-50%, -50%);
   width: 560px; height: 224px;
   opacity: 0;
-  animation: s8-eye 30s var(--ease-out) forwards; animation-delay: 26s;
+  animation: s8-eye 30s var(--ease-out) forwards; animation-delay: 36s;
 }
 .s8 .eye-wrap svg { width: 100%; height: 100%; color: var(--ink); }
 @keyframes s8-eye {
@@ -565,7 +589,7 @@ html, body {
   position: absolute; left: 0; right: 0; top: 58%;
   text-align: center;
   opacity: 0;
-  animation: s8-text 30s var(--ease-out) forwards; animation-delay: 26.3s;
+  animation: s8-text 30s var(--ease-out) forwards; animation-delay: 36.3s;
 }
 @keyframes s8-text {
   0% { opacity: 0; transform: translateY(20px); }
@@ -872,6 +896,8 @@ html, body {
           <rect x="10" y="14" width="20" height="1"/>
           <rect x="30" y="13" width="2" height="1"/>
         </g>
+        <!-- Paupiere de clignement : rect qui se deploie vers le bas -->
+        <rect class="blink-lid" x="6" y="2" width="28" height="11" fill="currentColor"/>
       </svg>
     </div>
     <div class="text">
@@ -1002,7 +1028,7 @@ async function loadFrance() {
   const corsePts = pathToPoints(f.corse);
 
   const s3svg = document.querySelector('svg[data-france="s3"]');
-  if (s3svg) seedDots(s3svg, mainPts, corsePts, [{ color: '#b45309', count: 237 }], 6.4);
+  if (s3svg) seedDots(s3svg, mainPts, corsePts, [{ color: '#b45309', count: 237 }], 10.4);
 
   const s4svg = document.querySelector('svg[data-france="s4"]');
   if (s4svg) seedDots(s4svg, mainPts, corsePts, [
@@ -1010,7 +1036,7 @@ async function loadFrance() {
     { color: '#C1554D', count: 78 },
     { color: '#2D6A4F', count: 311 },
     { color: '#1a1612',  count: 133 }
-  ], 10.4);
+  ], 14.4);
 }
 
 loadFrance();
