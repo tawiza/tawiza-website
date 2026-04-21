@@ -469,6 +469,44 @@ footer.colophon ul { list-style: none; padding: 0; }
 footer.colophon li { margin: 4px 0; }
 
 
+
+/* Bouton retour vers l'accueil panoptic : sticky top-left */
+.back-home {
+  position: fixed;
+  top: 14px;
+  left: 18px;
+  z-index: 51;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px 7px 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 140ms ease, background 140ms ease;
+}
+@supports not (background: color-mix(in srgb, red, blue)) {
+  .back-home { background: var(--bg-deep); }
+}
+.back-home:hover {
+  background: var(--ocre);
+  color: var(--bg);
+  transform: translateX(-3px);
+}
+.back-home .arrow { display: inline-block; font-size: 13px; line-height: 1; }
+@media (max-width: 480px) {
+  .back-home { padding: 6px 10px 6px 8px; font-size: 10px; top: 10px; left: 10px; }
+  .back-home .lbl { display: none; }
+}
+
 /* Dark mode : swap palette de base (accents ocre/terre/foret/gold inchangés) */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -508,6 +546,8 @@ footer.colophon li { margin: 4px 0; }
 </style>
 </head>
 <body>
+
+<a class="back-home" href="/" aria-label="retour à l'accueil panoptic"><span class="arrow">&larr;</span><span class="lbl">retour</span></a>
 
 <section class="eye-zone">
   <div class="eye-zone-inner">
