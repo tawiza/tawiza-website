@@ -211,12 +211,12 @@ html, body {
   background: var(--cream-d);
   border: 1px solid var(--ink);
   box-shadow: 5px 5px 0 var(--ink);
-  padding: 28px 32px;
+  padding: 24px 32px;
   display: grid;
-  grid-template-columns: 80px 1fr auto;
+  grid-template-columns: 100px 1fr auto;
   align-items: center;
   gap: 24px;
-  height: 150px;
+  height: 160px;
   opacity: 0;
   transform: translateX(-40px);
   animation: s2-card 30s var(--ease-out) forwards;
@@ -232,11 +232,22 @@ html, body {
   21% { opacity: 0; transform: translateX(30px); }
   100% { opacity: 0; }
 }
-.s2 .badge { width: 80px; height: 100%; border-radius: 2px; }
-.s2 .card-1 .badge { background: var(--ocre); }
-.s2 .card-2 .badge { background: var(--terre); }
-.s2 .card-3 .badge { background: var(--foret); }
-.s2 .card-4 .badge { background: var(--ink); }
+.s2 .glyph {
+  width: 100px; height: 100px;
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--cream);
+}
+.s2 .glyph svg { width: 64px; height: 64px; }
+.s2 .card-1 .glyph { border-color: var(--ocre); }
+.s2 .card-1 .glyph svg { color: var(--ocre); }
+.s2 .card-2 .glyph { border-color: var(--terre); }
+.s2 .card-2 .glyph svg { color: var(--terre); }
+.s2 .card-3 .glyph { border-color: var(--foret); }
+.s2 .card-3 .glyph svg { color: var(--foret); }
+.s2 .card-4 .glyph { border-color: var(--ink); }
+.s2 .card-4 .glyph svg { color: var(--ink); }
 .s2 .name { font-family: var(--serif); font-size: 54px; line-height: 1.1; }
 .s2 .tag { margin-top: 6px; font-family: var(--mono); font-size: 22px; color: var(--ink-soft); }
 .s2 .count { font-family: var(--serif); font-size: 72px; line-height: 1; letter-spacing: -0.03em; text-align: right; }
@@ -267,11 +278,17 @@ html, body {
 }
 .s3 .map-wrap, .s4 .map-wrap {
   position: absolute;
-  left: 50%; top: 56%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 780px;
 }
-.s3 .map-wrap svg, .s4 .map-wrap svg { width: 100%; height: auto; }
+.s3 .map-wrap { top: 52%; width: 720px; }
+.s4 .map-wrap { top: 66%; width: 500px; }
+.s3 .map-wrap svg, .s4 .map-wrap svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1016 / 1000;
+}
 .s3 .france path, .s4 .france path { fill: none; stroke: var(--ink); stroke-width: 3; }
 .s3 .france .mainland, .s4 .france .mainland { stroke-dasharray: 10000; stroke-dashoffset: 10000; }
 .s3 .france .corse, .s4 .france .corse { stroke-dasharray: 1000; stroke-dashoffset: 1000; }
@@ -409,24 +426,41 @@ html, body {
   position: absolute;
   left: 50%; top: 56%;
   transform: translate(-50%, -50%);
-  width: 760px; height: 760px;
+  width: 920px; height: 860px;
 }
 .s5 .labels .lab {
   position: absolute;
-  font-family: var(--mono); font-size: 22px; font-weight: 500;
-  text-transform: uppercase; letter-spacing: 0.1em;
+  font-family: var(--mono);
   opacity: 0;
   animation: s5-labels 30s var(--ease-out) forwards;
   animation-delay: 15.5s;
+  max-width: 210px;
+  line-height: 1.3;
+}
+.s5 .labels .lab .name {
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 4px;
+}
+.s5 .labels .lab .desc {
+  font-size: 15px;
+  color: var(--ink-soft);
+  letter-spacing: 0;
+  text-transform: none;
 }
 @keyframes s5-labels {
   0% { opacity: 0; } 5% { opacity: 1; }
   90% { opacity: 1; } 100% { opacity: 0; }
 }
-.s5 .labels .lab.a { top: 20%; left: 10%; color: var(--ocre-d); }
-.s5 .labels .lab.b { top: 20%; right: 10%; color: var(--terre); }
-.s5 .labels .lab.c { bottom: 16%; right: 10%; color: var(--foret); }
-.s5 .labels .lab.d { bottom: 16%; left: 10%; color: var(--ink); }
+.s5 .labels .lab.a { top: 2%; left: 0; text-align: right; right: 72%; color: var(--ocre-d); }
+.s5 .labels .lab.a { left: auto; }
+.s5 .labels .lab.b { top: 2%; right: 0; text-align: left; color: var(--terre); }
+.s5 .labels .lab.c { bottom: 2%; right: 0; text-align: left; color: var(--foret); }
+.s5 .labels .lab.d { bottom: 2%; left: 0; text-align: right; right: 72%; color: var(--ink); }
+.s5 .labels .lab.d { left: auto; }
 
 /* ===== SCENE 6 - Paradoxe ===== */
 .s6 .bg { background: var(--cream); }
@@ -614,7 +648,14 @@ html, body {
     </div>
     <div class="cards">
       <div class="card card-1">
-        <div class="badge"></div>
+        <div class="glyph">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M32 6 L32 22"/>
+            <path d="M18 28 L46 28"/>
+            <path d="M22 28 L22 44 Q22 50 32 50 Q42 50 42 44 L42 28"/>
+            <path d="M32 50 L32 58"/>
+          </svg>
+        </div>
         <div>
           <div class="name">ADEME</div>
           <div class="tag">raccordés au réseau</div>
@@ -625,7 +666,13 @@ html, body {
         </div>
       </div>
       <div class="card card-2">
-        <div class="badge"></div>
+        <div class="glyph">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 18 H28 L32 14 H52 V48 Q52 52 48 52 H16 Q12 52 12 48 V18 Z"/>
+            <path d="M22 32 H42"/>
+            <path d="M22 40 H36"/>
+          </svg>
+        </div>
         <div>
           <div class="name">projets-environnement</div>
           <div class="tag">en instruction</div>
@@ -636,7 +683,15 @@ html, body {
         </div>
       </div>
       <div class="card card-3">
-        <div class="badge"></div>
+        <div class="glyph">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M32 8 L32 54"/>
+            <path d="M20 54 L44 54"/>
+            <path d="M32 14 L14 28 L22 36 L32 26 L42 36 L50 28 Z"/>
+            <path d="M14 28 L10 38 Q14 44 22 38 Z"/>
+            <path d="M50 28 L46 38 Q50 44 58 38 Z"/>
+          </svg>
+        </div>
         <div>
           <div class="name">MRAe</div>
           <div class="tag">avis autorité environnementale</div>
@@ -647,7 +702,12 @@ html, body {
         </div>
       </div>
       <div class="card card-4">
-        <div class="badge"></div>
+        <div class="glyph">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M32 8 L12 16 V34 Q12 46 32 56 Q52 46 52 34 V16 Z"/>
+            <path d="M22 32 L30 40 L44 24"/>
+          </svg>
+        </div>
         <div>
           <div class="name">CNPrV</div>
           <div class="tag">contestations locales</div>
@@ -685,8 +745,8 @@ html, body {
     <h2 class="name">4 registres</h2>
     <div class="total">626</div>
     <div class="total-label">projets croisés au total</div>
-    <div class="map-wrap" style="top: 62%;">
-      <svg data-france="s4" class="france" viewBox="0 0 1016 1000" style="width: 540px;">
+    <div class="map-wrap">
+      <svg data-france="s4" class="france" viewBox="0 0 1016 1000">
         <path class="mainland" d=""></path>
         <path class="corse" d=""></path>
         <g class="dots"></g>
@@ -726,10 +786,22 @@ html, body {
       <circle class="c4" cx="280" cy="480" r="220"></circle>
     </svg>
     <div class="labels">
-      <div class="lab a">ADEME</div>
-      <div class="lab b">projets-env</div>
-      <div class="lab c">MRAe</div>
-      <div class="lab d">CNPrV</div>
+      <div class="lab a">
+        <span class="name">ADEME</span>
+        <span class="desc">ne voit que les projets <strong>raccordés</strong>.</span>
+      </div>
+      <div class="lab b">
+        <span class="name">projets-env</span>
+        <span class="desc">ne voit que ceux <strong>en instruction</strong>.</span>
+      </div>
+      <div class="lab c">
+        <span class="name">MRAe</span>
+        <span class="desc">ne voit que ceux qui passent par un <strong>avis environnemental</strong>.</span>
+      </div>
+      <div class="lab d">
+        <span class="name">CNPrV</span>
+        <span class="desc">ne voit que ceux <strong>contestés localement</strong>.</span>
+      </div>
     </div>
   </section>
 
