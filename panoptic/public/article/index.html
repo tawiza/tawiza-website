@@ -404,14 +404,9 @@ details.rm summary:hover .rm-line { color: var(--ocre); }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  pointer-events: none; /* laisse cliquer à travers l'espace autour de l'oeil */
 }
-/* fallback pour les navigateurs sans color-mix : fond opaque */
-@supports not (background: color-mix(in srgb, red, blue)) {
-  .eye-zone { background: var(--bg); }
-}
+.eye-zone .eye-root { pointer-events: auto; }
 /* .eye-zone::before hachures : retirées en mode masthead compact */
 .eye-zone-inner {
   position: relative;
