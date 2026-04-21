@@ -400,12 +400,11 @@ details.rm summary:hover .rm-line { color: var(--ocre); }
 
 /* ---------- 3AYNE zone (convention tawiza.fr) ---------- */
 .eye-zone {
-  margin-top: 96px;
-  padding: 96px 24px 72px;
-  border-top: 1px solid var(--line);
+  padding: 48px 24px 32px;
   background: var(--bg-deep);
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid var(--line);
 }
 .eye-zone::before {
   content: "";
@@ -438,7 +437,7 @@ details.rm summary:hover .rm-line { color: var(--ocre); }
 .eye-zone-label span { color: var(--terre); }
 .eye-root {
   display: block;
-  width: min(60vw, 440px);
+  width: min(40vw, 280px);
   margin: 0 auto;
   color: var(--ink);
   user-select: none;
@@ -482,6 +481,35 @@ footer.colophon h4 {
 footer.colophon ul { list-style: none; padding: 0; }
 footer.colophon li { margin: 4px 0; }
 
+
+/* Dark mode : swap palette de base (accents ocre/terre/foret/gold inchangés) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #1a1612;
+    --bg-deep:   #26201a;
+    --ink:       #faf5ef;
+    --ink-soft:  #d8cfbf;
+    --ink-mute:  #8a8070;
+    --line:      #3a342c;
+  }
+  .terminal { background: #0a0806; color: #d8cfbf; }
+  .callout { background: #201a14; }
+  .roadmap { background: #201a14; }
+  .install-box { background: #26201a; }
+  .thread { background: #201a14; }
+  .data-table { background: #201a14; }
+  th { background: #2a241e; }
+  .pull { color: #d8cfbf; }
+  abbr[title]:hover::after, abbr[title]:focus::after {
+    background: var(--bg-deep);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  abbr[title]:hover::before, abbr[title]:focus::before {
+    border-top-color: var(--bg-deep);
+  }
+}
+
 @media (max-width: 600px) {
   article h1 { font-size: 38px; }
   article .dek { font-size: 18px; }
@@ -493,6 +521,27 @@ footer.colophon li { margin: 4px 0; }
 </style>
 </head>
 <body>
+
+<section class="eye-zone">
+  <div class="eye-zone-inner">
+    <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui ne dort jamais</span></div>
+    <div class="eye-root" role="img" aria-label="3AYNE - l'&oelig;il Tawiza"></div>
+    <div class="eye-caption">il regarde, il compte, il doute</div>
+  </div>
+</section>
+
+<script>
+  fetch('/assets/v2/eye.svg?v=20260421').then(function (r) { return r.text(); }).then(function (svgText) {
+    var mount = document.querySelector('.eye-root');
+    if (!mount) return;
+    var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
+    mount.appendChild(svgEl);
+  }).then(function () {
+    var s = document.createElement('script');
+    s.src = '/assets/v2/eye.js?v=20260421';
+    document.body.appendChild(s);
+  }).catch(function () { /* mascotte absente en local → silence, no crash */ });
+</script>
 
 <div class="content-wrap">
 <nav class="nav">
@@ -843,25 +892,6 @@ footer.colophon li { margin: 4px 0; }
 </div>
 
 
-<section class="eye-zone">
-  <div class="eye-zone-inner">
-    <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui ne dort jamais</span></div>
-    <div class="eye-root" role="img" aria-label="3AYNE - l'&oelig;il Tawiza"></div>
-    <div class="eye-caption">il regarde, il compte, il doute</div>
-  </div>
-</section>
 
-<script>
-  fetch('/assets/v2/eye.svg?v=20260421').then(function (r) { return r.text(); }).then(function (svgText) {
-    var mount = document.querySelector('.eye-root');
-    if (!mount) return;
-    var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
-    mount.appendChild(svgEl);
-  }).then(function () {
-    var s = document.createElement('script');
-    s.src = '/assets/v2/eye.js?v=20260421';
-    document.body.appendChild(s);
-  }).catch(function () { /* mascotte absente en local → silence, no crash */ });
-</script>
 </body>
 </html>

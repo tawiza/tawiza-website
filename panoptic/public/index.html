@@ -71,6 +71,33 @@
   }
   .top .kicker { text-transform: none; }
   .top .status { display: flex; align-items: center; gap: 8px; }
+  /* CTA principal vers l'article */
+  .cta-article {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: var(--ink);
+    color: var(--cream);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    transition: background 180ms ease, transform 120ms ease;
+    border: 1px solid var(--ink);
+  }
+  .cta-article:hover {
+    background: var(--cream);
+    color: var(--ink);
+    transform: translateX(2px);
+  }
+  .cta-article .cta-arrow { font-size: 14px; }
+  @media (max-width: 640px) {
+    .cta-article { padding: 6px 14px; font-size: 11px; }
+  }
+
 
   /* ---- Surlignage crème façon stabilo - version "tracé main" ---- */
   /* Principe : chaque .mark a un micro-tilt unique (--tilt), un trait
@@ -413,10 +440,10 @@
 
   <div class="top">
     <span class="kicker"><span class="mark" data-variant="a">// panoptic - un regard</span></span>
-    <span class="status">
-      <span class="dot"></span>
-      <span class="mark" data-variant="b">work_in_progress</span>
-    </span>
+    <a class="cta-article" href="/article/">
+      <span class="cta-label">lire la note</span>
+      <span class="cta-arrow">&rarr;</span>
+    </a>
   </div>
 
   <main class="stage">
