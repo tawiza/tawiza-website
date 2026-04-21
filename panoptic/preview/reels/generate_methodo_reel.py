@@ -247,26 +247,82 @@ def draw_eye(img: Image.Image, cx: float, cy: float, width: int,
 
 
 # =========================================================================
-# FRANCE - outline simplifie (~13 points, hexagone stylise)
+# FRANCE - outline metro + Corse
+# ~35 points lat/lon echantillonnes pour donner une silhouette reconnaissable
+# (Bretagne, Cotentin, Cote d'Azur, Pyrenees, Alsace). Corse en polygone
+# separe.
 # =========================================================================
 
-# Coordonnees lat/lon approx des contours (sens horaire depuis Dunkerque)
-FRANCE_POINTS_LATLON = [
-    (51.0, 2.4),    # Dunkerque
-    (50.6, 3.1),    # Lille
-    (49.2, 5.5),    # Metz
-    (48.6, 7.8),    # Strasbourg
-    (47.0, 7.2),    # Jura
-    (45.0, 7.0),    # Briancon
-    (43.7, 7.3),    # Nice
-    (43.3, 5.4),    # Marseille
-    (43.1, 3.0),    # Narbonne
-    (42.6, 2.0),    # Pyrenees Est
-    (43.0, -1.5),   # Pyrenees Ouest
-    (45.7, -1.2),   # La Rochelle
-    (48.4, -4.8),   # Brest
-    (49.6, -1.3),   # Cherbourg
-    (50.8, 1.6),    # Calais
+FRANCE_METRO_LATLON = [
+    # Cote Nord, ouest -> est
+    (51.05, 2.37),   # Dunkerque
+    (50.72, 1.60),   # Boulogne
+    # Normandie
+    (49.92, 1.08),   # Dieppe
+    (49.50, 0.12),   # Le Havre / Fecamp
+    (49.63, -1.62),  # Cherbourg (Cotentin top)
+    (48.85, -1.60),  # Granville
+    (48.62, -1.95),  # Mont-Saint-Michel
+    (48.64, -2.02),  # Cancale
+    # Bretagne
+    (48.65, -2.80),  # Saint-Brieuc
+    (48.52, -4.00),  # Abers
+    (48.41, -4.77),  # Pointe Saint-Mathieu (extreme ouest)
+    (48.04, -4.74),  # Pointe du Raz
+    (47.60, -3.30),  # Lorient
+    (47.28, -2.51),  # Le Croisic / Saint-Nazaire embouchure
+    # Cote Atlantique
+    (46.72, -2.34),  # Ile d'Yeu
+    (46.16, -1.15),  # La Rochelle
+    (45.63, -1.03),  # Royan
+    (44.65, -1.18),  # Arcachon
+    (43.55, -1.55),  # Biarritz
+    # Pyrenees
+    (43.35, -1.78),  # Hendaye
+    (42.80, -0.40),  # Aspe / centre
+    (42.50, 0.90),   # Andorre
+    (42.35, 1.70),   # Pyrenees Est
+    (42.43, 3.17),   # Cerbere (Mediterranee ouest)
+    # Mediterranee
+    (43.00, 3.00),   # Narbonne
+    (43.45, 3.70),   # Sete
+    (43.30, 5.37),   # Marseille
+    (43.12, 5.93),   # Toulon
+    (43.27, 6.64),   # Saint-Tropez
+    (43.55, 7.12),   # Cannes
+    (43.70, 7.27),   # Nice
+    (43.78, 7.54),   # Menton (frontiere IT)
+    # Alpes
+    (45.03, 6.50),   # Briancon
+    (45.60, 6.90),   # Val d'Isere
+    (45.90, 6.87),   # Mont Blanc
+    # Suisse / Jura / Alsace
+    (46.20, 6.15),   # Geneve / frontiere CH
+    (47.55, 7.59),   # Bale
+    (48.58, 7.75),   # Strasbourg
+    (49.12, 6.18),   # Metz
+    # Luxembourg / Belgique
+    (49.60, 5.90),   # frontiere LU
+    (50.14, 4.83),   # Givet (enclave belge)
+    (50.28, 3.97),   # Maubeuge
+    (50.72, 3.13),   # Tourcoing
+    (50.80, 2.55),   # Hazebrouck
+    (51.05, 2.37),   # retour Dunkerque
+]
+
+# Corse - polygone simplifie
+CORSE_LATLON = [
+    (43.01, 9.48),   # Cap Corse nord
+    (42.70, 9.45),   # Bastia
+    (42.10, 9.55),   # Aleria
+    (41.60, 9.38),   # Porto-Vecchio
+    (41.38, 9.18),   # Bonifacio
+    (41.58, 8.70),   # Propriano
+    (41.92, 8.75),   # Ajaccio
+    (42.22, 8.55),   # Porto / Calanques
+    (42.60, 8.75),   # Calvi
+    (42.82, 9.25),   # Saint-Florent
+    (43.01, 9.48),   # retour
 ]
 
 
