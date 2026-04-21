@@ -94,6 +94,34 @@
     transform: translateX(2px);
   }
   .cta-article .cta-arrow { font-size: 14px; }
+  /* Groupe de CTAs en haut de page (note · code · données) */
+  .top-ctas {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  /* CTA ghost : bordure seule, pas de fond sombre (pour données/code à côté du principal) */
+  .cta-article.cta--ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .cta-article.cta--ghost:hover {
+    background: var(--ink);
+    color: var(--cream);
+    transform: translateX(2px);
+  }
+  @media (max-width: 640px) {
+    .top-ctas { gap: 6px; }
+    .cta-article.cta--ghost { padding: 5px 11px; font-size: 10px; }
+  }
+  @media (max-width: 420px) {
+    .top { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .top-ctas { width: 100%; justify-content: flex-start; }
+  }
+
   @media (max-width: 640px) {
     .cta-article { padding: 6px 14px; font-size: 11px; }
   }
@@ -530,10 +558,18 @@
 
   <div class="top">
     <span class="kicker"><span class="mark" data-variant="a">// panoptic - un regard</span></span>
-    <a class="cta-article" href="/article/">
-      <span class="cta-label">lire la note</span>
-      <span class="cta-arrow">&rarr;</span>
-    </a>
+    <div class="top-ctas">
+      <a class="cta-article cta--ghost" href="/data/manifest.json">
+        <span class="cta-label">données</span>
+      </a>
+      <a class="cta-article cta--ghost" href="https://github.com/tawiza/panoptic-cli" target="_blank" rel="noopener">
+        <span class="cta-label">code</span>
+      </a>
+      <a class="cta-article" href="/article/">
+        <span class="cta-label">lire la note</span>
+        <span class="cta-arrow">&rarr;</span>
+      </a>
+    </div>
   </div>
 
   <main class="stage">
