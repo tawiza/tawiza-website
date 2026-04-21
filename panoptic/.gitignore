@@ -16,3 +16,4 @@ npm-debug.log*
 # Artefacts de preview IG (régénérables depuis preview/cards/*.html)
 preview/exports/*.png
 preview/exports/*.zip
+preview/exports/*.mp4
