@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Panoptic - Methodo 7/7 · ce qui vient</title>
+<meta name="viewport" content="width=1080">
+<link rel="stylesheet" href="../assets/panoptic-styles.css">
+<style>
+:root { --cream: #faf5ef; --ocre-d: #8a3f07; }
+  .card.card-m-7 {
+    background: var(--ocre);
+    color: var(--cream);
+    padding: 112px 96px 104px;
+  }
+  .card-m-7 .card__kicker { color: var(--cream); opacity: 0.78; }
+  .card-m-7 .hero-title {
+    font-family: var(--serif);
+    font-size: 148px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    margin-top: 32px;
+  }
+  .card-m-7 .hero-sub {
+    margin-top: 26px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 42px;
+    line-height: 1.25;
+    color: var(--cream);
+    max-width: 860px;
+  }
+  .card-m-7 .promises {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .card-m-7 .promise {
+    font-family: var(--mono);
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--cream);
+    padding-left: 28px;
+    position: relative;
+  }
+  .card-m-7 .promise::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .card-m-7 .promise strong {
+    font-weight: 500;
+    border-bottom: 1px dashed rgba(250,245,239,0.5);
+  }
+  .card-m-7 .cta-box {
+    margin-top: 48px;
+    padding: 28px 32px;
+    background: rgba(26, 22, 18, 0.9);
+    border-left: 4px solid var(--cream);
+    font-family: var(--mono);
+    font-size: 22px;
+    color: var(--cream);
+    line-height: 1.6;
+  }
+  .card-m-7 .cta-box strong {
+    font-weight: 500;
+    color: var(--cream);
+    border-bottom: 1px dashed rgba(250,245,239,0.4);
+  }
+  .card-m-7 .card__source,
+  .card-m-7 .card__wordmark { color: var(--cream); opacity: 0.7; }
+  .card-m-7 .card__footer { border-top-color: rgba(250,245,239,0.18); }
+  .card-m-7 .eye-watcher { color: var(--ink); }
+</style>
+</head>
+<body>
+<article class="card card-m-7">
+  <div class="eye-watcher" role="img" aria-label="3AYNE"></div>
+  <header>
+    <p class="card__kicker">// panoptic - methodo 7/7</p>
+  </header>
+
+  <section class="card__main">
+    <h2 class="hero-title">ce qui<br>vient.</h2>
+    <p class="hero-sub">
+      Le dossier n'est pas encore ouvert. Voilà la promesse, quand il le sera :
+    </p>
+
+    <div class="promises">
+      <div class="promise">le <strong>code source</strong> de panoptic sera publié sur github.com/tawiza, sous license <strong>AGPL-3.0</strong>.</div>
+      <div class="promise">les <strong>données croisées</strong> (626 projets, 133 contestations) en <strong>CC BY-SA 4.0</strong>, re-utilisables.</div>
+      <div class="promise">la <strong>méthodologie complète</strong> documentée - chaque chiffre reproductible.</div>
+      <div class="promise">tu pourras <strong>refaire, corriger, forker</strong>.</div>
+    </div>
+
+    <div class="cta-box">
+      en attendant : tu vois un projet manqué, un opérateur caché,
+      une contestation ratée ? <strong>DM ouvert</strong> ou
+      <strong>tawiza.v0@gmail.com</strong>.
+    </div>
+  </section>
+
+  <footer class="card__footer">
+    <p class="card__source">publication prévue Sprint 1 S6 - panoptic.tawiza.fr (landing en ligne)</p>
+    <p class="card__wordmark">tawiza - panoptic</p>
+  </footer>
+</article>
+<script src="_shared.js"></script>
+<script>injectEye('.eye-watcher', 'avatar');</script>
+</body>
+</html>

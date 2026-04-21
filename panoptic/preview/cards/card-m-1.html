@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Panoptic - Methodo 1/7 · hero</title>
+<meta name="viewport" content="width=1080">
+<link rel="stylesheet" href="../assets/panoptic-styles.css">
+<style>
+:root { --cream: #faf5ef; --ocre-d: #8a3f07; }
+  /* Carte M1 - hero methodo : fond ocre, titre massif serif cream */
+  .card.card-m-1 {
+    background: var(--ocre);
+    color: var(--cream);
+    padding: 112px 96px 104px;
+  }
+  .card-m-1 .card__kicker { color: var(--cream); opacity: 0.78; }
+  .card-m-1 .hero-title {
+    font-family: var(--serif);
+    font-size: 220px;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    color: var(--cream);
+    margin-top: 48px;
+  }
+  .card-m-1 .hero-sub {
+    margin-top: 48px;
+    font-family: var(--mono);
+    font-size: 26px;
+    letter-spacing: 0.01em;
+    color: var(--cream);
+    opacity: 0.82;
+    max-width: 760px;
+    line-height: 1.5;
+  }
+  .card-m-1 .hero-sub strong { color: var(--cream); font-weight: 500; border-bottom: 1px dashed rgba(250,245,239,0.4); }
+  .card-m-1 .card__rule { background: rgba(250,245,239,0.35); margin-top: 32px; }
+  .card-m-1 .card__source,
+  .card-m-1 .card__wordmark { color: var(--cream); opacity: 0.7; }
+  .card-m-1 .card__footer { border-top-color: rgba(250,245,239,0.18); }
+  .card-m-1 .eye-watcher { color: var(--ink); }
+</style>
+</head>
+<body>
+<article class="card card-m-1">
+  <div class="eye-watcher" role="img" aria-label="3AYNE"></div>
+  <header>
+    <p class="card__kicker">// panoptic - methodo 1/7</p>
+  </header>
+
+  <section class="card__main">
+    <h1 class="hero-title">la<br>méthodologie.</h1>
+    <div class="card__rule"></div>
+    <p class="hero-sub">
+      On n'a pas inventé les registres publics. On les a juste
+      <strong>croisés, dans un même tableur</strong>, pour la première fois semble-t-il.
+      Voilà comment on a compté 626 projets agrivoltaïques.
+    </p>
+  </section>
+
+  <footer class="card__footer">
+    <p class="card__source">ADEME · projets-environnement · MRAe · CNPrV (extraction 2026-04)</p>
+    <p class="card__wordmark">tawiza - panoptic</p>
+  </footer>
+</article>
+<script src="_shared.js"></script>
+<script>injectEye('.eye-watcher', 'avatar');</script>
+</body>
+</html>

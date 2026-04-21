@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Panoptic - Methodo 6/7 · ce qu'on fais pas</title>
+<meta name="viewport" content="width=1080">
+<link rel="stylesheet" href="../assets/panoptic-styles.css">
+<style>
+  .card.card-m-6 { padding: 112px 96px 104px; }
+  .card-m-6 .hero-title {
+    font-family: var(--serif);
+    font-size: 108px;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-top: 24px;
+  }
+  .card-m-6 .hero-sub {
+    margin-top: 22px;
+    font-family: var(--mono);
+    font-size: 22px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    max-width: 780px;
+  }
+  .card-m-6 .rules {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .card-m-6 .rule {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: start;
+    gap: 24px;
+    padding: 22px 0;
+    border-top: 1px solid var(--line-soft);
+  }
+  .card-m-6 .rule:first-child { border-top: none; padding-top: 0; }
+  .card-m-6 .rule .cross {
+    font-family: var(--serif);
+    font-size: 72px;
+    line-height: 1;
+    color: var(--terre);
+  }
+  .card-m-6 .rule .txt .title {
+    font-family: var(--serif);
+    font-size: 36px;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .card-m-6 .rule .txt .desc {
+    font-family: var(--mono);
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    max-width: 720px;
+  }
+  .card-m-6 .rule .txt .desc strong {
+    color: var(--foret);
+    font-weight: 500;
+    border-bottom: 1px dashed rgba(45,106,79,0.35);
+  }
+</style>
+</head>
+<body>
+<article class="card card-m-6">
+  <div class="eye-watcher" role="img" aria-label="3AYNE"></div>
+  <header>
+    <p class="card__kicker">// panoptic - methodo 6/7</p>
+  </header>
+
+  <section class="card__main">
+    <h2 class="hero-title">ce qu'on a<br>choisi de pas faire.</h2>
+    <p class="hero-sub">
+      Trois règles éditoriales qu'on s'impose avant de publier. Chaque chiffre
+      passe ce filtre, sinon il dégage.
+    </p>
+
+    <div class="rules">
+      <div class="rule">
+        <div class="cross">×</div>
+        <div class="txt">
+          <div class="title">pas de scraping hors registres publics.</div>
+          <div class="desc">
+            Si la donnée n'est pas <strong>déjà publiée</strong> par une source institutionnelle,
+            on ne la récupère pas. Pas de scraping LinkedIn, pas de scraping presse privée.
+          </div>
+        </div>
+      </div>
+      <div class="rule">
+        <div class="cross">×</div>
+        <div class="txt">
+          <div class="title">pas de nominatif privé.</div>
+          <div class="desc">
+            On nomme les <strong>structures</strong> (SPV, maisons-mères, holdings) - pas les personnes
+            physiques privées. Les noms publics (dirigeants au RCS, porteurs officiels) sont cités.
+          </div>
+        </div>
+      </div>
+      <div class="rule">
+        <div class="cross">×</div>
+        <div class="txt">
+          <div class="title">pas de projection prédictive.</div>
+          <div class="desc">
+            On montre ce qui <strong>existe et ce qui est contesté</strong>. Pas de "combien
+            il y en aura en 2030", pas de scénario marketé. Juste l'état des lieux, sourcé.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="card__footer">
+    <p class="card__source">3 règles éditoriales - appliquées sur toutes les cartes panoptic</p>
+    <p class="card__wordmark">tawiza - panoptic</p>
+  </footer>
+</article>
+<script src="_shared.js"></script>
+<script>injectEye('.eye-watcher');</script>
+</body>
+</html>

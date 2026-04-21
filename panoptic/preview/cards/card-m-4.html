@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Panoptic - Methodo 4/7 · le croisement</title>
+<meta name="viewport" content="width=1080">
+<link rel="stylesheet" href="../assets/panoptic-styles.css">
+<style>
+:root { --cream: #faf5ef; --ocre-d: #8a3f07; }
+  .card.card-m-4 {
+    background: #0d0b09;
+    color: var(--cream);
+    padding: 112px 96px 104px;
+  }
+  .card-m-4 .card__kicker { color: var(--ocre); }
+  .card-m-4 .hero-title {
+    font-family: var(--serif);
+    font-size: 128px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    margin-top: 28px;
+  }
+  .card-m-4 .hero-sub {
+    margin-top: 24px;
+    font-family: var(--mono);
+    font-size: 22px;
+    color: #d7ccbb;
+    max-width: 720px;
+    line-height: 1.5;
+  }
+  .card-m-4 .hero-sub strong { color: var(--ocre); border-bottom: 1px dashed rgba(180,83,9,0.55); }
+  .card-m-4 .stats {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+  .card-m-4 .stat {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+  }
+  .card-m-4 .stat .big {
+    font-family: var(--serif);
+    font-size: 200px;
+    line-height: 0.92;
+    letter-spacing: -0.05em;
+    color: var(--cream);
+  }
+  .card-m-4 .stat.hl .big { color: var(--ocre); }
+  .card-m-4 .stat .lbl {
+    font-family: var(--mono);
+    font-size: 17px;
+    color: #a39683;
+    letter-spacing: 0.05em;
+    margin-top: 12px;
+    line-height: 1.4;
+  }
+  .card-m-4 .method {
+    margin-top: 56px;
+    font-family: var(--mono);
+    font-size: 19px;
+    color: #c4b8a3;
+    line-height: 1.6;
+    padding: 22px 26px;
+    border: 1px dashed rgba(255,255,255,0.25);
+    border-radius: 4px;
+    background: rgba(255,255,255,0.02);
+  }
+  .card-m-4 .method strong { color: var(--ocre); font-weight: 400; }
+  .card-m-4 .card__source { color: #a39683; }
+  .card-m-4 .card__wordmark { color: #a39683; }
+  .card-m-4 .card__wordmark::before { color: var(--ocre); }
+  .card-m-4 .card__footer { border-top-color: rgba(255,255,255,0.12); }
+  .card-m-4 .eye-watcher { color: var(--cream); }
+</style>
+</head>
+<body>
+<article class="card card-m-4">
+  <div class="eye-watcher" role="img" aria-label="3AYNE"></div>
+  <header>
+    <p class="card__kicker">// panoptic - methodo 4/7</p>
+  </header>
+
+  <section class="card__main">
+    <h2 class="hero-title">le croisement.</h2>
+    <p class="hero-sub">
+      On matche <strong>nom + coordonnées + opérateur</strong> entre les 4 sources, avec une tolérance floue (rapidfuzz + distance géo). Verdict :
+    </p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="big">626</div>
+        <div class="lbl">projets uniques<br>après déduplication</div>
+      </div>
+      <div class="stat hl">
+        <div class="big">21</div>
+        <div class="lbl">visibles dans <strong>2+</strong> registres<br>(3,3 % du total croisé)</div>
+      </div>
+    </div>
+
+    <p class="method">
+      <strong>matching</strong> : nom du projet ± 15 %, adresse géocodée ± 3 km,
+      nom d'opérateur détecté par <strong>NER spaCy</strong>. Les 96 % restants
+      ne sont vus qu'à travers une seule source.
+    </p>
+  </section>
+
+  <footer class="card__footer">
+    <p class="card__source">panoptic/common/matching.py - open source AGPL-3.0</p>
+    <p class="card__wordmark">tawiza - panoptic</p>
+  </footer>
+</article>
+<script src="_shared.js"></script>
+<script>injectEye('.eye-watcher', 'avatar');</script>
+</body>
+</html>

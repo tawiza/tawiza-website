@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Panoptic - Methodo 5/7 · operateurs caches</title>
+<meta name="viewport" content="width=1080">
+<link rel="stylesheet" href="../assets/panoptic-styles.css">
+<style>
+  .card.card-m-5 { padding: 112px 96px 104px; }
+  .card-m-5 .hero-title {
+    font-family: var(--serif);
+    font-size: 112px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-top: 20px;
+  }
+  .card-m-5 .hero {
+    margin-top: 72px;
+    font-family: var(--serif);
+    font-size: 380px;
+    line-height: 0.85;
+    letter-spacing: -0.06em;
+    color: var(--terre);
+  }
+  .card-m-5 .hero-sub {
+    margin-top: 24px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 44px;
+    line-height: 1.15;
+    color: var(--ink);
+    max-width: 780px;
+  }
+  .card-m-5 .explain {
+    margin-top: 52px;
+    font-family: var(--mono);
+    font-size: 18px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    max-width: 840px;
+  }
+  .card-m-5 .explain strong {
+    color: var(--terre);
+    font-weight: 500;
+    border-bottom: 1px dashed rgba(193,85,77,0.4);
+  }
+</style>
+</head>
+<body>
+<article class="card card-m-5">
+  <div class="eye-watcher" role="img" aria-label="3AYNE"></div>
+  <div class="glyph-hatch hatch-ocre" aria-hidden="true"></div>
+
+  <header>
+    <p class="card__kicker">// panoptic - methodo 5/7</p>
+  </header>
+
+  <section class="card__main">
+    <h2 class="hero-title">les opérateurs<br>cachés.</h2>
+    <div class="hero">65%</div>
+    <p class="hero-sub">
+      des victoires CNPrV ne nomment pas<br>l'opérateur derrière le projet.
+    </p>
+    <p class="explain">
+      La plupart des projets sont portés par des <strong>SPV aux noms champêtres</strong>
+      ("Ferme Solaire de X", "Bergerie du Y") créées ad hoc. Pour retrouver la
+      maison-mère, on croise avec le <strong>BODACC</strong> (immatriculations) et les <strong>docs
+      MRAe</strong> (identification du porteur). C'est là qu'on voit que GLHD contrôle
+      44 % de la puissance.
+    </p>
+  </section>
+
+  <footer class="card__footer">
+    <p class="card__source">BODACC · data.gouv.fr · docs MRAe - extraction NER spaCy</p>
+    <p class="card__wordmark">tawiza - panoptic</p>
+  </footer>
+</article>
+<script src="_shared.js"></script>
+<script>injectEye('.eye-watcher');</script>
+</body>
+</html>

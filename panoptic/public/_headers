@@ -28,3 +28,7 @@
 /*.mp4
   Cache-Control: public, max-age=86400
   Content-Disposition: inline
+
+/*.zip
+  Cache-Control: public, max-age=3600
+  Content-Disposition: attachment
