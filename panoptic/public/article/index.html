@@ -400,44 +400,33 @@ details.rm summary:hover .rm-line { color: var(--ocre); }
 
 /* ---------- 3AYNE zone (convention tawiza.fr) ---------- */
 .eye-zone {
-  padding: 48px 24px 32px;
-  background: var(--bg-deep);
+  padding: 18px 24px 14px;
+  background: transparent;
   position: relative;
-  overflow: hidden;
   border-bottom: 1px solid var(--line);
 }
-.eye-zone::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    0deg,
-    var(--line) 0,
-    var(--line) 1px,
-    transparent 1px,
-    transparent 32px
-  );
-  opacity: 0.35;
-  pointer-events: none;
-}
+/* .eye-zone::before hachures : retirées en mode masthead compact */
 .eye-zone-inner {
   position: relative;
   max-width: 720px;
   margin: 0 auto;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 .eye-zone-label {
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.16em;
+  font-size: 10px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-mute);
-  margin-bottom: 32px;
 }
 .eye-zone-label span { color: var(--terre); }
 .eye-root {
   display: block;
-  width: min(40vw, 280px);
+  width: min(30vw, 120px);
   margin: 0 auto;
   color: var(--ink);
   user-select: none;
@@ -447,16 +436,12 @@ details.rm summary:hover .rm-line { color: var(--ocre); }
 .eye-root svg { width: 100%; height: auto; display: block; }
 .eye-caption {
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  letter-spacing: 0.06em;
   color: var(--ink-mute);
-  margin-top: 24px;
   text-transform: lowercase;
 }
-.eye-caption::before, .eye-caption::after {
-  content: " · ";
-  color: var(--ocre);
-}
+/* .eye-caption::before/after : retirés en mode inline compact */
 
 /* ---------- Footer ---------- */
 
