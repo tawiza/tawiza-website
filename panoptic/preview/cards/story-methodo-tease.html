@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Panoptic - Story tease methodologie</title>
+<meta name="viewport" content="width=1080">
+<link rel="stylesheet" href="../assets/panoptic-styles.css">
+<style>
+:root { --cream: #faf5ef; --ocre-d: #8a3f07; }
+.card.story-tease {
+  width: 1080px;
+  height: 1920px;
+  background: var(--ocre);
+  color: var(--cream);
+  padding: 140px 96px 120px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.story-tease .glyph-hatch {
+  position: absolute;
+  top: 0; right: 0;
+  width: 320px; height: 560px;
+  opacity: 0.55;
+}
+.story-tease .eye-watcher {
+  color: var(--ink);
+  top: 112px;
+  right: 96px;
+  width: 240px;
+  height: 96px;
+}
+.story-tease .card__kicker {
+  color: var(--cream);
+  opacity: 0.78;
+  font-size: 22px;
+}
+.story-tease .tease {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.story-tease .tomorrow {
+  font-family: var(--mono);
+  font-size: 32px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.8;
+  margin-bottom: 36px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(250,245,239,0.35);
+  width: fit-content;
+}
+.story-tease .tomorrow::before {
+  content: "→ ";
+  color: var(--ink);
+  font-weight: 700;
+}
+.story-tease .hero {
+  font-family: var(--serif);
+  font-size: 200px;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: var(--cream);
+}
+.story-tease .sub {
+  margin-top: 40px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 54px;
+  line-height: 1.15;
+  color: var(--cream);
+  max-width: 780px;
+}
+.story-tease .details {
+  margin-top: 56px;
+  font-family: var(--mono);
+  font-size: 24px;
+  line-height: 1.8;
+  color: var(--cream);
+  opacity: 0.9;
+}
+.story-tease .details span {
+  display: block;
+}
+.story-tease .details span::before {
+  content: "· ";
+  color: var(--ink);
+  font-weight: 700;
+}
+.story-tease .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 28px;
+  border-top: 1px solid rgba(250,245,239,0.18);
+  font-family: var(--mono);
+  font-size: 18px;
+  color: var(--cream);
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+<article class="card story-tease">
+  <div class="eye-watcher" role="img" aria-label="3AYNE"></div>
+  <div class="glyph-hatch hatch-ocre" aria-hidden="true"></div>
+
+  <header>
+    <p class="card__kicker">// panoptic - un regard</p>
+  </header>
+
+  <section class="tease">
+    <div class="tomorrow">mercredi · en carrousel</div>
+    <h1 class="hero">la<br>méthodologie.</h1>
+    <p class="sub">
+      comment on a compté 626 projets agrivoltaïques en croisant 4 registres publics.
+    </p>
+    <div class="details">
+      <span>la méthode, carte par carte</span>
+      <span>les 4 sources, détaillées</span>
+      <span>ce qu'on s'interdit</span>
+      <span>ce qui vient</span>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>ADEME · projets-env · MRAe · CNPrV</span>
+    <span>tawiza - panoptic</span>
+  </footer>
+</article>
+<script src="_shared.js"></script>
+<script>injectEye('.eye-watcher', 'avatar');</script>
+</body>
+</html>

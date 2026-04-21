@@ -4,3 +4,4 @@ Thumbs.db
 .env
 data/
 !assets/data/
+!panoptic/public/data/

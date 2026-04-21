@@ -1,29 +1,3 @@
-<!doctype html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<title>Panoptic - Carte 1/8 · hook</title>
-<meta name="viewport" content="width=1080">
-<link rel="stylesheet" href="../assets/panoptic-styles.css">
-<style>
-  /* Carte 1 - hook : chiffre-héros +600 + glyph hachuré ocre */
-  .card-1 .card__hero--number {
-    color: var(--ink);
-    font-size: 380px;            /* réduit de 420 pour accueillir "+600" sans déborder */
-    line-height: 0.85;
-  }
-  .card-1 .glyph-hatch {
-    width: 240px;                /* réduit de 300 - laisse respirer le chiffre */
-    height: 420px;
-    top: 0;
-    right: 0;
-    opacity: 0.85;
-  }
-</style>
-</head>
-<body>
-<article class="card card-1">
-  <div class="eye-watcher" role="img" aria-label="3AYNE - le regard panoptic">
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 3AYNE - l'œil Tawiza pixel-art CSS-playable
      viewBox 40x16, 1 unité = 1 pixel, pupille contrôlable via CSS custom properties -->
@@ -110,26 +84,3 @@
     <rect class="blink-top" x="8" y="3" width="24" height="0"/>
   </g>
 </svg>
-
-</div>
-<div class="glyph-hatch hatch-ocre" aria-hidden="true"></div>
-
-  <header>
-    <p class="card__kicker">// panoptic - carte 1/8</p>
-  </header>
-
-  <section class="card__main">
-    <h1 class="card__hero card__hero--number">416</h1>
-    <div class="card__rule"></div>
-    <p class="card__sub">
-      projets agrivoltaïques obtenus en croisant <strong>4 registres publics</strong> (ADEME, MRAe, projets-environnement, CNPrV). Les sources brutes comptent 467 traces · la fusion inter-sources en révèle 416 uniques. Aucun registre seul ne voit l'ensemble.
-    </p>
-  </section>
-
-  <footer class="card__footer">
-    <p class="card__source">ADEME · projets-environnement.gouv.fr · MRAe · CNPrV (extraction 2026-04)</p>
-    <p class="card__wordmark">tawiza - panoptic</p>
-  </footer>
-</article>
-</body>
-</html>

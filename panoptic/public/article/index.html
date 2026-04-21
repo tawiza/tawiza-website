@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>panoptic · un regard sur l'agrivoltaïsme français</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="On a croisé 4 registres publics sur l'agrivoltaïsme français. 416 projets. 133 contestations. Un oligopole. Une ceinture de résistance.">
+<meta property="og:title" content="panoptic · un regard sur l'agrivoltaïsme français">
+<meta property="og:description" content="On a croisé 4 registres publics. Voici ce qu'on a vu.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://panoptic.tawiza.fr/article/">
+
+<style>
+:root {
+  --bg:        #faf5ef;
+  --bg-deep:   #f3ebdd;
+  --ink:       #1a1612;
+  --ink-soft:  #3a342c;
+  --ink-mute:  #7a6e5e;
+  --line:      #d8cfbf;
+  --ocre:      #b45309;
+  --terre:     #C1554D;
+  --foret:     #2D6A4F;
+  --gold:      #D4A843;
+
+  --serif: "Instrument Serif", "Iowan Old Style", Georgia, ui-serif, serif;
+  --mono:  "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--serif);
+  line-height: 1.58;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body { padding: 48px 0 0; }
+.content-wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+/* article + nav dans content-wrap; eye-zone + footer hors wrap pour pleine largeur */
+
+/* ---------- Nav top ---------- */
+.nav {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  display: flex;
+  gap: 24px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 48px;
+}
+.nav a { color: var(--ink-mute); text-decoration: none; }
+.nav a:hover { color: var(--ocre); }
+.nav .wordmark { color: var(--ocre); font-weight: 500; margin-right: auto; }
+
+/* ---------- Titre article ---------- */
+article header.lead {
+  margin-bottom: 48px;
+}
+article .kicker {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ocre);
+  margin-bottom: 16px;
+}
+article h1 {
+  font-size: 54px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+article h1 em { font-style: italic; color: var(--ocre); }
+article .dek {
+  font-size: 22px;
+  color: var(--ink-soft);
+  font-style: italic;
+  line-height: 1.4;
+  max-width: 600px;
+}
+article .byline {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--ink-mute);
+  margin-top: 28px;
+}
+
+/* ---------- Corps ---------- */
+article h2 {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 56px 0 16px;
+  color: var(--ink);
+}
+article h2 .num {
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  color: var(--ink-mute);
+  display: block;
+  margin-bottom: 6px;
+}
+article p {
+  font-size: 19px;
+  margin-bottom: 18px;
+  color: var(--ink);
+}
+article p.dim { color: var(--ink-soft); }
+article strong { font-weight: 500; color: var(--ocre); }
+article em { font-style: italic; color: var(--ink-soft); }
+article a { color: var(--ocre); text-decoration: underline; text-underline-offset: 3px; }
+article a:hover { color: var(--terre); }
+
+/* abbr : acronymes avec définition au hover (native <abbr title="">) */
+abbr[title] {
+  position: relative;
+  text-decoration: underline dotted var(--ink-mute);
+  text-underline-offset: 3px;
+  cursor: help;
+  text-decoration-thickness: 1px;
+}
+abbr[title]:hover,
+abbr[title]:focus { color: var(--ocre); text-decoration-color: var(--ocre); }
+
+/* Tooltip CSS pur : apparaît instantanément au hover/focus, pas besoin JS */
+abbr[title]:hover::after,
+abbr[title]:focus::after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 6px);
+  z-index: 50;
+  width: max-content;
+  max-width: min(360px, 85vw);
+  padding: 10px 14px;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--serif);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-align: left;
+  text-transform: none;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(26, 22, 18, 0.2);
+  pointer-events: none;
+  white-space: normal;
+}
+/* petite flèche pointant vers l'acronyme */
+abbr[title]:hover::before,
+abbr[title]:focus::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  bottom: 100%;
+  z-index: 51;
+  border: 5px solid transparent;
+  border-top-color: var(--ink);
+  pointer-events: none;
+}
+/* sur mobile (touch), le focus ouvre le tooltip au tap */
+@media (hover: none) {
+  abbr[title] { text-decoration-color: var(--ocre); }
+}
+
+/* ---------- Pull quote style ---------- */
+.pull {
+  border-left: 3px solid var(--ocre);
+  padding: 4px 24px;
+  margin: 28px 0;
+  font-size: 24px;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
+
+/* ---------- Numbers callouts ---------- */
+.callout {
+  margin: 32px 0;
+  padding: 28px 32px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--ocre);
+  border-radius: 0 6px 6px 0;
+}
+.callout .big {
+  font-family: var(--serif);
+  font-size: 56px;
+  line-height: 1;
+  color: var(--ocre);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.callout .label {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: 8px;
+}
+.callout p.note { font-size: 16px; margin-top: 12px; color: var(--ink-soft); }
+
+/* ---------- Terminal block ---------- */
+.terminal {
+  background: var(--ink);
+  color: #d8cfbf;
+  padding: 24px 28px;
+  margin: 32px 0;
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 6px;
+  overflow-x: auto;
+  box-shadow: 0 8px 24px rgba(26, 22, 18, 0.14);
+}
+.terminal .prompt { color: var(--ocre); }
+.terminal .prompt::before { content: "$ "; color: #7a6e5e; }
+.terminal .gold  { color: var(--gold); }
+.terminal .warn  { color: var(--terre); }
+.terminal .note  { color: #7a6e5e; font-style: italic; }
+
+/* ---------- Data table ---------- */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 14px;
+  margin: 28px 0;
+}
+.data-table th, .data-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+.data-table th {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  background: var(--bg-deep);
+  font-weight: 500;
+}
+.data-table td.pct { color: var(--ocre); font-weight: 500; text-align: right; }
+
+/* ---------- CTA install ---------- */
+.install-box {
+  margin: 56px 0 32px;
+  padding: 36px 32px;
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.install-box h3 {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+.install-box p { font-size: 17px; }
+.install-box code.cmd {
+  display: inline-block;
+  font-family: var(--mono);
+  background: var(--ink);
+  color: var(--gold);
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-size: 15px;
+  margin-top: 16px;
+  letter-spacing: 0.02em;
+}
+.install-box .meta {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-mute);
+  letter-spacing: 0.06em;
+  margin-top: 18px;
+}
+
+/* ---------- Roadmap interactive (native <details>/<summary>) ---------- */
+.roadmap {
+  margin: 48px 0 24px;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.roadmap-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  margin-bottom: 4px;
+}
+.roadmap-sub {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.roadmap-note {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+  font-size: 14px;
+  color: var(--ink-mute);
+  font-style: italic;
+}
+
+details.rm {
+  border-top: 1px solid var(--line);
+  padding: 14px 0;
+}
+details.rm:first-of-type { border-top: none; padding-top: 6px; }
+details.rm summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 6px 0;
+  font-family: var(--serif);
+  transition: color 120ms ease;
+}
+details.rm summary::-webkit-details-marker { display: none; }
+details.rm summary::before {
+  content: "+";
+  font-family: var(--mono);
+  font-size: 18px;
+  color: var(--ink-mute);
+  width: 14px;
+  text-align: center;
+  transition: transform 180ms ease;
+}
+details.rm[open] summary::before { content: "–"; color: var(--ocre); }
+details.rm summary:hover .rm-line { color: var(--ocre); }
+
+.rm-badge {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.rm-badge-active { background: var(--ocre); color: #fff; }
+.rm-badge-next   { background: #fff; color: var(--ocre); border-color: var(--ocre); }
+.rm-badge-later  { background: var(--bg-deep); color: var(--ink-mute); border-color: var(--line); }
+
+.rm-line {
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.rm-list {
+  list-style: none;
+  padding: 14px 0 10px 32px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.rm-list li {
+  margin: 10px 0;
+  padding-left: 16px;
+  position: relative;
+  color: var(--ink-soft);
+}
+.rm-list li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--ocre);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1;
+  top: 4px;
+}
+.rm-list code {
+  font-family: var(--mono);
+  font-size: 13px;
+  background: var(--bg-deep);
+  padding: 1px 6px;
+  border-radius: 3px;
+  color: var(--ink-soft);
+}
+
+/* ---------- 3AYNE zone (convention tawiza.fr) ---------- */
+.eye-zone {
+  margin-top: 96px;
+  padding: 96px 24px 72px;
+  border-top: 1px solid var(--line);
+  background: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
+}
+.eye-zone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    var(--line) 0,
+    var(--line) 1px,
+    transparent 1px,
+    transparent 32px
+  );
+  opacity: 0.35;
+  pointer-events: none;
+}
+.eye-zone-inner {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.eye-zone-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 32px;
+}
+.eye-zone-label span { color: var(--terre); }
+.eye-root {
+  display: block;
+  width: min(60vw, 440px);
+  margin: 0 auto;
+  color: var(--ink);
+  user-select: none;
+  transition: filter 0.3s;
+}
+.eye-root:hover { filter: drop-shadow(0 0 12px rgba(180, 83, 9, 0.35)); }
+.eye-root svg { width: 100%; height: auto; display: block; }
+.eye-caption {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-mute);
+  margin-top: 24px;
+  text-transform: lowercase;
+}
+.eye-caption::before, .eye-caption::after {
+  content: " · ";
+  color: var(--ocre);
+}
+
+/* ---------- Footer ---------- */
+
+footer.colophon {
+  margin-top: 96px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--ink-mute);
+}
+footer.colophon h4 {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0;
+  margin: 20px 0 8px;
+  text-transform: none;
+}
+footer.colophon ul { list-style: none; padding: 0; }
+footer.colophon li { margin: 4px 0; }
+
+@media (max-width: 600px) {
+  article h1 { font-size: 38px; }
+  article .dek { font-size: 18px; }
+  article h2 { font-size: 26px; }
+  article p { font-size: 17px; }
+  .callout .big { font-size: 44px; }
+  .terminal { font-size: 12px; padding: 16px 18px; }
+}
+</style>
+</head>
+<body>
+
+<div class="content-wrap">
+<nav class="nav">
+  <span class="wordmark">tawiza · panoptic</span>
+  <a href="https://tawiza.fr">tawiza.fr</a>
+  <a href="https://panoptic.tawiza.fr">panoptic.tawiza.fr</a>
+</nav>
+
+<article>
+
+<header class="lead">
+  <p class="kicker">// agrivoltaïsme · notes</p>
+  <h1>On a croisé quatre registres publics sur l'agrivoltaïsme français.<br><em>Voici ce qu'on a vu.</em></h1>
+  <p class="dek">
+    416 projets, 133 contestations, un oligopole à 50 %, une ceinture de résistance en moyenne montagne. Et un outil citoyen pour regarder ce qui bouge près de chez toi.
+  </p>
+  <p class="byline">tawiza · avril 2026 · lecture 10 minutes</p>
+</header>
+
+<!-- ========================= I. Hook ========================= -->
+<section>
+  <p>
+    L'agrivoltaïsme est devenu en quelques années un mot omniprésent dans les discussions sur la transition énergétique française. Derrière le mot : des panneaux solaires installés sur des terres agricoles, avec une promesse : produire de l'électricité <em>et</em> maintenir l'activité agricole sur la même parcelle.
+  </p>
+
+  <p>
+    Cette filière est encore jeune. Les registres publics qui la documentent sont <strong>fragmentés</strong> : certains recensent les projets raccordés, d'autres ceux en instruction, d'autres encore les avis environnementaux rendus en amont. Personne, en France, ne publie un tableau unifié. Pas l'ADEME. Pas le ministère. Pas le régulateur.
+  </p>
+
+  <p>
+    Pour voir ce qui se passe, il faut <strong>croiser</strong>. On a essayé de le faire, avec quatre sources publiques françaises.
+  </p>
+</section>
+
+<!-- ========================= II. Méthode ========================= -->
+<section>
+  <h2><span class="num">I · la méthode</span>Quatre registres, chacun avec une partie de l'image</h2>
+
+  <p>
+    Aucun de ces registres n'est complet. C'est le constat de départ, sobre : la France documente sa propre filière d'une manière <em>distribuée</em>, et personne ne fait le travail de consolidation.
+  </p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>registre</th><th>ce qu'il voit</th><th>projets vus</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ADEME Observatoire</td><td>projets raccordés au réseau, fiches techniques</td><td>171</td></tr>
+      <tr><td>MRAe</td><td>avis d'autorité environnementale régionale, amont du dossier</td><td>219</td></tr>
+      <tr><td>projets-environnement.gouv.fr</td><td>projets en instruction administrative</td><td>77</td></tr>
+      <tr><td>Coordination Nationale Photorévoltée</td><td>victoires documentées de collectifs locaux</td><td>133</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    Le croisement inter-sources n'est pas trivial : les communes s'écrivent différemment (<em>Pujo-le-Plan</em>, <em>PUJO LE PLAN</em>, <em>Pujo Le Plan</em>), les projets apparaissent sous leur nom commercial dans l'ADEME et sous un code PDF dans la MRAe, certaines entrées MRAe sont des <em>templates vides</em> récupérés par erreur lors du scraping.
+  </p>
+
+  <p>
+    Après fusion, filtrage des métadonnées polluantes, et déduplication par commune + nom fuzzy, on obtient <strong>416 projets uniques</strong>. La règle de fusion est publique, inspectable, et <a href="https://github.com/tawiza/panoptic-cli">reproductible</a>.
+  </p>
+
+  <div class="callout">
+    <p class="big">97 %</p>
+    <p class="label">projets visibles dans UN SEUL registre</p>
+    <p class="note">
+      Sur 416 projets agrégés, seulement 13 apparaissent dans deux sources ou plus. Autrement dit, dans l'écrasante majorité des cas, <strong>chaque acteur public français ne voit qu'un angle unique de la filière</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- ========================= III. L'oligopole ========================= -->
+<section>
+  <h2><span class="num">II · l'oligopole</span>Un seul acteur contrôle la moitié de la puissance</h2>
+
+  <p>
+    Sur les 2,36 <abbr title="gigawatt-crête : 1 000 MWc">GWc</abbr> de puissance agrivoltaïque recensée dans la base, <strong>un seul groupe</strong>, <abbr title="Greenlighthouse Development : opérateur de projets agrivoltaïques, co-contrôlé 50/50 par EDF Renouvelables et Macquarie depuis juillet 2025">GLHD</abbr>, concentre <strong>50,5 %</strong>. Neuf projets, 1 191 MWc.
+  </p>
+
+  <div class="pull">
+    Derrière le sigle GLHD : EDF Renouvelables et Macquarie, fonds d'infrastructure australien, en co-contrôle paritaire depuis juillet 2025. Portfolio annoncé : 2,4 GW.
+  </div>
+
+  <p>
+    GLHD signifie <em>Greenlighthouse Development</em>. Le rachat a été acté via <em>Cero Generation</em>, la filiale énergétique de Macquarie. Le communiqué officiel est passé en juillet 2025 sur <a href="https://www.pv-magazine.fr/">pv-magazine</a> et <a href="https://www.greenunivers.com/">GreenUnivers</a> (presse spécialisée) mais la filière politique, syndicale et associative n'en a pas fait un sujet public.
+  </p>
+
+  <p>
+    Le cas d'école de cette concentration, c'est <strong>Terr'Arbouts</strong>, dans les Landes : 480 MWc, 750 hectares sur six communes (Pujo-le-Plan et cinq voisines). Le projet est porté par une association de 35 agriculteurs (<em><abbr title="Association porteuse du projet Terr'Arbouts : 35 producteurs agricoles fondateurs">PATAV</abbr></em>) mais l'opérateur industriel derrière, c'est GLHD.
+  </p>
+
+  <div class="callout">
+    <p class="big">+ 20 MW</p>
+    <p class="label">sans communication publique</p>
+    <p class="note">
+      L'<abbr title="Inspection Générale de l'Environnement et du Développement Durable : corps d'inspection ministériel">IGEDD</abbr> annonçait 460 MWc en 2022. L'ADEME en compte 480 en 2026. Le projet a gagné 20 MW en quatre ans, sans communiqué, sans enquête publique supplémentaire. C'est exactement le genre de divergence que panoptic détecte automatiquement en comparant les registres.
+    </p>
+  </div>
+</section>
+
+<!-- ========================= IV. L'opposition ========================= -->
+<section>
+  <h2><span class="num">III · l'opposition</span>133 victoires, zéro contre GLHD</h2>
+
+  <p>
+    La Coordination Nationale Photorévoltée est un collectif qui documente, depuis 2023, les victoires de mobilisations locales contre des projets photovoltaïques sur terres agricoles ou naturelles. Au moment de l'extraction (avril 2026), elle recense <strong>133 projets bloqués</strong>.
+  </p>
+
+  <p>
+    On a croisé ces 133 victoires avec notre liste d'opérateurs. <strong>Zéro d'entre elles n'est identifiée comme étant portée par GLHD.</strong> Les opérateurs apparaissant sont Photosol (5), Reden Solar (4), Boralex (3), TotalEnergies (3), EDF Renouvelables (3), Engie (3), et une longue traîne de petits développeurs.
+  </p>
+
+  <p>
+    Le paradoxe est frappant. <strong>Un groupe qui concentre 50 % de la puissance recensée n'apparaît dans aucune des 133 oppositions documentées.</strong>
+  </p>
+
+  <div class="pull">
+    Le modèle "coopérative d'agriculteurs porteurs", 35 paysans de PATAV pour Terr'Arbouts, désamorce l'opposition avant qu'elle ne se constitue.
+  </div>
+
+  <p>
+    Quand le projet arrive dans la commune sous le nom d'une association paysanne locale, avec des visages connus comme porte-parole, la mobilisation a beaucoup moins de prise. Techniquement, le projet reste un projet industriel porté à 100 % par un fonds d'investissement. Mais politiquement, il se présente comme paysan.
+  </p>
+
+  <p>
+    Ce n'est pas une théorie : c'est un pattern qu'on lit dans les chiffres. Les opérateurs dont les noms apparaissent dans les victoires CNPrV sont ceux qui portent leurs projets directement, avec leur propre marque. GLHD porte les siens via des <abbr title="Société de Projet (Special Purpose Vehicle) : structure juridique dédiée à un projet unique, souvent aux noms champêtres">SPV</abbr> locaux et des associations d'agriculteurs. La différence est structurelle.
+  </p>
+
+  <h2><span class="num">IV · la résistance géographique</span>Une ceinture de moyenne montagne dit non</h2>
+
+  <p>
+    En regardant la répartition géographique des victoires contre la répartition géographique des projets, quatre départements se détachent clairement. Ce sont des départements de <strong>moyenne montagne</strong>, avec une agriculture traditionnelle, un tourisme diffus, et une identité paysagère forte.
+  </p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>département</th><th>projets</th><th>victoires</th><th>taux</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>12 · Aveyron</td><td>1</td><td>7</td><td class="pct">88 %</td></tr>
+      <tr><td>07 · Ardèche</td><td>1</td><td>6</td><td class="pct">86 %</td></tr>
+      <tr><td>04 · Alpes-de-Haute-Provence</td><td>2</td><td>11</td><td class="pct">85 %</td></tr>
+      <tr><td>81 · Tarn</td><td>1</td><td>5</td><td class="pct">83 %</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    Dans ces quatre départements, plus de 80 % des projets identifiables sont bloqués par des mobilisations locales. Ce ne sont pas des projets abstraits : ce sont des parcelles d'estive, des terres pastorales, des paysages inscrits dans l'identité locale. La formule <em>"mouton sous panneaux"</em> y est reçue comme un outrage.
+  </p>
+</section>
+
+<!-- ========================= V. L'outil ========================= -->
+<section>
+  <h2><span class="num">V · l'outil</span>Un regard citoyen, une commande</h2>
+
+  <p>
+    La base panoptic ne servirait pas à grand-chose si on la gardait pour nous. On en a fait un outil qui tourne en local, sur le PC de qui veut regarder.
+  </p>
+
+  <div class="pull">
+    Pas de cloud, pas de compte, pas de GPU. Une commande.
+  </div>
+
+  <div class="terminal">
+    <p class="prompt">panoptic 47</p>
+    <p class="gold">3AYNE · éveillé · data fraîche</p>
+    <p>zone : département 47</p>
+    <p>10 projets · 5 contestations · 454 <abbr title="mégawatt-crête : puissance maximale d'une installation photovoltaïque en conditions standardisées d'ensoleillement">MWc</abbr> cumulés</p>
+    <p>─────────────────────────────────────</p>
+    <p style="color: #7a6e5e; font-size: 12px;">micro-signaux détectés (4)</p>
+    <p class="gold">● silence suspect · GLHD [score 80]</p>
+    <p style="color: #a09590; font-size: 13px;">&nbsp;&nbsp;50 % de la puissance, 0 contestation documentée</p>
+    <p style="color: #c8a030;">↗ projet latent · CONCESSION PLATIN DE GRAVE [65]</p>
+    <p style="color: #a09590; font-size: 13px;">&nbsp;&nbsp;visible uniquement dans <abbr title="Mission Régionale d'Autorité environnementale : rend un avis public sur chaque projet avant décision préfectorale">MRAe</abbr>, pas encore dans les registres</p>
+    <p class="note">pas de compte. pas de cloud. pas de GPU.</p>
+  </div>
+
+  <p>
+    <strong>Concrètement, l'algo fait trois choses :</strong> il lit la base SQLite embarquée, il pré-calcule quelques agrégats globaux (parts de marché par opérateur, taux d'opposition par département), puis il applique cinq règles de détection simples à la zone demandée. C'est environ 200 lignes de Python, lisibles ligne à ligne. Pas de modèle entraîné, pas de LLM. Des seuils, des jointures, des comparaisons.
+  </p>
+
+  <p>
+    Les cinq règles actives dans la version 0.1 :
+  </p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>signal</th><th>déclenché quand…</th><th>score</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>opposition naissante</strong></td>
+        <td>une contestation <abbr title="Coordination Nationale Photorévoltée : collectif associatif qui documente les victoires de mobilisations locales contre les projets photovoltaïques sur terres agricoles">CNPrV</abbr> date de moins de 60 jours ET un projet actif existe à ≤ 15 km ou dans la même commune</td>
+        <td class="pct">75 · alarme</td>
+      </tr>
+      <tr>
+        <td><strong>paradoxe opérateur</strong></td>
+        <td>un opérateur contrôle ≥ 10 % de la puissance nationale ET zéro contestation documentée ne lui est attribuée</td>
+        <td class="pct">80</td>
+      </tr>
+      <tr>
+        <td><strong>projet latent MRAe</strong></td>
+        <td>un projet est visible uniquement dans un avis MRAe, sans correspondance dans <abbr title="Agence de la transition écologique, agence publique de référence sur l'énergie et l'environnement">ADEME</abbr> ni projets-environnement</td>
+        <td class="pct">65</td>
+      </tr>
+      <tr>
+        <td><strong>ceinture de résistance</strong></td>
+        <td>un département dépasse 60 % de contestations sur le total (projets + contestations)</td>
+        <td class="pct">55</td>
+      </tr>
+      <tr>
+        <td><strong>opacité opérateur</strong></td>
+        <td>un projet ≥ 10 MWc n'a pas d'opérateur déclaré lisible</td>
+        <td class="pct">40</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Chaque signal est annoté avec sa source, son score, les projets ou contestations qu'il référence. Seule la règle <em>"opposition naissante"</em> déclenche le passage de l'œil 3AYNE en <em>alarmé</em> (rouge terre). Les autres signaux s'affichent mais ne réveillent pas l'alarme : on a choisi de réserver le rouge à l'urgence militante concrète.
+  </p>
+
+  <p>
+    Le seuil par défaut est 60. L'utilisateur peut le baisser pour voir plus de signaux faibles, ou le monter pour ne voir que les plus critiques.
+  </p>
+
+  <!-- Roadmap interactive : 3 versions dépliables (<details> natif, pas de JS) -->
+  <div class="roadmap">
+    <h3 class="roadmap-title">État du chantier</h3>
+    <p class="roadmap-sub">Panoptic avance par petits morceaux. Voici ce qui tourne, ce qui est en cours, ce qui viendra.</p>
+
+    <details class="rm rm-active" open>
+      <summary>
+        <span class="rm-badge rm-badge-active">v0.1 · actif</span>
+        <span class="rm-line">5 détecteurs + DB embarquée + export HTML</span>
+      </summary>
+      <ul class="rm-list">
+        <li><strong>5 détecteurs actifs</strong> : opposition naissante, paradoxe opérateur, projet latent MRAe, ceinture de résistance, opacité opérateur</li>
+        <li><strong>Base <abbr title="moteur de base de données embarqué dans un unique fichier, sans serveur">SQLite</abbr> embarquée</strong> (≈ 400 Ko) : 416 projets, 133 contestations, 4 sources croisées, disponible hors-ligne dès l'installation</li>
+        <li><strong><code>panoptic &lt;zone&gt;</code></strong> : recherche par département, code postal, code INSEE ou nom de commune (fuzzy)</li>
+        <li><strong><code>panoptic update</code></strong> : sync manifest CDN avec vérification <abbr title="empreinte cryptographique qui garantit qu'un fichier n'a pas été modifié entre sa génération et son téléchargement">SHA-256</abbr>, cache local dans <code>~/.cache/panoptic/</code></li>
+        <li><strong><code>panoptic &lt;zone&gt; --html rapport.html</code></strong> : export autonome, partageable email / Signal / clé USB</li>
+        <li><strong>3AYNE</strong> avec 4 états de pupille (dormant, attentif, éveillé, alarmé) en ASCII terminal</li>
+      </ul>
+    </details>
+
+    <details class="rm rm-next">
+      <summary>
+        <span class="rm-badge rm-badge-next">v0.2 · prochain</span>
+        <span class="rm-line">divergence registres + hausse opérateur + matching fuzzy amélioré</span>
+      </summary>
+      <ul class="rm-list">
+        <li><strong>Divergence registres</strong> : détecter automatiquement quand un même projet apparaît avec des chiffres différents entre sources. Ce qu'on a observé à la main sur Terr'Arbouts (460 → 480 MW) mais pas encore outillé. Demande de stocker <code>power_mwc</code> et <code>surface_ha</code> <em>par source</em> dans la SQLite, pas juste la valeur canonique fusionnée.</li>
+        <li><strong>Hausse d'opérateur</strong> : surveiller les opérateurs dont le portefeuille explose sur 90 jours, signal de mouvement stratégique (rachat, nouveau fonds, contrat-cadre). Demande un <code>first_seen_at</code> fiable par projet et par source.</li>
+        <li><strong>Matching fuzzy amélioré</strong> : actuellement seulement 4 des 133 victoires CNPrV s'accrochent à un projet recensé. Améliorer le croisement commune + proximité géographique + nom fuzzy rendra le paradoxe GLHD encore plus net.</li>
+        <li><strong>Filtre MRAe renforcé côté pipeline</strong> : environ 5 % des entrées MRAe sont aujourd'hui des métadonnées administratives (index régionaux, <abbr title="Plan Local d'Urbanisme : document qui définit les règles d'occupation des sols à l'échelle communale">PLU</abbr>, avis génériques). Un filtre plus précis côté collector réduira le bruit résiduel.</li>
+      </ul>
+    </details>
+
+    <details class="rm rm-later">
+      <summary>
+        <span class="rm-badge rm-badge-later">v0.x · envisagé</span>
+        <span class="rm-line">watch, --live, cascade actionnariale, pages par signal</span>
+      </summary>
+      <ul class="rm-list">
+        <li><strong><code>panoptic watch &lt;zone&gt;</code></strong> : mode veille passive. Au second run, panoptic compare à la photo précédente et liste ce qui a bougé (nouveau projet, changement de statut, nouvelle contestation). Pas de daemon imposé, juste un diff déclenché à la demande.</li>
+        <li><strong><code>--live</code></strong> : scrapers légers embarqués qui tapent directement les APIs publiques MRAe / ADEME pour la data du matin, pour les cas d'investigation urgente. Attention rate-limit poli : opt-in explicite.</li>
+        <li><strong>Cascade actionnariale</strong> via <abbr title="Bulletin Officiel Des Annonces Civiles et Commerciales : publication légale des créations, modifications et cessations d'entreprises">BODACC</abbr> et <abbr title="Institut National de la Propriété Industrielle : opérateur du registre national des entreprises">INPI</abbr> RNE : remonter de "Ferme Solaire des Tilleuls SAS" à son fonds d'infrastructure final. Demande des API payantes, à évaluer en fonction des retours.</li>
+        <li><strong>Pages navigables signal-par-signal</strong> sur panoptic.tawiza.fr : chaque signal (paradoxe GLHD, projets latents 47, ceinture 04…) aurait sa propre URL pour citation dans la presse et partage sur les réseaux.</li>
+        <li><strong>Feed RSS / Atom</strong> des nouveaux projets et nouvelles contestations depuis la dernière extraction. Pour les journalistes, collectifs, élus qui veulent être prévenus sans avoir à lancer la CLI tous les matins.</li>
+        <li><strong>Couverture étendue hors agrivoltaïsme</strong> : éoliens agricoles, méthaniseurs, stations de transfert d'énergie par pompage. Même méthode de croisement inter-registres, autres filières.</li>
+      </ul>
+    </details>
+
+    <p class="roadmap-note">
+      Cette roadmap n'est pas un contrat. C'est ce qu'on voit depuis aujourd'hui. L'ordre dépend aussi de ce que les lecteurs remontent : un signal manquant, un projet qu'on a raté, une source qu'on devrait ajouter.
+    </p>
+  </div>
+</section>
+
+<!-- ========================= Install ========================= -->
+<div class="install-box">
+  <h3>Essayer panoptic</h3>
+  <p>
+    panoptic est un paquet Python ouvert. La base de données est embarquée (≈ 400 Ko), l'outil marche hors-ligne, et le code est vérifiable ligne à ligne.
+  </p>
+  <code class="cmd">pipx install panoptic-tawiza</code>
+  <p class="meta" style="text-transform:none; letter-spacing:0.02em; font-size:14px; color:var(--ink-soft); margin-top:14px;">
+    On recommande <strong>pipx</strong> plutôt que <code>pip</code> classique : ça installe panoptic dans un environnement Python isolé, séparé du reste de ta machine. Aucun conflit avec les autres paquets Python que tu aurais déjà. Si tu n'as pas pipx : <code>sudo apt install pipx</code> (Debian/Ubuntu) ou <code>brew install pipx</code> (macOS).
+  </p>
+  <p class="meta" style="text-transform:none; letter-spacing:0.02em; font-size:14px; color:var(--ink-soft); margin-top:12px;">
+    Alternative si tu préfères : créer un venv à la main : <code>python -m venv ~/.panoptic-venv &amp;&amp; ~/.panoptic-venv/bin/pip install panoptic-tawiza</code>. Toujours dans un environnement séparé. Jamais <code>sudo pip</code>, jamais dans le Python système.
+  </p>
+  <p class="meta">
+    python 3.10+ · code <abbr title="licence libre copyleft forte : toute modification publiée doit l'être sous la même licence">AGPL-3.0</abbr> · data <abbr title="Creative Commons Attribution – Partage dans les Mêmes Conditions">CC-BY-SA-4.0</abbr> · rafraîchissement via <code>panoptic update</code>
+  </p>
+</div>
+
+<!-- ========================= VI. Limites + next ========================= -->
+<section>
+  <h2><span class="num">VI · ce qu'on ne voit pas encore</span>Limites et suite</h2>
+
+  <p>
+    Cette base n'est <em>pas</em> exhaustive. Elle est composée de ce que quatre sources publiques veulent bien publier, au moment où on les a scrapées. Plusieurs angles morts sont connus :
+  </p>
+
+  <p class="dim">
+    Les contestations <em>qui ne gagnent pas</em> n'apparaissent dans aucun registre. La Coordination Nationale Photorévoltée documente les victoires. Pas les luttes en cours, ni celles qui ont échoué. La mémoire des défaites militantes reste orale.
+  </p>
+
+  <p class="dim">
+    La cascade actionnariale derrière les SPV (sociétés de projet locales) n'est que partiellement reconstituée. Remonter de "Ferme Solaire des Tilleuls SAS" à un fonds d'infrastructure ultime demande des requêtes BODACC et INPI <abbr title="Registre National des Entreprises : remplace depuis 2023 le RCS + RM + Registre des actifs agricoles">RNE</abbr> qui ne sont pas encore intégrées.
+  </p>
+
+  <p class="dim">
+    Le suivi temporel des projets (quand un projet change de statut, de surface, de puissance) est embryonnaire. C'est ce que permettra la prochaine version avec <code>panoptic watch</code> (mode veille).
+  </p>
+
+  <p>
+    Panoptic est un chantier, pas un point final. Si tu connais un projet qu'on n'a pas, un opérateur mal identifié, un angle qu'on n'a pas vu : <a href="mailto:tawiza.v0@gmail.com">on est joignables</a>.
+  </p>
+</section>
+
+<footer class="colophon">
+  <h4>Sources</h4>
+  <ul>
+    <li>ADEME Observatoire de l'agrivoltaïsme · <a href="https://data.ademe.fr/">data.ademe.fr</a></li>
+    <li>projets-environnement.gouv.fr · registre national des projets</li>
+    <li>Missions Régionales d'Autorité environnementale (MRAe)</li>
+    <li>Coordination Nationale Photorévoltée · <a href="https://victoires-pv.gogocarto.fr/">victoires-pv.gogocarto.fr</a></li>
+    <li>pv-magazine.fr · GreenUnivers · L'Écho du Solaire (presse spécialisée)</li>
+  </ul>
+
+  <h4>Licences</h4>
+  <ul>
+    <li>données : CC-BY-SA-4.0 · code : AGPL-3.0-or-later</li>
+    <li>forkable, modifiable, redistribuable · sous la même licence</li>
+  </ul>
+
+  <h4>Méthode</h4>
+  <ul>
+    <li>règle de fusion inter-sources lisible dans le code (AGPL-3.0)</li>
+    <li>extraction datée du 2026-04-21 · une extraction = une photo à un instant</li>
+  </ul>
+</footer>
+
+</article>
+</div>
+
+
+<section class="eye-zone">
+  <div class="eye-zone-inner">
+    <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui ne dort jamais</span></div>
+    <div class="eye-root" role="img" aria-label="3AYNE - l'&oelig;il Tawiza"></div>
+    <div class="eye-caption">il regarde, il compte, il doute</div>
+  </div>
+</section>
+
+<script>
+  fetch('/assets/v2/eye.svg?v=20260421').then(function (r) { return r.text(); }).then(function (svgText) {
+    var mount = document.querySelector('.eye-root');
+    if (!mount) return;
+    var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
+    mount.appendChild(svgEl);
+  }).then(function () {
+    var s = document.createElement('script');
+    s.src = '/assets/v2/eye.js?v=20260421';
+    document.body.appendChild(s);
+  }).catch(function () { /* mascotte absente en local → silence, no crash */ });
+</script>
+</body>
+</html>
