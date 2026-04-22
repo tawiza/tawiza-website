@@ -1,0 +1,143 @@
+/* IG story format 1080x1920 · Tawiza palette */
+:root {
+  --bg:       #faf5ef;
+  --bg-deep:  #f3ebdd;
+  --ink:      #1a1612;
+  --ink-soft: #3a342c;
+  --ink-mute: #7a6e5e;
+  --line:     #d8cfbf;
+  --ocre:     #b45309;
+  --terre:    #C1554D;
+  --foret:    #2D6A4F;
+  --gold:     #D4A843;
+  --serif:    "Instrument Serif", Georgia, ui-serif, serif;
+  --mono:     "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  position: relative;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hachures fines en diagonale, signature Tawiza */
+.hatch {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--ink) 0 1.5px,
+    transparent 1.5px 14px
+  );
+  z-index: 0;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 120px 96px 96px;
+}
+
+.kicker {
+  font-family: var(--mono);
+  font-size: 22px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ocre);
+  margin-bottom: 32px;
+}
+
+.hero {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.0;
+}
+
+.sub {
+  font-family: var(--serif);
+  font-size: 44px;
+  line-height: 1.25;
+  color: var(--ink-soft);
+  margin-top: 56px;
+  max-width: 860px;
+}
+
+.em { color: var(--ocre); font-style: italic; }
+
+.rule {
+  width: 120px;
+  height: 3px;
+  background: var(--ocre);
+  margin: 48px 0;
+}
+
+/* 3AYNE pixel art SVG, bas-gauche */
+.eye-mark {
+  position: absolute;
+  bottom: 96px;
+  left: 96px;
+  width: 120px;
+  height: 48px;
+  color: var(--ink);
+  z-index: 2;
+}
+.eye-mark svg { width: 100%; height: 100%; display: block; }
+
+/* wordmark + URL bas-droite */
+.wordmark {
+  position: absolute;
+  bottom: 96px;
+  right: 96px;
+  text-align: right;
+  z-index: 2;
+  font-family: var(--mono);
+}
+.wordmark__brand {
+  font-size: 22px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+.wordmark__url {
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  color: var(--ocre);
+}
+
+.source {
+  position: absolute;
+  bottom: 40px;
+  left: 96px;
+  right: 96px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  z-index: 2;
+}
+
+.pager {
+  position: absolute;
+  top: 60px;
+  right: 96px;
+  font-family: var(--mono);
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  color: var(--ink-mute);
+  z-index: 2;
+}
