@@ -495,6 +495,81 @@ details.rm summary:hover .rm-line { color: var(--ocre); }
 }
 /* .eye-caption::before/after : retirés en mode inline compact */
 
+/* ---------- Bloc de partage ---------- */
+.share-block {
+  margin: 64px 0 24px;
+  padding: 28px 24px;
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  text-align: center;
+}
+.share-title {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 18px;
+}
+.share-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 120ms ease, border-color 120ms, background 120ms, color 120ms;
+}
+.share-btn:hover,
+.share-btn:focus-visible {
+  border-color: var(--ocre);
+  color: var(--ocre);
+  transform: translateY(-1px);
+  outline: none;
+}
+.share-btn--primary {
+  background: var(--ocre);
+  color: var(--bg);
+  border-color: var(--ocre);
+  font-weight: 500;
+}
+.share-btn--primary:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.share-ic {
+  font-size: 11px;
+  letter-spacing: 0;
+  padding: 2px 6px;
+  background: var(--bg-deep);
+  border-radius: 3px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.share-btn--primary .share-ic { background: rgba(250, 245, 239, 0.2); color: var(--bg); }
+.share-btn--copied { border-color: var(--foret); color: var(--foret); }
+.share-btn--copied .share-ic { color: var(--foret); }
+
+/* masque le bouton "Partager" natif sur desktop (pas de Web Share API) */
+@media (hover: hover) and (pointer: fine) {
+  .share-btn--primary { display: none; }
+}
+
 /* ---------- Footer ---------- */
 
 footer.colophon {
@@ -940,6 +1015,34 @@ footer.colophon li { margin: 4px 0; }
   </p>
 </section>
 
+<!-- Bloc de partage : native Web Share API sur mobile, fallback 5 destinations desktop -->
+<div class="share-block" role="group" aria-labelledby="share-title">
+  <p id="share-title" class="share-title">Partager cette note</p>
+  <div class="share-grid">
+    <button type="button" class="share-btn share-btn--primary" data-share="native">
+      <span class="share-ic" aria-hidden="true">↗</span> Partager
+    </button>
+    <a class="share-btn" data-share="bluesky" href="#" target="_blank" rel="noopener">
+      <span class="share-ic" aria-hidden="true">bsky</span> Bluesky
+    </a>
+    <a class="share-btn" data-share="mastodon" href="#" target="_blank" rel="noopener">
+      <span class="share-ic" aria-hidden="true">mst</span> Mastodon
+    </a>
+    <a class="share-btn" data-share="threads" href="#" target="_blank" rel="noopener">
+      <span class="share-ic" aria-hidden="true">@</span> Threads
+    </a>
+    <a class="share-btn" data-share="linkedin" href="#" target="_blank" rel="noopener">
+      <span class="share-ic" aria-hidden="true">in</span> LinkedIn
+    </a>
+    <a class="share-btn" data-share="email" href="#">
+      <span class="share-ic" aria-hidden="true">@</span> Email
+    </a>
+    <button type="button" class="share-btn" data-share="copy">
+      <span class="share-ic" aria-hidden="true">⧉</span> <span class="share-copy-lbl">Copier le lien</span>
+    </button>
+  </div>
+</div>
+
 <footer class="colophon">
   <h4>Sources</h4>
   <ul>
@@ -966,7 +1069,55 @@ footer.colophon li { margin: 4px 0; }
 </article>
 </div>
 
+<!-- Partage article · vanilla JS, zero dependency, zero tracking -->
+<script>
+(function() {
+  var url = location.href;
+  var title = document.title;
+  var txt = "Agrivoltaïsme en France : 4 registres croisés, 416 projets, 133 contestations, 50 % chez un seul groupe.";
+  var enc = encodeURIComponent;
 
+  var handlers = {
+    bluesky:  "https://bsky.app/intent/compose?text=" + enc(txt + " · " + url),
+    mastodon: "https://mastodon.social/share?text=" + enc(txt) + "&url=" + enc(url),
+    threads:  "https://www.threads.net/intent/post?text=" + enc(txt + "\n\n" + url),
+    linkedin: "https://www.linkedin.com/sharing/share-offsite/?url=" + enc(url),
+    email:    "mailto:?subject=" + enc(title) + "&body=" + enc(txt + "\n\n" + url)
+  };
+
+  document.querySelectorAll(".share-btn").forEach(function(el) {
+    var kind = el.dataset.share;
+    if (handlers[kind]) { el.href = handlers[kind]; return; }
+
+    if (kind === "native") {
+      el.addEventListener("click", function() {
+        if (navigator.share) {
+          navigator.share({ title: title, text: txt, url: url }).catch(function(){});
+        } else {
+          navigator.clipboard && navigator.clipboard.writeText(url);
+        }
+      });
+    }
+
+    if (kind === "copy") {
+      el.addEventListener("click", function() {
+        if (!navigator.clipboard) return;
+        navigator.clipboard.writeText(url).then(function() {
+          var lbl = el.querySelector(".share-copy-lbl");
+          if (!lbl) return;
+          var original = lbl.textContent;
+          lbl.textContent = "copié !";
+          el.classList.add("share-btn--copied");
+          setTimeout(function(){
+            lbl.textContent = original;
+            el.classList.remove("share-btn--copied");
+          }, 1600);
+        });
+      });
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
