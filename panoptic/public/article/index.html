@@ -946,7 +946,7 @@ footer.colophon li { margin: 4px 0; }
       <ul class="rm-list">
         <li><strong>Divergence registres</strong> : détecter automatiquement quand un même projet apparaît avec des chiffres différents entre sources. Ce qu'on a observé à la main sur Terr'Arbouts (460 → 480 MW) mais pas encore outillé. Demande de stocker <code>power_mwc</code> et <code>surface_ha</code> <em>par source</em> dans la SQLite, pas juste la valeur canonique fusionnée.</li>
         <li><strong>Hausse d'opérateur</strong> : surveiller les opérateurs dont le portefeuille explose sur 90 jours, signal de mouvement stratégique (rachat, nouveau fonds, contrat-cadre). Demande un <code>first_seen_at</code> fiable par projet et par source.</li>
-        <li><strong>Matching fuzzy amélioré</strong> : actuellement seulement 4 des 133 victoires CNPrV s'accrochent à un projet recensé. Améliorer le croisement commune + proximité géographique + nom fuzzy rendra le paradoxe GLHD encore plus net.</li>
+        <li><strong>Matching fuzzy amélioré</strong> : la v0.2 améliore le croisement (8 des 133 victoires matchent désormais un projet recensé, via geocoding BAN + signaux name/opérateur). L'invisibilité de l'essentiel des contestations dans les registres reste le résultat central.</li>
         <li><strong>Filtre MRAe renforcé côté pipeline</strong> : environ 5 % des entrées MRAe sont aujourd'hui des métadonnées administratives (index régionaux, <abbr title="Plan Local d'Urbanisme : document qui définit les règles d'occupation des sols à l'échelle communale">PLU</abbr>, avis génériques). Un filtre plus précis côté collector réduira le bruit résiduel.</li>
       </ul>
     </details>
