@@ -1,10 +1,19 @@
-# panoptic.tawiza.fr - work_in_progress
-# Indexation bloquée jusqu'au lancement public (Sprint 1 S6)
-
+# panoptic.tawiza.fr
 User-agent: *
+Allow: /
+
+Sitemap: https://panoptic.tawiza.fr/sitemap.xml
+
+# Bots IA : on autorise l'indexation, pas l'entraînement à plein tube
+# (ces règles sont respectées par Anthropic, OpenAI, Google-Extended)
+User-agent: GPTBot
 Disallow: /
 
-# Une fois le site stabilisé, remplacer par :
-# User-agent: *
-# Allow: /
-# Sitemap: https://panoptic.tawiza.fr/sitemap.xml
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
