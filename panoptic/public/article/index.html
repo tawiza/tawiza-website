@@ -792,6 +792,41 @@ footer.colophon li { margin: 4px 0; }
   </div>
 </section>
 
+<!-- ========================= II-bis. La cascade actionnariale ========================= -->
+<section>
+  <h2><span class="num">II-bis · la cascade</span>Derrière les noms français, les actionnaires ont changé</h2>
+
+  <p>
+    La base recense 28 opérateurs canoniques portant un nom français connu : Neoen, Photosol, Urbasolar, EDF Renouvelables, Engie Green, Valeco. En remontant la chaîne actionnariale via BODACC et le Registre National des Entreprises (RNE, données ouvertes INPI), on s'aperçoit que cette identité française n'est souvent que nominale.
+  </p>
+
+  <p>
+    Sur les quatre premières majors analysées en profondeur, <strong>les quatre ont changé de main entre 2022 et 2025</strong>.
+  </p>
+
+  <div class="callout">
+    <p class="label">Quatre rachats confirmés par BODACC</p>
+    <ul class="rm-list" style="margin-top:10px">
+      <li><strong>Neoen</strong> (9 projets dans la base, 327 filiales au RNE) · nomination du Président <em>Brookfield Renewable Holdings SAS</em> le 6 juillet 2025. Brookfield Asset Management est un fonds d'infrastructure canadien coté à Toronto, environ 900 milliards de dollars d'actifs sous gestion.</li>
+      <li><strong>Photosol</strong> (30 projets dans la base, 185 entités du groupe) · nomination du Président <em>Rubis Photosol</em> le 14 mai 2025. Rubis est un groupe français coté au SBF 120, historiquement distributeur pétrolier en outre-mer.</li>
+      <li><strong>Amarenco</strong> France (2 projets dans la base, 213 filiales au RNE) · Président <em>AMARENCO SOLAR LIMITED</em> (Irlande). Schéma classique holding IRL pour entité opérationnelle française.</li>
+      <li><strong>Ombrea</strong> (3 projets dans la base) · absorbée par TotalEnergies Renouvelables France en 2022. L'entité juridique Ombrea a disparu mais le nom marketing continue d'apparaître dans les registres ADEME et MRAe.</li>
+    </ul>
+  </div>
+
+  <p>
+    L'empreinte réelle de ces opérateurs en France dépasse largement ce que la base agrivoltaïque laisse voir. En scannant le stock RNE (1 054 SIREN du groupe étendu), on recense <strong>au moins 4 432 filiales</strong> sous contrôle des 28 mères canoniques, dominées par <em>Engie Green</em> (740), <em>Urbasolar</em> (690), <em>Neoen</em> (356), <em>EDF Renouvelables</em> (353) et <em>Ombrea/TotalEnergies</em> (342). Les 119 projets agrivolt visibles dans panoptic représentent environ <strong>3 % de cette empreinte</strong>. Le reste est majoritairement du photovoltaïque au sol, de l'éolien et du stockage, sous le même contrôle actionnarial.
+  </p>
+
+  <p class="dim">
+    Deux modèles d'organisation coexistent. Les plus gros (Engie Green, Urbasolar, EDF Renouvelables) président leurs SPV <em>directement</em> depuis la mère. D'autres (Photosol, Voltalia, ENOE) utilisent des holdings intermédiaires empilées, ce qui rend leur empreinte invisible au premier coup d'œil : Photosol n'apparaît que comme président de 2 SPV si on interroge son seul SIREN, mais 183 si on ajoute ses holdings (<em>Photosol Invest</em>, <em>Rubis Photosol Mobexi</em>, SPV à numéros). C'est cette résolution élargie que panoptic v0.3 intègre.
+  </p>
+
+  <p>
+    Les commandes <code>panoptic operators --alarm</code> et <code>panoptic operators --foreign</code> exposent publiquement ces signaux dans la CLI. Elles ne nécessitent pas de compte ni de clé. Les données sources sont ouvertes.
+  </p>
+</section>
+
 <!-- ========================= IV. L'opposition ========================= -->
 <section>
   <h2><span class="num">III · l'opposition</span>133 victoires, zéro contre GLHD</h2>
@@ -1003,7 +1038,7 @@ footer.colophon li { margin: 4px 0; }
   </p>
 
   <p class="dim">
-    La cascade actionnariale derrière les SPV (sociétés de projet locales) n'est que partiellement reconstituée. Remonter de "Ferme Solaire des Tilleuls SAS" à un fonds d'infrastructure ultime demande des requêtes BODACC et INPI <abbr title="Registre National des Entreprises : remplace depuis 2023 le RCS + RM + Registre des actifs agricoles">RNE</abbr> qui ne sont pas encore intégrées.
+    La cascade actionnariale était identifiée comme angle mort v0.1. La v0.2 l'intègre : BODACC donne le président actuel et les changements de dirigeants, INPI RNE donne les filiales directes. Reste à remonter les cascades de holdings intermédiaires profondes (niveau 2+) qui demandent l'API INPI NIVEAU 2 (payante) ou des croisements Pappers.
   </p>
 
   <p class="dim">
