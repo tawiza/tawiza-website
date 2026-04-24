@@ -5,3 +5,12 @@ Thumbs.db
 data/
 !assets/data/
 !panoptic/public/data/
+!src/data/
+
+# Astro V2
+node_modules/
+dist/
+.astro/
+.vite/
+package-lock.json
+
