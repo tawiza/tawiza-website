@@ -362,6 +362,12 @@
           status.textContent = data.data.has_optin ? 'D\u00e9j\u00e0 inscrit.' : 'V\u00e9rifiez votre bo\u00eete mail.';
           status.style.color = 'var(--foret)';
           e.target.style.display = 'none';
+          // Trigger welcome email (webhook s\u00e9par\u00e9 appel\u00e9 apr\u00e8s inscription r\u00e9ussie)
+          fetch('https://nl.tawiza.fr/api/welcome', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, name: '' })
+          }).catch(function () { /* inscription d\u00e9j\u00e0 OK, welcome best-effort */ });
         } else {
           status.textContent = 'Erreur.'; status.style.color = 'var(--terre)';
           btn.disabled = false; btn.textContent = 'envoyer \u2192';
