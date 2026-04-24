@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>panoptic · le graphe de l'agrivoltaïque français</title>
+  <meta name="description" content="Carte interactive de l'écosystème agrivoltaïque français : 28 opérateurs, 4432 filiales, cascades actionnariales et contrôles étrangers. Données ouvertes, code libre.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:title" content="panoptic · graphe de l'agrivoltaïque français">
+  <meta property="og:description" content="4432 SPV sous contrôle de 28 opérateurs canoniques. Visualisation interactive à partir de BODACC + INPI RNE.">
+  <meta property="og:url" content="https://panoptic.tawiza.fr/graph/">
+  <meta property="og:image" content="https://panoptic.tawiza.fr/og-image.png">
+  <link rel="stylesheet" href="graph.css">
+  <script src="https://unpkg.com/cytoscape@3.28.1/dist/cytoscape.min.js"></script>
+  <script src="https://unpkg.com/layout-base@2.0.1/layout-base.js"></script>
+  <script src="https://unpkg.com/cose-base@2.2.0/cose-base.js"></script>
+  <script src="https://unpkg.com/cytoscape-fcose@2.2.0/cytoscape-fcose.js"></script>
+  <!-- Plausible analytics -->
+  <script defer data-domain="panoptic.tawiza.fr" src="https://analytics.tawiza.fr/js/script.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="brand">
+    <span class="brand-mark">panoptic</span>
+    <span class="brand-sub">un regard sur l'agrivoltaïsme français</span>
+  </a>
+  <nav class="topnav">
+    <a href="/article/">Article</a>
+    <a href="/graph/" class="active">Graphe</a>
+    <a href="https://github.com/tawiza/panoptic-cli" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="intro">
+  <h1>Le graphe de l'agrivoltaïque français</h1>
+  <p class="lede">
+    Ce que les registres publics laissent voir d'un côté, ce que le Registre National des Entreprises révèle de l'autre. Chaque nœud est un acteur, chaque lien est une relation juridique documentée.
+  </p>
+  <p class="source">
+    Sources : ADEME · projets-environnement.gouv.fr · MRAe · Coordination Nationale Photorévoltée · BODACC · INPI RNE NIVEAU 1. Licence CC-BY-SA.
+  </p>
+</section>
+
+<section class="stats" id="stats">
+  <div class="stat"><span class="stat-num" id="stat-mothers">...</span><span class="stat-label">opérateurs mères</span></div>
+  <div class="stat alarm"><span class="stat-num" id="stat-alarm">...</span><span class="stat-label">en alarme actionnariale</span></div>
+  <div class="stat foreign"><span class="stat-num" id="stat-foreign">...</span><span class="stat-label">sous contrôle étranger direct</span></div>
+  <div class="stat"><span class="stat-num" id="stat-group">...</span><span class="stat-label">filiales RNE cumulées</span></div>
+</section>
+
+<section class="legend-guide">
+  <h2>Mode d'emploi en trente secondes</h2>
+  <div class="guide-grid">
+    <div class="guide-item">
+      <div class="legend-sample sample-mother-fra"></div>
+      <div>
+        <strong>Opérateur mère, contrôle français</strong>
+        <p>Engie Green, Urbasolar, EDF Renouvelables... 28 en tout.</p>
+      </div>
+    </div>
+    <div class="guide-item">
+      <div class="legend-sample sample-mother-alarm"></div>
+      <div>
+        <strong>Rachat récent ou cascade offshore</strong>
+        <p>Neoen (Brookfield), Photosol (Rubis), Amarenco (Irlande), AMDA (Espagne).</p>
+      </div>
+    </div>
+    <div class="guide-item">
+      <div class="legend-sample sample-country"></div>
+      <div>
+        <strong>Pays de contrôle étranger</strong>
+        <p>Le lien va de l'opérateur FR vers le pays de sa maison mère.</p>
+      </div>
+    </div>
+    <div class="guide-item">
+      <div class="legend-sample sample-holding"></div>
+      <div>
+        <strong>Holdings intermédiaires</strong>
+        <p>Photosol Invest, Arkolia HoldCo, etc. Cliquez sur une mère pour les afficher.</p>
+      </div>
+    </div>
+    <div class="guide-item">
+      <div class="legend-sample sample-spv"></div>
+      <div>
+        <strong>SPV (société de projet)</strong>
+        <p>Chaque parc solaire ou éolien a sa propre SAS. Échantillon de 10 par mère.</p>
+      </div>
+    </div>
+    <div class="guide-item guide-hint">
+      <strong>Astuces</strong>
+      <p>Clic sur un nœud pour les détails. Double-clic sur une mère pour étendre ses holdings. Molette pour zoomer. Glisser pour déplacer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="controls">
+  <div class="filters">
+    <label class="filter">
+      <input type="checkbox" id="filter-alarm">
+      <span>opérateurs en alarme seulement</span>
+    </label>
+    <label class="filter">
+      <input type="checkbox" id="filter-foreign">
+      <span>contrôle étranger seulement</span>
+    </label>
+    <label class="filter">
+      <input type="checkbox" id="show-holdings">
+      <span>afficher les holdings intermédiaires</span>
+    </label>
+    <label class="filter">
+      <input type="checkbox" id="show-spv">
+      <span>afficher un échantillon de SPV</span>
+    </label>
+    <input type="search" id="search-box" placeholder="chercher un opérateur (ex. Neoen)">
+    <button type="button" id="reset-btn">réinitialiser</button>
+  </div>
+</section>
+
+<section class="graph-wrap">
+  <div id="cy"></div>
+  <aside id="sidebar" class="sidebar-hidden">
+    <button type="button" class="close-btn" id="close-sidebar" aria-label="Fermer">×</button>
+    <div id="sidebar-content">
+      <p class="hint">Clic sur un nœud pour voir ses détails ici.</p>
+    </div>
+  </aside>
+</section>
+
+<section class="reading">
+  <h2>Comment lire ce graphe</h2>
+  <p>
+    Pour que l'écosystème tienne dans une seule image, chaque élément porte une signification précise.
+  </p>
+  <p>
+    <strong>La taille d'un nœud mère est proportionnelle à son empreinte RNE groupe.</strong> Plus la société contrôle de filiales directement ou via ses holdings, plus le cercle est gros. Engie Green (740 filiales) est visuellement plus grand que Neoen (356), qui est lui-même plus grand que Amarenco (220).
+  </p>
+  <p>
+    <strong>La couleur rouge terre signale un signal d'alarme actionnarial</strong> : rachat par une personne morale dans les 18 derniers mois (D3) ou cascade via juridiction d'optimisation fiscale (D7). Quatre opérateurs sont concernés aujourd'hui : Neoen (Brookfield depuis juillet 2025), Photosol (Rubis depuis mai 2025), Amarenco (AMARENCO SOLAR LIMITED basée en Irlande), et AMDA Energies (AMDA ENERGIA SA en Espagne).
+  </p>
+  <p>
+    <strong>Les pays en nœuds rectangulaires exposent la dépossession directe.</strong> Deux flèches sortent de France : une vers l'Irlande (Amarenco), une vers l'Espagne (AMDA). Le cas Neoen est plus subtil : Brookfield est canadien mais opère via une coquille française (<em>Brookfield Renewable Holdings SAS</em>). Il n'y a donc pas de flèche Neoen → Canada, mais c'est bien une prise de contrôle étrangère.
+  </p>
+  <p>
+    <strong>Les holdings intermédiaires sont masqués par défaut.</strong> Les activer révèle la différence entre deux modèles : Engie Green ou Urbasolar président leurs 700+ SPV directement depuis la mère, tandis que Photosol, ENOE ou Voltalia empilent des holdings intermédiaires (<em>Photosol Invest</em>, <em>PHOTOSOL SPV 56</em>, <em>Rubis Photosol Mobexi 2</em>) qui portent chacune un sous-portefeuille de SPV.
+  </p>
+</section>
+
+<section class="methodo">
+  <h2>Ce que le graphe ne montre pas encore</h2>
+  <ul>
+    <li><strong>Les cascades profondes</strong>. Brookfield est canadien mais n'apparaît pas comme nœud pays car le RNE ne voit que la coquille française. Remonter au-delà demande l'API INPI NIVEAU 2 (payante) ou des croisements Pappers.</li>
+    <li><strong>Les flux financiers</strong>. Le graphe montre qui préside qui, pas qui finance qui ni combien. Les bilans agrégés demandent l'exploitation des dépôts de comptes BODACC, à venir.</li>
+    <li><strong>La dimension temporelle</strong>. Le graphe représente un instantané avril 2026. L'historique des rachats (Ombrea 2022, Neoen 2024-2025, Photosol 2025) est lisible dans les signaux mais pas animé.</li>
+    <li><strong>Les projets contestés</strong>. Les 133 victoires de la Coordination Nationale Photorévoltée ne sont pas sur ce graphe-ci. Elles figurent dans l'<a href="/article/">article</a> et sont interrogeables via <code>panoptic &lt;département&gt;</code>.</li>
+  </ul>
+  <p class="close-note">
+    Panoptic est un chantier. Si tu vois une erreur de rattachement, une holding qu'on a ratée, un pays à ajouter : <a href="mailto:tawiza.v0@gmail.com">on est joignables</a>.
+  </p>
+</section>
+
+</main>
+
+<footer class="colophon">
+  <p>
+    panoptic · <a href="/">tawiza.fr</a> ·
+    <a href="https://github.com/tawiza/panoptic-cli" target="_blank" rel="noopener">GitHub</a> ·
+    <code>pip install panoptic-tawiza</code>
+  </p>
+  <p class="licence">
+    Code AGPL-3.0 · Données CC-BY-SA-4.0
+  </p>
+</footer>
+
+<script src="graph.js"></script>
+</body>
+</html>

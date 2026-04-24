@@ -1,0 +1,7727 @@
+{
+  "version": "2026-04-24",
+  "generated_at": "2026-04-24T06:52:10.647108+00:00",
+  "stats": {
+    "n_mothers": 28,
+    "n_mothers_alarm": 4,
+    "n_mothers_foreign": 2,
+    "n_holdings_shown": 346,
+    "n_spv_shown": 150,
+    "n_subsidiaries_group_total": 4432,
+    "n_countries": 2
+  },
+  "nodes": [
+    {
+      "id": "m:892398769",
+      "type": "mother",
+      "level": 1,
+      "siren": "892398769",
+      "canonical": "AMDA Energies",
+      "denomination": "AMDA ENERGIES",
+      "n_subsidiaries_solo": 0,
+      "n_subsidiaries_group": 0,
+      "president_current": "AMDA ENERGIA SA",
+      "president_is_legal": true,
+      "ultimate_country": "ESP",
+      "max_signal_score": 80,
+      "signals": [
+        {
+          "kind": "D3_rachat_recent",
+          "score": 80,
+          "title": "rachat récent (210 j)",
+          "is_alarm": true
+        },
+        {
+          "kind": "D1_controle_etranger",
+          "score": 65,
+          "title": "contrôle étranger : ESP",
+          "is_alarm": false
+        }
+      ]
+    },
+    {
+      "id": "m:890930738",
+      "type": "mother",
+      "level": 1,
+      "siren": "890930738",
+      "canonical": "Agriteos",
+      "denomination": "AGRITEOS",
+      "n_subsidiaries_solo": 0,
+      "n_subsidiaries_group": 0,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 0,
+      "signals": []
+    },
+    {
+      "id": "m:952642213",
+      "type": "mother",
+      "level": 1,
+      "siren": "952642213",
+      "canonical": "Alta EnR",
+      "denomination": "SNC ALTA ENR 11-01",
+      "n_subsidiaries_solo": 0,
+      "n_subsidiaries_group": 0,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 0,
+      "signals": []
+    },
+    {
+      "id": "m:537509333",
+      "type": "mother",
+      "level": 1,
+      "siren": "537509333",
+      "canonical": "Amarenco",
+      "denomination": "AMARENCO FRANCE",
+      "n_subsidiaries_solo": 213,
+      "n_subsidiaries_group": 220,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "IRL",
+      "max_signal_score": 75,
+      "signals": [
+        {
+          "kind": "D7_cascade_offshore",
+          "score": 75,
+          "title": "cascade via Irlande",
+          "is_alarm": true
+        },
+        {
+          "kind": "D1_controle_etranger",
+          "score": 65,
+          "title": "contrôle étranger : Irlande",
+          "is_alarm": false
+        },
+        {
+          "kind": "D4_empreinte_massive",
+          "score": 55,
+          "title": "empreinte massive : 213 SPV au RNE",
+          "is_alarm": false
+        }
+      ]
+    },
+    {
+      "id": "m:509835104",
+      "type": "mother",
+      "level": 1,
+      "siren": "509835104",
+      "canonical": "Arkolia",
+      "denomination": "ARKOLIA ENERGIES",
+      "n_subsidiaries_solo": 266,
+      "n_subsidiaries_group": 267,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 55,
+      "signals": [
+        {
+          "kind": "D4_empreinte_massive",
+          "score": 55,
+          "title": "empreinte massive : 266 SPV au RNE",
+          "is_alarm": false
+        },
+        {
+          "kind": "D6_opacite_be",
+          "score": 35,
+          "title": "aucun bénéficiaire effectif déclaré",
+          "is_alarm": false
+        }
+      ]
+    },
+    {
+      "id": "m:503450462",
+      "type": "mother",
+      "level": 1,
+      "siren": "503450462",
+      "canonical": "BayWa r.e.",
+      "denomination": "BAYWA R.E. FRANCE",
+      "n_subsidiaries_solo": 80,
+      "n_subsidiaries_group": 80,
+      "president_current": "Dabo, Martina",
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 55,
+      "signals": [
+        {
+          "kind": "D4_empreinte_massive",
+          "score": 55,
+          "title": "empreinte massive : 80 SPV au RNE",
+          "is_alarm": false
+        },
+        {
+          "kind": "D6_opacite_be",
+          "score": 35,
+          "title": "aucun bénéficiaire effectif déclaré",
+          "is_alarm": false
+        }
+      ]
+    },
+    {
+      "id": "m:851816942",
+      "type": "mother",
+      "level": 1,
+      "siren": "851816942",
+      "canonical": "Belenergia",
+      "denomination": "BELENERGIA FRANCE",
+      "n_subsidiaries_solo": 1,
+      "n_subsidiaries_group": 1,
+      "president_current": "Baron, Nicolas",
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 0,
+      "signals": []
+    },
+    {
+      "id": "m:434689915",
+      "type": "mother",
+      "level": 1,
+      "siren": "434689915",
+      "canonical": "EDF Renouvelables",
+      "denomination": "EDF power solutions France",
+      "n_subsidiaries_solo": 353,
+      "n_subsidiaries_group": 353,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 55,
+      "signals": [
+        {
+          "kind": "D4_empreinte_massive",
+          "score": 55,
+          "title": "empreinte massive : 353 SPV au RNE",
+          "is_alarm": false
+        }
+      ]
+    },
+    {
+      "id": "m:493993620",
+      "type": "mother",
+      "level": 1,
+      "siren": "493993620",
+      "canonical": "ENOE",
+      "denomination": "ENOE",
+      "n_subsidiaries_solo": 2,
+      "n_subsidiaries_group": 242,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 0,
+      "signals": []
+    },
+    {
+      "id": "m:542107651",
+      "type": "mother",
+      "level": 1,
+      "siren": "542107651",
+      "canonical": "Engie",
+      "denomination": "ENGIE",
+      "n_subsidiaries_solo": 17,
+      "n_subsidiaries_group": 56,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 0,
+      "signals": []
+    },
+    {
+      "id": "m:478826753",
+      "type": "mother",
+      "level": 1,
+      "siren": "478826753",
+      "canonical": "Engie Green",
+      "denomination": "ENGIE GREEN FRANCE",
+      "n_subsidiaries_solo": 718,
+      "n_subsidiaries_group": 740,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 55,
+      "signals": [
+        {
+          "kind": "D4_empreinte_massive",
+          "score": 55,
+          "title": "empreinte massive : 718 SPV au RNE",
+          "is_alarm": false
+        },
+        {
+          "kind": "D6_opacite_be",
+          "score": 35,
+          "title": "aucun bénéficiaire effectif déclaré",
+          "is_alarm": false
+        }
+      ]
+    },
+    {
+      "id": "m:451225692",
+      "type": "mother",
+      "level": 1,
+      "siren": "451225692",
+      "canonical": "Eni Plenitude",
+      "denomination": "Eni Plenitude France",
+      "n_subsidiaries_solo": 0,
+      "n_subsidiaries_group": 0,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 0,
+      "signals": []
+    },
+    {
+      "id": "m:501657399",
+      "type": "mother",
+      "level": 1,
+      "siren": "501657399",
+      "canonical": "GreenYellow",
+      "denomination": "GREENYELLOW",
+      "n_subsidiaries_solo": 56,
+      "n_subsidiaries_group": 63,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 60,
+      "signals": [
+        {
+          "kind": "D2_fonds_infrastructure",
+          "score": 60,
+          "title": "contrôlé par un fonds",
+          "is_alarm": false
+        },
+        {
+          "kind": "D4_empreinte_massive",
+          "score": 55,
+          "title": "empreinte massive : 56 SPV au RNE",
+          "is_alarm": false
+        }
+      ]
+    },
+    {
+      "id": "m:410943948",
+      "type": "mother",
+      "level": 1,
+      "siren": "410943948",
+      "canonical": "JP Énergie",
+      "denomination": "JP ENERGIE ENVIRONNEMENT",
+      "n_subsidiaries_solo": 272,
+      "n_subsidiaries_group": 272,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 55,
+      "signals": [
+        {
+          "kind": "D4_empreinte_massive",
+          "score": 55,
+          "title": "empreinte massive : 272 SPV au RNE",
+          "is_alarm": false
+        }
+      ]
+    },
+    {
+      "id": "m:822376372",
+      "type": "mother",
+      "level": 1,
+      "siren": "822376372",
+      "canonical": "Kronos Solar",
+      "denomination": "KRONOS SOLAR PROJECTS GMBH",
+      "n_subsidiaries_solo": 1,
+      "n_subsidiaries_group": 1,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 0,
+      "signals": []
+    },
+    {
+      "id": "m:508320017",
+      "type": "mother",
+      "level": 1,
+      "siren": "508320017",
+      "canonical": "Neoen",
+      "denomination": "NEOEN",
+      "n_subsidiaries_solo": 327,
+      "n_subsidiaries_group": 356,
+      "president_current": "Brookfield Renewable Holdings SAS",
+      "president_is_legal": true,
+      "ultimate_country": "FRA",
+      "max_signal_score": 80,
+      "signals": [
+        {
+          "kind": "D3_rachat_recent",
+          "score": 80,
+          "title": "rachat récent (291 j)",
+          "is_alarm": true
+        },
+        {
+          "kind": "D2_fonds_infrastructure",
+          "score": 60,
+          "title": "contrôlé par un fonds",
+          "is_alarm": false
+        },
+        {
+          "kind": "D4_empreinte_massive",
+          "score": 55,
+          "title": "empreinte massive : 327 SPV au RNE",
+          "is_alarm": false
+        }
+      ]
+    },
+    {
+      "id": "m:821818655",
+      "type": "mother",
+      "level": 1,
+      "siren": "821818655",
+      "canonical": "Novawood",
+      "denomination": "NOVAWOOD",
+      "n_subsidiaries_solo": 0,
+      "n_subsidiaries_group": 0,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 0,
+      "signals": []
+    },
+    {
+      "id": "m:434836276",
+      "type": "mother",
+      "level": 1,
+      "siren": "434836276",
+      "canonical": "Ombrea",
+      "denomination": "TOTALENERGIES RENOUVELABLES FRANCE",
+      "n_subsidiaries_solo": 342,
+      "n_subsidiaries_group": 342,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 55,
+      "signals": [
+        {
+          "kind": "D4_empreinte_massive",
+          "score": 55,
+          "title": "empreinte massive : 342 SPV au RNE",
+          "is_alarm": false
+        },
+        {
+          "kind": "D6_opacite_be",
+          "score": 35,
+          "title": "aucun bénéficiaire effectif déclaré",
+          "is_alarm": false
+        }
+      ]
+    },
+    {
+      "id": "m:507546943",
+      "type": "mother",
+      "level": 1,
+      "siren": "507546943",
+      "canonical": "Photosol",
+      "denomination": "PHOTOSOL",
+      "n_subsidiaries_solo": 2,
+      "n_subsidiaries_group": 183,
+      "president_current": "Rubis Photosol",
+      "president_is_legal": true,
+      "ultimate_country": "FRA",
+      "max_signal_score": 80,
+      "signals": [
+        {
+          "kind": "D3_rachat_recent",
+          "score": 80,
+          "title": "rachat récent (344 j)",
+          "is_alarm": true
+        }
+      ]
+    },
+    {
+      "id": "m:990133746",
+      "type": "mother",
+      "level": 1,
+      "siren": "990133746",
+      "canonical": "RP Global",
+      "denomination": "RP GLOBAL",
+      "n_subsidiaries_solo": 0,
+      "n_subsidiaries_group": 0,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 0,
+      "signals": []
+    },
+    {
+      "id": "m:500661806",
+      "type": "mother",
+      "level": 1,
+      "siren": "500661806",
+      "canonical": "Reden Solar",
+      "denomination": "REDEN SOLAR",
+      "n_subsidiaries_solo": 37,
+      "n_subsidiaries_group": 37,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 0,
+      "signals": []
+    },
+    {
+      "id": "m:843927583",
+      "type": "mother",
+      "level": 1,
+      "siren": "843927583",
+      "canonical": "Solefra",
+      "denomination": "SOLEFRA 2",
+      "n_subsidiaries_solo": 0,
+      "n_subsidiaries_group": 0,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 0,
+      "signals": []
+    },
+    {
+      "id": "m:752147330",
+      "type": "mother",
+      "level": 1,
+      "siren": "752147330",
+      "canonical": "Sonnedix",
+      "denomination": "SONNEDIX FRANCE SERVICES",
+      "n_subsidiaries_solo": 76,
+      "n_subsidiaries_group": 78,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 55,
+      "signals": [
+        {
+          "kind": "D4_empreinte_massive",
+          "score": 55,
+          "title": "empreinte massive : 76 SPV au RNE",
+          "is_alarm": false
+        }
+      ]
+    },
+    {
+      "id": "m:542051180",
+      "type": "mother",
+      "level": 1,
+      "siren": "542051180",
+      "canonical": "TotalEnergies",
+      "denomination": "TOTALENERGIES SE",
+      "n_subsidiaries_solo": 7,
+      "n_subsidiaries_group": 51,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 0,
+      "signals": []
+    },
+    {
+      "id": "m:492381157",
+      "type": "mother",
+      "level": 1,
+      "siren": "492381157",
+      "canonical": "Urbasolar",
+      "denomination": "URBASOLAR",
+      "n_subsidiaries_solo": 690,
+      "n_subsidiaries_group": 690,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 55,
+      "signals": [
+        {
+          "kind": "D4_empreinte_massive",
+          "score": 55,
+          "title": "empreinte massive : 690 SPV au RNE",
+          "is_alarm": false
+        },
+        {
+          "kind": "D6_opacite_be",
+          "score": 35,
+          "title": "aucun bénéficiaire effectif déclaré",
+          "is_alarm": false
+        }
+      ]
+    },
+    {
+      "id": "m:421377946",
+      "type": "mother",
+      "level": 1,
+      "siren": "421377946",
+      "canonical": "Valeco",
+      "denomination": "VALECO",
+      "n_subsidiaries_solo": 222,
+      "n_subsidiaries_group": 224,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 55,
+      "signals": [
+        {
+          "kind": "D4_empreinte_massive",
+          "score": 55,
+          "title": "empreinte massive : 222 SPV au RNE",
+          "is_alarm": false
+        },
+        {
+          "kind": "D6_opacite_be",
+          "score": 35,
+          "title": "aucun bénéficiaire effectif déclaré",
+          "is_alarm": false
+        }
+      ]
+    },
+    {
+      "id": "m:485182448",
+      "type": "mother",
+      "level": 1,
+      "siren": "485182448",
+      "canonical": "Voltalia",
+      "denomination": "VOLTALIA",
+      "n_subsidiaries_solo": 6,
+      "n_subsidiaries_group": 176,
+      "president_current": null,
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 0,
+      "signals": []
+    },
+    {
+      "id": "m:838334662",
+      "type": "mother",
+      "level": 1,
+      "siren": "838334662",
+      "canonical": "WPD Solar France",
+      "denomination": "WPD SOLAR FRANCE",
+      "n_subsidiaries_solo": 0,
+      "n_subsidiaries_group": 0,
+      "president_current": "Boll, Matthias Wilhelm Josef",
+      "president_is_legal": false,
+      "ultimate_country": "FRA",
+      "max_signal_score": 0,
+      "signals": []
+    },
+    {
+      "id": "c:ESP",
+      "type": "country",
+      "level": 1,
+      "label": "Espagne",
+      "code": "ESP"
+    },
+    {
+      "id": "c:IRL",
+      "type": "country",
+      "level": 1,
+      "label": "Irlande",
+      "code": "IRL"
+    },
+    {
+      "id": "h:952717569",
+      "type": "holding",
+      "level": 2,
+      "siren": "952717569",
+      "denomination": "[Alta EnR intermediate]",
+      "parent": "Alta EnR"
+    },
+    {
+      "id": "h:952694164",
+      "type": "holding",
+      "level": 2,
+      "siren": "952694164",
+      "denomination": "[Alta EnR intermediate]",
+      "parent": "Alta EnR"
+    },
+    {
+      "id": "h:952695971",
+      "type": "holding",
+      "level": 2,
+      "siren": "952695971",
+      "denomination": "[Alta EnR intermediate]",
+      "parent": "Alta EnR"
+    },
+    {
+      "id": "h:952710028",
+      "type": "holding",
+      "level": 2,
+      "siren": "952710028",
+      "denomination": "[Alta EnR intermediate]",
+      "parent": "Alta EnR"
+    },
+    {
+      "id": "h:851797381",
+      "type": "holding",
+      "level": 2,
+      "siren": "851797381",
+      "denomination": "[Amarenco intermediate]",
+      "parent": "Amarenco"
+    },
+    {
+      "id": "h:854018314",
+      "type": "holding",
+      "level": 2,
+      "siren": "854018314",
+      "denomination": "[Amarenco intermediate]",
+      "parent": "Amarenco"
+    },
+    {
+      "id": "h:853824928",
+      "type": "holding",
+      "level": 2,
+      "siren": "853824928",
+      "denomination": "[Amarenco intermediate]",
+      "parent": "Amarenco"
+    },
+    {
+      "id": "h:890956410",
+      "type": "holding",
+      "level": 2,
+      "siren": "890956410",
+      "denomination": "[Amarenco intermediate]",
+      "parent": "Amarenco"
+    },
+    {
+      "id": "h:823546858",
+      "type": "holding",
+      "level": 2,
+      "siren": "823546858",
+      "denomination": "[Amarenco intermediate]",
+      "parent": "Amarenco"
+    },
+    {
+      "id": "h:847488558",
+      "type": "holding",
+      "level": 2,
+      "siren": "847488558",
+      "denomination": "[Amarenco intermediate]",
+      "parent": "Amarenco"
+    },
+    {
+      "id": "h:799493515",
+      "type": "holding",
+      "level": 2,
+      "siren": "799493515",
+      "denomination": "[Amarenco intermediate]",
+      "parent": "Amarenco"
+    },
+    {
+      "id": "h:832082861",
+      "type": "holding",
+      "level": 2,
+      "siren": "832082861",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:750318438",
+      "type": "holding",
+      "level": 2,
+      "siren": "750318438",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:940441686",
+      "type": "holding",
+      "level": 2,
+      "siren": "940441686",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:750401101",
+      "type": "holding",
+      "level": 2,
+      "siren": "750401101",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:829879386",
+      "type": "holding",
+      "level": 2,
+      "siren": "829879386",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:940855695",
+      "type": "holding",
+      "level": 2,
+      "siren": "940855695",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:940855687",
+      "type": "holding",
+      "level": 2,
+      "siren": "940855687",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:921515391",
+      "type": "holding",
+      "level": 2,
+      "siren": "921515391",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:841070394",
+      "type": "holding",
+      "level": 2,
+      "siren": "841070394",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:934925801",
+      "type": "holding",
+      "level": 2,
+      "siren": "934925801",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:907874341",
+      "type": "holding",
+      "level": 2,
+      "siren": "907874341",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:920668514",
+      "type": "holding",
+      "level": 2,
+      "siren": "920668514",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:907874051",
+      "type": "holding",
+      "level": 2,
+      "siren": "907874051",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:940898125",
+      "type": "holding",
+      "level": 2,
+      "siren": "940898125",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:940890445",
+      "type": "holding",
+      "level": 2,
+      "siren": "940890445",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:979586963",
+      "type": "holding",
+      "level": 2,
+      "siren": "979586963",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:979591765",
+      "type": "holding",
+      "level": 2,
+      "siren": "979591765",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:750401143",
+      "type": "holding",
+      "level": 2,
+      "siren": "750401143",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:920668506",
+      "type": "holding",
+      "level": 2,
+      "siren": "920668506",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:940872906",
+      "type": "holding",
+      "level": 2,
+      "siren": "940872906",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:834134199",
+      "type": "holding",
+      "level": 2,
+      "siren": "834134199",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:979762267",
+      "type": "holding",
+      "level": 2,
+      "siren": "979762267",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:979587243",
+      "type": "holding",
+      "level": 2,
+      "siren": "979587243",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:940448418",
+      "type": "holding",
+      "level": 2,
+      "siren": "940448418",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:940872823",
+      "type": "holding",
+      "level": 2,
+      "siren": "940872823",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:934879297",
+      "type": "holding",
+      "level": 2,
+      "siren": "934879297",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:940441694",
+      "type": "holding",
+      "level": 2,
+      "siren": "940441694",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:921515342",
+      "type": "holding",
+      "level": 2,
+      "siren": "921515342",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:750208266",
+      "type": "holding",
+      "level": 2,
+      "siren": "750208266",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:895064392",
+      "type": "holding",
+      "level": 2,
+      "siren": "895064392",
+      "denomination": "[Arkolia intermediate]",
+      "parent": "Arkolia"
+    },
+    {
+      "id": "h:795340215",
+      "type": "holding",
+      "level": 2,
+      "siren": "795340215",
+      "denomination": "[BayWa r.e. intermediate]",
+      "parent": "BayWa r.e."
+    },
+    {
+      "id": "h:795340330",
+      "type": "holding",
+      "level": 2,
+      "siren": "795340330",
+      "denomination": "[BayWa r.e. intermediate]",
+      "parent": "BayWa r.e."
+    },
+    {
+      "id": "h:831135231",
+      "type": "holding",
+      "level": 2,
+      "siren": "831135231",
+      "denomination": "[Belenergia intermediate]",
+      "parent": "Belenergia"
+    },
+    {
+      "id": "h:932855422",
+      "type": "holding",
+      "level": 2,
+      "siren": "932855422",
+      "denomination": "[Belenergia intermediate]",
+      "parent": "Belenergia"
+    },
+    {
+      "id": "h:948877428",
+      "type": "holding",
+      "level": 2,
+      "siren": "948877428",
+      "denomination": "[EDF Renouvelables intermediate]",
+      "parent": "EDF Renouvelables"
+    },
+    {
+      "id": "h:883775488",
+      "type": "holding",
+      "level": 2,
+      "siren": "883775488",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:880967690",
+      "type": "holding",
+      "level": 2,
+      "siren": "880967690",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:880231386",
+      "type": "holding",
+      "level": 2,
+      "siren": "880231386",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:909019846",
+      "type": "holding",
+      "level": 2,
+      "siren": "909019846",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:925233603",
+      "type": "holding",
+      "level": 2,
+      "siren": "925233603",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:952021129",
+      "type": "holding",
+      "level": 2,
+      "siren": "952021129",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:907468631",
+      "type": "holding",
+      "level": 2,
+      "siren": "907468631",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:895174654",
+      "type": "holding",
+      "level": 2,
+      "siren": "895174654",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:895172500",
+      "type": "holding",
+      "level": 2,
+      "siren": "895172500",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:895173771",
+      "type": "holding",
+      "level": 2,
+      "siren": "895173771",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:899893234",
+      "type": "holding",
+      "level": 2,
+      "siren": "899893234",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:925224586",
+      "type": "holding",
+      "level": 2,
+      "siren": "925224586",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:925240350",
+      "type": "holding",
+      "level": 2,
+      "siren": "925240350",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:952021350",
+      "type": "holding",
+      "level": 2,
+      "siren": "952021350",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:952022069",
+      "type": "holding",
+      "level": 2,
+      "siren": "952022069",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:852477405",
+      "type": "holding",
+      "level": 2,
+      "siren": "852477405",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:925304727",
+      "type": "holding",
+      "level": 2,
+      "siren": "925304727",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:894546977",
+      "type": "holding",
+      "level": 2,
+      "siren": "894546977",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:894554179",
+      "type": "holding",
+      "level": 2,
+      "siren": "894554179",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:892028192",
+      "type": "holding",
+      "level": 2,
+      "siren": "892028192",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:894555549",
+      "type": "holding",
+      "level": 2,
+      "siren": "894555549",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:894560598",
+      "type": "holding",
+      "level": 2,
+      "siren": "894560598",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:895171759",
+      "type": "holding",
+      "level": 2,
+      "siren": "895171759",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:914813076",
+      "type": "holding",
+      "level": 2,
+      "siren": "914813076",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:534059720",
+      "type": "holding",
+      "level": 2,
+      "siren": "534059720",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:852115476",
+      "type": "holding",
+      "level": 2,
+      "siren": "852115476",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:849766092",
+      "type": "holding",
+      "level": 2,
+      "siren": "849766092",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:897605861",
+      "type": "holding",
+      "level": 2,
+      "siren": "897605861",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:851929273",
+      "type": "holding",
+      "level": 2,
+      "siren": "851929273",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:883694663",
+      "type": "holding",
+      "level": 2,
+      "siren": "883694663",
+      "denomination": "[ENOE intermediate]",
+      "parent": "ENOE"
+    },
+    {
+      "id": "h:509649679",
+      "type": "holding",
+      "level": 2,
+      "siren": "509649679",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:812294197",
+      "type": "holding",
+      "level": 2,
+      "siren": "812294197",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:340793959",
+      "type": "holding",
+      "level": 2,
+      "siren": "340793959",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:843014754",
+      "type": "holding",
+      "level": 2,
+      "siren": "843014754",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:849069554",
+      "type": "holding",
+      "level": 2,
+      "siren": "849069554",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:750545949",
+      "type": "holding",
+      "level": 2,
+      "siren": "750545949",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:788974996",
+      "type": "holding",
+      "level": 2,
+      "siren": "788974996",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:849496807",
+      "type": "holding",
+      "level": 2,
+      "siren": "849496807",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:838290450",
+      "type": "holding",
+      "level": 2,
+      "siren": "838290450",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:848273314",
+      "type": "holding",
+      "level": 2,
+      "siren": "848273314",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:517509840",
+      "type": "holding",
+      "level": 2,
+      "siren": "517509840",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:829163807",
+      "type": "holding",
+      "level": 2,
+      "siren": "829163807",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:750600249",
+      "type": "holding",
+      "level": 2,
+      "siren": "750600249",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:503785123",
+      "type": "holding",
+      "level": 2,
+      "siren": "503785123",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:788975548",
+      "type": "holding",
+      "level": 2,
+      "siren": "788975548",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:514145929",
+      "type": "holding",
+      "level": 2,
+      "siren": "514145929",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:537981672",
+      "type": "holding",
+      "level": 2,
+      "siren": "537981672",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:538739137",
+      "type": "holding",
+      "level": 2,
+      "siren": "538739137",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:523859387",
+      "type": "holding",
+      "level": 2,
+      "siren": "523859387",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:523859403",
+      "type": "holding",
+      "level": 2,
+      "siren": "523859403",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:507904878",
+      "type": "holding",
+      "level": 2,
+      "siren": "507904878",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:838194256",
+      "type": "holding",
+      "level": 2,
+      "siren": "838194256",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:838290419",
+      "type": "holding",
+      "level": 2,
+      "siren": "838290419",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:811056449",
+      "type": "holding",
+      "level": 2,
+      "siren": "811056449",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:809901341",
+      "type": "holding",
+      "level": 2,
+      "siren": "809901341",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:843719329",
+      "type": "holding",
+      "level": 2,
+      "siren": "843719329",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:843086760",
+      "type": "holding",
+      "level": 2,
+      "siren": "843086760",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:843192048",
+      "type": "holding",
+      "level": 2,
+      "siren": "843192048",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:849492624",
+      "type": "holding",
+      "level": 2,
+      "siren": "849492624",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:853091718",
+      "type": "holding",
+      "level": 2,
+      "siren": "853091718",
+      "denomination": "[Engie intermediate]",
+      "parent": "Engie"
+    },
+    {
+      "id": "h:798668307",
+      "type": "holding",
+      "level": 2,
+      "siren": "798668307",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:843753856",
+      "type": "holding",
+      "level": 2,
+      "siren": "843753856",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:802916254",
+      "type": "holding",
+      "level": 2,
+      "siren": "802916254",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:421128372",
+      "type": "holding",
+      "level": 2,
+      "siren": "421128372",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:797992294",
+      "type": "holding",
+      "level": 2,
+      "siren": "797992294",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:832934053",
+      "type": "holding",
+      "level": 2,
+      "siren": "832934053",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:802916379",
+      "type": "holding",
+      "level": 2,
+      "siren": "802916379",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:813654704",
+      "type": "holding",
+      "level": 2,
+      "siren": "813654704",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:842982597",
+      "type": "holding",
+      "level": 2,
+      "siren": "842982597",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:843014705",
+      "type": "holding",
+      "level": 2,
+      "siren": "843014705",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:798802096",
+      "type": "holding",
+      "level": 2,
+      "siren": "798802096",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:853208924",
+      "type": "holding",
+      "level": 2,
+      "siren": "853208924",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:838289932",
+      "type": "holding",
+      "level": 2,
+      "siren": "838289932",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:832923015",
+      "type": "holding",
+      "level": 2,
+      "siren": "832923015",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:832934046",
+      "type": "holding",
+      "level": 2,
+      "siren": "832934046",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:798710562",
+      "type": "holding",
+      "level": 2,
+      "siren": "798710562",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:823038245",
+      "type": "holding",
+      "level": 2,
+      "siren": "823038245",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:823038294",
+      "type": "holding",
+      "level": 2,
+      "siren": "823038294",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:838289874",
+      "type": "holding",
+      "level": 2,
+      "siren": "838289874",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:811103712",
+      "type": "holding",
+      "level": 2,
+      "siren": "811103712",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:820444198",
+      "type": "holding",
+      "level": 2,
+      "siren": "820444198",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:843191966",
+      "type": "holding",
+      "level": 2,
+      "siren": "843191966",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:849399555",
+      "type": "holding",
+      "level": 2,
+      "siren": "849399555",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:813688462",
+      "type": "holding",
+      "level": 2,
+      "siren": "813688462",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:838194264",
+      "type": "holding",
+      "level": 2,
+      "siren": "838194264",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:838290344",
+      "type": "holding",
+      "level": 2,
+      "siren": "838290344",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:824534853",
+      "type": "holding",
+      "level": 2,
+      "siren": "824534853",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:813654654",
+      "type": "holding",
+      "level": 2,
+      "siren": "813654654",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:798682571",
+      "type": "holding",
+      "level": 2,
+      "siren": "798682571",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:802916205",
+      "type": "holding",
+      "level": 2,
+      "siren": "802916205",
+      "denomination": "[Engie Green intermediate]",
+      "parent": "Engie Green"
+    },
+    {
+      "id": "h:829472497",
+      "type": "holding",
+      "level": 2,
+      "siren": "829472497",
+      "denomination": "[Eni Plenitude intermediate]",
+      "parent": "Eni Plenitude"
+    },
+    {
+      "id": "h:828678326",
+      "type": "holding",
+      "level": 2,
+      "siren": "828678326",
+      "denomination": "[Eni Plenitude intermediate]",
+      "parent": "Eni Plenitude"
+    },
+    {
+      "id": "h:514261106",
+      "type": "holding",
+      "level": 2,
+      "siren": "514261106",
+      "denomination": "[Eni Plenitude intermediate]",
+      "parent": "Eni Plenitude"
+    },
+    {
+      "id": "h:902367523",
+      "type": "holding",
+      "level": 2,
+      "siren": "902367523",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:880327945",
+      "type": "holding",
+      "level": 2,
+      "siren": "880327945",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:880328000",
+      "type": "holding",
+      "level": 2,
+      "siren": "880328000",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:880328182",
+      "type": "holding",
+      "level": 2,
+      "siren": "880328182",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:528320898",
+      "type": "holding",
+      "level": 2,
+      "siren": "528320898",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:519085898",
+      "type": "holding",
+      "level": 2,
+      "siren": "519085898",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:880327861",
+      "type": "holding",
+      "level": 2,
+      "siren": "880327861",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:880328075",
+      "type": "holding",
+      "level": 2,
+      "siren": "880328075",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:820142545",
+      "type": "holding",
+      "level": 2,
+      "siren": "820142545",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:902414218",
+      "type": "holding",
+      "level": 2,
+      "siren": "902414218",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:917419798",
+      "type": "holding",
+      "level": 2,
+      "siren": "917419798",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:538532722",
+      "type": "holding",
+      "level": 2,
+      "siren": "538532722",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:531651537",
+      "type": "holding",
+      "level": 2,
+      "siren": "531651537",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:902414192",
+      "type": "holding",
+      "level": 2,
+      "siren": "902414192",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:853869840",
+      "type": "holding",
+      "level": 2,
+      "siren": "853869840",
+      "denomination": "[GreenYellow intermediate]",
+      "parent": "GreenYellow"
+    },
+    {
+      "id": "h:905387346",
+      "type": "holding",
+      "level": 2,
+      "siren": "905387346",
+      "denomination": "[Kronos Solar intermediate]",
+      "parent": "Kronos Solar"
+    },
+    {
+      "id": "h:831070479",
+      "type": "holding",
+      "level": 2,
+      "siren": "831070479",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:492690821",
+      "type": "holding",
+      "level": 2,
+      "siren": "492690821",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:825057698",
+      "type": "holding",
+      "level": 2,
+      "siren": "825057698",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:820556074",
+      "type": "holding",
+      "level": 2,
+      "siren": "820556074",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:789991635",
+      "type": "holding",
+      "level": 2,
+      "siren": "789991635",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:509319257",
+      "type": "holding",
+      "level": 2,
+      "siren": "509319257",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:828400010",
+      "type": "holding",
+      "level": 2,
+      "siren": "828400010",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:820433951",
+      "type": "holding",
+      "level": 2,
+      "siren": "820433951",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:828197798",
+      "type": "holding",
+      "level": 2,
+      "siren": "828197798",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:897801536",
+      "type": "holding",
+      "level": 2,
+      "siren": "897801536",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:845212406",
+      "type": "holding",
+      "level": 2,
+      "siren": "845212406",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:799259429",
+      "type": "holding",
+      "level": 2,
+      "siren": "799259429",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:837682947",
+      "type": "holding",
+      "level": 2,
+      "siren": "837682947",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:853795144",
+      "type": "holding",
+      "level": 2,
+      "siren": "853795144",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:840244651",
+      "type": "holding",
+      "level": 2,
+      "siren": "840244651",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:824735559",
+      "type": "holding",
+      "level": 2,
+      "siren": "824735559",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:913532008",
+      "type": "holding",
+      "level": 2,
+      "siren": "913532008",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:850411414",
+      "type": "holding",
+      "level": 2,
+      "siren": "850411414",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:843736828",
+      "type": "holding",
+      "level": 2,
+      "siren": "843736828",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:897846184",
+      "type": "holding",
+      "level": 2,
+      "siren": "897846184",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:904078029",
+      "type": "holding",
+      "level": 2,
+      "siren": "904078029",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:851601419",
+      "type": "holding",
+      "level": 2,
+      "siren": "851601419",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:852540715",
+      "type": "holding",
+      "level": 2,
+      "siren": "852540715",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:840295760",
+      "type": "holding",
+      "level": 2,
+      "siren": "840295760",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:843151465",
+      "type": "holding",
+      "level": 2,
+      "siren": "843151465",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:930123740",
+      "type": "holding",
+      "level": 2,
+      "siren": "930123740",
+      "denomination": "[Neoen intermediate]",
+      "parent": "Neoen"
+    },
+    {
+      "id": "h:977576859",
+      "type": "holding",
+      "level": 2,
+      "siren": "977576859",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:507927168",
+      "type": "holding",
+      "level": 2,
+      "siren": "507927168",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:977549310",
+      "type": "holding",
+      "level": 2,
+      "siren": "977549310",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:529005209",
+      "type": "holding",
+      "level": 2,
+      "siren": "529005209",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:903534972",
+      "type": "holding",
+      "level": 2,
+      "siren": "903534972",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:898916598",
+      "type": "holding",
+      "level": 2,
+      "siren": "898916598",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:518310446",
+      "type": "holding",
+      "level": 2,
+      "siren": "518310446",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:914156518",
+      "type": "holding",
+      "level": 2,
+      "siren": "914156518",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:913868980",
+      "type": "holding",
+      "level": 2,
+      "siren": "913868980",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:914128525",
+      "type": "holding",
+      "level": 2,
+      "siren": "914128525",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:914156120",
+      "type": "holding",
+      "level": 2,
+      "siren": "914156120",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:539677567",
+      "type": "holding",
+      "level": 2,
+      "siren": "539677567",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:531570836",
+      "type": "holding",
+      "level": 2,
+      "siren": "531570836",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:529004160",
+      "type": "holding",
+      "level": 2,
+      "siren": "529004160",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:529005746",
+      "type": "holding",
+      "level": 2,
+      "siren": "529005746",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:539701789",
+      "type": "holding",
+      "level": 2,
+      "siren": "539701789",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:539701854",
+      "type": "holding",
+      "level": 2,
+      "siren": "539701854",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:531270825",
+      "type": "holding",
+      "level": 2,
+      "siren": "531270825",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:531570521",
+      "type": "holding",
+      "level": 2,
+      "siren": "531570521",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:750534091",
+      "type": "holding",
+      "level": 2,
+      "siren": "750534091",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:529005696",
+      "type": "holding",
+      "level": 2,
+      "siren": "529005696",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:529005969",
+      "type": "holding",
+      "level": 2,
+      "siren": "529005969",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:903535201",
+      "type": "holding",
+      "level": 2,
+      "siren": "903535201",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:953317633",
+      "type": "holding",
+      "level": 2,
+      "siren": "953317633",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:914156773",
+      "type": "holding",
+      "level": 2,
+      "siren": "914156773",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:531272714",
+      "type": "holding",
+      "level": 2,
+      "siren": "531272714",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:827703109",
+      "type": "holding",
+      "level": 2,
+      "siren": "827703109",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:528655574",
+      "type": "holding",
+      "level": 2,
+      "siren": "528655574",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:914156252",
+      "type": "holding",
+      "level": 2,
+      "siren": "914156252",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:898916606",
+      "type": "holding",
+      "level": 2,
+      "siren": "898916606",
+      "denomination": "[Photosol intermediate]",
+      "parent": "Photosol"
+    },
+    {
+      "id": "h:899359129",
+      "type": "holding",
+      "level": 2,
+      "siren": "899359129",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:890088503",
+      "type": "holding",
+      "level": 2,
+      "siren": "890088503",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:843927179",
+      "type": "holding",
+      "level": 2,
+      "siren": "843927179",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:883533911",
+      "type": "holding",
+      "level": 2,
+      "siren": "883533911",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:843927153",
+      "type": "holding",
+      "level": 2,
+      "siren": "843927153",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:843927161",
+      "type": "holding",
+      "level": 2,
+      "siren": "843927161",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:843927187",
+      "type": "holding",
+      "level": 2,
+      "siren": "843927187",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:843927567",
+      "type": "holding",
+      "level": 2,
+      "siren": "843927567",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:843927609",
+      "type": "holding",
+      "level": 2,
+      "siren": "843927609",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:888862695",
+      "type": "holding",
+      "level": 2,
+      "siren": "888862695",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:892067331",
+      "type": "holding",
+      "level": 2,
+      "siren": "892067331",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:882360282",
+      "type": "holding",
+      "level": 2,
+      "siren": "882360282",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:888862679",
+      "type": "holding",
+      "level": 2,
+      "siren": "888862679",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:892064668",
+      "type": "holding",
+      "level": 2,
+      "siren": "892064668",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:849100276",
+      "type": "holding",
+      "level": 2,
+      "siren": "849100276",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:849099247",
+      "type": "holding",
+      "level": 2,
+      "siren": "849099247",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:849101456",
+      "type": "holding",
+      "level": 2,
+      "siren": "849101456",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:882360191",
+      "type": "holding",
+      "level": 2,
+      "siren": "882360191",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:882360225",
+      "type": "holding",
+      "level": 2,
+      "siren": "882360225",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:882360241",
+      "type": "holding",
+      "level": 2,
+      "siren": "882360241",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:882360274",
+      "type": "holding",
+      "level": 2,
+      "siren": "882360274",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:897487351",
+      "type": "holding",
+      "level": 2,
+      "siren": "897487351",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:892068875",
+      "type": "holding",
+      "level": 2,
+      "siren": "892068875",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:888862653",
+      "type": "holding",
+      "level": 2,
+      "siren": "888862653",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:888862802",
+      "type": "holding",
+      "level": 2,
+      "siren": "888862802",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:889204210",
+      "type": "holding",
+      "level": 2,
+      "siren": "889204210",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:889204301",
+      "type": "holding",
+      "level": 2,
+      "siren": "889204301",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:890088495",
+      "type": "holding",
+      "level": 2,
+      "siren": "890088495",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:890583909",
+      "type": "holding",
+      "level": 2,
+      "siren": "890583909",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:823911219",
+      "type": "holding",
+      "level": 2,
+      "siren": "823911219",
+      "denomination": "[Solefra intermediate]",
+      "parent": "Solefra"
+    },
+    {
+      "id": "h:521176677",
+      "type": "holding",
+      "level": 2,
+      "siren": "521176677",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:523963809",
+      "type": "holding",
+      "level": 2,
+      "siren": "523963809",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:518580675",
+      "type": "holding",
+      "level": 2,
+      "siren": "518580675",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:517726659",
+      "type": "holding",
+      "level": 2,
+      "siren": "517726659",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:517726790",
+      "type": "holding",
+      "level": 2,
+      "siren": "517726790",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:953867611",
+      "type": "holding",
+      "level": 2,
+      "siren": "953867611",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:517730644",
+      "type": "holding",
+      "level": 2,
+      "siren": "517730644",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:517730966",
+      "type": "holding",
+      "level": 2,
+      "siren": "517730966",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:512013368",
+      "type": "holding",
+      "level": 2,
+      "siren": "512013368",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:512023367",
+      "type": "holding",
+      "level": 2,
+      "siren": "512023367",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:518958988",
+      "type": "holding",
+      "level": 2,
+      "siren": "518958988",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:513023358",
+      "type": "holding",
+      "level": 2,
+      "siren": "513023358",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:952666972",
+      "type": "holding",
+      "level": 2,
+      "siren": "952666972",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:517543328",
+      "type": "holding",
+      "level": 2,
+      "siren": "517543328",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:952664415",
+      "type": "holding",
+      "level": 2,
+      "siren": "952664415",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:952667426",
+      "type": "holding",
+      "level": 2,
+      "siren": "952667426",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:953110111",
+      "type": "holding",
+      "level": 2,
+      "siren": "953110111",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:517543625",
+      "type": "holding",
+      "level": 2,
+      "siren": "517543625",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:510239148",
+      "type": "holding",
+      "level": 2,
+      "siren": "510239148",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:538512641",
+      "type": "holding",
+      "level": 2,
+      "siren": "538512641",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:902892314",
+      "type": "holding",
+      "level": 2,
+      "siren": "902892314",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:901190421",
+      "type": "holding",
+      "level": 2,
+      "siren": "901190421",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:523476703",
+      "type": "holding",
+      "level": 2,
+      "siren": "523476703",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:524149986",
+      "type": "holding",
+      "level": 2,
+      "siren": "524149986",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:802047506",
+      "type": "holding",
+      "level": 2,
+      "siren": "802047506",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:524150141",
+      "type": "holding",
+      "level": 2,
+      "siren": "524150141",
+      "denomination": "[Sonnedix intermediate]",
+      "parent": "Sonnedix"
+    },
+    {
+      "id": "h:538612458",
+      "type": "holding",
+      "level": 2,
+      "siren": "538612458",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:844435883",
+      "type": "holding",
+      "level": 2,
+      "siren": "844435883",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:542034921",
+      "type": "holding",
+      "level": 2,
+      "siren": "542034921",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:328195193",
+      "type": "holding",
+      "level": 2,
+      "siren": "328195193",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:409160132",
+      "type": "holding",
+      "level": 2,
+      "siren": "409160132",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:692004807",
+      "type": "holding",
+      "level": 2,
+      "siren": "692004807",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:552120784",
+      "type": "holding",
+      "level": 2,
+      "siren": "552120784",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:442395448",
+      "type": "holding",
+      "level": 2,
+      "siren": "442395448",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:853835239",
+      "type": "holding",
+      "level": 2,
+      "siren": "853835239",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:399542430",
+      "type": "holding",
+      "level": 2,
+      "siren": "399542430",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:572215721",
+      "type": "holding",
+      "level": 2,
+      "siren": "572215721",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:428292023",
+      "type": "holding",
+      "level": 2,
+      "siren": "428292023",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:494580798",
+      "type": "holding",
+      "level": 2,
+      "siren": "494580798",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:879319242",
+      "type": "holding",
+      "level": 2,
+      "siren": "879319242",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:844192492",
+      "type": "holding",
+      "level": 2,
+      "siren": "844192492",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:384305660",
+      "type": "holding",
+      "level": 2,
+      "siren": "384305660",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:505028118",
+      "type": "holding",
+      "level": 2,
+      "siren": "505028118",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:479858854",
+      "type": "holding",
+      "level": 2,
+      "siren": "479858854",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:400515698",
+      "type": "holding",
+      "level": 2,
+      "siren": "400515698",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:509749941",
+      "type": "holding",
+      "level": 2,
+      "siren": "509749941",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:530045111",
+      "type": "holding",
+      "level": 2,
+      "siren": "530045111",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:612048322",
+      "type": "holding",
+      "level": 2,
+      "siren": "612048322",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:844192518",
+      "type": "holding",
+      "level": 2,
+      "siren": "844192518",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:844192591",
+      "type": "holding",
+      "level": 2,
+      "siren": "844192591",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:401605720",
+      "type": "holding",
+      "level": 2,
+      "siren": "401605720",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:832282164",
+      "type": "holding",
+      "level": 2,
+      "siren": "832282164",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:832282453",
+      "type": "holding",
+      "level": 2,
+      "siren": "832282453",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:349710046",
+      "type": "holding",
+      "level": 2,
+      "siren": "349710046",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:303775027",
+      "type": "holding",
+      "level": 2,
+      "siren": "303775027",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:843016593",
+      "type": "holding",
+      "level": 2,
+      "siren": "843016593",
+      "denomination": "[TotalEnergies intermediate]",
+      "parent": "TotalEnergies"
+    },
+    {
+      "id": "h:502341993",
+      "type": "holding",
+      "level": 2,
+      "siren": "502341993",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:817536774",
+      "type": "holding",
+      "level": 2,
+      "siren": "817536774",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:507699213",
+      "type": "holding",
+      "level": 2,
+      "siren": "507699213",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:810965970",
+      "type": "holding",
+      "level": 2,
+      "siren": "810965970",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:810330795",
+      "type": "holding",
+      "level": 2,
+      "siren": "810330795",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:810158907",
+      "type": "holding",
+      "level": 2,
+      "siren": "810158907",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:810279679",
+      "type": "holding",
+      "level": 2,
+      "siren": "810279679",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:810279786",
+      "type": "holding",
+      "level": 2,
+      "siren": "810279786",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:810279893",
+      "type": "holding",
+      "level": 2,
+      "siren": "810279893",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:810966069",
+      "type": "holding",
+      "level": 2,
+      "siren": "810966069",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:792704173",
+      "type": "holding",
+      "level": 2,
+      "siren": "792704173",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:821554896",
+      "type": "holding",
+      "level": 2,
+      "siren": "821554896",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:810966283",
+      "type": "holding",
+      "level": 2,
+      "siren": "810966283",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:828454587",
+      "type": "holding",
+      "level": 2,
+      "siren": "828454587",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:911601375",
+      "type": "holding",
+      "level": 2,
+      "siren": "911601375",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:835274663",
+      "type": "holding",
+      "level": 2,
+      "siren": "835274663",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:502368574",
+      "type": "holding",
+      "level": 2,
+      "siren": "502368574",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:817837073",
+      "type": "holding",
+      "level": 2,
+      "siren": "817837073",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:819330952",
+      "type": "holding",
+      "level": 2,
+      "siren": "819330952",
+      "denomination": "[Urbasolar intermediate]",
+      "parent": "Urbasolar"
+    },
+    {
+      "id": "h:388693525",
+      "type": "holding",
+      "level": 2,
+      "siren": "388693525",
+      "denomination": "[Valeco intermediate]",
+      "parent": "Valeco"
+    },
+    {
+      "id": "h:489753657",
+      "type": "holding",
+      "level": 2,
+      "siren": "489753657",
+      "denomination": "[Valeco intermediate]",
+      "parent": "Valeco"
+    },
+    {
+      "id": "h:887492908",
+      "type": "holding",
+      "level": 2,
+      "siren": "887492908",
+      "denomination": "[Valeco intermediate]",
+      "parent": "Valeco"
+    },
+    {
+      "id": "h:512072729",
+      "type": "holding",
+      "level": 2,
+      "siren": "512072729",
+      "denomination": "[Valeco intermediate]",
+      "parent": "Valeco"
+    },
+    {
+      "id": "h:434054318",
+      "type": "holding",
+      "level": 2,
+      "siren": "434054318",
+      "denomination": "[Valeco intermediate]",
+      "parent": "Valeco"
+    },
+    {
+      "id": "h:392415840",
+      "type": "holding",
+      "level": 2,
+      "siren": "392415840",
+      "denomination": "[Valeco intermediate]",
+      "parent": "Valeco"
+    },
+    {
+      "id": "h:537806747",
+      "type": "holding",
+      "level": 2,
+      "siren": "537806747",
+      "denomination": "[Valeco intermediate]",
+      "parent": "Valeco"
+    },
+    {
+      "id": "h:840153175",
+      "type": "holding",
+      "level": 2,
+      "siren": "840153175",
+      "denomination": "[Valeco intermediate]",
+      "parent": "Valeco"
+    },
+    {
+      "id": "h:987514544",
+      "type": "holding",
+      "level": 2,
+      "siren": "987514544",
+      "denomination": "[Valeco intermediate]",
+      "parent": "Valeco"
+    },
+    {
+      "id": "h:497674291",
+      "type": "holding",
+      "level": 2,
+      "siren": "497674291",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:517684791",
+      "type": "holding",
+      "level": 2,
+      "siren": "517684791",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:500982095",
+      "type": "holding",
+      "level": 2,
+      "siren": "500982095",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:820462786",
+      "type": "holding",
+      "level": 2,
+      "siren": "820462786",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:509962841",
+      "type": "holding",
+      "level": 2,
+      "siren": "509962841",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:452146905",
+      "type": "holding",
+      "level": 2,
+      "siren": "452146905",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:522645282",
+      "type": "holding",
+      "level": 2,
+      "siren": "522645282",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:940695406",
+      "type": "holding",
+      "level": 2,
+      "siren": "940695406",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:511677312",
+      "type": "holding",
+      "level": 2,
+      "siren": "511677312",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:511676967",
+      "type": "holding",
+      "level": 2,
+      "siren": "511676967",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:511641797",
+      "type": "holding",
+      "level": 2,
+      "siren": "511641797",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:511642076",
+      "type": "holding",
+      "level": 2,
+      "siren": "511642076",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:511676934",
+      "type": "holding",
+      "level": 2,
+      "siren": "511676934",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:509872073",
+      "type": "holding",
+      "level": 2,
+      "siren": "509872073",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:509669305",
+      "type": "holding",
+      "level": 2,
+      "siren": "509669305",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:509874400",
+      "type": "holding",
+      "level": 2,
+      "siren": "509874400",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:948776877",
+      "type": "holding",
+      "level": 2,
+      "siren": "948776877",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:979858420",
+      "type": "holding",
+      "level": 2,
+      "siren": "979858420",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:931983266",
+      "type": "holding",
+      "level": 2,
+      "siren": "931983266",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:984822197",
+      "type": "holding",
+      "level": 2,
+      "siren": "984822197",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "h:931967764",
+      "type": "holding",
+      "level": 2,
+      "siren": "931967764",
+      "denomination": "[Voltalia intermediate]",
+      "parent": "Voltalia"
+    },
+    {
+      "id": "s:101085504",
+      "type": "spv",
+      "level": 3,
+      "siren": "101085504",
+      "denomination": "SOLEIA LAC",
+      "parent": "JP Énergie",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:101086445",
+      "type": "spv",
+      "level": 3,
+      "siren": "101086445",
+      "denomination": "SOLEIA PLS",
+      "parent": "JP Énergie",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:101119345",
+      "type": "spv",
+      "level": 3,
+      "siren": "101119345",
+      "denomination": "SOLEIA VPA",
+      "parent": "JP Énergie",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:479455362",
+      "type": "spv",
+      "level": 3,
+      "siren": "479455362",
+      "denomination": "PELEIA-1",
+      "parent": "JP Énergie",
+      "role_in_parent": "code_205"
+    },
+    {
+      "id": "s:479917924",
+      "type": "spv",
+      "level": 3,
+      "siren": "479917924",
+      "denomination": "PELEIA - 2",
+      "parent": "JP Énergie",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:481074359",
+      "type": "spv",
+      "level": 3,
+      "siren": "481074359",
+      "denomination": "SNC CILAOS 57",
+      "parent": "JP Énergie",
+      "role_in_parent": "Directeur général non associé"
+    },
+    {
+      "id": "s:483277729",
+      "type": "spv",
+      "level": 3,
+      "siren": "483277729",
+      "denomination": "PELEIA 3",
+      "parent": "JP Énergie",
+      "role_in_parent": "code_205"
+    },
+    {
+      "id": "s:483277851",
+      "type": "spv",
+      "level": 3,
+      "siren": "483277851",
+      "denomination": "PELEIA 4",
+      "parent": "JP Énergie",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:484981774",
+      "type": "spv",
+      "level": 3,
+      "siren": "484981774",
+      "denomination": "BEAUCE ENERGIE",
+      "parent": "JP Énergie",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:484982442",
+      "type": "spv",
+      "level": 3,
+      "siren": "484982442",
+      "denomination": "BOISSY ENERGIE 1",
+      "parent": "JP Énergie",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:101496156",
+      "type": "spv",
+      "level": 3,
+      "siren": "101496156",
+      "denomination": "CAS DE PENAGRISOL",
+      "parent": "Valeco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:440856938",
+      "type": "spv",
+      "level": 3,
+      "siren": "440856938",
+      "denomination": "VALECO INGENIERIE",
+      "parent": "Valeco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:498148956",
+      "type": "spv",
+      "level": 3,
+      "siren": "498148956",
+      "denomination": "LA SOCIETE DES MONTS DE LACAUNE",
+      "parent": "Valeco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:503288789",
+      "type": "spv",
+      "level": 3,
+      "siren": "503288789",
+      "denomination": "SAINT LAURENT SOLAR",
+      "parent": "Valeco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:753423193",
+      "type": "spv",
+      "level": 3,
+      "siren": "753423193",
+      "denomination": "PARC EOLIEN DE REVELLES",
+      "parent": "Valeco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:753457977",
+      "type": "spv",
+      "level": 3,
+      "siren": "753457977",
+      "denomination": "PARC EOLIEN DES MOUSSIERES",
+      "parent": "Valeco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:788427490",
+      "type": "spv",
+      "level": 3,
+      "siren": "788427490",
+      "denomination": "GRAMENTES ENERGIES",
+      "parent": "Valeco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:788428183",
+      "type": "spv",
+      "level": 3,
+      "siren": "788428183",
+      "denomination": "LABRUGUIERE ENERGIES",
+      "parent": "Valeco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:793141227",
+      "type": "spv",
+      "level": 3,
+      "siren": "793141227",
+      "denomination": "PARC EOLIEN DE BEL AIR",
+      "parent": "Valeco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:387498926",
+      "type": "spv",
+      "level": 3,
+      "siren": "387498926",
+      "denomination": "EDF power solutions Services",
+      "parent": "EDF Renouvelables",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:434518437",
+      "type": "spv",
+      "level": 3,
+      "siren": "434518437",
+      "denomination": "SOCIETE DU PARC EOLIEN D'OUPIA",
+      "parent": "EDF Renouvelables",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:434518577",
+      "type": "spv",
+      "level": 3,
+      "siren": "434518577",
+      "denomination": "SOCIETE DU PARC EOLIEN DE LUC SUR ORBIEU",
+      "parent": "EDF Renouvelables",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:434519088",
+      "type": "spv",
+      "level": 3,
+      "siren": "434519088",
+      "denomination": "SOCIETE DU PARC EOLIEN DE VILLESEQUE",
+      "parent": "EDF Renouvelables",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:437757461",
+      "type": "spv",
+      "level": 3,
+      "siren": "437757461",
+      "denomination": "MAYOTTE 7",
+      "parent": "EDF Renouvelables",
+      "role_in_parent": "code_99"
+    },
+    {
+      "id": "s:437923402",
+      "type": "spv",
+      "level": 3,
+      "siren": "437923402",
+      "denomination": "SOCIETE DU PARC EOLIEN DE CASTANET-LE HAUT",
+      "parent": "EDF Renouvelables",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:438147456",
+      "type": "spv",
+      "level": 3,
+      "siren": "438147456",
+      "denomination": "SOC PARC EOLIEN PAYS COTE JADE",
+      "parent": "EDF Renouvelables",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:438147910",
+      "type": "spv",
+      "level": 3,
+      "siren": "438147910",
+      "denomination": "SIIF GUADELOUPE SERVICES",
+      "parent": "EDF Renouvelables",
+      "role_in_parent": "code_29"
+    },
+    {
+      "id": "s:438540312",
+      "type": "spv",
+      "level": 3,
+      "siren": "438540312",
+      "denomination": "SOCIETE DU PARC EOLIEN DE FIENNES",
+      "parent": "EDF Renouvelables",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:439956160",
+      "type": "spv",
+      "level": 3,
+      "siren": "439956160",
+      "denomination": "TECHN ENERGIES NOUVE ENVIRON TENESA",
+      "parent": "EDF Renouvelables",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:100089481",
+      "type": "spv",
+      "level": 3,
+      "siren": "100089481",
+      "denomination": "CS RENFR 765",
+      "parent": "Ombrea",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:100095777",
+      "type": "spv",
+      "level": 3,
+      "siren": "100095777",
+      "denomination": "CS RENFR 764",
+      "parent": "Ombrea",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:100099258",
+      "type": "spv",
+      "level": 3,
+      "siren": "100099258",
+      "denomination": "CS RENFR 766",
+      "parent": "Ombrea",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:100120591",
+      "type": "spv",
+      "level": 3,
+      "siren": "100120591",
+      "denomination": "CS RENFR 768",
+      "parent": "Ombrea",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:100215532",
+      "type": "spv",
+      "level": 3,
+      "siren": "100215532",
+      "denomination": "CS RENFR 769",
+      "parent": "Ombrea",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:100215474",
+      "type": "spv",
+      "level": 3,
+      "siren": "100215474",
+      "denomination": "CS RENFR 767",
+      "parent": "Ombrea",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:100215581",
+      "type": "spv",
+      "level": 3,
+      "siren": "100215581",
+      "denomination": "CE RENFR 773",
+      "parent": "Ombrea",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:100216381",
+      "type": "spv",
+      "level": 3,
+      "siren": "100216381",
+      "denomination": "CS RENFR 771",
+      "parent": "Ombrea",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:100227610",
+      "type": "spv",
+      "level": 3,
+      "siren": "100227610",
+      "denomination": "CS RENFR 770",
+      "parent": "Ombrea",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:100240712",
+      "type": "spv",
+      "level": 3,
+      "siren": "100240712",
+      "denomination": "CE RENFR 772",
+      "parent": "Ombrea",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:398654012",
+      "type": "spv",
+      "level": 3,
+      "siren": "398654012",
+      "denomination": "EG EOLIEN 907",
+      "parent": "Engie Green",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:428604318",
+      "type": "spv",
+      "level": 3,
+      "siren": "428604318",
+      "denomination": "OSTWIND INTERNATIONAL",
+      "parent": "Engie Green",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:440332971",
+      "type": "spv",
+      "level": 3,
+      "siren": "440332971",
+      "denomination": "EOLIENNES DE FAUQUEMBERGUES",
+      "parent": "Engie Green",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:440333045",
+      "type": "spv",
+      "level": 3,
+      "siren": "440333045",
+      "denomination": "EOLIENNES DE VINCLY",
+      "parent": "Engie Green",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:440333029",
+      "type": "spv",
+      "level": 3,
+      "siren": "440333029",
+      "denomination": "EOLIENNES DE RENTY   AUDINCTHUN",
+      "parent": "Engie Green",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:442084935",
+      "type": "spv",
+      "level": 3,
+      "siren": "442084935",
+      "denomination": "FUTURES ENERGIES INVESTISSEMENTS",
+      "parent": "Engie Green",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:442203154",
+      "type": "spv",
+      "level": 3,
+      "siren": "442203154",
+      "denomination": "EOLIENNES DE RECLINGHEM",
+      "parent": "Engie Green",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:443189287",
+      "type": "spv",
+      "level": 3,
+      "siren": "443189287",
+      "denomination": "PH2016",
+      "parent": "Engie Green",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:444702005",
+      "type": "spv",
+      "level": 3,
+      "siren": "444702005",
+      "denomination": "LES MOULINS A VENT D'ARMORIQUE",
+      "parent": "Engie Green",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:507674687",
+      "type": "spv",
+      "level": 3,
+      "siren": "507674687",
+      "denomination": "CENTRALE BIOMASSE DE CHAMPDENIERS",
+      "parent": "Voltalia",
+      "role_in_parent": "code_99"
+    },
+    {
+      "id": "s:507687788",
+      "type": "spv",
+      "level": 3,
+      "siren": "507687788",
+      "denomination": "PARC SOLAIRE MONTEGUT ENERGIE",
+      "parent": "Voltalia",
+      "role_in_parent": "code_99"
+    },
+    {
+      "id": "s:507689032",
+      "type": "spv",
+      "level": 3,
+      "siren": "507689032",
+      "denomination": "CENTRALE BIOMASSE DE CORBENAY",
+      "parent": "Voltalia",
+      "role_in_parent": "code_99"
+    },
+    {
+      "id": "s:520397050",
+      "type": "spv",
+      "level": 3,
+      "siren": "520397050",
+      "denomination": "HELEXIA",
+      "parent": "Voltalia",
+      "role_in_parent": "code_65"
+    },
+    {
+      "id": "s:524950136",
+      "type": "spv",
+      "level": 3,
+      "siren": "524950136",
+      "denomination": "PARC SOLAIRE DE SAINT ETIENNE DES SORTS",
+      "parent": "Voltalia",
+      "role_in_parent": "code_41"
+    },
+    {
+      "id": "s:524950227",
+      "type": "spv",
+      "level": 3,
+      "siren": "524950227",
+      "denomination": "TOITURE SOLAIRE DOMAINE DU DEFFEND",
+      "parent": "Voltalia",
+      "role_in_parent": "code_99"
+    },
+    {
+      "id": "s:501809214",
+      "type": "spv",
+      "level": 3,
+      "siren": "501809214",
+      "denomination": "SAS URBASUN CARAIBES 1",
+      "parent": "Urbasolar",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:503165318",
+      "type": "spv",
+      "level": 3,
+      "siren": "503165318",
+      "denomination": "GCE ENERGIES",
+      "parent": "Urbasolar",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:503777088",
+      "type": "spv",
+      "level": 3,
+      "siren": "503777088",
+      "denomination": "M.C.E. ENERGIES",
+      "parent": "Urbasolar",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:507793271",
+      "type": "spv",
+      "level": 3,
+      "siren": "507793271",
+      "denomination": "FREJORGUES ENERGY",
+      "parent": "Urbasolar",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:507795219",
+      "type": "spv",
+      "level": 3,
+      "siren": "507795219",
+      "denomination": "SOLAR PARTICIPATIONS",
+      "parent": "Urbasolar",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:509893467",
+      "type": "spv",
+      "level": 3,
+      "siren": "509893467",
+      "denomination": "JUVIGNAC ENERGY",
+      "parent": "Urbasolar",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:510396666",
+      "type": "spv",
+      "level": 3,
+      "siren": "510396666",
+      "denomination": "2PRCE ENERGIES",
+      "parent": "Urbasolar",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:903720399",
+      "type": "spv",
+      "level": 3,
+      "siren": "903720399",
+      "denomination": "SCI UNILOCAS",
+      "parent": "ENOE",
+      "role_in_parent": "Représentant permanent"
+    },
+    {
+      "id": "s:937657500",
+      "type": "spv",
+      "level": 3,
+      "siren": "937657500",
+      "denomination": "ENOE IMMO",
+      "parent": "ENOE",
+      "role_in_parent": "Représentant permanent"
+    },
+    {
+      "id": "s:509516571",
+      "type": "spv",
+      "level": 3,
+      "siren": "509516571",
+      "denomination": "REDEN INDUSTRIES",
+      "parent": "Reden Solar",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:519902795",
+      "type": "spv",
+      "level": 3,
+      "siren": "519902795",
+      "denomination": "HABITAT SOLAIRE",
+      "parent": "Reden Solar",
+      "role_in_parent": "code_40"
+    },
+    {
+      "id": "s:521357046",
+      "type": "spv",
+      "level": 3,
+      "siren": "521357046",
+      "denomination": "FIPAS SAS",
+      "parent": "Reden Solar",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:523408409",
+      "type": "spv",
+      "level": 3,
+      "siren": "523408409",
+      "denomination": "SAINT SULPICE",
+      "parent": "Reden Solar",
+      "role_in_parent": "Associé gérant"
+    },
+    {
+      "id": "s:523421618",
+      "type": "spv",
+      "level": 3,
+      "siren": "523421618",
+      "denomination": "REDEN INVEST AO",
+      "parent": "Reden Solar",
+      "role_in_parent": "Associé gérant"
+    },
+    {
+      "id": "s:523422996",
+      "type": "spv",
+      "level": 3,
+      "siren": "523422996",
+      "denomination": "REDEN SERRES",
+      "parent": "Reden Solar",
+      "role_in_parent": "Associé gérant"
+    },
+    {
+      "id": "s:525202677",
+      "type": "spv",
+      "level": 3,
+      "siren": "525202677",
+      "denomination": "REDEN ELECTRICITE",
+      "parent": "Reden Solar",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:529614521",
+      "type": "spv",
+      "level": 3,
+      "siren": "529614521",
+      "denomination": "CENTRE DE CONTACTS ENERGIE",
+      "parent": "Reden Solar",
+      "role_in_parent": "Associé gérant"
+    },
+    {
+      "id": "s:530830140",
+      "type": "spv",
+      "level": 3,
+      "siren": "530830140",
+      "denomination": "REDEN TECHNIQUE",
+      "parent": "Reden Solar",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:751528258",
+      "type": "spv",
+      "level": 3,
+      "siren": "751528258",
+      "denomination": "LES FRUITIERS DU MESTROT 1",
+      "parent": "Reden Solar",
+      "role_in_parent": "Représentant permanent"
+    },
+    {
+      "id": "s:504403775",
+      "type": "spv",
+      "level": 3,
+      "siren": "504403775",
+      "denomination": "KASSIRA",
+      "parent": "GreenYellow",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:523502656",
+      "type": "spv",
+      "level": 3,
+      "siren": "523502656",
+      "denomination": "LYCEES PYRENEES ORIENTALES",
+      "parent": "GreenYellow",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:528278914",
+      "type": "spv",
+      "level": 3,
+      "siren": "528278914",
+      "denomination": "HOLDING DE GESTION DE PROJETS ENERGETIQUES 1",
+      "parent": "GreenYellow",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:528315708",
+      "type": "spv",
+      "level": 3,
+      "siren": "528315708",
+      "denomination": "HOLDING D'EXPLOITATION DE CENTRALES PHOTOVOLTAIQUES 10",
+      "parent": "GreenYellow",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:538215740",
+      "type": "spv",
+      "level": 3,
+      "siren": "538215740",
+      "denomination": "GREEN YELLOW EFFENERGIE REUNION 3",
+      "parent": "GreenYellow",
+      "role_in_parent": "code_99"
+    },
+    {
+      "id": "s:538215690",
+      "type": "spv",
+      "level": 3,
+      "siren": "538215690",
+      "denomination": "GREEN YELLOW EFFENERGIE REUNION 2",
+      "parent": "GreenYellow",
+      "role_in_parent": "Directeur général non associé"
+    },
+    {
+      "id": "s:750791931",
+      "type": "spv",
+      "level": 3,
+      "siren": "750791931",
+      "denomination": "GREEN YELLOW EFFENERGIE REUNION 4",
+      "parent": "GreenYellow",
+      "role_in_parent": "Directeur général non associé"
+    },
+    {
+      "id": "s:789506607",
+      "type": "spv",
+      "level": 3,
+      "siren": "789506607",
+      "denomination": "HOLDING D'EXPLOITATION DE CENTRALES PHOTOVOLTAIQUES 16",
+      "parent": "GreenYellow",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:480187947",
+      "type": "spv",
+      "level": 3,
+      "siren": "480187947",
+      "denomination": "ENERPOLE",
+      "parent": "BayWa r.e.",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:524099728",
+      "type": "spv",
+      "level": 3,
+      "siren": "524099728",
+      "denomination": "TREDIAS ENERGIES",
+      "parent": "BayWa r.e.",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:809284540",
+      "type": "spv",
+      "level": 3,
+      "siren": "809284540",
+      "denomination": "BOTSAY ENERGIE",
+      "parent": "BayWa r.e.",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:841647563",
+      "type": "spv",
+      "level": 3,
+      "siren": "841647563",
+      "denomination": "LES EOLIENNES CITOYENNES DE BOTSAY",
+      "parent": "BayWa r.e.",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:850618968",
+      "type": "spv",
+      "level": 3,
+      "siren": "850618968",
+      "denomination": "TENAREZE ENERGIES",
+      "parent": "BayWa r.e.",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:851619791",
+      "type": "spv",
+      "level": 3,
+      "siren": "851619791",
+      "denomination": "PELE JOUE ENERGIES",
+      "parent": "BayWa r.e.",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:878768415",
+      "type": "spv",
+      "level": 3,
+      "siren": "878768415",
+      "denomination": "BRIZAY ENERGIES",
+      "parent": "BayWa r.e.",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:878789254",
+      "type": "spv",
+      "level": 3,
+      "siren": "878789254",
+      "denomination": "SOLAIRE DE HAUTE VOIE",
+      "parent": "BayWa r.e.",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:878823863",
+      "type": "spv",
+      "level": 3,
+      "siren": "878823863",
+      "denomination": "AUTELS VILLEVILLON ENERGIES",
+      "parent": "BayWa r.e.",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:882797467",
+      "type": "spv",
+      "level": 3,
+      "siren": "882797467",
+      "denomination": "SAINTS GEOSMES ENERGIES",
+      "parent": "BayWa r.e.",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:791571730",
+      "type": "spv",
+      "level": 3,
+      "siren": "791571730",
+      "denomination": "PHOTOM SERVICES",
+      "parent": "Photosol",
+      "role_in_parent": "code_131"
+    },
+    {
+      "id": "s:844031773",
+      "type": "spv",
+      "level": 3,
+      "siren": "844031773",
+      "denomination": "PHOTOSOL BOURBON",
+      "parent": "Photosol",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:100171602",
+      "type": "spv",
+      "level": 3,
+      "siren": "100171602",
+      "denomination": "Le Couret Stockage",
+      "parent": "Neoen",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:440947406",
+      "type": "spv",
+      "level": 3,
+      "siren": "440947406",
+      "denomination": "NEOEN DEVELOPPEMENT",
+      "parent": "Neoen",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:449690551",
+      "type": "spv",
+      "level": 3,
+      "siren": "449690551",
+      "denomination": "EOLIENNE PLOUGUIN 2",
+      "parent": "Neoen",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:449690627",
+      "type": "spv",
+      "level": 3,
+      "siren": "449690627",
+      "denomination": "EOLIENNE PLOUGUIN 3",
+      "parent": "Neoen",
+      "role_in_parent": "code_99"
+    },
+    {
+      "id": "s:452436074",
+      "type": "spv",
+      "level": 3,
+      "siren": "452436074",
+      "denomination": "VAL D'EOLE",
+      "parent": "Neoen",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:478542418",
+      "type": "spv",
+      "level": 3,
+      "siren": "478542418",
+      "denomination": "CHAPELLE D'EOLE",
+      "parent": "Neoen",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:479783250",
+      "type": "spv",
+      "level": 3,
+      "siren": "479783250",
+      "denomination": "SAS  AIOLOS",
+      "parent": "Neoen",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:479898751",
+      "type": "spv",
+      "level": 3,
+      "siren": "479898751",
+      "denomination": "CENTRALE EOLIENNE DE L'AUXOIS SUD",
+      "parent": "Neoen",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:479931123",
+      "type": "spv",
+      "level": 3,
+      "siren": "479931123",
+      "denomination": "CONSTANTINUS",
+      "parent": "Neoen",
+      "role_in_parent": "code_99"
+    },
+    {
+      "id": "s:480106087",
+      "type": "spv",
+      "level": 3,
+      "siren": "480106087",
+      "denomination": "EOLIENNE KERHERHAL 2",
+      "parent": "Neoen",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:101423820",
+      "type": "spv",
+      "level": 3,
+      "siren": "101423820",
+      "denomination": "ARKOLIA INVEST 222",
+      "parent": "Arkolia",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:101432375",
+      "type": "spv",
+      "level": 3,
+      "siren": "101432375",
+      "denomination": "ARKOLIA INVEST 221",
+      "parent": "Arkolia",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:504392515",
+      "type": "spv",
+      "level": 3,
+      "siren": "504392515",
+      "denomination": "ENERGIE DU HAUT DOURDOU",
+      "parent": "Arkolia",
+      "role_in_parent": "Directeur général"
+    },
+    {
+      "id": "s:509270690",
+      "type": "spv",
+      "level": 3,
+      "siren": "509270690",
+      "denomination": "CENTRALE PHOTOVOLTAIQUE DE DAUMAZAN SUR ARIZE",
+      "parent": "Arkolia",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:512755406",
+      "type": "spv",
+      "level": 3,
+      "siren": "512755406",
+      "denomination": "CSBG INVEST",
+      "parent": "Arkolia",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:520887167",
+      "type": "spv",
+      "level": 3,
+      "siren": "520887167",
+      "denomination": "CS LA GLACIERE",
+      "parent": "Arkolia",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:521526996",
+      "type": "spv",
+      "level": 3,
+      "siren": "521526996",
+      "denomination": "CS HUPARLAC",
+      "parent": "Arkolia",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:521973826",
+      "type": "spv",
+      "level": 3,
+      "siren": "521973826",
+      "denomination": "CENTRALE PHOTOVOLTAIQUE DE MISON",
+      "parent": "Arkolia",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:522340710",
+      "type": "spv",
+      "level": 3,
+      "siren": "522340710",
+      "denomination": "CS LAISSAC",
+      "parent": "Arkolia",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:522340843",
+      "type": "spv",
+      "level": 3,
+      "siren": "522340843",
+      "denomination": "CS RIEUPEYROUX",
+      "parent": "Arkolia",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:493288112",
+      "type": "spv",
+      "level": 3,
+      "siren": "493288112",
+      "denomination": "SOCIETE D'ENERGIES NOUVELLES DE LA REUNION",
+      "parent": "Amarenco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:502864267",
+      "type": "spv",
+      "level": 3,
+      "siren": "502864267",
+      "denomination": "AMARENCO MONTELIMAR",
+      "parent": "Amarenco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:504188749",
+      "type": "spv",
+      "level": 3,
+      "siren": "504188749",
+      "denomination": "AMARENCO SERVICES",
+      "parent": "Amarenco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:510475999",
+      "type": "spv",
+      "level": 3,
+      "siren": "510475999",
+      "denomination": "SALLELE ENERGIES",
+      "parent": "Amarenco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:513824946",
+      "type": "spv",
+      "level": 3,
+      "siren": "513824946",
+      "denomination": "AFR LAGARDE",
+      "parent": "Amarenco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:524162153",
+      "type": "spv",
+      "level": 3,
+      "siren": "524162153",
+      "denomination": "AFR GRABELS",
+      "parent": "Amarenco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:524652708",
+      "type": "spv",
+      "level": 3,
+      "siren": "524652708",
+      "denomination": "FERME PV2",
+      "parent": "Amarenco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:529336489",
+      "type": "spv",
+      "level": 3,
+      "siren": "529336489",
+      "denomination": "CENTRALE PHOTOVOLTAIQUE DU FOUILLOUX",
+      "parent": "Amarenco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:529541674",
+      "type": "spv",
+      "level": 3,
+      "siren": "529541674",
+      "denomination": "BETHLEEM INVESTISSEMENT",
+      "parent": "Amarenco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:530311539",
+      "type": "spv",
+      "level": 3,
+      "siren": "530311539",
+      "denomination": "GDM",
+      "parent": "Amarenco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:315335950",
+      "type": "spv",
+      "level": 3,
+      "siren": "315335950",
+      "denomination": "CTRE RECH GEOLO MATIE PREMIE MINER ENERG",
+      "parent": "TotalEnergies",
+      "role_in_parent": "Représentant permanent"
+    },
+    {
+      "id": "s:414547588",
+      "type": "spv",
+      "level": 3,
+      "siren": "414547588",
+      "denomination": "TOTAL E AND P KUWAIT",
+      "parent": "TotalEnergies",
+      "role_in_parent": "code_99"
+    },
+    {
+      "id": "s:493601801",
+      "type": "spv",
+      "level": 3,
+      "siren": "493601801",
+      "denomination": "TOTAL E&P SAUDI",
+      "parent": "TotalEnergies",
+      "role_in_parent": "code_99"
+    },
+    {
+      "id": "s:509835492",
+      "type": "spv",
+      "level": 3,
+      "siren": "509835492",
+      "denomination": "TOTAL E&P MONTELIMAR",
+      "parent": "TotalEnergies",
+      "role_in_parent": "code_99"
+    },
+    {
+      "id": "s:517698239",
+      "type": "spv",
+      "level": 3,
+      "siren": "517698239",
+      "denomination": "TOTAL E&P QATAR BLOCK BC",
+      "parent": "TotalEnergies",
+      "role_in_parent": "code_41"
+    },
+    {
+      "id": "s:539072934",
+      "type": "spv",
+      "level": 3,
+      "siren": "539072934",
+      "denomination": "TOTAL E&P DEVELOPPEMENT",
+      "parent": "TotalEnergies",
+      "role_in_parent": "code_41"
+    },
+    {
+      "id": "s:333363547",
+      "type": "spv",
+      "level": 3,
+      "siren": "333363547",
+      "denomination": "TRANSMANCHE CONSTRUCTION",
+      "parent": "Engie",
+      "role_in_parent": "code_11"
+    },
+    {
+      "id": "s:342721073",
+      "type": "spv",
+      "level": 3,
+      "siren": "342721073",
+      "denomination": "CYLERGIE",
+      "parent": "Engie",
+      "role_in_parent": "code_11"
+    },
+    {
+      "id": "s:385136023",
+      "type": "spv",
+      "level": 3,
+      "siren": "385136023",
+      "denomination": "GROUPEMT ENTREPRISE PUBLIQUE SEINE AMONT",
+      "parent": "Engie",
+      "role_in_parent": "code_11"
+    },
+    {
+      "id": "s:400278966",
+      "type": "spv",
+      "level": 3,
+      "siren": "400278966",
+      "denomination": "ABN AMRO EURO SUSTAINABLE MONEY MARKET",
+      "parent": "Engie",
+      "role_in_parent": "code_65"
+    },
+    {
+      "id": "s:410354070",
+      "type": "spv",
+      "level": 3,
+      "siren": "410354070",
+      "denomination": "CALLIANCE GESTION",
+      "parent": "Engie",
+      "role_in_parent": "code_11"
+    },
+    {
+      "id": "s:440087161",
+      "type": "spv",
+      "level": 3,
+      "siren": "440087161",
+      "denomination": "ENGIE ALLIANCE",
+      "parent": "Engie",
+      "role_in_parent": "code_11"
+    },
+    {
+      "id": "s:443129358",
+      "type": "spv",
+      "level": 3,
+      "siren": "443129358",
+      "denomination": "CESAME EXADEBIT SA",
+      "parent": "Engie",
+      "role_in_parent": "code_65"
+    },
+    {
+      "id": "s:444786511",
+      "type": "spv",
+      "level": 3,
+      "siren": "444786511",
+      "denomination": "GRDF",
+      "parent": "Engie",
+      "role_in_parent": "code_65"
+    },
+    {
+      "id": "s:491358362",
+      "type": "spv",
+      "level": 3,
+      "siren": "491358362",
+      "denomination": "UNION BORDEAUX BEGLES",
+      "parent": "Engie",
+      "role_in_parent": "code_65"
+    },
+    {
+      "id": "s:518242805",
+      "type": "spv",
+      "level": 3,
+      "siren": "518242805",
+      "denomination": "INSTITUT DE FORMATION A L'ENVIRONNEMENT ET AU DEVELOPPEMENT DURABLE",
+      "parent": "Engie",
+      "role_in_parent": "code_65"
+    },
+    {
+      "id": "s:499695211",
+      "type": "spv",
+      "level": 3,
+      "siren": "499695211",
+      "denomination": "DELTA SOLAR",
+      "parent": "Sonnedix",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:499990331",
+      "type": "spv",
+      "level": 3,
+      "siren": "499990331",
+      "denomination": "CORSICA VERDE",
+      "parent": "Sonnedix",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:500086327",
+      "type": "spv",
+      "level": 3,
+      "siren": "500086327",
+      "denomination": "SUNERGOS",
+      "parent": "Sonnedix",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:501217210",
+      "type": "spv",
+      "level": 3,
+      "siren": "501217210",
+      "denomination": "SOLEOL I",
+      "parent": "Sonnedix",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:501226153",
+      "type": "spv",
+      "level": 3,
+      "siren": "501226153",
+      "denomination": "LAVANSOL III",
+      "parent": "Sonnedix",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:501226112",
+      "type": "spv",
+      "level": 3,
+      "siren": "501226112",
+      "denomination": "LAVANSOL I",
+      "parent": "Sonnedix",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:501226179",
+      "type": "spv",
+      "level": 3,
+      "siren": "501226179",
+      "denomination": "SOLEOL II",
+      "parent": "Sonnedix",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:501226096",
+      "type": "spv",
+      "level": 3,
+      "siren": "501226096",
+      "denomination": "PROVENSOL I",
+      "parent": "Sonnedix",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:501226062",
+      "type": "spv",
+      "level": 3,
+      "siren": "501226062",
+      "denomination": "LAVANSOL V",
+      "parent": "Sonnedix",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:502544638",
+      "type": "spv",
+      "level": 3,
+      "siren": "502544638",
+      "denomination": "SOLAIREPOGGIO-DI-NAZZA",
+      "parent": "Sonnedix",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:538898206",
+      "type": "spv",
+      "level": 3,
+      "siren": "538898206",
+      "denomination": "SOLOGNE BIOGAZ",
+      "parent": "Belenergia",
+      "role_in_parent": "Président"
+    }
+  ],
+  "edges": [
+    {
+      "source": "m:892398769",
+      "target": "c:ESP",
+      "kind": "controlled_by",
+      "level": 1
+    },
+    {
+      "source": "m:537509333",
+      "target": "c:IRL",
+      "kind": "controlled_by",
+      "level": 1
+    },
+    {
+      "source": "h:952717569",
+      "target": "m:952642213",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:952694164",
+      "target": "m:952642213",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:952695971",
+      "target": "m:952642213",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:952710028",
+      "target": "m:952642213",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:851797381",
+      "target": "m:537509333",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:854018314",
+      "target": "m:537509333",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:853824928",
+      "target": "m:537509333",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:890956410",
+      "target": "m:537509333",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:823546858",
+      "target": "m:537509333",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:847488558",
+      "target": "m:537509333",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:799493515",
+      "target": "m:537509333",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:832082861",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:750318438",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:940441686",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:750401101",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:829879386",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:940855695",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:940855687",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:921515391",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:841070394",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:934925801",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:907874341",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:920668514",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:907874051",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:940898125",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:940890445",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:979586963",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:979591765",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:750401143",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:920668506",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:940872906",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:834134199",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:979762267",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:979587243",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:940448418",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:940872823",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:934879297",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:940441694",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:921515342",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:750208266",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:895064392",
+      "target": "m:509835104",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:795340215",
+      "target": "m:503450462",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:795340330",
+      "target": "m:503450462",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:831135231",
+      "target": "m:851816942",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:932855422",
+      "target": "m:851816942",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:948877428",
+      "target": "m:434689915",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:883775488",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:880967690",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:880231386",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:909019846",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:925233603",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:952021129",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:907468631",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:895174654",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:895172500",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:895173771",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:899893234",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:925224586",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:925240350",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:952021350",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:952022069",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:852477405",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:925304727",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:894546977",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:894554179",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:892028192",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:894555549",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:894560598",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:895171759",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:914813076",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:534059720",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:852115476",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:849766092",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:897605861",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:851929273",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:883694663",
+      "target": "m:493993620",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:509649679",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:812294197",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:340793959",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843014754",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:849069554",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:750545949",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:788974996",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:849496807",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:838290450",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:848273314",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:517509840",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:829163807",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:750600249",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:503785123",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:788975548",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:514145929",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:537981672",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:538739137",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:523859387",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:523859403",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:507904878",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:838194256",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:838290419",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:811056449",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:809901341",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843719329",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843086760",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843192048",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:849492624",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:853091718",
+      "target": "m:542107651",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:798668307",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843753856",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:802916254",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:421128372",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:797992294",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:832934053",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:802916379",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:813654704",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:842982597",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843014705",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:798802096",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:853208924",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:838289932",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:832923015",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:832934046",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:798710562",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:823038245",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:823038294",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:838289874",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:811103712",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:820444198",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843191966",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:849399555",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:813688462",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:838194264",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:838290344",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:824534853",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:813654654",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:798682571",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:802916205",
+      "target": "m:478826753",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:829472497",
+      "target": "m:451225692",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:828678326",
+      "target": "m:451225692",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:514261106",
+      "target": "m:451225692",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:902367523",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:880327945",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:880328000",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:880328182",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:528320898",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:519085898",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:880327861",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:880328075",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:820142545",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:902414218",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:917419798",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:538532722",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:531651537",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:902414192",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:853869840",
+      "target": "m:501657399",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:905387346",
+      "target": "m:822376372",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:831070479",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:492690821",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:825057698",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:820556074",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:789991635",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:509319257",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:828400010",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:820433951",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:828197798",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:897801536",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:845212406",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:799259429",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:837682947",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:853795144",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:840244651",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:824735559",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:913532008",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:850411414",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843736828",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:897846184",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:904078029",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:851601419",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:852540715",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:840295760",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843151465",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:930123740",
+      "target": "m:508320017",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:977576859",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:507927168",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:977549310",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:529005209",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:903534972",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:898916598",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:518310446",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:914156518",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:913868980",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:914128525",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:914156120",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:539677567",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:531570836",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:529004160",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:529005746",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:539701789",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:539701854",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:531270825",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:531570521",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:750534091",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:529005696",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:529005969",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:903535201",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:953317633",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:914156773",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:531272714",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:827703109",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:528655574",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:914156252",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:898916606",
+      "target": "m:507546943",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:899359129",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:890088503",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843927179",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:883533911",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843927153",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843927161",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843927187",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843927567",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843927609",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:888862695",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:892067331",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:882360282",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:888862679",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:892064668",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:849100276",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:849099247",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:849101456",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:882360191",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:882360225",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:882360241",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:882360274",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:897487351",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:892068875",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:888862653",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:888862802",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:889204210",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:889204301",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:890088495",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:890583909",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:823911219",
+      "target": "m:843927583",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:521176677",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:523963809",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:518580675",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:517726659",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:517726790",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:953867611",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:517730644",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:517730966",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:512013368",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:512023367",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:518958988",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:513023358",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:952666972",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:517543328",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:952664415",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:952667426",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:953110111",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:517543625",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:510239148",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:538512641",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:902892314",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:901190421",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:523476703",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:524149986",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:802047506",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:524150141",
+      "target": "m:752147330",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:538612458",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:844435883",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:542034921",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:328195193",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:409160132",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:692004807",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:552120784",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:442395448",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:853835239",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:399542430",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:572215721",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:428292023",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:494580798",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:879319242",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:844192492",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:384305660",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:505028118",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:479858854",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:400515698",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:509749941",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:530045111",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:612048322",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:844192518",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:844192591",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:401605720",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:832282164",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:832282453",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:349710046",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:303775027",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:843016593",
+      "target": "m:542051180",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:502341993",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:817536774",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:507699213",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:810965970",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:810330795",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:810158907",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:810279679",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:810279786",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:810279893",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:810966069",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:792704173",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:821554896",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:810966283",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:828454587",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:911601375",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:835274663",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:502368574",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:817837073",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:819330952",
+      "target": "m:492381157",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:388693525",
+      "target": "m:421377946",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:489753657",
+      "target": "m:421377946",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:887492908",
+      "target": "m:421377946",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:512072729",
+      "target": "m:421377946",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:434054318",
+      "target": "m:421377946",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:392415840",
+      "target": "m:421377946",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:537806747",
+      "target": "m:421377946",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:840153175",
+      "target": "m:421377946",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:987514544",
+      "target": "m:421377946",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:497674291",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:517684791",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:500982095",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:820462786",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:509962841",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:452146905",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:522645282",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:940695406",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:511677312",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:511676967",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:511641797",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:511642076",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:511676934",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:509872073",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:509669305",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:509874400",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:948776877",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:979858420",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:931983266",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:984822197",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "h:931967764",
+      "target": "m:485182448",
+      "kind": "holding_of",
+      "level": 2
+    },
+    {
+      "source": "s:101085504",
+      "target": "m:410943948",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:101086445",
+      "target": "m:410943948",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:101119345",
+      "target": "m:410943948",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:479455362",
+      "target": "m:410943948",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:479917924",
+      "target": "m:410943948",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:481074359",
+      "target": "m:410943948",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:483277729",
+      "target": "m:410943948",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:483277851",
+      "target": "m:410943948",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:484981774",
+      "target": "m:410943948",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:484982442",
+      "target": "m:410943948",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:101496156",
+      "target": "m:421377946",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:440856938",
+      "target": "m:421377946",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:498148956",
+      "target": "m:421377946",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:503288789",
+      "target": "m:421377946",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:753423193",
+      "target": "m:421377946",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:753457977",
+      "target": "m:421377946",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:788427490",
+      "target": "m:421377946",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:788428183",
+      "target": "m:421377946",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:793141227",
+      "target": "m:421377946",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:387498926",
+      "target": "m:434689915",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:434518437",
+      "target": "m:434689915",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:434518577",
+      "target": "m:434689915",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:434519088",
+      "target": "m:434689915",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:437757461",
+      "target": "m:434689915",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:437923402",
+      "target": "m:434689915",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:438147456",
+      "target": "m:434689915",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:438147910",
+      "target": "m:434689915",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:438540312",
+      "target": "m:434689915",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:439956160",
+      "target": "m:434689915",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:100089481",
+      "target": "m:434836276",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:100095777",
+      "target": "m:434836276",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:100099258",
+      "target": "m:434836276",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:100120591",
+      "target": "m:434836276",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:100215532",
+      "target": "m:434836276",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:100215474",
+      "target": "m:434836276",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:100215581",
+      "target": "m:434836276",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:100216381",
+      "target": "m:434836276",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:100227610",
+      "target": "m:434836276",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:100240712",
+      "target": "m:434836276",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:398654012",
+      "target": "m:478826753",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:428604318",
+      "target": "m:478826753",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:440332971",
+      "target": "m:478826753",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:440333045",
+      "target": "m:478826753",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:440333029",
+      "target": "m:478826753",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:442084935",
+      "target": "m:478826753",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:442203154",
+      "target": "m:478826753",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:443189287",
+      "target": "m:478826753",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:444702005",
+      "target": "m:478826753",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:507674687",
+      "target": "m:485182448",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:507687788",
+      "target": "m:485182448",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:507689032",
+      "target": "m:485182448",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:520397050",
+      "target": "m:485182448",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:524950136",
+      "target": "m:485182448",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:524950227",
+      "target": "m:485182448",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:501809214",
+      "target": "m:492381157",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:503165318",
+      "target": "m:492381157",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:503777088",
+      "target": "m:492381157",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:507793271",
+      "target": "m:492381157",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:507795219",
+      "target": "m:492381157",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:509893467",
+      "target": "m:492381157",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:510396666",
+      "target": "m:492381157",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:903720399",
+      "target": "m:493993620",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:937657500",
+      "target": "m:493993620",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:509516571",
+      "target": "m:500661806",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:519902795",
+      "target": "m:500661806",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:521357046",
+      "target": "m:500661806",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:523408409",
+      "target": "m:500661806",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:523421618",
+      "target": "m:500661806",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:523422996",
+      "target": "m:500661806",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:525202677",
+      "target": "m:500661806",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:529614521",
+      "target": "m:500661806",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:530830140",
+      "target": "m:500661806",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:751528258",
+      "target": "m:500661806",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:504403775",
+      "target": "m:501657399",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:523502656",
+      "target": "m:501657399",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:528278914",
+      "target": "m:501657399",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:528315708",
+      "target": "m:501657399",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:538215740",
+      "target": "m:501657399",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:538215690",
+      "target": "m:501657399",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:750791931",
+      "target": "m:501657399",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:789506607",
+      "target": "m:501657399",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:480187947",
+      "target": "m:503450462",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:524099728",
+      "target": "m:503450462",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:809284540",
+      "target": "m:503450462",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:841647563",
+      "target": "m:503450462",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:850618968",
+      "target": "m:503450462",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:851619791",
+      "target": "m:503450462",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:878768415",
+      "target": "m:503450462",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:878789254",
+      "target": "m:503450462",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:878823863",
+      "target": "m:503450462",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:882797467",
+      "target": "m:503450462",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:791571730",
+      "target": "m:507546943",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:844031773",
+      "target": "m:507546943",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:100171602",
+      "target": "m:508320017",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:440947406",
+      "target": "m:508320017",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:449690551",
+      "target": "m:508320017",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:449690627",
+      "target": "m:508320017",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:452436074",
+      "target": "m:508320017",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:478542418",
+      "target": "m:508320017",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:479783250",
+      "target": "m:508320017",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:479898751",
+      "target": "m:508320017",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:479931123",
+      "target": "m:508320017",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:480106087",
+      "target": "m:508320017",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:101423820",
+      "target": "m:509835104",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:101432375",
+      "target": "m:509835104",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:504392515",
+      "target": "m:509835104",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:509270690",
+      "target": "m:509835104",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:512755406",
+      "target": "m:509835104",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:520887167",
+      "target": "m:509835104",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:521526996",
+      "target": "m:509835104",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:521973826",
+      "target": "m:509835104",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:522340710",
+      "target": "m:509835104",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:522340843",
+      "target": "m:509835104",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:493288112",
+      "target": "m:537509333",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:502864267",
+      "target": "m:537509333",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:504188749",
+      "target": "m:537509333",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:510475999",
+      "target": "m:537509333",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:513824946",
+      "target": "m:537509333",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:524162153",
+      "target": "m:537509333",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:524652708",
+      "target": "m:537509333",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:529336489",
+      "target": "m:537509333",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:529541674",
+      "target": "m:537509333",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:530311539",
+      "target": "m:537509333",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:315335950",
+      "target": "m:542051180",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:414547588",
+      "target": "m:542051180",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:493601801",
+      "target": "m:542051180",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:509835492",
+      "target": "m:542051180",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:517698239",
+      "target": "m:542051180",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:539072934",
+      "target": "m:542051180",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:333363547",
+      "target": "m:542107651",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:342721073",
+      "target": "m:542107651",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:385136023",
+      "target": "m:542107651",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:400278966",
+      "target": "m:542107651",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:410354070",
+      "target": "m:542107651",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:440087161",
+      "target": "m:542107651",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:443129358",
+      "target": "m:542107651",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:444786511",
+      "target": "m:542107651",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:491358362",
+      "target": "m:542107651",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:518242805",
+      "target": "m:542107651",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:499695211",
+      "target": "m:752147330",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:499990331",
+      "target": "m:752147330",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:500086327",
+      "target": "m:752147330",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:501217210",
+      "target": "m:752147330",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:501226153",
+      "target": "m:752147330",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:501226112",
+      "target": "m:752147330",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:501226179",
+      "target": "m:752147330",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:501226096",
+      "target": "m:752147330",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:501226062",
+      "target": "m:752147330",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:502544638",
+      "target": "m:752147330",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:538898206",
+      "target": "m:851816942",
+      "kind": "presided_by",
+      "level": 3
+    }
+  ]
+}
