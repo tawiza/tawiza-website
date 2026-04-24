@@ -1,12 +1,13 @@
 {
   "version": "2026-04-24",
-  "generated_at": "2026-04-24T06:52:10.647108+00:00",
+  "generated_at": "2026-04-24T07:14:49.062537+00:00",
   "stats": {
     "n_mothers": 28,
     "n_mothers_alarm": 4,
     "n_mothers_foreign": 2,
     "n_holdings_shown": 346,
-    "n_spv_shown": 150,
+    "n_spv_shown": 148,
+    "n_influence_shown": 20,
     "n_subsidiaries_group_total": 4432,
     "n_countries": 2
   },
@@ -3474,6 +3475,16 @@
       "role_in_parent": "Président"
     },
     {
+      "id": "i:494134620",
+      "type": "influence",
+      "level": 4,
+      "siren": "494134620",
+      "denomination": "SNC ALIZES LOCATION 210",
+      "parent": "JP Énergie",
+      "role_code": "75",
+      "role_label": "Représentant permanent"
+    },
+    {
       "id": "s:101496156",
       "type": "spv",
       "level": 3,
@@ -3555,6 +3566,35 @@
       "role_in_parent": "Président"
     },
     {
+      "id": "s:793443730",
+      "type": "spv",
+      "level": 3,
+      "siren": "793443730",
+      "denomination": "CENTRALE PHOTOVOLTAIQUE DE SAINT QUENTIN LA TOUR",
+      "parent": "Valeco",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "i:808698823",
+      "type": "influence",
+      "level": 4,
+      "siren": "808698823",
+      "denomination": "PE DE MANDRES LA COTE",
+      "parent": "Valeco",
+      "role_code": "99",
+      "role_label": "code_99"
+    },
+    {
+      "id": "i:881801096",
+      "type": "influence",
+      "level": 4,
+      "siren": "881801096",
+      "denomination": "CS LAC BEDOREDE",
+      "parent": "Valeco",
+      "role_code": "0",
+      "role_label": "code_0"
+    },
+    {
       "id": "s:387498926",
       "type": "spv",
       "level": 3,
@@ -3591,13 +3631,14 @@
       "role_in_parent": "Président"
     },
     {
-      "id": "s:437757461",
-      "type": "spv",
-      "level": 3,
+      "id": "i:437757461",
+      "type": "influence",
+      "level": 4,
       "siren": "437757461",
       "denomination": "MAYOTTE 7",
       "parent": "EDF Renouvelables",
-      "role_in_parent": "code_99"
+      "role_code": "99",
+      "role_label": "code_99"
     },
     {
       "id": "s:437923402",
@@ -3643,6 +3684,25 @@
       "denomination": "TECHN ENERGIES NOUVE ENVIRON TENESA",
       "parent": "EDF Renouvelables",
       "role_in_parent": "Président"
+    },
+    {
+      "id": "s:441054186",
+      "type": "spv",
+      "level": 3,
+      "siren": "441054186",
+      "denomination": "SOCIETE DU PARC EOLIEN DE LA CONQUE",
+      "parent": "EDF Renouvelables",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "i:443123088",
+      "type": "influence",
+      "level": 4,
+      "siren": "443123088",
+      "denomination": "GROUPEMENT FORESTIER DE MAUROUL",
+      "parent": "EDF Renouvelables",
+      "role_code": "99",
+      "role_label": "code_99"
     },
     {
       "id": "s:100089481",
@@ -3816,6 +3876,15 @@
       "role_in_parent": "Président"
     },
     {
+      "id": "s:448666552",
+      "type": "spv",
+      "level": 3,
+      "siren": "448666552",
+      "denomination": "OSTWIND PRODUCTION",
+      "parent": "Engie Green",
+      "role_in_parent": "Président"
+    },
+    {
       "id": "s:507674687",
       "type": "spv",
       "level": 3,
@@ -3843,13 +3912,14 @@
       "role_in_parent": "code_99"
     },
     {
-      "id": "s:520397050",
-      "type": "spv",
-      "level": 3,
+      "id": "i:520397050",
+      "type": "influence",
+      "level": 4,
       "siren": "520397050",
       "denomination": "HELEXIA",
       "parent": "Voltalia",
-      "role_in_parent": "code_65"
+      "role_code": "65",
+      "role_label": "code_65"
     },
     {
       "id": "s:524950136",
@@ -3933,22 +4003,51 @@
       "role_in_parent": "Président"
     },
     {
-      "id": "s:903720399",
+      "id": "s:511076069",
       "type": "spv",
       "level": 3,
+      "siren": "511076069",
+      "denomination": "CENTRALE PHOTOVOLTAIQUE DU PLATEAU DE L'ARNET",
+      "parent": "Urbasolar",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:515404960",
+      "type": "spv",
+      "level": 3,
+      "siren": "515404960",
+      "denomination": "FONCALIEU ENERGY",
+      "parent": "Urbasolar",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:519864052",
+      "type": "spv",
+      "level": 3,
+      "siren": "519864052",
+      "denomination": "SOLAR INVEST",
+      "parent": "Urbasolar",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "i:903720399",
+      "type": "influence",
+      "level": 4,
       "siren": "903720399",
       "denomination": "SCI UNILOCAS",
       "parent": "ENOE",
-      "role_in_parent": "Représentant permanent"
+      "role_code": "75",
+      "role_label": "Représentant permanent"
     },
     {
-      "id": "s:937657500",
-      "type": "spv",
-      "level": 3,
+      "id": "i:937657500",
+      "type": "influence",
+      "level": 4,
       "siren": "937657500",
       "denomination": "ENOE IMMO",
       "parent": "ENOE",
-      "role_in_parent": "Représentant permanent"
+      "role_code": "75",
+      "role_label": "Représentant permanent"
     },
     {
       "id": "s:509516571",
@@ -4032,13 +4131,43 @@
       "role_in_parent": "Président"
     },
     {
-      "id": "s:751528258",
-      "type": "spv",
-      "level": 3,
+      "id": "i:751528258",
+      "type": "influence",
+      "level": 4,
       "siren": "751528258",
       "denomination": "LES FRUITIERS DU MESTROT 1",
       "parent": "Reden Solar",
-      "role_in_parent": "Représentant permanent"
+      "role_code": "75",
+      "role_label": "Représentant permanent"
+    },
+    {
+      "id": "s:789999455",
+      "type": "spv",
+      "level": 3,
+      "siren": "789999455",
+      "denomination": "LES FRUITIERS DU MESTROT 2",
+      "parent": "Reden Solar",
+      "role_in_parent": "code_28"
+    },
+    {
+      "id": "i:849705892",
+      "type": "influence",
+      "level": 4,
+      "siren": "849705892",
+      "denomination": "SCI LOSSE D 472",
+      "parent": "Reden Solar",
+      "role_code": "75",
+      "role_label": "Représentant permanent"
+    },
+    {
+      "id": "i:938852910",
+      "type": "influence",
+      "level": 4,
+      "siren": "938852910",
+      "denomination": "REDEN PDL",
+      "parent": "Reden Solar",
+      "role_code": "75",
+      "role_label": "Représentant permanent"
     },
     {
       "id": "s:504403775",
@@ -4077,13 +4206,14 @@
       "role_in_parent": "Président"
     },
     {
-      "id": "s:538215740",
-      "type": "spv",
-      "level": 3,
+      "id": "i:538215740",
+      "type": "influence",
+      "level": 4,
       "siren": "538215740",
       "denomination": "GREEN YELLOW EFFENERGIE REUNION 3",
       "parent": "GreenYellow",
-      "role_in_parent": "code_99"
+      "role_code": "99",
+      "role_label": "code_99"
     },
     {
       "id": "s:538215690",
@@ -4109,6 +4239,33 @@
       "level": 3,
       "siren": "789506607",
       "denomination": "HOLDING D'EXPLOITATION DE CENTRALES PHOTOVOLTAIQUES 16",
+      "parent": "GreenYellow",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:790792907",
+      "type": "spv",
+      "level": 3,
+      "siren": "790792907",
+      "denomination": "HOLDING D'EXPLOITATION DE CENTRALES PHOTOVOLTAIQUES 17",
+      "parent": "GreenYellow",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:794432252",
+      "type": "spv",
+      "level": 3,
+      "siren": "794432252",
+      "denomination": "CAP SOLAR 02",
+      "parent": "GreenYellow",
+      "role_in_parent": "code_205"
+    },
+    {
+      "id": "s:794482794",
+      "type": "spv",
+      "level": 3,
+      "siren": "794482794",
+      "denomination": "CAP SOLAR 09",
       "parent": "GreenYellow",
       "role_in_parent": "Président"
     },
@@ -4203,13 +4360,14 @@
       "role_in_parent": "Président"
     },
     {
-      "id": "s:791571730",
-      "type": "spv",
-      "level": 3,
+      "id": "i:791571730",
+      "type": "influence",
+      "level": 4,
       "siren": "791571730",
       "denomination": "PHOTOM SERVICES",
       "parent": "Photosol",
-      "role_in_parent": "code_131"
+      "role_code": "131",
+      "role_label": "code_131"
     },
     {
       "id": "s:844031773",
@@ -4293,13 +4451,14 @@
       "role_in_parent": "Président"
     },
     {
-      "id": "s:479931123",
-      "type": "spv",
-      "level": 3,
+      "id": "i:479931123",
+      "type": "influence",
+      "level": 4,
       "siren": "479931123",
       "denomination": "CONSTANTINUS",
       "parent": "Neoen",
-      "role_in_parent": "code_99"
+      "role_code": "99",
+      "role_label": "code_99"
     },
     {
       "id": "s:480106087",
@@ -4307,6 +4466,15 @@
       "level": 3,
       "siren": "480106087",
       "denomination": "EOLIENNE KERHERHAL 2",
+      "parent": "Neoen",
+      "role_in_parent": "Président"
+    },
+    {
+      "id": "s:482922630",
+      "type": "spv",
+      "level": 3,
+      "siren": "482922630",
+      "denomination": "CHAPELLE ENERGIE",
       "parent": "Neoen",
       "role_in_parent": "Président"
     },
@@ -4500,31 +4668,34 @@
       "role_in_parent": "Représentant permanent"
     },
     {
-      "id": "s:414547588",
-      "type": "spv",
-      "level": 3,
+      "id": "i:414547588",
+      "type": "influence",
+      "level": 4,
       "siren": "414547588",
       "denomination": "TOTAL E AND P KUWAIT",
       "parent": "TotalEnergies",
-      "role_in_parent": "code_99"
+      "role_code": "99",
+      "role_label": "code_99"
     },
     {
-      "id": "s:493601801",
-      "type": "spv",
-      "level": 3,
+      "id": "i:493601801",
+      "type": "influence",
+      "level": 4,
       "siren": "493601801",
       "denomination": "TOTAL E&P SAUDI",
       "parent": "TotalEnergies",
-      "role_in_parent": "code_99"
+      "role_code": "99",
+      "role_label": "code_99"
     },
     {
-      "id": "s:509835492",
-      "type": "spv",
-      "level": 3,
+      "id": "i:509835492",
+      "type": "influence",
+      "level": 4,
       "siren": "509835492",
       "denomination": "TOTAL E&P MONTELIMAR",
       "parent": "TotalEnergies",
-      "role_in_parent": "code_99"
+      "role_code": "99",
+      "role_label": "code_99"
     },
     {
       "id": "s:517698239",
@@ -4572,13 +4743,14 @@
       "role_in_parent": "code_11"
     },
     {
-      "id": "s:400278966",
-      "type": "spv",
-      "level": 3,
+      "id": "i:400278966",
+      "type": "influence",
+      "level": 4,
       "siren": "400278966",
       "denomination": "ABN AMRO EURO SUSTAINABLE MONEY MARKET",
       "parent": "Engie",
-      "role_in_parent": "code_65"
+      "role_code": "65",
+      "role_label": "code_65"
     },
     {
       "id": "s:410354070",
@@ -4599,40 +4771,51 @@
       "role_in_parent": "code_11"
     },
     {
-      "id": "s:443129358",
-      "type": "spv",
-      "level": 3,
+      "id": "i:443129358",
+      "type": "influence",
+      "level": 4,
       "siren": "443129358",
       "denomination": "CESAME EXADEBIT SA",
       "parent": "Engie",
-      "role_in_parent": "code_65"
+      "role_code": "65",
+      "role_label": "code_65"
     },
     {
-      "id": "s:444786511",
-      "type": "spv",
-      "level": 3,
+      "id": "i:444786511",
+      "type": "influence",
+      "level": 4,
       "siren": "444786511",
       "denomination": "GRDF",
       "parent": "Engie",
-      "role_in_parent": "code_65"
+      "role_code": "65",
+      "role_label": "code_65"
     },
     {
-      "id": "s:491358362",
+      "id": "s:518553276",
       "type": "spv",
       "level": 3,
-      "siren": "491358362",
-      "denomination": "UNION BORDEAUX BEGLES",
+      "siren": "518553276",
+      "denomination": "L'INSTITUT DE L'ECONOMIE POSITIVE",
       "parent": "Engie",
-      "role_in_parent": "code_65"
+      "role_in_parent": "code_64"
     },
     {
-      "id": "s:518242805",
+      "id": "s:518633920",
       "type": "spv",
       "level": 3,
-      "siren": "518242805",
-      "denomination": "INSTITUT DE FORMATION A L'ENVIRONNEMENT ET AU DEVELOPPEMENT DURABLE",
+      "siren": "518633920",
+      "denomination": "ENGIE MANAGEMENT COMPANY",
       "parent": "Engie",
-      "role_in_parent": "code_65"
+      "role_in_parent": "Directeur général non associé"
+    },
+    {
+      "id": "s:527577621",
+      "type": "spv",
+      "level": 3,
+      "siren": "527577621",
+      "denomination": "CMG 2015",
+      "parent": "Engie",
+      "role_in_parent": "code_11"
     },
     {
       "id": "s:499695211",
@@ -6884,6 +7067,12 @@
       "level": 3
     },
     {
+      "source": "i:494134620",
+      "target": "m:410943948",
+      "kind": "influence_by",
+      "level": 4
+    },
+    {
       "source": "s:101496156",
       "target": "m:421377946",
       "kind": "presided_by",
@@ -6938,6 +7127,24 @@
       "level": 3
     },
     {
+      "source": "s:793443730",
+      "target": "m:421377946",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "i:808698823",
+      "target": "m:421377946",
+      "kind": "influence_by",
+      "level": 4
+    },
+    {
+      "source": "i:881801096",
+      "target": "m:421377946",
+      "kind": "influence_by",
+      "level": 4
+    },
+    {
       "source": "s:387498926",
       "target": "m:434689915",
       "kind": "presided_by",
@@ -6962,10 +7169,10 @@
       "level": 3
     },
     {
-      "source": "s:437757461",
+      "source": "i:437757461",
       "target": "m:434689915",
-      "kind": "presided_by",
-      "level": 3
+      "kind": "influence_by",
+      "level": 4
     },
     {
       "source": "s:437923402",
@@ -6996,6 +7203,18 @@
       "target": "m:434689915",
       "kind": "presided_by",
       "level": 3
+    },
+    {
+      "source": "s:441054186",
+      "target": "m:434689915",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "i:443123088",
+      "target": "m:434689915",
+      "kind": "influence_by",
+      "level": 4
     },
     {
       "source": "s:100089481",
@@ -7112,6 +7331,12 @@
       "level": 3
     },
     {
+      "source": "s:448666552",
+      "target": "m:478826753",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
       "source": "s:507674687",
       "target": "m:485182448",
       "kind": "presided_by",
@@ -7130,10 +7355,10 @@
       "level": 3
     },
     {
-      "source": "s:520397050",
+      "source": "i:520397050",
       "target": "m:485182448",
-      "kind": "presided_by",
-      "level": 3
+      "kind": "influence_by",
+      "level": 4
     },
     {
       "source": "s:524950136",
@@ -7190,16 +7415,34 @@
       "level": 3
     },
     {
-      "source": "s:903720399",
-      "target": "m:493993620",
+      "source": "s:511076069",
+      "target": "m:492381157",
       "kind": "presided_by",
       "level": 3
     },
     {
-      "source": "s:937657500",
-      "target": "m:493993620",
+      "source": "s:515404960",
+      "target": "m:492381157",
       "kind": "presided_by",
       "level": 3
+    },
+    {
+      "source": "s:519864052",
+      "target": "m:492381157",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "i:903720399",
+      "target": "m:493993620",
+      "kind": "influence_by",
+      "level": 4
+    },
+    {
+      "source": "i:937657500",
+      "target": "m:493993620",
+      "kind": "influence_by",
+      "level": 4
     },
     {
       "source": "s:509516571",
@@ -7256,10 +7499,28 @@
       "level": 3
     },
     {
-      "source": "s:751528258",
+      "source": "i:751528258",
+      "target": "m:500661806",
+      "kind": "influence_by",
+      "level": 4
+    },
+    {
+      "source": "s:789999455",
       "target": "m:500661806",
       "kind": "presided_by",
       "level": 3
+    },
+    {
+      "source": "i:849705892",
+      "target": "m:500661806",
+      "kind": "influence_by",
+      "level": 4
+    },
+    {
+      "source": "i:938852910",
+      "target": "m:500661806",
+      "kind": "influence_by",
+      "level": 4
     },
     {
       "source": "s:504403775",
@@ -7286,10 +7547,10 @@
       "level": 3
     },
     {
-      "source": "s:538215740",
+      "source": "i:538215740",
       "target": "m:501657399",
-      "kind": "presided_by",
-      "level": 3
+      "kind": "influence_by",
+      "level": 4
     },
     {
       "source": "s:538215690",
@@ -7305,6 +7566,24 @@
     },
     {
       "source": "s:789506607",
+      "target": "m:501657399",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:790792907",
+      "target": "m:501657399",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:794432252",
+      "target": "m:501657399",
+      "kind": "presided_by",
+      "level": 3
+    },
+    {
+      "source": "s:794482794",
       "target": "m:501657399",
       "kind": "presided_by",
       "level": 3
@@ -7370,10 +7649,10 @@
       "level": 3
     },
     {
-      "source": "s:791571730",
+      "source": "i:791571730",
       "target": "m:507546943",
-      "kind": "presided_by",
-      "level": 3
+      "kind": "influence_by",
+      "level": 4
     },
     {
       "source": "s:844031773",
@@ -7430,13 +7709,19 @@
       "level": 3
     },
     {
-      "source": "s:479931123",
+      "source": "i:479931123",
+      "target": "m:508320017",
+      "kind": "influence_by",
+      "level": 4
+    },
+    {
+      "source": "s:480106087",
       "target": "m:508320017",
       "kind": "presided_by",
       "level": 3
     },
     {
-      "source": "s:480106087",
+      "source": "s:482922630",
       "target": "m:508320017",
       "kind": "presided_by",
       "level": 3
@@ -7568,22 +7853,22 @@
       "level": 3
     },
     {
-      "source": "s:414547588",
+      "source": "i:414547588",
       "target": "m:542051180",
-      "kind": "presided_by",
-      "level": 3
+      "kind": "influence_by",
+      "level": 4
     },
     {
-      "source": "s:493601801",
+      "source": "i:493601801",
       "target": "m:542051180",
-      "kind": "presided_by",
-      "level": 3
+      "kind": "influence_by",
+      "level": 4
     },
     {
-      "source": "s:509835492",
+      "source": "i:509835492",
       "target": "m:542051180",
-      "kind": "presided_by",
-      "level": 3
+      "kind": "influence_by",
+      "level": 4
     },
     {
       "source": "s:517698239",
@@ -7616,10 +7901,10 @@
       "level": 3
     },
     {
-      "source": "s:400278966",
+      "source": "i:400278966",
       "target": "m:542107651",
-      "kind": "presided_by",
-      "level": 3
+      "kind": "influence_by",
+      "level": 4
     },
     {
       "source": "s:410354070",
@@ -7634,25 +7919,31 @@
       "level": 3
     },
     {
-      "source": "s:443129358",
+      "source": "i:443129358",
+      "target": "m:542107651",
+      "kind": "influence_by",
+      "level": 4
+    },
+    {
+      "source": "i:444786511",
+      "target": "m:542107651",
+      "kind": "influence_by",
+      "level": 4
+    },
+    {
+      "source": "s:518553276",
       "target": "m:542107651",
       "kind": "presided_by",
       "level": 3
     },
     {
-      "source": "s:444786511",
+      "source": "s:518633920",
       "target": "m:542107651",
       "kind": "presided_by",
       "level": 3
     },
     {
-      "source": "s:491358362",
-      "target": "m:542107651",
-      "kind": "presided_by",
-      "level": 3
-    },
-    {
-      "source": "s:518242805",
+      "source": "s:527577621",
       "target": "m:542107651",
       "kind": "presided_by",
       "level": 3

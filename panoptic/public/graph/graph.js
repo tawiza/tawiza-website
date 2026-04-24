@@ -201,12 +201,12 @@
       renderWelcome();
     });
 
-    ['filter-alarm', 'filter-foreign', 'show-holdings', 'show-spv'].forEach((id) =>
+    ['filter-alarm', 'filter-foreign', 'show-holdings', 'show-spv', 'show-influence'].forEach((id) =>
       $(id).addEventListener('change', applyFilters)
     );
     $('search-box').addEventListener('input', handleSearch);
     $('reset-btn').addEventListener('click', () => {
-      ['filter-alarm', 'filter-foreign', 'show-holdings', 'show-spv'].forEach((id) => {
+      ['filter-alarm', 'filter-foreign', 'show-holdings', 'show-spv', 'show-influence'].forEach((id) => {
         $(id).checked = false;
       });
       $('search-box').value = '';
@@ -300,6 +300,21 @@
           'border-width': 0,
           label: '',
       }},
+      { selector: 'node.type-influence', style: {
+          'background-color': 'transparent',
+          'border-width': 2,
+          'border-color': COL.foret,
+          'border-style': 'dotted',
+          shape: 'round-rectangle',
+          width: 14, height: 14,
+          label: '',
+      }},
+      { selector: '.edge-influence_by', style: {
+          'line-color': COL.foret,
+          'target-arrow-color': COL.foret,
+          'line-style': 'dotted',
+          opacity: 0.55,
+      }},
       { selector: 'node:selected', style: {
           'border-width': 5,
           'border-color': COL.foret,
@@ -317,6 +332,7 @@
     const wantForeign = $('filter-foreign').checked;
     const wantHoldings = $('show-holdings').checked;
     const wantSpv = $('show-spv').checked;
+    const wantInfluence = $('show-influence').checked;
 
     const visibleNodeIds = new Set();
 
@@ -332,6 +348,8 @@
         visible = wantHoldings;
       } else if (t === 'spv') {
         visible = wantSpv;
+      } else if (t === 'influence') {
+        visible = wantInfluence;
       }
       n.style('display', visible ? 'element' : 'none');
       if (visible) visibleNodeIds.add(n.id());
@@ -497,6 +515,27 @@
         block.appendChild(el('em', { text: ' (' + d.role_in_parent + ')' }));
       }
       sidebarContent.appendChild(block);
+    } else if (d.type === 'influence') {
+      sidebarContent.appendChild(el('h3', { text: d.denomination || d.siren }));
+      sidebarContent.appendChild(el('p', {
+        cls: 'meta',
+        text: 'SIREN ' + d.siren + ' · lien externe (rôle ' + (d.role_code || '?') + ')',
+      }));
+      const q = el('div', { cls: 'block' });
+      q.style.background = 'rgba(45, 106, 79, 0.08)';
+      q.style.padding = '12px 14px';
+      q.style.borderLeft = '3px solid ' + COL.foret;
+      q.style.borderRadius = '2px';
+      q.style.margin = '14px 0';
+      q.appendChild(el('div', { cls: 'block-label', text: 'une question, pas une affirmation' }));
+      const p = el('p', { text:
+        d.parent + ' est inscrite au Registre National des Entreprises avec un rôle non-actionnarial dans cette entité. Ce n\'est pas un contrôle capitalistique documenté. Mais ce lien existe : sponsoring, siège au conseil, filiation foncière, partenariat stratégique ? C\'est ce qui mérite d\'être regardé.'
+      });
+      p.style.margin = '8px 0 0';
+      p.style.fontSize = '0.92rem';
+      p.style.lineHeight = '1.5';
+      q.appendChild(p);
+      sidebarContent.appendChild(q);
     }
   }
 })();

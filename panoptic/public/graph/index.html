@@ -89,6 +89,13 @@
         <p>Chaque parc solaire ou éolien a sa propre SAS. Échantillon de 10 par mère.</p>
       </div>
     </div>
+    <div class="guide-item">
+      <div class="legend-sample sample-influence"></div>
+      <div>
+        <strong>Liens d'influence (optionnel)</strong>
+        <p>Siège au conseil, sponsoring, SCI foncière, filiale non-ENR. Pas un contrôle actionnarial : c'est une question posée.</p>
+      </div>
+    </div>
     <div class="guide-item guide-hint">
       <strong>Astuces</strong>
       <p>Clic sur un nœud pour les détails. Double-clic sur une mère pour étendre ses holdings. Molette pour zoomer. Glisser pour déplacer.</p>
@@ -113,6 +120,10 @@
     <label class="filter">
       <input type="checkbox" id="show-spv">
       <span>afficher un échantillon de SPV</span>
+    </label>
+    <label class="filter">
+      <input type="checkbox" id="show-influence">
+      <span>afficher les liens d'influence</span>
     </label>
     <input type="search" id="search-box" placeholder="chercher un opérateur (ex. Neoen)">
     <button type="button" id="reset-btn">réinitialiser</button>
@@ -163,6 +174,9 @@
   </p>
   <p>
     <strong>Les holdings intermédiaires sont masqués par défaut.</strong> Les activer révèle la différence entre deux modèles : Engie Green ou Urbasolar président leurs 700+ SPV directement depuis la mère, tandis que Photosol, ENOE ou Voltalia empilent des holdings intermédiaires (<em>Photosol Invest</em>, <em>PHOTOSOL SPV 56</em>, <em>Rubis Photosol Mobexi 2</em>) qui portent chacune un sous-portefeuille de SPV.
+  </p>
+  <p>
+    <strong>Les liens d'influence sont optionnels et interrogatifs.</strong> Le Registre National des Entreprises enregistre aussi des rôles qui ne sont pas du contrôle capitalistique : un siège au conseil d'administration d'un club sportif sponsorisé, une SCI foncière, une filiale non-énergétique, une représentation permanente. Activer la case <em>« afficher les liens d'influence »</em> ajoute un échantillon de ces relations. Ce ne sont pas des « contrôles ». Ce sont des indices d'influence territoriale ou de diversification d'activité qui méritent qu'on pose la question, pas qu'on conclue.
   </p>
 </section>
 
