@@ -121,10 +121,28 @@
 
 <section class="graph-wrap">
   <div id="cy"></div>
-  <aside id="sidebar" class="sidebar-hidden">
+  <aside id="sidebar">
     <button type="button" class="close-btn" id="close-sidebar" aria-label="Fermer">×</button>
     <div id="sidebar-content">
-      <p class="hint">Clic sur un nœud pour voir ses détails ici.</p>
+      <h3>Explorer l'écosystème</h3>
+      <p class="intro-side">
+        Cliquez sur un nœud pour voir ses détails ici : président actuel, empreinte RNE, contrôle actionnarial, signaux.
+      </p>
+      <div class="block">
+        <div class="block-label">les 4 opérateurs en alarme</div>
+        <ul id="alarm-list" class="alarm-list">
+          <li><em>chargement...</em></li>
+        </ul>
+      </div>
+      <div class="block">
+        <div class="block-label">contrôle étranger direct</div>
+        <ul id="foreign-list" class="alarm-list">
+          <li><em>chargement...</em></li>
+        </ul>
+      </div>
+      <div class="block" style="margin-top:18px;font-size:0.85rem;color:var(--grey-m)">
+        Double-clic sur une mère pour afficher ses holdings. Molette pour zoomer.
+      </div>
     </div>
   </aside>
 </section>

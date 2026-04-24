@@ -42,6 +42,7 @@
       $('stat-alarm').textContent = data.stats.n_mothers_alarm;
       $('stat-foreign').textContent = data.stats.n_mothers_foreign;
       $('stat-group').textContent = data.stats.n_subsidiaries_group_total.toLocaleString('fr');
+      populateSidebarLists(data);
       initGraph();
     })
     .catch((err) => {
@@ -51,6 +52,114 @@
       errEl.textContent = 'Erreur de chargement du graphe. Réessaye plus tard.';
       $('stats').appendChild(errEl);
     });
+
+  function renderWelcome() {
+    clear(sidebarContent);
+    sidebarContent.appendChild(el('h3', { text: "Explorer l'écosystème" }));
+    sidebarContent.appendChild(el('p', {
+      cls: 'intro-side',
+      text: "Cliquez sur un nœud pour voir ses détails ici : président actuel, empreinte RNE, contrôle actionnarial, signaux.",
+    }));
+
+    // Alarm block
+    const alarmBlock = el('div', { cls: 'block' });
+    alarmBlock.appendChild(el('div', {
+      cls: 'block-label',
+      text: 'les opérateurs en alarme',
+    }));
+    const alarmUl = el('ul', { cls: 'alarm-list' });
+    alarmUl.id = 'alarm-list';
+    alarmBlock.appendChild(alarmUl);
+    sidebarContent.appendChild(alarmBlock);
+
+    // Foreign block
+    const foreignBlock = el('div', { cls: 'block' });
+    foreignBlock.appendChild(el('div', {
+      cls: 'block-label',
+      text: 'contrôle étranger direct',
+    }));
+    const foreignUl = el('ul', { cls: 'alarm-list' });
+    foreignUl.id = 'foreign-list';
+    foreignBlock.appendChild(foreignUl);
+    sidebarContent.appendChild(foreignBlock);
+
+    // Hint
+    const hint = el('div', { cls: 'block' });
+    hint.style.marginTop = '18px';
+    hint.style.fontSize = '0.85rem';
+    hint.style.color = COL.greyM;
+    hint.textContent = 'Double-clic sur une mère pour afficher ses holdings. Molette pour zoomer.';
+    sidebarContent.appendChild(hint);
+
+    if (graph) populateSidebarLists(graph);
+  }
+
+  function populateSidebarLists(data) {
+    const alarmList = $('alarm-list');
+    const foreignList = $('foreign-list');
+    if (!alarmList || !foreignList) return;
+
+    while (alarmList.firstChild) alarmList.removeChild(alarmList.firstChild);
+    while (foreignList.firstChild) foreignList.removeChild(foreignList.firstChild);
+
+    const mothers = data.nodes.filter((n) => n.type === 'mother');
+    const alarmed = mothers
+      .filter((m) => (m.max_signal_score || 0) >= 75)
+      .sort((a, b) => (b.max_signal_score || 0) - (a.max_signal_score || 0));
+    const foreign = mothers
+      .filter((m) => (m.ultimate_country || 'FRA') !== 'FRA');
+
+    alarmed.forEach((m) => {
+      const li = document.createElement('li');
+      li.className = 'alarm-item';
+      const nameEl = document.createElement('span');
+      nameEl.className = 'op-name';
+      nameEl.textContent = m.canonical;
+      li.appendChild(nameEl);
+      const detailEl = document.createElement('span');
+      detailEl.className = 'op-detail';
+      const topSignal = (m.signals || []).find((s) => s.is_alarm);
+      detailEl.textContent = topSignal ? topSignal.title : 'signal actionnarial détecté';
+      li.appendChild(detailEl);
+      li.addEventListener('click', () => focusMotherBySiren(m.siren));
+      alarmList.appendChild(li);
+    });
+    if (alarmed.length === 0) {
+      const li = document.createElement('li');
+      li.textContent = '(aucun)';
+      alarmList.appendChild(li);
+    }
+
+    foreign.forEach((m) => {
+      const li = document.createElement('li');
+      li.className = 'foreign-item';
+      const nameEl = document.createElement('span');
+      nameEl.className = 'op-name';
+      nameEl.textContent = m.canonical;
+      li.appendChild(nameEl);
+      const detailEl = document.createElement('span');
+      detailEl.className = 'op-detail';
+      detailEl.textContent = 'contrôle ' + (COUNTRY_LABELS[m.ultimate_country] || m.ultimate_country);
+      li.appendChild(detailEl);
+      li.addEventListener('click', () => focusMotherBySiren(m.siren));
+      foreignList.appendChild(li);
+    });
+    if (foreign.length === 0) {
+      const li = document.createElement('li');
+      li.textContent = '(aucun détecté au niveau 1)';
+      foreignList.appendChild(li);
+    }
+  }
+
+  function focusMotherBySiren(siren) {
+    if (!cy) return;
+    const node = cy.getElementById('m:' + siren);
+    if (node.length === 0) return;
+    cy.elements().removeClass('faded');
+    cy.animate({ fit: { eles: node, padding: 140 }, duration: 500 });
+    node.select();
+    showNodeDetails(node.data());
+  }
 
   function initGraph() {
     const elements = [];
@@ -88,7 +197,9 @@
       $('show-holdings').checked = true;
       applyFilters();
     });
-    $('close-sidebar').addEventListener('click', () => sidebar.classList.add('sidebar-hidden'));
+    $('close-sidebar').addEventListener('click', () => {
+      renderWelcome();
+    });
 
     ['filter-alarm', 'filter-foreign', 'show-holdings', 'show-spv'].forEach((id) =>
       $(id).addEventListener('change', applyFilters)
@@ -99,7 +210,7 @@
         $(id).checked = false;
       });
       $('search-box').value = '';
-      sidebar.classList.add('sidebar-hidden');
+      renderWelcome();
       applyFilters();
     });
 
@@ -298,7 +409,6 @@
   function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
 
   function showNodeDetails(d) {
-    sidebar.classList.remove('sidebar-hidden');
     clear(sidebarContent);
 
     if (d.type === 'mother') {
