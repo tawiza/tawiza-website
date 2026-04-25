@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="panoptic · un regard sur l'agrivoltaïsme français | tawiza"
+  description="panoptic est un chantier parallèle à tawiza qui regarde l'agrivoltaïsme français, projet par projet, opérateur par opérateur. domaine dédié panoptic.tawiza.fr."
+  currentPath="/panoptic/"
+>
+
+<main class="wrap panoptic-page">
+  <header class="head">
+    <div class="kk kk-sl">chantier · panoptic · 2026</div>
+    <h1 class="disp-xl">un regard sur l'<em>agrivoltaïsme</em> français.</h1>
+    <p class="lede">
+      panoptic est un chantier parallèle à tawiza. projet par projet, opérateur par opérateur,
+      on regarde ce qui se passe quand on recouvre des champs de panneaux solaires en france.
+    </p>
+  </header>
+
+  <section class="body">
+    <p>
+      Même méthode que tawiza (données publiques croisées), même ouverture (code AGPL-3.0),
+      même ton (pas d'observatoire, pas de premier).
+    </p>
+    <p>
+      416 projets canonical dans la base, 133 contestations référencées, un oligopole concentré
+      (HHI 2352), une cascade actionnariale qui remonte vers Brookfield, Macquarie et Rubis.
+      Le registre ADEME voit 237 projets raccordés. Panoptic voit 416 projets dans le pipeline.
+    </p>
+  </section>
+
+  <section class="cta-row">
+    <a class="btn btn-primary" href="https://panoptic.tawiza.fr">panoptic.tawiza.fr →</a>
+    <a class="btn" href="https://github.com/tawiza/panoptic-cli">github panoptic-cli →</a>
+  </section>
+</main>
+
+</BaseLayout>
+
+<style>
+  .panoptic-page { padding: 60px 0 80px; max-width: 720px; }
+  .head { padding-bottom: 32px; border-bottom: 2px solid var(--line); }
+  .head .kk-sl { margin-bottom: 16px; }
+  .head .disp-xl {
+    font-family: var(--f-serif);
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    margin: 0 0 20px 0;
+  }
+  .head .disp-xl em { color: var(--terre); font-style: italic; }
+  .head .lede {
+    font-family: var(--f-body);
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 58ch;
+  }
+  .body { margin-top: 32px; max-width: 62ch; }
+  .body p {
+    font-family: var(--f-body);
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink);
+    margin: 0 0 16px 0;
+  }
+  .cta-row {
+    margin-top: 40px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    padding: 12px 20px;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    text-decoration: none;
+    transition: border-color .18s, color .18s;
+  }
+  .btn:hover { border-color: var(--terre); color: var(--terre); }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .btn-primary:hover {
+    background: var(--terre);
+    border-color: var(--terre);
+    color: var(--bg);
+  }
+</style>
