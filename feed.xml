@@ -6,7 +6,15 @@
         <link>https://tawiza.fr/analyses/</link>
         <atom:link href="https://tawiza.fr/feed.xml" rel="self" type="application/rss+xml"/>
         <language>fr</language>
-        <lastBuildDate>Fri, 17 Apr 2026 18:00:00 +0200</lastBuildDate>
+        <lastBuildDate>Tue, 28 Apr 2026 21:30:00 +0200</lastBuildDate>
+
+        <item>
+            <title>AI Act &#183; un seul marché public français sur 298 nomme le règlement</title>
+            <link>https://tawiza.fr/004/</link>
+            <guid>https://tawiza.fr/004/</guid>
+            <pubDate>Tue, 28 Apr 2026 21:30:00 +0200</pubDate>
+            <description>Le 2 août 2026, le règlement européen sur l'intelligence artificielle entre pleinement en application. En France, sur 298 marchés publics analysés en 2026 dans les huit domaines classés haut risque (Annexe III), un seul mentionne le règlement (UE) 2024/1689. C'est France Travail, qui publie le 22 février 2026 un accord-cadre couplant RGPD, RIA et Homologation. Quatre autorités (Cour des comptes, CNIL, Sénat, France Travail) se sont prononcées en six semaines sur le même dossier. Dataset BOAMP reproductible (CSV + Python) en téléchargement libre.</description>
+        </item>
 
         <item>
             <title>Paris vélo 2026 &#8212; qui paie, quelle dette, quel choix en juin</title>
