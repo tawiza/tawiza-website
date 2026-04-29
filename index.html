@@ -168,6 +168,24 @@
       .home-methodo-label { margin-top: 8px; }
     }
 
+    /* Panoptic (cross-domain block) */
+    .home-panoptic { padding: 80px 0; border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); background: linear-gradient(180deg, transparent 0%, rgba(180, 83, 9, 0.025) 100%); }
+    .home-panoptic-kicker { font-family: var(--mono); font-size: 11px; color: var(--ocre); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 28px; }
+    .home-panoptic-kicker::before { content: "$ "; }
+    .home-panoptic-title { font-family: var(--serif-display); font-size: clamp(1.4rem, 2.8vw, 2rem); line-height: 1.3; margin: 0 0 24px; color: var(--ink); font-weight: 400; max-width: 32ch; }
+    .home-panoptic-title em { font-style: italic; color: var(--terre); }
+    .home-panoptic-lede { font-family: var(--serif-display); font-size: 1.15rem; line-height: 1.6; max-width: 60ch; margin: 0 0 28px; color: var(--ink-soft); }
+    .home-panoptic-lede strong { color: var(--terre); font-weight: 400; }
+    .home-panoptic-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 600px; margin: 0 0 32px; padding: 16px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .home-panoptic-stat-num { font-family: var(--mono); font-size: 1.6rem; color: var(--ocre); font-weight: 500; line-height: 1; }
+    .home-panoptic-stat-label { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 6px; }
+    .home-panoptic-cta { display: inline-block; font-family: var(--mono); font-size: 13px; color: var(--ocre); text-decoration: none; letter-spacing: 0.04em; }
+    .home-panoptic-cta::before { content: "$ "; }
+    .home-panoptic-cta:hover { text-decoration: underline; }
+    @media (max-width: 640px) {
+      .home-panoptic-stats { grid-template-columns: 1fr; gap: 12px; }
+    }
+
     /* Subscribe */
     .home-subscribe { padding: 72px 0 96px; }
     .home-sub-kicker { font-family: var(--mono); font-size: 11px; color: var(--ocre); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 20px; }
@@ -333,6 +351,32 @@
     </div>
   </section>
 
+  <!-- 02c. Panoptic (cross-domain) -->
+  <section class="home-panoptic">
+    <div class="terrain">
+      <div class="home-panoptic-kicker">cd ../panoptic.tawiza.fr</div>
+      <h2 class="home-panoptic-title">panoptic &middot; <em>cartographier la commande publique fran&ccedil;aise</em></h2>
+      <p class="home-panoptic-lede">
+        Outil s&oelig;ur de Tawiza, d&eacute;di&eacute; aux <strong>march&eacute;s publics</strong> et aux <strong>contestations citoyennes</strong>. On y croise quatre registres publics (BOAMP, JOUE, Geoportail, presse locale) pour reconstituer ce que les acheteurs publics financent et ce que les territoires ne disent pas.
+      </p>
+      <div class="home-panoptic-stats" aria-label="chiffres-cl&eacute;s panoptic">
+        <div>
+          <div class="home-panoptic-stat-num">416</div>
+          <div class="home-panoptic-stat-label">projets cartographi&eacute;s</div>
+        </div>
+        <div>
+          <div class="home-panoptic-stat-num">133</div>
+          <div class="home-panoptic-stat-label">contestations identifi&eacute;es</div>
+        </div>
+        <div>
+          <div class="home-panoptic-stat-num">50&nbsp;%</div>
+          <div class="home-panoptic-stat-label">oligopole sur op&eacute;rations majeures</div>
+        </div>
+      </div>
+      <a href="https://panoptic.tawiza.fr/" class="home-panoptic-cta">ouvrir panoptic.tawiza.fr &rarr;</a>
+    </div>
+  </section>
+
   <!-- 03. Manifeste -->
   <section class="home-manifeste">
     <div class="terrain">
@@ -382,6 +426,7 @@
         <a href="/analyses/">analyses</a>
         <a href="/articles/">articles</a>
         <a href="/notebooks/">notebooks</a>
+        <a href="https://panoptic.tawiza.fr/">panoptic</a>
         <a href="/manifeste.html">manifeste</a>
         <a href="/a-propos.html">&agrave; propos</a>
         <a href="/contribuer.html">contribuer</a>

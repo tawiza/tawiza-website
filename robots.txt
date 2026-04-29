@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+
+# Sitemap principal (URLs tawiza.fr)
 Sitemap: https://tawiza.fr/sitemap.xml
+
+# Sitemap index (référence aussi panoptic.tawiza.fr)
+Sitemap: https://tawiza.fr/sitemap-index.xml
