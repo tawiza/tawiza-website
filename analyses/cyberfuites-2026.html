@@ -267,6 +267,234 @@
             margin-left: -6px;
         }
 
+        /* === Tableau recap des 7 fuites publiques === */
+        .fuites-table-wrapper {
+            margin: 2rem 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .fuites-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            min-width: 600px;
+        }
+        .fuites-table caption {
+            text-align: left;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-secondary);
+            padding-bottom: 0.75rem;
+        }
+        .fuites-table thead th {
+            text-align: left;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-secondary);
+            font-weight: 600;
+            padding: 0.6rem 0.75rem;
+            border-bottom: 2px solid #b45309;
+            background: var(--bg-alt);
+        }
+        .fuites-table tbody td {
+            padding: 0.7rem 0.75rem;
+            border-bottom: 1px solid var(--separator);
+            vertical-align: top;
+            line-height: 1.4;
+        }
+        .fuites-table tbody tr:last-child td { border-bottom: none; }
+        .fuites-table tbody tr:hover { background: rgba(180, 83, 9, 0.03); }
+        .fuites-table .td-date {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+        .fuites-table .td-entite {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .fuites-table .td-volume {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: #b45309;
+            text-align: right;
+            white-space: nowrap;
+        }
+        .fuites-table .td-statut {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+        .fuites-table .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            line-height: 1.5;
+            white-space: nowrap;
+        }
+        .fuites-table .tag-non       { background: rgba(193, 85, 77, 0.12); color: #8b2f28; }
+        .fuites-table .tag-partiel   { background: rgba(212, 168, 67, 0.18); color: #7a5f1a; }
+        .fuites-table .tag-encours   { background: rgba(91, 122, 140, 0.15); color: #3d5564; }
+        .fuites-table .tag-sanction  { background: rgba(45, 106, 79, 0.12); color: #1d4633; font-weight: 600; }
+        .fuites-table tfoot td {
+            font-family: var(--font-mono);
+            padding: 0.7rem 0.75rem;
+            border-top: 2px solid var(--separator);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+        .fuites-table tfoot .td-volume {
+            color: var(--text-primary);
+            font-weight: 700;
+            font-style: normal;
+        }
+        @media (max-width: 600px) {
+            .fuites-table-wrapper::after {
+                content: "← d&eacute;filer →";
+                display: block;
+                font-family: var(--font-mono);
+                font-size: 0.7rem;
+                color: var(--text-muted);
+                text-align: center;
+                margin-top: 0.5rem;
+            }
+        }
+
+        /* === Encart "Que faire en pratique" === */
+        .practical-box {
+            margin: 2.5rem 0;
+            padding: 1.5rem 1.5rem 1.25rem;
+            background: rgba(45, 106, 79, 0.04);
+            border: 1px solid rgba(45, 106, 79, 0.20);
+            border-left: 4px solid #2D6A4F;
+            border-radius: 4px;
+        }
+        .practical-box h3 {
+            margin: 0 0 0.5rem;
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            color: #1d4633;
+        }
+        .practical-box .practical-intro {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            margin: 0 0 1rem;
+        }
+        .practical-box ol {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+        .practical-box li {
+            padding: 0.4rem 0;
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+        .practical-box li strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.15rem;
+            font-family: var(--font-heading);
+            font-weight: 600;
+        }
+        .practical-box a {
+            color: #1d4633;
+            text-decoration: underline;
+            text-decoration-color: rgba(29, 70, 51, 0.4);
+            text-underline-offset: 2px;
+        }
+        .practical-box a:hover {
+            text-decoration-color: #1d4633;
+        }
+
+        /* === Section "A lire ensuite" === */
+        .next-reads {
+            margin-top: 3rem;
+            border-top: 1px solid var(--separator);
+            padding-top: 2rem;
+        }
+        .next-reads h2 {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            border: none;
+            padding: 0;
+            margin: 0 0 1.25rem;
+        }
+        .next-reads-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 720px) {
+            .next-reads-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.25rem;
+            }
+        }
+        .next-read-card {
+            display: block;
+            padding: 1.25rem 1.25rem 1.1rem;
+            background: var(--bg-alt);
+            border: 1px solid var(--separator);
+            border-left: 3px solid #b45309;
+            border-radius: 4px;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+        }
+        .next-read-card:hover,
+        .next-read-card:focus-visible {
+            border-color: #b45309;
+            background: var(--bg);
+            transform: translateY(-2px);
+            outline: none;
+        }
+        .next-read-tag {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #b45309;
+            margin-bottom: 0.5rem;
+        }
+        .next-read-title {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.35;
+            margin: 0 0 0.5rem;
+        }
+        .next-read-desc {
+            display: block;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+        }
+        .next-read-arrow {
+            display: inline-block;
+            margin-left: 0.3rem;
+            transition: transform 0.2s ease;
+        }
+        .next-read-card:hover .next-read-arrow {
+            transform: translateX(3px);
+        }
+
         /* ── Bouton agrandir ── */
         .fig-zoom {
             position: absolute; top: 10px; right: 14px;
@@ -386,117 +614,318 @@
             .tawiza-eye-footer img { animation: none !important; }
         }
 
-        /* === Calculateur d'exposition cyber === */
+        /* === Calculateur d'exposition cyber : mobile-first responsive === */
         .calculateur-cyber {
             background: var(--bg-alt);
             border: 1px solid var(--separator);
             border-left: 4px solid #b45309;
-            padding: 2rem 1.75rem;
+            padding: 1.5rem 1.25rem;
             margin: 3rem 0;
+            text-align: left; /* override body justify */
         }
+        /* Casser l'heritage body{text-align:justify} sur les blocs UI */
+        .calculateur-cyber,
+        .fuites-table-wrapper,
+        .fuites-table,
+        .fuites-table thead,
+        .fuites-table tbody,
+        .fuites-table tfoot,
+        .fuites-table tr,
+        .fuites-table th,
+        .fuites-table td,
+        .practical-box,
+        .next-reads,
+        .calc-breakdown,
+        .calc-breakdown li {
+            text-align: left;
+        }
+        .fuites-table th,
+        .fuites-table td { hyphens: none; -webkit-hyphens: none; }
+        .calc-score, .calc-score * { text-align: center; }
+        .fuites-table .td-volume,
+        .fuites-table .th-volume,
+        .fuites-table tfoot .td-volume { text-align: right; }
         .calculateur-cyber h3 {
             margin-top: 0;
             font-family: var(--font-heading);
             color: var(--text-primary);
+            font-size: clamp(1.1rem, 1rem + 0.6vw, 1.4rem);
         }
         .calc-intro {
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.6;
         }
-        .calc-form { margin-top: 1.25rem; }
+
+        /* Layout : monocolonne par defaut (mobile) */
+        .calc-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-top: 1.25rem;
+        }
+
+        /* Form (gauche en desktop) */
+        .calc-form { margin: 0; min-width: 0; }
         .calc-form fieldset {
             border: 1px solid var(--separator);
-            padding: 1rem 1.25rem;
-            margin: 0.75rem 0;
+            padding: 0.85rem 0.9rem;
+            margin: 0 0 0.85rem;
             background: var(--bg);
+            border-radius: 4px;
         }
+        .calc-form fieldset:last-child { margin-bottom: 0; }
         .calc-form legend {
             font-weight: 600;
             padding: 0 0.5rem;
-            font-size: 0.9rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.06em;
             color: var(--text-secondary);
         }
+
+        /* Cibles tactiles 44px min - WCAG 2.5.5 + Apple HIG */
         .calc-form label {
-            display: block;
-            margin: 0.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            padding: 0.6rem 0.5rem;
+            margin: 0.15rem -0.25rem;
+            min-height: 44px;
             cursor: pointer;
             font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.45;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: background 0.15s ease, border-color 0.15s ease;
+        }
+        .calc-form label:hover {
+            background: rgba(180, 83, 9, 0.04);
+        }
+        /* Surlignage natif quand la checkbox interieure est cochee */
+        .calc-form label:has(input:checked) {
+            background: rgba(180, 83, 9, 0.07);
+            border-color: rgba(180, 83, 9, 0.25);
+        }
+        .calc-form label:focus-within {
+            outline: 2px solid #b45309;
+            outline-offset: 2px;
+        }
+
+        /* Le label avec un select/number : plus de marge interne */
+        .calc-form .calc-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            padding: 0.5rem;
+            min-height: 0;
+        }
+        .calc-form .calc-field > span {
+            font-size: 0.95rem;
+            color: var(--text-primary);
         }
         .calc-form input[type="number"],
         .calc-form select {
             font-family: var(--font-mono);
-            padding: 0.3rem 0.5rem;
+            padding: 0.55rem 0.7rem;
             border: 1px solid var(--separator);
             background: var(--bg);
             color: var(--text-primary);
-            font-size: 0.95rem;
-            margin-left: 0.5rem;
+            font-size: 1rem;
+            min-height: 44px;
+            border-radius: 4px;
+            margin: 0;
+            width: 100%;
+            max-width: 280px;
         }
         .calc-form input[type="checkbox"] {
-            margin-right: 0.5rem;
-            transform: scale(1.1);
-            vertical-align: middle;
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            margin: 1px 0 0;
+            accent-color: #b45309;
+            cursor: pointer;
         }
+
+        /* Resultat (droite en desktop) */
         .calc-result {
             background: var(--bg);
-            padding: 1.5rem;
-            margin-top: 1.5rem;
+            padding: 1.25rem 1rem;
             border: 1px solid var(--separator);
+            border-radius: 4px;
+            min-width: 0;
         }
+
+        /* Score principal : grand pct + jauge */
         .calc-score {
             text-align: center;
-            padding: 1.5rem 1rem;
+            padding: 0.5rem 0.5rem 1.25rem;
             border-bottom: 1px solid var(--separator);
             margin-bottom: 1rem;
         }
-        .calc-score #calc-count {
+        .calc-score-pct {
             font-family: var(--font-heading);
-            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-size: clamp(2.8rem, 7vw, 4rem);
             font-weight: 700;
             color: #b45309;
             line-height: 1;
+            display: block;
         }
-        .calc-score small {
+        .calc-score-label {
             display: block;
             color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
+            font-size: 0.92rem;
+            margin: 0.45rem 0 0.85rem;
+            line-height: 1.5;
         }
-        .calc-result ul {
+
+        /* Jauge horizontale 0-100% avec gradient ambre -> ocre -> rouge */
+        .calc-gauge {
+            position: relative;
+            height: 10px;
+            background: var(--separator);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 0.85rem auto 0.6rem;
+            max-width: 340px;
+        }
+        .calc-gauge-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #D4A843 0%, #b45309 55%, #C1554D 100%);
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 5px;
+        }
+        .calc-score-secondary {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin: 0.5rem 0 0;
+            font-family: var(--font-mono);
+        }
+        .calc-score-secondary strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Liste des contributions : cards avec barre individuelle */
+        .calc-breakdown {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        .calc-result li {
-            padding: 0.6rem 0;
-            border-bottom: 1px dotted var(--separator);
-            font-size: 0.9rem;
+        .calc-breakdown li {
+            padding: 0.7rem 0.75rem;
+            margin: 0.45rem 0;
+            background: var(--bg-alt);
+            border: 1px solid var(--separator);
+            border-radius: 4px;
+            font-size: 0.88rem;
         }
-        .calc-result li:last-child { border-bottom: none; }
-        .calc-result li.matched {
+        .calc-breakdown li.matched {
+            border-left: 3px solid #b45309;
+            background: rgba(180, 83, 9, 0.04);
+        }
+        .calc-breakdown li.unmatched {
+            opacity: 0.65;
+        }
+        .calc-breakdown-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 0.4rem;
+        }
+        .calc-breakdown-name {
             color: var(--text-primary);
+            font-weight: 500;
+            line-height: 1.35;
+            font-size: 0.9rem;
+            flex: 1;
+            min-width: 0;
         }
-        .calc-result li.matched strong { color: #b45309; }
-        .calc-result li.unmatched {
-            color: var(--text-muted);
-        }
-        .calc-result .calc-pct {
+        .calc-breakdown-pct {
             font-family: var(--font-mono);
             font-weight: 600;
-            display: inline-block;
-            min-width: 3.5rem;
-            text-align: right;
+            color: #b45309;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
+        .calc-breakdown li.unmatched .calc-breakdown-pct {
+            color: var(--text-muted);
+        }
+        .calc-breakdown-bar {
+            height: 5px;
+            background: var(--separator);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .calc-breakdown-bar > span {
+            display: block;
+            height: 100%;
+            background: #b45309;
+            transition: width 0.4s ease;
+            border-radius: 3px;
+        }
+        .calc-breakdown li.unmatched .calc-breakdown-bar > span {
+            background: var(--text-muted);
+        }
+        .calc-breakdown-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-family: var(--font-mono);
+            color: #b45309;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            vertical-align: middle;
+        }
+
         .calc-disclaimer {
             font-size: 0.8rem;
             color: var(--text-muted);
             margin-top: 1.25rem;
             font-style: italic;
             line-height: 1.6;
+        }
+
+        /* === Desktop : 2 colonnes cote a cote a partir de 900px === */
+        @media (min-width: 900px) {
+            .calculateur-cyber {
+                padding: 2rem 1.75rem;
+            }
+            .calc-layout {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+                gap: 2rem;
+                align-items: start;
+            }
+            .calc-result {
+                position: sticky;
+                top: 1.5rem;
+                padding: 1.5rem;
+            }
+        }
+        /* === Tres grand ecran : breakout du container-narrow ===
+           Le container-narrow est limite a 680px, ce qui etrangle le simulateur
+           a 2 colonnes. On l'elargit a 1000px en debordant symetriquement. */
+        @media (min-width: 1100px) {
+            .calculateur-cyber,
+            .fuites-table-wrapper {
+                width: 1000px;
+                max-width: calc(100vw - 4rem);
+                margin-left: 50%;
+                transform: translateX(-50%);
+                position: relative;
+            }
+            .calc-layout {
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+                gap: 2.5rem;
+            }
+        }
+        /* Tout petits ecrans : reduire encore les paddings */
+        @media (max-width: 400px) {
+            .calculateur-cyber { padding: 1.25rem 0.9rem; }
+            .calc-form fieldset { padding: 0.75rem 0.65rem; }
         }
     </style>
 
@@ -577,17 +1006,17 @@
 
                     <h2>Plo&euml;rmel, Morbihan. Juin 2024.</h2>
 
-                    <p>Un habitant de Plo&euml;rmel, dans le Morbihan, re&ccedil;oit en f&eacute;vrier 2025 un SMS qui lui demande de cliquer sur un lien pour confirmer la prise en charge d'un colis. Le message comporte son pr&eacute;nom, son nom de famille, son adresse postale et la mention du nom de son hameau. Il ne reconna&icirc;t pas l'exp&eacute;diteur. Il ne clique pas.</p>
+                    <p>En juin 2024, un fichier contenant <strong>14&nbsp;390 contacts</strong> r&eacute;sidant &agrave; Plo&euml;rmel et <strong>7&nbsp;854 contacts</strong> de la commune voisine de Josselin est mis en vente sur un forum cybercriminel. Noms, pr&eacute;noms, num&eacute;ros de t&eacute;l&eacute;phone portable, adresses e-mail, adresses postales, genre. L'origine&nbsp;: une cyberattaque sur les serveurs de la mairie de Plo&euml;rmel, qui mutualise une partie de son infrastructure num&eacute;rique avec Josselin. L'affaire est document&eacute;e par <em>Ici Bretagne</em> et la presse r&eacute;gionale d&eacute;but 2025<sup class="fn">[<a href="#src-12">12</a>]</sup>.</p>
 
-                    <p>Quelques jours plus tard, en cherchant sur un moteur de recherche pourquoi le phishing semble si pr&eacute;cis, il tombe sur un fil de discussion qui mentionne, en passant, une fuite de donn&eacute;es de la mairie de Plo&euml;rmel. En juin 2024, soit huit mois plus t&ocirc;t, un fichier contenant <strong>14&nbsp;390 contacts</strong> r&eacute;sidant &agrave; Plo&euml;rmel et <strong>7&nbsp;854 contacts</strong> de la commune voisine de Josselin avait &eacute;t&eacute; mis en vente sur un forum cybercriminel. Noms, pr&eacute;noms, num&eacute;ros de t&eacute;l&eacute;phone portable, adresses e-mail, adresses postales, genre. Tout ce qui permet d'envoyer un SMS qui ne ressemble pas &agrave; un phishing.</p>
+                    <p>C'est exactement le type de donn&eacute;es qui permet de fabriquer un SMS de phishing convaincant&nbsp;: votre nom et votre adresse au m&ecirc;me endroit, dans un message qui semble venir d'un livreur ou d'un service public. Cybermalveillance.gouv.fr documente le sch&eacute;ma depuis plusieurs ann&eacute;es&nbsp;: chaque fuite locale alimente, dans les semaines qui suivent, une vague de phishings personnalis&eacute;s aupr&egrave;s des habitants concern&eacute;s.</p>
 
-                    <p>Il n'avait jamais re&ccedil;u de courrier de sa mairie pour l'en avertir. Aucun mail. Aucun SMS officiel. Aucune publication sur le site communal. Il l'apprend par accident, en remontant un lien.</p>
+                    <p>Pourtant, aucune des deux communes n'a notifi&eacute; individuellement les personnes figurant dans le fichier. Pas de courrier. Pas d'email. Pas de SMS officiel. Pas de communiqu&eacute; sur le site communal. Les habitants qui ont d&eacute;couvert leur exposition l'ont appris par <em>Ici Bretagne</em>, par le bouche-&agrave;-oreille, ou jamais.</p>
 
-                    <p>Et il d&eacute;couvre, en creusant un peu plus, que sa commune a probablement subi une seconde attaque six mois plus tard. Le 1er&nbsp;janvier 2025, le site web de Plo&euml;rmel a connu une indisponibilit&eacute; soudaine, comme une vingtaine d'autres mairies fran&ccedil;aises ce jour-l&agrave;. Une publication sp&eacute;cialis&eacute;e en cybers&eacute;curit&eacute; attribuera l'incident &agrave; <strong>NoName057(16)</strong>, un groupe pro-russe actif depuis 2022 qui cible les pays de l'<dfn title="Organisation du trait&eacute; de l'Atlantique Nord. Alliance militaire dont la France est membre fondateur.">OTAN</dfn> soutenant l'Ukraine.</p>
+                    <p>Six mois plus tard, le 1er&nbsp;janvier 2025, le site web de Plo&euml;rmel conna&icirc;t une indisponibilit&eacute; soudaine, comme une vingtaine d'autres mairies fran&ccedil;aises ce jour-l&agrave;. Plusieurs publications sp&eacute;cialis&eacute;es en cybers&eacute;curit&eacute; attribueront l'incident &agrave; <strong>NoName057(16)</strong>, un groupe pro-russe actif depuis 2022 qui cible les pays de l'<dfn title="Organisation du trait&eacute; de l'Atlantique Nord. Alliance militaire dont la France est membre fondateur.">OTAN</dfn> soutenant l'Ukraine.</p>
 
-                    <p>Deux attaques en six mois. La premi&egrave;re criminelle, la seconde g&eacute;opolitique. Sa commune ne lui en a rien dit, dans aucun des deux cas.</p>
+                    <p>Deux attaques en six mois. La premi&egrave;re criminelle, la seconde g&eacute;opolitique. Aucune communication formelle de la commune n'est parue sur ni l'une ni l'autre.</p>
 
-                    <p>Il n'est pas seul. Ils sont des millions.</p>
+                    <p>Plo&euml;rmel et Josselin ne sont pas seules. Sur les 144 communes piratées en 2024, elles ne sont qu'un cas parmi beaucoup d'autres. Ce que cet article documente, c'est moins la fuite elle-même que l'opacit&eacute; qui l'accompagne.</p>
 
                 </div>
             </div>
@@ -684,7 +1113,7 @@
 
                     <p>En 2024, elle a reçu <strong>5&nbsp;629 notifications</strong> de violations de données au titre de l'article 33 du RGPD, soit +20&nbsp;% par rapport à 2023. Quarante de ces violations concernaient plus d'un million de personnes chacune, contre une vingtaine en 2023.</p>
 
-                    <p>En 2025, le compteur a explosé&nbsp;: <strong>5&nbsp;840 violations déclarées</strong>, soit +47&nbsp;% par rapport à 2024. <strong>40,3 millions de comptes</strong> ont été officiellement compromis sur la seule année 2025.</p>
+                    <p>En 2025, le compteur poursuit sa hausse&nbsp;: <strong>5&nbsp;840 violations déclarées</strong>, soit +3,7&nbsp;% en volume par rapport à 2024. Mais c'est surtout le nombre de personnes touchées qui explose&nbsp;: <strong>40,3 millions de comptes</strong> ont été officiellement compromis sur la seule année 2025, soit +47&nbsp;% par rapport à 2024.</p>
 
                     <figure data-fig="Fig. 1" class="fade-up">
                         <img src="../img/cyberfuites/02_notifications_cnil_annuelles.png"
@@ -702,7 +1131,87 @@
                         <figcaption>Sept fuites de données publiques majeures notifiées en France entre mars 2024 et avril 2026, en millions de personnes concernées. Cumul brut&nbsp;: 73 millions de personnes (avec doublons probables, une même personne pouvant figurer dans plusieurs bases). <em>Source&nbsp;: communiqués officiels (Ministère de l'Intérieur, Ministère de l'Économie, France Travail, CNAF) et presse spécialisée (Usine Digitale, Banque des Territoires).</em></figcaption>
                     </figure>
 
-                    <p>Mais ces chiffres ne disent rien sur la suite. Combien de ces 40 millions de personnes ont effectivement reçu un courrier ou un email les avertissant&nbsp;? La CNIL ne le publie pas. Les organismes notifiés ne le publient pas non plus.</p>
+                    <div class="fuites-table-wrapper">
+                        <table class="fuites-table">
+                            <caption>Tableau&nbsp;1. Les 8 fuites publiques nationales majeures 2024-2026</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Entit&eacute;</th>
+                                    <th scope="col" style="text-align: right;">Personnes</th>
+                                    <th scope="col">Donn&eacute;es fuit&eacute;es</th>
+                                    <th scope="col">Statut notification</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="td-date">Mars 2024</td>
+                                    <td class="td-entite">France Travail</td>
+                                    <td class="td-volume">43&nbsp;M</td>
+                                    <td>NIR, identit&eacute;, e-mail, adresse</td>
+                                    <td class="td-statut"><span class="tag tag-sanction">Sanction CNIL 5&nbsp;M&euro;</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-date">Juil. 2025</td>
+                                    <td class="td-entite">France Travail (Kairos)</td>
+                                    <td class="td-volume">340&nbsp;k</td>
+                                    <td>Identit&eacute;, identifiants</td>
+                                    <td class="td-statut"><span class="tag tag-non">Notification non v&eacute;rifiable</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-date">D&eacute;c. 2025</td>
+                                    <td class="td-entite">France Travail (Missions Locales)</td>
+                                    <td class="td-volume">1,6&nbsp;M</td>
+                                    <td>NIR, identit&eacute;, e-mail, adresse</td>
+                                    <td class="td-statut"><span class="tag tag-non">Notification non v&eacute;rifiable</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-date">D&eacute;c. 2025</td>
+                                    <td class="td-entite">CAF / CNAF</td>
+                                    <td class="td-volume">8&nbsp;M</td>
+                                    <td>Identit&eacute;, contact, identifiant CAF</td>
+                                    <td class="td-statut"><span class="tag tag-non">Notification non v&eacute;rifiable</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-date">D&eacute;c. 2025</td>
+                                    <td class="td-entite">&Eacute;ducation nationale (&Eacute;duConnect)</td>
+                                    <td class="td-volume">n.&nbsp;c.</td>
+                                    <td>Identifiants &eacute;l&egrave;ves, &eacute;tablissement</td>
+                                    <td class="td-statut"><span class="tag tag-encours">Notification en cours</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-date">Janv. 2026</td>
+                                    <td class="td-entite">FICOBA (DGFiP)</td>
+                                    <td class="td-volume">1,2&nbsp;M</td>
+                                    <td>RIB, IBAN, identit&eacute;</td>
+                                    <td class="td-statut"><span class="tag tag-encours">Notification en cours</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-date">Janv. 2026</td>
+                                    <td class="td-entite">Choisir le service public</td>
+                                    <td class="td-volume">377&nbsp;k</td>
+                                    <td>Candidatures, CV</td>
+                                    <td class="td-statut"><span class="tag tag-non">Notification non v&eacute;rifiable</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-date">Avril 2026</td>
+                                    <td class="td-entite">ANTS (Min. Int&eacute;rieur)</td>
+                                    <td class="td-volume">18,5&nbsp;M</td>
+                                    <td>Identit&eacute;, e-mail, identifiants</td>
+                                    <td class="td-statut"><span class="tag tag-encours">Notification en cours</span></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2">Cumul brut (avec doublons probables)</td>
+                                    <td class="td-volume">73,2&nbsp;M</td>
+                                    <td colspan="2">1 sanction CNIL prononc&eacute;e &middot; 0 bilan public de notification individuelle</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <p>Mais ces chiffres ne disent rien sur la suite. Combien de ces 40 millions de personnes ont effectivement reçu un courrier ou un email les avertissant&nbsp;? La CNIL ne le publie pas. Les organismes notifiés ne le publient pas non plus. Sur les 8 fuites du tableau ci-dessus, <strong>une seule a donné lieu à une sanction CNIL</strong>&nbsp;: France Travail mars 2024, sanctionn&eacute;e en janvier 2026 pour 5 millions d'euros, soit 22 mois après la fuite. Pour les sept autres, aucun bilan public ne quantifie le nombre de personnes effectivement averties.</p>
 
                     <h3>Le formulaire qui n'a jamais rendu son bilan</h3>
 
@@ -740,38 +1249,47 @@
                         <h3>Combien de bases publiques fuit&eacute;es vous concernent probablement&nbsp;?</h3>
                         <p class="calc-intro">S&eacute;lectionnez ce qui vous correspond. Le calcul est probabiliste, fond&eacute; sur les fuites publiques document&eacute;es 2024-2026 et les populations &eacute;ligibles correspondantes. <strong>Aucune donn&eacute;e n'est envoy&eacute;e nulle part</strong>&nbsp;: tout se passe dans votre navigateur, le code source est lisible dans la page.</p>
 
-                        <form class="calc-form" id="calc-form" aria-label="Calculateur d'exposition aux fuites publiques">
-                            <fieldset>
-                                <legend>Profil</legend>
-                                <label>&Acirc;ge&nbsp;: <input type="number" id="calc-age" min="0" max="120" value="40"></label>
-                                <label>Statut professionnel&nbsp;:
-                                    <select id="calc-statut">
-                                        <option value="actif">Actif occup&eacute;</option>
-                                        <option value="chomeur">Demandeur d'emploi (actuel ou pass&eacute;)</option>
-                                        <option value="retraite">Retrait&eacute;</option>
-                                        <option value="etudiant">&Eacute;tudiant</option>
-                                    </select>
-                                </label>
-                            </fieldset>
+                        <div class="calc-layout">
+                            <form class="calc-form" id="calc-form" aria-label="Calculateur d'exposition aux fuites publiques">
+                                <fieldset>
+                                    <legend>Profil</legend>
+                                    <label class="calc-field" for="calc-age">
+                                        <span>&Acirc;ge</span>
+                                        <input type="number" id="calc-age" min="0" max="120" value="40" inputmode="numeric">
+                                    </label>
+                                    <label class="calc-field" for="calc-statut">
+                                        <span>Statut professionnel</span>
+                                        <select id="calc-statut">
+                                            <option value="actif">Actif occup&eacute;</option>
+                                            <option value="chomeur">Demandeur d'emploi (actuel ou pass&eacute;)</option>
+                                            <option value="retraite">Retrait&eacute;</option>
+                                            <option value="etudiant">&Eacute;tudiant</option>
+                                        </select>
+                                    </label>
+                                </fieldset>
 
-                            <fieldset>
-                                <legend>Avez-vous&nbsp;:</legend>
-                                <label><input type="checkbox" id="calc-caf"> &Eacute;t&eacute; allocataire CAF entre 2024 et 2025 (RSA, APL, allocations familiales, prime d'activit&eacute;, etc.)</label>
-                                <label><input type="checkbox" id="calc-titre"> Demand&eacute; une carte d'identit&eacute;, un passeport ou un permis depuis 2020</label>
-                                <label><input type="checkbox" id="calc-ft"> &Eacute;t&eacute; inscrit &agrave; P&ocirc;le Emploi puis France Travail entre 2004 et 2024</label>
-                                <label><input type="checkbox" id="calc-impots" checked> D&eacute;clar&eacute; vos imp&ocirc;ts en ligne sur impots.gouv.fr (la quasi-totalit&eacute; des contribuables le font)</label>
-                                <label><input type="checkbox" id="calc-banque" checked> Un compte bancaire en France</label>
-                            </fieldset>
-                        </form>
+                                <fieldset>
+                                    <legend>Avez-vous&hellip;</legend>
+                                    <label><input type="checkbox" id="calc-caf"> <span>&Eacute;t&eacute; allocataire CAF entre 2024 et 2025 (RSA, APL, allocations familiales, prime d'activit&eacute;)</span></label>
+                                    <label><input type="checkbox" id="calc-titre"> <span>Demand&eacute; une carte d'identit&eacute;, un passeport ou un permis depuis 2020</span></label>
+                                    <label><input type="checkbox" id="calc-ft"> <span>&Eacute;t&eacute; inscrit &agrave; P&ocirc;le Emploi puis France Travail entre 2004 et 2024</span></label>
+                                    <label><input type="checkbox" id="calc-impots" checked> <span>D&eacute;clar&eacute; vos imp&ocirc;ts en ligne sur impots.gouv.fr</span></label>
+                                    <label><input type="checkbox" id="calc-banque" checked> <span>Un compte bancaire en France</span></label>
+                                </fieldset>
+                            </form>
 
-                        <div class="calc-result" id="calc-result">
-                            <div class="calc-score">
-                                <span id="calc-count">&mdash;</span>
-                                <small>bases publiques fuit&eacute;es 2024-2026 vous concernent probablement<br>
-                                Probabilit&eacute; d'&ecirc;tre dans au moins une&nbsp;: <strong id="calc-atleastone">&mdash;</strong></small>
+                            <div class="calc-result" id="calc-result" aria-live="polite">
+                                <div class="calc-score">
+                                    <span class="calc-score-pct" id="calc-atleastone">&mdash;</span>
+                                    <span class="calc-score-label">probabilit&eacute; d'&ecirc;tre dans <strong>au moins une</strong> fuite publique majeure 2024-2026</span>
+                                    <div class="calc-gauge" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="calc-gauge">
+                                        <div class="calc-gauge-fill" id="calc-gauge-fill" style="width: 0%"></div>
+                                    </div>
+                                    <p class="calc-score-secondary"><strong id="calc-count">&mdash;</strong> bases attendues sur 7 document&eacute;es</p>
+                                </div>
+                                <ul class="calc-breakdown" id="calc-detail"></ul>
+                                <p class="calc-disclaimer">Estimation bas&eacute;e sur les chiffres officiels (CNIL, ANSSI, communiqu&eacute;s minist&eacute;riels) et les populations &eacute;ligibles. M&eacute;thode hybride&nbsp;: si un crit&egrave;re est mat&eacute;rialis&eacute; (par exemple &laquo;&nbsp;a demand&eacute; un titre d'identit&eacute;&nbsp;&raquo; pour la fuite ANTS), la probabilit&eacute; vaut le ratio personnes&nbsp;expos&eacute;es&nbsp;/&nbsp;population&nbsp;&eacute;ligible. Sinon, une probabilit&eacute; r&eacute;siduelle tr&egrave;s faible est conserv&eacute;e. Le calcul est volontairement conservateur. Code source&nbsp;: <a href="#calc-script-source">consulter le script en bas de page</a>.</p>
                             </div>
-                            <ul id="calc-detail"></ul>
-                            <p class="calc-disclaimer">Estimation bas&eacute;e sur les chiffres officiels (CNIL, ANSSI, communiqu&eacute;s minist&eacute;riels) et les populations &eacute;ligibles. M&eacute;thode hybride&nbsp;: si un crit&egrave;re est mat&eacute;rialis&eacute; (par exemple &laquo;&nbsp;a demand&eacute; un titre d'identit&eacute;&nbsp;&raquo; pour la fuite ANTS), on consid&egrave;re que la probabilit&eacute; vaut le ratio personnes&nbsp;expos&eacute;es&nbsp;/&nbsp;population&nbsp;&eacute;ligible. Si le crit&egrave;re ne mat&eacute;rialise pas l'inscription dans cette base, une probabilit&eacute; r&eacute;siduelle tr&egrave;s faible est conserv&eacute;e (l'erreur d'attribution existe). Le calcul est volontairement conservateur. Code source&nbsp;: <a href="#calc-script-source">consulter le script en bas de page</a>.</p>
                         </div>
                     </div>
                     <!-- === fin calculateur === -->
@@ -809,6 +1327,30 @@
 
             <div class="container-narrow">
                 <div class="article-body">
+
+                    <!-- Encart action-reflexe pour le lecteur -->
+                    <aside class="practical-box" aria-labelledby="practical-title">
+                        <h3 id="practical-title">Que faire en pratique, &agrave; votre niveau</h3>
+                        <p class="practical-intro">Avant de parler de ce qui devrait changer institutionnellement, voici ce que vous pouvez faire d&egrave;s aujourd'hui si vous pensez &ecirc;tre concern&eacute; par l'une des fuites document&eacute;es plus haut.</p>
+                        <ol>
+                            <li>
+                                <strong>V&eacute;rifier si vos donn&eacute;es ont d&eacute;j&agrave; fuit&eacute;.</strong>
+                                Le service gratuit <a href="https://haveibeenpwned.com" target="_blank" rel="noopener noreferrer">haveibeenpwned.com</a> liste les fuites de donn&eacute;es publiques d&eacute;tect&eacute;es par adresse e-mail. Le portail public <a href="https://www.cybermalveillance.gouv.fr" target="_blank" rel="noopener noreferrer">cybermalveillance.gouv.fr</a> fournit des diagnostics et alertes en fran&ccedil;ais.
+                            </li>
+                            <li>
+                                <strong>Renforcer les comptes potentiellement expos&eacute;s.</strong>
+                                Activer l'authentification &agrave; double facteur (FranceConnect+ pour les services publics, application authenticator pour les services priv&eacute;s). Changer les mots de passe r&eacute;utilis&eacute;s. Bloquer les SMS de num&eacute;ros inconnus contenant des liens.
+                            </li>
+                            <li>
+                                <strong>Exercer vos droits RGPD aupr&egrave;s de l'organisme concern&eacute;.</strong>
+                                Vous avez un droit d'acc&egrave;s, de rectification et d'effacement sur vos donn&eacute;es. Si l'organisme ne r&eacute;pond pas sous un mois, vous pouvez d&eacute;poser une r&eacute;clamation aupr&egrave;s de la CNIL via le formulaire <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer">cnil.fr/fr/plaintes</a>.
+                            </li>
+                            <li>
+                                <strong>Porter plainte si vous avez subi un pr&eacute;judice concret.</strong>
+                                Phishing ayant abouti, usurpation d'identit&eacute;, fraude bancaire&nbsp;: vous pouvez d&eacute;poser plainte en commissariat ou en ligne via la pr&eacute;-plainte sur <a href="https://www.pre-plainte-en-ligne.gouv.fr" target="_blank" rel="noopener noreferrer">pre-plainte-en-ligne.gouv.fr</a>. Conservez les preuves (captures d'&eacute;cran, e-mails, SMS).
+                            </li>
+                        </ol>
+                    </aside>
 
                     <!-- SECTION 7 : Ce qui devrait changer -->
 
@@ -873,6 +1415,26 @@
                         <li id="src-13"><strong>CIO Online.</strong> Comment la r&eacute;forme du march&eacute; de l'emploi a fragilis&eacute; la cybers&eacute;curit&eacute; de France Travail&nbsp;: le sous-traitant Majorel mis en cause. <a href="https://www.cio-online.com/actualites/lire-comment-la-reforme-du-marche-de-l-emploi-a-fragilise-la-cybersecurite-de-france-travail-15597.html" target="_blank" rel="noopener">cio-online.com</a></li>
                         <li id="src-14"><strong>Seban Avocats.</strong> Bilan des sanctions CNIL 2025&nbsp;: d&eacute;composition d&eacute;taill&eacute;e des 9 personnes publiques sanctionn&eacute;es. <a href="https://www.seban-associes.avocat.fr/bilan-sanction-cnil-2025/" target="_blank" rel="noopener">seban-associes.avocat.fr</a></li>
                     </ol>
+
+                    <section class="next-reads" aria-labelledby="next-reads-title">
+                        <h2 id="next-reads-title">&Agrave; lire ensuite</h2>
+                        <div class="next-reads-grid">
+                            <a class="next-read-card" href="/analyses/risque-argile-silence-communal.html">
+                                <span class="next-read-tag">Analyse &middot; Tawiza 002</span>
+                                <span class="next-read-title">Risque argile&nbsp;: 65 % des communes concern&eacute;es n'ont jamais pr&eacute;venu leurs habitants<span class="next-read-arrow">&rarr;</span></span>
+                                <span class="next-read-desc">Le pendant naturel de cet article&nbsp;: l'obligation d'information communale (DICRIM) existe pour les risques naturels mais reste largement ignor&eacute;e. 12,1 millions de maisons expos&eacute;es au retrait-gonflement des argiles, 8 031 communes sans document l&eacute;gal d'information. M&ecirc;me angle juridique, autre risque.</span>
+                            </a>
+                            <a class="next-read-card" href="/analyses/dunkerque-vulnerabilite-energetique.html">
+                                <span class="next-read-tag">Analyse &middot; Tawiza</span>
+                                <span class="next-read-title">Dunkerque, vitrine de la r&eacute;industrialisation, mais &agrave; quel point vuln&eacute;rable&nbsp;?<span class="next-read-arrow">&rarr;</span></span>
+                                <span class="next-read-desc">Une autre forme de vuln&eacute;rabilit&eacute; publique mal racont&eacute;e. Sous la promesse industrielle, un territoire reste ancr&eacute; dans des d&eacute;pendances h&eacute;rit&eacute;es qui ne disparaissent pas avec les gigafactories.</span>
+                            </a>
+                        </div>
+                        <p style="margin-top: 1.25rem; font-size: 0.85rem; color: var(--text-muted);">
+                            Toutes les analyses Tawiza&nbsp;: <a href="/analyses/" style="color: #b45309;">/analyses/</a> &middot;
+                            Notebook reproductible de cet article&nbsp;: <a href="/notebooks/cyberfuites/" style="color: #b45309;">/notebooks/cyberfuites/</a>
+                        </p>
+                    </section>
 
                 </div>
             </div>
@@ -1064,9 +1626,19 @@
                 banque: document.getElementById('calc-banque').checked
             };
             var r = compute(profil);
-            document.getElementById('calc-count').textContent = r.expected.toFixed(1);
-            document.getElementById('calc-atleastone').textContent = (r.atLeastOne * 100).toFixed(0) + ' %';
 
+            // Score principal : at-least-one probability en grand
+            var atLeastOnePct = Math.round(r.atLeastOne * 100);
+            document.getElementById('calc-atleastone').textContent = atLeastOnePct + ' %';
+            document.getElementById('calc-count').textContent = r.expected.toFixed(1);
+
+            // Jauge horizontale animee
+            var gauge = document.getElementById('calc-gauge');
+            var fill = document.getElementById('calc-gauge-fill');
+            fill.style.width = atLeastOnePct + '%';
+            gauge.setAttribute('aria-valuenow', String(atLeastOnePct));
+
+            // Breakdown : cards individuelles avec barre de progression
             var ul = document.getElementById('calc-detail');
             while (ul.firstChild) { ul.removeChild(ul.firstChild); }
 
@@ -1074,20 +1646,37 @@
                 var li = document.createElement('li');
                 li.className = b.match ? 'matched' : 'unmatched';
 
-                var pctSpan = document.createElement('span');
-                pctSpan.className = 'calc-pct';
-                var pct = Math.round(b.p * 100);
-                pctSpan.textContent = (pct < 1 ? '<1' : pct.toString()) + '%';
+                var row = document.createElement('div');
+                row.className = 'calc-breakdown-row';
 
-                var nameEl = document.createElement('strong');
+                var nameEl = document.createElement('span');
+                nameEl.className = 'calc-breakdown-name';
                 nameEl.textContent = b.name;
 
-                li.appendChild(pctSpan);
-                li.appendChild(document.createTextNode(' '));
-                li.appendChild(nameEl);
                 if (b.match) {
-                    li.appendChild(document.createTextNode(' - critere matche'));
+                    var tag = document.createElement('span');
+                    tag.className = 'calc-breakdown-tag';
+                    tag.textContent = 'critere matche';
+                    nameEl.appendChild(document.createTextNode(' '));
+                    nameEl.appendChild(tag);
                 }
+
+                var pctSpan = document.createElement('span');
+                pctSpan.className = 'calc-breakdown-pct';
+                var pct = Math.round(b.p * 100);
+                pctSpan.textContent = (pct < 1 ? '<1' : pct.toString()) + ' %';
+
+                row.appendChild(nameEl);
+                row.appendChild(pctSpan);
+
+                var bar = document.createElement('div');
+                bar.className = 'calc-breakdown-bar';
+                var barFill = document.createElement('span');
+                barFill.style.width = Math.max(1, Math.min(100, pct)) + '%';
+                bar.appendChild(barFill);
+
+                li.appendChild(row);
+                li.appendChild(bar);
                 ul.appendChild(li);
             });
         }
