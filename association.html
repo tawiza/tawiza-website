@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Co-fonder l'association Tawiza - Appel &agrave; manifestation d'int&eacute;r&ecirc;t</title>
+  <meta name="description" content="Tawiza grandit. Pour passer en bien commun durable, il faut une association. On cherche celles et ceux qui veulent la co-fonder.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#b45309">
+  <link rel="canonical" href="https://tawiza.fr/association.html">
+  <meta property="og:title" content="Co-fonder l'association Tawiza">
+  <meta property="og:description" content="Appel &agrave; manifestation d'int&eacute;r&ecirc;t pour co-fonder l'association porteuse du projet Tawiza.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tawiza.fr/association.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Tawiza">
+  <meta property="og:image" content="https://tawiza.fr/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Co-fonder l'association Tawiza">
+  <meta name="twitter:description" content="Appel &agrave; manifestation d'int&eacute;r&ecirc;t.">
+  <meta name="twitter:image" content="https://tawiza.fr/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23faf5ef'/%3E%3Crect x='6' y='12' width='20' height='8' fill='%23b45309'/%3E%3Crect x='13' y='14' width='6' height='4' fill='%231a1612'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/fonts/tawiza-fonts.css?v=20260420a">
+  <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260420a">
+  <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.tagged-events.pageview-props.outbound-links.file-downloads.js"></script>
+  <style>
+    /* === Profils recherches === */
+    .profil-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin: 24px 0 8px;
+    }
+    @media (min-width: 720px) {
+      .profil-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+    }
+    .profil-card {
+      border: 1px solid var(--line-soft);
+      border-left: 3px solid var(--ocre);
+      padding: 18px 18px 14px;
+      background: var(--bg);
+      border-radius: 4px;
+    }
+    .profil-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ocre);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .profil-title {
+      font-family: var(--serif-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0 0 8px;
+      line-height: 1.25;
+    }
+    .profil-desc {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    /* === Questions pour candidater === */
+    .candidat-block {
+      background: rgba(180, 83, 9, 0.05);
+      border: 1px solid rgba(180, 83, 9, 0.22);
+      border-left: 4px solid var(--ocre);
+      padding: 24px 22px;
+      border-radius: 4px;
+      margin: 28px 0 16px;
+    }
+    .candidat-block h3 {
+      margin-top: 0;
+      font-family: var(--serif-display);
+      color: var(--ocre);
+    }
+    .candidat-block ol {
+      padding-left: 1.25rem;
+      margin: 12px 0 16px;
+    }
+    .candidat-block ol li {
+      padding: 4px 0;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .candidat-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ocre);
+      color: var(--cream);
+      padding: 12px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+      margin-top: 8px;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .candidat-cta:hover {
+      background: #7c2d12;
+      transform: translateY(-1px);
+      color: var(--cream);
+    }
+    .candidat-cta .arr { font-size: 1.1em; }
+
+    /* === Ce qui n'est PAS decide === */
+    .open-questions {
+      background: var(--bg-soft, #f5ede0);
+      border: 1px dashed var(--line);
+      padding: 18px 22px;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+    .open-questions h3 {
+      margin-top: 0;
+      font-family: var(--mono);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-mute);
+    }
+    .open-questions ul {
+      margin: 8px 0 0;
+      padding-left: 1.2rem;
+    }
+    .open-questions li {
+      padding: 3px 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ink-soft);
+    }
+
+    /* === Pourquoi maintenant - chiffres cles === */
+    .why-now-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+      margin: 16px 0 20px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .why-stat {
+      text-align: center;
+    }
+    .why-stat-num {
+      font-family: var(--serif-display);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--ocre);
+      line-height: 1;
+    }
+    .why-stat-label {
+      font-size: 12px;
+      color: var(--ink-mute);
+      margin-top: 6px;
+      line-height: 1.35;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="/" class="wordmark">tawiza.fr</a>
+  <div class="glyph-slot" aria-hidden="true" data-seed="/association"></div>
+
+  <article>
+    <header class="article-masthead article-masthead--hero terrain">
+      <div class="glyph-hero" data-seed="/association" data-size="240" data-cells="19" data-label="false"></div>
+      <div class="article-kicker">$ cat appel-association.txt</div>
+      <h1 class="article-title">Co-fonder <em>l'association</em></h1>
+      <p class="article-subtitle">Tawiza est port&eacute; par une personne depuis 2026. Pour durer en bien commun, il faut maintenant une structure collective. On cherche celles et ceux qui veulent la co-fonder.</p>
+    </header>
+
+    <div class="article-body terrain">
+
+      <h2>Pourquoi maintenant</h2>
+
+      <p>Tawiza a commenc&eacute; comme une recherche personnelle&nbsp;: rendre les donn&eacute;es publiques fran&ccedil;aises lisibles, sans les rabaisser au niveau d'un dashboard. Les premiers mois ont prouv&eacute; que c'&eacute;tait possible. Les mois suivants ont prouv&eacute; que le travail d&eacute;passe une personne.</p>
+
+      <div class="why-now-stats">
+        <div class="why-stat">
+          <div class="why-stat-num">9</div>
+          <div class="why-stat-label">analyses publi&eacute;es<br>2026 (S1)</div>
+        </div>
+        <div class="why-stat">
+          <div class="why-stat-num">3</div>
+          <div class="why-stat-label">notebooks reproductibles<br>en ligne</div>
+        </div>
+        <div class="why-stat">
+          <div class="why-stat-num">14+</div>
+          <div class="why-stat-label">jeux de donn&eacute;es publics<br>r&eacute;ouverts</div>
+        </div>
+        <div class="why-stat">
+          <div class="why-stat-num">1</div>
+          <div class="why-stat-label">personne aux manettes<br>aujourd'hui</div>
+        </div>
+      </div>
+
+      <p>Continuer en mode artisanal aurait du sens si Tawiza &eacute;tait un blog. Mais ce que le projet documente &mdash;&nbsp;la dette d'information cyber (article 003), le silence communal sur le risque argile (article 002), les comptes municipaux compar&eacute;s (articles 001a/b)&nbsp;&mdash; touche &agrave; des sujets que <strong>personne ne devrait porter seul</strong>. Si demain quelqu'un retire ce site, tout dispara&icirc;t avec lui. Un bien commun ne peut pas reposer sur un point unique de d&eacute;faillance.</p>
+
+      <p>Une association ouvre trois choses qu'un projet individuel ne peut pas&nbsp;: la <strong>pluralit&eacute; des regards</strong> (juriste, citoyen, &eacute;lu, journaliste), la <strong>continuit&eacute;</strong> (la structure survit aux personnes), et la <strong>capacit&eacute; institutionnelle</strong> (porter une plainte, signer une convention, recevoir un don d&eacute;fiscalisable, parler en nom collectif aux pouvoirs publics).</p>
+
+      <blockquote>
+        L'enjeu n'est pas de devenir grand. L'enjeu est de devenir <em>tenable dans le temps</em>, sans diluer la m&eacute;thode.
+      </blockquote>
+
+      <h2>Ce que l'association portera</h2>
+
+      <p>On part des trois piliers d&eacute;j&agrave; pos&eacute;s dans le <a href="/manifeste.html">manifeste</a>&nbsp;:</p>
+
+      <ol style="margin: 16px 0 24px; padding-left: 1.5rem;">
+        <li style="padding: 6px 0; line-height: 1.6;"><strong>Rendre lisibles les donn&eacute;es publiques fran&ccedil;aises.</strong> Pas un produit, pas une marque blanche. Un travail de m&eacute;thode et de p&eacute;dagogie.</li>
+        <li style="padding: 6px 0; line-height: 1.6;"><strong>Documenter les angles morts de la transparence publique.</strong> Le silence communal sur les risques majeurs, la dette d'information cyber, le co&ucirc;t cach&eacute; des incidents publics, l'opacit&eacute; des sous-traitants.</li>
+        <li style="padding: 6px 0; line-height: 1.6;"><strong>Outiller les acteurs qui en ont le moins les moyens.</strong> &Eacute;lus locaux, associations de quartier, citoyens, journalistes ind&eacute;pendants&nbsp;: leur donner les notebooks et les CSV pour qu'ils puissent v&eacute;rifier et plaider.</li>
+      </ol>
+
+      <p>L'association n'a pas vocation &agrave; remplacer le projet, &agrave; le b&eacute;n&eacute;ficier, ni &agrave; l'enrichir financi&egrave;rement. Elle a vocation &agrave; le <strong>tenir dans le temps</strong> et &agrave; en partager la responsabilit&eacute; &eacute;ditoriale.</p>
+
+      <h2>Profils recherch&eacute;s</h2>
+
+      <p>L'association sera plus utile si elle r&eacute;unit des regards diff&eacute;rents. On ne cherche pas des CV. On cherche des gens qui voient un angle du probl&egrave;me que les autres ne voient pas.</p>
+
+      <div class="profil-grid">
+
+        <div class="profil-card">
+          <span class="profil-tag">Profil 01</span>
+          <h3 class="profil-title">Juriste ou doctorant en droit public</h3>
+          <p class="profil-desc">Pour solidifier les angles juridiques (DICRIM, RGPD article 34, droit &agrave; l'information, transposition NIS2&hellip;). Les analyses Tawiza touchent souvent &agrave; du droit administratif et environnemental&nbsp;: un regard expert &eacute;vite les approximations.</p>
+        </div>
+
+        <div class="profil-card">
+          <span class="profil-tag">Profil 02</span>
+          <h3 class="profil-title">&Eacute;lu local ou ancien &eacute;lu</h3>
+          <p class="profil-desc">Pour ancrer les propositions dans la r&eacute;alit&eacute; communale. Un projet de DICRIM cyber peut sembler &eacute;vident depuis Paris mais avoir des implications concr&egrave;tes pour une mairie de 8&nbsp;000 habitants. Le retour de terrain manque.</p>
+        </div>
+
+        <div class="profil-card">
+          <span class="profil-tag">Profil 03</span>
+          <h3 class="profil-title">Journaliste ind&eacute;pendant ou pigiste</h3>
+          <p class="profil-desc">Pour densifier les enqu&ecirc;tes (entretiens, sources de terrain, droit de r&eacute;ponse). Un travail de v&eacute;rification cit&eacute; ne peut pas se faire que depuis un &eacute;cran. Compl&eacute;mentaire du c&oelig;ur data du projet.</p>
+        </div>
+
+        <div class="profil-card">
+          <span class="profil-tag">Profil 04</span>
+          <h3 class="profil-title">D&eacute;veloppeur, data scientist, designer</h3>
+          <p class="profil-desc">Pour faire grandir l'outillage technique (collecte, agent IA, dashboard, simulateurs interactifs, accessibilit&eacute;). Le code est open source&nbsp;: rejoindre l'asso, c'est aussi influer sur la roadmap technique en plus du code lui-m&ecirc;me.</p>
+        </div>
+
+        <div class="profil-card">
+          <span class="profil-tag">Profil 05</span>
+          <h3 class="profil-title">Citoyenne ou citoyen engag&eacute;</h3>
+          <p class="profil-desc">Pour repr&eacute;senter celles et ceux que le projet vise &agrave; outiller. Pas de comp&eacute;tence technique requise. Le regard du non-sp&eacute;cialiste est ce qui rend les analyses Tawiza lisibles&nbsp;: il doit aussi peser dans la gouvernance.</p>
+        </div>
+
+        <div class="profil-card">
+          <span class="profil-tag">Profil 06</span>
+          <h3 class="profil-title">Comptable ou gestionnaire</h3>
+          <p class="profil-desc">Pour porter la gestion administrative et financi&egrave;re d'une association de loi 1901 (tr&eacute;sorerie, d&eacute;clarations, transparence comptable). Un r&ocirc;le critique souvent invisible, qui d&eacute;termine la cr&eacute;dibilit&eacute; institutionnelle.</p>
+        </div>
+
+      </div>
+
+      <p style="margin-top: 16px; color: var(--ink-soft); font-size: 14.5px;"><em>Cette liste est indicative. Si vous voyez un angle qui manque ou un profil non list&eacute; qui vous semble pertinent, dites-le.</em></p>
+
+      <h2>Forme envisag&eacute;e</h2>
+
+      <p>L'option de d&eacute;part est une <strong>association loi 1901 &agrave; but non lucratif</strong>, fran&ccedil;aise, gouvern&eacute;e collectivement. Les principes que les statuts devront respecter, et qui sont non-n&eacute;gociables&nbsp;:</p>
+
+      <ul style="margin: 12px 0 20px;">
+        <li style="padding: 4px 0;"><strong>Gouvernance non-hi&eacute;rarchique.</strong> Pas de pr&eacute;sident-fondateur perp&eacute;tuel. Rotation des r&ocirc;les. Pouvoir de signature partag&eacute;.</li>
+        <li style="padding: 4px 0;"><strong>Transparence radicale.</strong> Comptes publi&eacute;s, d&eacute;cisions document&eacute;es publiquement, conflits d'int&eacute;r&ecirc;ts d&eacute;clar&eacute;s.</li>
+        <li style="padding: 4px 0;"><strong>Pas de prestation commerciale.</strong> L'asso ne facture pas. Elle peut recevoir des dons ponctuels, demander des subventions publiques cibl&eacute;es, encaisser des cotisations symboliques. Elle ne vend pas de service.</li>
+        <li style="padding: 4px 0;"><strong>Ind&eacute;pendance &eacute;ditoriale.</strong> Aucun financeur n'a un droit de regard sur les analyses publi&eacute;es.</li>
+        <li style="padding: 4px 0;"><strong>Le travail reste open source.</strong> Pas de propri&eacute;t&eacute; intellectuelle exclusive sur les contenus.</li>
+        <li style="padding: 4px 0;"><strong>Charte &eacute;ditoriale opposable.</strong> L'association porte un projet de r&eacute;flexion publique, pas de militantisme. Les principes sont publi&eacute;s dans <a href="/charte.html">la charte &eacute;ditoriale</a>&nbsp;: chaque cofondateur la signe en rejoignant la structure.</li>
+      </ul>
+
+      <div class="open-questions">
+        <h3>Ce qui n'est PAS d&eacute;cid&eacute;</h3>
+        <ul>
+          <li>Le nom exact de l'association (probablement &laquo;&nbsp;Tawiza&nbsp;&raquo; mais reste &agrave; voter).</li>
+          <li>La date de l'assembl&eacute;e g&eacute;n&eacute;rale fondatrice.</li>
+          <li>Le si&egrave;ge social.</li>
+          <li>Le montant de la cotisation annuelle (sym&eacute;trie membre fondateur / adh&eacute;rent ult&eacute;rieur).</li>
+          <li>Le nombre d'administrateurs et la dur&eacute;e des mandats.</li>
+          <li>Le processus exact d'arbitrage &eacute;ditorial entre membres.</li>
+        </ul>
+        <p style="margin: 12px 0 0; font-size: 13px; color: var(--ink-mute);"><em>Toutes ces questions seront tranch&eacute;es par les cofondateurs, ensemble. Aucune d&eacute;cision n'a &eacute;t&eacute; prise unilat&eacute;ralement avant cet appel.</em></p>
+      </div>
+
+      <h2>Comment manifester son int&eacute;r&ecirc;t</h2>
+
+      <p>Aucun formulaire en ligne, aucun service tiers, aucune collecte automatis&eacute;e&nbsp;: on commence par un email simple. Plus efficace, plus humain, plus tra&ccedil;able.</p>
+
+      <div class="candidat-block">
+        <h3>&Eacute;crivez &agrave; <code>contact@tawiza.fr</code></h3>
+        <p style="margin-top: 6px;">Objet&nbsp;: <strong>Cofondation association Tawiza</strong></p>
+        <p style="margin-bottom: 10px; font-size: 14.5px;">Avant d'&eacute;crire, <strong>lisez <a href="/charte.html">la charte &eacute;ditoriale</a></strong>. Elle pr&eacute;cise ce que le projet est (un travail de r&eacute;flexion public) et ce qu'il n'est pas (un mouvement militant). Si elle vous pose probl&egrave;me, cette asso n'est probablement pas la v&ocirc;tre&nbsp;; mieux vaut le d&eacute;couvrir ici qu'en AG fondatrice.</p>
+        <p style="margin-bottom: 10px; font-size: 14.5px;">Dans le corps du message, r&eacute;pondez librement aux questions ci-dessous. Pas besoin d'&ecirc;tre exhaustif&nbsp;: ce qui compte, c'est de comprendre ce que vous apporteriez et comment vous voyez le projet.</p>
+        <ol>
+          <li>Qui &ecirc;tes-vous, en deux lignes&nbsp;? (Pas besoin de CV.)</li>
+          <li>Quel(s) profil(s) ci-dessus vous correspond(ent), ou lequel manque selon vous&nbsp;?</li>
+          <li>Pourquoi co-fonder cette asso plut&ocirc;t qu'une autre&nbsp;? Qu'est-ce qui vous parle dans Tawiza tel qu'il existe d&eacute;j&agrave;&nbsp;?</li>
+          <li>Combien de temps r&eacute;aliste pouvez-vous y consacrer par mois&nbsp;? Tout est bon, m&ecirc;me 2&nbsp;h.</li>
+          <li>Une chose que vous ne sauriez PAS faire et pour laquelle l'asso devra trouver quelqu'un d'autre.</li>
+        </ol>
+        <a class="candidat-cta" href="mailto:contact@tawiza.fr?subject=Cofondation%20association%20Tawiza">
+          <span class="arr">&rarr;</span>
+          contact@tawiza.fr
+        </a>
+        <p style="margin-top: 12px; font-size: 12.5px; color: var(--ink-mute);">Toutes les r&eacute;ponses sont lues. Les retours qui int&egrave;grent le cercle des cofondateurs seront recontact&eacute;s pour une premi&egrave;re visio. Les autres recevront une r&eacute;ponse &eacute;crite expliquant pourquoi.</p>
+      </div>
+
+      <h2>Calendrier indicatif</h2>
+
+      <p>Tawiza s'engage &agrave; ne pas faire dura&icirc;tre cette phase&nbsp;: trop court tue le pluralisme, trop long &eacute;puise les volont&eacute;s.</p>
+
+      <ul style="margin: 12px 0 24px;">
+        <li style="padding: 5px 0;"><strong>Mai 2026.</strong> Ouverture de l'appel (cette page).</li>
+        <li style="padding: 5px 0;"><strong>Juin-juillet 2026.</strong> Lecture des manifestations d'int&eacute;r&ecirc;t, visios individuelles avec les retours pertinents.</li>
+        <li style="padding: 5px 0;"><strong>Septembre 2026.</strong> R&eacute;union de cadrage entre cofondateurs pressentis (en ligne).</li>
+        <li style="padding: 5px 0;"><strong>Octobre-novembre 2026.</strong> R&eacute;daction collective des statuts.</li>
+        <li style="padding: 5px 0;"><strong>D&eacute;cembre 2026 ou janvier 2027.</strong> Assembl&eacute;e g&eacute;n&eacute;rale fondatrice et d&eacute;p&ocirc;t en pr&eacute;fecture.</li>
+      </ul>
+
+      <h2>Pour aller plus loin</h2>
+
+      <p style="display:flex; gap:24px; flex-wrap:wrap; font-family: var(--mono); font-size: 13px; letter-spacing: 0.04em;">
+        <a href="/charte.html">charte &eacute;ditoriale &rarr;</a>
+        <a href="/manifeste.html">manifeste &rarr;</a>
+        <a href="/a-propos.html">&agrave; propos &rarr;</a>
+        <a href="/contribuer.html">contribuer (sans asso) &rarr;</a>
+        <a href="/analyses/">analyses publi&eacute;es &rarr;</a>
+        <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">code source &rarr;</a>
+      </p>
+
+    </div>
+  </article>
+
+  <section class="eye-zone">
+    <div class="terrain">
+      <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui ne dort jamais</span></div>
+      <div class="eye-root" role="img" aria-label="3AYNE - l'&oelig;il Tawiza"></div>
+      <div class="eye-caption">il regarde, il compte, il doute</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="terrain" style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span>tawiza &middot; bien commun num&eacute;rique &middot; 2026</span>
+      <div class="footer-links">
+        <a href="/analyses/">analyses</a>
+        <a href="/articles/">articles</a>
+        <a href="/notebooks/">notebooks</a>
+        <a href="/manifeste.html">manifeste</a>
+        <a href="/charte.html">charte</a>
+        <a href="/a-propos.html">&agrave; propos</a>
+        <a href="/contribuer.html">contribuer</a>
+        <a href="/association.html">association</a>
+        <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">source</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('/assets/v2/eye.svg?v=20260420a').then(function (r) { return r.text(); }).then(function (svgText) {
+      var mount = document.querySelector('.eye-root');
+      if (!mount) return;
+      var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
+      mount.appendChild(svgEl);
+    });
+  </script>
+  <script src="/assets/v2/eye.js?v=20260420a" defer></script>
+  <script src="/assets/v2/glyph.js?v=20260420a" defer></script>
+</body>
+</html>

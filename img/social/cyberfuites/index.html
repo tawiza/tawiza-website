@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrousel cyberfuites - Téléchargement | Tawiza</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --ocre: #b45309;
+    --ocre-deep: #7c2d12;
+    --ink: #1a1612;
+    --ink-mute: #78716c;
+    --cream: #faf5ef;
+    --cream-deep: #f5ede0;
+    --separator: #e7ddd0;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.55;
+    padding: 2rem 1.5rem 4rem;
+  }
+  .wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  header {
+    border-left: 4px solid var(--ocre);
+    padding-left: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .kicker {
+    font-family: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ocre);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  h1 {
+    font-family: Georgia, "Source Serif Pro", serif;
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.2rem);
+    margin: 0 0 0.75rem;
+    color: var(--ink);
+    font-weight: 700;
+    line-height: 1.15;
+  }
+  p.intro {
+    color: var(--ink-mute);
+    max-width: 720px;
+    font-size: 0.95rem;
+  }
+  .download-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 1.5rem 0;
+    background: var(--ocre);
+    color: var(--cream);
+    padding: 0.85rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .download-all:hover {
+    background: var(--ocre-deep);
+    transform: translateY(-1px);
+  }
+  .download-all .icon { font-size: 1.1em; }
+  .meta-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-family: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+    font-size: 0.8rem;
+    color: var(--ink-mute);
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--separator);
+    border-bottom: 1px solid var(--separator);
+    margin: 1.5rem 0 2.5rem;
+  }
+  .meta-info strong { color: var(--ink); font-weight: 600; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: var(--cream-deep);
+    border: 1px solid var(--separator);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .card:hover {
+    border-color: var(--ocre);
+    transform: translateY(-2px);
+  }
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: var(--cream);
+  }
+  .card-body {
+    padding: 0.85rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .card-label {
+    font-family: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+    font-size: 0.75rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+  }
+  .card-label strong { color: var(--ink); font-weight: 600; }
+  .btn-dl {
+    background: transparent;
+    color: var(--ocre);
+    border: 1px solid var(--ocre);
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .btn-dl:hover {
+    background: var(--ocre);
+    color: var(--cream);
+  }
+
+  footer.fp {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--separator);
+    font-family: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+    font-size: 0.78rem;
+    color: var(--ink-mute);
+    line-height: 1.7;
+  }
+  footer.fp a { color: var(--ocre); text-decoration: none; }
+  footer.fp a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Carrousel Instagram &middot; Tawiza 003 cyberfuites</div>
+  <h1>9 slides 1080&times;1350 prêtes à publier</h1>
+  <p class="intro">
+    Chaque slide est exportée en PNG individuel. Format Instagram portrait 4:5 (recommandé depuis 2022). Téléchargez les fichiers séparément, ou récupérez tout le carrousel d'un coup en ZIP.
+  </p>
+  <a class="download-all" href="cyberfuites-carrousel.zip" download="tawiza-cyberfuites-carrousel.zip">
+    <span class="icon">&darr;</span>
+    Télécharger tout le carrousel (ZIP, 9 PNG)
+  </a>
+</header>
+
+<div class="meta-info">
+  <span><strong>Format :</strong> 1080&times;1350 (4:5)</span>
+  <span><strong>DPI :</strong> 120</span>
+  <span><strong>Slides :</strong> 9</span>
+  <span><strong>Article lié :</strong> <a href="/analyses/cyberfuites-2026.html" style="color: var(--ocre); text-decoration: none;">tawiza.fr/analyses/cyberfuites-2026.html</a></span>
+</div>
+
+<div class="grid">
+
+  <div class="card">
+    <img src="slide_01.png" alt="Slide 1 - Hook : Si le sol bouge sous votre maison..." loading="lazy">
+    <div class="card-body">
+      <span class="card-label"><strong>01</strong> &middot; hook</span>
+      <a class="btn-dl" href="slide_01.png" download="tawiza-cyberfuites-01-hook.png">PNG &darr;</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="slide_02.png" alt="Slide 2 - 40,3 millions de comptes compromis" loading="lazy">
+    <div class="card-body">
+      <span class="card-label"><strong>02</strong> &middot; 40,3 M comptes</span>
+      <a class="btn-dl" href="slide_02.png" download="tawiza-cyberfuites-02-cnil.png">PNG &darr;</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="slide_03.png" alt="Slide 3 - 144 communes piratees" loading="lazy">
+    <div class="card-body">
+      <span class="card-label"><strong>03</strong> &middot; 144 communes</span>
+      <a class="btn-dl" href="slide_03.png" download="tawiza-cyberfuites-03-anssi.png">PNG &darr;</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="slide_04.png" alt="Slide 4 - 0 DICRIM cyber publie" loading="lazy">
+    <div class="card-body">
+      <span class="card-label"><strong>04</strong> &middot; 0 DICRIM cyber</span>
+      <a class="btn-dl" href="slide_04.png" download="tawiza-cyberfuites-04-zero.png">PNG &darr;</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="slide_05.png" alt="Slide 5 - Cas concret Ploermel et Josselin" loading="lazy">
+    <div class="card-body">
+      <span class="card-label"><strong>05</strong> &middot; Ploërmel cas</span>
+      <a class="btn-dl" href="slide_05.png" download="tawiza-cyberfuites-05-ploermel.png">PNG &darr;</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="slide_06.png" alt="Slide 6 - Article L.125-2 et risques majeurs" loading="lazy">
+    <div class="card-body">
+      <span class="card-label"><strong>06</strong> &middot; L.125-2 DICRIM</span>
+      <a class="btn-dl" href="slide_06.png" download="tawiza-cyberfuites-06-loi.png">PNG &darr;</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="slide_07.png" alt="Slide 7 - 3 propositions politiques" loading="lazy">
+    <div class="card-body">
+      <span class="card-label"><strong>07</strong> &middot; 3 propositions</span>
+      <a class="btn-dl" href="slide_07.png" download="tawiza-cyberfuites-07-propositions.png">PNG &darr;</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="slide_08.png" alt="Slide 8 - Methode et transparence" loading="lazy">
+    <div class="card-body">
+      <span class="card-label"><strong>08</strong> &middot; méthode</span>
+      <a class="btn-dl" href="slide_08.png" download="tawiza-cyberfuites-08-methode.png">PNG &darr;</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="slide_09.png" alt="Slide 9 - CTA lis l'article complet" loading="lazy">
+    <div class="card-body">
+      <span class="card-label"><strong>09</strong> &middot; CTA Tawiza</span>
+      <a class="btn-dl" href="slide_09.png" download="tawiza-cyberfuites-09-cta.png">PNG &darr;</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="fp">
+  <p>
+    <strong>Usage prévu</strong> &middot; Instagram (carrousel 9 slides natif), LinkedIn (téléversable comme document PDF combiné), X/Twitter (sélectionner 4 max en thread, suggestion : 1, 4, 7, 9).
+  </p>
+  <p>
+    <strong>Légende et hashtags</strong> dans <code>tawiza/articles/003-cyberfuites/social-posts.md</code> (format 6 dédié Instagram).
+  </p>
+  <p>
+    Cette page n'est pas indexée et n'est servie qu'en local Tailscale. Une fois la diffusion lancée, les images restent accessibles publiquement à
+    <code>tawiza.fr/img/social/cyberfuites/slide_NN.png</code>.
+  </p>
+</footer>
+
+</div>
+</body>
+</html>

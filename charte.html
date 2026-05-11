@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charte &eacute;ditoriale - Tawiza</title>
+  <meta name="description" content="Tawiza documente. Tawiza ne milite pas. Charte &eacute;ditoriale&nbsp;: ce que le projet fait, ce qu'il ne fait pas, et pourquoi.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#b45309">
+  <link rel="canonical" href="https://tawiza.fr/charte.html">
+  <meta property="og:title" content="Charte &eacute;ditoriale - Tawiza">
+  <meta property="og:description" content="Tawiza documente. Tawiza ne milite pas.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tawiza.fr/charte.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Tawiza">
+  <meta property="og:image" content="https://tawiza.fr/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Charte &eacute;ditoriale - Tawiza">
+  <meta name="twitter:description" content="Tawiza documente. Tawiza ne milite pas.">
+  <meta name="twitter:image" content="https://tawiza.fr/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23faf5ef'/%3E%3Crect x='6' y='12' width='20' height='8' fill='%23b45309'/%3E%3Crect x='13' y='14' width='6' height='4' fill='%231a1612'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/fonts/tawiza-fonts.css?v=20260420a">
+  <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260420a">
+  <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.tagged-events.pageview-props.outbound-links.file-downloads.js"></script>
+  <style>
+    /* === Charte : deux colonnes "fait / ne fait pas" === */
+    .charte-pair {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin: 24px 0;
+    }
+    @media (min-width: 760px) {
+      .charte-pair { grid-template-columns: 1fr 1fr; gap: 24px; }
+    }
+    .charte-col {
+      padding: 22px 22px 18px;
+      border-radius: 4px;
+      border: 1px solid var(--line-soft);
+    }
+    .charte-col.fait {
+      background: rgba(45, 106, 79, 0.05);
+      border-left: 4px solid #2D6A4F;
+    }
+    .charte-col.pas {
+      background: rgba(193, 85, 77, 0.05);
+      border-left: 4px solid #C1554D;
+    }
+    .charte-col h3 {
+      margin-top: 0;
+      font-family: var(--serif-display);
+      color: var(--ink);
+      font-size: 18px;
+    }
+    .charte-col.fait h3 { color: #1d4633; }
+    .charte-col.pas h3 { color: #8b2f28; }
+    .charte-col ul {
+      margin: 12px 0 0;
+      padding-left: 1.15rem;
+      list-style: none;
+    }
+    .charte-col li {
+      padding: 6px 0;
+      font-size: 14.5px;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .charte-col.fait li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: #2D6A4F;
+      font-weight: 700;
+      font-size: 1em;
+    }
+    .charte-col.pas li::before {
+      content: "\2717";
+      position: absolute;
+      left: 0;
+      color: #C1554D;
+      font-weight: 700;
+      font-size: 1em;
+    }
+
+    /* === Encart "Si vous voulez agir politiquement" === */
+    .act-elsewhere {
+      background: rgba(212, 168, 67, 0.08);
+      border: 1px solid rgba(212, 168, 67, 0.35);
+      border-left: 4px solid #D4A843;
+      padding: 22px 22px 18px;
+      border-radius: 4px;
+      margin: 28px 0 16px;
+    }
+    .act-elsewhere h3 {
+      margin-top: 0;
+      font-family: var(--serif-display);
+      color: #7a5f1a;
+    }
+    .act-elsewhere ul {
+      margin-top: 10px;
+      padding-left: 1.25rem;
+    }
+    .act-elsewhere li {
+      padding: 5px 0;
+      font-size: 14.5px;
+      line-height: 1.5;
+    }
+    .act-elsewhere li a {
+      color: var(--ocre);
+      text-decoration: underline;
+      text-decoration-color: rgba(180, 83, 9, 0.4);
+      text-underline-offset: 2px;
+    }
+    .act-elsewhere li a:hover { text-decoration-color: var(--ocre); }
+
+    /* === Engagement de conformite === */
+    .conformite-block {
+      border-top: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+      padding: 20px 0;
+      margin: 32px 0 8px;
+    }
+    .conformite-block h3 {
+      margin: 0 0 14px;
+      font-family: var(--mono);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ocre);
+    }
+    .conformite-block ol {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+    .conformite-block li {
+      padding: 5px 0;
+      font-size: 14.5px;
+      line-height: 1.55;
+    }
+
+    /* === Citation forte === */
+    .charte-tagline {
+      font-family: var(--serif-display);
+      font-size: clamp(22px, 1.5rem + 1vw, 28px);
+      line-height: 1.3;
+      color: var(--ink);
+      padding: 24px 24px 24px 28px;
+      border-left: 4px solid var(--ocre);
+      background: var(--bg-soft, #f5ede0);
+      margin: 28px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .charte-tagline em { color: var(--ocre); font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <a href="/" class="wordmark">tawiza.fr</a>
+  <div class="glyph-slot" aria-hidden="true" data-seed="/charte"></div>
+
+  <article>
+    <header class="article-masthead article-masthead--hero terrain">
+      <div class="glyph-hero" data-seed="/charte" data-size="240" data-cells="19" data-label="false"></div>
+      <div class="article-kicker">$ cat charte-editoriale.txt</div>
+      <h1 class="article-title">Charte <em>&eacute;ditoriale</em></h1>
+      <p class="article-subtitle">Tawiza documente. Tawiza ne milite pas. La diff&eacute;rence n'est pas s&eacute;mantique&nbsp;: elle structure ce que le projet publie et ce qu'il refuse de publier.</p>
+    </header>
+
+    <div class="article-body terrain">
+
+      <h2>Pr&eacute;ambule</h2>
+
+      <p>Cette charte est lue par chaque cofondateur, chaque contributeur, chaque relecteur d'une analyse Tawiza. Elle pr&eacute;cise une posture &eacute;ditoriale&nbsp;: produire du mat&eacute;riau pour la r&eacute;flexion publique, sans se substituer aux choix politiques de celles et ceux qui le lisent.</p>
+
+      <div class="charte-tagline">
+        Le citoyen est outill&eacute; pour <em>comprendre</em>. Pas pour <em>obtenir une consigne</em>.
+      </div>
+
+      <h2>Ce que Tawiza fait, ce que Tawiza ne fait pas</h2>
+
+      <div class="charte-pair">
+
+        <div class="charte-col fait">
+          <h3>Tawiza fait</h3>
+          <ul>
+            <li>Rendre lisibles les donn&eacute;es publiques fran&ccedil;aises (CNIL, ANSSI, INSEE, Cour des comptes, etc.).</li>
+            <li>Documenter les angles morts de la transparence publique (silence communal, absence de bilan, opacit&eacute; de la sous-traitance).</li>
+            <li>Croiser, sourcer, rendre v&eacute;rifiable. Chaque chiffre a son URL d'origine.</li>
+            <li>Publier les datasets bruts (CSV) et le code (Python) qui produit les graphiques et les calculs.</li>
+            <li>Outiller les acteurs qui n'ont pas les moyens techniques&nbsp;: &eacute;lus locaux, journalistes ind&eacute;pendants, associations de quartier, citoyens.</li>
+            <li>Reconnaitre publiquement ses erreurs et ses limites m&eacute;thodologiques.</li>
+            <li>Comparer&nbsp;: avec d'autres pays, d'autres ann&eacute;es, d'autres territoires.</li>
+          </ul>
+        </div>
+
+        <div class="charte-col pas">
+          <h3>Tawiza ne fait pas</h3>
+          <ul>
+            <li>Donner de mot d'ordre politique, partisan ou &eacute;lectoral. Aucune consigne de vote.</li>
+            <li>Faire campagne pour un parti, une candidate, une organisation politique, un syndicat.</li>
+            <li>Appeler au boycott, &agrave; la manifestation, &agrave; la d&eacute;sob&eacute;issance civile, &agrave; la gr&egrave;ve.</li>
+            <li>Appeler &agrave; enfreindre la loi, &agrave; pirater, &agrave; t&eacute;l&eacute;charger des donn&eacute;es illicites.</li>
+            <li>D&eacute;signer individuellement &agrave; la vindicte&nbsp;: ni un agent public, ni un &eacute;lu, ni un fonctionnaire, ni une entreprise par son personnel.</li>
+            <li>Personnaliser le conflit. L'analyse porte sur des d&eacute;cisions, des m&eacute;canismes, des absences de m&eacute;canismes &mdash; pas sur des personnes.</li>
+            <li>Republier, citer, ou r&eacute;f&eacute;rencer les fuites de donn&eacute;es elles-m&ecirc;mes. Les liens vers des forums cybercriminels ou des dumps sont prohib&eacute;s.</li>
+            <li>Pr&eacute;senter de pr&eacute;dictions politiques&nbsp;: ce qu'il va se passer, qui va gagner, ce qui devrait advenir si&hellip;</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <h2>Pourquoi cette posture</h2>
+
+      <p>Trois raisons, dans cet ordre.</p>
+
+      <p><strong>La m&eacute;thode prime sur l'engagement.</strong> Une analyse qui prend parti perd la moiti&eacute; de son lectorat avant la premi&egrave;re ligne. Tawiza vise un lectorat large&nbsp;: militant et neutre, &eacute;lu local et fonctionnaire d'&Eacute;tat, journaliste et juriste, citoyen et &eacute;tudiant. Si le texte affirme une position politique, il devient illisible pour la moiti&eacute; de cette audience. La m&eacute;thode neutre ne signifie pas absence de jugement&nbsp;: elle signifie que le jugement est rendu apr&egrave;s lecture, par le lecteur, &agrave; partir d'un mat&eacute;riau v&eacute;rifiable.</p>
+
+      <p><strong>Le bien commun se construit par compr&eacute;hension, pas par adh&eacute;sion.</strong> Une communaut&eacute; politique a besoin de citoyens capables de comprendre la complexit&eacute; des d&eacute;cisions publiques&nbsp;: c'est cela que Tawiza vise &agrave; entretenir. Une consigne, m&ecirc;me juste, court-circuite la r&eacute;flexion qui aurait pu y mener. Le militant est un acteur l&eacute;gitime de la d&eacute;mocratie&nbsp;; ce n'est pas le r&ocirc;le que Tawiza occupe.</p>
+
+      <p><strong>La cr&eacute;dibilit&eacute; n'est pas n&eacute;gociable.</strong> Une seule prise de position partisane &eacute;rode la confiance d&eacute;j&agrave; investie dans le travail d&eacute;j&agrave; publi&eacute;. La cr&eacute;dibilit&eacute; est asym&eacute;trique&nbsp;: elle se construit lentement, se perd vite. Toute production Tawiza doit pouvoir &ecirc;tre lue dans dix ans sans avoir &agrave; reconsid&eacute;rer la fiabilit&eacute; du travail &eacute;ditorial qui l'a produite.</p>
+
+      <h2>Et si je veux agir politiquement&nbsp;?</h2>
+
+      <p>C'est l&eacute;gitime. C'est m&ecirc;me souvent souhaitable. Mais ce n'est pas le r&ocirc;le de Tawiza. Tawiza fournit le mat&eacute;riau&nbsp;: &agrave; chacun d'en faire usage selon sa propre orientation.</p>
+
+      <div class="act-elsewhere">
+        <h3>Quelques structures qui portent ces sujets</h3>
+        <p style="font-size: 14.5px; color: var(--ink-soft); margin-top: 4px;">Cette liste est indicative, non exhaustive, et sans h&eacute;rarchie. Elle ne vaut pas endossement&nbsp;: nous ne sommes pas affili&eacute;s, nous ne donnons pas de mot d'ordre.</p>
+        <ul>
+          <li>Protection des donn&eacute;es et libert&eacute;s num&eacute;riques&nbsp;: <a href="https://www.laquadrature.net" target="_blank" rel="noopener">La Quadrature du Net</a>, <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL (autorit&eacute; administrative ind&eacute;pendante)</a>, <a href="https://exodus-privacy.eu.org/fr/" target="_blank" rel="noopener">Exodus Privacy</a>.</li>
+          <li>Transparence publique&nbsp;: <a href="https://www.transparency-france.org" target="_blank" rel="noopener">Transparency International France</a>, <a href="https://www.regardscitoyens.org" target="_blank" rel="noopener">Regards Citoyens</a>, <a href="https://anticor.org" target="_blank" rel="noopener">Anticor</a>.</li>
+          <li>D&eacute;mocratie locale et &eacute;lus de proximit&eacute;&nbsp;: <a href="https://www.amf.asso.fr" target="_blank" rel="noopener">Association des Maires de France</a>, <a href="https://www.intercommunalites.fr" target="_blank" rel="noopener">Intercommunalit&eacute;s de France</a>.</li>
+          <li>Journalisme d'investigation&nbsp;: collectifs et m&eacute;dias ind&eacute;pendants r&eacute;f&eacute;renc&eacute;s par le <a href="https://www.snj.fr" target="_blank" rel="noopener">SNJ</a> ou la <a href="https://www.fij.org" target="_blank" rel="noopener">F&eacute;d&eacute;ration internationale des journalistes</a>.</li>
+        </ul>
+      </div>
+
+      <h2>Comment cette charte s'applique en pratique</h2>
+
+      <p>Trois r&eacute;flexes &eacute;ditoriaux concrets, appliqu&eacute;s &agrave; chaque article&nbsp;:</p>
+
+      <p><strong>Toute phrase qui exprime une opinion est attribu&eacute;e &agrave; sa source.</strong> &laquo;&nbsp;La Cour des comptes &eacute;crit que&hellip;&nbsp;&raquo;, &laquo;&nbsp;Ipsos mesure que&hellip;&nbsp;&raquo;, &laquo;&nbsp;Le rapport ANSSI signale que&hellip;&nbsp;&raquo;. Si une phrase ne peut pas &ecirc;tre attribu&eacute;e, elle est reformul&eacute;e ou supprim&eacute;e. Le pronom &laquo;&nbsp;on&nbsp;&raquo; (utilis&eacute; dans les analyses Tawiza) renvoie &agrave; la r&eacute;daction&nbsp;: il signale toujours un constat factuel ou un choix m&eacute;thodologique, jamais une opinion politique.</p>
+
+      <p><strong>Toute proposition est encadr&eacute;e par sa faisabilit&eacute; juridique et institutionnelle.</strong> Quand Tawiza propose une &eacute;volution (par exemple, l'extension du DICRIM au risque cyber), la proposition est document&eacute;e dans son cadre&nbsp;: voie r&eacute;glementaire (d&eacute;cret) ou voie l&eacute;gislative, niveau de difficult&eacute;, pr&eacute;c&eacute;dents existants. Aucune proposition n'est pr&eacute;sent&eacute;e comme &laquo;&nbsp;il faut&nbsp;&raquo;&nbsp;; toutes sont pr&eacute;sent&eacute;es comme &laquo;&nbsp;voici une option et son co&ucirc;t&nbsp;&raquo;.</p>
+
+      <p><strong>Aucun retour de lecteur n'est r&eacute;-utilis&eacute; comme munition politique.</strong> Les t&eacute;moignages cit&eacute;s par les habitants (par exemple via l'appel &agrave; v&eacute;rification citoyenne de l'article 003 cyberfuites) servent &agrave; pr&eacute;ciser le constat factuel&nbsp;: ils n'alimentent pas une campagne ni une mise en accusation publique nominative.</p>
+
+      <div class="conformite-block">
+        <h3>Engagements de conformit&eacute;</h3>
+        <ol>
+          <li>Aucun appel &agrave; enfreindre la loi fran&ccedil;aise ou europ&eacute;enne.</li>
+          <li>Toute donn&eacute;e cit&eacute;e provient d'une source publique accessible et v&eacute;rifiable.</li>
+          <li>Aucune donn&eacute;e personnelle de victime d'une fuite n'est jamais r&eacute;f&eacute;renc&eacute;e ni republi&eacute;e par Tawiza.</li>
+          <li>Aucun lien vers un forum cybercriminel, un dump, un outil de leak.</li>
+          <li>Toute mise &agrave; jour de cette charte est document&eacute;e publiquement (historique git).</li>
+          <li>Les conflits d'int&eacute;r&ecirc;ts ventuels (subventions, partenariats, prestations annexes des membres) sont d&eacute;clar&eacute;s.</li>
+        </ol>
+      </div>
+
+      <h2>R&eacute;vision de la charte</h2>
+
+      <p>Cette charte n'est pas grav&eacute;e. Elle &eacute;voluera avec le projet et avec ses cofondateurs. Toute modification substantielle doit &ecirc;tre&nbsp;:</p>
+
+      <ul style="margin: 12px 0 24px;">
+        <li style="padding: 4px 0;">d&eacute;cid&eacute;e collectivement par les membres de l'association une fois constitu&eacute;e&nbsp;;</li>
+        <li style="padding: 4px 0;">publi&eacute;e avec sa date et son motif sur cette m&ecirc;me page&nbsp;;</li>
+        <li style="padding: 4px 0;">retrouvable dans l'historique git du d&eacute;p&ocirc;t <a href="https://github.com/tawiza/tawiza-website" target="_blank" rel="noopener">github.com/tawiza/tawiza-website</a>.</li>
+      </ul>
+
+      <p style="font-size: 13px; color: var(--ink-mute); margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--line-soft); font-family: var(--mono);">
+        Version&nbsp;: 1.0 &middot; mai 2026 &middot; <a href="/association.html">co-fonder l'association</a> &middot; <a href="/manifeste.html">manifeste</a>
+      </p>
+
+    </div>
+  </article>
+
+  <section class="eye-zone">
+    <div class="terrain">
+      <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui ne dort jamais</span></div>
+      <div class="eye-root" role="img" aria-label="3AYNE - l'&oelig;il Tawiza"></div>
+      <div class="eye-caption">il regarde, il compte, il doute</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="terrain" style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span>tawiza &middot; bien commun num&eacute;rique &middot; 2026</span>
+      <div class="footer-links">
+        <a href="/analyses/">analyses</a>
+        <a href="/articles/">articles</a>
+        <a href="/notebooks/">notebooks</a>
+        <a href="/manifeste.html">manifeste</a>
+        <a href="/charte.html">charte</a>
+        <a href="/a-propos.html">&agrave; propos</a>
+        <a href="/contribuer.html">contribuer</a>
+        <a href="/association.html">association</a>
+        <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">source</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('/assets/v2/eye.svg?v=20260420a').then(function (r) { return r.text(); }).then(function (svgText) {
+      var mount = document.querySelector('.eye-root');
+      if (!mount) return;
+      var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
+      mount.appendChild(svgEl);
+    });
+  </script>
+  <script src="/assets/v2/eye.js?v=20260420a" defer></script>
+  <script src="/assets/v2/glyph.js?v=20260420a" defer></script>
+</body>
+</html>
