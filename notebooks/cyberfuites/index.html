@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook reproductible &middot; Cyberfuites &middot; Tawiza</title>
+    <meta name="description" content="Comment l'article 003 Tawiza Cyberfuites a &eacute;t&eacute; calcul&eacute;. Chaque chiffre est expliqu&eacute; pas-&agrave;-pas, avec le code Python et les r&eacute;sultats. Reproductible sans pr&eacute;-requis technique pour les lecteurs non-codeurs.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#b45309">
+    <link rel="canonical" href="https://tawiza.fr/notebooks/cyberfuites/">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23b45309'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='18'%3ET%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/fonts/tawiza-fonts.css?v=20260420a">
+    <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260420a">
+
+    <style>
+        body {
+            background: var(--bg);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.65;
+        }
+        .nb-container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        .nb-meta {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4.5vw, 2.6rem);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        .nb-lead {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        h2 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-top: 3.5rem;
+            margin-bottom: 1rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--separator);
+            position: relative;
+        }
+        h2::before {
+            content: '';
+            position: absolute; top: -1px; left: 0;
+            width: 36px; height: 3px;
+            background: var(--accent, #b45309);
+        }
+        h3 {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        .nb-explanation {
+            margin: 1rem 0;
+        }
+        .nb-code, .nb-output {
+            font-family: var(--font-mono, 'JetBrains Mono', monospace);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            white-space: pre;
+            border-left: 3px solid;
+        }
+        .nb-code {
+            background: var(--bg-alt);
+            border-left-color: #b45309;
+            color: var(--text-primary);
+        }
+        .nb-code::before {
+            content: '# code';
+            display: block;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.5rem;
+        }
+        .nb-output {
+            background: rgba(180, 83, 9, 0.05);
+            border-left-color: var(--separator);
+            color: var(--text-secondary);
+        }
+        .nb-output::before {
+            content: '# sortie';
+            display: block;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.5rem;
+        }
+        .nb-footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--separator);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .nb-cta {
+            background: var(--bg-alt);
+            border: 1px solid var(--separator);
+            border-left: 4px solid #b45309;
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+        }
+        .nb-cta a {
+            color: #b45309;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+        .nb-cta a:hover { border-bottom-color: #b45309; }
+        .wordmark {
+            position: fixed;
+            top: 1rem; left: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            letter-spacing: 0.06em;
+        }
+        .wordmark:hover { color: #b45309; }
+    </style>
+</head>
+<body>
+
+    <a href="/" class="wordmark">tawiza.fr</a>
+
+    <div class="nb-container">
+
+        <div class="nb-meta">Notebook reproductible &middot; Mai 2026</div>
+        <h1>Comment l'article &laquo;&nbsp;Cyberfuites&nbsp;&raquo; a &eacute;t&eacute; calcul&eacute;</h1>
+
+        <p class="nb-lead">Cette page reprend, &eacute;tape par &eacute;tape, tous les calculs cit&eacute;s dans l'article 003. Chaque section commence par une explication en fran&ccedil;ais clair, puis montre le code Python, puis montre le r&eacute;sultat r&eacute;ellement produit. <strong>Vous n'avez pas besoin de savoir coder pour suivre&nbsp;</strong>: les explications sont &eacute;crites pour qui n'a jamais ouvert un &eacute;diteur de code.</p>
+
+        <div class="nb-cta">
+            <p><strong>Pour relancer les calculs chez vous</strong>&nbsp;:</p>
+            <ol style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                <li>Installez Python 3.11 ou plus r&eacute;cent (<a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org/downloads</a>).</li>
+                <li>Installez la biblioth&egrave;que <code>pandas</code> avec la commande <code>pip install pandas</code> dans un terminal.</li>
+                <li>T&eacute;l&eacute;chargez le script <a href="/_notebooks-src/cyberfuites-2026.py">cyberfuites-2026.py</a> et les CSV depuis le dossier <a href="https://github.com/tawiza/tawiza-website/tree/main/assets/data/cyberfuites" target="_blank" rel="noopener">assets/data/cyberfuites</a> du repo public.</li>
+                <li>Lancez avec <code>python cyberfuites-2026.py</code> dans un terminal.</li>
+            </ol>
+            <p style="margin-top: 0.75rem;">Vous obtiendrez exactement les m&ecirc;mes r&eacute;sultats que ceux pr&eacute;sent&eacute;s ci-dessous.</p>
+        </div>
+
+        <h2>&Eacute;tape 1 &middot; Les chiffres bruts de la CNIL</h2>
+
+        <div class="nb-explanation">
+            <p>On charge le tableau r&eacute;capitulatif des bilans annuels de la CNIL. Ces chiffres viennent directement des bilans publi&eacute;s par la CNIL elle-m&ecirc;me (<a href="https://www.cnil.fr/fr/bilan-sanctions-2025" target="_blank" rel="noopener">bilan 2025</a>) et de l'analyse compl&eacute;mentaire de Seban Avocats sur la composition des amendes publiques.</p>
+        </div>
+
+        <div class="nb-code">import pandas as pd
+
+sanctions = pd.read_csv("assets/data/cyberfuites/sanctions_cnil_annuel.csv")
+print(sanctions[["annee", "total_sanctions", "total_amendes_eur",
+                 "sanctions_publiques", "amendes_publiques_eur"]])</div>
+
+        <div class="nb-output">     annee  total_sanctions  total_amendes_eur  sanctions_publiques  amendes_publiques_eur
+0     2024               87           55212400                   12                 100900
+1     2025               83          486839500                    9                 116000
+2  2026-S1               11           53200000                    1                5000000</div>
+
+        <div class="nb-explanation">
+            <p><strong>Ce que dit ce tableau</strong>&nbsp;: en 2024, la CNIL a prononc&eacute; 87 sanctions pour un total de 55,2 millions d'euros d'amendes. 12 de ces 87 sanctions visaient des &laquo;&nbsp;personnes publiques&nbsp;&raquo; (administrations, &eacute;tablissements publics, communes, mais aussi associations subventionn&eacute;es et organismes de formation), pour 100&nbsp;900&nbsp;&euro; au total.</p>
+        </div>
+
+        <h2>&Eacute;tape 2 &middot; Pourquoi on n'a PAS pr&eacute;sent&eacute; de ratio public/priv&eacute;</h2>
+
+        <div class="nb-explanation">
+            <p>L'article explique pourquoi on a renonc&eacute; au ratio &laquo;&nbsp;0,024&nbsp;% public&nbsp;&raquo; qui circulait dans nos premi&egrave;res versions. La raison est simple&nbsp;: deux sanctions concernant les cookies (Google et Shein, en septembre 2025) p&egrave;sent &agrave; elles seules 475 millions d'euros sur les 486,8&nbsp;M&euro; de l'ann&eacute;e. Comparer le total public au total priv&eacute; revient donc &agrave; mettre des amendes pour cookies dans la balance avec des amendes pour fuites de donn&eacute;es.</p>
+        </div>
+
+        <div class="nb-code">google_shein_meur = 325 + 150          # Google 325 M&euro; + Shein 150 M&euro;
+total_2025_meur = 486.8                 # bilan CNIL 2025
+part_cookies_pct = google_shein_meur / total_2025_meur * 100
+
+print(f"Sanctions cookies Google + Shein 2025 : {google_shein_meur} M&euro;")
+print(f"Total amendes CNIL 2025             : {total_2025_meur} M&euro;")
+print(f"Part cookies dans le total          : {part_cookies_pct:.1f} %")</div>
+
+        <div class="nb-output">Sanctions cookies Google + Shein 2025 : 475 M&euro;
+Total amendes CNIL 2025             : 486.8 M&euro;
+Part cookies dans le total          : 97.6 %</div>
+
+        <div class="nb-explanation">
+            <p>97,6&nbsp;% du total annuel vient de DEUX sanctions sur 83. Comparer brut public/priv&eacute; serait fortement biais&eacute;.</p>
+        </div>
+
+        <h2>&Eacute;tape 3 &middot; Le calcul de la dette d'information</h2>
+
+        <div class="nb-explanation">
+            <p>Deux sources convergent&nbsp;: la <strong>CNIL</strong> d&eacute;clare officiellement 40,3&nbsp;millions de comptes compromis en France en 2025 (bilan 2025). Le sondage <strong>Ipsos d'ao&ucirc;t 2025</strong> indique que 37&nbsp;% des Fran&ccedil;ais se sentent bien inform&eacute;s sur l'usage de leurs donn&eacute;es par les acteurs publics&nbsp;; donc 63&nbsp;% ne le sont pas.</p>
+        </div>
+
+        <div class="nb-code">population_france = 67_000_000          # INSEE 1er janvier 2025
+ipsos_part_non_informes = 0.63          # 100% - 37%
+non_informes_estimes = int(population_france * ipsos_part_non_informes)
+comptes_compromis_2025 = 40_300_000     # CNIL bilan 2025
+
+print(f"Population fran&ccedil;aise                    : {population_france:>14,}")
+print(f"Part Ipsos non inform&eacute;s (ao&ucirc;t 2025)    : {ipsos_part_non_informes:>14.0%}")
+print(f"Estimation non inform&eacute;s                 : {non_informes_estimes:>14,}")
+print(f"Comptes compromis 2025 (CNIL officiel) : {comptes_compromis_2025:>14,}")</div>
+
+        <div class="nb-output">Population fran&ccedil;aise                    :     67 000 000
+Part Ipsos non inform&eacute;s (ao&ucirc;t 2025)    :            63%
+Estimation non inform&eacute;s                 :     42 210 000
+Comptes compromis 2025 (CNIL officiel) :     40 300 000</div>
+
+        <div class="nb-explanation">
+            <p>Les deux ordres de grandeur convergent autour de 40 millions. <strong>Attention&nbsp;</strong>: nous ne pr&eacute;tendons PAS que les 42,2 millions de non-inform&eacute;s sont strictement les m&ecirc;mes personnes que les 40,3 millions de comptes compromis. Ce sont deux mesures distinctes du m&ecirc;me ph&eacute;nom&egrave;ne d'opacit&eacute; publique.</p>
+        </div>
+
+        <h2>&Eacute;tape 4 &middot; Le cumul des fuites publiques 2024-2026</h2>
+
+        <div class="nb-explanation">
+            <p>On charge la liste des fuites publiques nationales document&eacute;es et on additionne le nombre de personnes concern&eacute;es par chacune. <strong>Le total comporte des doublons</strong>&nbsp;: une m&ecirc;me personne peut figurer dans plusieurs bases (par exemple France Travail + CAF + ANTS).</p>
+        </div>
+
+        <div class="nb-code">fuites = pd.read_csv("assets/data/cyberfuites/breaches_nationales.csv")
+fuites_chiffrees = fuites.dropna(subset=["personnes_concernees"])
+fuites_chiffrees = fuites_chiffrees[fuites_chiffrees["personnes_concernees"] &gt; 0]
+
+print(fuites_chiffrees[["date", "entite", "personnes_concernees"]].to_string(index=False))
+total = int(fuites_chiffrees["personnes_concernees"].sum())
+print(f"\nCumul brut (avec doublons probables) : {total:,} personnes")</div>
+
+        <div class="nb-output">      date                            entite  personnes_concernees
+2024-03-13                    France Travail            43000000.0
+2025-07-12           France Travail (Kairos)              340000.0
+   2025-12 France Travail (Missions Locales)             1600000.0
+2026-04-15              ANTS (Min Interieur)            18500000.0
+2025-12-17                        CAF (CNAF)             8000000.0
+2026-01-31                    FICOBA (DGFiP)             1200000.0
+   2026-01         Choisir le service public              377000.0
+      2026           DILA + Cohesion sociale              160000.0
+
+Cumul brut (avec doublons probables) : 73 177 000 personnes</div>
+
+        <div class="nb-explanation">
+            <p>73 millions de personnes apparaissent au moins une fois dans une fuite publique nationale entre 2024 et 2026. Comme une personne peut figurer dans plusieurs bases, le chiffre R&Eacute;EL de personnes touch&eacute;es est inf&eacute;rieur, mais nettement sup&eacute;rieur aux 40&nbsp;M de la seule ann&eacute;e 2025.</p>
+        </div>
+
+        <h2>&Eacute;tape 5 &middot; Comment fonctionne le calculateur d'exposition</h2>
+
+        <div class="nb-explanation">
+            <p>Le calculateur de l'article (en bas de l'article principal) utilise une m&eacute;thode dite <em>hybride</em>&nbsp;: pour chaque fuite, si vous remplissez un crit&egrave;re donn&eacute; (par exemple &laquo;&nbsp;j'ai demand&eacute; un titre d'identit&eacute; depuis 2020&nbsp;&raquo;), votre probabilit&eacute; de figurer dans la fuite est calcul&eacute;e comme le rapport <em>personnes&nbsp;expos&eacute;es</em> / <em>population&nbsp;&eacute;ligible</em>. Sinon, une probabilit&eacute; r&eacute;siduelle tr&egrave;s faible est gard&eacute;e pour tenir compte des erreurs d'attribution.</p>
+            <p>Exemple pour un profil &laquo;&nbsp;actif 40 ans, ex-inscrit France Travail, allocataire CAF, a demand&eacute; un passeport depuis 2020&nbsp;&raquo;&nbsp;:</p>
+        </div>
+
+        <div class="nb-code">bases_eligibles = {
+    "France Travail mars 2024":  (43_000_000, 35_000_000),
+    "CAF d&eacute;cembre 2025":         ( 8_000_000, 13_000_000),
+    "ANTS avril 2026":           (18_500_000, 30_000_000),
+    "FICOBA janvier 2026":       ( 1_200_000, 50_000_000),
+}
+
+proba_au_moins_une = 1.0
+for nom, (pop_fuite, pop_eligible) in bases_eligibles.items():
+    p = min(1.0, pop_fuite / pop_eligible)
+    proba_au_moins_une *= (1 - p)
+    print(f"{nom:&lt;35}{p:&gt;10.0%}")
+
+proba_au_moins_une = 1 - proba_au_moins_une
+print(f"\nProbabilit&eacute; d'&ecirc;tre dans AU MOINS UNE de ces fuites : {proba_au_moins_une:.0%}")</div>
+
+        <div class="nb-output">France Travail mars 2024                  100%
+CAF d&eacute;cembre 2025                          62%
+ANTS avril 2026                            62%
+FICOBA janvier 2026                         2%
+
+Probabilit&eacute; d'&ecirc;tre dans AU MOINS UNE de ces fuites : 100%</div>
+
+        <div class="nb-explanation">
+            <p>Pour ce profil exemple (actif 40 ans avec CAF + France Travail + passeport r&eacute;cent), la probabilit&eacute; d'appara&icirc;tre dans au moins une fuite publique majeure est de pratiquement 100&nbsp;%. Le crit&egrave;re &laquo;&nbsp;a &eacute;t&eacute; inscrit &agrave; France Travail&nbsp;&raquo; matche m&eacute;caniquement la fuite de mars 2024 (qui couvre 20 ans d'historique).</p>
+        </div>
+
+        <h2>&Eacute;tape 6 &middot; Ce que ce calcul ne dit pas</h2>
+
+        <div class="nb-explanation">
+            <p>Les limites m&eacute;thodologiques que nous assumons&nbsp;:</p>
+            <ul>
+                <li>Le calcul ne prend en compte que les <strong>fuites nationales</strong> document&eacute;es 2024-2026. Il ignore les fuites des collectivit&eacute;s locales (mairies, h&ocirc;pitaux, lyc&eacute;es), m&ecirc;me si elles concernent souvent les m&ecirc;mes personnes.</li>
+                <li>Il ignore les fuites des <strong>prestataires priv&eacute;s</strong> (Cegedim Sant&eacute;, Majorel, etc.) qui h&eacute;bergent en pratique des donn&eacute;es publiques. C'est un trou que nous documentons dans l'article.</li>
+                <li>L'hypoth&egrave;se d'<strong>ind&eacute;pendance</strong> entre fuites est une simplification. En r&eacute;alit&eacute;, qui figure dans la base France Travail a plus de chances que la moyenne de figurer aussi dans la base CAF (les statuts pr&eacute;caires sont concentr&eacute;s).</li>
+                <li>Le calcul est volontairement <strong>conservateur</strong>. Le chiffre r&eacute;el est probablement plus &eacute;lev&eacute;.</li>
+            </ul>
+        </div>
+
+        <div class="nb-cta">
+            <p><strong>Pour aller plus loin</strong></p>
+            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                <li>Article complet&nbsp;: <a href="/analyses/cyberfuites-2026.html">tawiza.fr/analyses/cyberfuites-2026.html</a></li>
+                <li>Code source du site&nbsp;: <a href="https://github.com/tawiza/tawiza-website" target="_blank" rel="noopener">github.com/tawiza/tawiza-website</a></li>
+                <li>Script Python complet&nbsp;: <a href="/_notebooks-src/cyberfuites-2026.py">/_notebooks-src/cyberfuites-2026.py</a></li>
+                <li>Donn&eacute;es brutes (CSV)&nbsp;: <a href="https://github.com/tawiza/tawiza-website/tree/main/assets/data/cyberfuites" target="_blank" rel="noopener">assets/data/cyberfuites</a></li>
+            </ul>
+        </div>
+
+        <div class="nb-footer">
+            <p>Toutes les sources cit&eacute;es ici sont r&eacute;f&eacute;renc&eacute;es nominativement dans la section &laquo;&nbsp;Sources&nbsp;&raquo; de l'article principal. Cette page suit la m&ecirc;me discipline m&eacute;thodologique que l'article&nbsp;: aucune donn&eacute;e n'est invent&eacute;e, aucune source n'est masqu&eacute;e, et toute personne qui suit pas-&agrave;-pas les &eacute;tapes ci-dessus arrive aux m&ecirc;mes chiffres. C'est ce que nous entendons par &laquo;&nbsp;analyse reproductible&nbsp;&raquo;.</p>
+            <p>Tawiza est un commun num&eacute;rique sous licence MIT. Vous pouvez copier, modifier, &eacute;tendre librement.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

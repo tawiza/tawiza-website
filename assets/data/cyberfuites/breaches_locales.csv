@@ -1,0 +1,30 @@
+id,date,entite,type_entite,commune_ou_dept,scope,personnes_concernees,donnees_fuitees,ransomware,dicrim_cyber_publie,source
+ANSSI-COMMUNES-2024,2024,Communes (agrege ANSSI),mairie,FR,national_agrege,144,divers,25,0,maire-info.com/l'anssi-a-traite-144-incidents-cyber-affectant-les-communes-en-2024-article2-29445
+ANSSI-COLL-2022-2023,2022-06_2023-06,Collectivites territoriales (agrege ANSSI),collectivite,FR,national_agrege,,divers,majoritaire,0,anssi.gouv.fr (187 attaques janv 2022-juin 2023)
+CYBM-COLLECT-2025-S1,2025-S1,Collectivites (agrege Cybermalv),collectivite,FR,national_agrege,160,divers,oui_majoritaire,0,cybermalveillance.gouv.fr
+DDoS-NoName-2025-01,2025-01-01,20+ grandes villes (DDoS),mairie,Marseille/Bordeaux/Nantes/Nice/Montpellier/Pau/Nimes/Tarbes,national,,sites_indisponibles,non,0,rm3a.fr/bilan-des-cyberattaques-en-france-2024-2025
+FUMEL-2024,2024,Mairie de Fumel,mairie,Lot-et-Garonne (47),local,,donnees_collectivite_cryptees,oui,0,france3-regions.franceinfo.fr/nouvelle-aquitaine/lot-et-garonne/agen
+PLOERMEL-2024,2024-06,Mairie de Ploermel,mairie,Morbihan (56),local,14390,"nom,prenom,tel,email,adresse,genre",oui,0,ici.fr/bretagne/morbihan-56/josselin
+JOSSELIN-2024,2024-06,Mairie de Josselin,mairie,Morbihan (56),local,7854,"nom,prenom,tel,email,adresse,genre",oui,0,ici.fr/bretagne/morbihan-56/josselin
+MORLAIX-2024,2024,Mairie de Morlaix,mairie,Finistere (29),local,,donnees_collectivite,oui,0,blog.lockself.com/cyberattaques-secteur-public-2023
+MANDEURE-2024,2024,Ville de Mandeure (5000 hab),mairie,Doubs (25),local,,services_paralyses,oui_5M_dollars,0,portail-ie.fr/univers/risques-et-gouvernance-cyber/2023
+OZOIR-2024,2024,Commune Ozoir-la-Ferriere,mairie,Seine-et-Marne (77),local,,site_mairie + page_Facebook,oui,0,smartcitymag.fr/article/1425
+BETTON-2024-08,2024-08,Mairie de Betton,mairie,Ille-et-Vilaine (35),local,,donnees_chiffrees_par_Medusa,oui_100k_dollars,0,stormshield.com/fr/actus/cyberattaques-quand-les-collectivites-cherchent-la-parade
+BRUNOY-2024,2024,Mairie de Brunoy,mairie,Essonne (91),local,,donnees_collectivite,oui,0,vie-publique.fr/en-bref/291598-cyberattaques-de-fortes-menaces
+CHALOSSE-2024,2024,Communaute communes Chalosse Tursan,interco,Landes (40),local,,effacement_complet_serveur,oui,0,vie-publique.fr/en-bref/291598
+ALPES-MAR-2022-11,2022-11-10,Conseil departemental Alpes-Maritimes,departement,Alpes-Maritimes (06),regional,,290_Go_dont_13_Go_publies,oui_PlayRansomware,0,france3-regions.franceinfo.fr/provence-alpes-cote-d-azur/alpes-maritimes
+LOIRET-2023,2023,Conseil departemental du Loiret,departement,Loiret (45),regional,,archives_diffusees_darkweb,oui_LockBit,0,banquedesterritoires.fr
+REUNION-CD-2024-11,2024-11-13,Conseil departemental de La Reunion,departement,La Reunion (974),regional,,services_indisponibles,oui,0,la1ere.franceinfo.fr/reunion
+HAUTS-SEINE-2025-05,2025-05-20,Conseil departemental Hauts-de-Seine,departement,Hauts-de-Seine (92),regional,,grande_ampleur,a_confirmer,0,france3-regions.franceinfo.fr/paris-ile-de-france/hauts-de-seine
+HDF-LYCEES-2025-10,2025-10,200+ lycees Hauts-de-France,lycee,Hauts-de-France,regional,,donnees_eleves_aspirees,oui_Qilin,0,hautsdefrance.fr/incident-de-cybersecurite-dans-plusieurs-lycees
+EDUC-NAT-2025-12,2025-12,Ministere Education Nationale (EduConnect),etat_central,FR,national,,"nom,prenom,id_EduConnect,etablissement,classe,email",non,0,education.gouv.fr/incident-de-securite + franceinfo
+PARIS1-2024-10,2024-10-10,Universite Paris 1 Pantheon-Sorbonne,universite,Paris (75),local,73000,"nom,prenom,email_universitaire,photo,statut",non,0,siecledigital.fr/2024/10/15
+CANNES-SVEIL-2024,2024,Hopital Simone-Veil Cannes,hopital,Cannes (06),local,,61Go_donnees_personnelles,oui_LockBit,0,usine-digitale.fr
+ARMENTIERES-2024,2024-02,CH Armentieres,hopital,Nord (59),local,,donnees_patients,oui,0,jedha.co/formation-cybersecurite
+GHGO-2024-10,2024-10-02,Groupe hospitalier Grand Ouest,hopital,Bretagne+Pays Loire (9 etablissements),regional,,donnees_patients,oui,0,gendarmerie.interieur.gouv.fr/gendinfo
+PONTARLIER-2025-10,2025-10-19,CH intercommunal Haute-Comte,hopital,Pontarlier (25),local,,donnees_patients,oui,0,usine-digitale.fr
+GERS-2025-08,2025-08-06,Centre hospitalier du Gers,hopital,Gers (32),local,,donnees_patients,suspicion,0,rm3a.fr
+LYON-CHU-2026-03,2026-03,CHU Lyon,hopital,Lyon (69),local,,1200_consultations_reportees,oui,0,rm3a.fr
+MEDIBOARD-PARIS-2024,2024,Hopital parisien via Mediboard,hopital,Paris (75),local,750000,dossiers_medicaux_complets,oui,0,usine-digitale.fr
+CEGEDIM-2024,2024,Cegedim Sante (logiciel MLM),prestataire_sante,FR,national,1500,donnees_patients_via_medecins,oui,0,usine-digitale.fr
+CERBALLIANCE-2026-03,2026-03,Cerballiance (700 labos),laboratoire,FR,national,,"etat_civil,NIR,resultats_analyses",oui,0,usine-digitale.fr

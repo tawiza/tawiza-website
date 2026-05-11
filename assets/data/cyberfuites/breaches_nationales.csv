@@ -1,0 +1,10 @@
+id,date,entite,type_entite,scope,personnes_concernees,donnees_fuitees,communique_dit_notifier,verifiable_ex_post,sanction_cnil_eur,sanction_cnil_date,source_principale
+FT-2024-03,2024-03-13,France Travail,operateur_public,national,43000000,"nom,prenom,NIR,email,adresse,tel",oui,partiel,5000000,2026-01-22,cnil.fr/fr/violation-de-donnees-sanction-5millions-france-travail
+FT-2025-07,2025-07-12,France Travail (Kairos),operateur_public,national,340000,"nom,adresse,identifiants",oui,non,,,next.ink/193279
+FT-2025-12,2025-12,France Travail (Missions Locales),operateur_public,national,1600000,"nom,date_naissance,NIR,email,adresse,tel",oui,non,,,plare.fr/fuites-donnees-france-2026
+ANTS-2026-04,2026-04-15,ANTS (Min Interieur),agence_etat,national,18500000,"nom,prenom,date_naissance,email,identifiants",oui,en_cours,,,rgpdkit.fr/blog/piratage-ants-fuite-donnees-19-millions-rgpd-avril-2026
+CAF-2025-12,2025-12-17,CAF (CNAF),etablissement_public,national,8000000,"nom,adresse,email,tel,date_naissance,id_CAF",oui,non,,,solutions-numeriques.com/fuite-massive-a-la-caf-22-millions-de-lignes-de-donnees-personnelles
+FICOBA-2026-01,2026-01-31,FICOBA (DGFiP),fichier_etat,national,1200000,"RIB,IBAN,identite,adresse",oui,en_cours,,,economie.gouv.fr/actualites/ficoba-tout-savoir-lacces-illegitime
+CSP-2026-01,2026-01,Choisir le service public,plateforme_etat,national,377000,"candidatures,CV",oui,non,,,banquedesterritoires.fr/choisir-le-service-public-et-le-fichier-ficoba-victimes-de-fuites-de-donnees
+DILA-2026,2026,DILA + Cohesion sociale,agence_etat,national,160000,"documents administratifs",partiel,non,,,europe-infos.fr/cyberattaque/7570
+EDUC-NAT-2025-12,2025-12,Ministere Education Nationale (EduConnect),etat_central,national,,nom_prenom_id_EduConnect_etablissement_classe_email,partiel,en_cours,,,education.gouv.fr/incident-de-securite-affectant-les-donnees-de-certains-eleves-de-l-education-nationale-504443
