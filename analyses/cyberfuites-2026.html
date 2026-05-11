@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberfuites : 42 millions de Français ne savent pas ce que l'État fait de leurs données | Tawiza</title>
+    <meta name="description" content="5 840 violations de données déclarées à la CNIL en 2025, 40,3 millions de comptes officiellement compromis, 144 communes piratées en 2024, 0 DICRIM cyber. La loi a oublié le risque numérique du XXIe siècle. On a compté.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#b45309">
+    <link rel="canonical" href="https://tawiza.fr/analyses/cyberfuites-2026.html">
+    <link rel="alternate" type="application/rss+xml" title="Tawiza - Analyses" href="https://tawiza.fr/feed.xml">
+
+    <meta property="og:title" content="Cyberfuites : 42 millions de Français ne savent pas ce que l'État fait de leurs données">
+    <meta property="og:description" content="5 840 violations CNIL en 2025, 40,3M comptes compromis, 144 communes piratées, 0 DICRIM cyber. On a croisé les données.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://tawiza.fr/analyses/cyberfuites-2026.html">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Tawiza">
+    <meta property="og:image" content="https://tawiza.fr/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cyberfuites : 42 millions de Français ne savent pas ce que l'État fait de leurs données">
+    <meta name="twitter:description" content="5 840 violations CNIL en 2025, 40,3M comptes compromis, 144 communes piratées, 0 DICRIM cyber.">
+    <meta name="twitter:image" content="https://tawiza.fr/og-image.png">
+
+    <meta property="og:article:published_time" content="2026-05-11">
+    <meta property="og:article:modified_time" content="2026-05-11">
+    <meta property="og:article:author" content="Tawiza">
+    <meta property="og:article:section" content="Analyse">
+    <meta property="og:article:tag" content="cybersécurité">
+    <meta property="og:article:tag" content="RGPD">
+    <meta property="og:article:tag" content="CNIL">
+    <meta property="og:article:tag" content="DICRIM">
+    <meta property="og:article:tag" content="données personnelles">
+    <meta property="og:article:tag" content="ANSSI">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23b45309'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='18'%3ET%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/fonts/tawiza-fonts.css?v=20260420a">
+    <link rel="stylesheet" href="../style.css?v=10">
+    <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260420a">
+    <link rel="stylesheet" href="../assets/css/tracking.css">
+    <style>
+        /* ═══ DESIGN ÉDITORIAL v2 ═══ */
+
+        /* ── Hero éditorial typographique ── */
+        .hero-editorial {
+            position: relative;
+            padding: 8rem 24px 4rem;
+            overflow: hidden;
+            background: var(--bg);
+        }
+        .hero-editorial::before {
+            content: '';
+            position: absolute; inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23b45309' stroke-width='1.2'%3E%3Cpath d='M60 10L72 30L90 22L80 42L100 48L80 54L90 74L72 66L60 86L48 66L30 74L40 54L20 48L40 42L30 22L48 30Z'/%3E%3Ccircle cx='60' cy='48' r='8'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 120px 96px;
+            pointer-events: none;
+        }
+        .hero-editorial__content {
+            position: relative; z-index: 2;
+            max-width: 680px;
+            margin: 0 auto;
+            animation: heroSlideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        @keyframes heroSlideUp {
+            from { opacity: 0; transform: translateY(32px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-editorial .article-meta {
+            margin-bottom: 1.5rem;
+        }
+        .hero-editorial h1 {
+            font-size: clamp(2rem, 4.8vw, 3rem);
+            line-height: 1.18;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+        }
+        .hero-editorial .article-intro {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+        .hero-editorial__accent-line {
+            display: block;
+            width: 48px; height: 3px;
+            background: var(--accent);
+            margin-bottom: 2rem;
+            border-radius: 2px;
+        }
+
+        /* Sections aérées avec séparateurs */
+        .article-body h2 {
+            margin-top: 4.5rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--separator);
+            position: relative;
+        }
+        .article-body h2::before {
+            content: '';
+            position: absolute; top: -1px; left: 0;
+            width: 40px; height: 3px;
+            background: var(--accent);
+        }
+        .article-body h3 { margin-top: 2.5rem; }
+
+        /* Paragraphes plus aérés */
+        .article-body p { margin-bottom: 1.4em; }
+
+        /* ── Chiffre clé en vedette ── */
+        .key-num {
+            display: block; text-align: center;
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 700; color: var(--accent);
+            padding: 2.5rem 1rem; line-height: 1.15;
+            margin: 2rem 0;
+            position: relative;
+        }
+        .key-num::before, .key-num::after {
+            content: '';
+            display: block; width: 40px; height: 1px;
+            background: var(--accent); opacity: 0.3;
+            margin: 0 auto;
+        }
+        .key-num::before { margin-bottom: 1.5rem; }
+        .key-num::after { margin-top: 1.5rem; }
+        .key-num small {
+            display: block; font-family: var(--font-body);
+            font-size: 0.38em; font-weight: 400;
+            color: var(--text-secondary); margin-top: 0.4em;
+            letter-spacing: 0.01em; line-height: 1.5;
+        }
+
+        /* ── Citation / pull quote ── */
+        .pull-quote {
+            font-family: var(--font-heading);
+            font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+            font-weight: 500;
+            color: var(--text); line-height: 1.55;
+            border-left: 3px solid var(--accent);
+            padding: 0.8rem 0 0.8rem 1.5rem;
+            margin: 3rem 0;
+            position: relative;
+        }
+        .pull-quote::before {
+            content: '';
+            position: absolute; left: -3px; top: 0;
+            width: 3px; height: 12px;
+            background: var(--accent-hover);
+        }
+
+        /* ── Graphiques ── */
+        .article-body figure {
+            position: relative;
+            margin: 3rem -2rem;
+            padding: 1.5rem 1.5rem 1rem;
+            background: var(--surface);
+            border-top: 1px solid var(--separator);
+            border-bottom: 1px solid var(--separator);
+            text-align: center;
+        }
+        .article-body figure img {
+            max-width: 100%; height: auto;
+            cursor: pointer; transition: opacity 0.2s;
+        }
+        .article-body figure img:hover { opacity: 0.93; }
+        .article-body figcaption {
+            max-width: 680px; margin: 1rem auto 0;
+            font-size: 0.82em; color: var(--text-muted); line-height: 1.6;
+            text-align: left;
+        }
+        .article-body figure::before {
+            content: attr(data-fig);
+            position: absolute; top: 10px; left: 16px;
+            font-family: var(--font-mono); font-size: 0.62rem;
+            color: var(--accent); opacity: 0.5;
+            letter-spacing: 0.04em; text-transform: uppercase;
+        }
+
+        /* ── Éléments avec fade-up ── */
+        .article-body figure.fade-up,
+        .article-body .key-num,
+        .article-body .pull-quote {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .article-body figure.fade-up.visible,
+        .article-body .key-num.visible,
+        .article-body .pull-quote.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 720px) {
+            .article-body figure { margin-left: -24px; margin-right: -24px; padding: 1rem; }
+        }
+
+        /* ── Blocs dépliables ── */
+        details.graph-explain {
+            max-width: 680px; margin: -0.5rem auto 3rem;
+        }
+        details.graph-explain summary {
+            cursor: pointer; padding: 10px 0;
+            font-size: 0.82em; font-weight: 500;
+            color: var(--accent); list-style: none; user-select: none;
+        }
+        details.graph-explain summary::before { content: "▸ "; font-size: 0.8em; }
+        details.graph-explain[open] summary::before { content: "▾ "; }
+        details.graph-explain .explain-content {
+            padding: 12px 16px 16px;
+            font-size: 0.88em; line-height: 1.75; color: var(--text-secondary);
+            background: var(--bg-alt); border-radius: 6px; margin-top: 4px;
+        }
+        details.graph-explain .explain-content p { margin: 0.5em 0; }
+        details.graph-explain .explain-content strong { color: var(--text); }
+
+        /* ── Définitions (popover au clic) ── */
+        dfn {
+            font-style: normal;
+            border-bottom: 1px dotted var(--accent);
+            cursor: pointer;
+            position: relative;
+        }
+        dfn:hover { border-bottom-style: solid; }
+        .dfn-pop {
+            position: absolute;
+            left: 50%; transform: translateX(-50%);
+            top: calc(100% + 8px);
+            width: max(260px, min(90vw, 380px));
+            padding: 12px 16px;
+            background: var(--bg-alt, #292524);
+            color: var(--text, #e7e5e4);
+            border: 1px solid var(--accent, #b45309);
+            border-radius: 8px;
+            font-size: 0.85rem; line-height: 1.6;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            z-index: 1000;
+            pointer-events: auto;
+            animation: dfn-fade .15s ease-out;
+        }
+        .dfn-pop::before {
+            content: ''; position: absolute;
+            top: -6px; left: 50%; transform: translateX(-50%) rotate(45deg);
+            width: 10px; height: 10px;
+            background: var(--bg-alt, #292524);
+            border-left: 1px solid var(--accent, #b45309);
+            border-top: 1px solid var(--accent, #b45309);
+        }
+        @keyframes dfn-fade { from { opacity: 0; transform: translateX(-50%) translateY(4px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+
+        /* ── Appels de notes ── */
+        sup.fn a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+        sup.fn a:hover { text-decoration: underline; }
+        .sources-list li:target {
+            background: rgba(180, 83, 9, 0.15);
+            border-radius: 4px;
+            padding: 2px 6px;
+            margin-left: -6px;
+        }
+
+        /* ── Bouton agrandir ── */
+        .fig-zoom {
+            position: absolute; top: 10px; right: 14px;
+            background: rgba(28,25,23,0.65); color: white;
+            border: none; border-radius: 5px; padding: 4px 10px;
+            font-size: 0.7rem; cursor: pointer;
+            font-family: var(--font-mono); text-transform: uppercase;
+            opacity: 0; transition: opacity 0.2s; pointer-events: none;
+        }
+        figure:hover .fig-zoom { opacity: 1; pointer-events: auto; }
+
+        /* ── Lightbox ── */
+        .lightbox {
+            display: none; position: fixed; inset: 0;
+            background: rgba(28,25,23,0.95); z-index: 9999;
+            align-items: center; justify-content: center;
+            cursor: pointer;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 95vw; max-height: 92vh; border-radius: 8px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+            animation: lb-in 0.15s ease-out;
+        }
+        @keyframes lb-in { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+        .lightbox-close {
+            position: fixed; top: 18px; right: 22px; color: rgba(255,255,255,0.6);
+            font-size: 2rem; cursor: pointer; z-index: 10000; line-height: 1;
+        }
+        .lightbox-close:hover { color: white; }
+
+        /* ── Note méthodo ambrée ── */
+        .method-note {
+            border-left: 3px solid var(--accent);
+            padding-left: 1.25rem;
+            margin: 2rem 0;
+            font-size: 0.9em;
+            color: var(--text-secondary);
+        }
+        .method-note pre {
+            background: #292524;
+            color: #e7e5e4;
+            padding: 0.85rem 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            line-height: 1.55;
+            margin: 1rem 0;
+            max-width: 100%;
+            box-sizing: border-box;
+            white-space: pre;
+        }
+        .method-note pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+            font-family: inherit;
+            font-size: inherit;
+            white-space: pre;
+        }
+        .method-note ul {
+            margin: 0.6em 0;
+            padding-left: 1.5em;
+        }
+        .method-note ul li { margin-bottom: 0.5em; }
+        .method-note code {
+            background: rgba(180, 83, 9, 0.08);
+            color: var(--accent);
+            padding: 0.1em 0.35em;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 720px) {
+            .hero-editorial { padding: 6.5rem 20px 3rem; }
+            .hero-editorial h1 { font-size: 1.6rem; }
+            .key-num { padding: 2rem 0.5rem; }
+        }
+
+        /* ── Œil Tawiza animé : pied d'article signature ── */
+        .tawiza-eye-footer {
+            max-width: 720px; margin: 4rem auto 3rem;
+            padding: 3rem 1.5rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--separator);
+        }
+        .tawiza-eye-footer img {
+            width: 180px; max-width: 60%; height: auto;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            display: inline-block;
+            margin: 0 auto 1rem;
+        }
+        .tawiza-eye-tagline {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+            margin: 1.2rem 0 1rem;
+        }
+        .tawiza-eye-note {
+            max-width: 520px; margin: 1rem auto;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+        .tawiza-eye-date {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .tawiza-eye-footer img { animation: none !important; }
+        }
+
+        /* === Calculateur d'exposition cyber === */
+        .calculateur-cyber {
+            background: var(--bg-alt);
+            border: 1px solid var(--separator);
+            border-left: 4px solid #b45309;
+            padding: 2rem 1.75rem;
+            margin: 3rem 0;
+        }
+        .calculateur-cyber h3 {
+            margin-top: 0;
+            font-family: var(--font-heading);
+            color: var(--text-primary);
+        }
+        .calc-intro {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .calc-form { margin-top: 1.25rem; }
+        .calc-form fieldset {
+            border: 1px solid var(--separator);
+            padding: 1rem 1.25rem;
+            margin: 0.75rem 0;
+            background: var(--bg);
+        }
+        .calc-form legend {
+            font-weight: 600;
+            padding: 0 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-secondary);
+        }
+        .calc-form label {
+            display: block;
+            margin: 0.5rem 0;
+            cursor: pointer;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .calc-form input[type="number"],
+        .calc-form select {
+            font-family: var(--font-mono);
+            padding: 0.3rem 0.5rem;
+            border: 1px solid var(--separator);
+            background: var(--bg);
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            margin-left: 0.5rem;
+        }
+        .calc-form input[type="checkbox"] {
+            margin-right: 0.5rem;
+            transform: scale(1.1);
+            vertical-align: middle;
+        }
+        .calc-result {
+            background: var(--bg);
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border: 1px solid var(--separator);
+        }
+        .calc-score {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            border-bottom: 1px solid var(--separator);
+            margin-bottom: 1rem;
+        }
+        .calc-score #calc-count {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 700;
+            color: #b45309;
+            line-height: 1;
+        }
+        .calc-score small {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        .calc-result ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .calc-result li {
+            padding: 0.6rem 0;
+            border-bottom: 1px dotted var(--separator);
+            font-size: 0.9rem;
+        }
+        .calc-result li:last-child { border-bottom: none; }
+        .calc-result li.matched {
+            color: var(--text-primary);
+        }
+        .calc-result li.matched strong { color: #b45309; }
+        .calc-result li.unmatched {
+            color: var(--text-muted);
+        }
+        .calc-result .calc-pct {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            display: inline-block;
+            min-width: 3.5rem;
+            text-align: right;
+        }
+        .calc-disclaimer {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 1.25rem;
+            font-style: italic;
+            line-height: 1.6;
+        }
+    </style>
+
+    <script defer data-domain="tawiza.fr" data-api="https://t.tawiza.fr/api/event" src="https://t.tawiza.fr/js/script.tagged-events.pageview-props.outbound-links.file-downloads.js"></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org", "@type": "NewsArticle",
+        "headline": "Cyberfuites : 42 millions de Français ne savent pas ce que l'État fait de leurs données",
+        "description": "5 840 violations de données déclarées à la CNIL en 2025, 40,3 millions de comptes compromis, 144 communes piratées en 2024, 0 DICRIM cyber. Le risque numérique du XXIe siècle n'a pas d'obligation d'information communale.",
+        "datePublished": "2026-05-11",
+        "dateModified": "2026-05-11",
+        "mainEntityOfPage": "https://tawiza.fr/analyses/cyberfuites-2026.html",
+        "image": "https://tawiza.fr/og-image.png",
+        "author": { "@type": "Organization", "name": "Tawiza", "url": "https://tawiza.fr" },
+        "publisher": { "@type": "Organization", "name": "Tawiza", "url": "https://tawiza.fr", "logo": { "@type": "ImageObject", "url": "https://tawiza.fr/img/logo-tawiza-amber.svg" } },
+        "inLanguage": "fr",
+        "keywords": ["cybersécurité", "RGPD", "CNIL", "DICRIM", "ANSSI", "données personnelles", "fuites de données", "France Travail", "ANTS", "analyse territoriale"]
+    }
+    </script>
+</head>
+<body>
+        <!-- v2: wordmark + generative glyph (replaces legacy nav) -->
+    <a href="/" class="wordmark">tawiza.fr</a>
+    <div class="glyph-slot" aria-hidden="true" data-seed="/analyses/cyberfuites-2026"></div>
+    <main>
+        <!-- ═══ HERO ═══ -->
+        <article>
+            <header class="hero-editorial">
+                <div class="hero-editorial__content">
+                    <div class="article-meta">
+                        <time datetime="2026-05-11">11 mai 2026</time>
+                        <span class="article-tag">Analyse #6</span>
+                        <span style="color: var(--text-muted); font-size: 0.85rem; margin-left: 0.5rem;">en cours de rédaction</span>
+                    </div>
+                    <span class="hero-editorial__accent-line"></span>
+                    <h1>Votre commune doit vous prévenir si le sol bouge sous votre maison. Pas si vos données ont fui sur BreachForums.</h1>
+                    <p class="article-intro">5&nbsp;840 violations de données déclarées à la CNIL en 2025. 40,3&nbsp;millions de comptes officiellement compromis. 144 communes piratées en 2024 selon l'ANSSI. Zéro <abbr title="Document d'Information Communal sur les Risques Majeurs">DICRIM</abbr> cyber publié. La loi a oublié le risque numérique du XXIe siècle.</p>
+                </div>
+            </header>
+
+            <!-- Hero chiffres -->
+            <div style="background: var(--bg-alt); border-top: 1px solid var(--separator); border-bottom: 1px solid var(--separator); padding: 2.5rem 24px; margin: 0;">
+                <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center;">
+                    <div>
+                        <div style="font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; color: #C1554D; line-height: 1;">40,3M</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">comptes compromis<br>déclarés à la CNIL en 2025</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">+47&nbsp;% vs 2024</div>
+                    </div>
+                    <div>
+                        <div style="font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; color: #D4A843; line-height: 1;">42,2M</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">Français se sentent mal informés<br>sur l'usage public de leurs données</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">63&nbsp;% selon Ipsos, août 2025</div>
+                    </div>
+                    <div>
+                        <div style="font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; color: #2D6A4F; line-height: 1;">0</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">commune piratée<br>n'a publié de DICRIM cyber</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">144 piratées en 2024 (ANSSI)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accroche sous le hero -->
+            <div class="container-narrow" style="padding-top: 2.5rem;">
+                <p style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">Tous les communiqués officiels annoncent que les personnes concernées sont notifiées individuellement. Personne ne vérifie ex-post. En août 2025, 37&nbsp;% des Français déclarent se sentir bien informés sur l'usage de leurs données par les acteurs publics. On a regardé qui savait, qui prévenait, et qui ne disait rien.</p>
+            </div>
+
+            <div class="zellige-frise"></div>
+
+            <div class="container-narrow">
+                <div class="article-body">
+
+                    <div class="method-note">
+                        <p><strong>Note méthodologique.</strong> Cette analyse utilise exclusivement des données publiques&nbsp;: bilans annuels de la <dfn title="Commission nationale de l'informatique et des libertés. Autorité administrative indépendante française chargée de veiller à la protection des données personnelles.">CNIL</dfn>, communiqués officiels des entités concernées, rapport du panorama de la cybermenace 2025 de l'<dfn title="Agence nationale de la sécurité des systèmes d'information. Autorité nationale en matière de défense et de sécurité des systèmes d'information.">ANSSI</dfn>, sondage Ipsos d'août 2025 sur la confiance des Français envers les acteurs publics. Les millésimes sont indiqués pour chaque chiffre. Tout le code est disponible sur <a href="https://github.com/tawiza/tawiza-website" target="_blank" rel="noopener">GitHub</a>.</p>
+                    </div>
+
+                    <!-- SECTION 1 : Plo&euml;rmel, juin 2024 -->
+
+                    <h2>Plo&euml;rmel, Morbihan. Juin 2024.</h2>
+
+                    <p>Un habitant de Plo&euml;rmel, dans le Morbihan, re&ccedil;oit en f&eacute;vrier 2025 un SMS qui lui demande de cliquer sur un lien pour confirmer la prise en charge d'un colis. Le message comporte son pr&eacute;nom, son nom de famille, son adresse postale et la mention du nom de son hameau. Il ne reconna&icirc;t pas l'exp&eacute;diteur. Il ne clique pas.</p>
+
+                    <p>Quelques jours plus tard, en cherchant sur un moteur de recherche pourquoi le phishing semble si pr&eacute;cis, il tombe sur un fil de discussion qui mentionne, en passant, une fuite de donn&eacute;es de la mairie de Plo&euml;rmel. En juin 2024, soit huit mois plus t&ocirc;t, un fichier contenant <strong>14&nbsp;390 contacts</strong> r&eacute;sidant &agrave; Plo&euml;rmel et <strong>7&nbsp;854 contacts</strong> de la commune voisine de Josselin avait &eacute;t&eacute; mis en vente sur un forum cybercriminel. Noms, pr&eacute;noms, num&eacute;ros de t&eacute;l&eacute;phone portable, adresses e-mail, adresses postales, genre. Tout ce qui permet d'envoyer un SMS qui ne ressemble pas &agrave; un phishing.</p>
+
+                    <p>Il n'avait jamais re&ccedil;u de courrier de sa mairie pour l'en avertir. Aucun mail. Aucun SMS officiel. Aucune publication sur le site communal. Il l'apprend par accident, en remontant un lien.</p>
+
+                    <p>Et il d&eacute;couvre, en creusant un peu plus, que sa commune a probablement subi une seconde attaque six mois plus tard. Le 1er&nbsp;janvier 2025, le site web de Plo&euml;rmel a connu une indisponibilit&eacute; soudaine, comme une vingtaine d'autres mairies fran&ccedil;aises ce jour-l&agrave;. Une publication sp&eacute;cialis&eacute;e en cybers&eacute;curit&eacute; attribuera l'incident &agrave; <strong>NoName057(16)</strong>, un groupe pro-russe actif depuis 2022 qui cible les pays de l'<dfn title="Organisation du trait&eacute; de l'Atlantique Nord. Alliance militaire dont la France est membre fondateur.">OTAN</dfn> soutenant l'Ukraine.</p>
+
+                    <p>Deux attaques en six mois. La premi&egrave;re criminelle, la seconde g&eacute;opolitique. Sa commune ne lui en a rien dit, dans aucun des deux cas.</p>
+
+                    <p>Il n'est pas seul. Ils sont des millions.</p>
+
+                </div>
+            </div>
+
+            <div class="zellige-frise--fine"></div>
+
+            <div class="container-narrow">
+                <div class="article-body">
+
+                    <!-- SECTION 2 : Ce que la loi exige -->
+
+                    <h2 style="border-top: none; padding-top: 1rem;">Ce que la loi exige (et qui marche, parfois)</h2>
+
+                    <p>Soyons honnêtes&nbsp;: la loi française n'est pas muette sur les risques majeurs. Elle est même plutôt bien construite.</p>
+
+                    <p>L'<strong>article L.125-2 du Code de l'environnement</strong>, hérité des lois post-AZF, est court et fondateur. Il dispose que «&nbsp;<em>toute personne a un droit à l'information sur les risques majeurs naturels et technologiques auxquels elle est soumise dans certaines zones du territoire et sur les mesures de sauvegarde qui la concernent</em>&nbsp;». Tout ce qui suit, c'est la mécanique administrative pour rendre ce droit effectif.</p>
+
+                    <p>De ce droit découle une cascade. Les décrets d'application (articles R.125-9 à R.125-22 du même Code) listent les risques majeurs concernés&nbsp;: inondation, mouvement de terrain, séisme, avalanche, feu de forêt, risque industriel SEVESO, transport de matières dangereuses, rupture de barrage, risque nucléaire, retrait-gonflement des argiles. Pour chacun, le préfet établit un <dfn title="Dossier Départemental des Risques Majeurs : document du préfet qui recense les risques d'un département et déclenche l'obligation de DICRIM communal.">DDRM</dfn>. Et pour chaque commune exposée, le maire doit publier un <dfn title="Document d'Information Communal sur les Risques Majeurs. Document obligatoire qui informe les habitants des risques et des mesures de sauvegarde. À mettre à jour au moins tous les 5 ans, à communiquer activement tous les 2 ans.">DICRIM</dfn> et organiser une communication active tous les deux ans.</p>
+
+                    <p>Cette liste a été élargie trois fois en quatre ans&nbsp;: <strong>radon</strong> en 2020, <strong>risques cycloniques</strong> outre-mer en 2022, <strong>submersion marine</strong> en 2024. À chaque fois, sans nouvelle loi&nbsp;: il a suffi d'un décret d'application pour intégrer le nouveau risque dans le dispositif existant.</p>
+
+                    <p>Elle n'a jamais été élargie au risque cyber.</p>
+
+                    <div class="method-note" style="margin-top: 2rem; border-left-color: #b45309;">
+                        <p><strong>Le mécanisme juridique en quatre étages.</strong> L.125-2 (la loi) affirme un droit à l'information sur les risques majeurs. R.125-9 à R.125-22 (les décrets d'application) listent les risques concernés. Le préfet décline en DDRM. Le maire décline en DICRIM avec obligation de communication active. <strong>Pour ajouter un nouveau risque au dispositif, il y a deux voies&nbsp;: amender la loi (une seule ligne au Parlement), ou amender le décret d'application (en Conseil d'État, sans vote législatif)</strong>. Les trois précédents récents&mdash;radon, cyclones, submersion&mdash;ont tous emprunté la voie réglementaire. Le mécanisme est rodé.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="zellige-frise"></div>
+
+            <div class="container-narrow">
+                <div class="article-body">
+
+                    <!-- SECTION 3 : Le risque qui n'existe pas pour la loi -->
+
+                    <h2 style="border-top: none; padding-top: 1rem;">Le risque qui n'existe pas pour la loi</h2>
+
+                    <p>Voici un chiffre qu'on a tiré du rapport annuel 2025 de l'<dfn title="Maire-info reprend le bilan officiel de l'ANSSI : 144 communes ont été touchées par un incident de cybersécurité majeur en 2024, dont 25 confirmées par ransomware.">ANSSI</dfn>, publié en mars 2026&nbsp;: <strong>144 communes françaises ont été touchées par un incident cyber en 2024</strong>. Vingt-cinq d'entre elles ont été paralysées par un ransomware. Cybermalveillance.gouv.fr a reçu <strong>160 demandes d'assistance supplémentaires</strong> de collectivités territoriales sur le seul premier semestre 2025.</p>
+
+                    <p>À ces chiffres s'ajoutent les hôpitaux publics&nbsp;: Armentières (février 2024), Groupe hospitalier Grand Ouest (octobre 2024, neuf établissements), Cannes Simone-Veil (61&nbsp;Go publiés par LockBit), Pontarlier (octobre 2025), Centre hospitalier du Gers (août 2025), CHU de Lyon (mars 2026, 1&nbsp;200 consultations reportées). Les lycées et CCAS s'ajoutent à la liste. Le tableau est connu, documenté, public.</p>
+
+                    <p>Et pourtant.</p>
+
+                    <p>Sur les 144 communes piratées en 2024, <strong>zéro a publié un document communal informant ses habitants du risque cyber et des mesures de protection à prendre</strong>. Pour une raison simple&nbsp;: la loi ne le leur demande pas. À Plo&euml;rmel, les 14&nbsp;390 habitants dont les coordonn&eacute;es figurent dans le lot vendu en juin 2024 n'ont jamais re&ccedil;u d'information formelle de leur mairie. &Agrave; Josselin, 7&nbsp;854 habitants sont dans la m&ecirc;me situation. Aucune des deux communes n'est juridiquement en faute.</p>
+
+                    <span class="key-num">144 communes piratées<small>en 2024 selon l'ANSSI. Zéro a publié un document communal informant ses habitants du risque cyber.</small></span>
+
+                    <figure data-fig="Fig. 3" class="fade-up">
+                        <img src="../img/cyberfuites/03_carte_incidents.png"
+                             alt="Carte de France m&eacute;tropolitaine avec les principaux incidents cyber 2024-2026 : 8 villes touch&eacute;es par DDoS NoName057 le 1er janvier 2025, mairies de Plo&euml;rmel/Josselin/Fumel, h&ocirc;pitaux Cannes/Armenti&egrave;res/Pontarlier/Gers/Lyon, et le groupe hospitalier Grand Ouest (9 &eacute;tablissements en Bretagne)."
+                             loading="lazy" width="900">
+                        <figcaption>16 incidents cyber documentés nommément entre 2024 et 2026, sur les centaines recensés par l'ANSSI et Cybermalveillance. Trois types se distinguent&nbsp;: villes touchées par le DDoS pro-russe du 1er janvier 2025, mairies victimes de fuites de données, hôpitaux publics frappés par ransomware. <em>Sources&nbsp;: communiqués officiels, presse spécialisée, Panorama ANSSI 2025. Fond cartographique&nbsp;: France-GeoJSON (gregoiredavid).</em></figcaption>
+                    </figure>
+
+                    <p>L'autre c&ocirc;t&eacute; de l'effet en cha&icirc;ne est invisible aux statistiques. Quand une administration centrale est touch&eacute;e, c'est tr&egrave;s souvent <em>via</em> un sous-traitant. La fuite de France Travail en mars 2024 (43&nbsp;millions de profils) provenait d'un acc&egrave;s indirect &agrave; <strong>Majorel</strong>, l'un de ses sous-traitants de gestion. La fuite de quinze millions de Fran&ccedil;ais en d&eacute;cembre 2025 venait de <strong>Cegedim Sant&eacute;</strong>, un logiciel utilis&eacute; par 1&nbsp;500 m&eacute;decins g&eacute;n&eacute;ralistes. Aucune des deux entreprises n'a fait l'objet d'une communication communale, malgr&eacute; le nombre de territoires concern&eacute;s. L'&Eacute;tat externalise ses donn&eacute;es. Il externalise aussi ses risques. Et au bout de la cha&icirc;ne, la commune reste muette.</p>
+
+                    <p>Le risque cyber répond pourtant à la définition technique d'un risque majeur retenue par le Code de l'environnement&nbsp;: probabilité non négligeable, gravité avérée pour les personnes et leurs biens, effet collectif sur la continuité du service public. Les inondations sont moins fréquentes pour la plupart des communes que les phishings ciblés.</p>
+
+                    <p>La différence n'est pas dans le risque. Elle est dans la loi.</p>
+
+                </div>
+            </div>
+
+            <div class="zellige-frise"></div>
+
+            <div class="container-narrow">
+                <div class="article-body">
+
+                    <!-- SECTION 4 : La dette d'information -->
+
+                    <h2 style="border-top: none; padding-top: 1rem;">La dette d'information</h2>
+
+                    <p>L'<strong>article 34 du RGPD</strong> est clair. Quand une violation de données personnelles est susceptible d'engendrer un risque élevé pour les personnes concernées, le responsable du traitement <strong>doit</strong> les informer individuellement. Ce n'est pas une recommandation. C'est une obligation légale, assortie de sanctions.</p>
+
+                    <p>La CNIL elle-même a publié les chiffres bruts.</p>
+
+                    <p>En 2024, elle a reçu <strong>5&nbsp;629 notifications</strong> de violations de données au titre de l'article 33 du RGPD, soit +20&nbsp;% par rapport à 2023. Quarante de ces violations concernaient plus d'un million de personnes chacune, contre une vingtaine en 2023.</p>
+
+                    <p>En 2025, le compteur a explosé&nbsp;: <strong>5&nbsp;840 violations déclarées</strong>, soit +47&nbsp;% par rapport à 2024. <strong>40,3 millions de comptes</strong> ont été officiellement compromis sur la seule année 2025.</p>
+
+                    <figure data-fig="Fig. 1" class="fade-up">
+                        <img src="../img/cyberfuites/02_notifications_cnil_annuelles.png"
+                             alt="Courbe : violations de donnees notifiees a la CNIL au titre de l'article 33 du RGPD. 2 825 en 2020, 4 668 en 2023, 5 629 en 2024, 5 840 en 2025."
+                             loading="lazy" width="900">
+                        <figcaption>Violations de données notifiées à la CNIL au titre de l'article 33 du RGPD. La courbe ne reflète pas le nombre d'incidents réels (un même évènement peut donner lieu à plusieurs notifications par un prestataire et ses clients) mais le volume officiel déclaré chaque année. <em>Source&nbsp;: CNIL, bilans annuels. Voir <a href="#methode">section sources</a>.</em></figcaption>
+                    </figure>
+
+                    <span class="key-num">40,3 millions<small>de comptes officiellement compromis en 2025 selon la CNIL. Sur soixante-sept millions de Français.</small></span>
+
+                    <figure data-fig="Fig. 2" class="fade-up">
+                        <img src="../img/cyberfuites/01_fuites_publiques_timeline.png"
+                             alt="Bar chart chronologique des 7 fuites publiques majeures 2024-2026. France Travail 43M en mars 2024 et ANTS 18,5M en avril 2026 dominent visuellement."
+                             loading="lazy" width="900">
+                        <figcaption>Sept fuites de données publiques majeures notifiées en France entre mars 2024 et avril 2026, en millions de personnes concernées. Cumul brut&nbsp;: 73 millions de personnes (avec doublons probables, une même personne pouvant figurer dans plusieurs bases). <em>Source&nbsp;: communiqués officiels (Ministère de l'Intérieur, Ministère de l'Économie, France Travail, CNAF) et presse spécialisée (Usine Digitale, Banque des Territoires).</em></figcaption>
+                    </figure>
+
+                    <p>Mais ces chiffres ne disent rien sur la suite. Combien de ces 40 millions de personnes ont effectivement reçu un courrier ou un email les avertissant&nbsp;? La CNIL ne le publie pas. Les organismes notifiés ne le publient pas non plus.</p>
+
+                    <h3>Le formulaire qui n'a jamais rendu son bilan</h3>
+
+                    <p>Mars 2024. France Travail vient de reconnaître la fuite de 43 millions de profils, vingt ans d'historique de demandeurs d'emploi, numéros de Sécurité sociale inclus. Le ministère de l'Intérieur, en partenariat avec cybermalveillance.gouv.fr, met en ligne sur Démarches-Simplifiées un <strong>formulaire de lettre-plainte simplifiée</strong>. L'objectif annoncé&nbsp;: permettre aux 43 millions de personnes concernées de porter plainte sans avoir à se déplacer dans un commissariat.</p>
+
+                    <p>Le service ferme <strong>début 2025</strong>. Aucun bilan public n'est publié. Aucune statistique sur le nombre de plaintes effectivement déposées n'apparaît dans le rapport annuel 2024 de la CNIL, dans les communications de France Travail, ni dans les bilans Beauvau du ministère de l'Intérieur.</p>
+
+                    <p>Une opération publique ouverte pour 43 millions de victimes, fermée dix mois plus tard sans communication sur son utilisation. Personne ne sait combien de personnes l'ont utilisée. Et personne ne semble vouloir le savoir.</p>
+
+                    <h3>Ce que les Français disent eux-mêmes</h3>
+
+                    <p>Faute de bilan institutionnel, il existe au moins une source indépendante. En août 2025, <strong>Ipsos</strong> a interrogé les Français sur leur perception de la gestion publique des données personnelles.</p>
+
+                    <p>Les résultats&nbsp;:</p>
+
+                    <ul>
+                        <li><strong>37&nbsp;%</strong> déclarent se sentir bien informés sur l'utilisation de leurs données par les acteurs publics. C'est <strong>4 points de moins</strong> qu'un an auparavant.</li>
+                        <li><strong>49&nbsp;%</strong> font confiance à l'État pour gérer leurs données personnelles. Soit <strong>-4 points</strong> sur un an.</li>
+                        <li><strong>67&nbsp;%</strong> font confiance aux services publics pour appliquer le RGPD. Soit <strong>-5 points</strong>.</li>
+                        <li><strong>61&nbsp;%</strong> font confiance dans l'efficacité du RGPD lui-même. Soit <strong>-5 points</strong>.</li>
+                    </ul>
+
+                    <p>Cinq baisses consécutives, sur cinq indicateurs différents, en douze mois.</p>
+
+                    <p>Si 37&nbsp;% des Français se sentent informés, 63&nbsp;% ne le sont pas. Soit, rapporté à la population&nbsp;: <strong>42,2 millions de Français qui n'ont pas le sentiment de savoir ce que l'État fait de leurs données</strong>.</p>
+
+                    <span class="key-num">42,2 millions<small>de Français qui n'ont pas le sentiment d'être informés sur l'usage de leurs données par les acteurs publics (Ipsos, août 2025).</small></span>
+
+                    <p>Quarante-deux millions de personnes. Le même ordre de grandeur que les 40,3 millions de comptes que la CNIL déclare officiellement compromis sur la seule année 2025.</p>
+
+                    <p class="pull-quote">L'État communique sur ce qu'il va faire. Il ne communique pas sur ce qu'il a fait.</p>
+
+                    <!-- === Calculateur d'exposition === -->
+                    <div class="calculateur-cyber" id="calc-exposition">
+                        <h3>Combien de bases publiques fuit&eacute;es vous concernent probablement&nbsp;?</h3>
+                        <p class="calc-intro">S&eacute;lectionnez ce qui vous correspond. Le calcul est probabiliste, fond&eacute; sur les fuites publiques document&eacute;es 2024-2026 et les populations &eacute;ligibles correspondantes. <strong>Aucune donn&eacute;e n'est envoy&eacute;e nulle part</strong>&nbsp;: tout se passe dans votre navigateur, le code source est lisible dans la page.</p>
+
+                        <form class="calc-form" id="calc-form" aria-label="Calculateur d'exposition aux fuites publiques">
+                            <fieldset>
+                                <legend>Profil</legend>
+                                <label>&Acirc;ge&nbsp;: <input type="number" id="calc-age" min="0" max="120" value="40"></label>
+                                <label>Statut professionnel&nbsp;:
+                                    <select id="calc-statut">
+                                        <option value="actif">Actif occup&eacute;</option>
+                                        <option value="chomeur">Demandeur d'emploi (actuel ou pass&eacute;)</option>
+                                        <option value="retraite">Retrait&eacute;</option>
+                                        <option value="etudiant">&Eacute;tudiant</option>
+                                    </select>
+                                </label>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Avez-vous&nbsp;:</legend>
+                                <label><input type="checkbox" id="calc-caf"> &Eacute;t&eacute; allocataire CAF entre 2024 et 2025 (RSA, APL, allocations familiales, prime d'activit&eacute;, etc.)</label>
+                                <label><input type="checkbox" id="calc-titre"> Demand&eacute; une carte d'identit&eacute;, un passeport ou un permis depuis 2020</label>
+                                <label><input type="checkbox" id="calc-ft"> &Eacute;t&eacute; inscrit &agrave; P&ocirc;le Emploi puis France Travail entre 2004 et 2024</label>
+                                <label><input type="checkbox" id="calc-impots" checked> D&eacute;clar&eacute; vos imp&ocirc;ts en ligne sur impots.gouv.fr (la quasi-totalit&eacute; des contribuables le font)</label>
+                                <label><input type="checkbox" id="calc-banque" checked> Un compte bancaire en France</label>
+                            </fieldset>
+                        </form>
+
+                        <div class="calc-result" id="calc-result">
+                            <div class="calc-score">
+                                <span id="calc-count">&mdash;</span>
+                                <small>bases publiques fuit&eacute;es 2024-2026 vous concernent probablement<br>
+                                Probabilit&eacute; d'&ecirc;tre dans au moins une&nbsp;: <strong id="calc-atleastone">&mdash;</strong></small>
+                            </div>
+                            <ul id="calc-detail"></ul>
+                            <p class="calc-disclaimer">Estimation bas&eacute;e sur les chiffres officiels (CNIL, ANSSI, communiqu&eacute;s minist&eacute;riels) et les populations &eacute;ligibles. M&eacute;thode hybride&nbsp;: si un crit&egrave;re est mat&eacute;rialis&eacute; (par exemple &laquo;&nbsp;a demand&eacute; un titre d'identit&eacute;&nbsp;&raquo; pour la fuite ANTS), on consid&egrave;re que la probabilit&eacute; vaut le ratio personnes&nbsp;expos&eacute;es&nbsp;/&nbsp;population&nbsp;&eacute;ligible. Si le crit&egrave;re ne mat&eacute;rialise pas l'inscription dans cette base, une probabilit&eacute; r&eacute;siduelle tr&egrave;s faible est conserv&eacute;e (l'erreur d'attribution existe). Le calcul est volontairement conservateur. Code source&nbsp;: <a href="#calc-script-source">consulter le script en bas de page</a>.</p>
+                        </div>
+                    </div>
+                    <!-- === fin calculateur === -->
+
+                </div>
+            </div>
+
+            <div class="zellige-frise"></div>
+
+            <div class="container-narrow">
+                <div class="article-body">
+
+                    <!-- SECTION 6 : Ce que l'Etat ne mesure pas -->
+
+                    <h2 style="border-top: none; padding-top: 1rem;">Ce que l'&Eacute;tat ne mesure pas</h2>
+
+                    <p>On a cherch&eacute; quatre statistiques publiques. Les quatre manquent.</p>
+
+                    <p><strong>Le d&eacute;lai m&eacute;dian de notification.</strong> L'article 33 du RGPD impose aux organismes de notifier la CNIL <em>dans les 72 heures</em> apr&egrave;s avoir pris connaissance d'une violation. La CNIL elle-m&ecirc;me, dans ses bilans annuels 2024 et 2025, ne publie ni le d&eacute;lai m&eacute;dian effectivement constat&eacute;, ni le pourcentage de notifications respectant le d&eacute;lai. La sanction de Free de d&eacute;cembre 2025, qui retenait notamment «&nbsp;<em>un d&eacute;lai excessif de notification aux personnes concern&eacute;es</em>&nbsp;», confirme que le manquement existe, mais l'autorit&eacute; ne le mesure pas publiquement. L'autorit&eacute; de contr&ocirc;le ne mesure pas la conformit&eacute; &agrave; la r&egrave;gle qu'elle est charg&eacute;e de faire respecter.</p>
+
+                    <p><strong>Le co&ucirc;t cumul&eacute; des cyberattaques publiques.</strong> Le 16 juin 2025, la Cour des comptes a publi&eacute; un rapport sur la r&eacute;ponse de l'&Eacute;tat aux cybermenaces visant ses syst&egrave;mes d'information civils. Elle y reconna&icirc;t explicitement qu'aucun chiffrage national du co&ucirc;t des incidents cyber dans le secteur public n'existe. Les deux seuls cas isol&eacute;s qu'elle documente datent de 2020&nbsp;: 960&nbsp;000&nbsp;euros pour la m&eacute;tropole d'Aix-Marseille, plus d'un million et demi d'euros pour la ville de Bondy. Pour la p&eacute;riode r&eacute;cente, le rapport admet que «&nbsp;le chiffrage des co&ucirc;ts indirects est complexe&nbsp;».</p>
+
+                    <p><strong>La r&eacute;cidive par entit&eacute;.</strong> Les bilans CNIL pr&eacute;sentent un nombre brut annuel de violations notifi&eacute;es&mdash;5&nbsp;629 en 2024, 5&nbsp;840 en 2025. Ils n'indiquent jamais combien d'entit&eacute;s sont concern&eacute;es par <em>plusieurs</em> notifications dans une m&ecirc;me ann&eacute;e. Sur le seul exercice 2025, en agr&eacute;geant les communiqu&eacute;s officiels et la presse sp&eacute;cialis&eacute;e, on identifie au moins sept violations majeures notifi&eacute;es par France Travail et trois autres par le minist&egrave;re de l'Int&eacute;rieur sur le dernier trimestre. La r&eacute;cidive est un signal&nbsp;: elle dit qu'un correctif n'a pas suivi le premier incident. Les statistiques agr&eacute;g&eacute;es ne la font pas ressortir.</p>
+
+                    <span class="key-num">7 violations<small>notifi&eacute;es par France Travail &agrave; la CNIL sur la seule ann&eacute;e 2025. La r&eacute;cidive n'appara&icirc;t dans aucun bilan annuel.</small></span>
+
+                    <p><strong>La superposition des fuites.</strong> Aucune statistique publique n'estime combien de Fran&ccedil;ais figurent simultan&eacute;ment dans plusieurs bases publiques fuit&eacute;es. France Travail (43&nbsp;millions de profils, dont l'historique des demandeurs d'emploi sur vingt ans), CAF (22&nbsp;millions de lignes, environ 8&nbsp;millions de personnes apr&egrave;s d&eacute;duplication), ANTS (18,5&nbsp;millions de comptes, soit toutes les demandes r&eacute;centes de titres d'identit&eacute;) couvrent pourtant la quasi-totalit&eacute; de la population adulte active. Personne ne calcule l'intersection.</p>
+
+                    <p class="pull-quote">Ce qui n'est pas mesur&eacute; ne peut pas &ecirc;tre corrig&eacute;.</p>
+
+                </div>
+            </div>
+
+            <div class="zellige-frise"></div>
+
+            <div class="container-narrow">
+                <div class="article-body">
+
+                    <!-- SECTION 7 : Ce qui devrait changer -->
+
+                    <h2 style="border-top: none; padding-top: 1rem;">Ce qui devrait changer</h2>
+
+                    <p>Trois propositions, sans ton militant, en restant dans le périmètre du droit existant.</p>
+
+                    <p><strong>Premièrement&nbsp;: étendre le périmètre du DICRIM au risque cyber.</strong> Deux voies, déjà documentées plus haut, sont possibles. La voie réglementaire (un décret en Conseil d'État qui ajoute «&nbsp;risque numérique majeur affectant les systèmes d'information des services publics&nbsp;» à la liste des articles R.125-9 à R.125-22) ne nécessite aucun vote parlementaire&mdash;c'est exactement la méthode employée pour le radon en 2020, les cyclones outre-mer en 2022, la submersion marine en 2024. La voie législative (amender L.125-2 lui-même en ajoutant le qualificatif «&nbsp;numérique&nbsp;» aux «&nbsp;risques majeurs naturels et technologiques&nbsp;») est plus solennelle mais marquerait politiquement la reconnaissance du cyber comme catégorie pleine et entière. Dans les deux cas, l'effet est immédiat&nbsp;: chaque commune exposée doit publier un DICRIM cyber listant les incidents passés, les mesures de protection citoyennes, le canal d'alerte en cas de fuite affectant ses administrés, et organiser une communication active tous les deux ans.</p>
+
+                    <p><strong>Deuxièmement&nbsp;: obliger les organismes publics à rendre publique, dans un délai borné, la liste exhaustive des personnes individuellement notifiées après chaque violation.</strong> Pas leur identité, leur nombre. Le formulaire France Travail aurait alors dû produire un bilan chiffré au moment de sa fermeture. L'opacité est un choix administratif, pas une fatalité technique.</p>
+
+                    <p><strong>Troisièmement&nbsp;: publier un tableau de bord national d'exécution de l'article 34 du RGPD</strong>, mis à jour à chaque violation déclarée à la CNIL au titre de l'article 33. Trois colonnes&nbsp;: nombre de personnes concernées, nombre de notifications individuelles effectivement envoyées (vérifiable), délai entre l'incident et la notification. Le RGPD existe. Son article 34 existe. Ce qui manque, c'est la traçabilité publique de son exécution.</p>
+
+                </div>
+            </div>
+
+            <div class="zellige-frise"></div>
+
+            <div class="container-narrow">
+                <div class="article-body" id="methode">
+
+                    <h2 style="border-top: none; padding-top: 1rem;">Méthode et limites</h2>
+
+                    <div class="method-note" style="margin-top: 1rem; border-left-color: #b45309;">
+                        <p><strong>Sources utilisées.</strong> Cette analyse s'appuie exclusivement sur des sources publiques accessibles en ligne&nbsp;: bilans annuels CNIL 2024 et 2025, rapport ANSSI Panorama de la cybermenace 2025, sondage Ipsos d'août 2025 sur la confiance dans la gestion publique des données, communiqués officiels du ministère de l'Intérieur (ANTS), du ministère de l'Économie (FICOBA), de France Travail et de la CAF, articles de presse spécialisée (Usine Digitale, Maire-Info, Le Monde Informatique, ZATAZ), retours des collectivités via Cybermalveillance.gouv.fr.</p>
+                    </div>
+
+                    <h3>Reproduire cette analyse</h3>
+
+                    <div class="method-note">
+                        <p>Le code source de cette page et les datasets associés sont accessibles sur GitHub&nbsp;:</p>
+                        <pre><code>github.com/tawiza/tawiza-website</code></pre>
+                        <p>Trois datasets nous ont servi de base&nbsp;: bilans CNIL annuels 2024 et 2025 (notifications de violations de données reçues au titre de l'article 33 du RGPD, nombre de comptes compromis déclarés), recensement des 8 principales fuites de données publiques nationales 2024-2026 (ANTS, France Travail, CAF, FICOBA, etc.), recensement de 16 incidents cyber locaux documentés (hôpitaux, mairies, conseils départementaux, agrégat ANSSI). Les sources de chaque ligne sont citées dans la section Sources ci-dessous.</p>
+                    </div>
+
+                    <h3>Limites de l'analyse</h3>
+
+                    <p>Plusieurs limites méritent d'être explicites.</p>
+
+                    <p><strong>L'estimation du non-notifié</strong> repose sur la convergence de deux mesures&nbsp;: le sondage Ipsos (perception déclarative) et l'absence de bilan public sur les notifications individuelles. Nous ne prétendons pas que les 42,2&nbsp;millions de Français qui ne se sentent pas informés sont strictement les mêmes que les 40,3&nbsp;millions de comptes officiellement compromis en 2025. Ce sont deux mesures différentes du même phénomène d'opacité.</p>
+
+                    <p><strong>Le recensement des piratages locaux</strong> est nécessairement partiel. L'ANSSI publie des chiffres agrégés (144 communes en 2024) sans liste nominative. Notre table croise les communications publiques de victimes et la presse régionale. Toute commune ayant gardé le silence sur un incident échappe au recensement.</p>
+
+                    <p><strong>Nous ne comparons pas le public au privé sur le terrain des sanctions.</strong> La CNIL publie un volume total d'amendes prononcées chaque année, mais la nature des infractions diffère fortement&nbsp;: en 2025, deux sanctions cookies (Google 325 M€ et Shein 150 M€) représentent à elles seules 97,5&nbsp;% du total annuel. Comparer le montant d'amendes globales public/privé reviendrait à mettre dans la même balance des sanctions pour cookies et des sanctions pour exfiltrations massives, ce qui ne tient pas. L'analyse se concentre donc sur la violation et sa notification, pas sur la sanction qu'elle déclenche.</p>
+
+                    <h3>Sources</h3>
+
+                    <ol class="sources-list" style="font-size: 0.9em; color: #78716c; line-height: 1.8;">
+                        <li id="src-1"><strong>CNIL.</strong> Bilan annuel des sanctions et mesures correctrices 2024. <a href="https://www.cnil.fr/fr/sanctions-et-mesures-correctrices-bilan-2024-de-laction-de-la-cnil" target="_blank" rel="noopener">cnil.fr/fr/sanctions-et-mesures-correctrices-bilan-2024-de-laction-de-la-cnil</a></li>
+                        <li id="src-2"><strong>CNIL.</strong> Sanctions et mesures correctrices : bilan 2025. <a href="https://www.cnil.fr/fr/bilan-sanctions-2025" target="_blank" rel="noopener">cnil.fr/fr/bilan-sanctions-2025</a></li>
+                        <li id="src-3"><strong>CNIL.</strong> Violation de données : sanction de 5 millions d'euros à l'encontre de FRANCE TRAVAIL, 22 janvier 2026. <a href="https://www.cnil.fr/fr/violation-de-donnees-sanction-5millions-france-travail" target="_blank" rel="noopener">cnil.fr/fr/violation-de-donnees-sanction-5millions-france-travail</a></li>
+                        <li id="src-4"><strong>ANSSI.</strong> Panorama de la cybermenace 2025, publié en mars 2026. Repris dans Maire-Info&nbsp;: 144 incidents cyber affectant les communes en 2024. <a href="https://www.maire-info.com/l'anssi-a-traite-144-incidents-cyber-affectant-les-communes-en-2024-article2-29445" target="_blank" rel="noopener">maire-info.com</a></li>
+                        <li id="src-5"><strong>Ipsos.</strong> Données personnelles&nbsp;: la confiance des Français envers les acteurs publics s'érode, août 2025. <a href="https://www.ipsos.com/fr-fr/donnees-personnelles-la-confiance-des-francais-envers-les-acteurs-publics-serode" target="_blank" rel="noopener">ipsos.com</a></li>
+                        <li id="src-6"><strong>Ministère de l'Intérieur.</strong> Communiqué cyberattaque ANTS, 21 avril 2026. Repris par presse spécialisée.</li>
+                        <li id="src-7"><strong>Ministère de l'Économie.</strong> FICOBA&nbsp;: tout savoir sur l'accès illégitime au fichier national des comptes bancaires. <a href="https://www.economie.gouv.fr/actualites/ficoba-tout-savoir-lacces-illegitime-au-fichier-national-des-comptes-bancaires" target="_blank" rel="noopener">economie.gouv.fr</a></li>
+                        <li id="src-8"><strong>Cybermalveillance.gouv.fr.</strong> Lettre-plainte France Travail (formulaire fermé début 2025). <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/violation-de-donnees-personnelles-france-travail-formulaire-lettre-plainte-202403" target="_blank" rel="noopener">cybermalveillance.gouv.fr</a></li>
+                        <li id="src-9"><strong>Usine Digitale.</strong> Avec 5&nbsp;629 notifications, les violations de données ont augmenté de 20&nbsp;% en 2024 selon la CNIL. <a href="https://www.usine-digitale.fr/article/avec-5629-notifications-les-violations-de-donnees-ont-augmente-de-20-en-2024-selon-la-cnil.N2231417" target="_blank" rel="noopener">usine-digitale.fr</a></li>
+                        <li id="src-10"><strong>Banque des Territoires.</strong> &laquo;&nbsp;Choisir le service public&nbsp;&raquo; et le fichier FICOBA victimes de fuites de données. <a href="https://www.banquedesterritoires.fr/choisir-le-service-public-et-le-fichier-ficoba-victimes-de-fuites-de-donnees" target="_blank" rel="noopener">banquedesterritoires.fr</a></li>
+                        <li id="src-11"><strong>Cour des comptes.</strong> R&eacute;ponse de l'&Eacute;tat aux cybermenaces sur les syst&egrave;mes d'information civils, rapport du 16 juin 2025. <a href="https://www.ccomptes.fr/sites/default/files/2025-06/20250616-S2025-0602-Reponse-de-l-Etat-aux-cybermenaces-sur-systemes-d'information-civils.pdf" target="_blank" rel="noopener">ccomptes.fr</a></li>
+                        <li id="src-12"><strong>Maire-Info.</strong> Mairies de Plo&euml;rmel et Josselin (Morbihan) concern&eacute;es par une cyberattaque, 14&nbsp;390 et 7&nbsp;854 contacts compromis depuis juin 2024. <a href="https://www.ici.fr/bretagne/morbihan-56/josselin/la-commune-de-josselin-dans-le-morbihan-concernee-par-une-cyberattaque-5632788" target="_blank" rel="noopener">ici.fr</a></li>
+                        <li id="src-13"><strong>CIO Online.</strong> Comment la r&eacute;forme du march&eacute; de l'emploi a fragilis&eacute; la cybers&eacute;curit&eacute; de France Travail&nbsp;: le sous-traitant Majorel mis en cause. <a href="https://www.cio-online.com/actualites/lire-comment-la-reforme-du-marche-de-l-emploi-a-fragilise-la-cybersecurite-de-france-travail-15597.html" target="_blank" rel="noopener">cio-online.com</a></li>
+                        <li id="src-14"><strong>Seban Avocats.</strong> Bilan des sanctions CNIL 2025&nbsp;: d&eacute;composition d&eacute;taill&eacute;e des 9 personnes publiques sanctionn&eacute;es. <a href="https://www.seban-associes.avocat.fr/bilan-sanction-cnil-2025/" target="_blank" rel="noopener">seban-associes.avocat.fr</a></li>
+                    </ol>
+
+                </div>
+            </div>
+
+
+        </article>
+    </main>
+
+        <!-- v2: 3AYNE eye + minimal footer -->
+    <section class="eye-zone">
+        <div class="terrain">
+            <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui ne dort jamais</span></div>
+            <div class="eye-root" role="img" aria-label="3AYNE - l'&oelig;il Tawiza"></div>
+            <div class="eye-caption">il regarde, il compte, il doute</div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="terrain" style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+            <span>tawiza &middot; bien commun num&eacute;rique &middot; 2026</span>
+            <div class="footer-links">
+                <a href="/analyses/">analyses</a>
+                <a href="/manifeste.html">manifeste</a>
+                <a href="/contribuer.html">contribuer</a>
+                <a href="/a-propos.html">&agrave; propos</a>
+                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">source</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Fade-up observer -->
+    <script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up, .article-body .key-num, .article-body .pull-quote').forEach(el => observer.observe(el));
+    </script>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+    // Mobile nav toggle
+    document.querySelector('.nav-mobile')?.addEventListener('click', function() {
+        const links = document.querySelector('.nav-links');
+        links?.classList.toggle('nav-links--open');
+        this.setAttribute('aria-expanded', links?.classList.contains('nav-links--open'));
+    });
+
+    // Lightbox : agrandir les graphiques au clic
+    (function() {
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        const lbClose = document.getElementById('lightbox-close');
+
+        document.querySelectorAll('.article-body figure img').forEach(function(img) {
+            // Ajouter bouton "Agrandir"
+            const btn = document.createElement('button');
+            btn.className = 'fig-zoom';
+            btn.textContent = 'Agrandir';
+            img.parentElement.appendChild(btn);
+
+            function openLb() {
+                lbImg.src = img.src;
+                lbImg.alt = img.alt;
+                lb.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            img.addEventListener('click', openLb);
+            btn.addEventListener('click', openLb);
+        });
+
+        function closeLb() {
+            lb.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        lb.addEventListener('click', closeLb);
+        lbClose.addEventListener('click', closeLb);
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLb(); });
+    })();
+    </script>
+
+    <!-- Popover définitions -->
+    <script>
+    (function() {
+        let activePop = null;
+        function closePop() {
+            if (activePop) { activePop.remove(); activePop = null; }
+        }
+        document.querySelectorAll('dfn[title]').forEach(function(el) {
+            const def = el.getAttribute('title');
+            el.removeAttribute('title');
+            el.dataset.def = def;
+            el.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (activePop && activePop.parentElement === el) { closePop(); return; }
+                closePop();
+                const pop = document.createElement('span');
+                pop.className = 'dfn-pop';
+                pop.textContent = def;
+                el.appendChild(pop);
+                activePop = pop;
+                // Empêcher le débordement horizontal
+                const rect = pop.getBoundingClientRect();
+                if (rect.right > window.innerWidth - 12) {
+                    pop.style.left = 'auto';
+                    pop.style.right = '0';
+                    pop.style.transform = 'none';
+                    pop.querySelector || (pop.style.setProperty('--arrow-fix', '1'));
+                }
+                if (rect.left < 12) {
+                    pop.style.left = '0';
+                    pop.style.transform = 'none';
+                }
+            });
+        });
+        document.addEventListener('click', closePop);
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePop(); });
+    })();
+    </script>
+    <!-- v2: inject 3AYNE eye + load eye.js + glyph.js -->
+    <script>
+        fetch('/assets/v2/eye.svg?v=20260420a').then(function (r) { return r.text(); }).then(function (svgText) {
+            var mount = document.querySelector('.eye-root');
+            if (!mount) return;
+            var svgEl = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
+            mount.appendChild(svgEl);
+        }).then(function () {
+            var s = document.createElement('script');
+            s.src = '/assets/v2/eye.js?v=20260420a';
+            document.body.appendChild(s);
+        });
+    </script>
+    <script src="/assets/v2/glyph.js?v=20260420a" defer></script>
+  <script src="/assets/v2/annotate.js?v=20260420a" defer></script>
+
+    <!-- Calculateur d'exposition cyber - JS pur, aucun envoi de donnees, aucun innerHTML -->
+    <script id="calc-script-source">
+    (function() {
+        var POP_FR_ADULTE = 50000000;
+        var FUITES = [
+            { id: 'FT-2024', name: 'France Travail (mars 2024)', pop: 43000000, base: 35000000,
+              critere: function(p) { return p.ft_inscrit; } },
+            { id: 'FT-2025-K', name: 'France Travail Kairos (juillet 2025)', pop: 340000, base: 8000000,
+              critere: function(p) { return p.ft_inscrit && p.age < 40; } },
+            { id: 'FT-2025-ML', name: 'France Travail Missions Locales (decembre 2025)', pop: 1600000, base: 7000000,
+              critere: function(p) { return (p.statut === 'chomeur' || p.statut === 'etudiant') && p.age < 30; } },
+            { id: 'CAF-2025', name: 'CAF (decembre 2025, ~8M apres dedup)', pop: 8000000, base: 13000000,
+              critere: function(p) { return p.caf; } },
+            { id: 'ANTS-2026', name: 'ANTS (avril 2026)', pop: 18500000, base: 30000000,
+              critere: function(p) { return p.titre; } },
+            { id: 'FICOBA-2026', name: 'FICOBA (janvier 2026, acces illegitime ~1,2M)', pop: 1200000, base: POP_FR_ADULTE,
+              critere: function(p) { return p.banque; } },
+            { id: 'CSP-2026', name: 'Choisir le service public (janvier 2026)', pop: 377000, base: 8000000,
+              critere: function(p) { return p.statut === 'actif' && p.age >= 22 && p.age <= 55; } }
+        ];
+
+        function compute(profil) {
+            var probas = [];
+            var breakdown = [];
+            FUITES.forEach(function(f) {
+                var match = !!f.critere(profil);
+                var p = match
+                    ? Math.min(1.0, f.pop / f.base)
+                    : (f.pop / POP_FR_ADULTE) / 5;
+                probas.push(p);
+                breakdown.push({ id: f.id, name: f.name, p: p, match: match });
+            });
+            var expected = probas.reduce(function(s, p) { return s + p; }, 0);
+            var noneProb = probas.reduce(function(acc, p) { return acc * (1 - p); }, 1);
+            return { expected: expected, atLeastOne: 1 - noneProb, breakdown: breakdown };
+        }
+
+        function refresh() {
+            var profil = {
+                age: parseInt(document.getElementById('calc-age').value, 10) || 0,
+                statut: document.getElementById('calc-statut').value,
+                caf: document.getElementById('calc-caf').checked,
+                titre: document.getElementById('calc-titre').checked,
+                ft_inscrit: document.getElementById('calc-ft').checked,
+                impots: document.getElementById('calc-impots').checked,
+                banque: document.getElementById('calc-banque').checked
+            };
+            var r = compute(profil);
+            document.getElementById('calc-count').textContent = r.expected.toFixed(1);
+            document.getElementById('calc-atleastone').textContent = (r.atLeastOne * 100).toFixed(0) + ' %';
+
+            var ul = document.getElementById('calc-detail');
+            while (ul.firstChild) { ul.removeChild(ul.firstChild); }
+
+            r.breakdown.sort(function(a, b) { return b.p - a.p; }).forEach(function(b) {
+                var li = document.createElement('li');
+                li.className = b.match ? 'matched' : 'unmatched';
+
+                var pctSpan = document.createElement('span');
+                pctSpan.className = 'calc-pct';
+                var pct = Math.round(b.p * 100);
+                pctSpan.textContent = (pct < 1 ? '<1' : pct.toString()) + '%';
+
+                var nameEl = document.createElement('strong');
+                nameEl.textContent = b.name;
+
+                li.appendChild(pctSpan);
+                li.appendChild(document.createTextNode(' '));
+                li.appendChild(nameEl);
+                if (b.match) {
+                    li.appendChild(document.createTextNode(' - critere matche'));
+                }
+                ul.appendChild(li);
+            });
+        }
+
+        function init() {
+            var form = document.getElementById('calc-form');
+            if (!form) return;
+            form.addEventListener('input', refresh);
+            form.addEventListener('change', refresh);
+            refresh();
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+    </script>
+</body>
+</html>
