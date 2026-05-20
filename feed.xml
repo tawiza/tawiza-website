@@ -6,7 +6,15 @@
         <link>https://tawiza.fr/analyses/</link>
         <atom:link href="https://tawiza.fr/feed.xml" rel="self" type="application/rss+xml"/>
         <language>fr</language>
-        <lastBuildDate>Tue, 28 Apr 2026 21:30:00 +0200</lastBuildDate>
+        <lastBuildDate>Wed, 20 May 2026 12:00:00 +0200</lastBuildDate>
+
+        <item>
+            <title>Le vibe coding, sur la durée</title>
+            <link>https://tawiza.fr/analyses/vibe-coding.html</link>
+            <guid>https://tawiza.fr/analyses/vibe-coding.html</guid>
+            <pubDate>Wed, 20 May 2026 12:00:00 +0200</pubDate>
+            <description>Note de doctrine. Le débat sur le vibe coding tourne en rond : pour les démos, dangereux ailleurs. Faux problème. La vraie question, c'est où on met la frontière entre ce qu'on vibe-code et ce qu'on vérifie machinalement. Cette frontière bouge tous les six mois. On propose un mot pour celui ou celle qui pratique ça : la vigie. Celle qui ne tient pas le gouvernail mais qui voit où il faut aller. Sept angles morts du débat actuel, côté code et côté personne. Une figure pour nommer ce qu'on devient.</description>
+        </item>
 
         <item>
             <title>Cyberfuites &#183; 42 millions de Français ne savent pas ce que l'État fait de leurs données</title>

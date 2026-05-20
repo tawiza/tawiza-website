@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le vibe coding, sur la durée | Tawiza</title>
+    <meta name="description" content="Note de doctrine sur le vibe coding tel qu'on le pratique en codant tawiza. Sans crier. Sur la durée, dans l'éthique, dans le respect. Une figure : la vigie.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#b45309">
+    <link rel="canonical" href="https://tawiza.fr/analyses/vibe-coding.html">
+    <link rel="alternate" type="application/rss+xml" title="Tawiza - Analyses" href="https://tawiza.fr/feed.xml">
+
+    <meta property="og:title" content="Le vibe coding, sur la durée">
+    <meta property="og:description" content="Note de doctrine sur le vibe coding tel qu'on le pratique en codant tawiza. Une figure : la vigie.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://tawiza.fr/analyses/vibe-coding.html">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Tawiza">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Le vibe coding, sur la durée">
+    <meta name="twitter:description" content="Note de doctrine sur le vibe coding tel qu'on le pratique en codant tawiza. Une figure : la vigie.">
+
+    <meta property="og:article:published_time" content="2026-05-20">
+    <meta property="og:article:author" content="Tawiza">
+    <meta property="og:article:section" content="Doctrine">
+    <meta property="og:article:tag" content="vibe coding">
+    <meta property="og:article:tag" content="IA">
+    <meta property="og:article:tag" content="éthique du code">
+    <meta property="og:article:tag" content="vigie">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23b45309'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='18'%3ET%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/fonts/tawiza-fonts.css?v=20260420a">
+    <link rel="stylesheet" href="../style.css?v=10">
+    <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260420a">
+    <link rel="stylesheet" href="../assets/css/tracking.css">
+    <style>
+        /* ═══ DESIGN ÉDITORIAL v2 (minimal, prose) ═══ */
+
+        .hero-editorial {
+            position: relative;
+            padding: 8rem 24px 4rem;
+            overflow: hidden;
+            background: var(--bg);
+        }
+        .hero-editorial::before {
+            content: '';
+            position: absolute; inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23b45309' stroke-width='1.2'%3E%3Cpath d='M60 10L72 30L90 22L80 42L100 48L80 54L90 74L72 66L60 86L48 66L30 74L40 54L20 48L40 42L30 22L48 30Z'/%3E%3Ccircle cx='60' cy='48' r='8'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 120px 96px;
+            pointer-events: none;
+        }
+        .hero-editorial__content {
+            position: relative; z-index: 2;
+            max-width: 680px;
+            margin: 0 auto;
+            animation: heroSlideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        @keyframes heroSlideUp {
+            from { opacity: 0; transform: translateY(32px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-editorial .article-meta { margin-bottom: 1.5rem; }
+        .hero-editorial h1 {
+            font-size: clamp(2rem, 4.8vw, 3rem);
+            line-height: 1.18;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+        }
+        .hero-editorial .article-intro {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+        .hero-editorial__accent-line {
+            display: block;
+            width: 48px; height: 3px;
+            background: var(--accent);
+            margin-bottom: 2rem;
+            border-radius: 2px;
+        }
+
+        .container-narrow {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .article-body { padding: 2rem 0 4rem; }
+        .article-body p {
+            margin-bottom: 1.4em;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+        .article-body p strong {
+            font-weight: 600;
+            color: var(--text);
+        }
+        .article-body h2 {
+            font-family: var(--font-heading);
+            margin-top: 4.5rem;
+            padding-top: 3rem;
+            margin-bottom: 1.8rem;
+            border-top: 1px solid var(--separator);
+            position: relative;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+        }
+        .article-body h2::before {
+            content: '';
+            position: absolute; top: -1px; left: 0;
+            width: 40px; height: 3px;
+            background: var(--accent);
+        }
+
+        .article-body .closing {
+            margin-top: 4rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--separator);
+        }
+        .article-body .closing p {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            line-height: 1.65;
+            color: var(--text);
+        }
+
+        /* Tablettes et petits laptops */
+        @media (max-width: 720px) {
+            .hero-editorial { padding: 5rem 20px 2.5rem; }
+            .hero-editorial .article-intro { font-size: 1.05rem; }
+            .container-narrow { padding: 0 20px; }
+            .article-body { padding: 1.5rem 0 3rem; }
+            .article-body h2 {
+                margin-top: 3rem;
+                padding-top: 2rem;
+                margin-bottom: 1.4rem;
+            }
+            .article-body p { font-size: 1rem; line-height: 1.75; }
+            .article-body .closing { margin-top: 3rem; padding-top: 2rem; }
+            .article-body .closing p { font-size: 1.1rem; }
+        }
+
+        /* Téléphones */
+        @media (max-width: 480px) {
+            .hero-editorial { padding: 4rem 16px 2rem; }
+            .hero-editorial h1 {
+                font-size: 1.75rem;
+                letter-spacing: -0.02em;
+                margin-bottom: 1.2rem;
+            }
+            .hero-editorial .article-intro {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+            .hero-editorial__accent-line {
+                width: 36px;
+                margin-bottom: 1.5rem;
+            }
+            .hero-editorial .article-meta {
+                font-size: 0.85rem;
+                margin-bottom: 1.2rem;
+            }
+            .container-narrow { padding: 0 16px; }
+            .article-body p {
+                font-size: 0.98rem;
+                line-height: 1.7;
+                margin-bottom: 1.3em;
+            }
+            .article-body h2 {
+                margin-top: 2.5rem;
+                padding-top: 1.5rem;
+                margin-bottom: 1.2rem;
+                font-size: 1.4rem;
+            }
+            .article-body h2::before { width: 32px; height: 2px; }
+            .article-body .closing { margin-top: 2.5rem; padding-top: 1.5rem; }
+            .article-body .closing p {
+                font-size: 1.05rem;
+                line-height: 1.55;
+            }
+        }
+    </style>
+</head>
+<body>
+        <!-- v2: wordmark + generative glyph (replaces legacy nav) -->
+    <a href="/" class="wordmark">tawiza.fr</a>
+    <div class="glyph-slot" aria-hidden="true" data-seed="/analyses/vibe-coding"></div>
+
+    <main>
+        <article>
+            <header class="hero-editorial">
+                <div class="hero-editorial__content">
+                    <div class="article-meta">
+                        <time datetime="2026-05-20">20 mai 2026</time>
+                        <span class="article-tag">Note de doctrine</span>
+                    </div>
+                    <span class="hero-editorial__accent-line"></span>
+                    <h1>Le vibe coding, sur la durée</h1>
+                    <p class="article-intro">Une note posée sur la façon dont on pratique le vibe coding en codant tawiza. Sans crier. Avec une figure pour nommer ce qu'on devient&nbsp;: la vigie.</p>
+                </div>
+            </header>
+
+            <div class="container-narrow article-body">
+
+                <p>Il y a un mot qui circule depuis quelques mois et qui agace beaucoup de gens. Vibe coding. On code en discutant avec la machine. On lui dit où on veut aller, elle propose, on accepte ou on refuse, on avance. La doxa dit que c'est joli pour bricoler, dangereux pour le reste.</p>
+
+                <p>Je crois qu'on se trompe sur le débat.</p>
+
+                <p>La question n'est pas de savoir si la machine écrit le code. La question est de savoir ce qu'on attend d'un code, et qui reste responsable de la réponse. Sur tawiza, le code touche à des données qui finissent dans des décisions. Un siret qu'on lit mal, c'est un dossier qu'on rate. Une commune qu'on classe à côté, c'est un habitant qu'on prévient pas. La machine peut écrire les lignes. Elle ne peut pas porter le poids de ce qu'elles font.</p>
+
+                <p>Donc le vibe coding, oui. Mais pas n'importe lequel.</p>
+
+                <p>On en garde le rythme, parce qu'il libère du temps pour les choses qui comptent vraiment, l'architecture, la nuance, le doute. On en jette la facilité, parce qu'elle invite à oublier qu'on est responsable. Entre les deux, il y a une discipline tranquille, qui ne ressemble à rien de spectaculaire. On lit ce qu'on signe. On laisse l'audit tourner. On accepte que la machine se trompe et on construit autour d'elle des garde-fous qu'elle n'a pas envie de mettre toute seule.</p>
+
+                <p>Ce n'est ni une victoire de la machine, ni une défaite de l'humain. C'est juste un nouveau rapport de travail. Plus lent en surface, plus rapide en profondeur. Plus humble aussi.</p>
+
+                <h2>Ce que la doxa rate, côté code</h2>
+
+                <p><strong>Le piège du code trop propre.</strong> Quand un humain écrit du code à l'arrache un dimanche soir, ça se voit. Variables nommées à la va-vite, une fonction trop longue, un commentaire qui dit «&nbsp;TODO j'y reviendrai&nbsp;». On se méfie en lisant. Le code généré par un modèle n'a aucun de ces signaux. Il est bien rangé, bien commenté, bien typé. Il inspire confiance. Et c'est exactement le problème. Un code qui inspire confiance, c'est un code qu'on relit moins attentivement. La propreté visuelle peut cacher des malentendus profonds, et on les attrape moins bien parce que rien ne signale qu'il faut chercher.</p>
+
+                <p><strong>La dette de mémoire.</strong> On parle beaucoup de dette technique. Personne ne parle de dette de mémoire. Quand un dev humain écrit une fonction, il sait pourquoi il l'a écrite comme ça. Six mois plus tard, il peut encore expliquer ses arbitrages. Avec le vibe coding, le code passe d'un état «&nbsp;à écrire&nbsp;» à un état «&nbsp;écrit&nbsp;» sans qu'aucune mémoire ne se construise. Dans deux ans, plus personne ne saura pourquoi cette branche a été ajoutée. Le code sera là, lisible, mais muet. Ce n'est pas un défaut du modèle, c'est un défaut de la pratique. La parade existe, mais personne n'en parle parce que ça contredit le récit de «&nbsp;ça va plus vite&nbsp;».</p>
+
+                <p><strong>Le rétrécissement silencieux.</strong> Un modèle propose ce qu'il a déjà vu. Statistiquement, il pousse vers la moyenne des solutions existantes. À l'échelle d'un projet, on ne le voit pas. À l'échelle d'une décennie, tous les codes vont commencer à se ressembler. Les choix singuliers, les bricolages élégants, les paris stylistiques qui font la culture du métier, tout ça est lentement lissé. On gagne en lisibilité moyenne, on perd en diversité réelle. C'est un mouvement de fond, pas un drame quotidien, et c'est pour ça qu'il est dangereux. Il avance sans bruit.</p>
+
+                <h2>Ce que la doxa rate, côté personne</h2>
+
+                <p><strong>La complicité émotionnelle.</strong> Quand on travaille longtemps avec un modèle, il se passe un truc qui n'a pas encore de nom propre. On lui dit «&nbsp;exellent&nbsp;» quand il propose un bon angle, on s'agace quand il insiste sur une mauvaise piste. C'est ni un outil au sens marteau, ni un collègue au sens humain. Une troisième chose. Et cette troisième chose modifie en silence la manière dont on juge le travail rendu. On critique moins quelque chose à qui on vient de dire merci. C'est microscopique, c'est répété mille fois par semaine, ça finit par compter.</p>
+
+                <p><strong>Le goût du non.</strong> Avant, ce qui faisait un bon dev, c'était savoir écrire. Maintenant, savoir écrire c'est devenu abondant, la machine le fait. Ce qui devient précieux, c'est savoir refuser. Refuser une suggestion bien formulée qui pousse le code dans la mauvaise direction. Refuser un raccourci qui marche aujourd'hui et qui coince dans six mois. Refuser le code que le modèle propose avec une telle assurance qu'on n'a presque pas envie de relire. Cette compétence ne s'apprend nulle part. On la développe par accident, en se brûlant.</p>
+
+                <p><strong>La solitude confortable.</strong> Un solo dev avant l'IA était condamné à sortir. Demander un coup de main sur un forum, croiser un copain qui code, suivre une conf parce qu'on bloquait. La solitude était inconfortable, donc on en sortait. Avec un LLM disponible 24 heures sur 24, la solitude devient confortable. On peut passer des semaines entières à coder sans parler à un humain. Pour la productivité, c'est sublime. Pour la santé du dev sur dix ans, c'est une question qu'on n'a pas le droit de ne pas poser. L'éthique d'une pratique, c'est aussi le soin qu'on prend de ceux qui la pratiquent.</p>
+
+                <h2>Une figure pour nommer ce qu'on devient</h2>
+
+                <p>On a besoin d'un mot pour la personne qui pratique tout ça. Pas «&nbsp;dev&nbsp;». Le mot porte la production, la livraison, le code comme marchandise. Il manque la posture.</p>
+
+                <p>Je propose <strong>vigie</strong>.</p>
+
+                <p>La vigie ne tient pas le gouvernail. Elle regarde au loin, elle voit avant les autres, elle prévient. C'est exactement le geste de celui qui ne tape plus la ligne mais qui voit où elle va. Le mot est grammaticalement féminin et s'applique indistinctement à tout le monde, comme sentinelle ou garde. Personne ne se sent renvoyé à un genre qui n'est pas le sien.</p>
+
+                <p>Une vigie, ce n'est pas une posture, c'est une pratique.</p>
+
+                <p>Elle relit avant d'accepter. Pas pour traquer la faute, pour rencontrer le code, comprendre où il veut aller. Lire devient le geste central, plus écrire. Elle laisse tourner les vérifications automatiques en parallèle, sans s'en remettre à elles, parce qu'elle sait que sa propre vigilance fatigue et que la machine doit prendre le relais sur tout ce qui est mécanique. Elle écrit ce qu'elle décide, pas le code, ses raisons. Une note dans un fichier de mémoire, une convention dans un document partagé. Elle parle à des humains régulièrement, même quand elle n'a pas besoin d'eux pour avancer, parce qu'une vigie qui ne parle plus qu'à sa machine devient muette à elle-même.</p>
+
+                <p>Elle refuse, souvent. Les suggestions qui sentent bon mais qui mènent loin du cap. Les raccourcis qui marchent aujourd'hui et qui coincent demain. Le code qu'elle ne comprend pas, même s'il passe les tests. La facilité de la complicité émotionnelle. Le goût du non, c'est ce qui sépare la vigie du simple opérateur.</p>
+
+                <p>Elle pense au lecteur qui n'est pas encore là. Le co-fondateur qu'on n'a pas encore trouvé, le contributeur qui débarquera dans deux ans, la version de soi qui ne se souviendra plus pourquoi telle décision a été prise. Donc elle soigne ce qui sera relu&nbsp;: les noms, les structures, les choix qui s'expliquent sans elle. C'est probablement le geste le plus discret et le plus important.</p>
+
+                <h2>Ce que ça change à l'échelle d'un écosystème</h2>
+
+                <p>Le métier compte encore en lignes, en commits, en pull requests. C'est ce qu'on note dans un CV, c'est ce qu'une boîte regarde au recrutement, c'est ce qu'on suit dans un tableau de bord d'équipe. Toutes ces métriques mesurent la production. Aucune ne mesure le goût, la lecture, le refus, la mémoire. Si la vigie devient une vraie posture, ces métriques deviennent fausses. Elles disent juste la quantité de code passé entre des mains. Les boîtes qui ne s'en rendent pas compte continueront un moment, puis remarqueront que leurs projets se ressemblent tous, que plus personne ne sait pourquoi telle décision a été prise, qu'elles dépendent toutes du même modèle sans avoir tissé de pensée propre. Elles paieront cher ce qu'elles n'auront pas su valoriser plus tôt.</p>
+
+                <p>On n'apprend nulle part à être vigie. On apprend à coder, on apprend à débugger, parfois on apprend à manager. La posture de vigie ne se trouve dans aucun cursus. On la développe par accident, en se cognant, en regrettant des choix qu'on a acceptés trop vite. Si on veut que la pratique tienne, il faut commencer à la transmettre explicitement. Pas une formation au prompt engineering qui périme dans six mois. Quelque chose qui ressemble plus à du compagnonnage. Lire ensemble du code généré, discuter de ce qu'on accepterait ou refuserait, partager les moments où on a senti que quelque chose clochait sans pouvoir nommer quoi. C'est du métier au sens vieux du terme.</p>
+
+                <p>Ce sont les solos et les petits collectifs qui peuvent porter la pratique en premier, parce qu'ils n'ont pas de structure à convaincre. Un dev qui travaille seul peut décider d'être vigie demain matin. Une organisation de deux cents personnes mettra cinq ans. L'écosystème va se polariser. D'un côté des solos et des petits projets qui pratiquent la vigie en silence, qui prennent leur temps, qui bâtissent des outils qu'ils comprennent encore après trois ans. De l'autre des grosses structures qui produisent vite, beaucoup, et dont plus personne ne sait quoi. Pendant un temps, les seconds gagneront en visibilité. Les premiers gagneront en confiance. Et la confiance, dans un métier qui touche à des décisions sérieuses, est la seule chose qui compose vraiment sur la durée.</p>
+
+                <h2>Pour finir</h2>
+
+                <div class="closing">
+                    <p>La vigie n'est pas une théorie. C'est quelqu'un qui aujourd'hui, à un bureau, regarde un écran et décide de relire avant d'accepter. C'est tout. Ça commence par là, et nulle part ailleurs.</p>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+        <!-- v2: 3AYNE eye + minimal footer -->
+    <section class="eye-zone">
+        <div class="terrain">
+            <div class="eye-zone-label">3ayne &middot; <span>l'&oelig;il qui ne dort jamais</span></div>
+            <div class="eye-root" role="img" aria-label="3AYNE - l'&oelig;il Tawiza"></div>
+            <div class="eye-caption">il regarde, il compte, il doute</div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="terrain" style="width:100%;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+            <span>tawiza &middot; bien commun num&eacute;rique &middot; 2026</span>
+            <div class="footer-links">
+                <a href="/analyses/">analyses</a>
+                <a href="/manifeste.html">manifeste</a>
+                <a href="/charte.html">charte</a>
+                <a href="/contribuer.html">contribuer</a>
+                <a href="/a-propos.html">&agrave; propos</a>
+                <a href="https://github.com/tawiza/tawiza" target="_blank" rel="noopener">source</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
