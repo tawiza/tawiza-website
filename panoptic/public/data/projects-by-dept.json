@@ -3,48 +3,26 @@
     "code_dept": "??",
     "departement_name": null,
     "region_name": null,
-    "project_count": 202,
+    "project_count": 444,
     "total_mwc": 0.0,
     "statuses": {
-      "instruction": 200,
+      "instruction": 438,
+      "autorise": 1,
+      "refuse": 3,
       "inconnu": 2
-    }
-  },
-  {
-    "code_dept": "47",
-    "departement_name": "Lot-et-Garonne",
-    "region_name": "Nouvelle-Aquitaine",
-    "project_count": 29,
-    "total_mwc": 477.945,
-    "statuses": {
-      "autorise": 6,
-      "instruction": 16,
-      "raccorde": 7
     }
   },
   {
     "code_dept": "16",
     "departement_name": "Charente",
     "region_name": "Nouvelle-Aquitaine",
-    "project_count": 22,
+    "project_count": 18,
     "total_mwc": 56.7,
     "statuses": {
       "autorise": 10,
       "raccorde": 6,
       "construction": 1,
-      "instruction": 5
-    }
-  },
-  {
-    "code_dept": "03",
-    "departement_name": null,
-    "region_name": null,
-    "project_count": 19,
-    "total_mwc": 85.297,
-    "statuses": {
-      "instruction": 11,
-      "raccorde": 6,
-      "autorise": 2
+      "instruction": 1
     }
   },
   {
@@ -58,92 +36,39 @@
     }
   },
   {
+    "code_dept": "47",
+    "departement_name": "Lot-et-Garonne",
+    "region_name": "Nouvelle-Aquitaine",
+    "project_count": 17,
+    "total_mwc": 477.945,
+    "statuses": {
+      "autorise": 6,
+      "raccorde": 7,
+      "instruction": 4
+    }
+  },
+  {
     "code_dept": "58",
     "departement_name": "Nièvre",
     "region_name": "Bourgogne-Franche-Comté",
-    "project_count": 17,
+    "project_count": 16,
     "total_mwc": 177.759,
     "statuses": {
       "autorise": 9,
-      "instruction": 1,
       "construction": 3,
       "raccorde": 4
     }
   },
   {
-    "code_dept": "86",
-    "departement_name": "Vienne",
-    "region_name": "Nouvelle-Aquitaine",
-    "project_count": 17,
-    "total_mwc": 73.12,
-    "statuses": {
-      "raccorde": 1,
-      "autorise": 6,
-      "instruction": 10
-    }
-  },
-  {
     "code_dept": "87",
-    "departement_name": null,
-    "region_name": null,
-    "project_count": 17,
-    "total_mwc": 36.313,
-    "statuses": {
-      "instruction": 8,
-      "raccorde": 1,
-      "autorise": 8
-    }
-  },
-  {
-    "code_dept": "40",
-    "departement_name": "Landes",
+    "departement_name": "Haute-Vienne",
     "region_name": "Nouvelle-Aquitaine",
     "project_count": 15,
-    "total_mwc": 492.228,
+    "total_mwc": 36.313,
     "statuses": {
-      "raccorde": 6,
-      "construction": 1,
-      "instruction": 7,
-      "autorise": 1
-    }
-  },
-  {
-    "code_dept": "21",
-    "departement_name": "Côte-d'Or",
-    "region_name": "Bourgogne-Franche-Comté",
-    "project_count": 14,
-    "total_mwc": 106.137,
-    "statuses": {
-      "raccorde": 2,
-      "autorise": 2,
-      "construction": 1,
-      "instruction": 9
-    }
-  },
-  {
-    "code_dept": "71",
-    "departement_name": "Saône-et-Loire",
-    "region_name": "Bourgogne-Franche-Comté",
-    "project_count": 14,
-    "total_mwc": 70.9,
-    "statuses": {
-      "raccorde": 5,
-      "instruction": 4,
-      "autorise": 4,
-      "construction": 1
-    }
-  },
-  {
-    "code_dept": "26",
-    "departement_name": "Drôme",
-    "region_name": "Auvergne-Rhône-Alpes",
-    "project_count": 13,
-    "total_mwc": 18.72,
-    "statuses": {
-      "raccorde": 6,
-      "construction": 1,
-      "autorise": 2,
-      "instruction": 4
+      "raccorde": 1,
+      "autorise": 8,
+      "instruction": 6
     }
   },
   {
@@ -158,25 +83,28 @@
     }
   },
   {
-    "code_dept": "11",
-    "departement_name": "Aude",
-    "region_name": "Occitanie",
-    "project_count": 10,
-    "total_mwc": 34.423,
+    "code_dept": "71",
+    "departement_name": "Saône-et-Loire",
+    "region_name": "Bourgogne-Franche-Comté",
+    "project_count": 11,
+    "total_mwc": 70.9,
     "statuses": {
-      "raccorde": 8,
-      "instruction": 2
+      "raccorde": 5,
+      "construction": 1,
+      "autorise": 4,
+      "instruction": 1
     }
   },
   {
-    "code_dept": "63",
-    "departement_name": "Puy-de-Dôme",
+    "code_dept": "03",
+    "departement_name": "Allier",
     "region_name": "Auvergne-Rhône-Alpes",
     "project_count": 10,
-    "total_mwc": 0.278,
+    "total_mwc": 85.297,
     "statuses": {
-      "raccorde": 1,
-      "instruction": 9
+      "raccorde": 6,
+      "autorise": 2,
+      "instruction": 2
     }
   },
   {
@@ -191,15 +119,51 @@
     }
   },
   {
-    "code_dept": "24",
-    "departement_name": "Dordogne",
+    "code_dept": "11",
+    "departement_name": "Aude",
+    "region_name": "Occitanie",
+    "project_count": 9,
+    "total_mwc": 34.423,
+    "statuses": {
+      "raccorde": 8,
+      "instruction": 1
+    }
+  },
+  {
+    "code_dept": "21",
+    "departement_name": "Côte-d'Or",
+    "region_name": "Bourgogne-Franche-Comté",
+    "project_count": 9,
+    "total_mwc": 106.137,
+    "statuses": {
+      "raccorde": 2,
+      "autorise": 2,
+      "construction": 1,
+      "instruction": 4
+    }
+  },
+  {
+    "code_dept": "26",
+    "departement_name": "Drôme",
+    "region_name": "Auvergne-Rhône-Alpes",
+    "project_count": 8,
+    "total_mwc": 18.72,
+    "statuses": {
+      "raccorde": 6,
+      "construction": 1,
+      "autorise": 1
+    }
+  },
+  {
+    "code_dept": "40",
+    "departement_name": "Landes",
     "region_name": "Nouvelle-Aquitaine",
     "project_count": 8,
-    "total_mwc": 28.895,
+    "total_mwc": 492.228,
     "statuses": {
-      "raccorde": 5,
-      "autorise": 1,
-      "instruction": 2
+      "raccorde": 6,
+      "construction": 1,
+      "autorise": 1
     }
   },
   {
@@ -211,6 +175,18 @@
     "statuses": {
       "autorise": 4,
       "raccorde": 3,
+      "instruction": 1
+    }
+  },
+  {
+    "code_dept": "24",
+    "departement_name": "Dordogne",
+    "region_name": "Nouvelle-Aquitaine",
+    "project_count": 7,
+    "total_mwc": 28.895,
+    "statuses": {
+      "raccorde": 5,
+      "autorise": 1,
       "instruction": 1
     }
   },
@@ -238,25 +214,14 @@
     }
   },
   {
-    "code_dept": "89",
-    "departement_name": "Yonne",
-    "region_name": "Bourgogne-Franche-Comté",
-    "project_count": 7,
-    "total_mwc": 60.0,
-    "statuses": {
-      "autorise": 1,
-      "instruction": 6
-    }
-  },
-  {
-    "code_dept": "17",
-    "departement_name": "Charente-Maritime",
+    "code_dept": "86",
+    "departement_name": "Vienne",
     "region_name": "Nouvelle-Aquitaine",
-    "project_count": 6,
-    "total_mwc": 8.745,
+    "project_count": 7,
+    "total_mwc": 73.12,
     "statuses": {
-      "raccorde": 4,
-      "instruction": 2
+      "raccorde": 1,
+      "autorise": 6
     }
   },
   {
@@ -272,11 +237,11 @@
     }
   },
   {
-    "code_dept": "15",
-    "departement_name": "Cantal",
-    "region_name": "Auvergne-Rhône-Alpes",
+    "code_dept": "17",
+    "departement_name": "Charente-Maritime",
+    "region_name": "Nouvelle-Aquitaine",
     "project_count": 5,
-    "total_mwc": 24.6,
+    "total_mwc": 8.745,
     "statuses": {
       "raccorde": 4,
       "instruction": 1
@@ -291,41 +256,6 @@
     "statuses": {
       "autorise": 2,
       "instruction": 3
-    }
-  },
-  {
-    "code_dept": "33",
-    "departement_name": "Gironde",
-    "region_name": "Nouvelle-Aquitaine",
-    "project_count": 5,
-    "total_mwc": 8.85,
-    "statuses": {
-      "raccorde": 3,
-      "construction": 1,
-      "instruction": 1
-    }
-  },
-  {
-    "code_dept": "44",
-    "departement_name": "Loire-Atlantique",
-    "region_name": "Pays de la Loire",
-    "project_count": 5,
-    "total_mwc": 10.3,
-    "statuses": {
-      "raccorde": 2,
-      "instruction": 3
-    }
-  },
-  {
-    "code_dept": "53",
-    "departement_name": "Mayenne",
-    "region_name": "Pays de la Loire",
-    "project_count": 5,
-    "total_mwc": 53.21,
-    "statuses": {
-      "autorise": 2,
-      "construction": 1,
-      "instruction": 2
     }
   },
   {
@@ -351,11 +281,32 @@
     }
   },
   {
+    "code_dept": "15",
+    "departement_name": "Cantal",
+    "region_name": "Auvergne-Rhône-Alpes",
+    "project_count": 4,
+    "total_mwc": 24.6,
+    "statuses": {
+      "raccorde": 4
+    }
+  },
+  {
     "code_dept": "31",
     "departement_name": "Haute-Garonne",
     "region_name": "Occitanie",
     "project_count": 4,
     "total_mwc": 25.46,
+    "statuses": {
+      "raccorde": 3,
+      "construction": 1
+    }
+  },
+  {
+    "code_dept": "33",
+    "departement_name": "Gironde",
+    "region_name": "Nouvelle-Aquitaine",
+    "project_count": 4,
+    "total_mwc": 8.85,
     "statuses": {
       "raccorde": 3,
       "construction": 1
@@ -373,25 +324,15 @@
     }
   },
   {
-    "code_dept": "43",
-    "departement_name": null,
-    "region_name": null,
-    "project_count": 4,
-    "total_mwc": 0.0,
-    "statuses": {
-      "instruction": 4
-    }
-  },
-  {
-    "code_dept": "72",
-    "departement_name": "Sarthe",
+    "code_dept": "53",
+    "departement_name": "Mayenne",
     "region_name": "Pays de la Loire",
     "project_count": 4,
-    "total_mwc": 28.7,
+    "total_mwc": 53.21,
     "statuses": {
-      "raccorde": 1,
-      "autorise": 1,
-      "instruction": 2
+      "autorise": 2,
+      "construction": 1,
+      "instruction": 1
     }
   },
   {
@@ -408,16 +349,6 @@
     }
   },
   {
-    "code_dept": "10",
-    "departement_name": null,
-    "region_name": null,
-    "project_count": 3,
-    "total_mwc": 0.0,
-    "statuses": {
-      "instruction": 3
-    }
-  },
-  {
     "code_dept": "18",
     "departement_name": "Cher",
     "region_name": "Centre-Val de Loire",
@@ -427,16 +358,6 @@
       "autorise": 1,
       "raccorde": 1,
       "instruction": 1
-    }
-  },
-  {
-    "code_dept": "19",
-    "departement_name": null,
-    "region_name": null,
-    "project_count": 3,
-    "total_mwc": 0.0,
-    "statuses": {
-      "instruction": 3
     }
   },
   {
@@ -462,16 +383,6 @@
     }
   },
   {
-    "code_dept": "35",
-    "departement_name": null,
-    "region_name": null,
-    "project_count": 3,
-    "total_mwc": 0.0,
-    "statuses": {
-      "instruction": 3
-    }
-  },
-  {
     "code_dept": "36",
     "departement_name": "Indre",
     "region_name": "Centre-Val de Loire",
@@ -490,17 +401,6 @@
     "total_mwc": 231.8,
     "statuses": {
       "autorise": 3
-    }
-  },
-  {
-    "code_dept": "38",
-    "departement_name": "Isère",
-    "region_name": "Auvergne-Rhône-Alpes",
-    "project_count": 3,
-    "total_mwc": 0.111,
-    "statuses": {
-      "raccorde": 1,
-      "instruction": 2
     }
   },
   {
@@ -526,49 +426,6 @@
     }
   },
   {
-    "code_dept": "56",
-    "departement_name": null,
-    "region_name": null,
-    "project_count": 3,
-    "total_mwc": 0.0,
-    "statuses": {
-      "instruction": 3
-    }
-  },
-  {
-    "code_dept": "70",
-    "departement_name": "Haute-Saône",
-    "region_name": "Bourgogne-Franche-Comté",
-    "project_count": 3,
-    "total_mwc": 3.4,
-    "statuses": {
-      "raccorde": 1,
-      "construction": 1,
-      "instruction": 1
-    }
-  },
-  {
-    "code_dept": "04",
-    "departement_name": "Alpes-de-Haute-Provence",
-    "region_name": "Provence-Alpes-Côte d'Azur",
-    "project_count": 2,
-    "total_mwc": 2.3,
-    "statuses": {
-      "raccorde": 1,
-      "instruction": 1
-    }
-  },
-  {
-    "code_dept": "08",
-    "departement_name": null,
-    "region_name": null,
-    "project_count": 2,
-    "total_mwc": 0.0,
-    "statuses": {
-      "instruction": 2
-    }
-  },
-  {
     "code_dept": "09",
     "departement_name": "Ariège",
     "region_name": "Occitanie",
@@ -590,16 +447,6 @@
     }
   },
   {
-    "code_dept": "20",
-    "departement_name": null,
-    "region_name": null,
-    "project_count": 2,
-    "total_mwc": 0.0,
-    "statuses": {
-      "instruction": 2
-    }
-  },
-  {
     "code_dept": "29",
     "departement_name": "Finistère",
     "region_name": "Bretagne",
@@ -608,6 +455,16 @@
     "statuses": {
       "autorise": 1,
       "raccorde": 1
+    }
+  },
+  {
+    "code_dept": "44",
+    "departement_name": "Loire-Atlantique",
+    "region_name": "Pays de la Loire",
+    "project_count": 2,
+    "total_mwc": 10.3,
+    "statuses": {
+      "raccorde": 2
     }
   },
   {
@@ -632,34 +489,25 @@
     }
   },
   {
-    "code_dept": "73",
-    "departement_name": null,
-    "region_name": null,
+    "code_dept": "70",
+    "departement_name": "Haute-Saône",
+    "region_name": "Bourgogne-Franche-Comté",
     "project_count": 2,
-    "total_mwc": 0.0,
-    "statuses": {
-      "instruction": 2
-    }
-  },
-  {
-    "code_dept": "77",
-    "departement_name": "Seine-et-Marne",
-    "region_name": "Île-de-France",
-    "project_count": 2,
-    "total_mwc": 0.115,
+    "total_mwc": 3.4,
     "statuses": {
       "raccorde": 1,
-      "instruction": 1
+      "construction": 1
     }
   },
   {
-    "code_dept": "78",
-    "departement_name": null,
-    "region_name": null,
+    "code_dept": "72",
+    "departement_name": "Sarthe",
+    "region_name": "Pays de la Loire",
     "project_count": 2,
-    "total_mwc": 0.0,
+    "total_mwc": 28.7,
     "statuses": {
-      "instruction": 2
+      "raccorde": 1,
+      "autorise": 1
     }
   },
   {
@@ -684,12 +532,13 @@
     }
   },
   {
-    "code_dept": "01",
-    "departement_name": null,
-    "region_name": null,
-    "project_count": 1,
-    "total_mwc": 0.0,
+    "code_dept": "89",
+    "departement_name": "Yonne",
+    "region_name": "Bourgogne-Franche-Comté",
+    "project_count": 2,
+    "total_mwc": 60.0,
     "statuses": {
+      "autorise": 1,
       "instruction": 1
     }
   },
@@ -699,6 +548,16 @@
     "region_name": "Hauts-de-France",
     "project_count": 1,
     "total_mwc": 0.3,
+    "statuses": {
+      "raccorde": 1
+    }
+  },
+  {
+    "code_dept": "04",
+    "departement_name": "Alpes-de-Haute-Provence",
+    "region_name": "Provence-Alpes-Côte d'Azur",
+    "project_count": 1,
+    "total_mwc": 2.3,
     "statuses": {
       "raccorde": 1
     }
@@ -724,8 +583,28 @@
     }
   },
   {
+    "code_dept": "10",
+    "departement_name": "Aube",
+    "region_name": null,
+    "project_count": 1,
+    "total_mwc": 0.0,
+    "statuses": {
+      "instruction": 1
+    }
+  },
+  {
     "code_dept": "12",
     "departement_name": "Aveyron",
+    "region_name": null,
+    "project_count": 1,
+    "total_mwc": 0.0,
+    "statuses": {
+      "instruction": 1
+    }
+  },
+  {
+    "code_dept": "19",
+    "departement_name": "Corrèze",
     "region_name": null,
     "project_count": 1,
     "total_mwc": 0.0,
@@ -744,6 +623,16 @@
     }
   },
   {
+    "code_dept": "38",
+    "departement_name": "Isère",
+    "region_name": "Auvergne-Rhône-Alpes",
+    "project_count": 1,
+    "total_mwc": 0.111,
+    "statuses": {
+      "raccorde": 1
+    }
+  },
+  {
     "code_dept": "39",
     "departement_name": "Jura",
     "region_name": "Bourgogne-Franche-Comté",
@@ -751,6 +640,16 @@
     "total_mwc": 1.0,
     "statuses": {
       "construction": 1
+    }
+  },
+  {
+    "code_dept": "43",
+    "departement_name": "Haute-Loire",
+    "region_name": null,
+    "project_count": 1,
+    "total_mwc": 0.0,
+    "statuses": {
+      "instruction": 1
     }
   },
   {
@@ -774,6 +673,16 @@
     }
   },
   {
+    "code_dept": "56",
+    "departement_name": "Morbihan",
+    "region_name": null,
+    "project_count": 1,
+    "total_mwc": 0.0,
+    "statuses": {
+      "instruction": 1
+    }
+  },
+  {
     "code_dept": "60",
     "departement_name": "Oise",
     "region_name": "Hauts-de-France",
@@ -791,6 +700,16 @@
     "total_mwc": 0.0,
     "statuses": {
       "instruction": 1
+    }
+  },
+  {
+    "code_dept": "63",
+    "departement_name": "Puy-de-Dôme",
+    "region_name": "Auvergne-Rhône-Alpes",
+    "project_count": 1,
+    "total_mwc": 0.278,
+    "statuses": {
+      "raccorde": 1
     }
   },
   {
@@ -834,6 +753,16 @@
     }
   },
   {
+    "code_dept": "77",
+    "departement_name": "Seine-et-Marne",
+    "region_name": "Île-de-France",
+    "project_count": 1,
+    "total_mwc": 0.115,
+    "statuses": {
+      "raccorde": 1
+    }
+  },
+  {
     "code_dept": "91",
     "departement_name": "Essonne",
     "region_name": "Île-de-France",
@@ -841,16 +770,6 @@
     "total_mwc": 0.111,
     "statuses": {
       "raccorde": 1
-    }
-  },
-  {
-    "code_dept": "95",
-    "departement_name": null,
-    "region_name": null,
-    "project_count": 1,
-    "total_mwc": 0.0,
-    "statuses": {
-      "instruction": 1
     }
   },
   {

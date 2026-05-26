@@ -6,6 +6,52 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -2.68629,
+          47.98929
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2026-05-08",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/2S",
+        "summary": "Pleugriffet Générale du SOlaire (Pleugriffet, 56)",
+        "project_id": null,
+        "commune": "Pleugriffet",
+        "code_postal": "56120"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.681921,
+          44.173426
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2026-04-28",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/2R",
+        "summary": "Servanac- JPEE Nass expansion (Servanac, 82)",
+        "project_id": null,
+        "commune": "Servanac",
+        "code_postal": "82140"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.233539,
           44.391782
         ]
@@ -75,29 +121,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.698221,
-          44.012705
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2026-04-03",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/2M",
-        "summary": "Tavel -Total Energy (Tavel, 30)",
-        "project_id": null,
-        "commune": "Tavel",
-        "code_postal": "30126"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           4.213484,
           44.465248
         ]
@@ -114,6 +137,29 @@
         "project_id": null,
         "commune": "Lablachère",
         "code_postal": "07230"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.698221,
+          44.012705
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2026-04-03",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/2M",
+        "summary": "Tavel -Total Energy (Tavel, 30)",
+        "project_id": null,
+        "commune": "Tavel",
+        "code_postal": "30126"
       }
     },
     {
@@ -328,8 +374,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.03232,
-          44.059034
+          2.054142,
+          44.053883
         ]
       },
       "properties": {
@@ -339,11 +385,11 @@
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/2A",
-        "summary": "LIEUDIT CAMMARC - GANTIE (Livers-Cazelles, 81)",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/2B",
+        "summary": "CANTALAUZE - M.MERCIE (Virac, 81)",
         "project_id": null,
-        "commune": "Livers-Cazelles",
-        "code_postal": "81170"
+        "commune": "Virac",
+        "code_postal": "81640"
       }
     },
     {
@@ -374,8 +420,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.054142,
-          44.053883
+          2.03232,
+          44.059034
         ]
       },
       "properties": {
@@ -385,34 +431,11 @@
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/2B",
-        "summary": "CANTALAUZE - M.MERCIE (Virac, 81)",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/2A",
+        "summary": "LIEUDIT CAMMARC - GANTIE (Livers-Cazelles, 81)",
         "project_id": null,
-        "commune": "Virac",
-        "code_postal": "81640"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.673019,
-          46.890702
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2026-01-14",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/29",
-        "summary": "Saint Gratien Savigny (Saint-Gratien-Savigny, 58)",
-        "project_id": null,
-        "commune": "Saint-Gratien-Savigny",
-        "code_postal": "58340"
+        "commune": "Livers-Cazelles",
+        "code_postal": "81170"
       }
     },
     {
@@ -443,6 +466,29 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.673019,
+          46.890702
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2026-01-14",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/29",
+        "summary": "Saint Gratien Savigny (Saint-Gratien-Savigny, 58)",
+        "project_id": null,
+        "commune": "Saint-Gratien-Savigny",
+        "code_postal": "58340"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -1.108489,
           47.339083
         ]
@@ -459,6 +505,29 @@
         "project_id": null,
         "commune": "Orée d'Anjou",
         "code_postal": "49530"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.138323,
+          44.256512
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-12-14",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/24",
+        "summary": "Lauzerte-Amarenco + Soelia (Lauzerte, 82)",
+        "project_id": null,
+        "commune": "Lauzerte",
+        "code_postal": "82110"
       }
     },
     {
@@ -512,29 +581,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.138323,
-          44.256512
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-12-14",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/24",
-        "summary": "Lauzerte-Amarenco + Soelia (Lauzerte, 82)",
-        "project_id": null,
-        "commune": "Lauzerte",
-        "code_postal": "82110"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           1.17015,
           44.286901
         ]
@@ -551,29 +597,6 @@
         "project_id": null,
         "commune": "Sainte-Juliette",
         "code_postal": "82110"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.024814,
-          43.662103
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-12-08",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/21",
-        "summary": "Monbrun : 9 ha - bovin - Urbasolar (Monbrun, 32)",
-        "project_id": null,
-        "commune": "Monbrun",
-        "code_postal": "32600"
       }
     },
     {
@@ -604,8 +627,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.554818,
-          43.646275
+          1.024814,
+          43.662103
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-12-08",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/21",
+        "summary": "Monbrun : 9 ha - bovin - Urbasolar (Monbrun, 32)",
+        "project_id": null,
+        "commune": "Monbrun",
+        "code_postal": "32600"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.529399,
+          42.779694
         ]
       },
       "properties": {
@@ -615,11 +661,11 @@
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1x",
-        "summary": "Beaupuy -gers (Beaupuy, 31)",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1w",
+        "summary": "Saint-Arnac (Saint-Arnac, 66)",
         "project_id": null,
-        "commune": "Beaupuy",
-        "code_postal": "31850"
+        "commune": "Saint-Arnac",
+        "code_postal": "66220"
       }
     },
     {
@@ -673,8 +719,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.529399,
-          42.779694
+          1.554818,
+          43.646275
         ]
       },
       "properties": {
@@ -684,11 +730,11 @@
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1w",
-        "summary": "Saint-Arnac (Saint-Arnac, 66)",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1x",
+        "summary": "Beaupuy -gers (Beaupuy, 31)",
         "project_id": null,
-        "commune": "Saint-Arnac",
-        "code_postal": "66220"
+        "commune": "Beaupuy",
+        "code_postal": "31850"
       }
     },
     {
@@ -719,29 +765,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.29084,
-          44.509124
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-11-03",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1t",
-        "summary": "Laurac / SAS Elements (Laurac-en-Vivarais, 07)",
-        "project_id": null,
-        "commune": "Laurac-en-Vivarais",
-        "code_postal": "07110"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           6.054679,
           47.537917
         ]
@@ -758,6 +781,29 @@
         "project_id": null,
         "commune": "Mailley-et-Chazelot",
         "code_postal": "70000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.29084,
+          44.509124
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-11-03",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1t",
+        "summary": "Laurac / SAS Elements (Laurac-en-Vivarais, 07)",
+        "project_id": null,
+        "commune": "Laurac-en-Vivarais",
+        "code_postal": "07110"
       }
     },
     {
@@ -788,29 +834,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.87895,
-          43.822948
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-10-15",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1q",
-        "summary": "camarès-85hectares (+nom du développeur) (Camarès, 12)",
-        "project_id": null,
-        "commune": "Camarès",
-        "code_postal": "12360"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           2.774083,
           43.88759
         ]
@@ -827,6 +850,29 @@
         "project_id": null,
         "commune": "Rebourguil",
         "code_postal": "12400"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.87895,
+          43.822948
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-10-15",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1q",
+        "summary": "camarès-85hectares (+nom du développeur) (Camarès, 12)",
+        "project_id": null,
+        "commune": "Camarès",
+        "code_postal": "12360"
       }
     },
     {
@@ -972,29 +1018,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.606128,
-          44.17172
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-09-05",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1i",
-        "summary": "Les omergues villesèche Abo energy (Les Omergues, 04)",
-        "project_id": null,
-        "commune": "Les Omergues",
-        "code_postal": "04200"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           5.62967,
           44.038175
         ]
@@ -1018,8 +1041,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.61458,
-          44.046597
+          5.606128,
+          44.17172
         ]
       },
       "properties": {
@@ -1029,11 +1052,11 @@
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1f",
-        "summary": "Banon mûres basses (Montsalier, 04)",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1i",
+        "summary": "Les omergues villesèche Abo energy (Les Omergues, 04)",
         "project_id": null,
-        "commune": "Montsalier",
-        "code_postal": "04150"
+        "commune": "Les Omergues",
+        "code_postal": "04200"
       }
     },
     {
@@ -1057,6 +1080,29 @@
         "project_id": null,
         "commune": "Mallefougasse-Augès",
         "code_postal": "04230"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.61458,
+          44.046597
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-09-05",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1f",
+        "summary": "Banon mûres basses (Montsalier, 04)",
+        "project_id": null,
+        "commune": "Montsalier",
+        "code_postal": "04150"
       }
     },
     {
@@ -1123,7 +1169,7 @@
         "source": "cnprv_victoires",
         "source_url": "https://victoires-pv.gogocarto.fr/#/element/1Y",
         "summary": "SASU C.P.E.S. B (Abilly, 37)",
-        "project_id": 16,
+        "project_id": 3,
         "commune": "Abilly",
         "code_postal": "37160"
       }
@@ -1179,29 +1225,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.105322,
-          44.433763
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-08-04",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1X",
-        "summary": "SOL2304 sérignac (Sérignac, 46)",
-        "project_id": null,
-        "commune": "Sérignac",
-        "code_postal": "46700"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.385925,
           45.894389
         ]
@@ -1225,22 +1248,22 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.900037,
-          44.181704
+          1.105322,
+          44.433763
         ]
       },
       "properties": {
         "type": "lutte_victorieuse",
-        "date_event": "2025-08-02",
+        "date_event": "2025-08-04",
         "acteur_nom": "Coordination Nationale Photorévoltée",
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1W",
-        "summary": "CS AgriPV 21-2 mairie de travaillan (Travaillan, 84)",
-        "project_id": 60,
-        "commune": "Travaillan",
-        "code_postal": "84850"
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1X",
+        "summary": "SOL2304 sérignac (Sérignac, 46)",
+        "project_id": null,
+        "commune": "Sérignac",
+        "code_postal": "46700"
       }
     },
     {
@@ -1264,6 +1287,29 @@
         "project_id": null,
         "commune": "Orist",
         "code_postal": "40300"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.900037,
+          44.181704
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-08-02",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1W",
+        "summary": "CS AgriPV 21-2 mairie de travaillan (Travaillan, 84)",
+        "project_id": 47,
+        "commune": "Travaillan",
+        "code_postal": "84850"
       }
     },
     {
@@ -1317,6 +1363,29 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          0.478294,
+          44.340006
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-07-30",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1S",
+        "summary": "saint sardos reden (Saint-Sardos, 47)",
+        "project_id": null,
+        "commune": "Saint-Sardos",
+        "code_postal": "47360"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.142431,
           43.433933
         ]
@@ -1356,29 +1425,6 @@
         "project_id": null,
         "commune": "Saint-Martin-le-Pin",
         "code_postal": "24300"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.478294,
-          44.340006
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-07-30",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1S",
-        "summary": "saint sardos reden (Saint-Sardos, 47)",
-        "project_id": null,
-        "commune": "Saint-Sardos",
-        "code_postal": "47360"
       }
     },
     {
@@ -1455,8 +1501,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.778169,
-          47.953461
+          0.644999,
+          44.597481
         ]
       },
       "properties": {
@@ -1466,149 +1512,11 @@
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1K",
-        "summary": "Montigny-sur-Aube (Montigny-sur-Aube, 21)",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1I",
+        "summary": "projet du castella (Lougratte, 47)",
         "project_id": null,
-        "commune": "Montigny-sur-Aube",
-        "code_postal": "21520"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          4.213484,
-          44.465248
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-27",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1C",
-        "summary": "lablachère -Verso Energy antoine Huard (Lablachère, 07)",
-        "project_id": null,
-        "commune": "Lablachère",
-        "code_postal": "07230"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.836973,
-          44.377873
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-27",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1H",
-        "summary": "penne d'agenais (Penne-d'Agenais, 47)",
-        "project_id": null,
-        "commune": "Penne-d'Agenais",
-        "code_postal": "47140"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.475466,
-          43.138632
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-27",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1D",
-        "summary": "buziet solvéo (Buziet, 64)",
-        "project_id": null,
-        "commune": "Buziet",
-        "code_postal": "64680"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.25158,
-          48.239256
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-27",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1G",
-        "summary": "Plouguernével (Plouguernével, 22)",
-        "project_id": null,
-        "commune": "Plouguernével",
-        "code_postal": "22110"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.071258,
-          49.312848
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-27",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1F",
-        "summary": "Isigny-sur-Mer (Isigny-sur-Mer, 14)",
-        "project_id": null,
-        "commune": "Isigny-sur-Mer",
-        "code_postal": "14230"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -4.282612,
-          47.903085
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-27",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1B",
-        "summary": "Plonéour-Lanvern (Plonéour-Lanvern, 29)",
-        "project_id": null,
-        "commune": "Plonéour-Lanvern",
-        "code_postal": "29720"
+        "commune": "Lougratte",
+        "code_postal": "47290"
       }
     },
     {
@@ -1639,6 +1547,144 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -4.282612,
+          47.903085
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-27",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1B",
+        "summary": "Plonéour-Lanvern (Plonéour-Lanvern, 29)",
+        "project_id": null,
+        "commune": "Plonéour-Lanvern",
+        "code_postal": "29720"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.213484,
+          44.465248
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-27",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1C",
+        "summary": "lablachère -Verso Energy antoine Huard (Lablachère, 07)",
+        "project_id": null,
+        "commune": "Lablachère",
+        "code_postal": "07230"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.475466,
+          43.138632
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-27",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1D",
+        "summary": "buziet solvéo (Buziet, 64)",
+        "project_id": null,
+        "commune": "Buziet",
+        "code_postal": "64680"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.071258,
+          49.312848
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-27",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1F",
+        "summary": "Isigny-sur-Mer (Isigny-sur-Mer, 14)",
+        "project_id": null,
+        "commune": "Isigny-sur-Mer",
+        "code_postal": "14230"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.25158,
+          48.239256
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-27",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1G",
+        "summary": "Plouguernével (Plouguernével, 22)",
+        "project_id": null,
+        "commune": "Plouguernével",
+        "code_postal": "22110"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.836973,
+          44.377873
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-27",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1H",
+        "summary": "penne d'agenais (Penne-d'Agenais, 47)",
+        "project_id": null,
+        "commune": "Penne-d'Agenais",
+        "code_postal": "47140"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           1.523682,
           45.101409
         ]
@@ -1662,8 +1708,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.644999,
-          44.597481
+          4.778169,
+          47.953461
         ]
       },
       "properties": {
@@ -1673,34 +1719,11 @@
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1I",
-        "summary": "projet du castella (Lougratte, 47)",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/1K",
+        "summary": "Montigny-sur-Aube (Montigny-sur-Aube, 21)",
         "project_id": null,
-        "commune": "Lougratte",
-        "code_postal": "47290"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.102379,
-          45.315862
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-26",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/19",
-        "summary": "Desmoukins (Saint-Hilaire-Foissac, 19)",
-        "project_id": null,
-        "commune": "Saint-Hilaire-Foissac",
-        "code_postal": "19550"
+        "commune": "Montigny-sur-Aube",
+        "code_postal": "21520"
       }
     },
     {
@@ -1731,8 +1754,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.752827,
-          49.38153
+          2.102379,
+          45.315862
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-26",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/19",
+        "summary": "Desmoukins (Saint-Hilaire-Foissac, 19)",
+        "project_id": null,
+        "commune": "Saint-Hilaire-Foissac",
+        "code_postal": "19550"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.882697,
+          46.70822
         ]
       },
       "properties": {
@@ -1742,11 +1788,11 @@
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/16",
-        "summary": "Barneville-Carteret (Barneville-Carteret, 50)",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/15",
+        "summary": "Loulle (Loulle, 39)",
         "project_id": null,
-        "commune": "Barneville-Carteret",
-        "code_postal": "50270"
+        "commune": "Loulle",
+        "code_postal": "39300"
       }
     },
     {
@@ -1892,29 +1938,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.036611,
-          47.53672
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-25",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/v",
-        "summary": "Nouan-le-Fuzelier. (Nouan-le-Fuzelier, 41)",
-        "project_id": null,
-        "commune": "Nouan-le-Fuzelier",
-        "code_postal": "41600"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -52.474467,
           5.013035
         ]
@@ -1938,8 +1961,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.882697,
-          46.70822
+          2.036611,
+          47.53672
         ]
       },
       "properties": {
@@ -1949,11 +1972,11 @@
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/15",
-        "summary": "Loulle (Loulle, 39)",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/v",
+        "summary": "Nouan-le-Fuzelier. (Nouan-le-Fuzelier, 41)",
         "project_id": null,
-        "commune": "Loulle",
-        "code_postal": "39300"
+        "commune": "Nouan-le-Fuzelier",
+        "code_postal": "41600"
       }
     },
     {
@@ -1961,8 +1984,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.835957,
-          44.062377
+          -1.752827,
+          49.38153
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-25",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/16",
+        "summary": "Barneville-Carteret (Barneville-Carteret, 50)",
+        "project_id": null,
+        "commune": "Barneville-Carteret",
+        "code_postal": "50270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.81928,
+          46.6179
         ]
       },
       "properties": {
@@ -1972,11 +2018,57 @@
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/V",
-        "summary": "Lure - Boralex (Cruis, 04)",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/s",
+        "summary": "Centrale de Cerilly (Cérilly, 03)",
         "project_id": null,
-        "commune": "Cruis",
-        "code_postal": "04230"
+        "commune": "Cérilly",
+        "code_postal": "03350"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.12393,
+          45.55349
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-24",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/t",
+        "summary": "Centrale de Mouthiers (Mouthiers-sur-Boëme, 16)",
+        "project_id": null,
+        "commune": "Mouthiers-sur-Boëme",
+        "code_postal": "16440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.879611,
+          43.228762
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-24",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/n",
+        "summary": "Projet de Raissac d‘Aude (Raissac-d'Aude, 11)",
+        "project_id": null,
+        "commune": "Raissac-d'Aude",
+        "code_postal": "11200"
       }
     },
     {
@@ -2069,6 +2161,75 @@
         "project_id": null,
         "commune": "Fouesnant",
         "code_postal": "29170"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.43839,
+          43.4943
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-24",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/i",
+        "summary": "Parc de Lézignan-la-Cèbe (Lézignan-la-Cèbe, 34)",
+        "project_id": null,
+        "commune": "Lézignan-la-Cèbe",
+        "code_postal": "34120"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.054679,
+          47.537917
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-24",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/h",
+        "summary": "parc photovoltaïque au sol de Mailley-et-Chazelot (Mailley-et-Chazelot, 70)",
+        "project_id": null,
+        "commune": "Mailley-et-Chazelot",
+        "code_postal": "70000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.174072,
+          43.628479
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-24",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/g",
+        "summary": "La Barben (8 projets pour 172ha) (La Barben, 13)",
+        "project_id": null,
+        "commune": "La Barben",
+        "code_postal": "13330"
       }
     },
     {
@@ -2202,6 +2363,52 @@
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/a",
+        "summary": "Levens (Levens, 06)",
+        "project_id": null,
+        "commune": "Levens",
+        "code_postal": "06670"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.24011,
+          43.847737
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-24",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/Z",
+        "summary": "levens (Levens, 06)",
+        "project_id": null,
+        "commune": "Levens",
+        "code_postal": "06670"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.24011,
+          43.847737
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-24",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
         "source_url": "https://victoires-pv.gogocarto.fr/#/element/Y",
         "summary": "Levens (Levens, 06)",
         "project_id": null,
@@ -2237,8 +2444,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.228786,
-          44.192559
+          5.733767,
+          44.027397
         ]
       },
       "properties": {
@@ -2248,11 +2455,34 @@
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/o",
-        "summary": "CPV de Pompiey (Pompiey, 47)",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/W",
+        "summary": "centrale solaire Engie Green de Seygnes sur la commune d’Ongles (Ongles, 04)",
         "project_id": null,
-        "commune": "Pompiey",
-        "code_postal": "47230"
+        "commune": "Ongles",
+        "code_postal": "04230"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.835957,
+          44.062377
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-24",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/V",
+        "summary": "Lure - Boralex (Cruis, 04)",
+        "project_id": null,
+        "commune": "Cruis",
+        "code_postal": "04230"
       }
     },
     {
@@ -2306,8 +2536,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.733767,
-          44.027397
+          4.541199,
+          44.682358
         ]
       },
       "properties": {
@@ -2317,149 +2547,11 @@
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/W",
-        "summary": "centrale solaire Engie Green de Seygnes sur la commune d’Ongles (Ongles, 04)",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/r",
+        "summary": "Centrale de Freyssenet (Freyssenet, 07)",
         "project_id": null,
-        "commune": "Ongles",
-        "code_postal": "04230"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          7.24011,
-          43.847737
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-24",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/Z",
-        "summary": "levens (Levens, 06)",
-        "project_id": null,
-        "commune": "Levens",
-        "code_postal": "06670"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          7.24011,
-          43.847737
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-24",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/a",
-        "summary": "Levens (Levens, 06)",
-        "project_id": null,
-        "commune": "Levens",
-        "code_postal": "06670"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.174072,
-          43.628479
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-24",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/g",
-        "summary": "La Barben (8 projets pour 172ha) (La Barben, 13)",
-        "project_id": null,
-        "commune": "La Barben",
-        "code_postal": "13330"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.054679,
-          47.537917
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-24",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/h",
-        "summary": "parc photovoltaïque au sol de Mailley-et-Chazelot (Mailley-et-Chazelot, 70)",
-        "project_id": null,
-        "commune": "Mailley-et-Chazelot",
-        "code_postal": "70000"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.43839,
-          43.4943
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-24",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/i",
-        "summary": "Parc de Lézignan-la-Cèbe (Lézignan-la-Cèbe, 34)",
-        "project_id": null,
-        "commune": "Lézignan-la-Cèbe",
-        "code_postal": "34120"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.879611,
-          43.228762
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-24",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/n",
-        "summary": "Projet de Raissac d‘Aude (Raissac-d'Aude, 11)",
-        "project_id": null,
-        "commune": "Raissac-d'Aude",
-        "code_postal": "11200"
+        "commune": "Freyssenet",
+        "code_postal": "07000"
       }
     },
     {
@@ -2490,75 +2582,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.541199,
-          44.682358
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-24",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/r",
-        "summary": "Centrale de Freyssenet (Freyssenet, 07)",
-        "project_id": null,
-        "commune": "Freyssenet",
-        "code_postal": "07000"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.81928,
-          46.6179
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-24",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/s",
-        "summary": "Centrale de Cerilly (Cérilly, 03)",
-        "project_id": null,
-        "commune": "Cérilly",
-        "code_postal": "03350"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.12393,
-          45.55349
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-06-24",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/t",
-        "summary": "Centrale de Mouthiers (Mouthiers-sur-Boëme, 16)",
-        "project_id": null,
-        "commune": "Mouthiers-sur-Boëme",
-        "code_postal": "16440"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -0.20005,
           43.129872
         ]
@@ -2572,9 +2595,32 @@
         "source": "cnprv_victoires",
         "source_url": "https://victoires-pv.gogocarto.fr/#/element/p",
         "summary": "Montaut (Montaut, 64)",
-        "project_id": 205,
+        "project_id": 192,
         "commune": "Montaut",
         "code_postal": "64800"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.228786,
+          44.192559
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-06-24",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/o",
+        "summary": "CPV de Pompiey (Pompiey, 47)",
+        "project_id": null,
+        "commune": "Pompiey",
+        "code_postal": "47230"
       }
     },
     {
@@ -2766,29 +2812,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.0036,
-          44.5107
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-03-20",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/K",
-        "summary": "Foissac. (Foissac, 12)",
-        "project_id": null,
-        "commune": "Foissac",
-        "code_postal": "12260"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           0.857276,
           45.755247
         ]
@@ -2812,6 +2835,29 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.0036,
+          44.5107
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-03-20",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/K",
+        "summary": "Foissac. (Foissac, 12)",
+        "project_id": null,
+        "commune": "Foissac",
+        "code_postal": "12260"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.503681,
           42.796282
         ]
@@ -2828,6 +2874,29 @@
         "project_id": null,
         "commune": "Lesquerde",
         "code_postal": "66220"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.997945,
+          45.930673
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2025-03-17",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/G",
+        "summary": "Banize (Banize, 23)",
+        "project_id": null,
+        "commune": "Banize",
+        "code_postal": "23120"
       }
     },
     {
@@ -2881,22 +2950,22 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.997945,
-          45.930673
+          0.367398,
+          43.630732
         ]
       },
       "properties": {
         "type": "lutte_victorieuse",
-        "date_event": "2025-03-17",
+        "date_event": "2025-03-15",
         "acteur_nom": "Coordination Nationale Photorévoltée",
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/G",
-        "summary": "Banize (Banize, 23)",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/E",
+        "summary": "Agrivoltaïsme Ovins 30 ha clôturés sur terres cultivées (Saint-Arailles, 32)",
         "project_id": null,
-        "commune": "Banize",
-        "code_postal": "23120"
+        "commune": "Saint-Arailles",
+        "code_postal": "32350"
       }
     },
     {
@@ -2927,22 +2996,22 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.367398,
-          43.630732
+          2.524752,
+          44.441195
         ]
       },
       "properties": {
         "type": "lutte_victorieuse",
-        "date_event": "2025-03-15",
+        "date_event": "2025-03-13",
         "acteur_nom": "Coordination Nationale Photorévoltée",
         "acteur_type": "association",
         "issue_status": "gagne",
         "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/E",
-        "summary": "Agrivoltaïsme Ovins 30 ha clôturés sur terres cultivées (Saint-Arailles, 32)",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/A",
+        "summary": "JP énergie (Salles-la-Source, 12)",
         "project_id": null,
-        "commune": "Saint-Arailles",
-        "code_postal": "32350"
+        "commune": "Salles-la-Source",
+        "code_postal": "12330"
       }
     },
     {
@@ -2963,29 +3032,6 @@
         "source": "cnprv_victoires",
         "source_url": "https://victoires-pv.gogocarto.fr/#/element/C",
         "summary": "Voltalia/ Mulliez/Comte de Lapanouse/Pierre Lapeyere (Salles-la-Source, 12)",
-        "project_id": null,
-        "commune": "Salles-la-Source",
-        "code_postal": "12330"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.524752,
-          44.441195
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2025-03-13",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/A",
-        "summary": "JP énergie (Salles-la-Source, 12)",
         "project_id": null,
         "commune": "Salles-la-Source",
         "code_postal": "12330"
