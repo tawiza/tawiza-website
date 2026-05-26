@@ -1,33 +1,34 @@
 {
   "version": "2026-05-26",
-  "generated_at": "2026-05-26T11:35:13.623882+00:00",
+  "generated_at": "2026-05-26T14:40:32.454170+00:00",
   "sqlite": {
     "url": "https://panoptic.tawiza.fr/data/panoptic.sqlite",
-    "sha256": "f33fd380b85e9421f604fcf0385eb4ca3d0fdfe1888700cfe953b518f1839604",
-    "size_bytes": 753664
+    "sha256": "f898a2ee814dd0087bc02218c807d8784f4fa8c359a6b61d5f888af8cd285b9e",
+    "size_bytes": 856064
   },
   "counts": {
-    "projects_canonical": 494,
+    "projects_canonical": 546,
     "contestations": 135
   },
   "sources": {
     "ademe_agrivolt": {
       "rows": 171,
-      "last_crawled": "2026-05-26T11:35:13.623882+00:00"
+      "last_crawled": "2026-05-26T14:40:32.454170+00:00"
     },
     "projets_env": {
       "rows": 78,
-      "last_crawled": "2026-05-26T11:35:13.623882+00:00"
+      "last_crawled": "2026-05-26T14:40:32.454170+00:00"
     },
     "mrae": {
-      "rows": 343,
-      "last_crawled": "2026-05-26T11:35:13.623882+00:00"
+      "rows": 420,
+      "last_crawled": "2026-05-26T14:40:32.454170+00:00"
     },
     "cnprv_victoires": {
       "rows": 135,
-      "last_crawled": "2026-05-26T11:35:13.623882+00:00"
+      "last_crawled": "2026-05-26T14:40:32.454170+00:00"
     }
   },
   "licence_data": "CC-BY-SA-4.0",
-  "licence_code": "AGPL-3.0-or-later"
+  "licence_code": "AGPL-3.0-or-later",
+  "schema_version": "v0.3"
 }

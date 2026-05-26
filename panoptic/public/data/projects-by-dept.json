@@ -3,12 +3,12 @@
     "code_dept": "??",
     "departement_name": null,
     "region_name": null,
-    "project_count": 444,
+    "project_count": 523,
     "total_mwc": 0.0,
     "statuses": {
-      "instruction": 438,
-      "autorise": 1,
-      "refuse": 3,
+      "instruction": 517,
+      "autorise": 3,
+      "refuse": 1,
       "inconnu": 2
     }
   },

@@ -121,29 +121,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.213484,
-          44.465248
-        ]
-      },
-      "properties": {
-        "type": "lutte_victorieuse",
-        "date_event": "2026-04-03",
-        "acteur_nom": "Coordination Nationale Photorévoltée",
-        "acteur_type": "association",
-        "issue_status": "gagne",
-        "source": "cnprv_victoires",
-        "source_url": "https://victoires-pv.gogocarto.fr/#/element/2N",
-        "summary": "Lablachère. Verso Energy, soleil du Varlet, Ardèche (Lablachère, 07)",
-        "project_id": null,
-        "commune": "Lablachère",
-        "code_postal": "07230"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           4.698221,
           44.012705
         ]
@@ -160,6 +137,29 @@
         "project_id": null,
         "commune": "Tavel",
         "code_postal": "30126"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.213484,
+          44.465248
+        ]
+      },
+      "properties": {
+        "type": "lutte_victorieuse",
+        "date_event": "2026-04-03",
+        "acteur_nom": "Coordination Nationale Photorévoltée",
+        "acteur_type": "association",
+        "issue_status": "gagne",
+        "source": "cnprv_victoires",
+        "source_url": "https://victoires-pv.gogocarto.fr/#/element/2N",
+        "summary": "Lablachère. Verso Energy, soleil du Varlet, Ardèche (Lablachère, 07)",
+        "project_id": null,
+        "commune": "Lablachère",
+        "code_postal": "07230"
       }
     },
     {
