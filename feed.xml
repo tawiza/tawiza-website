@@ -6,7 +6,15 @@
         <link>https://tawiza.fr/analyses/</link>
         <atom:link href="https://tawiza.fr/feed.xml" rel="self" type="application/rss+xml"/>
         <language>fr</language>
-        <lastBuildDate>Wed, 20 May 2026 12:00:00 +0200</lastBuildDate>
+        <lastBuildDate>Fri, 05 Jun 2026 12:00:00 +0200</lastBuildDate>
+
+        <item>
+            <title>Voil&#224; comment on finance une usine en France en 2026</title>
+            <link>https://tawiza.fr/analyses/verkor-dunkerque-argent-public.html</link>
+            <guid>https://tawiza.fr/analyses/verkor-dunkerque-argent-public.html</guid>
+            <pubDate>Fri, 05 Jun 2026 12:00:00 +0200</pubDate>
+            <description>Verkor &#224; Dunkerque, cas d'&#233;cole : une subvention de 659 millions autoris&#233;e pour combler le d&#233;ficit de financement, une agglom&#233;ration qui emprunte pour verser sa part de 30 millions, 1 200 emplois inscrits comme promesse jamais comme obligation, et des conditions renvoy&#233;es &#224; une convention non publique. On a d&#233;mont&#233; le m&#233;canisme document par document (d&#233;cision europ&#233;enne de 51 pages, rapport de la chambre r&#233;gionale des comptes, d&#233;lib&#233;rations, registres), et on note les dates o&#249; chacun pourra v&#233;rifier. Au passage : le registre europ&#233;en de transparence enregistre les promesses au centime pr&#232;s, mais les 30 millions vers&#233;s y restent introuvables.</description>
+        </item>
 
         <item>
             <title>Le vibe coding, sur la durée</title>
