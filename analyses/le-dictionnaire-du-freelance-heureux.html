@@ -41,6 +41,18 @@
     <link rel="stylesheet" href="/assets/v2/design-system.css?v=20260420a">
     <link rel="stylesheet" href="../assets/css/tracking.css">
     <style>
+        /* hero editorial (repris du gabarit analyses, absent du CSS partagé : sans ça la date passe sous le wordmark fixe) */
+        .hero-editorial { position: relative; padding: 8rem 24px 4rem; overflow: hidden; background: var(--bg); }
+        .hero-editorial::before { content:''; position:absolute; inset:0; opacity:.03;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23b45309' stroke-width='1.2'%3E%3Cpath d='M60 10L72 30L90 22L80 42L100 48L80 54L90 74L72 66L60 86L48 66L30 74L40 54L20 48L40 42L30 22L48 30Z'/%3E%3Ccircle cx='60' cy='48' r='8'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 120px 96px; pointer-events: none; }
+        .hero-editorial__content { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
+        .hero-editorial .article-meta { margin-bottom: 1.5rem; }
+        .hero-editorial h1 { font-size: clamp(2rem, 4.8vw, 3rem); line-height: 1.18; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
+        .hero-editorial .article-intro { font-size: 1.15rem; line-height: 1.75; color: var(--text-secondary); max-width: 600px; }
+        .hero-editorial__accent-line { display: block; width: 48px; height: 3px; background: var(--accent); margin-bottom: 2rem; border-radius: 2px; }
+        @media (max-width: 640px){ .hero-editorial { padding: 6.5rem 20px 3rem; } .hero-editorial h1 { font-size: 1.7rem; } }
+
         /* drop cap du paragraphe d'ouverture */
         .article-body p.dico-lead::first-letter{
             font-family: var(--font-heading); font-size: 3.4em; float: left;
